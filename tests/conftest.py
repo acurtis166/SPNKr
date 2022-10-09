@@ -1,9 +1,9 @@
 
 import contextlib
+import sys
 
 import pytest
 import requests
-import sys
 
 from halo_infinite_api.api.content import ContentClient
 from halo_infinite_api.api.profile import ProfileClient
