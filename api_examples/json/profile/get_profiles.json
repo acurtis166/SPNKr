@@ -1,0 +1,95 @@
+{
+    "profileUsers": [
+        {
+            "id": "2535445291321133",
+            "hostId": "2535445291321133",
+            "settings": [
+                {
+                    "id": "GameDisplayName",
+                    "value": "aCurtis X89"
+                },
+                {
+                    "id": "AppDisplayName",
+                    "value": "aCurtis X89"
+                },
+                {
+                    "id": "AppDisplayPicRaw",
+                    "value": "https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTcS9jr0n8i7LY1tL3U7Aiafawv0hvLVTadAYM74jo2GRWfV4isnhJzSvaPwT_5QUO5&format=png"
+                },
+                {
+                    "id": "GameDisplayPicRaw",
+                    "value": "https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTcS9jr0n8i7LY1tL3U7Aiafawv0hvLVTadAYM74jo2GRWfV4isnhJzSvaPwT_5QUO5&format=png"
+                },
+                {
+                    "id": "PublicGamerpic",
+                    "value": "https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTcS9jr0n8i7LY1tL3U7Aiafawv0hvLVTadAYM74jo2GRWfV4isnhJzSvaPwT_5QUO5"
+                },
+                {
+                    "id": "ShowUserAsAvatar",
+                    "value": "0"
+                },
+                {
+                    "id": "Gamerscore",
+                    "value": "16966"
+                },
+                {
+                    "id": "Gamertag",
+                    "value": "aCurtis X89"
+                },
+                {
+                    "id": "ModernGamertag",
+                    "value": "aCurtis X89"
+                },
+                {
+                    "id": "ModernGamertagSuffix",
+                    "value": ""
+                },
+                {
+                    "id": "UniqueModernGamertag",
+                    "value": "aCurtis X89"
+                },
+                {
+                    "id": "AccountTier",
+                    "value": "Silver"
+                },
+                {
+                    "id": "TenureLevel",
+                    "value": "0"
+                },
+                {
+                    "id": "XboxOneRep",
+                    "value": "GoodPlayer"
+                },
+                {
+                    "id": "PreferredColor",
+                    "value": "https://dlassets-ssl.xboxlive.com/public/content/ppl/colors/00002.json"
+                },
+                {
+                    "id": "Location",
+                    "value": ""
+                },
+                {
+                    "id": "Bio",
+                    "value": ""
+                },
+                {
+                    "id": "Watermarks",
+                    "value": ""
+                },
+                {
+                    "id": "RealName",
+                    "value": ""
+                },
+                {
+                    "id": "RealNameOverride",
+                    "value": "Andrew Curtis"
+                },
+                {
+                    "id": "IsQuarantined",
+                    "value": "0"
+                }
+            ],
+            "isSponsoredUser": false
+        }
+    ]
+}
