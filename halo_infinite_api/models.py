@@ -12,14 +12,14 @@ import orjson
 from halo_infinite_api import util
 
 
-def load_to_datetime(o, base_type):
+def load_to_datetime(o: str, base_type: dt.datetime) -> dt.datetime:
     return dateutil.parser.isoparse(o)
 
-def load_to_timedelta(o, base_type):
+def load_to_timedelta(o: str, base_type: dt.timedelta):
     return util.parse_iso_duration(o)
     
 def parse_json(cls: Type[JSONSerializable], string: str):
-    return cls.from_json(string, decoder=orjson.loads)
+    return cls.from_json(string, decoder=orjson.loads)  # type: ignore
 
 
 class SnakeModel(JSONSerializable, LoadMixin):
