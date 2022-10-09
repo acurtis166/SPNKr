@@ -1,0 +1,43 @@
+{
+    "Value": [
+        {
+            "Id": "xuid(2535445291321133)",
+            "ResultCode": 0,
+            "Result": {
+                "Current": {
+                    "Value": -1,
+                    "MeasurementMatchesRemaining": 4,
+                    "Tier": "",
+                    "TierStart": 0,
+                    "SubTier": 0,
+                    "NextTier": "",
+                    "NextTierStart": 0,
+                    "NextSubTier": 0,
+                    "InitialMeasurementMatches": 10
+                },
+                "SeasonMax": {
+                    "Value": -1,
+                    "MeasurementMatchesRemaining": 4,
+                    "Tier": "",
+                    "TierStart": 0,
+                    "SubTier": 0,
+                    "NextTier": "",
+                    "NextTierStart": 0,
+                    "NextSubTier": 0,
+                    "InitialMeasurementMatches": 10
+                },
+                "AllTimeMax": {
+                    "Value": 1549,
+                    "MeasurementMatchesRemaining": 4,
+                    "Tier": "Onyx",
+                    "TierStart": 1500,
+                    "SubTier": 0,
+                    "NextTier": "Onyx",
+                    "NextTierStart": 1500,
+                    "NextSubTier": 0,
+                    "InitialMeasurementMatches": 10
+                }
+            }
+        }
+    ]
+}

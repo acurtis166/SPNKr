@@ -1,0 +1,1434 @@
+<MatchStats xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite.Match.Stats">
+    <MatchId xmlns:d2p1="http://schemas.datacontract.org/2004/07/Bond">
+        <d2p1:Data1>1878437784</d2p1:Data1>
+        <d2p1:Data2>22166</d2p1:Data2>
+        <d2p1:Data3>16698</d2p1:Data3>
+        <d2p1:Data4>13762215748299593123</d2p1:Data4>
+    </MatchId>
+    <MatchInfo xmlns:d2p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+        <d2p1:ClearanceId xmlns:d3p1="http://schemas.datacontract.org/2004/07/Bond">
+            <d3p1:Data1>170089190</d3p1:Data1>
+            <d3p1:Data2>58516</d3p1:Data2>
+            <d3p1:Data3>17802</d3p1:Data3>
+            <d3p1:Data4>2029371556740738197</d3p1:Data4>
+        </d2p1:ClearanceId>
+        <d2p1:Duration>PT8M24.0981509S</d2p1:Duration>
+        <d2p1:EndTime>2022-06-22T01:50:09.942Z</d2p1:EndTime>
+        <d2p1:GameVariantCategory>MultiplayerAttrition</d2p1:GameVariantCategory>
+        <d2p1:LevelId xmlns:d3p1="http://schemas.datacontract.org/2004/07/Bond">
+            <d3p1:Data1>1823533968</d3p1:Data1>
+            <d3p1:Data2>10265</d3p1:Data2>
+            <d3p1:Data3>19311</d3p1:Data3>
+            <d3p1:Data4>4475656261232855715</d3p1:Data4>
+        </d2p1:LevelId>
+        <d2p1:LifecycleMode>Matchmade</d2p1:LifecycleMode>
+        <d2p1:MapVariant xmlns:d3p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+            <d3p1:AssetId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>1393781465</d4p1:Data1>
+                <d4p1:Data2>4054</d4p1:Data2>
+                <d4p1:Data3>17009</d4p1:Data3>
+                <d4p1:Data4>2186138168195109511</d4p1:Data4>
+            </d3p1:AssetId>
+            <d3p1:AssetKind>Map</d3p1:AssetKind>
+            <d3p1:VersionId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>1360740266</d4p1:Data1>
+                <d4p1:Data2>62457</d4p1:Data2>
+                <d4p1:Data3>19899</d4p1:Data3>
+                <d4p1:Data4>8079170224467068836</d4p1:Data4>
+            </d3p1:VersionId>
+        </d2p1:MapVariant>
+        <d2p1:PlayableDuration>PT8M8.985S</d2p1:PlayableDuration>
+        <d2p1:Playlist xmlns:d3p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+            <d3p1:AssetId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>3184455603</d4p1:Data1>
+                <d4p1:Data2>7250</d4p1:Data2>
+                <d4p1:Data3>18504</d4p1:Data3>
+                <d4p1:Data4>11317567637368911782</d4p1:Data4>
+            </d3p1:AssetId>
+            <d3p1:AssetKind>Playlist</d3p1:AssetKind>
+            <d3p1:VersionId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>3383182405</d4p1:Data1>
+                <d4p1:Data2>17688</d4p1:Data2>
+                <d4p1:Data3>17954</d4p1:Data3>
+                <d4p1:Data4>2993789345858452360</d4p1:Data4>
+            </d3p1:VersionId>
+        </d2p1:Playlist>
+        <d2p1:PlaylistExperience>Arena</d2p1:PlaylistExperience>
+        <d2p1:PlaylistMapModePair xmlns:d3p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+            <d3p1:AssetId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>6141194</d4p1:Data1>
+                <d4p1:Data2>1605</d4p1:Data2>
+                <d4p1:Data3>17467</d4p1:Data3>
+                <d4p1:Data4>1315278424121210803</d4p1:Data4>
+            </d3p1:AssetId>
+            <d3p1:AssetKind>MapModePair</d3p1:AssetKind>
+            <d3p1:VersionId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>1889032517</d4p1:Data1>
+                <d4p1:Data2>6975</d4p1:Data2>
+                <d4p1:Data3>18435</d4p1:Data3>
+                <d4p1:Data4>980559910064738204</d4p1:Data4>
+            </d3p1:VersionId>
+        </d2p1:PlaylistMapModePair>
+        <d2p1:SeasonId>Seasons/Season7.json</d2p1:SeasonId>
+        <d2p1:StartTime>2022-06-22T01:39:28.053Z</d2p1:StartTime>
+        <d2p1:TeamScoringEnabled>true</d2p1:TeamScoringEnabled>
+        <d2p1:TeamsEnabled>true</d2p1:TeamsEnabled>
+        <d2p1:UgcGameVariant xmlns:d3p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+            <d3p1:AssetId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>1292856853</d4p1:Data1>
+                <d4p1:Data2>52287</d4p1:Data2>
+                <d4p1:Data3>18144</d4p1:Data3>
+                <d4p1:Data4>14682879805760865949</d4p1:Data4>
+            </d3p1:AssetId>
+            <d3p1:AssetKind>UgcGameVariant</d3p1:AssetKind>
+            <d3p1:VersionId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>3601087783</d4p1:Data1>
+                <d4p1:Data2>39508</d4p1:Data2>
+                <d4p1:Data3>18547</d4p1:Data3>
+                <d4p1:Data4>15897516615889827255</d4p1:Data4>
+            </d3p1:VersionId>
+        </d2p1:UgcGameVariant>
+    </MatchInfo>
+    <Players>
+        <PlayerStats>
+            <BotAttributes i:nil="true" />
+            <LastTeamId>1</LastTeamId>
+            <Outcome>Win</Outcome>
+            <ParticipationInfo>
+                <ConfirmedParticipation i:nil="true" />
+                <FirstJoinedTime>2022-06-22T01:41:45.839Z</FirstJoinedTime>
+                <JoinedInProgress>false</JoinedInProgress>
+                <LastLeaveTime i:nil="true" />
+                <LeftInProgress>false</LeftInProgress>
+                <PresentAtBeginning>true</PresentAtBeginning>
+                <PresentAtCompletion>true</PresentAtCompletion>
+                <TimePlayed>PT8M8.985S</TimePlayed>
+            </ParticipationInfo>
+            <PlayerId>xuid(2533274906635397)</PlayerId>
+            <PlayerTeamStats>
+                <PlayerTeamStats>
+                    <Stats>
+                        <BombStats i:nil="true" />
+                        <CaptureTheFlagStats i:nil="true" />
+                        <CoreStats>
+                            <Accuracy>41.37</Accuracy>
+                            <Assists>4</Assists>
+                            <AverageLifeDuration>PT1M3.3S</AverageLifeDuration>
+                            <Betrayals>0</Betrayals>
+                            <CalloutAssists>0</CalloutAssists>
+                            <DamageDealt>1858</DamageDealt>
+                            <DamageTaken>1955</DamageTaken>
+                            <Deaths>4</Deaths>
+                            <DeprecatedDamageDealt>1858</DeprecatedDamageDealt>
+                            <DeprecatedDamageTaken>1955</DeprecatedDamageTaken>
+                            <DriverAssists>0</DriverAssists>
+                            <EmpAssists>0</EmpAssists>
+                            <GrenadeKills>0</GrenadeKills>
+                            <HeadshotKills>0</HeadshotKills>
+                            <Hijacks>0</Hijacks>
+                            <KDA>3.33</KDA>
+                            <Kills>6</Kills>
+                            <MaxKillingSpree>2</MaxKillingSpree>
+                            <Medals>
+                                <MatchResultMedalStats>
+                                    <Count>2</Count>
+                                    <NameId>221693153</NameId>
+                                    <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                                </MatchResultMedalStats>
+                            </Medals>
+                            <MeleeKills>0</MeleeKills>
+                            <PersonalScore>1000</PersonalScore>
+                            <PersonalScores>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>4</Count>
+                                    <NameId>1024030246</NameId>
+                                    <TotalPersonalScoreAwarded>400</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>4</Count>
+                                    <NameId>638246808</NameId>
+                                    <TotalPersonalScoreAwarded>200</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>2</Count>
+                                    <NameId>2408971842</NameId>
+                                    <TotalPersonalScoreAwarded>400</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                            </PersonalScores>
+                            <PowerWeaponKills>0</PowerWeaponKills>
+                            <RoundsLost>1</RoundsLost>
+                            <RoundsTied>1</RoundsTied>
+                            <RoundsWon>1</RoundsWon>
+                            <Score>0</Score>
+                            <ShotsFired>203</ShotsFired>
+                            <ShotsHit>84</ShotsHit>
+                            <Spawns>6</Spawns>
+                            <Suicides>0</Suicides>
+                            <VehicleDestroys>0</VehicleDestroys>
+                        </CoreStats>
+                        <EliminationStats>
+                            <AlliesRevived>0</AlliesRevived>
+                            <EliminationAssists>3</EliminationAssists>
+                            <EliminationOrder>0</EliminationOrder>
+                            <Eliminations>2</Eliminations>
+                            <EnemyRevivesDenied>0</EnemyRevivesDenied>
+                            <Executions>0</Executions>
+                            <KillsAsLastPlayerStanding>0</KillsAsLastPlayerStanding>
+                            <LastPlayersStandingKilled>1</LastPlayersStandingKilled>
+                            <LivesRemaining i:nil="true" />
+                            <RoundsSurvived>2</RoundsSurvived>
+                            <TimesRevivedByAlly>0</TimesRevivedByAlly>
+                        </EliminationStats>
+                        <ExtractionStats i:nil="true" />
+                        <InfectionStats i:nil="true" />
+                        <OddballStats i:nil="true" />
+                        <StockpileStats i:nil="true" />
+                        <VipStats i:nil="true" />
+                        <ZonesStats i:nil="true" />
+                    </Stats>
+                    <TeamId>1</TeamId>
+                </PlayerTeamStats>
+            </PlayerTeamStats>
+            <PlayerType>Human</PlayerType>
+            <Rank>1</Rank>
+        </PlayerStats>
+        <PlayerStats>
+            <BotAttributes i:nil="true" />
+            <LastTeamId>0</LastTeamId>
+            <Outcome>Loss</Outcome>
+            <ParticipationInfo>
+                <ConfirmedParticipation i:nil="true" />
+                <FirstJoinedTime>2022-06-22T01:41:45.842Z</FirstJoinedTime>
+                <JoinedInProgress>false</JoinedInProgress>
+                <LastLeaveTime i:nil="true" />
+                <LeftInProgress>false</LeftInProgress>
+                <PresentAtBeginning>true</PresentAtBeginning>
+                <PresentAtCompletion>true</PresentAtCompletion>
+                <TimePlayed>PT8M8.985S</TimePlayed>
+            </ParticipationInfo>
+            <PlayerId>xuid(2535445291321133)</PlayerId>
+            <PlayerTeamStats>
+                <PlayerTeamStats>
+                    <Stats>
+                        <BombStats i:nil="true" />
+                        <CaptureTheFlagStats i:nil="true" />
+                        <CoreStats>
+                            <Accuracy>48.64</Accuracy>
+                            <Assists>3</Assists>
+                            <AverageLifeDuration>PT50.2S</AverageLifeDuration>
+                            <Betrayals>0</Betrayals>
+                            <CalloutAssists>0</CalloutAssists>
+                            <DamageDealt>2875</DamageDealt>
+                            <DamageTaken>2369</DamageTaken>
+                            <Deaths>6</Deaths>
+                            <DeprecatedDamageDealt>2875</DeprecatedDamageDealt>
+                            <DeprecatedDamageTaken>2369</DeprecatedDamageTaken>
+                            <DriverAssists>0</DriverAssists>
+                            <EmpAssists>0</EmpAssists>
+                            <GrenadeKills>0</GrenadeKills>
+                            <HeadshotKills>3</HeadshotKills>
+                            <Hijacks>0</Hijacks>
+                            <KDA>1</KDA>
+                            <Kills>6</Kills>
+                            <MaxKillingSpree>2</MaxKillingSpree>
+                            <Medals>
+                                <MatchResultMedalStats>
+                                    <Count>1</Count>
+                                    <NameId>3334154676</NameId>
+                                    <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                                </MatchResultMedalStats>
+                                <MatchResultMedalStats>
+                                    <Count>1</Count>
+                                    <NameId>1283796619</NameId>
+                                    <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                                </MatchResultMedalStats>
+                                <MatchResultMedalStats>
+                                    <Count>1</Count>
+                                    <NameId>4229934157</NameId>
+                                    <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                                </MatchResultMedalStats>
+                            </Medals>
+                            <MeleeKills>0</MeleeKills>
+                            <PersonalScore>750</PersonalScore>
+                            <PersonalScores>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>6</Count>
+                                    <NameId>1024030246</NameId>
+                                    <TotalPersonalScoreAwarded>600</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>3</Count>
+                                    <NameId>638246808</NameId>
+                                    <TotalPersonalScoreAwarded>150</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                            </PersonalScores>
+                            <PowerWeaponKills>2</PowerWeaponKills>
+                            <RoundsLost>1</RoundsLost>
+                            <RoundsTied>1</RoundsTied>
+                            <RoundsWon>1</RoundsWon>
+                            <Score>0</Score>
+                            <ShotsFired>259</ShotsFired>
+                            <ShotsHit>126</ShotsHit>
+                            <Spawns>7</Spawns>
+                            <Suicides>0</Suicides>
+                            <VehicleDestroys>0</VehicleDestroys>
+                        </CoreStats>
+                        <EliminationStats>
+                            <AlliesRevived>0</AlliesRevived>
+                            <EliminationAssists>2</EliminationAssists>
+                            <EliminationOrder>0</EliminationOrder>
+                            <Eliminations>0</Eliminations>
+                            <EnemyRevivesDenied>0</EnemyRevivesDenied>
+                            <Executions>0</Executions>
+                            <KillsAsLastPlayerStanding>0</KillsAsLastPlayerStanding>
+                            <LastPlayersStandingKilled>0</LastPlayersStandingKilled>
+                            <LivesRemaining i:nil="true" />
+                            <RoundsSurvived>1</RoundsSurvived>
+                            <TimesRevivedByAlly>0</TimesRevivedByAlly>
+                        </EliminationStats>
+                        <ExtractionStats i:nil="true" />
+                        <InfectionStats i:nil="true" />
+                        <OddballStats i:nil="true" />
+                        <StockpileStats i:nil="true" />
+                        <VipStats i:nil="true" />
+                        <ZonesStats i:nil="true" />
+                    </Stats>
+                    <TeamId>0</TeamId>
+                </PlayerTeamStats>
+            </PlayerTeamStats>
+            <PlayerType>Human</PlayerType>
+            <Rank>5</Rank>
+        </PlayerStats>
+        <PlayerStats>
+            <BotAttributes i:nil="true" />
+            <LastTeamId>1</LastTeamId>
+            <Outcome>Win</Outcome>
+            <ParticipationInfo>
+                <ConfirmedParticipation i:nil="true" />
+                <FirstJoinedTime>2022-06-22T01:41:45.842Z</FirstJoinedTime>
+                <JoinedInProgress>false</JoinedInProgress>
+                <LastLeaveTime i:nil="true" />
+                <LeftInProgress>false</LeftInProgress>
+                <PresentAtBeginning>true</PresentAtBeginning>
+                <PresentAtCompletion>true</PresentAtCompletion>
+                <TimePlayed>PT8M8.985S</TimePlayed>
+            </ParticipationInfo>
+            <PlayerId>xuid(2535411545814847)</PlayerId>
+            <PlayerTeamStats>
+                <PlayerTeamStats>
+                    <Stats>
+                        <BombStats i:nil="true" />
+                        <CaptureTheFlagStats i:nil="true" />
+                        <CoreStats>
+                            <Accuracy>23.61</Accuracy>
+                            <Assists>5</Assists>
+                            <AverageLifeDuration>PT52.5S</AverageLifeDuration>
+                            <Betrayals>0</Betrayals>
+                            <CalloutAssists>0</CalloutAssists>
+                            <DamageDealt>3527</DamageDealt>
+                            <DamageTaken>2520</DamageTaken>
+                            <Deaths>7</Deaths>
+                            <DeprecatedDamageDealt>3527</DeprecatedDamageDealt>
+                            <DeprecatedDamageTaken>2520</DeprecatedDamageTaken>
+                            <DriverAssists>0</DriverAssists>
+                            <EmpAssists>0</EmpAssists>
+                            <GrenadeKills>0</GrenadeKills>
+                            <HeadshotKills>4</HeadshotKills>
+                            <Hijacks>0</Hijacks>
+                            <KDA>3.66</KDA>
+                            <Kills>9</Kills>
+                            <MaxKillingSpree>3</MaxKillingSpree>
+                            <Medals>
+                                <MatchResultMedalStats>
+                                    <Count>1</Count>
+                                    <NameId>4229934157</NameId>
+                                    <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                                </MatchResultMedalStats>
+                                <MatchResultMedalStats>
+                                    <Count>1</Count>
+                                    <NameId>1283796619</NameId>
+                                    <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                                </MatchResultMedalStats>
+                                <MatchResultMedalStats>
+                                    <Count>1</Count>
+                                    <NameId>1172766553</NameId>
+                                    <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                                </MatchResultMedalStats>
+                            </Medals>
+                            <MeleeKills>1</MeleeKills>
+                            <PersonalScore>1600</PersonalScore>
+                            <PersonalScores>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>5</Count>
+                                    <NameId>1024030246</NameId>
+                                    <TotalPersonalScoreAwarded>500</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>5</Count>
+                                    <NameId>638246808</NameId>
+                                    <TotalPersonalScoreAwarded>250</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>4</Count>
+                                    <NameId>2408971842</NameId>
+                                    <TotalPersonalScoreAwarded>800</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>1</Count>
+                                    <NameId>3472794399</NameId>
+                                    <TotalPersonalScoreAwarded>50</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                            </PersonalScores>
+                            <PowerWeaponKills>1</PowerWeaponKills>
+                            <RoundsLost>1</RoundsLost>
+                            <RoundsTied>1</RoundsTied>
+                            <RoundsWon>1</RoundsWon>
+                            <Score>0</Score>
+                            <ShotsFired>542</ShotsFired>
+                            <ShotsHit>128</ShotsHit>
+                            <Spawns>7</Spawns>
+                            <Suicides>0</Suicides>
+                            <VehicleDestroys>1</VehicleDestroys>
+                        </CoreStats>
+                        <EliminationStats>
+                            <AlliesRevived>0</AlliesRevived>
+                            <EliminationAssists>1</EliminationAssists>
+                            <EliminationOrder>0</EliminationOrder>
+                            <Eliminations>4</Eliminations>
+                            <EnemyRevivesDenied>0</EnemyRevivesDenied>
+                            <Executions>0</Executions>
+                            <KillsAsLastPlayerStanding>0</KillsAsLastPlayerStanding>
+                            <LastPlayersStandingKilled>0</LastPlayersStandingKilled>
+                            <LivesRemaining i:nil="true" />
+                            <RoundsSurvived>0</RoundsSurvived>
+                            <TimesRevivedByAlly>0</TimesRevivedByAlly>
+                        </EliminationStats>
+                        <ExtractionStats i:nil="true" />
+                        <InfectionStats i:nil="true" />
+                        <OddballStats i:nil="true" />
+                        <StockpileStats i:nil="true" />
+                        <VipStats i:nil="true" />
+                        <ZonesStats i:nil="true" />
+                    </Stats>
+                    <TeamId>1</TeamId>
+                </PlayerTeamStats>
+            </PlayerTeamStats>
+            <PlayerType>Human</PlayerType>
+            <Rank>1</Rank>
+        </PlayerStats>
+        <PlayerStats>
+            <BotAttributes i:nil="true" />
+            <LastTeamId>1</LastTeamId>
+            <Outcome>Win</Outcome>
+            <ParticipationInfo>
+                <ConfirmedParticipation i:nil="true" />
+                <FirstJoinedTime>2022-06-22T01:41:45.843Z</FirstJoinedTime>
+                <JoinedInProgress>false</JoinedInProgress>
+                <LastLeaveTime i:nil="true" />
+                <LeftInProgress>false</LeftInProgress>
+                <PresentAtBeginning>true</PresentAtBeginning>
+                <PresentAtCompletion>true</PresentAtCompletion>
+                <TimePlayed>PT8M8.985S</TimePlayed>
+            </ParticipationInfo>
+            <PlayerId>xuid(2533274868338177)</PlayerId>
+            <PlayerTeamStats>
+                <PlayerTeamStats>
+                    <Stats>
+                        <BombStats i:nil="true" />
+                        <CaptureTheFlagStats i:nil="true" />
+                        <CoreStats>
+                            <Accuracy>49.22</Accuracy>
+                            <Assists>4</Assists>
+                            <AverageLifeDuration>PT35.4S</AverageLifeDuration>
+                            <Betrayals>0</Betrayals>
+                            <CalloutAssists>0</CalloutAssists>
+                            <DamageDealt>2915</DamageDealt>
+                            <DamageTaken>2899</DamageTaken>
+                            <Deaths>8</Deaths>
+                            <DeprecatedDamageDealt>2915</DeprecatedDamageDealt>
+                            <DeprecatedDamageTaken>2899</DeprecatedDamageTaken>
+                            <DriverAssists>0</DriverAssists>
+                            <EmpAssists>0</EmpAssists>
+                            <GrenadeKills>0</GrenadeKills>
+                            <HeadshotKills>5</HeadshotKills>
+                            <Hijacks>0</Hijacks>
+                            <KDA>2.33</KDA>
+                            <Kills>9</Kills>
+                            <MaxKillingSpree>3</MaxKillingSpree>
+                            <Medals>
+                                <MatchResultMedalStats>
+                                    <Count>1</Count>
+                                    <NameId>3334154676</NameId>
+                                    <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                                </MatchResultMedalStats>
+                                <MatchResultMedalStats>
+                                    <Count>1</Count>
+                                    <NameId>1176569867</NameId>
+                                    <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                                </MatchResultMedalStats>
+                                <MatchResultMedalStats>
+                                    <Count>2</Count>
+                                    <NameId>4229934157</NameId>
+                                    <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                                </MatchResultMedalStats>
+                                <MatchResultMedalStats>
+                                    <Count>1</Count>
+                                    <NameId>622331684</NameId>
+                                    <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                                </MatchResultMedalStats>
+                                <MatchResultMedalStats>
+                                    <Count>1</Count>
+                                    <NameId>2063152177</NameId>
+                                    <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                                </MatchResultMedalStats>
+                            </Medals>
+                            <MeleeKills>0</MeleeKills>
+                            <PersonalScore>1425</PersonalScore>
+                            <PersonalScores>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>6</Count>
+                                    <NameId>1024030246</NameId>
+                                    <TotalPersonalScoreAwarded>600</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>4</Count>
+                                    <NameId>638246808</NameId>
+                                    <TotalPersonalScoreAwarded>200</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>3</Count>
+                                    <NameId>2408971842</NameId>
+                                    <TotalPersonalScoreAwarded>600</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>1</Count>
+                                    <NameId>2130209372</NameId>
+                                    <TotalPersonalScoreAwarded>25</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                            </PersonalScores>
+                            <PowerWeaponKills>2</PowerWeaponKills>
+                            <RoundsLost>1</RoundsLost>
+                            <RoundsTied>1</RoundsTied>
+                            <RoundsWon>1</RoundsWon>
+                            <Score>0</Score>
+                            <ShotsFired>193</ShotsFired>
+                            <ShotsHit>95</ShotsHit>
+                            <Spawns>10</Spawns>
+                            <Suicides>0</Suicides>
+                            <VehicleDestroys>0</VehicleDestroys>
+                        </CoreStats>
+                        <EliminationStats>
+                            <AlliesRevived>0</AlliesRevived>
+                            <EliminationAssists>1</EliminationAssists>
+                            <EliminationOrder>0</EliminationOrder>
+                            <Eliminations>3</Eliminations>
+                            <EnemyRevivesDenied>1</EnemyRevivesDenied>
+                            <Executions>0</Executions>
+                            <KillsAsLastPlayerStanding>0</KillsAsLastPlayerStanding>
+                            <LastPlayersStandingKilled>1</LastPlayersStandingKilled>
+                            <LivesRemaining i:nil="true" />
+                            <RoundsSurvived>2</RoundsSurvived>
+                            <TimesRevivedByAlly>0</TimesRevivedByAlly>
+                        </EliminationStats>
+                        <ExtractionStats i:nil="true" />
+                        <InfectionStats i:nil="true" />
+                        <OddballStats i:nil="true" />
+                        <StockpileStats i:nil="true" />
+                        <VipStats i:nil="true" />
+                        <ZonesStats i:nil="true" />
+                    </Stats>
+                    <TeamId>1</TeamId>
+                </PlayerTeamStats>
+            </PlayerTeamStats>
+            <PlayerType>Human</PlayerType>
+            <Rank>1</Rank>
+        </PlayerStats>
+        <PlayerStats>
+            <BotAttributes i:nil="true" />
+            <LastTeamId>0</LastTeamId>
+            <Outcome>Loss</Outcome>
+            <ParticipationInfo>
+                <ConfirmedParticipation i:nil="true" />
+                <FirstJoinedTime>2022-06-22T01:41:45.843Z</FirstJoinedTime>
+                <JoinedInProgress>false</JoinedInProgress>
+                <LastLeaveTime i:nil="true" />
+                <LeftInProgress>false</LeftInProgress>
+                <PresentAtBeginning>true</PresentAtBeginning>
+                <PresentAtCompletion>true</PresentAtCompletion>
+                <TimePlayed>PT8M8.985S</TimePlayed>
+            </ParticipationInfo>
+            <PlayerId>xuid(2535434439369264)</PlayerId>
+            <PlayerTeamStats>
+                <PlayerTeamStats>
+                    <Stats>
+                        <BombStats i:nil="true" />
+                        <CaptureTheFlagStats i:nil="true" />
+                        <CoreStats>
+                            <Accuracy>60.49</Accuracy>
+                            <Assists>3</Assists>
+                            <AverageLifeDuration>PT26.2S</AverageLifeDuration>
+                            <Betrayals>0</Betrayals>
+                            <CalloutAssists>0</CalloutAssists>
+                            <DamageDealt>3697</DamageDealt>
+                            <DamageTaken>2892</DamageTaken>
+                            <Deaths>10</Deaths>
+                            <DeprecatedDamageDealt>3697</DeprecatedDamageDealt>
+                            <DeprecatedDamageTaken>2892</DeprecatedDamageTaken>
+                            <DriverAssists>0</DriverAssists>
+                            <EmpAssists>0</EmpAssists>
+                            <GrenadeKills>0</GrenadeKills>
+                            <HeadshotKills>7</HeadshotKills>
+                            <Hijacks>0</Hijacks>
+                            <KDA>0</KDA>
+                            <Kills>9</Kills>
+                            <MaxKillingSpree>3</MaxKillingSpree>
+                            <Medals>
+                                <MatchResultMedalStats>
+                                    <Count>1</Count>
+                                    <NameId>2123530881</NameId>
+                                    <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                                </MatchResultMedalStats>
+                                <MatchResultMedalStats>
+                                    <Count>2</Count>
+                                    <NameId>4229934157</NameId>
+                                    <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                                </MatchResultMedalStats>
+                                <MatchResultMedalStats>
+                                    <Count>1</Count>
+                                    <NameId>1172766553</NameId>
+                                    <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                                </MatchResultMedalStats>
+                                <MatchResultMedalStats>
+                                    <Count>1</Count>
+                                    <NameId>3091261182</NameId>
+                                    <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                                </MatchResultMedalStats>
+                            </Medals>
+                            <MeleeKills>0</MeleeKills>
+                            <PersonalScore>1150</PersonalScore>
+                            <PersonalScores>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>8</Count>
+                                    <NameId>1024030246</NameId>
+                                    <TotalPersonalScoreAwarded>800</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>3</Count>
+                                    <NameId>638246808</NameId>
+                                    <TotalPersonalScoreAwarded>150</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>1</Count>
+                                    <NameId>2408971842</NameId>
+                                    <TotalPersonalScoreAwarded>200</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                            </PersonalScores>
+                            <PowerWeaponKills>3</PowerWeaponKills>
+                            <RoundsLost>1</RoundsLost>
+                            <RoundsTied>1</RoundsTied>
+                            <RoundsWon>1</RoundsWon>
+                            <Score>0</Score>
+                            <ShotsFired>162</ShotsFired>
+                            <ShotsHit>98</ShotsHit>
+                            <Spawns>11</Spawns>
+                            <Suicides>0</Suicides>
+                            <VehicleDestroys>1</VehicleDestroys>
+                        </CoreStats>
+                        <EliminationStats>
+                            <AlliesRevived>0</AlliesRevived>
+                            <EliminationAssists>0</EliminationAssists>
+                            <EliminationOrder>0</EliminationOrder>
+                            <Eliminations>1</Eliminations>
+                            <EnemyRevivesDenied>0</EnemyRevivesDenied>
+                            <Executions>0</Executions>
+                            <KillsAsLastPlayerStanding>0</KillsAsLastPlayerStanding>
+                            <LastPlayersStandingKilled>0</LastPlayersStandingKilled>
+                            <LivesRemaining i:nil="true" />
+                            <RoundsSurvived>1</RoundsSurvived>
+                            <TimesRevivedByAlly>0</TimesRevivedByAlly>
+                        </EliminationStats>
+                        <ExtractionStats i:nil="true" />
+                        <InfectionStats i:nil="true" />
+                        <OddballStats i:nil="true" />
+                        <StockpileStats i:nil="true" />
+                        <VipStats i:nil="true" />
+                        <ZonesStats i:nil="true" />
+                    </Stats>
+                    <TeamId>0</TeamId>
+                </PlayerTeamStats>
+            </PlayerTeamStats>
+            <PlayerType>Human</PlayerType>
+            <Rank>5</Rank>
+        </PlayerStats>
+        <PlayerStats>
+            <BotAttributes i:nil="true" />
+            <LastTeamId>0</LastTeamId>
+            <Outcome>Loss</Outcome>
+            <ParticipationInfo>
+                <ConfirmedParticipation i:nil="true" />
+                <FirstJoinedTime>2022-06-22T01:41:45.843Z</FirstJoinedTime>
+                <JoinedInProgress>false</JoinedInProgress>
+                <LastLeaveTime i:nil="true" />
+                <LeftInProgress>false</LeftInProgress>
+                <PresentAtBeginning>true</PresentAtBeginning>
+                <PresentAtCompletion>true</PresentAtCompletion>
+                <TimePlayed>PT8M8.985S</TimePlayed>
+            </ParticipationInfo>
+            <PlayerId>xuid(2535469531821339)</PlayerId>
+            <PlayerTeamStats>
+                <PlayerTeamStats>
+                    <Stats>
+                        <BombStats i:nil="true" />
+                        <CaptureTheFlagStats i:nil="true" />
+                        <CoreStats>
+                            <Accuracy>45.06</Accuracy>
+                            <Assists>4</Assists>
+                            <AverageLifeDuration>PT46.8S</AverageLifeDuration>
+                            <Betrayals>0</Betrayals>
+                            <CalloutAssists>0</CalloutAssists>
+                            <DamageDealt>2899</DamageDealt>
+                            <DamageTaken>2695</DamageTaken>
+                            <Deaths>7</Deaths>
+                            <DeprecatedDamageDealt>2899</DeprecatedDamageDealt>
+                            <DeprecatedDamageTaken>2695</DeprecatedDamageTaken>
+                            <DriverAssists>0</DriverAssists>
+                            <EmpAssists>0</EmpAssists>
+                            <GrenadeKills>0</GrenadeKills>
+                            <HeadshotKills>1</HeadshotKills>
+                            <Hijacks>0</Hijacks>
+                            <KDA>2.33</KDA>
+                            <Kills>8</Kills>
+                            <MaxKillingSpree>2</MaxKillingSpree>
+                            <Medals>
+                                <MatchResultMedalStats>
+                                    <Count>1</Count>
+                                    <NameId>3334154676</NameId>
+                                    <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                                </MatchResultMedalStats>
+                                <MatchResultMedalStats>
+                                    <Count>1</Count>
+                                    <NameId>1477806194</NameId>
+                                    <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                                </MatchResultMedalStats>
+                                <MatchResultMedalStats>
+                                    <Count>1</Count>
+                                    <NameId>622331684</NameId>
+                                    <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                                </MatchResultMedalStats>
+                            </Medals>
+                            <MeleeKills>3</MeleeKills>
+                            <PersonalScore>1300</PersonalScore>
+                            <PersonalScores>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>6</Count>
+                                    <NameId>1024030246</NameId>
+                                    <TotalPersonalScoreAwarded>600</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>4</Count>
+                                    <NameId>638246808</NameId>
+                                    <TotalPersonalScoreAwarded>200</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>2</Count>
+                                    <NameId>2408971842</NameId>
+                                    <TotalPersonalScoreAwarded>400</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>1</Count>
+                                    <NameId>3428202435</NameId>
+                                    <TotalPersonalScoreAwarded>100</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                            </PersonalScores>
+                            <PowerWeaponKills>3</PowerWeaponKills>
+                            <RoundsLost>1</RoundsLost>
+                            <RoundsTied>1</RoundsTied>
+                            <RoundsWon>1</RoundsWon>
+                            <Score>0</Score>
+                            <ShotsFired>304</ShotsFired>
+                            <ShotsHit>137</ShotsHit>
+                            <Spawns>8</Spawns>
+                            <Suicides>0</Suicides>
+                            <VehicleDestroys>0</VehicleDestroys>
+                        </CoreStats>
+                        <EliminationStats>
+                            <AlliesRevived>1</AlliesRevived>
+                            <EliminationAssists>2</EliminationAssists>
+                            <EliminationOrder>0</EliminationOrder>
+                            <Eliminations>2</Eliminations>
+                            <EnemyRevivesDenied>0</EnemyRevivesDenied>
+                            <Executions>0</Executions>
+                            <KillsAsLastPlayerStanding>0</KillsAsLastPlayerStanding>
+                            <LastPlayersStandingKilled>1</LastPlayersStandingKilled>
+                            <LivesRemaining i:nil="true" />
+                            <RoundsSurvived>1</RoundsSurvived>
+                            <TimesRevivedByAlly>0</TimesRevivedByAlly>
+                        </EliminationStats>
+                        <ExtractionStats i:nil="true" />
+                        <InfectionStats i:nil="true" />
+                        <OddballStats i:nil="true" />
+                        <StockpileStats i:nil="true" />
+                        <VipStats i:nil="true" />
+                        <ZonesStats i:nil="true" />
+                    </Stats>
+                    <TeamId>0</TeamId>
+                </PlayerTeamStats>
+            </PlayerTeamStats>
+            <PlayerType>Human</PlayerType>
+            <Rank>5</Rank>
+        </PlayerStats>
+        <PlayerStats>
+            <BotAttributes i:nil="true" />
+            <LastTeamId>0</LastTeamId>
+            <Outcome>Loss</Outcome>
+            <ParticipationInfo>
+                <ConfirmedParticipation i:nil="true" />
+                <FirstJoinedTime>2022-06-22T01:41:45.843Z</FirstJoinedTime>
+                <JoinedInProgress>false</JoinedInProgress>
+                <LastLeaveTime i:nil="true" />
+                <LeftInProgress>false</LeftInProgress>
+                <PresentAtBeginning>true</PresentAtBeginning>
+                <PresentAtCompletion>true</PresentAtCompletion>
+                <TimePlayed>PT8M8.985S</TimePlayed>
+            </ParticipationInfo>
+            <PlayerId>xuid(2533274964913144)</PlayerId>
+            <PlayerTeamStats>
+                <PlayerTeamStats>
+                    <Stats>
+                        <BombStats i:nil="true" />
+                        <CaptureTheFlagStats i:nil="true" />
+                        <CoreStats>
+                            <Accuracy>48.61</Accuracy>
+                            <Assists>3</Assists>
+                            <AverageLifeDuration>PT33.2S</AverageLifeDuration>
+                            <Betrayals>0</Betrayals>
+                            <CalloutAssists>0</CalloutAssists>
+                            <DamageDealt>2049</DamageDealt>
+                            <DamageTaken>2905</DamageTaken>
+                            <Deaths>10</Deaths>
+                            <DeprecatedDamageDealt>2049</DeprecatedDamageDealt>
+                            <DeprecatedDamageTaken>2905</DeprecatedDamageTaken>
+                            <DriverAssists>0</DriverAssists>
+                            <EmpAssists>0</EmpAssists>
+                            <GrenadeKills>0</GrenadeKills>
+                            <HeadshotKills>0</HeadshotKills>
+                            <Hijacks>1</Hijacks>
+                            <KDA>-3</KDA>
+                            <Kills>6</Kills>
+                            <MaxKillingSpree>3</MaxKillingSpree>
+                            <Medals>
+                                <MatchResultMedalStats>
+                                    <Count>1</Count>
+                                    <NameId>2852571933</NameId>
+                                    <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                                </MatchResultMedalStats>
+                            </Medals>
+                            <MeleeKills>0</MeleeKills>
+                            <PersonalScore>1075</PersonalScore>
+                            <PersonalScores>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>1</Count>
+                                    <NameId>4294405210</NameId>
+                                    <TotalPersonalScoreAwarded>25</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>3</Count>
+                                    <NameId>638246808</NameId>
+                                    <TotalPersonalScoreAwarded>150</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>3</Count>
+                                    <NameId>1024030246</NameId>
+                                    <TotalPersonalScoreAwarded>300</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>3</Count>
+                                    <NameId>2408971842</NameId>
+                                    <TotalPersonalScoreAwarded>600</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                            </PersonalScores>
+                            <PowerWeaponKills>0</PowerWeaponKills>
+                            <RoundsLost>1</RoundsLost>
+                            <RoundsTied>1</RoundsTied>
+                            <RoundsWon>1</RoundsWon>
+                            <Score>0</Score>
+                            <ShotsFired>360</ShotsFired>
+                            <ShotsHit>175</ShotsHit>
+                            <Spawns>10</Spawns>
+                            <Suicides>0</Suicides>
+                            <VehicleDestroys>0</VehicleDestroys>
+                        </CoreStats>
+                        <EliminationStats>
+                            <AlliesRevived>0</AlliesRevived>
+                            <EliminationAssists>0</EliminationAssists>
+                            <EliminationOrder>0</EliminationOrder>
+                            <Eliminations>3</Eliminations>
+                            <EnemyRevivesDenied>0</EnemyRevivesDenied>
+                            <Executions>0</Executions>
+                            <KillsAsLastPlayerStanding>1</KillsAsLastPlayerStanding>
+                            <LastPlayersStandingKilled>0</LastPlayersStandingKilled>
+                            <LivesRemaining i:nil="true" />
+                            <RoundsSurvived>0</RoundsSurvived>
+                            <TimesRevivedByAlly>1</TimesRevivedByAlly>
+                        </EliminationStats>
+                        <ExtractionStats i:nil="true" />
+                        <InfectionStats i:nil="true" />
+                        <OddballStats i:nil="true" />
+                        <StockpileStats i:nil="true" />
+                        <VipStats i:nil="true" />
+                        <ZonesStats i:nil="true" />
+                    </Stats>
+                    <TeamId>0</TeamId>
+                </PlayerTeamStats>
+            </PlayerTeamStats>
+            <PlayerType>Human</PlayerType>
+            <Rank>5</Rank>
+        </PlayerStats>
+        <PlayerStats>
+            <BotAttributes i:nil="true" />
+            <LastTeamId>1</LastTeamId>
+            <Outcome>Win</Outcome>
+            <ParticipationInfo>
+                <ConfirmedParticipation i:nil="true" />
+                <FirstJoinedTime>2022-06-22T01:41:45.855Z</FirstJoinedTime>
+                <JoinedInProgress>false</JoinedInProgress>
+                <LastLeaveTime i:nil="true" />
+                <LeftInProgress>false</LeftInProgress>
+                <PresentAtBeginning>false</PresentAtBeginning>
+                <PresentAtCompletion>true</PresentAtCompletion>
+                <TimePlayed>PT8M8.985S</TimePlayed>
+            </ParticipationInfo>
+            <PlayerId>xuid(2535457653250806)</PlayerId>
+            <PlayerTeamStats>
+                <PlayerTeamStats>
+                    <Stats>
+                        <BombStats i:nil="true" />
+                        <CaptureTheFlagStats i:nil="true" />
+                        <CoreStats>
+                            <Accuracy>52.22</Accuracy>
+                            <Assists>2</Assists>
+                            <AverageLifeDuration>PT28.9S</AverageLifeDuration>
+                            <Betrayals>0</Betrayals>
+                            <CalloutAssists>0</CalloutAssists>
+                            <DamageDealt>2615</DamageDealt>
+                            <DamageTaken>2758</DamageTaken>
+                            <Deaths>10</Deaths>
+                            <DeprecatedDamageDealt>2615</DeprecatedDamageDealt>
+                            <DeprecatedDamageTaken>2758</DeprecatedDamageTaken>
+                            <DriverAssists>0</DriverAssists>
+                            <EmpAssists>0</EmpAssists>
+                            <GrenadeKills>0</GrenadeKills>
+                            <HeadshotKills>0</HeadshotKills>
+                            <Hijacks>0</Hijacks>
+                            <KDA>-0.33</KDA>
+                            <Kills>9</Kills>
+                            <MaxKillingSpree>4</MaxKillingSpree>
+                            <Medals>
+                                <MatchResultMedalStats>
+                                    <Count>2</Count>
+                                    <NameId>548533137</NameId>
+                                    <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                                </MatchResultMedalStats>
+                                <MatchResultMedalStats>
+                                    <Count>1</Count>
+                                    <NameId>622331684</NameId>
+                                    <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                                </MatchResultMedalStats>
+                                <MatchResultMedalStats>
+                                    <Count>1</Count>
+                                    <NameId>2123530881</NameId>
+                                    <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                                </MatchResultMedalStats>
+                            </Medals>
+                            <MeleeKills>3</MeleeKills>
+                            <PersonalScore>1000</PersonalScore>
+                            <PersonalScores>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>9</Count>
+                                    <NameId>1024030246</NameId>
+                                    <TotalPersonalScoreAwarded>900</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                                <MatchResultPersonalScoreStats>
+                                    <Count>2</Count>
+                                    <NameId>638246808</NameId>
+                                    <TotalPersonalScoreAwarded>100</TotalPersonalScoreAwarded>
+                                </MatchResultPersonalScoreStats>
+                            </PersonalScores>
+                            <PowerWeaponKills>0</PowerWeaponKills>
+                            <RoundsLost>1</RoundsLost>
+                            <RoundsTied>1</RoundsTied>
+                            <RoundsWon>1</RoundsWon>
+                            <Score>0</Score>
+                            <ShotsFired>360</ShotsFired>
+                            <ShotsHit>188</ShotsHit>
+                            <Spawns>11</Spawns>
+                            <Suicides>0</Suicides>
+                            <VehicleDestroys>0</VehicleDestroys>
+                        </CoreStats>
+                        <EliminationStats>
+                            <AlliesRevived>0</AlliesRevived>
+                            <EliminationAssists>0</EliminationAssists>
+                            <EliminationOrder>0</EliminationOrder>
+                            <Eliminations>0</Eliminations>
+                            <EnemyRevivesDenied>0</EnemyRevivesDenied>
+                            <Executions>0</Executions>
+                            <KillsAsLastPlayerStanding>0</KillsAsLastPlayerStanding>
+                            <LastPlayersStandingKilled>0</LastPlayersStandingKilled>
+                            <LivesRemaining i:nil="true" />
+                            <RoundsSurvived>1</RoundsSurvived>
+                            <TimesRevivedByAlly>0</TimesRevivedByAlly>
+                        </EliminationStats>
+                        <ExtractionStats i:nil="true" />
+                        <InfectionStats i:nil="true" />
+                        <OddballStats i:nil="true" />
+                        <StockpileStats i:nil="true" />
+                        <VipStats i:nil="true" />
+                        <ZonesStats i:nil="true" />
+                    </Stats>
+                    <TeamId>1</TeamId>
+                </PlayerTeamStats>
+            </PlayerTeamStats>
+            <PlayerType>Human</PlayerType>
+            <Rank>1</Rank>
+        </PlayerStats>
+        <PlayerStats>
+            <BotAttributes>
+                <Difficulty>ODST</Difficulty>
+            </BotAttributes>
+            <LastTeamId>1</LastTeamId>
+            <Outcome>DidNotFinish</Outcome>
+            <ParticipationInfo>
+                <ConfirmedParticipation i:nil="true" />
+                <FirstJoinedTime>2022-06-22T01:44:51.016Z</FirstJoinedTime>
+                <JoinedInProgress>false</JoinedInProgress>
+                <LastLeaveTime>2022-06-22T01:44:51.247Z</LastLeaveTime>
+                <LeftInProgress>true</LeftInProgress>
+                <PresentAtBeginning>false</PresentAtBeginning>
+                <PresentAtCompletion>false</PresentAtCompletion>
+                <TimePlayed>PT0.5459007S</TimePlayed>
+            </ParticipationInfo>
+            <PlayerId>bid(56.0)</PlayerId>
+            <PlayerTeamStats>
+                <PlayerTeamStats>
+                    <Stats>
+                        <BombStats i:nil="true" />
+                        <CaptureTheFlagStats i:nil="true" />
+                        <CoreStats>
+                            <Accuracy>0</Accuracy>
+                            <Assists>0</Assists>
+                            <AverageLifeDuration>PT0S</AverageLifeDuration>
+                            <Betrayals>0</Betrayals>
+                            <CalloutAssists>0</CalloutAssists>
+                            <DamageDealt>0</DamageDealt>
+                            <DamageTaken>0</DamageTaken>
+                            <Deaths>0</Deaths>
+                            <DeprecatedDamageDealt>0</DeprecatedDamageDealt>
+                            <DeprecatedDamageTaken>0</DeprecatedDamageTaken>
+                            <DriverAssists>0</DriverAssists>
+                            <EmpAssists>0</EmpAssists>
+                            <GrenadeKills>0</GrenadeKills>
+                            <HeadshotKills>0</HeadshotKills>
+                            <Hijacks>0</Hijacks>
+                            <KDA>0</KDA>
+                            <Kills>0</Kills>
+                            <MaxKillingSpree>0</MaxKillingSpree>
+                            <Medals />
+                            <MeleeKills>0</MeleeKills>
+                            <PersonalScore>0</PersonalScore>
+                            <PersonalScores />
+                            <PowerWeaponKills>0</PowerWeaponKills>
+                            <RoundsLost>0</RoundsLost>
+                            <RoundsTied>0</RoundsTied>
+                            <RoundsWon>0</RoundsWon>
+                            <Score>0</Score>
+                            <ShotsFired>0</ShotsFired>
+                            <ShotsHit>0</ShotsHit>
+                            <Spawns>0</Spawns>
+                            <Suicides>0</Suicides>
+                            <VehicleDestroys>0</VehicleDestroys>
+                        </CoreStats>
+                        <EliminationStats>
+                            <AlliesRevived>0</AlliesRevived>
+                            <EliminationAssists>0</EliminationAssists>
+                            <EliminationOrder>0</EliminationOrder>
+                            <Eliminations>0</Eliminations>
+                            <EnemyRevivesDenied>0</EnemyRevivesDenied>
+                            <Executions>0</Executions>
+                            <KillsAsLastPlayerStanding>0</KillsAsLastPlayerStanding>
+                            <LastPlayersStandingKilled>0</LastPlayersStandingKilled>
+                            <LivesRemaining i:nil="true" />
+                            <RoundsSurvived>0</RoundsSurvived>
+                            <TimesRevivedByAlly>0</TimesRevivedByAlly>
+                        </EliminationStats>
+                        <ExtractionStats i:nil="true" />
+                        <InfectionStats i:nil="true" />
+                        <OddballStats i:nil="true" />
+                        <StockpileStats i:nil="true" />
+                        <VipStats i:nil="true" />
+                        <ZonesStats i:nil="true" />
+                    </Stats>
+                    <TeamId>1</TeamId>
+                </PlayerTeamStats>
+            </PlayerTeamStats>
+            <PlayerType>Bot</PlayerType>
+            <Rank>9</Rank>
+        </PlayerStats>
+        <PlayerStats>
+            <BotAttributes>
+                <Difficulty>ODST</Difficulty>
+            </BotAttributes>
+            <LastTeamId>0</LastTeamId>
+            <Outcome>DidNotFinish</Outcome>
+            <ParticipationInfo>
+                <ConfirmedParticipation i:nil="true" />
+                <FirstJoinedTime>2022-06-22T01:47:25.207Z</FirstJoinedTime>
+                <JoinedInProgress>false</JoinedInProgress>
+                <LastLeaveTime>2022-06-22T01:47:25.438Z</LastLeaveTime>
+                <LeftInProgress>true</LeftInProgress>
+                <PresentAtBeginning>false</PresentAtBeginning>
+                <PresentAtCompletion>false</PresentAtCompletion>
+                <TimePlayed>PT0.5613868S</TimePlayed>
+            </ParticipationInfo>
+            <PlayerId>bid(40.0)</PlayerId>
+            <PlayerTeamStats>
+                <PlayerTeamStats>
+                    <Stats>
+                        <BombStats i:nil="true" />
+                        <CaptureTheFlagStats i:nil="true" />
+                        <CoreStats>
+                            <Accuracy>0</Accuracy>
+                            <Assists>0</Assists>
+                            <AverageLifeDuration>PT0S</AverageLifeDuration>
+                            <Betrayals>0</Betrayals>
+                            <CalloutAssists>0</CalloutAssists>
+                            <DamageDealt>0</DamageDealt>
+                            <DamageTaken>0</DamageTaken>
+                            <Deaths>0</Deaths>
+                            <DeprecatedDamageDealt>0</DeprecatedDamageDealt>
+                            <DeprecatedDamageTaken>0</DeprecatedDamageTaken>
+                            <DriverAssists>0</DriverAssists>
+                            <EmpAssists>0</EmpAssists>
+                            <GrenadeKills>0</GrenadeKills>
+                            <HeadshotKills>0</HeadshotKills>
+                            <Hijacks>0</Hijacks>
+                            <KDA>0</KDA>
+                            <Kills>0</Kills>
+                            <MaxKillingSpree>0</MaxKillingSpree>
+                            <Medals />
+                            <MeleeKills>0</MeleeKills>
+                            <PersonalScore>0</PersonalScore>
+                            <PersonalScores />
+                            <PowerWeaponKills>0</PowerWeaponKills>
+                            <RoundsLost>0</RoundsLost>
+                            <RoundsTied>0</RoundsTied>
+                            <RoundsWon>0</RoundsWon>
+                            <Score>0</Score>
+                            <ShotsFired>0</ShotsFired>
+                            <ShotsHit>0</ShotsHit>
+                            <Spawns>0</Spawns>
+                            <Suicides>0</Suicides>
+                            <VehicleDestroys>0</VehicleDestroys>
+                        </CoreStats>
+                        <EliminationStats>
+                            <AlliesRevived>0</AlliesRevived>
+                            <EliminationAssists>0</EliminationAssists>
+                            <EliminationOrder>0</EliminationOrder>
+                            <Eliminations>0</Eliminations>
+                            <EnemyRevivesDenied>0</EnemyRevivesDenied>
+                            <Executions>0</Executions>
+                            <KillsAsLastPlayerStanding>0</KillsAsLastPlayerStanding>
+                            <LastPlayersStandingKilled>0</LastPlayersStandingKilled>
+                            <LivesRemaining i:nil="true" />
+                            <RoundsSurvived>0</RoundsSurvived>
+                            <TimesRevivedByAlly>0</TimesRevivedByAlly>
+                        </EliminationStats>
+                        <ExtractionStats i:nil="true" />
+                        <InfectionStats i:nil="true" />
+                        <OddballStats i:nil="true" />
+                        <StockpileStats i:nil="true" />
+                        <VipStats i:nil="true" />
+                        <ZonesStats i:nil="true" />
+                    </Stats>
+                    <TeamId>0</TeamId>
+                </PlayerTeamStats>
+            </PlayerTeamStats>
+            <PlayerType>Bot</PlayerType>
+            <Rank>9</Rank>
+        </PlayerStats>
+    </Players>
+    <Teams>
+        <TeamStats>
+            <Outcome>Loss</Outcome>
+            <Rank>2</Rank>
+            <Stats>
+                <BombStats i:nil="true" />
+                <CaptureTheFlagStats i:nil="true" />
+                <CoreStats>
+                    <Accuracy>49.4</Accuracy>
+                    <Assists>12</Assists>
+                    <AverageLifeDuration>PT40S</AverageLifeDuration>
+                    <Betrayals>0</Betrayals>
+                    <CalloutAssists>0</CalloutAssists>
+                    <DamageDealt>11520</DamageDealt>
+                    <DamageTaken>10861</DamageTaken>
+                    <Deaths>33</Deaths>
+                    <DeprecatedDamageDealt>11520</DeprecatedDamageDealt>
+                    <DeprecatedDamageTaken>10861</DeprecatedDamageTaken>
+                    <DriverAssists>0</DriverAssists>
+                    <EmpAssists>0</EmpAssists>
+                    <GrenadeKills>0</GrenadeKills>
+                    <HeadshotKills>11</HeadshotKills>
+                    <Hijacks>1</Hijacks>
+                    <KDA>0</KDA>
+                    <Kills>29</Kills>
+                    <MaxKillingSpree>3</MaxKillingSpree>
+                    <Medals>
+                        <MatchResultMedalStats>
+                            <Count>2</Count>
+                            <NameId>3334154676</NameId>
+                            <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                        </MatchResultMedalStats>
+                        <MatchResultMedalStats>
+                            <Count>1</Count>
+                            <NameId>1283796619</NameId>
+                            <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                        </MatchResultMedalStats>
+                        <MatchResultMedalStats>
+                            <Count>1</Count>
+                            <NameId>1477806194</NameId>
+                            <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                        </MatchResultMedalStats>
+                        <MatchResultMedalStats>
+                            <Count>1</Count>
+                            <NameId>2123530881</NameId>
+                            <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                        </MatchResultMedalStats>
+                        <MatchResultMedalStats>
+                            <Count>1</Count>
+                            <NameId>622331684</NameId>
+                            <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                        </MatchResultMedalStats>
+                        <MatchResultMedalStats>
+                            <Count>3</Count>
+                            <NameId>4229934157</NameId>
+                            <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                        </MatchResultMedalStats>
+                        <MatchResultMedalStats>
+                            <Count>1</Count>
+                            <NameId>1172766553</NameId>
+                            <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                        </MatchResultMedalStats>
+                        <MatchResultMedalStats>
+                            <Count>1</Count>
+                            <NameId>3091261182</NameId>
+                            <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                        </MatchResultMedalStats>
+                        <MatchResultMedalStats>
+                            <Count>1</Count>
+                            <NameId>2852571933</NameId>
+                            <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                        </MatchResultMedalStats>
+                    </Medals>
+                    <MeleeKills>3</MeleeKills>
+                    <PersonalScore>4275</PersonalScore>
+                    <PersonalScores>
+                        <MatchResultPersonalScoreStats>
+                            <Count>23</Count>
+                            <NameId>1024030246</NameId>
+                            <TotalPersonalScoreAwarded>2300</TotalPersonalScoreAwarded>
+                        </MatchResultPersonalScoreStats>
+                        <MatchResultPersonalScoreStats>
+                            <Count>1</Count>
+                            <NameId>4294405210</NameId>
+                            <TotalPersonalScoreAwarded>25</TotalPersonalScoreAwarded>
+                        </MatchResultPersonalScoreStats>
+                        <MatchResultPersonalScoreStats>
+                            <Count>13</Count>
+                            <NameId>638246808</NameId>
+                            <TotalPersonalScoreAwarded>650</TotalPersonalScoreAwarded>
+                        </MatchResultPersonalScoreStats>
+                        <MatchResultPersonalScoreStats>
+                            <Count>6</Count>
+                            <NameId>2408971842</NameId>
+                            <TotalPersonalScoreAwarded>1200</TotalPersonalScoreAwarded>
+                        </MatchResultPersonalScoreStats>
+                        <MatchResultPersonalScoreStats>
+                            <Count>1</Count>
+                            <NameId>3428202435</NameId>
+                            <TotalPersonalScoreAwarded>100</TotalPersonalScoreAwarded>
+                        </MatchResultPersonalScoreStats>
+                    </PersonalScores>
+                    <PowerWeaponKills>8</PowerWeaponKills>
+                    <RoundsLost>1</RoundsLost>
+                    <RoundsTied>1</RoundsTied>
+                    <RoundsWon>1</RoundsWon>
+                    <Score>1</Score>
+                    <ShotsFired>1085</ShotsFired>
+                    <ShotsHit>536</ShotsHit>
+                    <Spawns>36</Spawns>
+                    <Suicides>0</Suicides>
+                    <VehicleDestroys>1</VehicleDestroys>
+                </CoreStats>
+                <EliminationStats>
+                    <AlliesRevived>1</AlliesRevived>
+                    <EliminationAssists>4</EliminationAssists>
+                    <EliminationOrder>0</EliminationOrder>
+                    <Eliminations>6</Eliminations>
+                    <EnemyRevivesDenied>0</EnemyRevivesDenied>
+                    <Executions>0</Executions>
+                    <KillsAsLastPlayerStanding>1</KillsAsLastPlayerStanding>
+                    <LastPlayersStandingKilled>1</LastPlayersStandingKilled>
+                    <LivesRemaining>0</LivesRemaining>
+                    <RoundsSurvived>1</RoundsSurvived>
+                    <TimesRevivedByAlly>1</TimesRevivedByAlly>
+                </EliminationStats>
+                <ExtractionStats i:nil="true" />
+                <InfectionStats i:nil="true" />
+                <OddballStats i:nil="true" />
+                <StockpileStats i:nil="true" />
+                <VipStats i:nil="true" />
+                <ZonesStats i:nil="true" />
+            </Stats>
+            <TeamId>0</TeamId>
+        </TeamStats>
+        <TeamStats>
+            <Outcome>Win</Outcome>
+            <Rank>1</Rank>
+            <Stats>
+                <BombStats i:nil="true" />
+                <CaptureTheFlagStats i:nil="true" />
+                <CoreStats>
+                    <Accuracy>38.13</Accuracy>
+                    <Assists>14</Assists>
+                    <AverageLifeDuration>PT42S</AverageLifeDuration>
+                    <Betrayals>0</Betrayals>
+                    <CalloutAssists>0</CalloutAssists>
+                    <DamageDealt>10915</DamageDealt>
+                    <DamageTaken>10132</DamageTaken>
+                    <Deaths>29</Deaths>
+                    <DeprecatedDamageDealt>10915</DeprecatedDamageDealt>
+                    <DeprecatedDamageTaken>10132</DeprecatedDamageTaken>
+                    <DriverAssists>0</DriverAssists>
+                    <EmpAssists>0</EmpAssists>
+                    <GrenadeKills>0</GrenadeKills>
+                    <HeadshotKills>9</HeadshotKills>
+                    <Hijacks>0</Hijacks>
+                    <KDA>8.66</KDA>
+                    <Kills>33</Kills>
+                    <MaxKillingSpree>4</MaxKillingSpree>
+                    <Medals>
+                        <MatchResultMedalStats>
+                            <Count>2</Count>
+                            <NameId>221693153</NameId>
+                            <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                        </MatchResultMedalStats>
+                        <MatchResultMedalStats>
+                            <Count>3</Count>
+                            <NameId>4229934157</NameId>
+                            <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                        </MatchResultMedalStats>
+                        <MatchResultMedalStats>
+                            <Count>1</Count>
+                            <NameId>1283796619</NameId>
+                            <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                        </MatchResultMedalStats>
+                        <MatchResultMedalStats>
+                            <Count>2</Count>
+                            <NameId>548533137</NameId>
+                            <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                        </MatchResultMedalStats>
+                        <MatchResultMedalStats>
+                            <Count>2</Count>
+                            <NameId>622331684</NameId>
+                            <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                        </MatchResultMedalStats>
+                        <MatchResultMedalStats>
+                            <Count>1</Count>
+                            <NameId>2123530881</NameId>
+                            <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                        </MatchResultMedalStats>
+                        <MatchResultMedalStats>
+                            <Count>1</Count>
+                            <NameId>1172766553</NameId>
+                            <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                        </MatchResultMedalStats>
+                        <MatchResultMedalStats>
+                            <Count>1</Count>
+                            <NameId>3334154676</NameId>
+                            <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                        </MatchResultMedalStats>
+                        <MatchResultMedalStats>
+                            <Count>1</Count>
+                            <NameId>1176569867</NameId>
+                            <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                        </MatchResultMedalStats>
+                        <MatchResultMedalStats>
+                            <Count>1</Count>
+                            <NameId>2063152177</NameId>
+                            <TotalPersonalScoreAwarded>0</TotalPersonalScoreAwarded>
+                        </MatchResultMedalStats>
+                    </Medals>
+                    <MeleeKills>4</MeleeKills>
+                    <PersonalScore>5025</PersonalScore>
+                    <PersonalScores>
+                        <MatchResultPersonalScoreStats>
+                            <Count>24</Count>
+                            <NameId>1024030246</NameId>
+                            <TotalPersonalScoreAwarded>2400</TotalPersonalScoreAwarded>
+                        </MatchResultPersonalScoreStats>
+                        <MatchResultPersonalScoreStats>
+                            <Count>15</Count>
+                            <NameId>638246808</NameId>
+                            <TotalPersonalScoreAwarded>750</TotalPersonalScoreAwarded>
+                        </MatchResultPersonalScoreStats>
+                        <MatchResultPersonalScoreStats>
+                            <Count>9</Count>
+                            <NameId>2408971842</NameId>
+                            <TotalPersonalScoreAwarded>1800</TotalPersonalScoreAwarded>
+                        </MatchResultPersonalScoreStats>
+                        <MatchResultPersonalScoreStats>
+                            <Count>1</Count>
+                            <NameId>2130209372</NameId>
+                            <TotalPersonalScoreAwarded>25</TotalPersonalScoreAwarded>
+                        </MatchResultPersonalScoreStats>
+                        <MatchResultPersonalScoreStats>
+                            <Count>1</Count>
+                            <NameId>3472794399</NameId>
+                            <TotalPersonalScoreAwarded>50</TotalPersonalScoreAwarded>
+                        </MatchResultPersonalScoreStats>
+                    </PersonalScores>
+                    <PowerWeaponKills>3</PowerWeaponKills>
+                    <RoundsLost>1</RoundsLost>
+                    <RoundsTied>1</RoundsTied>
+                    <RoundsWon>1</RoundsWon>
+                    <Score>2</Score>
+                    <ShotsFired>1298</ShotsFired>
+                    <ShotsHit>495</ShotsHit>
+                    <Spawns>34</Spawns>
+                    <Suicides>0</Suicides>
+                    <VehicleDestroys>1</VehicleDestroys>
+                </CoreStats>
+                <EliminationStats>
+                    <AlliesRevived>0</AlliesRevived>
+                    <EliminationAssists>4</EliminationAssists>
+                    <EliminationOrder>0</EliminationOrder>
+                    <Eliminations>9</Eliminations>
+                    <EnemyRevivesDenied>1</EnemyRevivesDenied>
+                    <Executions>0</Executions>
+                    <KillsAsLastPlayerStanding>0</KillsAsLastPlayerStanding>
+                    <LastPlayersStandingKilled>2</LastPlayersStandingKilled>
+                    <LivesRemaining>1</LivesRemaining>
+                    <RoundsSurvived>2</RoundsSurvived>
+                    <TimesRevivedByAlly>0</TimesRevivedByAlly>
+                </EliminationStats>
+                <ExtractionStats i:nil="true" />
+                <InfectionStats i:nil="true" />
+                <OddballStats i:nil="true" />
+                <StockpileStats i:nil="true" />
+                <VipStats i:nil="true" />
+                <ZonesStats i:nil="true" />
+            </Stats>
+            <TeamId>1</TeamId>
+        </TeamStats>
+    </Teams>
+</MatchStats>
