@@ -1,11 +1,11 @@
 """Endpoints for the "HIUGC_Discovery" and "HIUGC_Discovery_Open" authorities."""
 
 from halo_infinite_api.api.enums import AssetKind, AuthenticationMethod, ResultOrder, SearchProperty
-from halo_infinite_api.api import client
-from halo_infinite_api.api.content import models
+from halo_infinite_api.api.authorities.base import BaseAuthority
+from halo_infinite_api.api.authorities.ugc_discovery import models
 
 
-class ContentClient(client.Client):
+class UgcDiscoveryAuthority(BaseAuthority):
     URL = 'https://discovery-infiniteugc.svc.halowaypoint.com:443'
 
     def get_manifest(self,

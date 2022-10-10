@@ -5,10 +5,7 @@ import sys
 import pytest
 import requests
 
-from halo_infinite_api.api.content import ContentClient
-from halo_infinite_api.api.profile import ProfileClient
-from halo_infinite_api.api.skill import SkillClient
-from halo_infinite_api.api.stats import StatsClient
+from halo_infinite_api.api.client import Client
 from halo_infinite_api.authentication import manager
 from halo_infinite_api.authentication import models
 
@@ -37,25 +34,7 @@ def _auth_mgr():
 
 
 @pytest.fixture(scope='function')
-def content_client():
+def client():
     with _auth_mgr() as auth_mgr:
-        yield ContentClient(auth_mgr)
-
-
-@pytest.fixture(scope='function')
-def profile_client():
-    with _auth_mgr() as auth_mgr:
-        yield ProfileClient(auth_mgr)
-
-
-@pytest.fixture(scope='function')
-def skill_client():
-    with _auth_mgr() as auth_mgr:
-        yield SkillClient(auth_mgr)
-
-
-@pytest.fixture(scope='function')
-def stats_client():
-    with _auth_mgr() as auth_mgr:
-        yield StatsClient(auth_mgr)
+        yield Client(auth_mgr)
 

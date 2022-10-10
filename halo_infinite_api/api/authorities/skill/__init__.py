@@ -1,12 +1,12 @@
 """Endpoints for the "skill" authority."""
 
-from halo_infinite_api.api import client
-from halo_infinite_api.api.skill import models
+from halo_infinite_api.api.authorities.base import BaseAuthority
+from halo_infinite_api.api.authorities.skill import models
 from halo_infinite_api.api.enums import AuthenticationMethod
 from halo_infinite_api import util
 
 
-class SkillClient(client.Client):
+class SkillAuthority(BaseAuthority):
     URL = 'https://skill.svc.halowaypoint.com:443'
 
     def get_match_result(self,

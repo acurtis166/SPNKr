@@ -1,13 +1,13 @@
 """"""
 
-from halo_infinite_api.api import client
-from halo_infinite_api.api.profile import models
+from halo_infinite_api.api.authorities.base import BaseAuthority
+from halo_infinite_api.api.authorities.profile import models
 from halo_infinite_api.api.enums import AuthenticationMethod, ProfileSetting
 from halo_infinite_api.exceptions import ApiRateLimitException
 from halo_infinite_api import util
 
 
-class ProfileClient(client.Client):
+class ProfileAuthority(BaseAuthority):
     URL = 'https://profile.xboxlive.com:443'
     AUTH_METHOD = AuthenticationMethod.XSTSv3XboxAudience
 
