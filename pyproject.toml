@@ -27,8 +27,8 @@ Homepage = 'https://github.com/acurtis166/halo-infinite-api'
 # [project.scripts]
 # realpython = 'reader.__main__:main'
 
-[tool.setuptools]
-packages = ['haloinfinite', 'haloinfinite.api', 'haloinfinite.authentication']
+[tool.setuptools.packages.find]
+include = ['haloinfinite*']
 
 [tool.setuptools.dynamic]
 version = {attr = 'haloinfinite.__version__'}
