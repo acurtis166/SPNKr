@@ -36,10 +36,10 @@ Example Usage
 import pathlib
 import requests
 
-from halo_infinite_api.api.client import Client
-from halo_infinite_api.api.enums import PlayerType
-from halo_infinite_api.authentication.manager import AuthenticationManager
-from halo_infinite_api.authentication.models import OAuth2TokenResponse
+from haloinfinite.api.client import Client
+from haloinfinite.api.enums import PlayerType
+from haloinfinite.authentication.manager import AuthenticationManager
+from haloinfinite.authentication.models import OAuth2TokenResponse
 
 
 def main():
