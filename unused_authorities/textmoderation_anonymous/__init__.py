@@ -1,8 +1,8 @@
 """"""
 
-from halo_infinite_api import util
-from halo_infinite_api.api.authorities import base
-from halo_infinite_api.api.authorities.textmoderation_anonymous import models
+from haloinfinite import util
+from haloinfinite.api.authorities import base
+from haloinfinite.api.authorities.textmoderation_anonymous import models
 
 
 class textmoderation_anonymousAuthority(base.BaseAuthority):

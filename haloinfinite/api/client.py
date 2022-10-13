@@ -1,7 +1,7 @@
 
-from halo_infinite_api.api.session import Session
-from halo_infinite_api.api.authorities import profile, skill, stats, ugc_discovery
-from halo_infinite_api.authentication.manager import AuthenticationManager
+from haloinfinite.api.session import Session
+from haloinfinite.api.authorities import profile, skill, stats, ugc_discovery
+from haloinfinite.authentication.manager import AuthenticationManager
 
 
 class Client:

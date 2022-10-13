@@ -1,10 +1,10 @@
 """"""
 
-from halo_infinite_api.api.authorities.base import BaseAuthority
-from halo_infinite_api.api.authorities.profile import models
-from halo_infinite_api.api.enums import AuthenticationMethod, ProfileSetting
-from halo_infinite_api.exceptions import ApiRateLimitException
-from halo_infinite_api import util
+from haloinfinite.api.authorities.base import BaseAuthority
+from haloinfinite.api.authorities.profile import models
+from haloinfinite.api.enums import AuthenticationMethod, ProfileSetting
+from haloinfinite.exceptions import ApiRateLimitException
+from haloinfinite import util
 
 
 class ProfileAuthority(BaseAuthority):

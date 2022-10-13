@@ -1,5 +1,5 @@
 
-from halo_infinite_api.api.session import Session
+from haloinfinite.api.session import Session
 
 
 class BaseAuthority:

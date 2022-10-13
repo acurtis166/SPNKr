@@ -1,9 +1,9 @@
 """Endpoints for the "halostats" authority."""
 
-from halo_infinite_api.api.enums import MatchType
-from halo_infinite_api.api.authorities.base import BaseAuthority
-from halo_infinite_api.api.authorities.stats import models
-from halo_infinite_api import util
+from haloinfinite.api.enums import MatchType
+from haloinfinite.api.authorities.base import BaseAuthority
+from haloinfinite.api.authorities.stats import models
+from haloinfinite import util
 
 
 class StatsAuthority(BaseAuthority):

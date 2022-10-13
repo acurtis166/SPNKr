@@ -1,8 +1,8 @@
 """"""
 
-from halo_infinite_api import util
-from halo_infinite_api.api.authorities import base
-from halo_infinite_api.api.authorities.settings_st4 import models
+from haloinfinite import util
+from haloinfinite.api.authorities import base
+from haloinfinite.api.authorities.settings_st4 import models
 
 
 class settings_st4Authority(base.BaseAuthority):

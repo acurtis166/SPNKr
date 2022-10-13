@@ -1,5 +1,5 @@
 
-from halo_infinite_api.api.client import Client
+from haloinfinite.api.client import Client
 
 ACURTIS_XUID = '2535445291321133'
 ELIMINATION_MATCH = '6ff6af98-5696-413a-a315-afc74e36fdbe'

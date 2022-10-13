@@ -1,8 +1,8 @@
 """"""
 
-from halo_infinite_api import util
-from halo_infinite_api.api.authorities import base
-from halo_infinite_api.api.authorities.gamecms_hacs import models
+from haloinfinite import util
+from haloinfinite.api.authorities import base
+from haloinfinite.api.authorities.gamecms_hacs import models
 
 
 class gamecms_hacsAuthority(base.BaseAuthority):

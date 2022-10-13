@@ -5,9 +5,9 @@ import sys
 import pytest
 import requests
 
-from halo_infinite_api.api.client import Client
-from halo_infinite_api.authentication import manager
-from halo_infinite_api.authentication import models
+from haloinfinite.api.client import Client
+from haloinfinite.authentication import manager
+from haloinfinite.authentication import models
 
 try:
     from tests import config

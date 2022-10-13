@@ -1,8 +1,8 @@
 """"""
 
-from halo_infinite_api import util
-from halo_infinite_api.api.authorities import base
-from halo_infinite_api.api.authorities.xbl_title_storage import models
+from haloinfinite import util
+from haloinfinite.api.authorities import base
+from haloinfinite.api.authorities.xbl_title_storage import models
 
 
 class xbl_title_storageAuthority(base.BaseAuthority):

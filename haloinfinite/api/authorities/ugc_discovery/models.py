@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import Any
 from uuid import UUID
 
-from halo_infinite_api.models import PascalModel, Date
+from haloinfinite.models import PascalModel, Date
 
 
 @dataclass

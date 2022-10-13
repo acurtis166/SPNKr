@@ -3,7 +3,7 @@ requires = ['setuptools>=61.0.0', 'wheel']
 build-backend = 'setuptools.build_meta'
 
 [project]
-name = 'halo-infinite-api'
+name = 'haloinfinite'
 description = 'Python API for requesting Halo Infinite multiplayer data.'
 readme = 'README.md'
 authors = [{name = 'Andy Curtis'}]
@@ -27,8 +27,8 @@ Homepage = 'https://github.com/acurtis166/halo-infinite-api'
 # [project.scripts]
 # realpython = 'reader.__main__:main'
 
-[tool.setuptools.packages.find]
-include = ['halo_infinite_api']
+# [tool.setuptools.packages.find]
+# include = ['halo_infinite_api']
 
 [tool.setuptools.dynamic]
 version = {attr = 'halo_infinite_api.__version__'}
