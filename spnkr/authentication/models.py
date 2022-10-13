@@ -3,8 +3,8 @@
 from dataclasses import dataclass, field
 import datetime as dt
 
-from haloinfinite.models import SnakeModel, Date, PascalModel
-from haloinfinite import util
+from spnkr.models import SnakeModel, Date, PascalModel
+from spnkr import util
 
 
 @dataclass

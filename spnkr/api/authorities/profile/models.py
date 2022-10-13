@@ -2,7 +2,7 @@
 
 from dataclasses import dataclass
 
-from haloinfinite.models import CamelModel
+from spnkr.models import CamelModel
 
 
 @dataclass

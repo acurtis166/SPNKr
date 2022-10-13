@@ -1,7 +1,7 @@
 
-from haloinfinite.api.session import Session
-from haloinfinite.api.authorities import profile, skill, stats, ugc_discovery
-from haloinfinite.authentication.manager import AuthenticationManager
+from spnkr.api.session import Session
+from spnkr.api.authorities import profile, skill, stats, ugc_discovery
+from spnkr.authentication.manager import AuthenticationManager
 
 
 class Client:

@@ -5,9 +5,9 @@ import sys
 import pytest
 import requests
 
-from haloinfinite.api.client import Client
-from haloinfinite.authentication import manager
-from haloinfinite.authentication import models
+from spnkr.api.client import Client
+from spnkr.authentication import manager
+from spnkr.authentication import models
 
 try:
     from tests import config

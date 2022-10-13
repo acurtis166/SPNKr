@@ -8,8 +8,8 @@ import urllib.parse
 
 import requests
 
-from haloinfinite.authentication import models as mdl
-from haloinfinite.exceptions import AuthenticationException
+from spnkr.authentication import models as mdl
+from spnkr.exceptions import AuthenticationException
 
 DEFAULT_SCOPES = ['Xboxlive.signin', 'Xboxlive.offline_access']
 XSTS_V3_XBOX_AUDIENCE = 'http://xboxlive.com'

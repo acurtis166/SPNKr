@@ -9,7 +9,7 @@ from dataclass_wizard.enums import LetterCase
 import dateutil.parser
 import orjson
 
-from haloinfinite import util
+from spnkr import util
 
 
 def load_to_datetime(o: str, base_type: dt.datetime) -> dt.datetime:

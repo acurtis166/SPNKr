@@ -1,8 +1,8 @@
 """"""
 
-from haloinfinite import util
-from haloinfinite.api.authorities import base
-from haloinfinite.api.authorities.settings_noauth import models
+from spnkr import util
+from spnkr.api.authorities import base
+from spnkr.api.authorities.settings_noauth import models
 
 
 class settings_noauthAuthority(base.BaseAuthority):

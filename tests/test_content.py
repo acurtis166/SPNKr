@@ -1,6 +1,6 @@
 """Test the HIUGC_Discovery authority."""
 
-from haloinfinite.api.client import Client
+from spnkr.api.client import Client
 
 
 def test_get_custom_game_manifest(client: Client):

@@ -1,8 +1,8 @@
 """Endpoints for the "HIUGC_Discovery" and "HIUGC_Discovery_Open" authorities."""
 
-from haloinfinite.api.enums import AssetKind, AuthenticationMethod, ResultOrder, SearchProperty
-from haloinfinite.api.authorities.base import BaseAuthority
-from haloinfinite.api.authorities.ugc_discovery import models
+from spnkr.api.enums import AssetKind, AuthenticationMethod, ResultOrder, SearchProperty
+from spnkr.api.authorities.base import BaseAuthority
+from spnkr.api.authorities.ugc_discovery import models
 
 
 class UgcDiscoveryAuthority(BaseAuthority):

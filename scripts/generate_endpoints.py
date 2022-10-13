@@ -40,9 +40,9 @@ def main():
 
         with open(module_name + '/__init__.py', 'w') as fp:
             fp.write('""""""\n\n')
-            fp.write('from haloinfinite.api import util\n')
-            fp.write('from haloinfinite.api.authorities import base\n')
-            fp.write(f'from haloinfinite.api.authorities.{module_name} import models\n\n\n')
+            fp.write('from spnkr.api import util\n')
+            fp.write('from spnkr.api.authorities import base\n')
+            fp.write(f'from spnkr.api.authorities.{module_name} import models\n\n\n')
             fp.write(f'class {module_name}Authority(base.BaseAuthority):\n\n')
             fp.write(f"    URL = '{url}'\n")
             fp.write(f'    AUTHENTICATION_METHODS = {auth_methods}\n')

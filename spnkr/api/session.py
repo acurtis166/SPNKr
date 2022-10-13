@@ -4,8 +4,8 @@ from typing import Any
 import ms_cv
 import requests
 
-from haloinfinite.api.enums import AuthenticationMethod
-from haloinfinite.authentication.manager import AuthenticationManager
+from spnkr.api.enums import AuthenticationMethod
+from spnkr.authentication.manager import AuthenticationManager
 
 
 class Session:

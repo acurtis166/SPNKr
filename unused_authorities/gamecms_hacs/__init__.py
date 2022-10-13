@@ -1,8 +1,8 @@
 """"""
 
-from haloinfinite import util
-from haloinfinite.api.authorities import base
-from haloinfinite.api.authorities.gamecms_hacs import models
+from spnkr import util
+from spnkr.api.authorities import base
+from spnkr.api.authorities.gamecms_hacs import models
 
 
 class gamecms_hacsAuthority(base.BaseAuthority):

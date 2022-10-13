@@ -1,7 +1,7 @@
 
 from dataclasses import dataclass
 
-from haloinfinite.models import PascalModel
+from spnkr.models import PascalModel
 
 
 @dataclass

@@ -1,8 +1,8 @@
 """"""
 
-from haloinfinite import util
-from haloinfinite.api.authorities import base
-from haloinfinite.api.authorities.telemetry import models
+from spnkr import util
+from spnkr.api.authorities import base
+from spnkr.api.authorities.telemetry import models
 
 
 class telemetryAuthority(base.BaseAuthority):

@@ -1,8 +1,8 @@
 """"""
 
-from haloinfinite import util
-from haloinfinite.api.authorities import base
-from haloinfinite.api.authorities.iugcfiles import models
+from spnkr import util
+from spnkr.api.authorities import base
+from spnkr.api.authorities.iugcfiles import models
 
 
 class iugcfilesAuthority(base.BaseAuthority):

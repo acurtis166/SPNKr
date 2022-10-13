@@ -1,9 +1,9 @@
 """"""
 
 from typing import List
-from haloinfinite import util
-from haloinfinite.api.authorities import base
-from haloinfinite.api.authorities.banprocessor import models
+from spnkr import util
+from spnkr.api.authorities import base
+from spnkr.api.authorities.banprocessor import models
 
 
 class BanProcessorAuthority(base.BaseAuthority):

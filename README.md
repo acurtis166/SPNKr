@@ -1,6 +1,6 @@
-# Halo Infinite API (Python)
+# [SPNKr](https://www.halopedia.org/M41_SPNKr) Halo Infinite API (Python)
 
-This is a library to authenticate and submit requests to endpoints servicing Halo Infinite (Xbox/PC).
+This project provides a Python API for requesting multiplayer data from Halo Infinite servers.
 
 Authentication requires some preliminary work:
 
@@ -26,7 +26,7 @@ Authentication requires some preliminary work:
 
 Install
 ```
-pip install halo-infinite-api
+pip install spnkr
 ```
 
 Example Usage
@@ -36,10 +36,10 @@ Example Usage
 import pathlib
 import requests
 
-from haloinfinite.api.client import Client
-from haloinfinite.api.enums import PlayerType
-from haloinfinite.authentication.manager import AuthenticationManager
-from haloinfinite.authentication.models import OAuth2TokenResponse
+from spnkr.api.client import Client
+from spnkr.api.enums import PlayerType
+from spnkr.authentication.manager import AuthenticationManager
+from spnkr.authentication.models import OAuth2TokenResponse
 
 
 def main():

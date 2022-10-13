@@ -2,8 +2,8 @@
 
 from typing import Any, Dict, List
 
-from haloinfinite.api.models import OnlineUriReference, ResultContainer
-from haloinfinite.models import PascalModel
+from spnkr.api.models import OnlineUriReference, ResultContainer
+from spnkr.models import PascalModel
 
 
 class BanResult(PascalModel):

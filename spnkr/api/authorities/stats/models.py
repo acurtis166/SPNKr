@@ -3,8 +3,8 @@ from dataclasses import dataclass
 import datetime as dt
 from uuid import UUID
 
-from haloinfinite.api import enums
-from haloinfinite.models import PascalModel
+from spnkr.api import enums
+from spnkr.models import PascalModel
 
 
 @dataclass

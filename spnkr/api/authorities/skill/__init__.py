@@ -1,9 +1,9 @@
 """Endpoints for the "skill" authority."""
 
-from haloinfinite.api.authorities.base import BaseAuthority
-from haloinfinite.api.authorities.skill import models
-from haloinfinite.api.enums import AuthenticationMethod
-from haloinfinite import util
+from spnkr.api.authorities.base import BaseAuthority
+from spnkr.api.authorities.skill import models
+from spnkr.api.enums import AuthenticationMethod
+from spnkr import util
 
 
 class SkillAuthority(BaseAuthority):

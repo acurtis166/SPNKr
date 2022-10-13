@@ -1,5 +1,5 @@
 
-from haloinfinite.api.client import Client
+from spnkr.api.client import Client
 
 ACURTIS_XUID = '2535445291321133'
 ACURTIS_GAMERTAG = 'aCurtis X89'

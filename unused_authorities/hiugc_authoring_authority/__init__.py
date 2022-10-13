@@ -1,8 +1,8 @@
 """"""
 
-from haloinfinite import util
-from haloinfinite.api.authorities import base
-from haloinfinite.api.authorities.hiugc_authoring_authority import models
+from spnkr import util
+from spnkr.api.authorities import base
+from spnkr.api.authorities.hiugc_authoring_authority import models
 
 
 class hiugc_authoring_authorityAuthority(base.BaseAuthority):

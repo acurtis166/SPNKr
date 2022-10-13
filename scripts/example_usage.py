@@ -3,10 +3,10 @@
 import pathlib
 import requests
 
-from haloinfinite.api.client import Client
-from haloinfinite.api.enums import PlayerType
-from haloinfinite.authentication.manager import AuthenticationManager
-from haloinfinite.authentication.models import OAuth2TokenResponse
+from spnkr.api.client import Client
+from spnkr.api.enums import PlayerType
+from spnkr.authentication.manager import AuthenticationManager
+from spnkr.authentication.models import OAuth2TokenResponse
 
 
 def main():
