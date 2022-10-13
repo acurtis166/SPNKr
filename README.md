@@ -26,7 +26,7 @@ Authentication requires some preliminary work:
 
 Install
 ```
-pip install ...
+pip install halo-infinite-api
 ```
 
 Example Usage
