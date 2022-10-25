@@ -16,8 +16,6 @@ except ImportError:
         '"client_id", "client_secret", "redirect_uri", and "path_to_oauth" (all strings).')
     sys.exit(1)
 
-collect_ignore = ['setup.py']
-
 
 @contextlib.contextmanager
 def _auth_mgr():

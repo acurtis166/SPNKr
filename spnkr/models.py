@@ -5,7 +5,6 @@ import datetime as dt
 from typing import Type
 
 from dataclass_wizard import JSONSerializable, LoadMixin, json_field
-from dataclass_wizard.enums import LetterCase
 import dateutil.parser
 import orjson
 
@@ -39,9 +38,6 @@ class PascalModel(JSONSerializable, LoadMixin):
     def parse_json(cls, string: str):
         return parse_json(cls, string)
 
-    class Meta(JSONSerializable.Meta):
-        key_transform_with_dump = LetterCase.PASCAL
-
 
 class CamelModel(JSONSerializable, LoadMixin):
     load_to_datetime = load_to_datetime
@@ -50,9 +46,6 @@ class CamelModel(JSONSerializable, LoadMixin):
     @classmethod
     def parse_json(cls, string: str):
         return parse_json(cls, string)
-
-    class Meta(JSONSerializable.Meta):
-        key_transform_with_dump = LetterCase.CAMEL
 
 
 @dataclass
