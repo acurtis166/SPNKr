@@ -1,5 +1,6 @@
 
 from dataclasses import dataclass
+import uuid
 
 from spnkr.models import PascalModel
 
@@ -44,18 +45,24 @@ class Counterfactual(PascalModel):
 
 @dataclass
 class TierCounterfactuals(PascalModel):
-    bronze: Counterfactual | None
-    silver: Counterfactual | None
-    gold: Counterfactual | None
-    platinum: Counterfactual | None
-    diamond: Counterfactual | None
-    onyx: Counterfactual | None
+    bronze: Counterfactual | None = None
+    silver: Counterfactual | None = None
+    gold: Counterfactual | None = None
+    platinum: Counterfactual | None = None
+    diamond: Counterfactual | None = None
+    onyx: Counterfactual | None = None
 
 
 @dataclass
 class Counterfactuals(PascalModel):
     self_counterfactuals: Counterfactual
     tier_counterfactuals: TierCounterfactuals
+
+
+@dataclass
+class RankedRewards(PascalModel):
+    reward_id: uuid.UUID
+    awarded_rewards: dict[str, uuid.UUID]
 
 
 @dataclass

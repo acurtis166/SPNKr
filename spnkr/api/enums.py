@@ -108,6 +108,7 @@ class GameVariantCategory(int, enum.Enum):
 class PlaylistExperience(int, enum.Enum):
     Arena = 2
     BigTeamBattle = 3
+    PVE = 4
     Featured = 5
 
 

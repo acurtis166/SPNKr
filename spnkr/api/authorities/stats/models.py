@@ -185,12 +185,12 @@ class OddballStats(PascalModel):
 
 @dataclass
 class ZonesStats(PascalModel):
-    zone_captures: int
-    zone_defensive_kills: int
-    zone_offensive_kills: int
-    zone_secures: int
-    total_zone_occupation_time: dt.timedelta
-    zone_scoring_ticks: int
+    stronghold_captures: int
+    stronghold_defensive_kills: int
+    stronghold_offensive_kills: int
+    stronghold_secures: int
+    stronghold_occupation_time: dt.timedelta
+    stronghold_scoring_ticks: int
 
 
 @dataclass
@@ -253,7 +253,7 @@ class Player(PascalModel):
     player_type: enums.PlayerType
     bot_attributes: BotAttributes | None
     last_team_id: int
-    outcome: int
+    outcome: enums.Outcome
     rank: int
     participation_info: ParticipationInfo
     player_team_stats: list[PlayerTeamStats]
