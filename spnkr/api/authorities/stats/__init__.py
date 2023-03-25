@@ -7,7 +7,7 @@ from spnkr import util
 
 
 class StatsAuthority(BaseAuthority):
-    URL = 'https://halostats.svc.halowaypoint.com:443'
+    URL = "https://halostats.svc.halowaypoint.com:443"
 
     def get_match_count(self, player_xuid: str) -> models.MatchCount:
         """Get match counts across different game experiences for a player.
@@ -22,16 +22,18 @@ class StatsAuthority(BaseAuthority):
             PlayerMatchCount: Match counts.
         """
         xuid = util.wrap_xuid(player_xuid)
-        url = self.URL + f'/hi/players/{xuid}/matches/count'
+        url = self.URL + f"/hi/players/{xuid}/matches/count"
         resp = self._session.get(url)
         resp.raise_for_status()
-        return models.MatchCount.parse_json(resp.text)
+        return models.MatchCount.from_dict(resp.json())
 
-    def get_match_history(self,
-                          player_xuid: str,
-                          start: int = 0,
-                          count: int = 25,
-                          match_type: MatchType = MatchType.All) -> models.MatchHistoryResponse:
+    def get_match_history(
+        self,
+        player_xuid: str,
+        start: int = 0,
+        count: int = 25,
+        match_type: MatchType = MatchType.All,
+    ) -> models.MatchHistoryResponse:
         """Request a batch of matches from a player's match history.
 
         Args:
@@ -48,15 +50,15 @@ class StatsAuthority(BaseAuthority):
             MatchHistory: _description_
         """
         xuid = util.wrap_xuid(player_xuid)
-        url = self.URL + f'/hi/players/{xuid}/matches'
+        url = self.URL + f"/hi/players/{xuid}/matches"
         params = {
-            'start': start,
-            'count': count,
-            'type': match_type.name,
+            "start": start,
+            "count": count,
+            "type": match_type.name,
         }
         resp = self._session.get(url, params=params)
         resp.raise_for_status()
-        return models.MatchHistoryResponse.parse_json(resp.text)
+        return models.MatchHistoryResponse.from_dict(resp.json())
 
     def get_match_stats(self, match_guid: str) -> models.MatchStats:
         """Request match details using the Halo Infinite match GUID.
@@ -67,8 +69,7 @@ class StatsAuthority(BaseAuthority):
         Returns:
             MatchStats: Match details.
         """
-        url = self.URL + f'/hi/matches/{match_guid}/stats'
+        url = self.URL + f"/hi/matches/{match_guid}/stats"
         resp = self._session.get(url)
         resp.raise_for_status()
-        return models.MatchStats.parse_json(resp.text)
-
+        return models.MatchStats.from_dict(resp.json())

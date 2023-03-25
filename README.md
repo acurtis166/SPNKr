@@ -17,7 +17,6 @@ Authentication requires some preliminary work:
 - Libraries:
     - requests for making HTTP requests
     - ms_cv for including a correlation vector header for requests to Microsoft
-    - dataclass-wizard for mapping JSON responses to dataclasses
     - orjson for speedy JSON deserialization
     - pytest for unit testing
     - python-dateutil for parsing isoformat datetime strings

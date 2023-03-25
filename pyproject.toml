@@ -14,7 +14,7 @@ classifiers = [
     'Programming Language :: Python :: 3',
 ]
 keywords = ['halo', 'infinite', 'api']
-dependencies = ['ms-cv', 'orjson', 'requests', 'dataclass-wizard', 'python-dateutil']
+dependencies = ['ms-cv', 'orjson', 'requests', 'python-dateutil']
 requires-python = '>=3.10'
 dynamic = ['version']
 
