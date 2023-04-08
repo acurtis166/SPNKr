@@ -1,0 +1,85 @@
+{
+    "Value": [
+        {
+            "Id": "xuid(2535445291321133)",
+            "ResultCode": 0,
+            "Result": {
+                "TeamMmr": 1349.069330274021,
+                "RankRecap": {
+                    "PreMatchCsr": {
+                        "Value": 1530,
+                        "MeasurementMatchesRemaining": 0,
+                        "Tier": "Onyx",
+                        "TierStart": 1500,
+                        "SubTier": 0,
+                        "NextTier": "Onyx",
+                        "NextTierStart": 1500,
+                        "NextSubTier": 0,
+                        "InitialMeasurementMatches": 10
+                    },
+                    "PostMatchCsr": {
+                        "Value": 1532,
+                        "MeasurementMatchesRemaining": 0,
+                        "Tier": "Onyx",
+                        "TierStart": 1500,
+                        "SubTier": 0,
+                        "NextTier": "Onyx",
+                        "NextTierStart": 1500,
+                        "NextSubTier": 0,
+                        "InitialMeasurementMatches": 10
+                    }
+                },
+                "StatPerformances": {
+                    "Kills": {
+                        "Count": 18,
+                        "Expected": 21.555281749028442,
+                        "StdDev": 5.53817369533474
+                    },
+                    "Deaths": {
+                        "Count": 9,
+                        "Expected": 14.737865451775264,
+                        "StdDev": 5.168750661053899
+                    }
+                },
+                "TeamId": 0,
+                "TeamMmrs": {
+                    "0": 1349.069330274021,
+                    "1": 1377.9993201804525
+                },
+                "RankedRewards": null,
+                "Counterfactuals": {
+                    "SelfCounterfactuals": {
+                        "Kills": 21.555281749028442,
+                        "Deaths": 14.737865451775264
+                    },
+                    "TierCounterfactuals": {
+                        "Bronze": {
+                            "Kills": 3.5972955956569512,
+                            "Deaths": 20.352336882358298
+                        },
+                        "Silver": {
+                            "Kills": 6.660531905342796,
+                            "Deaths": 19.200235865931386
+                        },
+                        "Gold": {
+                            "Kills": 10.29879920592855,
+                            "Deaths": 18.05237075722733
+                        },
+                        "Platinum": {
+                            "Kills": 13.851833782176486,
+                            "Deaths": 16.994769582498478
+                        },
+                        "Diamond": {
+                            "Kills": 17.24490038343272,
+                            "Deaths": 15.998825507907934
+                        },
+                        "Onyx": {
+                            "Kills": 20.88805413808797,
+                            "Deaths": 14.932899746945761
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

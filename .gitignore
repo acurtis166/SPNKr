@@ -5,6 +5,7 @@
 client.json
 *token.json
 tests/config.py
+cred.txt
 
 ####################
 

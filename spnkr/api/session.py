@@ -1,66 +1,81 @@
+from __future__ import annotations
+
+from dataclasses import dataclass
+from enum import Enum, auto
 from typing import Any
 
-import requests
+import aiohttp
+import orjson
 
-from spnkr.api.enums import AuthenticationMethod
-from spnkr.authentication.manager import AuthenticationManager
+from ..authentication.manager import TokenManager
+
+ACCEPT_HEADER = "Accept"
+AUTHORIZATION_HEADER = "Authorization"
+SPARTAN_HEADER = "x-343-authorization-spartan"
+CLEARANCE_HEADER = "343-clearance"
+XBL_CONTRACT_VERSION_HEADER = "x-xbl-contract-version"
+
+XBL_CONTRACT_VERSION = "3"
 
 
+class AuthenticationMethod(Enum):
+    SPARTAN_TOKEN = auto()
+    CLEARANCE_TOKEN = auto()
+    XBOX_LIVE_V3 = auto()
+
+
+@dataclass(frozen=True, slots=True)
+class Response:
+    data: dict[str, Any]
+    status: int
+    error: aiohttp.ClientResponseError | None
+
+    @classmethod
+    async def from_response(cls, resp: aiohttp.ClientResponse) -> Response:
+        data: dict[str, Any] = await resp.json(loads=orjson.loads)
+        status = resp.status
+        error = None
+        try:
+            resp.raise_for_status()
+        except aiohttp.ClientResponseError as e:
+            error = e
+        return cls(data, status, error)
+
+
+@dataclass(frozen=True, slots=True)
 class Session:
-    def __init__(
-        self, auth_mgr: AuthenticationManager, validate_tokens: bool = True
-    ):
-        self._auth_mgr = auth_mgr
-        self._validate_tokens = validate_tokens
+    _session: aiohttp.ClientSession
+    _auth: TokenManager
 
-    def request(
+    async def request(
         self,
         method: str,
         url: str,
         auth_method: AuthenticationMethod
-        | None = AuthenticationMethod.SpartanToken,
-        **kwargs: Any,
-    ) -> requests.Response:
-        """Proxy request and add authentication headers."""
-        headers = kwargs.pop("headers", {})
+        | None = AuthenticationMethod.SPARTAN_TOKEN,
+        **kwargs,
+    ) -> Response:
+        new_headers = kwargs.pop("headers", {})
+        headers = {ACCEPT_HEADER: "application/json", **new_headers}
 
-        if "Accept" not in headers:
-            # default to accepting a JSON response
-            headers["Accept"] = "application/json"
+        if auth_method is not None:
+            jar = await self._auth.get_tokens()
+            if auth_method is AuthenticationMethod.SPARTAN_TOKEN:
+                headers[SPARTAN_HEADER] = jar.spartan_token
+            elif auth_method is AuthenticationMethod.CLEARANCE_TOKEN:
+                headers[SPARTAN_HEADER] = jar.spartan_token
+                headers[CLEARANCE_HEADER] = jar.clearance_token
+            elif auth_method is AuthenticationMethod.XBOX_LIVE_V3:
+                headers[AUTHORIZATION_HEADER] = jar.xsts_authorization_header
+                headers[XBL_CONTRACT_VERSION_HEADER] = XBL_CONTRACT_VERSION
 
-        if self._validate_tokens and auth_method is not None:
-            self._auth_mgr.refresh_tokens()
-
-        if auth_method == AuthenticationMethod.SpartanToken:
-            headers["x-343-authorization-spartan"] = self._auth_mgr.spartan_token.spartan_token  # type: ignore
-        elif auth_method == AuthenticationMethod.ClearanceToken:
-            headers["x-343-authorization-spartan"] = self._auth_mgr.spartan_token.spartan_token  # type: ignore
-            headers["343-clearance"] = self._auth_mgr.clearance_token.flight_configuration_id  # type: ignore
-        elif auth_method == AuthenticationMethod.XSTSv3XboxAudience:
-            headers["Authorization"] = self._auth_mgr.xsts_token.authorization_header_value  # type: ignore
-            headers["x-xbl-contract-version"] = "3"
-
-        return self._auth_mgr.session.request(
+        async with self._session.request(
             method, url, headers=headers, **kwargs
-        )
+        ) as response:
+            return await Response.from_response(response)
 
-    def get(self, url: str, **kwargs: Any) -> requests.Response:
-        return self.request("GET", url, **kwargs)
+    async def get(self, url: str, **kwargs) -> Response:
+        return await self.request("GET", url, **kwargs)
 
-    def options(self, url: str, **kwargs: Any) -> requests.Response:
-        return self.request("OPTIONS", url, **kwargs)
-
-    def head(self, url: str, **kwargs: Any) -> requests.Response:
-        return self.request("HEAD", url, **kwargs)
-
-    def post(self, url: str, **kwargs: Any) -> requests.Response:
-        return self.request("POST", url, **kwargs)
-
-    def put(self, url: str, **kwargs: Any) -> requests.Response:
-        return self.request("PUT", url, **kwargs)
-
-    def patch(self, url: str, **kwargs: Any) -> requests.Response:
-        return self.request("PATCH", url, **kwargs)
-
-    def delete(self, url: str, **kwargs: Any) -> requests.Response:
-        return self.request("DELETE", url, **kwargs)
+    async def post(self, url: str, **kwargs) -> Response:
+        return await self.request("POST", url, **kwargs)

@@ -120,17 +120,6 @@ if __name__ == '__main__':
 ```
 
 
-## Contribute
-
-- Implement/update authorities/endpoints
-    - [Source (no auth needed)](https://settings.svc.halowaypoint.com/settings/hipc/e2a0a7c6-6efe-42af-9283-c2ab73250c48)
-    - [Endpoints (JSON)](https://github.com/acurtis166/spnkr/blob/master/api_examples/json/endpoints.json)
-    - [Endpoints (XML)](https://github.com/acurtis166/spnkr/blob/master/api_examples/xml/endpoints.xml)
-    - [Script-generated code files](https://github.com/acurtis166/spnkr/tree/master/unused_authorities)
-- Documentation
-- Enumerated data type completion/confirmation
-
-
 ## Credits
 
 - Xbox authentication, profile endpoints: [OpenXbox/xbox-webapi-python](https://github.com/OpenXbox/xbox-webapi-python)
