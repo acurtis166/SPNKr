@@ -4,7 +4,7 @@ import json
 
 import pytest
 
-from spnkr import SPNKR, AzureApp
+from spnkr.api.client import SPNKR, AzureApp, _unwrap_xuid, _wrap_xuid
 
 ENDPOINT_FILES = {
     "https://ugc-discovery.svc.halowaypoint.com:443/hi/ugcGameVariants/asset_id/versions/version_id": (
@@ -77,6 +77,18 @@ def client():
     spnkr = SPNKR(app, "")
     spnkr._session = MockSession()  # type: ignore
     return spnkr
+
+
+def test_unwrap_xuid():
+    assert _unwrap_xuid(123) == "123"
+    assert _unwrap_xuid("123") == "123"
+    assert _unwrap_xuid("xuid(123)") == "123"
+
+
+def test_wrap_xuid():
+    assert _wrap_xuid(123) == "xuid(123)"
+    assert _wrap_xuid("123") == "xuid(123)"
+    assert _wrap_xuid("xuid(123)") == "xuid(123)"
 
 
 @pytest.mark.asyncio
