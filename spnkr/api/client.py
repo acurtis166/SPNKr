@@ -1,3 +1,5 @@
+"""Provides a client for the Halo Infinite API."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -99,7 +101,9 @@ class SPNKR:
             "userIds": [_unwrap_xuid(x) for x in xuids],
         }
         resp = await self._session.post(
-            url, json=data, auth_method=AuthenticationMethod.XBOX_LIVE_V3
+            url,
+            json=data,
+            auth_method=AuthenticationMethod.XBOX_LIVE_V3_HALO_AUDIENCE,
         )
         if resp.status == 429:
             raise ApiRateLimitExceedance(
@@ -125,7 +129,7 @@ class SPNKR:
         resp = await self._session.get(
             url,
             params=params,
-            auth_method=AuthenticationMethod.XBOX_LIVE_V3,
+            auth_method=AuthenticationMethod.XBOX_LIVE_V3_HALO_AUDIENCE,
         )
         if resp.status == 429:
             raise ApiRateLimitExceedance(
@@ -156,7 +160,7 @@ class SPNKR:
         resp = await self._session.get(
             url,
             params=params,
-            auth_method=AuthenticationMethod.XBOX_LIVE_V3,
+            auth_method=AuthenticationMethod.XBOX_LIVE_V3_HALO_AUDIENCE,
         )
         if resp.status == 429:
             raise ApiRateLimitExceedance(

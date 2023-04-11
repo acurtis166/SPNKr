@@ -1,4 +1,4 @@
-"""Authentication Models."""
+"""Authentication response data models."""
 
 from __future__ import annotations
 
@@ -10,16 +10,29 @@ from dateutil.parser import isoparse
 
 @dataclass(frozen=True, slots=True)
 class DisplayClaims:
+    """Represents the display claims returned from an X token request.
+
+    Attributes:
+        xui: The list of Xbox user information key-value pairs.
+    """
+
     xui: list[dict[str, str]]
 
     @classmethod
     def from_dict(cls, data: dict) -> DisplayClaims:
-        """Parse an XAUDisplayClaims from a dictionary."""
+        """Parse a DisplayClaims object from a dictionary."""
         return cls(xui=data["xui"])
 
 
 @dataclass(frozen=True, slots=True)
 class XAUResponse:
+    """Represents the response from an Xbox user request.
+
+    Attributes:
+        raw: The raw response dictionary.
+        token: The Xbox user token.
+    """
+
     raw: dict
     token: str
 
@@ -31,24 +44,37 @@ class XAUResponse:
 
 @dataclass(frozen=True, slots=True)
 class XSTSResponse:
+    """Represents the response from an XSTS token request.
+
+    Attributes:
+        raw: The raw response dictionary.
+        token: The XSTS token.
+        display_claims: The display claims returned from the request. These
+            contain information about the authenticated user.
+    """
+
     raw: dict
     token: str
     display_claims: DisplayClaims
 
     @property
     def xuid(self) -> str:
+        """The ID of the authenticated user."""
         return self.display_claims.xui[0]["xid"]
 
     @property
     def userhash(self) -> str:
+        """The user hash of the user. Used for XBL authentication."""
         return self.display_claims.xui[0]["uhs"]
 
     @property
     def gamertag(self) -> str:
+        """The gamertag of the authenticated user."""
         return self.display_claims.xui[0]["gtg"]
 
     @property
     def authorization_header_value(self) -> str:
+        """The value passed in the Authorization header for XBL requests."""
         return f"XBL3.0 x={self.userhash};{self.token}"
 
     @classmethod
@@ -67,6 +93,11 @@ class OAuth2TokenResponse:
 
     This is the root token used to authenticate an application. It is used to
     request an XToken, which is used to authenticate a user for Xbox Live.
+
+    Attributes:
+        raw: The raw response data.
+        access_token: The access token.
+        refresh_token: The refresh token.
     """
 
     raw: dict

@@ -1,3 +1,5 @@
+"""Provides functions for retrieving authentication tokens."""
+
 import urllib.parse
 
 from aiohttp import ClientSession
@@ -9,7 +11,14 @@ DEFAULT_SCOPES = ["Xboxlive.signin", "Xboxlive.offline_access"]
 
 
 def generate_authorization_url(app: AzureApp) -> str:
-    """Generate Windows Live Authorization URL."""
+    """Generate Windows Live Authorization URL.
+
+    Args:
+        app: The Azure AD application to authenticate.
+
+    Returns:
+        The authorization URL.
+    """
     params = {
         "client_id": app.client_id,
         "response_type": "code",
@@ -25,7 +34,16 @@ def generate_authorization_url(app: AzureApp) -> str:
 async def request_oauth_token(
     session: ClientSession, authorization_code: str, app: AzureApp
 ) -> mdl.OAuth2TokenResponse:
-    """Request OAuth2 token."""
+    """Request an OAuth2 token.
+
+    Args:
+        session: The aiohttp session to use.
+        authorization_code: The authorization code to use.
+        app: The Azure AD application to authenticate.
+
+    Returns:
+        The OAuth2 token response.
+    """
     data = {
         "grant_type": "authorization_code",
         "code": authorization_code,
@@ -38,7 +56,16 @@ async def request_oauth_token(
 async def refresh_oauth_token(
     session: ClientSession, refresh_token: str, app: AzureApp
 ) -> mdl.OAuth2TokenResponse:
-    """Refresh OAuth2 token."""
+    """Refresh an OAuth2 token.
+
+    Args:
+        session: The aiohttp session to use.
+        refresh_token: The refresh token to use.
+        app: The Azure AD application to authenticate.
+
+    Returns:
+        The OAuth2 token response.
+    """
     data = {
         "grant_type": "refresh_token",
         "scope": " ".join(DEFAULT_SCOPES),
@@ -50,7 +77,7 @@ async def refresh_oauth_token(
 async def _oauth2_token_request(
     session: ClientSession, data: dict[str, str], app: AzureApp
 ) -> mdl.OAuth2TokenResponse:
-    """Execute token requests."""
+    """Execute an OAuth2 token request."""
     url = "https://login.live.com/oauth20_token.srf"
     request_data = {
         **data,
@@ -66,7 +93,16 @@ async def request_user_token(
     access_token: str,
     relying_party: str = "http://auth.xboxlive.com",
 ) -> mdl.XAUResponse:
-    """Authenticate via OAuth access token and receive user token."""
+    """Authenticate via OAuth access token and receive a user token.
+
+    Args:
+        session: The aiohttp session to use.
+        access_token: The OAuth access token to use.
+        relying_party: The relying party to use.
+
+    Returns:
+        The user token response.
+    """
     url = "https://user.auth.xboxlive.com/user/authenticate"
     headers = {"x-xbl-contract-version": "1"}
     js = {
@@ -85,7 +121,16 @@ async def request_user_token(
 async def request_xsts_token(
     session: ClientSession, user_token: str, relying_party: str
 ) -> mdl.XSTSResponse:
-    """Authorize via user token and receive final X token."""
+    """Authorize via user token and receive final X token.
+
+    Args:
+        session: The aiohttp session to use.
+        user_token: The user token to use.
+        relying_party: The relying party to use.
+
+    Returns:
+        The XSTS token response.
+    """
     url = "https://xsts.auth.xboxlive.com/xsts/authorize"
     headers = {"x-xbl-contract-version": "1"}
     js = {
@@ -103,6 +148,15 @@ async def request_xsts_token(
 async def request_spartan_token(
     session: ClientSession, halo_xsts_token: str
 ) -> mdl.SpartanTokenResponse:
+    """Request a spartan token for authentication with Halo Infinite endpoints.
+
+    Args:
+        session: The aiohttp session to use.
+        halo_xsts_token: The XSTS token to use.
+
+    Returns:
+        The spartan token response.
+    """
     url = "https://settings.svc.halowaypoint.com/spartan-token"
     headers = {"Accept": "application/json"}
     js = {
@@ -122,7 +176,15 @@ async def request_spartan_token(
 async def request_clearance_token(
     session: ClientSession, spartan_token: str
 ) -> mdl.ClearanceTokenResponse:
-    """Request a clearance token, which is required for some endpoints."""
+    """Request a clearance token required for some Halo Infinite endpoints.
+
+    Args:
+        session: The aiohttp session to use.
+        spartan_token: The spartan token to use.
+
+    Returns:
+        The clearance token response.
+    """
     url = "https://settings.svc.halowaypoint.com/oban/flight-configurations/titles/hi/audiences/RETAIL/active"
     hdrs = {"x-343-authorization-spartan": spartan_token}
     params = {"sandbox": "UNUSED", "build": "222249.22.06.08.1730-0"}

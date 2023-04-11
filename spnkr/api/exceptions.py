@@ -1,3 +1,6 @@
+"""Custom exceptions for the API module."""
+
+
 class ApiRateLimitExceedance(Exception):
     """Raised when an API rate limit is exceeded."""
 
