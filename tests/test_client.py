@@ -4,7 +4,7 @@ import json
 
 import pytest
 
-from spnkr.api.client import SPNKR, AzureApp, _unwrap_xuid, _wrap_xuid
+from spnkr.client import AzureApp, HaloInfiniteClient, _unwrap_xuid, _wrap_xuid
 
 ENDPOINT_FILES = {
     "https://ugc-discovery.svc.halowaypoint.com:443/hi/ugcGameVariants/asset_id/versions/version_id": (
@@ -74,7 +74,7 @@ class MockSession:
 @pytest.fixture
 def client():
     app = AzureApp("", "", "")
-    spnkr = SPNKR(app, "")
+    spnkr = HaloInfiniteClient(app, "")
     spnkr._session = MockSession()  # type: ignore
     return spnkr
 
@@ -92,77 +92,77 @@ def test_wrap_xuid():
 
 
 @pytest.mark.asyncio
-async def test_get_map_mode_pair(client: SPNKR):
+async def test_get_map_mode_pair(client: HaloInfiniteClient):
     result = await client.get_map_mode_pair("asset_id", "version_id")
     assert str(result.id) == "95018e68-41fc-4d5f-b627-15590feb7469"
     assert result.name == "Arena:Shotty Snipes Slayer on Catalyst"
 
 
 @pytest.mark.asyncio
-async def test_get_playlist(client: SPNKR):
+async def test_get_playlist(client: HaloInfiniteClient):
     result = await client.get_playlist("asset_id", "version_id")
     assert str(result.id) == "edfef3ac-9cbe-4fa2-b949-8f29deafd483"
     assert result.name == "Ranked Arena"
 
 
 @pytest.mark.asyncio
-async def test_get_map(client: SPNKR):
+async def test_get_map(client: HaloInfiniteClient):
     result = await client.get_map("asset_id", "version_id")
     assert str(result.id) == "76669255-697d-48c9-a802-7ff2ec8257f1"
     assert result.name == "Forge Space"
 
 
 @pytest.mark.asyncio
-async def test_get_ugc_game_variant(client: SPNKR):
+async def test_get_ugc_game_variant(client: HaloInfiniteClient):
     result = await client.get_ugc_game_variant("asset_id", "version_id")
     assert str(result.id) == "aca7bbf8-7a18-4aae-8785-1bd3f58275fd"
     assert result.name == "Fiesta:Slayer"
 
 
 @pytest.mark.asyncio
-async def test_get_gamertags_by_xuids(client: SPNKR):
+async def test_get_gamertags_by_xuids(client: HaloInfiniteClient):
     result = await client.get_gamertags_by_xuids([123])
     assert result.gamertags == {"2535445291321133": "aCurtis X89"}
 
 
 @pytest.mark.asyncio
-async def test_get_gamertag_by_xuid(client: SPNKR):
+async def test_get_gamertag_by_xuid(client: HaloInfiniteClient):
     result = await client.get_gamertag_by_xuid(123)
     assert result.gamertags == {"2535445291321133": "aCurtis X89"}
 
 
 @pytest.mark.asyncio
-async def test_get_xuid_by_gamertag(client: SPNKR):
+async def test_get_xuid_by_gamertag(client: HaloInfiniteClient):
     result = await client.get_xuid_by_gamertag("aCurtis X89")
     assert result.gamertags == {"2535445291321133": "aCurtis X89"}
 
 
 @pytest.mark.asyncio
-async def test_get_match_skill(client: SPNKR):
+async def test_get_match_skill(client: HaloInfiniteClient):
     result = await client.get_match_skill("match_id", [123])
     assert result.results["xuid(2535445291321133)"].pre_match_csr.value == 1530
 
 
 @pytest.mark.asyncio
-async def test_get_playlist_csr(client: SPNKR):
+async def test_get_playlist_csr(client: HaloInfiniteClient):
     result = await client.get_playlist_csr("playlist_id", [123])
     assert result.results["xuid(2535445291321133)"].all_time_max.value == 1549
 
 
 @pytest.mark.asyncio
-async def test_get_match_count(client: SPNKR):
+async def test_get_match_count(client: HaloInfiniteClient):
     result = await client.get_match_count(123)
     assert result.total == 731
 
 
 @pytest.mark.asyncio
-async def test_get_match_history(client: SPNKR):
+async def test_get_match_history(client: HaloInfiniteClient):
     result = await client.get_match_history(123)
     assert len(result.matches) == 25
 
 
 @pytest.mark.asyncio
-async def test_get_match_stats(client: SPNKR):
+async def test_get_match_stats(client: HaloInfiniteClient):
     result = await client.get_match_stats("match_id")
     assert len(result.players) == 8
 

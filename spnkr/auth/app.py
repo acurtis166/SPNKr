@@ -1,11 +1,11 @@
-"""Provides a representation of an Azure AD application."""
+"""An Azure AD application."""
 
 from dataclasses import dataclass
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass(frozen=True)
 class AzureApp:
-    """Represents an Azure AD application.
+    """An Azure AD application.
 
     Attributes:
         client_id (str): The client ID of the application.
