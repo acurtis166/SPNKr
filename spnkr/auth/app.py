@@ -5,7 +5,11 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True)
 class AzureApp:
-    """An Azure AD application.
+    """An Azure Active Directory (Azure AD) application.
+
+    Azure AD is a cloud-based identity and access management service from
+    Microsoft. It allows you to sign in and access Microsoft resources from an
+    application.
 
     Attributes:
         client_id (str): The client ID of the application.

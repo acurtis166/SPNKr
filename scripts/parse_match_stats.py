@@ -1,12 +1,12 @@
 """Parse match stats from a directory of JSON files."""
 
 import argparse
+import json
 from pathlib import Path
 
-import orjson
 import pandas as pd
 
-from spnkr.parsers.flat_dict import stats
+from spnkr.parsers.records import stats
 
 PLAYER_FILE = "players.csv"
 TEAM_FILE = "teams.csv"
@@ -20,7 +20,7 @@ def main(input_dir: Path, output_dir: Path) -> None:
 
     for i, file in enumerate(input_dir.glob("*.json")):
         print(f"Processing file number {i + 1:6}", end="\r")
-        data = orjson.loads(file.read_bytes())
+        data = json.loads(file.read_bytes())
         player_results += stats.parse_player_core_stats(data)
         team_results += stats.parse_team_core_stats(data)
         medal_results += stats.parse_player_medals(data)

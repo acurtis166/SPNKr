@@ -1,5 +1,10 @@
-"""Parse highlight information from Halo Infinite API responses."""
+"""Parse flattened `NamedTuple` records from Halo Infinite API responses.
 
+The record format can be useful for dumping to files or databases and is faster
+than parsing the entirety of the JSON responses.
+"""
+
+from .gamecms_hacs import parse_medal_metadata
 from .skill import parse_match_skill, parse_playlist_csr
 from .stats import (
     parse_match_count,

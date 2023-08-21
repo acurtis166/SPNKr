@@ -1,3 +1,5 @@
+"""Models for the stats authority."""
+
 import datetime as dt
 from uuid import UUID
 

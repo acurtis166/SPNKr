@@ -5,6 +5,8 @@ from typing import Any
 
 from aiohttp import ClientSession
 
+from ..xuid import XUID
+
 
 @dataclass(frozen=True)
 class XAUResponse:
@@ -35,13 +37,15 @@ class XSTSResponse:
         return self.raw["DisplayClaims"]["xui"][0]
 
     @property
-    def xuid(self) -> str:
+    def xuid(self) -> XUID:
         """The ID of the authenticated user."""
-        return self.xui["xid"]
+        # TODO: This isn't always available.
+        return XUID(self.xui["xid"])
 
     @property
     def gamertag(self) -> str:
         """The gamertag of the authenticated user."""
+        # TODO: This isn't always available.
         return self.xui["gtg"]
 
 

@@ -1,4 +1,4 @@
-"""Define models for the "get match skill" response."""
+"""Models for the skill authority."""
 
 from pydantic import Field
 

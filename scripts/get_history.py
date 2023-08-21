@@ -12,7 +12,7 @@ from aiohttp import ClientSession
 
 from spnkr.auth import AzureApp, refresh_player_tokens
 from spnkr.client import HaloInfiniteClient
-from spnkr.parsers.flat_dict import parse_match_history
+from spnkr.parsers.records import parse_match_history
 from spnkr.xuid import XUID
 
 dotenv.load_dotenv()

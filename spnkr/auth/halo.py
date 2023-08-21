@@ -13,6 +13,9 @@ class SpartanToken:
 
     This provides the primary means of authenticating with the Halo Infinite
     API. The tokens are valid for 4 hours.
+
+    Attributes:
+        raw: The raw response from the Halo Infinite API.
     """
 
     raw: dict[str, Any]
@@ -50,7 +53,7 @@ async def request_spartan_token(
 
     Args:
         session: The aiohttp session to use.
-        halo_xsts_token: The XSTS token to use.
+        halo_xsts_token: An XSTS token scoped to Halo Waypoint.
 
     Returns:
         The spartan token response.

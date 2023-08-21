@@ -4,6 +4,7 @@ import asyncio
 import os
 
 import dotenv
+from aiohttp import ClientSession
 
 from spnkr.auth import AzureApp, authenticate_player
 
@@ -17,7 +18,8 @@ REDIRECT_URI = os.environ["SPNKR_REDIRECT_URI"]
 async def main() -> None:
     app = AzureApp(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI)
 
-    refresh_token = await authenticate_player(app)
+    async with ClientSession() as session:
+        refresh_token = await authenticate_player(session, app)
     print(f"Your refresh token is:\n{refresh_token}")
 
 

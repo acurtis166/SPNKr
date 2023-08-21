@@ -11,8 +11,14 @@ RESPONSES = Path("tests/responses")
 
 
 def load_response(name: str) -> Any:
-    with open(RESPONSES / f"{name}.json") as f:
+    with open(RESPONSES / f"{name}.json", encoding="utf-8") as f:
         return json.load(f)
+
+
+def test_parse_medal_metadata():
+    data = load_response("get_medal_metadata")
+    result = pp.MedalMetadata(**data)
+    assert result.medals[0].name_id == 622331684
 
 
 def test_parse_match_skill():

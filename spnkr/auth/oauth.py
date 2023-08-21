@@ -1,4 +1,4 @@
-"""Provides functions for retrieving authentication tokens."""
+"""Authenticate using OAuth2."""
 
 import urllib.parse
 from dataclasses import dataclass
