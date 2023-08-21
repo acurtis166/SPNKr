@@ -33,7 +33,7 @@ async def make_request(
     async with semaphore:
         await asyncio.sleep(0.5)
         async with aiofiles.open(out_path / file_name, "wb") as f:
-            async for data in response.response.content.iter_chunked(1024):
+            async for data in response.content.iter_chunked(1024):
                 await f.write(data)
     return file_name
 

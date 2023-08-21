@@ -6,7 +6,6 @@ from uuid import UUID
 
 from aiohttp import ClientResponse, ClientSession
 
-from . import responses as resp
 from .xuid import XUID
 
 SKILL_HOST = "https://skill.svc.halowaypoint.com:443"
@@ -25,13 +24,11 @@ class HaloInfiniteClient:
         session: The aiohttp session to use.
         spartan_token: The Spartan token used to authenticate with the API.
         clearance_token: The clearance token used to authenticate with the API.
-        raise_for_status: Whether to raise an exception when a request fails.
     """
 
     session: ClientSession
     spartan_token: str
     clearance_token: str
-    raise_for_status: bool = True
 
     async def _get(self, host: str, endpoint: str, **kwargs) -> ClientResponse:
         """Make a GET request to the API.
@@ -47,14 +44,11 @@ class HaloInfiniteClient:
             "x-343-authorization-spartan": self.spartan_token,
             "343-clearance": self.clearance_token,
         }
-        response = await self.session.get(url, headers=headers, **kwargs)
-        if self.raise_for_status:
-            response.raise_for_status()
-        return response
+        return await self.session.get(url, headers=headers, **kwargs)
 
     async def get_match_skill(
         self, match_id: str | UUID, xuids: Iterable[str | int | XUID]
-    ) -> resp.MatchSkillResponse:
+    ) -> ClientResponse:
         """Get player CSR and team MMR values for a given match and player list.
 
         Args:
@@ -67,12 +61,11 @@ class HaloInfiniteClient:
         """
         endpoint = f"/hi/matches/{match_id}/skill"
         params = dict(players=[XUID(x) for x in xuids])
-        response = await self._get(SKILL_HOST, endpoint, params=params)
-        return resp.MatchSkillResponse(response)
+        return await self._get(SKILL_HOST, endpoint, params=params)
 
     async def get_playlist_csr(
         self, playlist_id: str | UUID, xuids: Iterable[str | int | XUID]
-    ) -> resp.PlaylistCsrResponse:
+    ) -> ClientResponse:
         """Get player CSR values for a given playlist and player list.
 
         Args:
@@ -84,12 +77,9 @@ class HaloInfiniteClient:
         """
         endpoint = f"/hi/playlist/{playlist_id}/csrs"
         params = dict(players=[XUID(x) for x in xuids])
-        response = await self._get(SKILL_HOST, endpoint, params=params)
-        return resp.PlaylistCsrResponse(response)
+        return await self._get(SKILL_HOST, endpoint, params=params)
 
-    async def get_match_count(
-        self, xuid: str | int | XUID
-    ) -> resp.MatchCountResponse:
+    async def get_match_count(self, xuid: str | int | XUID) -> ClientResponse:
         """Get match counts across different game experiences for a player.
 
         The counts returned are for custom matches, matchmade matches, local
@@ -99,8 +89,7 @@ class HaloInfiniteClient:
             xuid: Xbox Live ID of the player to get counts for.
         """
         endpoint = f"/hi/players/{XUID(xuid)}/matches/count"
-        response = await self._get(STATS_URL, endpoint)
-        return resp.MatchCountResponse(response)
+        return await self._get(STATS_URL, endpoint)
 
     async def get_match_history(
         self,
@@ -108,7 +97,7 @@ class HaloInfiniteClient:
         start: int = 0,
         count: int = 25,
         match_type: Literal["All", "Matchmaking", "Custom", "Local"] = "All",
-    ) -> resp.MatchHistoryResponse:
+    ) -> ClientResponse:
         """Request a batch of matches from a player's match history.
 
         Args:
@@ -127,12 +116,9 @@ class HaloInfiniteClient:
         """
         url = f"/hi/players/{XUID(xuid)}/matches"
         params = {"start": start, "count": count, "type": match_type}
-        response = await self._get(STATS_URL, url, params=params)
-        return resp.MatchHistoryResponse(response)
+        return await self._get(STATS_URL, url, params=params)
 
-    async def get_match_stats(
-        self, match_id: str | UUID
-    ) -> resp.MatchStatsResponse:
+    async def get_match_stats(self, match_id: str | UUID) -> ClientResponse:
         """Request match details using the Halo Infinite match GUID.
 
         Args:
@@ -142,12 +128,11 @@ class HaloInfiniteClient:
             The match details.
         """
         endpoint = f"/hi/matches/{match_id}/stats"
-        response = await self._get(STATS_URL, endpoint)
-        return resp.MatchStatsResponse(response)
+        return await self._get(STATS_URL, endpoint)
 
     async def get_ugc_game_variant(
         self, asset_id: str | UUID, version_id: str | UUID
-    ) -> resp.UgcGameVariantResponse:
+    ) -> ClientResponse:
         """Get details about a game mode.
 
         Args:
@@ -158,15 +143,14 @@ class HaloInfiniteClient:
             The game variant details.
         """
         endpoint = f"/hi/ugcGameVariants/{asset_id}/versions/{version_id}"
-        response = await self._get(UGC_DISCOVERY_URL, endpoint)
-        return resp.UgcGameVariantResponse(response)
+        return await self._get(UGC_DISCOVERY_URL, endpoint)
 
     async def get_map_mode_pair(
         self,
         asset_id: str | UUID,
         version_id: str | UUID,
         clearance_id: str | None = None,
-    ) -> resp.MapModePairResponse:
+    ) -> ClientResponse:
         """Get details about a map mode pair.
 
         Args:
@@ -181,12 +165,11 @@ class HaloInfiniteClient:
         params = None
         if clearance_id is not None:
             params = {"clearanceId": clearance_id}
-        response = await self._get(UGC_DISCOVERY_URL, endpoint, params=params)
-        return resp.MapModePairResponse(response)
+        return await self._get(UGC_DISCOVERY_URL, endpoint, params=params)
 
     async def get_map(
         self, asset_id: str | UUID, version_id: str | UUID
-    ) -> resp.MapResponse:
+    ) -> ClientResponse:
         """Get details about a map.
 
         Args:
@@ -197,15 +180,14 @@ class HaloInfiniteClient:
             The map details.
         """
         endpoint = f"/hi/maps/{asset_id}/versions/{version_id}"
-        response = await self._get(UGC_DISCOVERY_URL, endpoint)
-        return resp.MapResponse(response)
+        return await self._get(UGC_DISCOVERY_URL, endpoint)
 
     async def get_playlist(
         self,
         asset_id: str | UUID,
         version_id: str | UUID,
         clearance_id: str | None = None,
-    ) -> resp.PlaylistResponse:
+    ) -> ClientResponse:
         """Get details about a playlist.
 
         Args:
@@ -220,5 +202,4 @@ class HaloInfiniteClient:
         params = None
         if clearance_id is not None:
             params = {"clearanceId": clearance_id}
-        response = await self._get(UGC_DISCOVERY_URL, endpoint, params=params)
-        return resp.PlaylistResponse(response)
+        return await self._get(UGC_DISCOVERY_URL, endpoint, params=params)

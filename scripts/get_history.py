@@ -12,7 +12,7 @@ from aiohttp import ClientSession
 
 from spnkr.auth import AzureApp, refresh_player_tokens
 from spnkr.client import HaloInfiniteClient
-from spnkr.parsers.flat_dict.parser import FlatDictParser
+from spnkr.parsers.flat_dict import parse_match_history
 from spnkr.xuid import XUID
 
 dotenv.load_dotenv()
@@ -21,7 +21,6 @@ REFRESH_TOKEN = os.environ["SPNKR_REFRESH_TOKEN"]
 CLIENT_ID = os.environ["SPNKR_CLIENT_ID"]
 CLIENT_SECRET = os.environ["SPNKR_CLIENT_SECRET"]
 REDIRECT_URI = os.environ["SPNKR_REDIRECT_URI"]
-PARSER = FlatDictParser()
 
 
 async def iter_matches(
@@ -33,7 +32,7 @@ async def iter_matches(
     while count == 25:
         print(start)
         response = await client.get_match_history(xuid, start, count)
-        history = await PARSER.parse_match_history(response)
+        history = parse_match_history(await response.json())
         for match in history:
             yield match
         count = len(history)

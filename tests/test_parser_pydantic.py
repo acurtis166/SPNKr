@@ -1,106 +1,73 @@
 import json
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 from uuid import UUID
 
 import pytest
 
-from spnkr import responses as resp
-from spnkr.parsers.pydantic import PydanticParser
+from spnkr.parsers import pydantic as pp
 
 RESPONSES = Path("tests/responses")
 
 
-class MockClientResponse:
-    def __init__(self, data: dict) -> None:
-        self.data = data
-
-    async def json(self, loads: Callable | None = None) -> dict[str, Any]:
-        return self.data
+def load_response(name: str) -> Any:
+    with open(RESPONSES / f"{name}.json") as f:
+        return json.load(f)
 
 
-def load_response(file_name: str) -> MockClientResponse:
-    with open(RESPONSES / f"{file_name}.json") as f:
-        data = json.load(f)
-    return MockClientResponse(data)
-
-
-@pytest.fixture
-def parser():
-    return PydanticParser()
-
-
-@pytest.mark.asyncio
-async def test_parse_match_skill(parser: PydanticParser):
-    client_response = load_response("get_match_skill")
-    response = resp.MatchSkillResponse(client_response)
-    result = await parser.parse_match_skill(response)
+def test_parse_match_skill():
+    data = load_response("get_match_skill")
+    result = pp.MatchSkill(**data)
     assert result.value[0].id == "xuid(2535445291321133)"
 
 
-@pytest.mark.asyncio
-async def test_parse_playlist_csv(parser: PydanticParser):
-    client_response = load_response("get_playlist_csr")
-    response = resp.PlaylistCsrResponse(client_response)
-    result = await parser.parse_playlist_csr(response)
+def test_parse_playlist_csr():
+    data = load_response("get_playlist_csr")
+    result = pp.PlaylistCsr(**data)
     assert result.value[0].id == "xuid(2535445291321133)"
 
 
-@pytest.mark.asyncio
-async def test_parse_match_count(parser: PydanticParser):
-    client_response = load_response("get_match_count")
-    response = resp.MatchCountResponse(client_response)
-    result = await parser.parse_match_count(response)
+def test_parse_match_count():
+    data = load_response("get_match_count")
+    result = pp.MatchCount(**data)
     assert result.matchmade_matches_played_count == 729
 
 
-@pytest.mark.asyncio
-async def test_parse_match_history(parser: PydanticParser):
-    client_response = load_response("get_match_history")
-    response = resp.MatchHistoryResponse(client_response)
-    result = await parser.parse_match_history(response)
+def test_parse_match_history():
+    data = load_response("get_match_history")
+    result = pp.MatchHistory(**data)
     expected = UUID("a1219f5c-5942-4cd5-9ff1-4b6ea89905bc")
     assert result.results[0].match_id == expected
 
 
-@pytest.mark.asyncio
-async def test_parse_match_stats(parser: PydanticParser):
-    client_response = load_response("get_match_stats")
-    response = resp.MatchStatsResponse(client_response)
-    result = await parser.parse_match_stats(response)
+def test_parse_match_stats():
+    data = load_response("get_match_stats")
+    result = pp.MatchStats(**data)
     expected = UUID("6f050134-bede-47bc-a6df-eeafdcb9f97f")
     assert result.match_id == expected
 
 
-@pytest.mark.asyncio
-async def test_parse_game_variant(parser: PydanticParser):
-    client_response = load_response("get_ugc_game_variant")
-    response = resp.UgcGameVariantResponse(client_response)
-    result = await parser.parse_game_variant(response)
+def test_parse_game_variant():
+    data = load_response("get_ugc_game_variant")
+    result = pp.UgcGameVariant(**data)
     assert result.public_name == "Fiesta:Slayer"
 
 
-@pytest.mark.asyncio
-async def test_parse_map_mode_pair(parser: PydanticParser):
-    client_response = load_response("get_map_mode_pair")
-    response = resp.MapModePairResponse(client_response)
-    result = await parser.parse_map_mode_pair(response)
+def test_parse_map_mode_pair():
+    data = load_response("get_map_mode_pair")
+    result = pp.MapModePair(**data)
     assert result.public_name == "Arena:Shotty Snipes Slayer on Catalyst"
 
 
-@pytest.mark.asyncio
-async def test_parse_map(parser: PydanticParser):
-    client_response = load_response("get_map")
-    response = resp.MapResponse(client_response)
-    result = await parser.parse_map(response)
+def test_parse_map():
+    data = load_response("get_map")
+    result = pp.Map(**data)
     assert result.public_name == "Forge Space"
 
 
-@pytest.mark.asyncio
-async def test_parse_playlist(parser: PydanticParser):
-    client_response = load_response("get_playlist")
-    response = resp.PlaylistResponse(client_response)
-    result = await parser.parse_playlist(response)
+def test_parse_playlist():
+    data = load_response("get_playlist")
+    result = pp.Playlist(**data)
     assert result.public_name == "Ranked Arena"
 
 

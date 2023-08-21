@@ -1,7 +1,5 @@
 """Test the SPNKR API client."""
 
-import json
-
 import pytest
 
 from spnkr.client import HaloInfiniteClient
