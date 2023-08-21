@@ -19,7 +19,7 @@ requires-python = '>=3.11'
 dynamic = ['version']
 
 [project.optional-dependencies]
-dev = ['pytest', 'pytest-asyncio', 'pydantic', 'dotenv']
+dev = ['pytest', 'pytest-asyncio', 'pydantic', 'python-dotenv']
 parsing = ['pydantic']
 
 [project.urls]
