@@ -2,7 +2,7 @@
 
 from pydantic import Field
 
-from ..refdata import SkillResultCode, SubTier, Team, Tier
+from ..refdata import SkillResultCode, SubTier, Tier
 from .base import PascalCaseModel
 
 
@@ -64,8 +64,8 @@ class MatchSkillResult(PascalCaseModel):
     team_mmr: float
     rank_recap: RankRecap
     stat_performances: StatPerformances
-    team_id: Team
-    team_mmrs: dict[Team, float]
+    team_id: int
+    team_mmrs: dict[int, float]
     ranked_rewards: None
     counterfactuals: Counterfactuals
 

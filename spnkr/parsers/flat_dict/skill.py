@@ -1,6 +1,6 @@
 from typing import Any
 
-from ..refdata import SkillResultCode, Team
+from ..refdata import SkillResultCode
 
 
 def parse_match_skill(match_skill: dict[str, Any]) -> list[dict[str, Any]]:
@@ -15,7 +15,7 @@ def _parse_match_skill_value(
     return {
         "xuid": msv["Id"],
         "result_code": SkillResultCode(result["ResultCode"]),
-        "team_id": Team(result["TeamId"]),
+        "team_id": result["TeamId"],
         "team_mmr": result["TeamMmr"],
         "pre_match_csr": result["RankRecap"]["PreMatchCsr"]["Value"],
         "post_match_csr": result["RankRecap"]["PostMatchCsr"]["Value"],

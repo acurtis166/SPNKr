@@ -11,7 +11,6 @@ from ..refdata import (
     Outcome,
     PlayerType,
     PlaylistExperience,
-    Team,
 )
 from .base import PascalCaseModel
 
@@ -39,10 +38,10 @@ class MatchInfo(PascalCaseModel):
     map_variant: Asset
     ugc_game_variant: Asset
     clearance_id: UUID
-    playlist: Asset
-    playlist_experience: PlaylistExperience
-    playlist_map_mode_pair: Asset
-    season_id: str
+    playlist: Asset | None
+    playlist_experience: PlaylistExperience | None
+    playlist_map_mode_pair: Asset | None
+    season_id: str | None
     playable_duration: dt.timedelta
     teams_enabled: bool
     team_scoring_enabled: bool
@@ -51,7 +50,7 @@ class MatchInfo(PascalCaseModel):
 class MatchHistoryResult(PascalCaseModel):
     match_id: UUID
     match_info: MatchInfo
-    last_team_id: Team
+    last_team_id: int
     outcome: Outcome
     rank: int = Field(ge=1)
     present_at_end_of_match: bool
@@ -79,7 +78,7 @@ class CoreStats(PascalCaseModel):
     kills: int
     deaths: int
     assists: int
-    kda: float
+    kda: float = Field(alias="KDA")
     suicides: int
     betrayals: int
     average_life_duration: dt.timedelta
@@ -197,7 +196,7 @@ class Stats(PascalCaseModel):
 
 
 class TeamStats(PascalCaseModel):
-    team_id: Team
+    team_id: int
     outcome: Outcome
     rank: int = Field(ge=1)
     stats: Stats
@@ -219,7 +218,7 @@ class ParticipationInfo(PascalCaseModel):
 
 
 class PlayerTeamStats(PascalCaseModel):
-    team_id: Team
+    team_id: int
     stats: Stats
 
 
@@ -227,7 +226,7 @@ class PlayerStats(PascalCaseModel):
     player_id: str
     player_type: PlayerType
     bot_attributes: BotAttributes | None
-    last_team_id: Team
+    last_team_id: int
     outcome: Outcome
     rank: int = Field(ge=1)
     participation_info: ParticipationInfo

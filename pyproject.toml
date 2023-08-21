@@ -14,12 +14,13 @@ classifiers = [
     'Programming Language :: Python :: 3',
 ]
 keywords = ['halo', 'infinite', 'api']
-dependencies = ['orjson', 'requests', 'python-dateutil']
-requires-python = '>=3.10'
+dependencies = ['aiohttp']
+requires-python = '>=3.11'
 dynamic = ['version']
 
 [project.optional-dependencies]
-dev = ['pytest']
+dev = ['pytest', 'pytest-asyncio', 'pydantic', 'dotenv']
+parsing = ['pydantic']
 
 [project.urls]
 Homepage = 'https://github.com/acurtis166/spnkr'

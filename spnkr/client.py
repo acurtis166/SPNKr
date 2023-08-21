@@ -25,6 +25,7 @@ class HaloInfiniteClient:
         session: The aiohttp session to use.
         spartan_token: The Spartan token used to authenticate with the API.
         clearance_token: The clearance token used to authenticate with the API.
+        raise_for_status: Whether to raise an exception when a request fails.
     """
 
     session: ClientSession

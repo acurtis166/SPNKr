@@ -40,6 +40,7 @@ class GameVariantCategory(IntEnum):
     ODDBALL = 18
     STOCKPILE = 19
     JUGGERNAUT = 20
+    GVC_22 = 22  # TODO: What is this?
     ESCORT = 23
     GUN_GAME = 24
     GRIFFBALL = 25
@@ -83,12 +84,6 @@ class SubTier(IntEnum):
     FOUR = 4
     FIVE = 5
     SIX = 6
-
-
-class Team(IntEnum):
-    # TODO: Check if these are correct and add missing ones
-    EAGLE = 0
-    COBRA = 1
 
 
 class Tier(StrEnum):

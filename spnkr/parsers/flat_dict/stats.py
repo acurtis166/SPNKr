@@ -7,7 +7,6 @@ from ..refdata import (
     LifecycleMode,
     Outcome,
     PlayerType,
-    Team,
 )
 
 
@@ -29,7 +28,7 @@ def parse_team_core_stats(match_stats: dict[str, Any]) -> list[dict[str, Any]]:
     for team in match_stats["Teams"]:
         entry = {
             "match_id": match_stats["MatchId"],
-            "team_id": Team(team["TeamId"]),
+            "team_id": team["TeamId"],
             "outcome": Outcome(team["Outcome"]),
             "rank": team["Rank"],
         }
@@ -51,21 +50,23 @@ def parse_player_core_stats(
     out = []
     for player in match_stats["Players"]:
         participation = player["ParticipationInfo"]
-        bot_attributes = player["BotAttributes"] or {}
-        difficulty = BotDifficulty(bot_attributes.get("Difficulty"))
+        bot_attributes = player["BotAttributes"]
+        difficulty = None
+        if bot_attributes is not None:
+            difficulty = BotDifficulty(bot_attributes["Difficulty"])
         for team in player["PlayerTeamStats"]:
             entry = {
                 "match_id": match_stats["MatchId"],
                 "player_id": player["PlayerId"],
                 "player_type": PlayerType(player["PlayerType"]),
                 "bot_difficulty": difficulty,
-                "last_team_id": Team(player["LastTeamId"]),
+                "last_team_id": player["LastTeamId"],
                 "outcome": Outcome(player["Outcome"]),
                 "rank": player["Rank"],
                 "present_at_beginning": participation["PresentAtBeginning"],
                 "present_at_completion": participation["PresentAtCompletion"],
                 "time_played": _parse_iso_duration(participation["TimePlayed"]),
-                "team_id": Team(team["TeamId"]),
+                "team_id": team["TeamId"],
             }
             entry.update(_parse_core_stats(team["Stats"]["CoreStats"]))
             out.append(entry)
@@ -76,17 +77,17 @@ def parse_player_medals(match_stats: dict[str, Any]) -> list[dict[str, Any]]:
     out = []
     for player in match_stats["Players"]:
         for team in player["PlayerTeamStats"]:
-            for medal in team["Stats"]["MedalStats"]:
+            for medal in team["Stats"]["CoreStats"]["Medals"]:
                 out.append(
                     {
                         "match_id": match_stats["MatchId"],
                         "player_id": player["PlayerId"],
-                        "team_id": Team(team["TeamId"]),
+                        "team_id": team["TeamId"],
                         "name_id": medal["NameId"],
                         "count": medal["Count"],
                     }
                 )
-    return []
+    return out
 
 
 def _parse_match_history_result(result: dict[str, Any]) -> dict[str, Any]:
@@ -94,7 +95,7 @@ def _parse_match_history_result(result: dict[str, Any]) -> dict[str, Any]:
     return {
         "match_id": result["MatchId"],
         **_parse_match_info(info),
-        "last_team_id": Team(result["LastTeamId"]),
+        "last_team_id": result["LastTeamId"],
         "outcome": Outcome(result["Outcome"]),
         "rank": result["Rank"],
         "present_at_end_of_match": result["PresentAtEndOfMatch"],
@@ -102,6 +103,16 @@ def _parse_match_history_result(result: dict[str, Any]) -> dict[str, Any]:
 
 
 def _parse_match_info(info: dict[str, Any]) -> dict[str, Any]:
+    playlist = info["Playlist"]
+    playlist_asset_id = playlist_version_id = None
+    if playlist is not None:
+        playlist_asset_id = playlist["AssetId"]
+        playlist_version_id = playlist["VersionId"]
+    map_mode = info["PlaylistMapModePair"]
+    map_mode_asset_id = map_mode_version_id = None
+    if map_mode is not None:
+        map_mode_asset_id = map_mode["AssetId"]
+        map_mode_version_id = map_mode["VersionId"]
     return {
         "start_time": dt.datetime.fromisoformat(info["StartTime"]),
         "end_time": dt.datetime.fromisoformat(info["EndTime"]),
@@ -115,13 +126,11 @@ def _parse_match_info(info: dict[str, Any]) -> dict[str, Any]:
         "map_version_id": info["MapVariant"]["VersionId"],
         "game_variant_asset_id": info["UgcGameVariant"]["AssetId"],
         "game_variant_version_id": info["UgcGameVariant"]["VersionId"],
-        # TODO: Playlist can be null
-        "playlist_asset_id": info["Playlist"]["AssetId"],
-        "playlist_version_id": info["Playlist"]["VersionId"],
-        # TODO: PlaylistMapModePair can be null
-        "map_mode_pair_asset_id": info["PlaylistMapModePair"]["AssetId"],
-        "map_mode_pair_version_id": info["PlaylistMapModePair"]["VersionId"],
-        "season_id": info["SeasonId"],
+        "playlist_asset_id": playlist_asset_id,
+        "playlist_version_id": playlist_version_id,
+        "map_mode_pair_asset_id": map_mode_asset_id,
+        "map_mode_pair_version_id": map_mode_version_id,
+        "season_id": info.get("SeasonId"),
         "playable_duration": _parse_iso_duration(info["PlayableDuration"]),
     }
 

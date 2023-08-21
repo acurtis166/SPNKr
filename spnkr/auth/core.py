@@ -5,7 +5,7 @@ from aiohttp import ClientSession
 from ..xuid import XUID
 from . import app, halo, oauth, player, xbox
 
-# XSTS_V3_XBOX_AUDIENCE = "http://xboxlive.com"
+XSTS_V3_XBOX_AUDIENCE = "http://xboxlive.com"
 XSTS_V3_HALO_AUDIENCE = "https://prod.xsts.halowaypoint.com/"
 
 
@@ -47,9 +47,9 @@ async def refresh_player_tokens(
     user_token = await xbox.request_user_token(
         session, oauth_token.access_token
     )
-    # xsts = await request_xsts_token(
-    #     session, user.token, XSTS_V3_XBOX_AUDIENCE
-    # )
+    xsts_token = await xbox.request_xsts_token(
+        session, user_token.token, XSTS_V3_XBOX_AUDIENCE
+    )
     halo_xsts_token = await xbox.request_xsts_token(
         session, user_token.token, XSTS_V3_HALO_AUDIENCE
     )
@@ -60,8 +60,8 @@ async def refresh_player_tokens(
         session, spartan_token.token
     )
     return player.AuthenticatedPlayer(
-        xuid=XUID(halo_xsts_token.xuid),
-        gamertag=halo_xsts_token.gamertag,
+        xuid=XUID(xsts_token.xuid),
+        gamertag=xsts_token.gamertag,
         spartan_token=spartan_token,
         clearance_token=clearance_token,
     )

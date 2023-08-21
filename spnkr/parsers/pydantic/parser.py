@@ -32,14 +32,11 @@ class _Response(Protocol):
 async def _parse_response(
     resp: _Response,
     model: type[T],
-    validate: bool,
-    json_loads: Callable | None = None,
+    json_loads: Callable | None = None
 ) -> T:
     """Parse a response into a pydantic model."""
     data = await resp.json(json_loads)
-    if validate:
-        return model(**data)
-    return model.model_construct(values=data)
+    return model(**data)
 
 
 @dataclass(frozen=True)
@@ -53,13 +50,12 @@ class PydanticParser:
             is passed, the default `json.loads` will be used.
     """
 
-    validate: bool = False
     json_loads: Callable | None = None
 
     async def parse_match_skill(self, resp: MatchSkillResponse) -> MatchSkill:
         """Parse a "get match skill" response into a pydantic model."""
         return await _parse_response(
-            resp, MatchSkill, self.validate, self.json_loads
+            resp, MatchSkill, self.json_loads
         )
 
     async def parse_playlist_csr(
@@ -67,13 +63,13 @@ class PydanticParser:
     ) -> PlaylistCsr:
         """Parse a "get playlist CSR" response into a pydantic model."""
         return await _parse_response(
-            resp, PlaylistCsr, self.validate, self.json_loads
+            resp, PlaylistCsr, self.json_loads
         )
 
     async def parse_match_count(self, resp: MatchCountResponse) -> MatchCount:
         """Parse a "get match count" response into a pydantic model."""
         return await _parse_response(
-            resp, MatchCount, self.validate, self.json_loads
+            resp, MatchCount, self.json_loads
         )
 
     async def parse_match_history(
@@ -81,13 +77,13 @@ class PydanticParser:
     ) -> MatchHistory:
         """Parse a "get match history" response into a pydantic model."""
         return await _parse_response(
-            resp, MatchHistory, self.validate, self.json_loads
+            resp, MatchHistory, self.json_loads
         )
 
     async def parse_match_stats(self, resp: MatchStatsResponse) -> MatchStats:
         """Parse a "get match stats" response into a pydantic model."""
         return await _parse_response(
-            resp, MatchStats, self.validate, self.json_loads
+            resp, MatchStats, self.json_loads
         )
 
     async def parse_game_variant(
@@ -95,7 +91,7 @@ class PydanticParser:
     ) -> UgcGameVariant:
         """Parse a "get UGC game variant" response into a pydantic model."""
         return await _parse_response(
-            resp, UgcGameVariant, self.validate, self.json_loads
+            resp, UgcGameVariant, self.json_loads
         )
 
     async def parse_map_mode_pair(
@@ -103,15 +99,15 @@ class PydanticParser:
     ) -> MapModePair:
         """Parse a "get map mode pair" response into a pydantic model."""
         return await _parse_response(
-            resp, MapModePair, self.validate, self.json_loads
+            resp, MapModePair, self.json_loads
         )
 
     async def parse_map(self, resp: MapResponse) -> Map:
         """Parse a "get map" response into a pydantic model."""
-        return await _parse_response(resp, Map, self.validate, self.json_loads)
+        return await _parse_response(resp, Map, self.json_loads)
 
     async def parse_playlist(self, resp: PlaylistResponse) -> Playlist:
         """Parse a "get playlist" response into a pydantic model."""
         return await _parse_response(
-            resp, Playlist, self.validate, self.json_loads
+            resp, Playlist, self.json_loads
         )
