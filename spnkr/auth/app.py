@@ -1,4 +1,4 @@
-"""An Azure AD application."""
+"""An Azure Active Directory (Azure AD) application."""
 
 from dataclasses import dataclass
 
@@ -12,11 +12,15 @@ class AzureApp:
     application.
 
     Attributes:
-        client_id (str): The client ID of the application.
-        client_secret (str): The client secret of the application.
-        redirect_uri (str): The redirect URI of the application.
+        client_id: The client ID of the application.
+        client_secret: The client secret of the application.
+        redirect_uri: The redirect URI of the application. Defaults to
+            "https://localhost".
     """
 
     client_id: str
+    """The client ID of the application."""
     client_secret: str
+    """The client secret of the application."""
     redirect_uri: str = "https://localhost"
+    """The redirect URI of the application."""

@@ -1,3 +1,5 @@
+"""Base classes for Pydantic models."""
+
 from pydantic import BaseModel
 
 
@@ -13,12 +15,16 @@ def _to_pascal_case(string: str) -> str:
 
 
 class CamelCaseModel(BaseModel):
+    """A Pydantic model that uses camelCase for its field names."""
+
     class Config:
         alias_generator = _to_camel_case
         populate_by_name = True
 
 
 class PascalCaseModel(BaseModel):
+    """A Pydantic model that uses PascalCase for its field names."""
+
     class Config:
         alias_generator = _to_pascal_case
         populate_by_name = True

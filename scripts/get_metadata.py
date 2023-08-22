@@ -12,7 +12,7 @@ from aiohttp import ClientSession
 
 from spnkr.auth import AzureApp, refresh_player_tokens
 from spnkr.client import HaloInfiniteClient
-from spnkr.parsers.records import parse_asset, parse_medal_metadata
+from spnkr.parsers.records import AssetRecord, parse_asset, parse_medal_metadata
 
 dotenv.load_dotenv()
 
@@ -24,7 +24,7 @@ REDIRECT_URI = os.environ["SPNKR_REDIRECT_URI"]
 
 async def get_asset(
     getter: Callable[[str, str], Coroutine], asset_id: str, version_id: str
-) -> dict:
+) -> AssetRecord:
     response = await getter(asset_id, version_id)
     return parse_asset(await response.json())
 

@@ -10,123 +10,106 @@ Authentication requires some preliminary work:
 1. Go to "Certificates & secrets" for your app to create a client secret.
 1. Save your app's client id, client secret, and redirect URI information.
 
-
 ## Dependencies
 
-- Python >= 3.10
-- Libraries:
-    - requests for making HTTP requests
-    - ms_cv for including a correlation vector header for requests to Microsoft
-    - orjson for speedy JSON deserialization
-    - pytest for unit testing
-    - python-dateutil for parsing isoformat datetime strings
-
+- Python >= 3.11
+- Required Packages:
+    - `aiohttp` for making HTTP requests
+- Optional Packages:
+    - `pydantic` for using provided Pydantic models to parse reponses
+    - `pytest` for unit testing
+    - `pytest-asyncio` for unit testing
 
 ## Getting Started
 
-Install
+### Install
+
+Basic
 ```
 pip install spnkr
 ```
 
-Example Usage
-```python
-"""Example usage of the library."""
-
-import pathlib
-import requests
-
-from spnkr.api.client import Client
-from spnkr.api.enums import PlayerType
-from spnkr.authentication.manager import AuthenticationManager
-from spnkr.authentication.models import OAuth2TokenResponse
-
-
-def main():
-    # Where the OAuth token should be/is saved
-    oauth_token_file = pathlib.Path('path/to/token.json')
-
-    # Azure AD app information
-    client_id = 'YOUR CLIENT ID'
-    client_secret = 'YOUR CLIENT SECRET'
-    redirect_uri = 'http://localhost'
-
-    with requests.session() as sess:
-        auth_mgr = AuthenticationManager(sess, client_id, client_secret, redirect_uri)
-        client = Client(auth_mgr)
-
-        if oauth_token_file.exists():
-            print('Refreshing tokens')
-            auth_mgr.oauth = OAuth2TokenResponse.parse_json(oauth_token_file.read_text())
-            auth_mgr.refresh_tokens()
-        else:
-            print('Requesting tokens')
-            auth_url = auth_mgr.generate_authorization_url()
-            print(auth_url)
-            print('Navigate to the above URL and copy the "code" parameter from the query string.')
-            code = input('Enter the code...')
-            auth_mgr.request_tokens(code)
-            oauth_token_file.mkdir(parents=True)
-
-        # Save the token for later
-        with oauth_token_file.open('w') as fp:
-            fp.write(auth_mgr.oauth.to_json())
-
-        # Get your Xbox Live ID (xuid)
-        your_xbox_live_id = auth_mgr.xsts_token.xuid
-
-        # Get your most recent 25 match summaries
-        matches = client.stats.get_match_history(your_xbox_live_id)
-        match = matches.results[0]  # most recent
-
-        # Get match map/playlist/game variant
-        map_variant = client.ugc_discovery.get_map(match.match_info.map_variant.asset_id,
-                                                   match.match_info.map_variant.version_id)
-        playlist = client.ugc_discovery.get_playlist(match.match_info.playlist.asset_id,
-                                                     match.match_info.playlist.version_id)
-        game_variant = client.ugc_discovery.get_ugc_game_variant(
-            match.match_info.ugc_game_variant.asset_id,
-            match.match_info.ugc_game_variant.version_id
-        )
-        print('Map | Game Type | Playlist')
-        print(map_variant.public_name, '|', game_variant.public_name, '|', playlist.public_name)
-
-        # Get match stats
-        stats = client.stats.get_match_stats(match.match_id)
-        print('Player | Kills | Deaths')
-        for player in stats.players:
-            core_stats = player.player_team_stats[0].stats.core_stats
-            print(player.player_id, '|', core_stats.kills, '|', core_stats.deaths)
-
-        # Get all the human players from the match
-        player_ids = [p.player_id for p in stats.players if p.player_type == PlayerType.Human]
-
-        # Get skill info (if applicable)
-        try:
-            skill = client.skill.get_match_result(match.match_id, player_ids)
-        except requests.HTTPError:
-            print(f'No skill info available for match {match.match_id}')
-            exit()
-
-        # Print out CSRs
-        print('Player | Pre-Match CSR | Post-Match CSR')
-        for entry in skill.value:
-            print(entry.id, '|', entry.result.rank_recap.pre_match_csr, '|',
-                  entry.result.rank_recap.post_match_csr)
-
-
-if __name__ == '__main__':
-    main()
+Include Pydantic parsing functionality
+```
+pip install spnkr[pydantic]
 ```
 
+All optional packages
+```
+pip install spnkr[dev]
+```
+
+### Example Usage
+
+See [scripts](https://github.com/acurtis166/spnkr/tree/master/scripts) for authentication and usage examples.
+
+Note that in order to run all scripts without modification, you will need to install additional packages (`pandas`, `python-dotenv`, and `aiofiles`).
+
+1. Create your Azure Active Directory application as described above.
+1. Store your client ID, client secret, and redirect URI values for the application. The solution provided in the example scripts uses a `.env` file to store the values and loads them in using [python-dotenv](https://pypi.org/project/python-dotenv/).
+1. Retrieve an OAuth2 refresh token by performing the initial authentication (see `scripts/authenticate.py`). Store this with your other configuration values.
+1. You can now refresh tokens to obtain a spartan token and clearance token for authorization at the API endpoints.
+1. Initialize a `spnkr.client.HaloInfiniteClient` with the tokens and begin making requests as shown in the example scripts.
+
+### Parsing
+
+Client methods return raw [ClientResponse](https://docs.aiohttp.org/en/stable/client_reference.html#response-object) objects. It is up to the user to parse the JSON content. Two parsing strategies are provided in the `spnkr.parsers` module, pydantic and records.
+
+Pydantic parsing provides Pydantic models that can be used to parse the deserialized JSON. The models are mostly complete representations of the source schema. This makes them fully functional for any use case, but the data structure might be cumbersome if you just want to grabs kill and death counts.
+
+```python
+# Import the appropriate model
+from spnkr.parsers.pydantic import MatchHistory
+
+# Make the client request
+response = client.get_match_history("xuid(123)")
+
+# Deserialize the JSON response
+data = await response.json()
+
+# Initialize the Pydantic model
+history = MatchHistory(**data)
+
+most_recent = history.results[0]
+print(f"Last match played on {most_recent.match_info.start_time:%Y-%m-%d %H:%M}")
+```
+
+Record parsing uses functions to parse the JSON responses into flat, record-like named tuples. They aren't as complete as the Pydantic models, but they are likely more convenient if you want to load them into a `pandas.DataFrame` or dump them to files/databases.
+
+```python
+# Import the appropriate parsing function(s)
+from spnkr.parsers.records import parse_match_history
+
+# Make the client request
+response = client.get_match_history("xuid(123)")
+
+# Deserialize the JSON response
+data = await response.json()
+
+# Parse to records
+history = parse_match_history(data)
+
+most_recent = history[0]
+print(f"Last match played on {most_recent.start_time:%Y-%m-%d %H:%M}")
+```
+
+If you would prefer to parse the responses yourself, check out example responses in the [tests/responses](https://github.com/acurtis166/spnkr/tree/master/tests/responses) folder.
+
+Due to incomplete test data, some enumerated data types may be incomplete. If you encounter one of these, please submit an issue or pull request.
+
+### Profile Information
+
+Note that no functionality is available in this project to look up profile information, such as gamertags, using player ids (XUIDs). This was determined to be outside the scope of the project. However, if you are interested in looking up profile information, check out the following resources:
+
+- [OpenXbox/xbox-webapi-python](https://github.com/OpenXbox/xbox-webapi-python) is a Python package for interacting with the Xbox Live API.
+- [Batch Profile POST](https://learn.microsoft.com/en-us/gaming/gdk/_content/gc/reference/live/rest/uri/profilev2/uri-usersbatchprofilesettingspost) is an Xbox Live API endpoint that allows you to submit a batch of XUIDs and receive profile information. If you would like to make the profile requests yourself, you can grab the Xbox Live API "Authorization" header value from the `AuthenticatedPlayer` object that is returned from the `refresh_player_tokens()` function call. The attribute name is `xbl_authorization_header_value`.
 
 ## Credits
 
-- Xbox authentication, profile endpoints: [OpenXbox/xbox-webapi-python](https://github.com/OpenXbox/xbox-webapi-python)
+- Xbox authentication [OpenXbox/xbox-webapi-python](https://github.com/OpenXbox/xbox-webapi-python)
 - Halo Infinite authentication [Den Delimarsky](https://den.dev/blog/halo-api-authentication)
 - Halo Infinite endpoints, schema, enumerated data types [OpenSpartan/grunt](https://github.com/OpenSpartan/grunt)
 - Microsoft/343 Industries
-
 
 ## Disclaimer
 

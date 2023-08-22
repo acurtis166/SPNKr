@@ -5,30 +5,40 @@ from typing import Any
 
 from aiohttp import ClientSession
 
-from ..xuid import XUID
+from ..xuid import wrap_xuid
 
 
 @dataclass(frozen=True)
 class XAUResponse:
-    """Represents the response from an Xbox user request."""
+    """Represents the response from an Xbox user request.
+
+    Attributes:
+        raw: The raw, deserialized JSON response.
+    """
 
     raw: dict[str, Any]
+    """The raw, deserialized JSON response."""
 
     @property
     def token(self) -> str:
-        """The Xbox user token."""
+        """The Xbox user token value."""
         return self.raw["Token"]
 
 
 @dataclass(frozen=True)
 class XSTSResponse:
-    """Represents the response from an XSTS token request."""
+    """Represents the response from an XSTS token request.
+
+    Attributes:
+        raw: The raw, deserialized JSON response.
+    """
 
     raw: dict[str, Any]
+    """The raw, deserialized JSON response."""
 
     @property
     def token(self) -> str:
-        """The XSTS token."""
+        """The XSTS token value."""
         return self.raw["Token"]
 
     @property
@@ -37,16 +47,26 @@ class XSTSResponse:
         return self.raw["DisplayClaims"]["xui"][0]
 
     @property
-    def xuid(self) -> XUID:
+    def xuid(self) -> str:
         """The ID of the authenticated user."""
         # TODO: This isn't always available.
-        return XUID(self.xui["xid"])
+        return wrap_xuid(self.xui["xid"])
+
+    @property
+    def userhash(self) -> str:
+        """The user hash of the user. Used for XBL authentication."""
+        return self.xui["uhs"]
 
     @property
     def gamertag(self) -> str:
         """The gamertag of the authenticated user."""
         # TODO: This isn't always available.
         return self.xui["gtg"]
+
+    @property
+    def authorization_header_value(self) -> str:
+        """The value passed in the Authorization header for XBL requests."""
+        return f"XBL3.0 x={self.userhash};{self.token}"
 
 
 async def request_user_token(

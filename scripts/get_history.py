@@ -4,7 +4,7 @@ import argparse
 import asyncio
 import os
 from pathlib import Path
-from typing import Any, AsyncIterator
+from typing import AsyncIterator
 
 import dotenv
 import pandas as pd
@@ -12,8 +12,7 @@ from aiohttp import ClientSession
 
 from spnkr.auth import AzureApp, refresh_player_tokens
 from spnkr.client import HaloInfiniteClient
-from spnkr.parsers.records import parse_match_history
-from spnkr.xuid import XUID
+from spnkr.parsers.records import MatchHistoryRecord, parse_match_history
 
 dotenv.load_dotenv()
 
@@ -24,8 +23,8 @@ REDIRECT_URI = os.environ["SPNKR_REDIRECT_URI"]
 
 
 async def iter_matches(
-    client: HaloInfiniteClient, xuid: XUID
-) -> AsyncIterator[dict[str, Any]]:
+    client: HaloInfiniteClient, xuid: str | int
+) -> AsyncIterator[MatchHistoryRecord]:
     """Request and yield match history results from the Halo Infinite API."""
     count = 25
     start = 0
@@ -62,8 +61,8 @@ async def main(out_path: Path) -> None:
 
         # Request the player's match history.
         matches = []
-        async for match in iter_matches(client, player.xuid):
-            if most_recent is not None and match["start_time"] <= most_recent:
+        async for match in iter_matches(client, player.player_id):
+            if most_recent is not None and match.start_time <= most_recent:
                 # We've reached the most recent match in the output file.
                 break
             matches.append(match)

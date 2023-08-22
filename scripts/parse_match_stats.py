@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from spnkr.parsers.records import stats
+from spnkr.parsers import records as rp
 
 PLAYER_FILE = "players.csv"
 TEAM_FILE = "teams.csv"
@@ -21,9 +21,9 @@ def main(input_dir: Path, output_dir: Path) -> None:
     for i, file in enumerate(input_dir.glob("*.json")):
         print(f"Processing file number {i + 1:6}", end="\r")
         data = json.loads(file.read_bytes())
-        player_results += stats.parse_player_core_stats(data)
-        team_results += stats.parse_team_core_stats(data)
-        medal_results += stats.parse_player_medals(data)
+        player_results += rp.parse_player_core_stats(data)
+        team_results += rp.parse_team_core_stats(data)
+        medal_results += rp.parse_player_medals(data)
 
     player_df = pd.DataFrame(player_results)
     team_df = pd.DataFrame(team_results)

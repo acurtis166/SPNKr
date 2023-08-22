@@ -12,7 +12,7 @@ from uuid import UUID
 
 from aiohttp import ClientResponse, ClientSession
 
-from .xuid import XUID
+from .xuid import wrap_xuid
 
 GAMECMS_HACS_HOST = "https://gamecms-hacs.svc.halowaypoint.com"
 SKILL_HOST = "https://skill.svc.halowaypoint.com:443"
@@ -58,7 +58,7 @@ class HaloInfiniteClient:
         return await self.session.get(url)
 
     async def get_match_skill(
-        self, match_id: str | UUID, xuids: Iterable[str | int | XUID]
+        self, match_id: str | UUID, xuids: Iterable[str | int]
     ) -> ClientResponse:
         """Get player CSR and team MMR values for a given match and player list.
 
@@ -71,11 +71,11 @@ class HaloInfiniteClient:
             The skill data for the match.
         """
         url = f"{SKILL_HOST}/hi/matches/{match_id}/skill"
-        params = {"players": [XUID.wrap(x) for x in xuids]}
+        params = {"players": [wrap_xuid(x) for x in xuids]}
         return await self.session.get(url, params=params)
 
     async def get_playlist_csr(
-        self, playlist_id: str | UUID, xuids: Iterable[str | int | XUID]
+        self, playlist_id: str | UUID, xuids: Iterable[str | int]
     ) -> ClientResponse:
         """Get player CSR values for a given playlist and player list.
 
@@ -87,10 +87,10 @@ class HaloInfiniteClient:
             The summary CSR data for the players in the given playlist.
         """
         url = f"{SKILL_HOST}/hi/playlist/{playlist_id}/csrs"
-        params = {"players": [XUID.wrap(x) for x in xuids]}
+        params = {"players": [wrap_xuid(x) for x in xuids]}
         return await self.session.get(url, params=params)
 
-    async def get_match_count(self, xuid: str | int | XUID) -> ClientResponse:
+    async def get_match_count(self, xuid: str | int) -> ClientResponse:
         """Get match counts across different game experiences for a player.
 
         The counts returned are for custom matches, matchmade matches, local
@@ -102,12 +102,12 @@ class HaloInfiniteClient:
         Returns:
             The match counts.
         """
-        url = f"{STATS_HOST}/hi/players/{XUID(xuid)}/matches/count"
+        url = f"{STATS_HOST}/hi/players/{wrap_xuid(xuid)}/matches/count"
         return await self.session.get(url)
 
     async def get_match_history(
         self,
-        xuid: str | int | XUID,
+        xuid: str | int,
         start: int = 0,
         count: int = 25,
         match_type: Literal["all", "matchmaking", "custom", "local"] = "all",
@@ -131,7 +131,7 @@ class HaloInfiniteClient:
         Returns:
             The requested match history "page" of results.
         """
-        url = f"{STATS_HOST}/hi/players/{XUID(xuid)}/matches"
+        url = f"{STATS_HOST}/hi/players/{wrap_xuid(xuid)}/matches"
         params = {"start": start, "count": count, "type": match_type}
         return await self.session.get(url, params=params)
 

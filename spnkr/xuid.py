@@ -1,36 +1,41 @@
-"""XUID class for converting Xbox Live IDs to and from strings and integers."""
+"""Convert Xbox Live IDs (XUID) to and from strings and integers."""
 
-from __future__ import annotations
+import re
+
+_PATTERN = re.compile(r"^xuid\((\d+)\)$")
 
 
-class XUID:
-    """Xbox Live user ID.
+def wrap_xuid(value: str | int) -> str:
+    """Wrap a XUID value in the "xuid()" format.
 
-    XUIDs are 64-bit integers that uniquely identify an Xbox Live user.
+    Args:
+        value: The XUID value to wrap.
 
-    Attributes:
-        value: The XUID value as a wrapped string, e.g., "xuid(<value>)".
+    Returns:
+        The wrapped XUID value as a string.
     """
+    value = str(value)
+    if value[0] == "x":
+        return value
+    return f"xuid({value})"
 
-    def __init__(self, value: str | int | XUID) -> None:
-        """Initialize an XUID.
 
-        Args:
-            value: The XUID value as a string, integer, or XUID object.
-        """
-        self.value = self.wrap(value)
+def unwrap_xuid(value: str | int) -> int:
+    """Unwrap a XUID value from the "xuid()" format.
 
-    def __str__(self) -> str:
-        return self.value
+    Args:
+        value: The XUID value to unwrap.
 
-    def as_int(self) -> int:
-        """Return the XUID as an integer."""
-        return int(self.value[5:-1])
+    Raises:
+        ValueError: If the XUID value is invalid.
 
-    @staticmethod
-    def wrap(value: str | int | XUID) -> str:
-        """Wrap an XUID value in the "xuid()" format."""
-        value = str(value)
-        if value[0] == "x":
-            return value
-        return f"xuid({value})"
+    Returns:
+        The unwrapped XUID value as an integer.
+    """
+    if isinstance(value, int) or value.isdigit():
+        return int(value)
+
+    match = _PATTERN.match(value)
+    if not match:
+        raise ValueError(f"Invalid XUID: {value!r}")
+    return int(match.group(1))

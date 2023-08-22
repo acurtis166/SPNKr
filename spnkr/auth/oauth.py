@@ -12,14 +12,18 @@ DEFAULT_SCOPES = ["Xboxlive.signin", "Xboxlive.offline_access"]
 
 
 @dataclass(frozen=True)
-class OAuth2TokenResponse:
+class OAuth2Token:
     """Response resulting from a request for an OAuth2 token.
 
     This is the root token used to authenticate an application. It is used to
     request an XToken, which is used to authenticate a user for Xbox Live.
+
+    Attributes:
+        raw: The raw, deserialized JSON response.
     """
 
     raw: dict[str, Any]
+    """The raw, deserialized JSON response."""
 
     @property
     def access_token(self) -> str:
@@ -28,7 +32,7 @@ class OAuth2TokenResponse:
 
     @property
     def refresh_token(self) -> str:
-        """The refresh token."""
+        """The refresh token used to refresh the access token."""
         return self.raw["refresh_token"]
 
 
@@ -48,14 +52,13 @@ def generate_authorization_url(app: AzureApp) -> str:
         "scope": " ".join(DEFAULT_SCOPES),
         "redirect_uri": app.redirect_uri,
     }
-
     query = urllib.parse.urlencode(params)
     return f"https://login.live.com/oauth20_authorize.srf?{query}"
 
 
 async def request_oauth_token(
     session: ClientSession, authorization_code: str, app: AzureApp
-) -> OAuth2TokenResponse:
+) -> OAuth2Token:
     """Request an OAuth2 token.
 
     Args:
@@ -77,7 +80,7 @@ async def request_oauth_token(
 
 async def refresh_oauth_token(
     session: ClientSession, refresh_token: str, app: AzureApp
-) -> OAuth2TokenResponse:
+) -> OAuth2Token:
     """Refresh an OAuth2 token.
 
     Args:
@@ -98,7 +101,7 @@ async def refresh_oauth_token(
 
 async def _oauth2_token_request(
     session: ClientSession, data: dict[str, str], app: AzureApp
-) -> OAuth2TokenResponse:
+) -> OAuth2Token:
     """Execute an OAuth2 token request."""
     url = "https://login.live.com/oauth20_token.srf"
     request_data = {
@@ -107,4 +110,4 @@ async def _oauth2_token_request(
         "client_secret": app.client_secret,
     }
     async with session.post(url, data=request_data) as resp:
-        return OAuth2TokenResponse(await resp.json())
+        return OAuth2Token(await resp.json())

@@ -15,19 +15,20 @@ class SpartanToken:
     API. The tokens are valid for 4 hours.
 
     Attributes:
-        raw: The raw response from the Halo Infinite API.
+        raw: The raw, deserialized JSON response.
     """
 
     raw: dict[str, Any]
+    """The raw, deserialized JSON response."""
 
     @property
     def token(self) -> str:
-        """The Spartan token."""
+        """The spartan token value."""
         return self.raw["SpartanToken"]
 
     @property
     def expires_at(self) -> dt.datetime:
-        """The datetime at which the Spartan token expires."""
+        """The UTC datetime at which the Spartan token expires."""
         return dt.datetime.fromisoformat(self.raw["ExpiresUtc"]["ISO8601Date"])
 
 
@@ -36,9 +37,13 @@ class ClearanceToken:
     """A Halo Infinite clearance token response.
 
     A clearance token is required for some API endpoints.
+
+    Attributes:
+        raw: The raw, deserialized JSON response.
     """
 
     raw: dict[str, Any]
+    """The raw, deserialized JSON response."""
 
     @property
     def token(self) -> str:

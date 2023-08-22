@@ -41,7 +41,7 @@ def _get_authorization_code(app: app.AzureApp) -> str:
         "Navigate to the above URL and copy the 'code' parameter from the "
         "redirect URL query string in the address bar."
     )
-    return input("Enter the code...")
+    return input("Enter the code...").strip()
 
 
 async def refresh_player_tokens(
@@ -76,8 +76,9 @@ async def refresh_player_tokens(
         session, spartan_token.token
     )
     return player.AuthenticatedPlayer(
-        xuid=xsts_token.xuid,
+        player_id=xsts_token.xuid,
         gamertag=xsts_token.gamertag,
         spartan_token=spartan_token,
         clearance_token=clearance_token,
+        xbl_authorization_header_value=xsts_token.authorization_header_value,
     )
