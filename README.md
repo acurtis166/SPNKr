@@ -113,6 +113,6 @@ Note that no functionality is available in this project to look up profile infor
 
 ## Disclaimer
 
-This software is not endorsed or supported by Microsoft or 343 Industries. It is a personal project with a goal of analyzing Halo Infinite match data.
+This software is not endorsed or supported by Microsoft or 343 Industries. It is a personal project with the goal of analyzing Halo Infinite match data.
 
 As the authentication process requires usage of personal credentials, **use at your own risk** of action by Microsoft or 343 Industries.

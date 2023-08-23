@@ -1,14 +1,6 @@
 # vs code
 .vscode/
 
-# private data
-client.json
-*token.json
-tests/config.py
-cred.txt
-
-####################
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

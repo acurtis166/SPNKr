@@ -29,7 +29,7 @@ async def iter_matches(
     count = 25
     start = 0
     while count == 25:
-        print(start)
+        print(f"Retrieving matches {start + 1} to {start + count}...")
         response = await client.get_match_history(xuid, start, count)
         history = parse_match_history(await response.json())
         for match in history:
@@ -38,15 +38,14 @@ async def iter_matches(
         start += count
 
 
-async def main(out_path: Path) -> None:
+async def main(csv_path: Path) -> None:
     app = AzureApp(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI)
 
     # Get the most recent match in the output file, if it exists.
     # This prevents us from requesting matches we already have.
     old_df = most_recent = None
-    if out_path.exists():
-        assert out_path.suffix == ".csv"
-        old_df = pd.read_csv(out_path)
+    if csv_path.exists():
+        old_df = pd.read_csv(csv_path)
         old_df["start_time"] = pd.to_datetime(old_df["start_time"])
         most_recent = old_df["start_time"].max()
 
@@ -70,13 +69,16 @@ async def main(out_path: Path) -> None:
     new_df = pd.DataFrame(matches)
     if old_df is not None:
         # Combine the old and new datasets.
-        new_df = pd.concat([old_df, new_df])
-    new_df.to_csv(out_path, index=False)
+        new_df = pd.concat([new_df, old_df])
+    new_df.to_csv(csv_path, index=False)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("out_path", type=Path, help="Output file path")
+    parser.add_argument(
+        "csv_path", type=Path, help="Input/output CSV file path"
+    )
     args = parser.parse_args()
+    assert args.csv_path.suffix == ".csv"
 
-    asyncio.run(main(args.out_path))
+    asyncio.run(main(args.csv_path))

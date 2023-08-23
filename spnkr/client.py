@@ -6,11 +6,11 @@ https://settings.svc.halowaypoint.com/settings/hipc/e2a0a7c6-6efe-42af-9283-c2ab
 Additionally inspected the network traffic while navigating Halo Waypoint.
 """
 
-from dataclasses import dataclass
 from typing import Iterable, Literal
 from uuid import UUID
 
 from aiohttp import ClientResponse, ClientSession
+from aiolimiter import AsyncLimiter
 
 from .xuid import wrap_xuid
 
@@ -20,33 +20,53 @@ STATS_HOST = "https://halostats.svc.halowaypoint.com:443"
 UGC_DISCOVERY_HOST = "https://discovery-infiniteugc.svc.halowaypoint.com:443"
 
 
-@dataclass(frozen=True)
+def _create_limiter(rate_per_second: int) -> AsyncLimiter:
+    """Return an AsyncLimiter with the given rate per second."""
+    # Setting the max rate to 1 disallows bursts.
+    return AsyncLimiter(1, 1 / rate_per_second)
+
+
 class HaloInfiniteClient:
-    """A client for the Halo Infinite API.
+    """A client for the Halo Infinite API."""
 
-    Raw `aiohttp` `ClientResponses` are returned from each method. The caller is
-    responsible for handling the response via custom parsing or by using one of
-    the provided parsers from the `spnkr.parsers` module.
+    def __init__(
+        self,
+        session: ClientSession,
+        spartan_token: str,
+        clearance_token: str,
+        requests_per_second: int | None = 5,
+    ) -> None:
+        """Initialize a client for the Halo Infinite API.
 
-    Attributes:
-        session: The aiohttp session to use.
-        spartan_token: The Spartan token used to authenticate with the API.
-        clearance_token: The clearance token used to authenticate with the API.
-    """
+        Raw `aiohttp` `ClientResponses` are returned from each method. The
+        caller is responsible for handling the response via custom parsing or by
+        using one of the provided parsers from the `spnkr.parsers` module.
 
-    session: ClientSession
-    spartan_token: str
-    clearance_token: str
+        Args:
+            session: The aiohttp session to use.
+            spartan_token: The spartan token used to authenticate with the API.
+            clearance_token: The clearance token used to authenticate with the API.
+            requests_per_second: The rate limit to use. Defaults to 5 requests per second.
+                Set to None to disable rate limiting.
+        """
+        self._session = session
+        headers = {
+            "Accept": "application/json",
+            "x-343-authorization-spartan": spartan_token,
+            "343-clearance": clearance_token,
+        }
+        self._session.headers.update(headers)
 
-    def __post_init__(self) -> None:
-        """Set the authorization headers on the session."""
-        self.session.headers.update(
-            {
-                "Accept": "application/json",
-                "x-343-authorization-spartan": self.spartan_token,
-                "343-clearance": self.clearance_token,
-            }
-        )
+        self._rate_limiter = None
+        if requests_per_second is not None:
+            self._rate_limiter = _create_limiter(requests_per_second)
+
+    async def _get(self, url: str, **kwargs) -> ClientResponse:
+        """Make a GET request to the given URL."""
+        if self._rate_limiter is None:
+            return await self._session.get(url, **kwargs)
+        async with self._rate_limiter:
+            return await self._session.get(url, **kwargs)
 
     async def get_medal_metadata(self) -> ClientResponse:
         """Get details for all medals obtainable in the game.
@@ -55,7 +75,7 @@ class HaloInfiniteClient:
             The medal metadata.
         """
         url = f"{GAMECMS_HACS_HOST}/hi/Waypoint/file/medals/metadata.json"
-        return await self.session.get(url)
+        return await self._get(url)
 
     async def get_match_skill(
         self, match_id: str | UUID, xuids: Iterable[str | int]
@@ -72,7 +92,7 @@ class HaloInfiniteClient:
         """
         url = f"{SKILL_HOST}/hi/matches/{match_id}/skill"
         params = {"players": [wrap_xuid(x) for x in xuids]}
-        return await self.session.get(url, params=params)
+        return await self._get(url, params=params)
 
     async def get_playlist_csr(
         self, playlist_id: str | UUID, xuids: Iterable[str | int]
@@ -88,7 +108,7 @@ class HaloInfiniteClient:
         """
         url = f"{SKILL_HOST}/hi/playlist/{playlist_id}/csrs"
         params = {"players": [wrap_xuid(x) for x in xuids]}
-        return await self.session.get(url, params=params)
+        return await self._get(url, params=params)
 
     async def get_match_count(self, xuid: str | int) -> ClientResponse:
         """Get match counts across different game experiences for a player.
@@ -103,7 +123,7 @@ class HaloInfiniteClient:
             The match counts.
         """
         url = f"{STATS_HOST}/hi/players/{wrap_xuid(xuid)}/matches/count"
-        return await self.session.get(url)
+        return await self._get(url)
 
     async def get_match_history(
         self,
@@ -133,7 +153,7 @@ class HaloInfiniteClient:
         """
         url = f"{STATS_HOST}/hi/players/{wrap_xuid(xuid)}/matches"
         params = {"start": start, "count": count, "type": match_type}
-        return await self.session.get(url, params=params)
+        return await self._get(url, params=params)
 
     async def get_match_stats(self, match_id: str | UUID) -> ClientResponse:
         """Request match details using the Halo Infinite match GUID.
@@ -145,7 +165,7 @@ class HaloInfiniteClient:
             The match details.
         """
         url = f"{STATS_HOST}/hi/matches/{match_id}/stats"
-        return await self.session.get(url)
+        return await self._get(url)
 
     async def get_ugc_game_variant(
         self, asset_id: str | UUID, version_id: str | UUID
@@ -161,7 +181,7 @@ class HaloInfiniteClient:
         """
         endpoint = f"/hi/ugcGameVariants/{asset_id}/versions/{version_id}"
         url = f"{UGC_DISCOVERY_HOST}{endpoint}"
-        return await self.session.get(url)
+        return await self._get(url)
 
     async def get_map_mode_pair(
         self,
@@ -179,7 +199,7 @@ class HaloInfiniteClient:
         """
         endpoint = f"/hi/mapModePairs/{asset_id}/versions/{version_id}"
         url = f"{UGC_DISCOVERY_HOST}{endpoint}"
-        return await self.session.get(url)
+        return await self._get(url)
 
     async def get_map(
         self, asset_id: str | UUID, version_id: str | UUID
@@ -195,7 +215,7 @@ class HaloInfiniteClient:
         """
         endpoint = f"/hi/maps/{asset_id}/versions/{version_id}"
         url = f"{UGC_DISCOVERY_HOST}{endpoint}"
-        return await self.session.get(url)
+        return await self._get(url)
 
     async def get_playlist(
         self,
@@ -213,4 +233,4 @@ class HaloInfiniteClient:
         """
         endpoint = f"/hi/playlists/{asset_id}/versions/{version_id}"
         url = f"{UGC_DISCOVERY_HOST}{endpoint}"
-        return await self.session.get(url)
+        return await self._get(url)

@@ -1,5 +1,6 @@
 """Test the SPNKR API client."""
 
+import time
 from unittest.mock import AsyncMock
 
 import pytest
@@ -22,11 +23,40 @@ def client():
 
 
 def test_header_update(client: HaloInfiniteClient):
-    assert client.session.headers == {
+    """Test that the client headers are updated as expected."""
+    assert client._session.headers == {
         "Accept": "application/json",
         "x-343-authorization-spartan": "spartan",
         "343-clearance": "clearance",
     }
+
+
+def test_async_limiter_set(client: HaloInfiniteClient):
+    """Test that the async limiter is set as expected."""
+    assert client._rate_limiter is not None
+    assert client._rate_limiter.max_rate / client._rate_limiter.time_period == 5
+
+
+@pytest.mark.asyncio
+async def test_rate_limiter(client: HaloInfiniteClient):
+    """Test that the rate limiter limits requests as expected."""
+    t0 = time.time()
+    # Use 6 requests due to the default rate of 5 requests per second.
+    for _ in range(6):
+        await client._get("url")
+    t1 = time.time()
+    assert t1 - t0 >= 1
+
+
+@pytest.mark.asyncio
+async def test_rate_limiter_none(client: HaloInfiniteClient):
+    """Test that the rate limiter does not limit requests if None."""
+    client._rate_limiter = None
+    t0 = time.time()
+    for _ in range(6):
+        await client._get("url")
+    t1 = time.time()
+    assert t1 - t0 < 1
 
 
 @pytest.mark.asyncio

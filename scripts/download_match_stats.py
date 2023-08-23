@@ -25,16 +25,13 @@ async def make_request(
     client: HaloInfiniteClient,
     match_id: str,
     out_path: Path,
-    semaphore: asyncio.Semaphore,
 ) -> str:
     """Make a request to the Halo Infinite API and save the response."""
     response = await client.get_match_stats(match_id)
     file_name = f"{match_id}.json"
-    async with semaphore:
-        await asyncio.sleep(0.5)
-        async with aiofiles.open(out_path / file_name, "wb") as f:
-            async for data in response.content.iter_chunked(1024):
-                await f.write(data)
+    async with aiofiles.open(out_path / file_name, "wb") as f:
+        async for data in response.content.iter_chunked(1024):
+            await f.write(data)
     return file_name
 
 
@@ -48,9 +45,6 @@ async def main(history_path: Path, out_dir: Path) -> None:
     history_df = pd.read_csv(history_path)
     match_ids = set(history_df["match_id"]) - existing_matches
 
-    # Create a semaphore to limit the number of concurrent requests.
-    semaphore = asyncio.Semaphore(10)
-
     async with ClientSession() as session:
         # Refresh the player's tokens.
         player = await refresh_player_tokens(session, REFRESH_TOKEN, app)
@@ -61,9 +55,7 @@ async def main(history_path: Path, out_dir: Path) -> None:
         )
 
         # Make requests for each match id.
-        jobs = [
-            make_request(client, mid, out_dir, semaphore) for mid in match_ids
-        ]
+        jobs = [make_request(client, mid, out_dir) for mid in match_ids]
         file_names = await asyncio.gather(*jobs)
 
     print(f"Downloaded {len(file_names)} matches.")
@@ -74,5 +66,7 @@ if __name__ == "__main__":
     parser.add_argument("i", type=Path, help="Path to input history CSV file.")
     parser.add_argument("o", type=Path, help="Path to output directory.")
     args = parser.parse_args()
+    assert args.i.suffix == ".csv"
+    assert args.o.is_dir()
 
     asyncio.run(main(args.i, args.o))

@@ -13,6 +13,7 @@ def test_authenticated_player_is_valid_true():
         "gamertag",
         spartan_token,
         clearance_token,
+        "xbl_auth_value",
     )
     assert authenticated_player.is_valid
 
@@ -27,5 +28,6 @@ def test_authenticated_player_is_valid_false():
         "gamertag",
         spartan_token,
         clearance_token,
+        "xbl_auth_value",
     )
     assert not authenticated_player.is_valid
