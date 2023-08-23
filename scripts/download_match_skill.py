@@ -26,17 +26,17 @@ async def make_request(
     match_id: str,
     xuids: list[str],
     out_path: Path,
-) -> str | None:
+) -> tuple[str, int, str | None]:
     """Make a request to the Halo Infinite API and save the response."""
     response = await client.get_match_skill(match_id, xuids)
-    if response.status == 404:
-        print(f"No skill data for match {match_id} ({len(xuids)} players).")
-        return None
+    if not response.ok:
+        # Requests may fail as not found or bad request.
+        return match_id, response.status, response.reason
     file_name = f"{match_id}.json"
     async with aiofiles.open(out_path / file_name, "wb") as f:
         async for data in response.content.iter_chunked(1024):
             await f.write(data)
-    return file_name
+    return match_id, response.status, response.reason
 
 
 async def main(player_stats_path: Path, out_dir: Path) -> None:
@@ -48,7 +48,9 @@ async def main(player_stats_path: Path, out_dir: Path) -> None:
     # Get match id/xuid pairs from the CSV.
     df = pd.read_csv(player_stats_path)
     df = df[~df["match_id"].isin(existing_matches)]  # Remove existing matches.
-    match_iter = df.groupby("match_id").aggregate({"xuid": list}).itertuples()
+    match_iter = (
+        df.groupby("match_id").aggregate({"player_id": list}).itertuples()
+    )
 
     async with ClientSession() as session:
         # Refresh the player's tokens.
@@ -64,9 +66,14 @@ async def main(player_stats_path: Path, out_dir: Path) -> None:
             make_request(client, mid, xuids, out_dir)
             for mid, xuids in match_iter
         ]
-        file_names = await asyncio.gather(*jobs)
+        results = await asyncio.gather(*jobs)
 
-    print(f"Downloaded {len(file_names)} matches.")
+    report = pd.DataFrame(results, columns=["match_id", "status", "reason"])
+    out_path = player_stats_path.parent / "report.csv"
+    report.to_csv(out_path, index=False)
+
+    print(f"Processed {len(results)} matches.")
+    print(f"Saved report to {out_path}.")
 
 
 if __name__ == "__main__":

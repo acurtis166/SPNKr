@@ -1,5 +1,6 @@
 """Models for the "skill" authority."""
 
+from uuid import UUID
 from ..refdata import SkillResultCode, SubTier, Tier
 from .base import PascalCaseModel
 
@@ -74,6 +75,13 @@ class Counterfactuals(PascalCaseModel):
     """Expected performances for all skill tiers."""
 
 
+class RankedRewards(PascalCaseModel):
+    """Rewards awarded to players based on skill acheivement."""
+
+    reward_id: UUID
+    """The ID of the player's reward."""
+
+
 class MatchSkillResult(PascalCaseModel):
     """Skill data for a player in a match."""
 
@@ -87,7 +95,7 @@ class MatchSkillResult(PascalCaseModel):
     """The ID of the player's team."""
     team_mmrs: dict[int, float]
     """The MMRs of all teams in the match."""
-    ranked_rewards: None
+    ranked_rewards: RankedRewards | None
     """Always null."""
     counterfactuals: Counterfactuals
     """Expected performances for the player and all skill tiers in a match."""

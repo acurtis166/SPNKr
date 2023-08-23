@@ -342,21 +342,21 @@ class Stats(PascalCaseModel):
 
     core_stats: CoreStats
     """Performance statistics common to all game modes."""
-    bomb_stats: BombStats | None
+    bomb_stats: BombStats | None = None
     """Performance statistics for bomb game modes."""
-    capture_the_flag_stats: CaptureTheFlagStats | None
+    capture_the_flag_stats: CaptureTheFlagStats | None = None
     """Performance statistics for capture the flag game modes."""
-    elimination_stats: EliminationStats | None
+    elimination_stats: EliminationStats | None = None
     """Performance statistics for elimination game modes."""
-    extraction_stats: ExtractionStats | None
+    extraction_stats: ExtractionStats | None = None
     """Performance statistics for extraction game modes."""
-    infection_stats: InfectionStats | None
+    infection_stats: InfectionStats | None = None
     """Performance statistics for infection game modes."""
-    oddball_stats: OddballStats | None
+    oddball_stats: OddballStats | None = None
     """Performance statistics for oddball game modes."""
-    zones_stats: ZonesStats | None
+    zones_stats: ZonesStats | None = None
     """Performance statistics for zones game modes."""
-    stockpile_stats: StockpileStats | None
+    stockpile_stats: StockpileStats | None = None
     """Performance statistics for stockpile game modes."""
 
 
