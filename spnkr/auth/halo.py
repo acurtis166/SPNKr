@@ -75,8 +75,8 @@ async def request_spartan_token(
             }
         ],
     }
-    async with session.post(url, headers=headers, json=js) as resp:
-        return SpartanToken(await resp.json())
+    response = await session.post(url, headers=headers, json=js)
+    return SpartanToken(await response.json())
 
 
 async def request_clearance_token(
@@ -97,5 +97,5 @@ async def request_clearance_token(
     )
     hdrs = {"x-343-authorization-spartan": spartan_token}
     params = {"sandbox": "UNUSED", "build": "222249.22.06.08.1730-0"}
-    async with session.get(url, params=params, headers=hdrs) as resp:
-        return ClearanceToken(await resp.json())
+    response = await session.get(url, params=params, headers=hdrs)
+    return ClearanceToken(await response.json())

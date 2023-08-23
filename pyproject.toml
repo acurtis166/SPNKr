@@ -23,6 +23,7 @@ pydantic = ['pydantic>=2']
 dev = [
     'pytest>=7',
     'pytest-asyncio',
+    'coverage>=7',
     'pydantic>=2',
 ]
 

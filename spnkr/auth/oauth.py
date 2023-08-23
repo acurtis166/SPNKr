@@ -109,5 +109,5 @@ async def _oauth2_token_request(
         "client_id": app.client_id,
         "client_secret": app.client_secret,
     }
-    async with session.post(url, data=request_data) as resp:
-        return OAuth2Token(await resp.json())
+    response = await session.post(url, data=request_data)
+    return OAuth2Token(await response.json())

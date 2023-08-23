@@ -3,12 +3,26 @@
 import json
 from pathlib import Path
 from typing import Any
+from unittest.mock import AsyncMock
 
 import pytest
 
 from spnkr.auth import xbox
 
 RESPONSES = Path("tests/responses")
+
+
+class MockResponse:
+    def __init__(self, json_data: Any):
+        self.json_data = json_data
+
+    async def json(self) -> Any:
+        return self.json_data
+
+
+class MockSession:
+    def __init__(self, response: Any):
+        self.post = AsyncMock(return_value=response)
 
 
 def load_response(name: str) -> Any:
@@ -65,9 +79,54 @@ def test_xsts_response_authorization_header_value():
     assert xsts_token.authorization_header_value == "XBL3.0 x=abcdefg;123456789"
 
 
-def test_request_user_token():
-    ...
+@pytest.mark.asyncio
+async def test_request_user_token():
+    response = load_response("xbox_user")
+    session = MockSession(MockResponse(response))
+    token = await xbox.request_user_token(session, "test")  # type: ignore
+    assert token.token == "abcdefg"
 
 
-def test_request_xsts_token():
-    ...
+@pytest.mark.asyncio
+async def test_request_user_token_called_with():
+    session = MockSession(MockResponse({}))
+    await xbox.request_user_token(session, "test")  # type: ignore
+    session.post.assert_called_with(
+        "https://user.auth.xboxlive.com/user/authenticate",
+        json={
+            "RelyingParty": "http://auth.xboxlive.com",
+            "TokenType": "JWT",
+            "Properties": {
+                "AuthMethod": "RPS",
+                "SiteName": "user.auth.xboxlive.com",
+                "RpsTicket": "d=test",
+            },
+        },
+        headers={"x-xbl-contract-version": "1"},
+    )
+
+
+@pytest.mark.asyncio
+async def test_request_xsts_token():
+    response = load_response("xsts")
+    session = MockSession(MockResponse(response))
+    token = await xbox.request_xsts_token(session, "test", "party")  # type: ignore
+    assert token.token == "123456789"
+
+
+@pytest.mark.asyncio
+async def test_request_xsts_token_called_with():
+    session = MockSession(MockResponse({}))
+    await xbox.request_xsts_token(session, "test", "party")  # type: ignore
+    session.post.assert_called_with(
+        "https://xsts.auth.xboxlive.com/xsts/authorize",
+        json={
+            "RelyingParty": "party",
+            "TokenType": "JWT",
+            "Properties": {
+                "UserTokens": ["test"],
+                "SandboxId": "RETAIL",
+            },
+        },
+        headers={"x-xbl-contract-version": "1"},
+    )

@@ -92,7 +92,7 @@ def test_parse_match_stats_player_core_stats():
 
 def test_parse_match_stats_player_medal_stats():
     data = load_response("get_match_stats")
-    result = records.parse_player_core_stats(data)
+    result = records.parse_player_medals(data)
     expected = "6f050134-bede-47bc-a6df-eeafdcb9f97f"
     assert result[0].match_id == expected
 

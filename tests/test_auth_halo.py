@@ -4,12 +4,27 @@ import datetime as dt
 import json
 from pathlib import Path
 from typing import Any
+from unittest.mock import AsyncMock
 
 import pytest
 
 from spnkr.auth import halo
 
 RESPONSES = Path("tests/responses")
+
+
+class MockResponse:
+    def __init__(self, json_data: Any):
+        self.json_data = json_data
+
+    async def json(self) -> Any:
+        return self.json_data
+
+
+class MockSession:
+    def __init__(self, response: Any):
+        self.get = AsyncMock(return_value=response)
+        self.post = AsyncMock(return_value=response)
 
 
 def load_response(name: str) -> Any:
@@ -39,9 +54,50 @@ def test_clearance_token_token():
     assert clearance_token.token == "xyz"
 
 
-def test_request_spartan_token():
-    ...
+@pytest.mark.asyncio
+async def test_request_spartan_token():
+    """Test that a spartan token is returned."""
+    response = load_response("spartan")
+    session = MockSession(MockResponse(response))
+    token = await halo.request_spartan_token(session, "test")  # type: ignore
+    assert token.token == "abcdef"
 
 
-def test_request_clearance_token():
-    ...
+@pytest.mark.asyncio
+async def test_request_spartan_token_called_with():
+    session = MockSession(MockResponse({}))
+    await halo.request_spartan_token(session, "test")  # type: ignore
+    session.post.assert_called_with(
+        "https://settings.svc.halowaypoint.com/spartan-token",
+        json={
+            "Audience": "urn:343:s3:services",
+            "MinVersion": "4",
+            "Proof": [
+                {
+                    "Token": "test",
+                    "TokenType": "Xbox_XSTSv3",
+                }
+            ],
+        },
+        headers={"Accept": "application/json"},
+    )
+
+
+@pytest.mark.asyncio
+async def test_request_clearance_token():
+    """Test that a clearance token is returned."""
+    response = load_response("clearance")
+    session = MockSession(MockResponse(response))
+    token = await halo.request_clearance_token(session, "test")  # type: ignore
+    assert token.token == "xyz"
+
+
+@pytest.mark.asyncio
+async def test_request_clearance_token_called_with():
+    session = MockSession(MockResponse({}))
+    await halo.request_clearance_token(session, "test")  # type: ignore
+    session.get.assert_called_with(
+        "https://settings.svc.halowaypoint.com/oban/flight-configurations/titles/hi/audiences/RETAIL/active",
+        params={"sandbox": "UNUSED", "build": "222249.22.06.08.1730-0"},
+        headers={"x-343-authorization-spartan": "test"},
+    )

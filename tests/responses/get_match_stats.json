@@ -340,8 +340,10 @@
     "Players": [
         {
             "PlayerId": "xuid(2535445291321133)",
-            "PlayerType": 1,
-            "BotAttributes": null,
+            "PlayerType": 2,
+            "BotAttributes": {
+                "Difficulty": 1
+            },
             "LastTeamId": 1,
             "Outcome": 2,
             "Rank": 1,

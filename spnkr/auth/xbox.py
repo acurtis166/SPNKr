@@ -95,8 +95,8 @@ async def request_user_token(
             "RpsTicket": f"d={access_token}",
         },
     }
-    async with session.post(url, json=js, headers=headers) as resp:
-        return XAUResponse(await resp.json())
+    response = await session.post(url, json=js, headers=headers)
+    return XAUResponse(await response.json())
 
 
 async def request_xsts_token(
@@ -122,5 +122,5 @@ async def request_xsts_token(
             "SandboxId": "RETAIL",
         },
     }
-    async with session.post(url, json=js, headers=headers) as resp:
-        return XSTSResponse(await resp.json())
+    response = await session.post(url, json=js, headers=headers)
+    return XSTSResponse(await response.json())
