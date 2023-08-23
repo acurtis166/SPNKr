@@ -53,6 +53,51 @@ def test_parse_match_stats():
     assert result.match_id == expected
 
 
+def test_parse_match_stats_ctf():
+    data = load_response("get_match_stats_ctf")
+    result = pp.MatchStats(**data)
+    expected = UUID("ffccbba6-fd52-4ff8-aa41-4bdc6487cd92")
+    assert result.match_id == expected
+    mode = result.players[0].player_team_stats[0].stats.capture_the_flag_stats
+    assert mode is not None
+
+
+def test_parse_match_stats_zones():
+    data = load_response("get_match_stats_zones")
+    result = pp.MatchStats(**data)
+    expected = UUID("ff9af871-ea6b-40c4-abe6-9aab6bfe1808")
+    assert result.match_id == expected
+    mode = result.players[0].player_team_stats[0].stats.zones_stats
+    assert mode is not None
+
+
+def test_parse_match_stats_elimination():
+    data = load_response("get_match_stats_elimination")
+    result = pp.MatchStats(**data)
+    expected = UUID("fe368e0b-9281-43ad-9b3d-9b16fe1e9402")
+    assert result.match_id == expected
+    mode = result.players[0].player_team_stats[0].stats.elimination_stats
+    assert mode is not None
+
+
+def test_parse_match_stats_oddball():
+    data = load_response("get_match_stats_oddball")
+    result = pp.MatchStats(**data)
+    expected = UUID("fe75a257-acd6-41ac-a778-8f86765639cb")
+    assert result.match_id == expected
+    mode = result.players[0].player_team_stats[0].stats.oddball_stats
+    assert mode is not None
+
+
+def test_parse_match_stats_stockpile():
+    data = load_response("get_match_stats_stockpile")
+    result = pp.MatchStats(**data)
+    expected = UUID("f40f4aa4-cc28-466d-b4ec-86fd86424083")
+    assert result.match_id == expected
+    mode = result.players[0].player_team_stats[0].stats.stockpile_stats
+    assert mode is not None
+
+
 def test_parse_game_variant():
     data = load_response("get_ugc_game_variant")
     result = pp.UgcGameVariant(**data)

@@ -1,6 +1,5 @@
 """Enumerated data types used by the Halo Infinite API."""
 
-import math
 from enum import IntEnum, StrEnum
 
 
@@ -22,12 +21,11 @@ class AssetKind(IntEnum):
 class BotDifficulty(IntEnum):
     """Bot difficulty levels."""
 
-    # TODO these are guesses
-    NOT_APPLICABLE = 0
-    RECRUIT = 1
-    MARINE = 2
-    ODST = 3
-    SPARTAN = 4
+    # TODO try creating custom games with different bot difficulties to confirm
+    RECRUIT = 0
+    MARINE = 1
+    ODST = 2
+    SPARTAN = 3
 
 
 class GameVariantCategory(IntEnum):
@@ -46,7 +44,7 @@ class GameVariantCategory(IntEnum):
     ODDBALL = 18
     STOCKPILE = 19
     JUGGERNAUT = 20
-    GVC_22 = 22  # TODO: What is this?
+    INFECTION = 22
     ESCORT = 23
     GUN_GAME = 24
     GRIFBALL = 25
@@ -116,7 +114,6 @@ class SkillResultCode(IntEnum):
     """Result codes for skill requests."""
 
     SUCCESS = 0
-    # TODO: Need to add the rest of these
 
 
 class SubTier(IntEnum):
@@ -141,30 +138,3 @@ class Tier(StrEnum):
     PLATINUM = "Platinum"
     DIAMOND = "Diamond"
     ONYX = "Onyx"
-
-
-def get_tier_from_csr(csr: float) -> tuple[Tier, SubTier]:
-    """Get the tier and sub-tier from a CSR value.
-
-    Args:
-        csr: CSR value to convert.
-
-    Returns:
-        A tuple containing the tier and sub-tier.
-    """
-    csr = math.floor(csr)
-    quotient, remainder = divmod(csr, 300)
-    if quotient == 0:
-        tier = Tier.BRONZE
-    elif quotient == 1:
-        tier = Tier.SILVER
-    elif quotient == 2:
-        tier = Tier.GOLD
-    elif quotient == 3:
-        tier = Tier.PLATINUM
-    elif quotient == 4:
-        tier = Tier.DIAMOND
-    else:
-        return Tier.ONYX, SubTier.NOT_APPLICABLE  # Onyx doesn't have sub-tiers
-    sub_tier = SubTier((remainder // 50) + 1)
-    return tier, sub_tier

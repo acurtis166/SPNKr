@@ -15,10 +15,9 @@ Authentication requires some preliminary work:
 - Python >= 3.11
 - Required Packages:
     - `aiohttp` for making HTTP requests
+    - `aiolimiter` for limiting requests per second
 - Optional Packages:
     - `pydantic` for using provided Pydantic models to parse reponses
-    - `pytest` for unit testing
-    - `pytest-asyncio` for unit testing
 
 ## Getting Started
 

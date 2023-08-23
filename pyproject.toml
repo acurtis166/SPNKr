@@ -25,6 +25,9 @@ dev = [
     'pytest-asyncio',
     'coverage>=7',
     'pydantic>=2',
+    'mkdocs>=1',
+    'mkdocstrings[python]',
+    'mkdocs-material>=9',
 ]
 
 [project.urls]

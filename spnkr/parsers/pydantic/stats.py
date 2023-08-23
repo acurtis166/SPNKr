@@ -282,8 +282,30 @@ class ExtractionStats(PascalCaseModel):
 class InfectionStats(PascalCaseModel):
     """Performance statistics for infection game modes."""
 
-    # TODO: Add infection stats
-    pass
+    alphas_killed: int
+    """Number of times killing an alpha zombie."""
+    spartans_infected: int
+    """Number of times infecting a spartan."""
+    spartans_infected_as_alpha: int
+    """Number of times infecting a spartan as an alpha zombie."""
+    kills_as_last_spartan_standing: int
+    """Number of kills as the last spartan standing."""
+    last_spartans_standing_infected: int
+    """Number of times infecting the last spartan standing."""
+    rounds_as_alpha: int
+    """Number of rounds as an alpha zombie."""
+    rounds_as_last_spartan_standing: int
+    """Number of rounds as the last spartan standing."""
+    rounds_finished_as_infected: int
+    """Number of rounds finished as an infected."""
+    rounds_survived_as_spartan: int
+    """Number of rounds survived as a spartan."""
+    rounds_survived_as_last_spartan_standing: int
+    """Number of rounds survived as the last spartan standing."""
+    time_as_last_spartan_standing: dt.timedelta
+    """Total time spent as the last spartan standing."""
+    infected_killed: int
+    """Number of times killing an infected."""
 
 
 class OddballStats(PascalCaseModel):
