@@ -47,7 +47,7 @@ async def main(history_path: Path, out_dir: Path) -> None:
 
     async with ClientSession() as session:
         # Refresh the player's tokens.
-        player = await refresh_player_tokens(session, REFRESH_TOKEN, app)
+        player = await refresh_player_tokens(session, app, REFRESH_TOKEN)
         client = HaloInfiniteClient(
             session=session,
             spartan_token=player.spartan_token.token,

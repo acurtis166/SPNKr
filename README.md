@@ -24,17 +24,17 @@ Authentication requires some preliminary work:
 ### Install
 
 Basic
-```
+```shell
 pip install spnkr
 ```
 
 Include Pydantic parsing functionality
-```
+```shell
 pip install spnkr[pydantic]
 ```
 
-All optional packages
-```
+Development
+```shell
 pip install spnkr[dev]
 ```
 
@@ -103,7 +103,7 @@ Note that no functionality is available in this project to look up profile infor
 - [OpenXbox/xbox-webapi-python](https://github.com/OpenXbox/xbox-webapi-python) is a Python package for interacting with the Xbox Live API.
 - [Batch Profile POST](https://learn.microsoft.com/en-us/gaming/gdk/_content/gc/reference/live/rest/uri/profilev2/uri-usersbatchprofilesettingspost) is an Xbox Live API endpoint that allows you to submit a batch of XUIDs and receive profile information. If you would like to make the profile requests yourself, you can grab the Xbox Live API "Authorization" header value from the `AuthenticatedPlayer` object that is returned from the `refresh_player_tokens()` function call. The attribute name is `xbl_authorization_header_value`.
 
-## Credits
+## Acknowledgements
 
 - Xbox authentication [OpenXbox/xbox-webapi-python](https://github.com/OpenXbox/xbox-webapi-python)
 - Halo Infinite authentication [Den Delimarsky](https://den.dev/blog/halo-api-authentication)

@@ -21,8 +21,7 @@ class AssetKind(IntEnum):
 class BotDifficulty(IntEnum):
     """Bot difficulty levels."""
 
-    # TODO try creating custom games with different bot difficulties to confirm
-    RECRUIT = 0
+    RECRUIT = 4
     MARINE = 1
     ODST = 2
     SPARTAN = 3

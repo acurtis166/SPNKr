@@ -83,7 +83,7 @@ async def test_refresh_player_tokens(session, azure_app, monkeypatch):
         "request_clearance_token",
         lambda *a: create_future(MockToken(token="test5")),
     )
-    player = await core.refresh_player_tokens(session, "rt", azure_app)
+    player = await core.refresh_player_tokens(session, azure_app, "rt")
     assert player.player_id == "xuid(123)"
     assert player.gamertag == "MrChief"
     assert player.spartan_token.token == "test4"

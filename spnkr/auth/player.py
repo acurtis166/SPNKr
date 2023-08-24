@@ -16,6 +16,8 @@ class AuthenticatedPlayer:
         spartan_token: An expirable Spartan token required for all API
             endpoints.
         clearance_token: A clearance token required for some API endpoints.
+        xbl_authorization_header_value: The value for the authorization header
+            passed when making requests to the Xbox Live API.
     """
 
     player_id: str
@@ -27,7 +29,7 @@ class AuthenticatedPlayer:
     clearance_token: ClearanceToken
     """A clearance token required for some API endpoints."""
     xbl_authorization_header_value: str
-    """The value to pass when making requests to the Xbox Live API."""
+    """The value for the authorization header passed for Xbox Live API calls."""
 
     @property
     def is_valid(self) -> bool:

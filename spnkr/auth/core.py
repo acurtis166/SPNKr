@@ -45,7 +45,7 @@ def _get_authorization_code(app: app.AzureApp) -> str:
 
 
 async def refresh_player_tokens(
-    session: ClientSession, oauth_refresh_token: str, app: app.AzureApp
+    session: ClientSession, app: app.AzureApp, oauth_refresh_token: str
 ) -> player.AuthenticatedPlayer:
     """Refresh all tokens and return authenticated player information.
 
