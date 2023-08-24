@@ -3,7 +3,6 @@
 from typing import Any
 from uuid import UUID
 
-from ..refdata import AssetKind
 from .base import PascalCaseModel
 
 
@@ -73,7 +72,6 @@ class Asset(PascalCaseModel):
     """A game asset, such as a map or game mode.
 
     Attributes:
-        asset_type: The type of asset.
         asset_id: The asset's GUID.
         version_id: The asset version's GUID.
         public_name: The asset's name.
@@ -87,7 +85,6 @@ class Asset(PascalCaseModel):
         order: The asset's order.
     """
 
-    asset_type: AssetKind
     asset_id: UUID
     version_id: UUID
     public_name: str
