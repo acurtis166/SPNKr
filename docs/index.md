@@ -163,7 +163,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-The above example would retrieve information about your 25 most recent matches. Of course, there are more methods for retrieving details statistics or skill information about matches. These are detailed [here](/reference).
+The above example would retrieve information about your 25 most recent matches. Of course, there are more methods for retrieving details statistics or skill information about matches. These are detailed [here](reference.md).
 
 ### Parsing Responses
 
@@ -172,7 +172,7 @@ API calls return JSON payloads, but these are not deserialized by the client. In
 - **Pydantic** - Parse deserialized JSON responses into [Pydantic](https://docs.pydantic.dev/latest/) models.
 - **Records** - Parse JSON responses into flat, record-like named tuples with only highlighted information. While not as complete as the Pydantic models, they are likely more convenient to load into a `pandas.DataFrame` or dump to files/databases.
 
-The classes and functions for these parsers are available in the `spnkr.parsers` module. Applicable parsing objects are referenced by client methods and are detailed [here](/reference).
+The classes and functions for these parsers are available in the `spnkr.parsers` module. Applicable parsing objects are referenced by client methods and are detailed [here](reference.md).
 
 Below is a continuation of our above script with parsing of the JSON into a `spnkr.parsers.pydantic.stats.MatchHistory` Pydantic model.
 
