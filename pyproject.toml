@@ -32,6 +32,7 @@ dev = [
 
 [project.urls]
 Homepage = 'https://github.com/acurtis166/spnkr'
+Documentation = 'https://acurtis166.github.io/spnkr/'
 
 [tool.setuptools.packages.find]
 include = ['spnkr*']
