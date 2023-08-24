@@ -1,0 +1,3859 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../records-parsing/">
+      
+      
+        <link rel="next" href="../tools/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.3">
+    
+    
+      
+        <title>Reference Data - SPNKr Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0e669242.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reference-data" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SPNKr Documentation" class="md-header__button md-logo" aria-label="SPNKr Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SPNKr Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reference Data
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SPNKr Documentation" class="md-nav__button md-logo" aria-label="SPNKr Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    SPNKr Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic-usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authentication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Halo Infinite Client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pydantic-parsing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pydantic Parsing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../records-parsing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Records Parsing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Reference Data
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Reference Data
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata" class="md-nav__link">
+    refdata
+  </a>
+  
+    <nav class="md-nav" aria-label="refdata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.AssetKind" class="md-nav__link">
+    AssetKind
+  </a>
+  
+    <nav class="md-nav" aria-label="AssetKind">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.AssetKind.ENGINE_GAME_VARIANT" class="md-nav__link">
+    ENGINE_GAME_VARIANT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.AssetKind.FILM" class="md-nav__link">
+    FILM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.AssetKind.MANIFEST" class="md-nav__link">
+    MANIFEST
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.AssetKind.MAP" class="md-nav__link">
+    MAP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.AssetKind.MAP_MODE_PAIR" class="md-nav__link">
+    MAP_MODE_PAIR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.AssetKind.PLAYLIST" class="md-nav__link">
+    PLAYLIST
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.AssetKind.PREFAB" class="md-nav__link">
+    PREFAB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.AssetKind.PROJECT" class="md-nav__link">
+    PROJECT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.AssetKind.TEST_ASSET" class="md-nav__link">
+    TEST_ASSET
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.AssetKind.UGC_GAME_VARIANT" class="md-nav__link">
+    UGC_GAME_VARIANT
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.BotDifficulty" class="md-nav__link">
+    BotDifficulty
+  </a>
+  
+    <nav class="md-nav" aria-label="BotDifficulty">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.BotDifficulty.MARINE" class="md-nav__link">
+    MARINE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.BotDifficulty.ODST" class="md-nav__link">
+    ODST
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.BotDifficulty.RECRUIT" class="md-nav__link">
+    RECRUIT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.BotDifficulty.SPARTAN" class="md-nav__link">
+    SPARTAN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory" class="md-nav__link">
+    GameVariantCategory
+  </a>
+  
+    <nav class="md-nav" aria-label="GameVariantCategory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.ASSAULT" class="md-nav__link">
+    ASSAULT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.ATTRITION" class="md-nav__link">
+    ATTRITION
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.BASTION" class="md-nav__link">
+    BASTION
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.CTF" class="md-nav__link">
+    CTF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.ELIMINATION" class="md-nav__link">
+    ELIMINATION
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.ESCORT" class="md-nav__link">
+    ESCORT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.EXTRACTION" class="md-nav__link">
+    EXTRACTION
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.FIESTA" class="md-nav__link">
+    FIESTA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.GRIFBALL" class="md-nav__link">
+    GRIFBALL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.GUN_GAME" class="md-nav__link">
+    GUN_GAME
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.INFECTION" class="md-nav__link">
+    INFECTION
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.JUGGERNAUT" class="md-nav__link">
+    JUGGERNAUT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.LAND_GRAB" class="md-nav__link">
+    LAND_GRAB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.ODDBALL" class="md-nav__link">
+    ODDBALL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.SLAYER" class="md-nav__link">
+    SLAYER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.STOCKPILE" class="md-nav__link">
+    STOCKPILE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.STRONGHOLDS" class="md-nav__link">
+    STRONGHOLDS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.TEST_ENGINE" class="md-nav__link">
+    TEST_ENGINE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.TOTAL_CONTROL" class="md-nav__link">
+    TOTAL_CONTROL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.LifecycleMode" class="md-nav__link">
+    LifecycleMode
+  </a>
+  
+    <nav class="md-nav" aria-label="LifecycleMode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.LifecycleMode.CUSTOM" class="md-nav__link">
+    CUSTOM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.LifecycleMode.MATCHMADE" class="md-nav__link">
+    MATCHMADE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalDifficulty" class="md-nav__link">
+    MedalDifficulty
+  </a>
+  
+    <nav class="md-nav" aria-label="MedalDifficulty">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalDifficulty.HEROIC" class="md-nav__link">
+    HEROIC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalDifficulty.LEGENDARY" class="md-nav__link">
+    LEGENDARY
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalDifficulty.MYTHIC" class="md-nav__link">
+    MYTHIC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalDifficulty.NORMAL" class="md-nav__link">
+    NORMAL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalType" class="md-nav__link">
+    MedalType
+  </a>
+  
+    <nav class="md-nav" aria-label="MedalType">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalType.MODE" class="md-nav__link">
+    MODE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalType.MULTIKILL" class="md-nav__link">
+    MULTIKILL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalType.PROFICIENCY" class="md-nav__link">
+    PROFICIENCY
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalType.SKILL" class="md-nav__link">
+    SKILL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalType.SPREE" class="md-nav__link">
+    SPREE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalType.STYLE" class="md-nav__link">
+    STYLE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Outcome" class="md-nav__link">
+    Outcome
+  </a>
+  
+    <nav class="md-nav" aria-label="Outcome">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Outcome.DID_NOT_FINISH" class="md-nav__link">
+    DID_NOT_FINISH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Outcome.LOSS" class="md-nav__link">
+    LOSS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Outcome.TIE" class="md-nav__link">
+    TIE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Outcome.WIN" class="md-nav__link">
+    WIN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.PlayerType" class="md-nav__link">
+    PlayerType
+  </a>
+  
+    <nav class="md-nav" aria-label="PlayerType">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.PlayerType.BOT" class="md-nav__link">
+    BOT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.PlayerType.HUMAN" class="md-nav__link">
+    HUMAN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.PlaylistExperience" class="md-nav__link">
+    PlaylistExperience
+  </a>
+  
+    <nav class="md-nav" aria-label="PlaylistExperience">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.PlaylistExperience.ARENA" class="md-nav__link">
+    ARENA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.PlaylistExperience.BIG_TEAM_BATTLE" class="md-nav__link">
+    BIG_TEAM_BATTLE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.PlaylistExperience.FEATURED" class="md-nav__link">
+    FEATURED
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.PlaylistExperience.PVE" class="md-nav__link">
+    PVE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.SkillResultCode" class="md-nav__link">
+    SkillResultCode
+  </a>
+  
+    <nav class="md-nav" aria-label="SkillResultCode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.SkillResultCode.SUCCESS" class="md-nav__link">
+    SUCCESS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.SubTier" class="md-nav__link">
+    SubTier
+  </a>
+  
+    <nav class="md-nav" aria-label="SubTier">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.SubTier.FIVE" class="md-nav__link">
+    FIVE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.SubTier.FOUR" class="md-nav__link">
+    FOUR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.SubTier.NOT_APPLICABLE" class="md-nav__link">
+    NOT_APPLICABLE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.SubTier.ONE" class="md-nav__link">
+    ONE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.SubTier.SIX" class="md-nav__link">
+    SIX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.SubTier.THREE" class="md-nav__link">
+    THREE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.SubTier.TWO" class="md-nav__link">
+    TWO
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Tier" class="md-nav__link">
+    Tier
+  </a>
+  
+    <nav class="md-nav" aria-label="Tier">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Tier.BRONZE" class="md-nav__link">
+    BRONZE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Tier.DIAMOND" class="md-nav__link">
+    DIAMOND
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Tier.GOLD" class="md-nav__link">
+    GOLD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Tier.NOT_APPLICABLE" class="md-nav__link">
+    NOT_APPLICABLE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Tier.ONYX" class="md-nav__link">
+    ONYX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Tier.PLATINUM" class="md-nav__link">
+    PLATINUM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Tier.SILVER" class="md-nav__link">
+    SILVER
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata" class="md-nav__link">
+    refdata
+  </a>
+  
+    <nav class="md-nav" aria-label="refdata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.AssetKind" class="md-nav__link">
+    AssetKind
+  </a>
+  
+    <nav class="md-nav" aria-label="AssetKind">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.AssetKind.ENGINE_GAME_VARIANT" class="md-nav__link">
+    ENGINE_GAME_VARIANT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.AssetKind.FILM" class="md-nav__link">
+    FILM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.AssetKind.MANIFEST" class="md-nav__link">
+    MANIFEST
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.AssetKind.MAP" class="md-nav__link">
+    MAP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.AssetKind.MAP_MODE_PAIR" class="md-nav__link">
+    MAP_MODE_PAIR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.AssetKind.PLAYLIST" class="md-nav__link">
+    PLAYLIST
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.AssetKind.PREFAB" class="md-nav__link">
+    PREFAB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.AssetKind.PROJECT" class="md-nav__link">
+    PROJECT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.AssetKind.TEST_ASSET" class="md-nav__link">
+    TEST_ASSET
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.AssetKind.UGC_GAME_VARIANT" class="md-nav__link">
+    UGC_GAME_VARIANT
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.BotDifficulty" class="md-nav__link">
+    BotDifficulty
+  </a>
+  
+    <nav class="md-nav" aria-label="BotDifficulty">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.BotDifficulty.MARINE" class="md-nav__link">
+    MARINE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.BotDifficulty.ODST" class="md-nav__link">
+    ODST
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.BotDifficulty.RECRUIT" class="md-nav__link">
+    RECRUIT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.BotDifficulty.SPARTAN" class="md-nav__link">
+    SPARTAN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory" class="md-nav__link">
+    GameVariantCategory
+  </a>
+  
+    <nav class="md-nav" aria-label="GameVariantCategory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.ASSAULT" class="md-nav__link">
+    ASSAULT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.ATTRITION" class="md-nav__link">
+    ATTRITION
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.BASTION" class="md-nav__link">
+    BASTION
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.CTF" class="md-nav__link">
+    CTF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.ELIMINATION" class="md-nav__link">
+    ELIMINATION
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.ESCORT" class="md-nav__link">
+    ESCORT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.EXTRACTION" class="md-nav__link">
+    EXTRACTION
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.FIESTA" class="md-nav__link">
+    FIESTA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.GRIFBALL" class="md-nav__link">
+    GRIFBALL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.GUN_GAME" class="md-nav__link">
+    GUN_GAME
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.INFECTION" class="md-nav__link">
+    INFECTION
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.JUGGERNAUT" class="md-nav__link">
+    JUGGERNAUT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.LAND_GRAB" class="md-nav__link">
+    LAND_GRAB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.ODDBALL" class="md-nav__link">
+    ODDBALL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.SLAYER" class="md-nav__link">
+    SLAYER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.STOCKPILE" class="md-nav__link">
+    STOCKPILE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.STRONGHOLDS" class="md-nav__link">
+    STRONGHOLDS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.TEST_ENGINE" class="md-nav__link">
+    TEST_ENGINE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.GameVariantCategory.TOTAL_CONTROL" class="md-nav__link">
+    TOTAL_CONTROL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.LifecycleMode" class="md-nav__link">
+    LifecycleMode
+  </a>
+  
+    <nav class="md-nav" aria-label="LifecycleMode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.LifecycleMode.CUSTOM" class="md-nav__link">
+    CUSTOM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.LifecycleMode.MATCHMADE" class="md-nav__link">
+    MATCHMADE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalDifficulty" class="md-nav__link">
+    MedalDifficulty
+  </a>
+  
+    <nav class="md-nav" aria-label="MedalDifficulty">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalDifficulty.HEROIC" class="md-nav__link">
+    HEROIC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalDifficulty.LEGENDARY" class="md-nav__link">
+    LEGENDARY
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalDifficulty.MYTHIC" class="md-nav__link">
+    MYTHIC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalDifficulty.NORMAL" class="md-nav__link">
+    NORMAL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalType" class="md-nav__link">
+    MedalType
+  </a>
+  
+    <nav class="md-nav" aria-label="MedalType">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalType.MODE" class="md-nav__link">
+    MODE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalType.MULTIKILL" class="md-nav__link">
+    MULTIKILL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalType.PROFICIENCY" class="md-nav__link">
+    PROFICIENCY
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalType.SKILL" class="md-nav__link">
+    SKILL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalType.SPREE" class="md-nav__link">
+    SPREE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.MedalType.STYLE" class="md-nav__link">
+    STYLE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Outcome" class="md-nav__link">
+    Outcome
+  </a>
+  
+    <nav class="md-nav" aria-label="Outcome">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Outcome.DID_NOT_FINISH" class="md-nav__link">
+    DID_NOT_FINISH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Outcome.LOSS" class="md-nav__link">
+    LOSS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Outcome.TIE" class="md-nav__link">
+    TIE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Outcome.WIN" class="md-nav__link">
+    WIN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.PlayerType" class="md-nav__link">
+    PlayerType
+  </a>
+  
+    <nav class="md-nav" aria-label="PlayerType">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.PlayerType.BOT" class="md-nav__link">
+    BOT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.PlayerType.HUMAN" class="md-nav__link">
+    HUMAN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.PlaylistExperience" class="md-nav__link">
+    PlaylistExperience
+  </a>
+  
+    <nav class="md-nav" aria-label="PlaylistExperience">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.PlaylistExperience.ARENA" class="md-nav__link">
+    ARENA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.PlaylistExperience.BIG_TEAM_BATTLE" class="md-nav__link">
+    BIG_TEAM_BATTLE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.PlaylistExperience.FEATURED" class="md-nav__link">
+    FEATURED
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.PlaylistExperience.PVE" class="md-nav__link">
+    PVE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.SkillResultCode" class="md-nav__link">
+    SkillResultCode
+  </a>
+  
+    <nav class="md-nav" aria-label="SkillResultCode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.SkillResultCode.SUCCESS" class="md-nav__link">
+    SUCCESS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.SubTier" class="md-nav__link">
+    SubTier
+  </a>
+  
+    <nav class="md-nav" aria-label="SubTier">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.SubTier.FIVE" class="md-nav__link">
+    FIVE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.SubTier.FOUR" class="md-nav__link">
+    FOUR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.SubTier.NOT_APPLICABLE" class="md-nav__link">
+    NOT_APPLICABLE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.SubTier.ONE" class="md-nav__link">
+    ONE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.SubTier.SIX" class="md-nav__link">
+    SIX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.SubTier.THREE" class="md-nav__link">
+    THREE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.SubTier.TWO" class="md-nav__link">
+    TWO
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Tier" class="md-nav__link">
+    Tier
+  </a>
+  
+    <nav class="md-nav" aria-label="Tier">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Tier.BRONZE" class="md-nav__link">
+    BRONZE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Tier.DIAMOND" class="md-nav__link">
+    DIAMOND
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Tier.GOLD" class="md-nav__link">
+    GOLD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Tier.NOT_APPLICABLE" class="md-nav__link">
+    NOT_APPLICABLE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Tier.ONYX" class="md-nav__link">
+    ONYX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Tier.PLATINUM" class="md-nav__link">
+    PLATINUM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.refdata.Tier.SILVER" class="md-nav__link">
+    SILVER
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="reference-data">Reference Data</h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="spnkr.parsers.refdata" class="doc doc-heading">
+            <code>spnkr.parsers.refdata</code>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+  
+      <p>Enumerated data types used by the Halo Infinite API.</p>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="spnkr.parsers.refdata.AssetKind" class="doc doc-heading">
+          <code>AssetKind</code>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="enum.IntEnum">IntEnum</span></code></p>
+
+  
+      <p>Types of assets used by Halo Infinite.</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.AssetKind.ENGINE_GAME_VARIANT" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">ENGINE_GAME_VARIANT</span> <span class="o">=</span> <span class="mi">10</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>An engine game mode asset.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.AssetKind.FILM" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">FILM</span> <span class="o">=</span> <span class="mi">1</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>A film asset.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.AssetKind.MANIFEST" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">MANIFEST</span> <span class="o">=</span> <span class="mi">9</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>A manifest asset.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.AssetKind.MAP" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">MAP</span> <span class="o">=</span> <span class="mi">2</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>A map asset.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.AssetKind.MAP_MODE_PAIR" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">MAP_MODE_PAIR</span> <span class="o">=</span> <span class="mi">7</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>A map and game mode pair asset.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.AssetKind.PLAYLIST" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">PLAYLIST</span> <span class="o">=</span> <span class="mi">3</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>A matchmaking playlist asset.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.AssetKind.PREFAB" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">PREFAB</span> <span class="o">=</span> <span class="mi">4</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>A prefabricated object asset.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.AssetKind.PROJECT" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">PROJECT</span> <span class="o">=</span> <span class="mi">8</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>A project asset.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.AssetKind.TEST_ASSET" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">TEST_ASSET</span> <span class="o">=</span> <span class="mi">5</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>A test asset.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.AssetKind.UGC_GAME_VARIANT" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">UGC_GAME_VARIANT</span> <span class="o">=</span> <span class="mi">6</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>A user-generated content game mode asset.</p>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="spnkr.parsers.refdata.BotDifficulty" class="doc doc-heading">
+          <code>BotDifficulty</code>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="enum.IntEnum">IntEnum</span></code></p>
+
+  
+      <p>Bot difficulty levels.</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.BotDifficulty.MARINE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">MARINE</span> <span class="o">=</span> <span class="mi">1</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Marine bots. 2nd lowest difficulty.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.BotDifficulty.ODST" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">ODST</span> <span class="o">=</span> <span class="mi">2</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>ODST bots. 2nd highest difficulty.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.BotDifficulty.RECRUIT" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">RECRUIT</span> <span class="o">=</span> <span class="mi">4</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Recruit bots. Lowest difficulty.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.BotDifficulty.SPARTAN" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">SPARTAN</span> <span class="o">=</span> <span class="mi">3</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Spartan bots. Highest difficulty.</p>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="spnkr.parsers.refdata.GameVariantCategory" class="doc doc-heading">
+          <code>GameVariantCategory</code>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="enum.IntEnum">IntEnum</span></code></p>
+
+  
+      <p>Categories of multiplayer game modes.</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.GameVariantCategory.ASSAULT" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">ASSAULT</span> <span class="o">=</span> <span class="mi">16</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Assault game modes.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.GameVariantCategory.ATTRITION" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">ATTRITION</span> <span class="o">=</span> <span class="mi">7</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Attrition game modes.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.GameVariantCategory.BASTION" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">BASTION</span> <span class="o">=</span> <span class="mi">12</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Bastion game modes.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.GameVariantCategory.CTF" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">CTF</span> <span class="o">=</span> <span class="mi">15</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Capture the Flag game modes.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.GameVariantCategory.ELIMINATION" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">ELIMINATION</span> <span class="o">=</span> <span class="mi">8</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Elimination game modes.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.GameVariantCategory.ESCORT" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">ESCORT</span> <span class="o">=</span> <span class="mi">23</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Escort game modes.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.GameVariantCategory.EXTRACTION" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">EXTRACTION</span> <span class="o">=</span> <span class="mi">17</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Extraction game modes.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.GameVariantCategory.FIESTA" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">FIESTA</span> <span class="o">=</span> <span class="mi">9</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Fiesta game modes.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.GameVariantCategory.GRIFBALL" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">GRIFBALL</span> <span class="o">=</span> <span class="mi">25</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Grifball game modes.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.GameVariantCategory.GUN_GAME" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">GUN_GAME</span> <span class="o">=</span> <span class="mi">24</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Gun Game game modes.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.GameVariantCategory.INFECTION" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">INFECTION</span> <span class="o">=</span> <span class="mi">22</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Infection game modes.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.GameVariantCategory.JUGGERNAUT" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">JUGGERNAUT</span> <span class="o">=</span> <span class="mi">20</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Juggernaut game modes.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.GameVariantCategory.LAND_GRAB" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">LAND_GRAB</span> <span class="o">=</span> <span class="mi">39</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Land Grab game modes.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.GameVariantCategory.ODDBALL" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">ODDBALL</span> <span class="o">=</span> <span class="mi">18</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Oddball game modes.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.GameVariantCategory.SLAYER" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">SLAYER</span> <span class="o">=</span> <span class="mi">6</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Slayer game modes.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.GameVariantCategory.STOCKPILE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">STOCKPILE</span> <span class="o">=</span> <span class="mi">19</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Stockpile game modes.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.GameVariantCategory.STRONGHOLDS" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">STRONGHOLDS</span> <span class="o">=</span> <span class="mi">11</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Strongholds game modes.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.GameVariantCategory.TEST_ENGINE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">TEST_ENGINE</span> <span class="o">=</span> <span class="mi">32</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Test Engine game modes.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.GameVariantCategory.TOTAL_CONTROL" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">TOTAL_CONTROL</span> <span class="o">=</span> <span class="mi">14</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Total Control game modes.</p>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="spnkr.parsers.refdata.LifecycleMode" class="doc doc-heading">
+          <code>LifecycleMode</code>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="enum.IntEnum">IntEnum</span></code></p>
+
+  
+      <p>General categories of game modes.</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.LifecycleMode.CUSTOM" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">CUSTOM</span> <span class="o">=</span> <span class="mi">1</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Custom games.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.LifecycleMode.MATCHMADE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">MATCHMADE</span> <span class="o">=</span> <span class="mi">3</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Matchmade games.</p>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="spnkr.parsers.refdata.MedalDifficulty" class="doc doc-heading">
+          <code>MedalDifficulty</code>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="enum.IntEnum">IntEnum</span></code></p>
+
+  
+      <p>Difficulty of medals obtainable in matchmaking.</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.MedalDifficulty.HEROIC" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">HEROIC</span> <span class="o">=</span> <span class="mi">1</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Heroic difficulty medals. 2nd easiest to obtain.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.MedalDifficulty.LEGENDARY" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">LEGENDARY</span> <span class="o">=</span> <span class="mi">2</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Legendary difficulty medals. 2nd hardest to obtain.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.MedalDifficulty.MYTHIC" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">MYTHIC</span> <span class="o">=</span> <span class="mi">3</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Mythic difficulty medals. Hardest to obtain.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.MedalDifficulty.NORMAL" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">NORMAL</span> <span class="o">=</span> <span class="mi">0</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Normal difficulty medals. Easiest to obtain.</p>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="spnkr.parsers.refdata.MedalType" class="doc doc-heading">
+          <code>MedalType</code>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="enum.IntEnum">IntEnum</span></code></p>
+
+  
+      <p>Types of medals obtainable in matchmaking.</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.MedalType.MODE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">MODE</span> <span class="o">=</span> <span class="mi">1</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Game mode-specific medals.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.MedalType.MULTIKILL" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">MULTIKILL</span> <span class="o">=</span> <span class="mi">2</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Kill multiple enemies in quick succession.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.MedalType.PROFICIENCY" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">PROFICIENCY</span> <span class="o">=</span> <span class="mi">3</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Medals related to player proficiency.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.MedalType.SKILL" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">SKILL</span> <span class="o">=</span> <span class="mi">4</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Medals awarded for skillful play.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.MedalType.SPREE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">SPREE</span> <span class="o">=</span> <span class="mi">0</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>General or weapon-specific killing sprees.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.MedalType.STYLE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">STYLE</span> <span class="o">=</span> <span class="mi">5</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Medals awarded for stylish play.</p>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="spnkr.parsers.refdata.Outcome" class="doc doc-heading">
+          <code>Outcome</code>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="enum.IntEnum">IntEnum</span></code></p>
+
+  
+      <p>Match outcome options.</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.Outcome.DID_NOT_FINISH" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">DID_NOT_FINISH</span> <span class="o">=</span> <span class="mi">4</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Match was not finished.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.Outcome.LOSS" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">LOSS</span> <span class="o">=</span> <span class="mi">3</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Match was lost.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.Outcome.TIE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">TIE</span> <span class="o">=</span> <span class="mi">1</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Match ended in a tie.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.Outcome.WIN" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">WIN</span> <span class="o">=</span> <span class="mi">2</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Match was won.</p>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="spnkr.parsers.refdata.PlayerType" class="doc doc-heading">
+          <code>PlayerType</code>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="enum.IntEnum">IntEnum</span></code></p>
+
+  
+      <p>Types of players.</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.PlayerType.BOT" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">BOT</span> <span class="o">=</span> <span class="mi">2</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>AI players.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.PlayerType.HUMAN" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">HUMAN</span> <span class="o">=</span> <span class="mi">1</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Human players.</p>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="spnkr.parsers.refdata.PlaylistExperience" class="doc doc-heading">
+          <code>PlaylistExperience</code>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="enum.IntEnum">IntEnum</span></code></p>
+
+  
+      <p>General categories of playlists.</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.PlaylistExperience.ARENA" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">ARENA</span> <span class="o">=</span> <span class="mi">2</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Arena playlists. Typically 4v4.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.PlaylistExperience.BIG_TEAM_BATTLE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">BIG_TEAM_BATTLE</span> <span class="o">=</span> <span class="mi">3</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Big team battle playlists. Typically 12v12.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.PlaylistExperience.FEATURED" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">FEATURED</span> <span class="o">=</span> <span class="mi">5</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Featured playlists. Rotates frequently.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.PlaylistExperience.PVE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">PVE</span> <span class="o">=</span> <span class="mi">4</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Player vs. environment playlists.</p>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="spnkr.parsers.refdata.SkillResultCode" class="doc doc-heading">
+          <code>SkillResultCode</code>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="enum.IntEnum">IntEnum</span></code></p>
+
+  
+      <p>Result codes for skill requests.</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.SkillResultCode.SUCCESS" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">SUCCESS</span> <span class="o">=</span> <span class="mi">0</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Skill request was successful.</p>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="spnkr.parsers.refdata.SubTier" class="doc doc-heading">
+          <code>SubTier</code>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="enum.IntEnum">IntEnum</span></code></p>
+
+  
+      <p>Sub-tiers of skill rankings.</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.SubTier.FIVE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">FIVE</span> <span class="o">=</span> <span class="mi">5</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>5th sub-tier.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.SubTier.FOUR" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">FOUR</span> <span class="o">=</span> <span class="mi">4</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>4th sub-tier.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.SubTier.NOT_APPLICABLE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">NOT_APPLICABLE</span> <span class="o">=</span> <span class="mi">0</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Not applicable.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.SubTier.ONE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">ONE</span> <span class="o">=</span> <span class="mi">1</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>1st sub-tier.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.SubTier.SIX" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">SIX</span> <span class="o">=</span> <span class="mi">6</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>6th sub-tier. Highest sub-tier before advancing to the next tier.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.SubTier.THREE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">THREE</span> <span class="o">=</span> <span class="mi">3</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>3rd sub-tier.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.SubTier.TWO" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">TWO</span> <span class="o">=</span> <span class="mi">2</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>2nd sub-tier.</p>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="spnkr.parsers.refdata.Tier" class="doc doc-heading">
+          <code>Tier</code>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="enum.StrEnum">StrEnum</span></code></p>
+
+  
+      <p>Tiers of skill rankings.</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.Tier.BRONZE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">BRONZE</span> <span class="o">=</span> <span class="s1">&#39;Bronze&#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Bronze tier. Lowest tier.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.Tier.DIAMOND" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">DIAMOND</span> <span class="o">=</span> <span class="s1">&#39;Diamond&#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Diamond tier.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.Tier.GOLD" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">GOLD</span> <span class="o">=</span> <span class="s1">&#39;Gold&#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Gold tier.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.Tier.NOT_APPLICABLE" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">NOT_APPLICABLE</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Not applicable.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.Tier.ONYX" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">ONYX</span> <span class="o">=</span> <span class="s1">&#39;Onyx&#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Onyx tier. Highest tier.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.Tier.PLATINUM" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">PLATINUM</span> <span class="o">=</span> <span class="s1">&#39;Platinum&#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Platinum tier.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.parsers.refdata.Tier.SILVER" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">SILVER</span> <span class="o">=</span> <span class="s1">&#39;Silver&#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Silver tier.</p>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.78eede0e.min.js"></script>
+      
+    
+  </body>
+</html>
