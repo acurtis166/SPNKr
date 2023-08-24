@@ -16,17 +16,10 @@
 - Halo Infinite authentication flow, endpoints, schema, enumerated data types: [Den Delimarsky](https://den.dev/blog/halo-api-authentication)
 - Microsoft/343 Industries
 
-## Disclaimer
+!!! warning "Disclaimer"
 
-This software is not endorsed or supported by Microsoft or 343 Industries. It is a personal project with the goal of analyzing Halo Infinite match data.
+    This software is not endorsed or supported by Microsoft or 343 Industries. It is a personal project with the goal of analyzing Halo Infinite match data.
 
-As the authentication process requires usage of personal credentials, **use at your own risk** of action by Microsoft or 343 Industries.
+    As the authentication process requires usage of personal credentials, **use at your own risk** of action by Microsoft or 343 Industries.
 
-## Dependencies
-
-- Python >= 3.11
-- Required Packages:
-    - `aiohttp` for making asyncronous HTTP requests
-    - `aiolimiter` for limiting requests per second
-- Optional Packages:
-    - `pydantic` for using provided Pydantic models to parse reponses
+[Get Started](getting-started.md){ .md-button }
