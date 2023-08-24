@@ -6,7 +6,7 @@
 
 ### Links
 
-- [Documentation](https://acurtis166.github.io/spnkr/)
+- [Documentation](https://acurtis166.github.io/SPNKr/)
 - [PyPI](https://pypi.org/project/spnkr/)
 - [GitHub](https://github.com/acurtis166/spnkr)
 
