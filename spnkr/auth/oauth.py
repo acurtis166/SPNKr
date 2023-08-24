@@ -23,7 +23,6 @@ class OAuth2Token:
     """
 
     raw: dict[str, Any]
-    """The raw, deserialized JSON response."""
 
     @property
     def access_token(self) -> str:

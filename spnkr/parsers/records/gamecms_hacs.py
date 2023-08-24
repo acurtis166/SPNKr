@@ -6,24 +6,27 @@ from ..refdata import MedalDifficulty, MedalType
 
 
 class MedalRecord(NamedTuple):
-    """Details about a medal."""
+    """Details about a medal.
+
+    Attributes:
+        name_id: The medal's ID.
+        name: The medal's name.
+        description: The medal's description.
+        sprite_index: The index of the medal's sprite in the sprite sheet.
+        sorting_weight: The medal's sorting weight.
+        difficulty: The medal's difficulty.
+        type: The medal's type.
+        personal_score: The amount of personal score awarded by obtaining the medal.
+    """
 
     name_id: int
-    """The medal's ID."""
     name: str
-    """The medal's name."""
     description: str
-    """The medal's description."""
     sprite_index: int
-    """The index of the medal's sprite in the sprite sheet."""
     sorting_weight: int
-    """The medal's sorting weight."""
     difficulty: MedalDifficulty
-    """The medal's difficulty."""
     type: MedalType
-    """The medal's type."""
     personal_score: int
-    """The amount of personal score awarded by obtaining the medal."""
 
 
 def parse_medal_metadata(data: dict[str, Any]) -> list[MedalRecord]:

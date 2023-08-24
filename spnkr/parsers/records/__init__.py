@@ -26,3 +26,26 @@ from .stats import (
     parse_team_core_stats,
 )
 from .ugc_discovery import AssetRecord, parse_asset
+
+__all__ = [
+    "AssetRecord",
+    "MatchCountRecord",
+    "MatchHistoryRecord",
+    "MatchInfoRecord",
+    "MedalRecord",
+    "PlayerCoreStatsRecord",
+    "PlayerMedalRecord",
+    "PlayerSkillRecord",
+    "PlaylistCsrRecord",
+    "TeamCoreStatsRecord",
+    "parse_asset",
+    "parse_match_count",
+    "parse_match_history",
+    "parse_match_info",
+    "parse_medal_metadata",
+    "parse_player_core_stats",
+    "parse_player_medals",
+    "parse_match_skill",
+    "parse_playlist_csr",
+    "parse_team_core_stats",
+]

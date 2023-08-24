@@ -15,275 +15,293 @@ from ..refdata import (
 
 
 class MatchCountRecord(NamedTuple):
-    """A player's match count summary."""
+    """A player's match count summary.
+
+    Attributes:
+        player_id: The player's Xbox Live ID.
+        total: The total number of matches played.
+        custom: The number of custom matches played.
+        matchmade: The number of matchmade matches played.
+        local: The number of local matches played.
+    """
 
     player_id: str
-    """The player's Xbox Live ID."""
     total: int
-    """The total number of matches played."""
     custom: int
-    """The number of custom matches played."""
     matchmade: int
-    """The number of matchmade matches played."""
     local: int
-    """The number of local matches played."""
 
 
 class MatchHistoryRecord(NamedTuple):
-    """A single match from a player's match history."""
+    """A single match from a player's match history.
+
+    Attributes:
+        match_id: The match GUID.
+        start_time: The UTC datetime the match started.
+        end_time: The UTC datetime the match ended.
+        duration: The duration of the match.
+        lifecycle_mode: The lifecycle mode of the match.
+        game_variant_category: The game variant category of the match.
+        level_id: The ID of the level the match was played on.
+        map_asset_id: The asset ID of the map variant.
+        map_version_id: The version ID of the map variant.
+        game_variant_asset_id: The asset ID of the game mode.
+        game_variant_version_id: The version ID of the game mode.
+        playlist_asset_id: The asset ID of the playlist.
+        playlist_version_id: The version ID of the playlist.
+        map_mode_pair_asset_id: The asset ID of the map mode pair.
+        map_mode_pair_version_id: The version ID of the map mode pair.
+        season_id: The ID of the season the match was played in.
+        playable_duration: The duration of the match that was playable.
+        last_team_id: The ID of the team the player was on at the end of the match.
+        outcome: The outcome of the match for the player.
+        rank: The player's rank in the match.
+        present_at_end_of_match: Whether the player was present at the end of the match.
+    """
 
     match_id: UUID
-    """The match GUID."""
     start_time: dt.datetime
-    """The UTC datetime the match started."""
     end_time: dt.datetime
-    """The UTC datetime the match ended."""
     duration: dt.timedelta
-    """The duration of the match."""
     lifecycle_mode: LifecycleMode
-    """The lifecycle mode of the match."""
     game_variant_category: GameVariantCategory
-    """The game variant category of the match."""
     level_id: str
-    """The ID of the level the match was played on."""
     map_asset_id: str
-    """The asset ID of the map variant."""
     map_version_id: int
-    """The version ID of the map variant."""
     game_variant_asset_id: str
-    """The asset ID of the game mode."""
     game_variant_version_id: int
-    """The version ID of the game mode."""
     playlist_asset_id: str | None
-    """The asset ID of the playlist."""
     playlist_version_id: int | None
-    """The version ID of the playlist."""
     map_mode_pair_asset_id: str | None
-    """The asset ID of the map mode pair."""
     map_mode_pair_version_id: int | None
-    """The version ID of the map mode pair."""
     season_id: int | None
-    """The ID of the season the match was played in."""
     playable_duration: dt.timedelta
-    """The duration of the match that was playable."""
     last_team_id: int
-    """The ID of the team the player was on at the end of the match."""
     outcome: Outcome
-    """The outcome of the match for the player."""
     rank: int
-    """The player's rank in the match."""
     present_at_end_of_match: bool
-    """Whether the player was present at the end of the match."""
 
 
 class MatchInfoRecord(NamedTuple):
-    """Information about a single match."""
+    """Information about a single match.
+
+    Attributes:
+        match_id: The match GUID.
+        start_time: The UTC datetime the match started.
+        end_time: The UTC datetime the match ended.
+        duration: The duration of the match.
+        lifecycle_mode: The lifecycle mode of the match.
+        game_variant_category: The game variant category of the match.
+        level_id: The ID of the level the match was played on.
+        map_asset_id: The asset ID of the map variant.
+        map_version_id: The version ID of the map variant.
+        game_variant_asset_id: The asset ID of the game mode.
+        game_variant_version_id: The version ID of the game mode.
+        playlist_asset_id: The asset ID of the playlist.
+        playlist_version_id: The version ID of the playlist.
+        map_mode_pair_asset_id: The asset ID of the map mode pair.
+        map_mode_pair_version_id: The version ID of the map mode pair.
+        season_id: The ID of the season the match was played in.
+        playable_duration: The duration of the match that was playable.
+    """
 
     match_id: UUID
-    """The match GUID."""
     start_time: dt.datetime
-    """The UTC datetime the match started."""
     end_time: dt.datetime
-    """The UTC datetime the match ended."""
     duration: dt.timedelta
-    """The duration of the match."""
     lifecycle_mode: LifecycleMode
-    """The lifecycle mode of the match."""
     game_variant_category: GameVariantCategory
-    """The game variant category of the match."""
     level_id: str
-    """The ID of the level the match was played on."""
     map_asset_id: str
-    """The asset ID of the map variant."""
     map_version_id: int
-    """The version ID of the map variant."""
     game_variant_asset_id: str
-    """The asset ID of the game mode."""
     game_variant_version_id: int
-    """The version ID of the game mode."""
     playlist_asset_id: str | None
-    """The asset ID of the playlist."""
     playlist_version_id: int | None
-    """The version ID of the playlist."""
     map_mode_pair_asset_id: str | None
-    """The asset ID of the map mode pair."""
     map_mode_pair_version_id: int | None
-    """The version ID of the map mode pair."""
     season_id: int | None
-    """The ID of the season the match was played in."""
     playable_duration: dt.timedelta
-    """The duration of the match that was playable."""
 
 
 class TeamCoreStatsRecord(NamedTuple):
-    """A team's core stats for a single match."""
+    """A team's core stats for a single match.
+
+    Attributes:
+        match_id: The match GUID.
+        team_id: The team ID.
+        outcome: The outcome of the match for the team.
+        rank: The team's rank in the match.
+        score: The team's score.
+        personal_score: The team's personal score.
+        rounds_won: The number of rounds the team won.
+        rounds_lost: The number of rounds the team lost.
+        rounds_tied: The number of rounds the team tied.
+        kills: The number of kills the team had.
+        deaths: The number of times the team died.
+        assists: The number of assists the team had.
+        kda: The team's kill-death-assist metric (kills + assists / 3 - deaths).
+        suicides: The number of times the team's members committed suicide.
+        betrayals: The number of times the team's members killed each other.
+        average_life_duration: The average duration of the team's lives.
+        grenade_kills: The number of grenade kills the team had.
+        headshot_kills: The number of headshot kills the team had.
+        melee_kills: The number of melee kills the team had.
+        power_weapon_kills: The number of power weapon kills the team had.
+        shots_fired: The number of shots the team fired.
+        shots_hit: The number of shots the team hit.
+        accuracy: The team's accuracy (shots_hit / shots_fired * 100).
+        damage_dealt: The amount of damage the team dealt.
+        damage_taken: The amount of damage the team took.
+        callout_assists: The number of marking assists the team had.
+        vehicle_destroys: The number of vehicles the team destroyed.
+        driver_assists: The number of driver assists the team had.
+        hijacks: The number of vehicles the team hijacked.
+        emp_assists: The number of EMP assists the team had.
+        max_killing_spree: The maximum killing spree across all team members.
+        spawns: The number of times the team spawned.
+    """
 
     match_id: UUID
-    """The match GUID."""
     team_id: int
-    """The team ID."""
     outcome: Outcome
-    """The outcome of the match for the team."""
     rank: int
-    """The team's rank in the match."""
     score: int
-    """The team's score."""
     personal_score: int
-    """The team's personal score."""
     rounds_won: int
-    """The number of rounds the team won."""
     rounds_lost: int
-    """The number of rounds the team lost."""
     rounds_tied: int
-    """The number of rounds the team tied."""
     kills: int
-    """The number of kills the team had."""
     deaths: int
-    """The number of times the team died."""
     assists: int
-    """The number of assists the team had."""
     kda: float
-    """The team's kill-death-assist metric (kills + assists / 3 - deaths)."""
     suicides: int
-    """The number of times the team's members committed suicide."""
     betrayals: int
-    """The number of times the team's members killed each other."""
     average_life_duration: dt.timedelta
-    """The average duration of the team's lives."""
     grenade_kills: int
-    """The number of grenade kills the team had."""
     headshot_kills: int
-    """The number of headshot kills the team had."""
     melee_kills: int
-    """The number of melee kills the team had."""
     power_weapon_kills: int
-    """The number of power weapon kills the team had."""
     shots_fired: int
-    """The number of shots the team fired."""
     shots_hit: int
-    """The number of shots the team hit."""
     accuracy: float
-    """The team's accuracy (shots_hit / shots_fired * 100)."""
     damage_dealt: int
-    """The amount of damage the team dealt."""
     damage_taken: int
-    """The amount of damage the team took."""
     callout_assists: int
-    """The number of marking assists the team had."""
     vehicle_destroys: int
-    """The number of vehicles the team destroyed."""
     driver_assists: int
-    """The number of driver assists the team had."""
     hijacks: int
-    """The number of vehicles the team hijacked."""
     emp_assists: int
-    """The number of EMP assists the team had."""
     max_killing_spree: int
-    """The maximum killing spree across all team members."""
     spawns: int
-    """The number of times the team spawned."""
 
 
 class PlayerCoreStatsRecord(NamedTuple):
-    """A player's core stats for a single match."""
+    """A player's core stats for a single match.
+
+    Attributes:
+        match_id: The match GUID.
+        player_id: The player's Xbox Live ID.
+        player_type: The player's type.
+        bot_difficulty: The bot's difficulty, if the player is a bot.
+        last_team_id: The ID of the team the player was on at the end of the match.
+        outcome: The outcome of the match for the player.
+        rank: The player's rank in the match.
+        present_at_beginning: Whether the player was present at the beginning of the match.
+        present_at_completion: Whether the player was present at the completion of the match.
+        time_played: The amount of time the player was present in the match.
+        team_id: The ID of the team the player was on.
+        outcome: The outcome of the match for the player.
+        rank: The player's rank in the match.
+        score: The player's score.
+        personal_score: The player's personal score.
+        rounds_won: The number of rounds the player's team won.
+        rounds_lost: The number of rounds the player's team lost.
+        rounds_tied: The number of rounds the player's team tied.
+        kills: The number of kills the player had.
+        deaths: The number of times the player died.
+        assists: The number of assists the player had.
+        kda: The player's kill-death-assist metric (kills + assists / 3 - deaths).
+        suicides: The number of times the player committed suicide.
+        betrayals: The number of times the player betrayed a teammate.
+        average_life_duration: The average duration of the player's lives.
+        grenade_kills: The number of grenade kills the player had.
+        headshot_kills: The number of headshot kills the player had.
+        melee_kills: The number of melee kills the player had.
+        power_weapon_kills: The number of power weapon kills the player had.
+        shots_fired: The number of shots the player fired.
+        shots_hit: The number of shots the player hit.
+        accuracy: The player's accuracy (shots_hit / shots_fired * 100).
+        damage_dealt: The amount of damage the player dealt.
+        damage_taken: The amount of damage the player took.
+        callout_assists: The number of callout assists the player had.
+        vehicle_destroys: The number of vehicles the player destroyed.
+        driver_assists: The number of driver assists the player had.
+        hijacks: The number of vehicles the player hijacked.
+        emp_assists: The number of EMP assists the player had.
+        max_killing_spree: The maximum killing spree the player had.
+        spawns: The number of times the player spawned.
+    """
 
     match_id: UUID
-    """The match GUID."""
     player_id: str
-    """The player's Xbox Live ID."""
     player_type: PlayerType
-    """The player's type."""
     bot_difficulty: BotDifficulty | None
-    """The bot's difficulty, if the player is a bot."""
     last_team_id: int
-    """The ID of the team the player was on at the end of the match."""
     outcome: Outcome
-    """The outcome of the match for the player."""
     rank: int
-    """The player's rank in the match."""
     present_at_beginning: bool
-    """Whether the player was present at the beginning of the match."""
     present_at_completion: bool
-    """Whether the player was present at the completion of the match."""
     time_played: dt.timedelta
-    """The amount of time the player was present in the match."""
     team_id: int
-    """The ID of the team the player was on."""
     outcome: Outcome
-    """The outcome of the match for the player."""
     rank: int
-    """The player's rank in the match."""
     score: int
-    """The player's score."""
     personal_score: int
-    """The player's personal score."""
     rounds_won: int
-    """The number of rounds the player's team won."""
     rounds_lost: int
-    """The number of rounds the player's team lost."""
     rounds_tied: int
-    """The number of rounds the player's team tied."""
     kills: int
-    """The number of kills the player had."""
     deaths: int
-    """The number of times the player died."""
     assists: int
-    """The number of assists the player had."""
     kda: float
-    """The player's kill-death-assist metric (kills + assists / 3 - deaths)."""
     suicides: int
-    """The number of times the player committed suicide."""
     betrayals: int
-    """The number of times the player betrayed a teammate."""
     average_life_duration: dt.timedelta
-    """The average duration of the player's lives."""
     grenade_kills: int
-    """The number of grenade kills the player had."""
     headshot_kills: int
-    """The number of headshot kills the player had."""
     melee_kills: int
-    """The number of melee kills the player had."""
     power_weapon_kills: int
-    """The number of power weapon kills the player had."""
     shots_fired: int
-    """The number of shots the player fired."""
     shots_hit: int
-    """The number of shots the player hit."""
     accuracy: float
-    """The player's accuracy (shots_hit / shots_fired * 100)."""
     damage_dealt: int
-    """The amount of damage the player dealt."""
     damage_taken: int
-    """The amount of damage the player took."""
     callout_assists: int
-    """The number of callout assists the player had."""
     vehicle_destroys: int
-    """The number of vehicles the player destroyed."""
     driver_assists: int
-    """The number of driver assists the player had."""
     hijacks: int
-    """The number of vehicles the player hijacked."""
     emp_assists: int
-    """The number of EMP assists the player had."""
     max_killing_spree: int
-    """The maximum killing spree the player had."""
     spawns: int
-    """The number of times the player spawned."""
 
 
 class PlayerMedalRecord(NamedTuple):
-    """A single medal earned by a player in a match."""
+    """A single medal earned by a player in a match.
+
+    Attributes:
+        match_id: The match GUID.
+        player_id: The player's Xbox Live ID.
+        team_id: The team ID of the player.
+        name_id: The medal's ID.
+        count: The number of times the medal was earned.
+    """
 
     match_id: UUID
-    """The match GUID."""
     player_id: str
-    """The player's Xbox Live ID."""
     team_id: int
-    """The team ID of the player."""
     name_id: int
-    """The medal's ID."""
     count: int
-    """The number of times the medal was earned."""
 
 
 def parse_match_count(

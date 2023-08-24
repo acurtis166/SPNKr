@@ -21,15 +21,10 @@ class AuthenticatedPlayer:
     """
 
     player_id: str
-    """Xbox Live ID of the player."""
     gamertag: str
-    """The player's gamertag."""
     spartan_token: SpartanToken
-    """An expirable Spartan token required for all API endpoints."""
     clearance_token: ClearanceToken
-    """A clearance token required for some API endpoints."""
     xbl_authorization_header_value: str
-    """The value for the authorization header passed for Xbox Live API calls."""
 
     @property
     def is_valid(self) -> bool:

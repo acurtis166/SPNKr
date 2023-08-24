@@ -7,45 +7,49 @@ from ..refdata import SkillResultCode
 
 
 class PlayerSkillRecord(NamedTuple):
-    """A player's skill data for a single match."""
+    """A player's skill data for a single match.
+
+    Attributes:
+        match_id: The match GUID.
+        player_id: The player's Xbox Live ID.
+        result_code: The status of the skill result.
+        team_id: The player's team ID.
+        team_mmr: The average MMR of the player's team.
+        pre_match_csr: The player's CSR before the match.
+        post_match_csr: The player's CSR after the match.
+        actual_kills: The number of kills the player got in the match.
+        expected_kills: The number of kills the player was expected to get in the match.
+    """
 
     match_id: UUID
-    """The match GUID."""
     player_id: str
-    """The player's Xbox Live ID."""
     result_code: SkillResultCode
-    """The status of the skill result."""
     team_id: int
-    """The player's team ID."""
     team_mmr: int
-    """The average MMR of the player's team."""
     pre_match_csr: int
-    """The player's CSR before the match."""
     post_match_csr: int
-    """The player's CSR after the match."""
     actual_kills: int
-    """The number of kills the player got in the match."""
     expected_kills: int
-    """The number of kills the player was expected to get in the match."""
     actual_deaths: int
-    """The number of deaths the player got in the match."""
     expected_deaths: int
-    """The number of deaths the player was expected to get in the match."""
 
 
 class PlaylistCsrRecord(NamedTuple):
-    """A player's CSR summary for a playlist."""
+    """A player's CSR summary for a playlist.
+
+    Attributes:
+        player_id: The player's Xbox Live ID.
+        result_code: The status of the CSR request.
+        current_csr: The player's current CSR in the playlist.
+        season_max_csr: The player's highest CSR in the playlist for the current season.
+        all_time_max_csr: The player's highest CSR in the playlist for all seasons.
+    """
 
     player_id: str
-    """The player's Xbox Live ID."""
     result_code: SkillResultCode
-    """The status of the CSR request."""
     current_csr: int
-    """The player's current CSR in the playlist."""
     season_max_csr: int
-    """The player's highest CSR in the playlist for the current season."""
     all_time_max_csr: int
-    """The player's highest CSR in the playlist for all seasons."""
 
 
 def parse_match_skill(

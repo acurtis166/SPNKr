@@ -19,7 +19,6 @@ class SpartanToken:
     """
 
     raw: dict[str, Any]
-    """The raw, deserialized JSON response."""
 
     @property
     def token(self) -> str:
@@ -43,7 +42,6 @@ class ClearanceToken:
     """
 
     raw: dict[str, Any]
-    """The raw, deserialized JSON response."""
 
     @property
     def token(self) -> str:

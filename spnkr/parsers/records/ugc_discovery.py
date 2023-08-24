@@ -4,24 +4,27 @@ from typing import Any, NamedTuple
 
 
 class AssetRecord(NamedTuple):
-    """A game asset, such as a map or game mode."""
+    """A game asset, such as a map or game mode.
+
+    Attributes:
+        name: The asset's name.
+        description: The asset's description.
+        asset_id: The asset's GUID.
+        version_id: The asset's version GUID.
+        plays_recent: The number of times the asset has been played recently.
+        plays_all_time: The number of times the asset has been played in total.
+        average_rating: The asset's average rating.
+        number_of_ratings: The number of ratings the asset has received.
+    """
 
     name: str
-    """The asset's name."""
     description: str
-    """The asset's description."""
     asset_id: str
-    """The asset's GUID."""
     version_id: str
-    """The asset's version GUID."""
     plays_recent: int
-    """The number of times the asset has been played recently."""
     plays_all_time: int
-    """The number of times the asset has been played in total."""
     average_rating: float
-    """The asset's average rating."""
     number_of_ratings: int
-    """The number of ratings the asset has received."""
 
 
 def parse_asset(asset: dict[str, Any]) -> AssetRecord:

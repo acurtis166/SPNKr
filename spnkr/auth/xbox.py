@@ -17,7 +17,6 @@ class XAUResponse:
     """
 
     raw: dict[str, Any]
-    """The raw, deserialized JSON response."""
 
     @property
     def token(self) -> str:
@@ -34,7 +33,6 @@ class XSTSResponse:
     """
 
     raw: dict[str, Any]
-    """The raw, deserialized JSON response."""
 
     @property
     def token(self) -> str:

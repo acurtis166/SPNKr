@@ -30,8 +30,6 @@ __all__ = [
     "PLAYER_TYPE_MAP",
     "PLAYLIST_EXPERIENCE_MAP",
     "get_rank_from_csr",
-    "SubTier",
-    "Tier",
     "Rank",
 ]
 
@@ -41,38 +39,44 @@ def _intenum_to_mapping(enum: type[IntEnum]) -> dict[int, str]:
     return {e.value: e.name for e in enum}
 
 
-BOT_DIFFICULTY_MAP = _intenum_to_mapping(BotDifficulty)
+BOT_DIFFICULTY_MAP: dict[int, str] = _intenum_to_mapping(BotDifficulty)
 """Mapping of bot difficulty values to names."""
-GAME_CATEGORY_MAP = _intenum_to_mapping(GameVariantCategory)
+GAME_CATEGORY_MAP: dict[int, str] = _intenum_to_mapping(GameVariantCategory)
 """Mapping of game variant category values to names."""
-LIFECYCLE_MAP = _intenum_to_mapping(LifecycleMode)
+LIFECYCLE_MAP: dict[int, str] = _intenum_to_mapping(LifecycleMode)
 """Mapping of lifecycle mode values to names."""
-MEDAL_DIFFICULTY_MAP = _intenum_to_mapping(MedalDifficulty)
+MEDAL_DIFFICULTY_MAP: dict[int, str] = _intenum_to_mapping(MedalDifficulty)
 """Mapping of medal difficulty values to names."""
-MEDAL_TYPE_MAP = _intenum_to_mapping(MedalType)
+MEDAL_TYPE_MAP: dict[int, str] = _intenum_to_mapping(MedalType)
 """Mapping of medal type values to names."""
-OUTCOME_MAP = _intenum_to_mapping(Outcome)
+OUTCOME_MAP: dict[int, str] = _intenum_to_mapping(Outcome)
 """Mapping of match outcome values to names."""
-PLAYER_TYPE_MAP = _intenum_to_mapping(PlayerType)
+PLAYER_TYPE_MAP: dict[int, str] = _intenum_to_mapping(PlayerType)
 """Mapping of player type values to names."""
-PLAYLIST_EXPERIENCE_MAP = _intenum_to_mapping(PlaylistExperience)
+PLAYLIST_EXPERIENCE_MAP: dict[int, str] = _intenum_to_mapping(
+    PlaylistExperience
+)
 """Mapping of playlist experience values to names."""
 
 
 class Rank(NamedTuple):
-    """A CSR tier and sub-tier."""
+    """A CSR tier and sub-tier.
+
+    Attributes:
+        tier: CSR tier.
+        sub_tier: CSR sub-tier.
+    """
 
     tier: Tier
     sub_tier: SubTier
 
     def __str__(self) -> str:
-        """Return the tier and sub-tier as a string."""
         if self.tier is Tier.ONYX:
             return self.tier.value
         return f"{self.tier.value} {self.sub_tier.value}"
 
 
-def get_rank_from_csr(csr: float) -> Rank:
+def get_rank_from_csr(csr: int | float) -> Rank:
     """Get the tier and sub-tier from a CSR value.
 
     Args:

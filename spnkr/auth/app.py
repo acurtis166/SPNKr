@@ -19,8 +19,5 @@ class AzureApp:
     """
 
     client_id: str
-    """The client ID of the application."""
     client_secret: str
-    """The client secret of the application."""
     redirect_uri: str = "https://localhost"
-    """The redirect URI of the application."""

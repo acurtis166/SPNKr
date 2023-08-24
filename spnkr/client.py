@@ -71,6 +71,10 @@ class HaloInfiniteClient:
     async def get_medal_metadata(self) -> ClientResponse:
         """Get details for all medals obtainable in the game.
 
+        Parsers:
+            - [MedalMetadata][spnkr.parsers.pydantic.gamecms_hacs.MedalMetadata]
+            - [parse_medal_metadata][spnkr.parsers.records.gamecms_hacs.parse_medal_metadata]
+
         Returns:
             The medal metadata.
         """
@@ -86,6 +90,10 @@ class HaloInfiniteClient:
             match_id: Halo Infinite match ID.
             xuids: The Xbox Live IDs of the match's players. Only
                 players in this list will have their skill data returned.
+
+        Parsers:
+            - [MatchSkill][spnkr.parsers.pydantic.skill.MatchSkill]
+            - [parse_match_skill][spnkr.parsers.records.skill.parse_match_skill]
 
         Returns:
             The skill data for the match.
@@ -103,6 +111,10 @@ class HaloInfiniteClient:
             playlist_id: Halo Infinite playlist asset ID.
             xuids: The Xbox Live IDs of the players.
 
+        Parsers:
+            - [PlaylistCsr][spnkr.parsers.pydantic.skill.PlaylistCsr]
+            - [parse_playlist_csr][spnkr.parsers.records.skill.parse_playlist_csr]
+
         Returns:
             The summary CSR data for the players in the given playlist.
         """
@@ -118,6 +130,10 @@ class HaloInfiniteClient:
 
         Args:
             xuid: Xbox Live ID of the player to get counts for.
+
+        Parsers:
+            - [MatchCount][spnkr.parsers.pydantic.stats.MatchCount]
+            - [parse_match_count][spnkr.parsers.records.stats.parse_match_count]
 
         Returns:
             The match counts.
@@ -135,18 +151,14 @@ class HaloInfiniteClient:
         """Request a batch of matches from a player's match history.
 
         Args:
-            xuid: Xbox Live ID of the player to request matches
-                for.
-            start: The number of matches to skip (offset).
-                Starts at 0.
-            count: The number of matches to request. Max is 25.
-                Cannot exceed the default value. The service will still return a
-                valid response with only the default match count, but the upper
-                limit is enforced here to ensure that the offset isn't
-                incremented incorrectly when attempting to collect continuous
-                match data for a player.
-            match_type: The type of matches to return. One of
-                "all", "matchmaking", "custom", or "local". Defaults to "all".
+            xuid: Xbox Live ID of the player to request matches for.
+            start: Index of the first match to request, starting at 0.
+            count: The number of matches to request. Maximum number of results returned is 25.
+            match_type: The type of matches to return. One of "all", "matchmaking", "custom", or "local".
+
+        Parsers:
+            - [MatchHistory][spnkr.parsers.pydantic.stats.MatchHistory]
+            - [parse_match_history][spnkr.parsers.records.stats.parse_match_history]
 
         Returns:
             The requested match history "page" of results.
@@ -160,6 +172,13 @@ class HaloInfiniteClient:
 
         Args:
             match_id: Halo Infinite GUID identifying the match.
+
+        Parsers:
+            - [MatchStats][spnkr.parsers.pydantic.stats.MatchStats]
+            - [parse_match_info][spnkr.parsers.records.stats.parse_match_info]
+            - [parse_player_core_stats][spnkr.parsers.records.stats.parse_player_core_stats]
+            - [parse_player_medals][spnkr.parsers.records.stats.parse_player_medals]
+            - [parse_team_core_stats][spnkr.parsers.records.stats.parse_team_core_stats]
 
         Returns:
             The match details.
@@ -175,6 +194,10 @@ class HaloInfiniteClient:
         Args:
             asset_id: The asset ID of the game variant.
             version_id: The version ID of the game variant.
+
+        Parsers:
+            - [UgcGameVariant][spnkr.parsers.pydantic.ugc_discovery.UgcGameVariant]
+            - [parse_asset][spnkr.parsers.records.ugc_discovery.parse_asset]
 
         Returns:
             The game variant details.
@@ -194,6 +217,10 @@ class HaloInfiniteClient:
             asset_id: The asset ID of the map mode pair.
             version_id: The version ID of the map mode pair.
 
+        Parsers:
+            - [MapModePair][spnkr.parsers.pydantic.ugc_discovery.MapModePair]
+            - [parse_asset][spnkr.parsers.records.ugc_discovery.parse_asset]
+
         Returns:
             The map mode pair details.
         """
@@ -209,6 +236,10 @@ class HaloInfiniteClient:
         Args:
             asset_id: The asset ID of the map.
             version_id: The version ID of the map.
+
+        Parsers:
+            - [Map][spnkr.parsers.pydantic.ugc_discovery.Map]
+            - [parse_asset][spnkr.parsers.records.ugc_discovery.parse_asset]
 
         Returns:
             The map details.
@@ -227,6 +258,10 @@ class HaloInfiniteClient:
         Args:
             asset_id: The asset ID of the playlist.
             version_id: The version ID of the playlist.
+
+        Parsers:
+            - [Playlist][spnkr.parsers.pydantic.ugc_discovery.Playlist]
+            - [parse_asset][spnkr.parsers.records.ugc_discovery.parse_asset]
 
         Returns:
             The playlist details.
