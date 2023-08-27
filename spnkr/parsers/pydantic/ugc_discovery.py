@@ -230,7 +230,7 @@ class MapModePair(Asset):
 
     custom_data: dict[Any, Any]
     tags: list[str]
-    map_link: Asset
+    map_link: Asset | None
     ugc_game_variant_link: Asset
 
 
