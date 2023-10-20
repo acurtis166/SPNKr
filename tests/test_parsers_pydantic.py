@@ -98,6 +98,15 @@ def test_parse_match_stats_stockpile():
     assert mode is not None
 
 
+def test_parse_match_stats_extraction():
+    data = load_response("get_match_stats_extraction")
+    result = pp.MatchStats(**data)
+    expected = UUID("44b9ca37-1d91-438a-8ef1-aa4cb78a19b2")
+    assert result.match_id == expected
+    mode = result.players[0].player_team_stats[0].stats.extraction_stats
+    assert mode is not None
+
+
 def test_parse_game_variant():
     data = load_response("get_ugc_game_variant")
     result = pp.UgcGameVariant(**data)
