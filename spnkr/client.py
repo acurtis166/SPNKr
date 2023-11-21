@@ -45,9 +45,10 @@ class HaloInfiniteClient:
         Args:
             session: The aiohttp session to use.
             spartan_token: The spartan token used to authenticate with the API.
-            clearance_token: The clearance token used to authenticate with the API.
-            requests_per_second: The rate limit to use. Defaults to 5 requests per second.
-                Set to None to disable rate limiting.
+            clearance_token: The clearance token used to authenticate with the
+                API.
+            requests_per_second: The rate limit to use. Defaults to 5 requests
+                per second. Set to None to disable rate limiting.
         """
         self._session = session
         headers = {
@@ -153,8 +154,10 @@ class HaloInfiniteClient:
         Args:
             xuid: Xbox Live ID of the player to request matches for.
             start: Index of the first match to request, starting at 0.
-            count: The number of matches to request. Maximum number of results returned is 25.
-            match_type: The type of matches to return. One of "all", "matchmaking", "custom", or "local".
+            count: The number of matches to request. Maximum number of results
+                returned is 25.
+            match_type: The type of matches to return. One of "all",
+                "matchmaking", "custom", or "local".
 
         Parsers:
             - [MatchHistory][spnkr.parsers.pydantic.stats.MatchHistory]
@@ -207,9 +210,7 @@ class HaloInfiniteClient:
         return await self._get(url)
 
     async def get_map_mode_pair(
-        self,
-        asset_id: str | UUID,
-        version_id: str | UUID,
+        self, asset_id: str | UUID, version_id: str | UUID
     ) -> ClientResponse:
         """Get details about a map mode pair.
 
@@ -249,9 +250,7 @@ class HaloInfiniteClient:
         return await self._get(url)
 
     async def get_playlist(
-        self,
-        asset_id: str | UUID,
-        version_id: str | UUID,
+        self, asset_id: str | UUID, version_id: str | UUID
     ) -> ClientResponse:
         """Get details about a playlist.
 
