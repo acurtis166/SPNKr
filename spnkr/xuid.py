@@ -53,3 +53,26 @@ def unwrap_xuid(xuid: str | int) -> int:
     if match is None:
         raise InvalidXuidError(xuid)
     return int(match.group(1))
+
+
+def wrap_xuid_or_gamertag(xuid_or_gamertag: str | int) -> str:
+    """Return the value if it is a gamertag. Otherwise, wrap in "xuid()" format.
+
+    Args:
+        xuid_or_gamertag: Xbox Live ID or gamertag. This can be an integer, a
+            string representation of the ID, or a gamertag. Examples of valid
+            inputs include "xuid(1234567890123456)", "1234567890123456",
+            1234567890123456, and "MyGamertag".
+
+    Returns:
+        A wrapped version of the XUID or the gamertag.
+
+    Raises:
+        InvalidXuidError: If the XUID is invalid.
+    """
+    try:
+        return wrap_xuid(xuid_or_gamertag)
+    except InvalidXuidError:
+        if isinstance(xuid_or_gamertag, int) or not xuid_or_gamertag.strip():
+            raise
+        return xuid_or_gamertag.strip()  # Can safely assume it's a gamertag
