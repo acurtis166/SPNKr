@@ -58,7 +58,7 @@ def test_parse_playlist_csr():
 
 def test_parse_match_count():
     data = load_response("get_match_count")
-    result = records.parse_match_count("xuid(123)", data)
+    result = records.parse_match_count("xuid(1234567890123456)", data)
     assert result.matchmade == 729
 
 
