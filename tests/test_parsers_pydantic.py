@@ -131,5 +131,12 @@ def test_parse_playlist():
     assert result.public_name == "Ranked Arena"
 
 
+def test_parse_users():
+    data = load_response("get_users")
+    result = [pp.User(**user) for user in data]
+    assert len(result) == 1
+    assert result[0].xuid == 1234567890
+
+
 if __name__ == "__main__":
     pytest.main()

@@ -142,5 +142,14 @@ async def test_get_match_stats(client: HaloInfiniteClient):
     )
 
 
+@pytest.mark.asyncio
+async def test_get_users(client: HaloInfiniteClient):
+    await client.get_users(["xuid(123)", "xuid(456)"])
+    SESSION.get.assert_called_with(
+        "https://profile.svc.halowaypoint.com/users",
+        params={"xuids": [123, 456]},
+    )
+
+
 if __name__ == "__main__":
     pytest.main()
