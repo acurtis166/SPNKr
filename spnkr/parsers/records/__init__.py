@@ -5,6 +5,7 @@ than parsing the entirety of the JSON responses.
 """
 
 from .gamecms_hacs import MedalRecord, parse_medal_metadata
+from .profile import User, parse_users
 from .skill import (
     PlayerSkillRecord,
     PlaylistCsrRecord,
@@ -38,6 +39,7 @@ __all__ = [
     "PlayerSkillRecord",
     "PlaylistCsrRecord",
     "TeamCoreStatsRecord",
+    "User",
     "parse_asset",
     "parse_match_count",
     "parse_match_history",
@@ -48,4 +50,5 @@ __all__ = [
     "parse_match_skill",
     "parse_playlist_csr",
     "parse_team_core_stats",
+    "parse_users",
 ]

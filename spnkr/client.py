@@ -12,12 +12,13 @@ from uuid import UUID
 from aiohttp import ClientResponse, ClientSession
 from aiolimiter import AsyncLimiter
 
-from .xuid import wrap_xuid, wrap_xuid_or_gamertag
+from .xuid import unwrap_xuid, wrap_xuid, wrap_xuid_or_gamertag
 
 GAMECMS_HACS_HOST = "https://gamecms-hacs.svc.halowaypoint.com"
 SKILL_HOST = "https://skill.svc.halowaypoint.com:443"
 STATS_HOST = "https://halostats.svc.halowaypoint.com:443"
 UGC_DISCOVERY_HOST = "https://discovery-infiniteugc.svc.halowaypoint.com:443"
+PROFILE_HOST = "https://profile.svc.halowaypoint.com"
 
 
 def _create_limiter(rate_per_second: int) -> AsyncLimiter:
@@ -274,3 +275,23 @@ class HaloInfiniteClient:
         endpoint = f"/hi/playlists/{asset_id}/versions/{version_id}"
         url = f"{UGC_DISCOVERY_HOST}{endpoint}"
         return await self._get(url)
+
+    async def get_users(self, xuids: Iterable[str | int]) -> ClientResponse:
+        """Get user profiles for the given list of Xbox Live IDs.
+
+        Note that the JSON response is an array. This differs from the other
+        endpoints, which return a single JSON object.
+
+        Args:
+            xuids: The Xbox Live IDs of the players.
+
+        Parsers:
+            - [User][spnkr.parsers.pydantic.profile.User]
+            - [parse_users][spnkr.parsers.records.profile.parse_users]
+
+        Returns:
+            A list of users.
+        """
+        url = f"{PROFILE_HOST}/users"
+        params = {"xuids": [unwrap_xuid(x) for x in xuids]}
+        return await self._get(url, params=params)
