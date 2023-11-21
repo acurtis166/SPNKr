@@ -12,7 +12,7 @@ from uuid import UUID
 from aiohttp import ClientResponse, ClientSession
 from aiolimiter import AsyncLimiter
 
-from .xuid import unwrap_xuid, wrap_xuid
+from .xuid import unwrap_xuid, wrap_xuid, wrap_xuid_or_gamertag
 
 GAMECMS_HACS_HOST = "https://gamecms-hacs.svc.halowaypoint.com"
 SKILL_HOST = "https://skill.svc.halowaypoint.com:443"
@@ -124,14 +124,16 @@ class HaloInfiniteClient:
         params = {"players": [wrap_xuid(x) for x in xuids]}
         return await self._get(url, params=params)
 
-    async def get_match_count(self, xuid: str | int) -> ClientResponse:
+    async def get_match_count(self, player: str | int) -> ClientResponse:
         """Get match counts across different game experiences for a player.
 
         The counts returned are for custom matches, matchmade matches, local
         matches, and total matches.
 
         Args:
-            xuid: Xbox Live ID of the player to get counts for.
+            player: Xbox Live ID or gamertag of the player to get counts for.
+                Examples of valid inputs include "xuid(1234567890123456)",
+                "1234567890123456", 1234567890123456, and "MyGamertag".
 
         Parsers:
             - [MatchCount][spnkr.parsers.pydantic.stats.MatchCount]
@@ -140,12 +142,13 @@ class HaloInfiniteClient:
         Returns:
             The match counts.
         """
-        url = f"{STATS_HOST}/hi/players/{wrap_xuid(xuid)}/matches/count"
+        xuid_or_gamertag = wrap_xuid_or_gamertag(player)
+        url = f"{STATS_HOST}/hi/players/{xuid_or_gamertag}/matches/count"
         return await self._get(url)
 
     async def get_match_history(
         self,
-        xuid: str | int,
+        player: str | int,
         start: int = 0,
         count: int = 25,
         match_type: Literal["all", "matchmaking", "custom", "local"] = "all",
@@ -153,7 +156,9 @@ class HaloInfiniteClient:
         """Request a batch of matches from a player's match history.
 
         Args:
-            xuid: Xbox Live ID of the player to request matches for.
+            player: Xbox Live ID or gamertag of the player to get counts for.
+                Examples of valid inputs include "xuid(1234567890123456)",
+                "1234567890123456", 1234567890123456, and "MyGamertag".
             start: Index of the first match to request, starting at 0.
             count: The number of matches to request. Maximum number of results
                 returned is 25.
@@ -167,7 +172,8 @@ class HaloInfiniteClient:
         Returns:
             The requested match history "page" of results.
         """
-        url = f"{STATS_HOST}/hi/players/{wrap_xuid(xuid)}/matches"
+        xuid_or_gamertag = wrap_xuid_or_gamertag(player)
+        url = f"{STATS_HOST}/hi/players/{xuid_or_gamertag}/matches"
         params = {"start": start, "count": count, "type": match_type}
         return await self._get(url, params=params)
 

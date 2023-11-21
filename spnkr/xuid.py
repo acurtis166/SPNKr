@@ -1,41 +1,78 @@
 """Convert Xbox Live IDs (XUID) to and from strings and integers."""
 
+import math
 import re
 
-_PATTERN = re.compile(r"^xuid\((\d+)\)$")
+from .errors import InvalidXuidError
+
+_XUID_PATTERN = re.compile(r"^xuid\((\d{16})\)$")
 
 
-def wrap_xuid(value: str | int) -> str:
-    """Wrap a XUID value in the "xuid()" format.
+def wrap_xuid(xuid: str | int) -> str:
+    """Wrap an Xbox Live ID in the "xuid()" format.
 
     Args:
-        value: The XUID value to wrap.
+        xuid: Xbox Live ID. This can be an integer or a string representation of
+            the ID. Examples of valid inputs include "xuid(1234567890123456)",
+            "1234567890123456", and 1234567890123456.
 
     Returns:
-        The wrapped XUID value as a string.
-    """
-    value = str(value)
-    if value[0] == "x":
-        return value
-    return f"xuid({value})"
-
-
-def unwrap_xuid(value: str | int) -> int:
-    """Unwrap a XUID value from the "xuid()" format.
-
-    Args:
-        value: The XUID value to unwrap.
+        A wrapped version of the XUID.
 
     Raises:
-        ValueError: If the XUID value is invalid.
+        InvalidXuidError: If the XUID is invalid.
+    """
+    return f"xuid({unwrap_xuid(xuid)})"
+
+
+def unwrap_xuid(xuid: str | int) -> int:
+    """Get the integer value of an Xbox Live ID.
+
+    Args:
+        xuid: Xbox Live ID. This can be an integer or a string representation of
+            the ID. Examples of valid inputs include "xuid(1234567890123456)",
+            "1234567890123456", and 1234567890123456.
 
     Returns:
-        The unwrapped XUID value as an integer.
-    """
-    if isinstance(value, int) or value.isdigit():
-        return int(value)
+        The integer value of the Xbox Live ID.
 
-    match = _PATTERN.match(value)
-    if not match:
-        raise ValueError(f"Invalid XUID: {value!r}")
+    Raises:
+        InvalidXuidError: If the XUID is invalid.
+    """
+    if isinstance(xuid, int):
+        if not math.floor(math.log10(xuid)) + 1 == 16:
+            # Must be a 16-digit number
+            raise InvalidXuidError(xuid)
+        return xuid
+
+    xuid = xuid.strip().lower()
+    if xuid.isdigit() and len(xuid) == 16:
+        return int(xuid)
+
+    match = _XUID_PATTERN.match(xuid)
+    if match is None:
+        raise InvalidXuidError(xuid)
     return int(match.group(1))
+
+
+def wrap_xuid_or_gamertag(xuid_or_gamertag: str | int) -> str:
+    """Return the value if it is a gamertag. Otherwise, wrap in "xuid()" format.
+
+    Args:
+        xuid_or_gamertag: Xbox Live ID or gamertag. This can be an integer, a
+            string representation of the ID, or a gamertag. Examples of valid
+            inputs include "xuid(1234567890123456)", "1234567890123456",
+            1234567890123456, and "MyGamertag".
+
+    Returns:
+        A wrapped version of the XUID or the gamertag.
+
+    Raises:
+        InvalidXuidError: If the XUID is invalid.
+    """
+    try:
+        return wrap_xuid(xuid_or_gamertag)
+    except InvalidXuidError:
+        if isinstance(xuid_or_gamertag, int) or not xuid_or_gamertag.strip():
+            raise
+        return xuid_or_gamertag.strip()  # Can safely assume it's a gamertag

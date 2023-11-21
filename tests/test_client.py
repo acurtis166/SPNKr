@@ -101,35 +101,39 @@ async def test_get_ugc_game_variant(client: HaloInfiniteClient):
 
 @pytest.mark.asyncio
 async def test_get_match_skill(client: HaloInfiniteClient):
-    await client.get_match_skill("match_id", [123])
+    await client.get_match_skill("match_id", [1234567890123456])
     SESSION.get.assert_called_with(
         "https://skill.svc.halowaypoint.com:443/hi/matches/match_id/skill",
-        params={"players": ["xuid(123)"]},
+        params={"players": ["xuid(1234567890123456)"]},
     )
 
 
 @pytest.mark.asyncio
 async def test_get_playlist_csr(client: HaloInfiniteClient):
-    await client.get_playlist_csr("playlist_id", [123, 456])
+    await client.get_playlist_csr(
+        "playlist_id", [1234567890123456, 2345678901234567]
+    )
     SESSION.get.assert_called_with(
         "https://skill.svc.halowaypoint.com:443/hi/playlist/playlist_id/csrs",
-        params={"players": ["xuid(123)", "xuid(456)"]},
+        params={
+            "players": ["xuid(1234567890123456)", "xuid(2345678901234567)"]
+        },
     )
 
 
 @pytest.mark.asyncio
 async def test_get_match_count(client: HaloInfiniteClient):
-    await client.get_match_count(123)
+    await client.get_match_count(1234567890123456)
     SESSION.get.assert_called_with(
-        "https://halostats.svc.halowaypoint.com:443/hi/players/xuid(123)/matches/count"
+        "https://halostats.svc.halowaypoint.com:443/hi/players/xuid(1234567890123456)/matches/count"
     )
 
 
 @pytest.mark.asyncio
 async def test_get_match_history(client: HaloInfiniteClient):
-    await client.get_match_history(123, 0, 10, "all")
+    await client.get_match_history(1234567890123456, 0, 10, "all")
     SESSION.get.assert_called_with(
-        "https://halostats.svc.halowaypoint.com:443/hi/players/xuid(123)/matches",
+        "https://halostats.svc.halowaypoint.com:443/hi/players/xuid(1234567890123456)/matches",
         params={"start": 0, "count": 10, "type": "all"},
     )
 
