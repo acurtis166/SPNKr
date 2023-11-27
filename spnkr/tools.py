@@ -73,7 +73,7 @@ class Rank(NamedTuple):
     def __str__(self) -> str:
         if self.tier is Tier.ONYX:
             return self.tier.value
-        return f"{self.tier.value} {self.sub_tier.value}"
+        return f"{self.tier.value} {self.sub_tier.to_int()}"
 
 
 def get_rank_from_csr(csr: int | float) -> Rank:
@@ -98,7 +98,6 @@ def get_rank_from_csr(csr: int | float) -> Rank:
     elif quotient == 4:
         tier = Tier.DIAMOND
     else:
-        # Onyx doesn't have sub-tiers
-        return Rank(Tier.ONYX, SubTier.NOT_APPLICABLE)
-    sub_tier = SubTier((remainder // 50) + 1)
+        return Rank(Tier.ONYX, SubTier.ONE)
+    sub_tier = SubTier.from_int((remainder // 50) + 1)
     return Rank(tier, sub_tier)
