@@ -130,6 +130,73 @@ async def test_get_match_count(client: HaloInfiniteClient):
 
 
 @pytest.mark.asyncio
+async def test_get_service_record(client: HaloInfiniteClient):
+    await client.get_service_record(1234567890123456)
+    SESSION.get.assert_called_with(
+        "https://halostats.svc.halowaypoint.com:443/hi/players/xuid(1234567890123456)/matchmade/servicerecord",
+        params={},
+    )
+
+
+@pytest.mark.asyncio
+async def test_get_service_record_season_playlist(client: HaloInfiniteClient):
+    await client.get_service_record(
+        1234567890123456,
+        season_id="season_id",
+        playlist_asset_id="playlist_asset_id",
+    )
+    SESSION.get.assert_called_with(
+        "https://halostats.svc.halowaypoint.com:443/hi/players/xuid(1234567890123456)/matchmade/servicerecord",
+        params={
+            "seasonid": "season_id",
+            "playlistassetid": "playlist_asset_id",
+        },
+    )
+
+
+@pytest.mark.asyncio
+async def test_get_service_record_game_variant_category_ranked(
+    client: HaloInfiniteClient,
+):
+    await client.get_service_record(
+        1234567890123456, game_variant_category=6, is_ranked=True
+    )
+    SESSION.get.assert_called_with(
+        "https://halostats.svc.halowaypoint.com:443/hi/players/xuid(1234567890123456)/matchmade/servicerecord",
+        params={"gamevariantcategory": "6", "isranked": "True"},
+    )
+
+
+@pytest.mark.asyncio
+async def test_get_service_record_invalid_match_type(
+    client: HaloInfiniteClient,
+):
+    with pytest.raises(ValueError):
+        await client.get_service_record(1234567890123456, match_type="invalid")  # type: ignore
+
+
+@pytest.mark.asyncio
+async def test_get_service_record_invalid_filter_combination(
+    client: HaloInfiniteClient,
+):
+    with pytest.raises(ValueError):
+        await client.get_service_record(1234567890123456, playlist_asset_id="")
+
+
+@pytest.mark.asyncio
+async def test_get_service_record_non_matchmade_params_ignored(
+    client: HaloInfiniteClient,
+):
+    await client.get_service_record(
+        1234567890123456, match_type="custom", is_ranked=True
+    )
+    SESSION.get.assert_called_with(
+        "https://halostats.svc.halowaypoint.com:443/hi/players/xuid(1234567890123456)/custom/servicerecord",
+        params={},
+    )
+
+
+@pytest.mark.asyncio
 async def test_get_match_history(client: HaloInfiniteClient):
     await client.get_match_history(1234567890123456, 0, 10, "all")
     SESSION.get.assert_called_with(

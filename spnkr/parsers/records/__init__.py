@@ -18,12 +18,14 @@ from .stats import (
     MatchInfoRecord,
     PlayerCoreStatsRecord,
     PlayerMedalRecord,
+    PlayerServiceRecord,
     TeamCoreStatsRecord,
     parse_match_count,
     parse_match_history,
     parse_match_info,
     parse_player_core_stats,
     parse_player_medals,
+    parse_service_record,
     parse_team_core_stats,
 )
 from .ugc_discovery import AssetRecord, parse_asset
@@ -38,6 +40,7 @@ __all__ = [
     "PlayerMedalRecord",
     "PlayerSkillRecord",
     "PlaylistCsrRecord",
+    "PlayerServiceRecord",
     "TeamCoreStatsRecord",
     "User",
     "parse_asset",
@@ -49,6 +52,7 @@ __all__ = [
     "parse_player_medals",
     "parse_match_skill",
     "parse_playlist_csr",
+    "parse_service_record",
     "parse_team_core_stats",
     "parse_users",
 ]

@@ -6,12 +6,14 @@ https://settings.svc.halowaypoint.com/settings/hipc/e2a0a7c6-6efe-42af-9283-c2ab
 Additionally inspected the network traffic while navigating Halo Waypoint.
 """
 
+import warnings
 from typing import Iterable, Literal
 from uuid import UUID
 
 from aiohttp import ClientResponse, ClientSession
 from aiolimiter import AsyncLimiter
 
+from .parsers.refdata import GameVariantCategory
 from .xuid import unwrap_xuid, wrap_xuid, wrap_xuid_or_gamertag
 
 GAMECMS_HACS_HOST = "https://gamecms-hacs.svc.halowaypoint.com"
@@ -19,6 +21,16 @@ SKILL_HOST = "https://skill.svc.halowaypoint.com:443"
 STATS_HOST = "https://halostats.svc.halowaypoint.com:443"
 UGC_DISCOVERY_HOST = "https://discovery-infiniteugc.svc.halowaypoint.com:443"
 PROFILE_HOST = "https://profile.svc.halowaypoint.com"
+
+_VALID_SERVICE_RECORD_FILTER_SETS = [
+    {"season_id"},
+    {"season_id", "game_variant_category"},
+    {"season_id", "game_variant_category", "playlist_asset_id"},
+    {"season_id", "game_variant_category", "is_ranked"},
+    {"season_id", "playlist_asset_id"},
+    {"game_variant_category"},
+    {"game_variant_category", "is_ranked"},
+]
 
 
 def _create_limiter(rate_per_second: int) -> AsyncLimiter:
@@ -145,6 +157,85 @@ class HaloInfiniteClient:
         xuid_or_gamertag = wrap_xuid_or_gamertag(player)
         url = f"{STATS_HOST}/hi/players/{xuid_or_gamertag}/matches/count"
         return await self._get(url)
+
+    async def get_service_record(
+        self,
+        player: str | int,
+        match_type: Literal["matchmade", "custom", "local"] = "matchmade",
+        season_id: str | None = None,
+        game_variant_category: GameVariantCategory | int | None = None,
+        is_ranked: bool | None = None,
+        playlist_asset_id: str | UUID | None = None,
+    ) -> ClientResponse:
+        """Get a service record for a player. Summarizes player stats.
+
+        Note that filters (`season_id`, `game_variant_category`, `is_ranked`,
+        and `playlist_asset_id`) are only applicable to "matchmade"
+        `match_type`. A warning is issued and the filters are ignored if they
+        are provided for a non-matchmade `match_type`.
+
+        Filters must be combined appropriately. The following are valid:
+        - `season_id`
+        - `season_id`, `game_variant_category`
+        - `season_id`, `game_variant_category`, `playlist_asset_id`
+        - `season_id`, `game_variant_category`, `is_ranked`
+        - `season_id`, `playlist_asset_id`
+        - `game_variant_category`
+        - `game_variant_category`, `is_ranked`
+
+        To collect possible values for the filter arguments, look at the
+        "subqueries" attribute of an unfiltered service record response.
+
+        Args:
+            player: Xbox Live ID or gamertag of the player to get counts for.
+                Examples of valid inputs include "xuid(1234567890123456)",
+                "1234567890123456", 1234567890123456, and "MyGamertag".
+            match_type: The type of games to include in the service record.
+                One of "matchmade", "custom", or "local".
+            season_id: The season ID to get service record for. Optional.
+            game_variant_category: The game variant category to filter service
+                record data. See `spnkr.parsers.refdata.GameVariantCategory` for
+                human-readable values. Optional.
+            is_ranked: Filter for ranked or unranked games. Optional.
+            playlist_asset_id: Filter for a specific playlist with its asset ID.
+                Optional.
+
+        Parsers:
+            - [ServiceRecord][spnkr.parsers.pydantic.stats.ServiceRecord]
+            - [parse_service_record][spnkr.parsers.records.stats.parse_service_record]
+
+        Returns:
+            The service record for the player with the given filters.
+
+        Raises:
+            ValueError: If `match_type` is not one of "matchmade", "custom", or
+                "local".
+            ValueError: If filter arguments are inappropriately combined.
+        """
+        if match_type.lower() not in ("matchmade", "custom", "local"):
+            raise ValueError(f"Invalid match type: {match_type}")
+        xuid_or_gamertag = wrap_xuid_or_gamertag(player)
+        endpoint = f"/hi/players/{xuid_or_gamertag}/{match_type}/servicerecord"
+        url = f"{STATS_HOST}{endpoint}"
+        filters = {
+            "season_id": season_id,
+            "game_variant_category": game_variant_category,
+            "is_ranked": is_ranked,
+            "playlist_asset_id": playlist_asset_id,
+        }
+        filters = {k: v for k, v in filters.items() if v is not None}
+        if match_type.lower() != "matchmade" and filters:
+            warnings.warn(
+                "Service record filters are only applicable to matchmade games."
+            )
+            filters = {}
+        if filters and set(filters) not in _VALID_SERVICE_RECORD_FILTER_SETS:
+            valid = "\n".join(str(s) for s in _VALID_SERVICE_RECORD_FILTER_SETS)
+            raise ValueError(
+                f"Invalid filter combination: {filters}. Options:\n{valid}"
+            )
+        params = {k.replace("_", ""): str(v) for k, v in filters.items()}
+        return await self._get(url, params=params)
 
     async def get_match_history(
         self,
