@@ -1,6 +1,6 @@
 """Enumerated data types used by the Halo Infinite API."""
 
-from enum import IntEnum, StrEnum
+from enum import Enum, IntEnum, StrEnum
 
 
 class AssetKind(IntEnum):
@@ -167,23 +167,35 @@ class SkillResultCode(IntEnum):
     """Skill request was successful."""
 
 
-class SubTier(IntEnum):
-    """Sub-tiers of skill rankings."""
+class SubTier(Enum):
+    """Sub-tiers of skill rankings.
 
-    NOT_APPLICABLE = 0
-    """Not applicable."""
-    ONE = 1
+    The `value` attribute of the sub-tier items is the index of the sub-tier,
+    starting at 0 for the 1st sub-tier and incrementing as sub-tier increases.
+    The `to_int` method returns the true sub-tier value, e.g., "ONE" returns 1.
+    """
+
+    ONE = 0
     """1st sub-tier."""
-    TWO = 2
+    TWO = 1
     """2nd sub-tier."""
-    THREE = 3
+    THREE = 2
     """3rd sub-tier."""
-    FOUR = 4
+    FOUR = 3
     """4th sub-tier."""
-    FIVE = 5
+    FIVE = 4
     """5th sub-tier."""
-    SIX = 6
+    SIX = 5
     """6th sub-tier. Highest sub-tier before advancing to the next tier."""
+
+    @classmethod
+    def from_int(cls, value: int) -> "SubTier":
+        """Return the sub-tier from an integer value."""
+        return cls(value - 1)
+
+    def to_int(self) -> int:
+        """Return the integer value of the sub-tier. For example, "ONE" => 1."""
+        return self.value + 1
 
 
 class Tier(StrEnum):

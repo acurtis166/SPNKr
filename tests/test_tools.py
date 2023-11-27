@@ -18,8 +18,8 @@ CSR_TIERS = [
     (1199, Tier.PLATINUM, SubTier.SIX),
     (1200, Tier.DIAMOND, SubTier.ONE),
     (1499, Tier.DIAMOND, SubTier.SIX),
-    (1500, Tier.ONYX, SubTier.NOT_APPLICABLE),
-    (3000, Tier.ONYX, SubTier.NOT_APPLICABLE),
+    (1500, Tier.ONYX, SubTier.ONE),
+    (3000, Tier.ONYX, SubTier.ONE),
 ]
 
 
@@ -31,7 +31,7 @@ def test_ranking_str():
 
 def test_ranking_str_onyx():
     """Test the __str__ method of the Rank class when the tier is Onyx."""
-    ranking = tools.Rank(Tier.ONYX, SubTier.NOT_APPLICABLE)
+    ranking = tools.Rank(Tier.ONYX, SubTier.ONE)
     assert str(ranking) == "Onyx"
 
 
