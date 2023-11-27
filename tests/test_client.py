@@ -148,10 +148,10 @@ async def test_get_match_stats(client: HaloInfiniteClient):
 
 @pytest.mark.asyncio
 async def test_get_users(client: HaloInfiniteClient):
-    await client.get_users(["xuid(123)", "xuid(456)"])
+    await client.get_users(["xuid(1234567890123456)", "xuid(2345678901234567)"])
     SESSION.get.assert_called_with(
         "https://profile.svc.halowaypoint.com/users",
-        params={"xuids": [123, 456]},
+        params={"xuids": [1234567890123456, 2345678901234567]},
     )
 
 
