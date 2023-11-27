@@ -39,6 +39,18 @@ def test_parse_match_count():
     assert result.matchmade_matches_played_count == 729
 
 
+def test_parse_service_record():
+    data = load_response("get_service_record")
+    result = pp.ServiceRecord(**data)
+    assert result.matches_completed == 1915
+
+
+def test_parse_service_record_empty():
+    data = load_response("get_service_record_empty")
+    result = pp.ServiceRecord(**data)
+    assert result.matches_completed == 0
+
+
 def test_parse_match_history():
     data = load_response("get_match_history")
     result = pp.MatchHistory(**data)

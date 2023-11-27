@@ -211,8 +211,6 @@ class PlayerCoreStatsRecord(NamedTuple):
         present_at_completion: Whether the player was present at the completion of the match.
         time_played: The amount of time the player was present in the match.
         team_id: The ID of the team the player was on.
-        outcome: The outcome of the match for the player.
-        rank: The player's rank in the match.
         score: The player's score.
         personal_score: The player's personal score.
         rounds_won: The number of rounds the player's team won.
@@ -254,8 +252,6 @@ class PlayerCoreStatsRecord(NamedTuple):
     present_at_completion: bool
     time_played: dt.timedelta
     team_id: int
-    outcome: Outcome
-    rank: int
     score: int
     personal_score: int
     rounds_won: int
@@ -302,6 +298,80 @@ class PlayerMedalRecord(NamedTuple):
     team_id: int
     name_id: int
     count: int
+
+
+class PlayerServiceRecord(NamedTuple):
+    """A player's service record in a given context.
+
+    Attributes:
+        player_id: The player's Xbox Live ID.
+        time_played: The amount of time the player was present in the match.
+        matches_completed: The number of matches the player completed.
+        wins: The number of matches the player won.
+        losses: The number of matches the player lost.
+        ties: The number of matches the player tied.
+        score: The player's score.
+        personal_score: The player's personal score.
+        rounds_won: The number of rounds the player's team won.
+        rounds_lost: The number of rounds the player's team lost.
+        rounds_tied: The number of rounds the player's team tied.
+        kills: The number of kills the player had.
+        deaths: The number of times the player died.
+        assists: The number of assists the player had.
+        average_kda: The player's kill-death-assist metric (kills + assists / 3 - deaths).
+        suicides: The number of times the player committed suicide.
+        betrayals: The number of times the player betrayed a teammate.
+        grenade_kills: The number of grenade kills the player had.
+        headshot_kills: The number of headshot kills the player had.
+        melee_kills: The number of melee kills the player had.
+        power_weapon_kills: The number of power weapon kills the player had.
+        shots_fired: The number of shots the player fired.
+        shots_hit: The number of shots the player hit.
+        accuracy: The player's accuracy (shots_hit / shots_fired * 100).
+        damage_dealt: The amount of damage the player dealt.
+        damage_taken: The amount of damage the player took.
+        callout_assists: The number of callout assists the player had.
+        vehicle_destroys: The number of vehicles the player destroyed.
+        driver_assists: The number of driver assists the player had.
+        hijacks: The number of vehicles the player hijacked.
+        emp_assists: The number of EMP assists the player had.
+        max_killing_spree: The maximum killing spree the player had.
+        spawns: The number of times the player spawned.
+    """
+
+    player_id: str
+    time_played: dt.timedelta
+    matches_completed: int
+    wins: int
+    losses: int
+    ties: int
+    score: int
+    personal_score: int
+    rounds_won: int
+    rounds_lost: int
+    rounds_tied: int
+    kills: int
+    deaths: int
+    assists: int
+    average_kda: float
+    suicides: int
+    betrayals: int
+    grenade_kills: int
+    headshot_kills: int
+    melee_kills: int
+    power_weapon_kills: int
+    shots_fired: int
+    shots_hit: int
+    accuracy: float
+    damage_dealt: int
+    damage_taken: int
+    callout_assists: int
+    vehicle_destroys: int
+    driver_assists: int
+    hijacks: int
+    emp_assists: int
+    max_killing_spree: int
+    spawns: int
 
 
 def parse_match_count(
@@ -445,6 +515,57 @@ def parse_player_medals(match_stats: dict[str, Any]) -> list[PlayerMedalRecord]:
     return out
 
 
+def parse_service_record(
+    xuid: str | int, service_record: dict[str, Any]
+) -> PlayerServiceRecord:
+    """Parse a service record response into a player service record.
+
+    Args:
+        xuid: The player's Xbox Live ID.
+        service_record: The deserialized JSON from the client's
+            `get_service_record` method.
+
+    Returns:
+        A player service record.
+    """
+    stats = service_record["CoreStats"]
+    return PlayerServiceRecord(
+        player_id=wrap_xuid(xuid),
+        time_played=_parse_iso_duration(service_record["TimePlayed"]),
+        matches_completed=service_record["MatchesCompleted"],
+        wins=service_record["Wins"],
+        losses=service_record["Losses"],
+        ties=service_record["Ties"],
+        score=stats["Score"],
+        personal_score=stats["PersonalScore"],
+        rounds_won=stats["RoundsWon"],
+        rounds_lost=stats["RoundsLost"],
+        rounds_tied=stats["RoundsTied"],
+        kills=stats["Kills"],
+        deaths=stats["Deaths"],
+        assists=stats["Assists"],
+        average_kda=stats["AverageKDA"],
+        suicides=stats["Suicides"],
+        betrayals=stats["Betrayals"],
+        grenade_kills=stats["GrenadeKills"],
+        headshot_kills=stats["HeadshotKills"],
+        melee_kills=stats["MeleeKills"],
+        power_weapon_kills=stats["PowerWeaponKills"],
+        shots_fired=stats["ShotsFired"],
+        shots_hit=stats["ShotsHit"],
+        accuracy=stats["Accuracy"],
+        damage_dealt=stats["DamageDealt"],
+        damage_taken=stats["DamageTaken"],
+        callout_assists=stats["CalloutAssists"],
+        vehicle_destroys=stats["VehicleDestroys"],
+        driver_assists=stats["DriverAssists"],
+        hijacks=stats["Hijacks"],
+        emp_assists=stats["EmpAssists"],
+        max_killing_spree=stats["MaxKillingSpree"],
+        spawns=stats["Spawns"],
+    )
+
+
 def _parse_match_history_result(result: dict[str, Any]) -> MatchHistoryRecord:
     info = result["MatchInfo"]
     return MatchHistoryRecord(
@@ -525,25 +646,30 @@ def _parse_core_stats(stats: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _iso_split(value: str, separator: str) -> tuple[float, str]:
+    """Split an ISO 8601 duration string at a given separator.
+
+    Return the count and the remaining string.
+    """
+    count = None
+    if separator in value:
+        count, value = value.split(separator)
+    return (float(count or 0), value)
+
+
 def _parse_iso_duration(value: str) -> dt.timedelta:
     """Parse an ISO 8601 duration string to a timedelta object.
 
     Example: PT12M34.1102934S => 12 minutes, 34.1102934 seconds
 
-    Only hour, minute, and second components are supported.
+    Only days, hours, minutes, and seconds are supported.
     """
-    if not value.startswith("PT"):
-        raise ValueError(
-            "Invalid ISO 8601 duration string. Only hours, minutes, and "
-            "seconds are supported."
-        )
-    kwargs = {}
-    haystack = value[2:]  # Remove "PT" prefix
-    attributes = ("hours", "minutes", "seconds")
-    for attribute in attributes:
-        separator = attribute[0].upper()
-        parts = haystack.split(separator)
-        if len(parts) > 1:
-            kwargs[attribute] = float(parts[0])
-            haystack = parts[1]
-    return dt.timedelta(**kwargs)
+    haystack = value.split("P")[-1]  # Remove leading P
+    days, haystack = _iso_split(haystack, "D")
+    _, haystack = _iso_split(haystack, "T")
+    hours, haystack = _iso_split(haystack, "H")
+    minutes, haystack = _iso_split(haystack, "M")
+    seconds, haystack = _iso_split(haystack, "S")
+    return dt.timedelta(
+        days=days, hours=hours, minutes=minutes, seconds=seconds
+    )

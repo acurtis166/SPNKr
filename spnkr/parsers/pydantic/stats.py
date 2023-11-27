@@ -137,7 +137,40 @@ class AwardCount(PascalCaseModel):
     total_personal_score_awarded: int
 
 
-class CoreStats(PascalCaseModel):
+class _CoreStats(PascalCaseModel):
+    """Core statistics about a player or team performance in a match."""
+
+    score: int
+    personal_score: int
+    rounds_won: int
+    rounds_lost: int
+    rounds_tied: int
+    kills: int
+    deaths: int
+    assists: int
+    suicides: int
+    betrayals: int
+    grenade_kills: int
+    headshot_kills: int
+    melee_kills: int
+    power_weapon_kills: int
+    shots_fired: int
+    shots_hit: int
+    accuracy: float
+    damage_dealt: int
+    damage_taken: int
+    callout_assists: int
+    vehicle_destroys: int
+    driver_assists: int
+    hijacks: int
+    emp_assists: int
+    max_killing_spree: int
+    medals: list[AwardCount]
+    personal_scores: list[AwardCount]
+    spawns: int
+
+
+class CoreStats(_CoreStats):
     """Core statistics about a player or team performance in a match.
 
     Attributes:
@@ -170,43 +203,49 @@ class CoreStats(PascalCaseModel):
         max_killing_spree: The maximum number of kills without dying.
         medals: Medals earned.
         personal_scores: Personal score awards earned.
-        deprecated_damage_dealt: Deprecated. Use damage_dealt instead.
-        deprecated_damage_taken: Deprecated. Use damage_taken instead.
         spawns: The number of times spawned.
     """
 
-    score: int
-    personal_score: int
-    rounds_won: int
-    rounds_lost: int
-    rounds_tied: int
-    kills: int
-    deaths: int
-    assists: int
     kda: float = Field(alias="KDA")
-    suicides: int
-    betrayals: int
     average_life_duration: dt.timedelta
-    grenade_kills: int
-    headshot_kills: int
-    melee_kills: int
-    power_weapon_kills: int
-    shots_fired: int
-    shots_hit: int
-    accuracy: float
-    damage_dealt: int
-    damage_taken: int
-    callout_assists: int
-    vehicle_destroys: int
-    driver_assists: int
-    hijacks: int
-    emp_assists: int
-    max_killing_spree: int
-    medals: list[AwardCount]
-    personal_scores: list[AwardCount]
-    deprecated_damage_dealt: float
-    deprecated_damage_taken: float
-    spawns: int
+
+
+class ServiceRecordCoreStats(_CoreStats):
+    """Core statistics about a player or team performance in a match.
+
+    Attributes:
+        score: Earned points related to the match outcome.
+        personal_score: Earned points related to personal performance.
+        rounds_won: The number of rounds won.
+        rounds_lost: The number of rounds lost.
+        rounds_tied: The number of rounds tied.
+        kills: The number of kills.
+        deaths: The number of deaths.
+        assists: The number of assists.
+        average_kda: Kill-death-assist metric (kills + assists / 3 - deaths).
+        suicides: The number of suicides.
+        betrayals: The number of betrayals.
+        grenade_kills: The number of kills using grenades.
+        headshot_kills: The number of kills with headshots.
+        melee_kills: The number of kills with melee or a melee weapon.
+        power_weapon_kills: The number of kills with "power" weapons.
+        shots_fired: The number of shots fired with weapons.
+        shots_hit: The number of shots hit with weapons.
+        accuracy: The accuracy of shots fired (shots_fired / shots_hit * 100).
+        damage_dealt: The amount of damage dealt.
+        damage_taken: The amount of damage taken.
+        callout_assists: The number of assists earned by "marking" an enemy.
+        vehicle_destroys: The number of vehicles destroyed.
+        driver_assists: The number of assists earned by driving a teammate that gets a kill.
+        hijacks: The number of times hijacking a vehicle.
+        emp_assists: The number of assists earned by EMPing an enemy player or vehicle.
+        max_killing_spree: The maximum number of kills without dying.
+        medals: Medals earned.
+        personal_scores: Personal score awards earned.
+        spawns: The number of times spawned.
+    """
+
+    average_kda: float = Field(alias="AverageKDA")
 
 
 class BombStats(PascalCaseModel):
@@ -265,7 +304,21 @@ class CaptureTheFlagStats(PascalCaseModel):
     time_as_flag_carrier: dt.timedelta
 
 
-class EliminationStats(PascalCaseModel):
+class _EliminationStats(PascalCaseModel):
+    """Performance statistics for elimination game modes."""
+
+    allies_revived: int
+    elimination_assists: int
+    eliminations: int
+    enemy_revives_denied: int
+    executions: int
+    kills_as_last_player_standing: int
+    last_players_standing_killed: int
+    rounds_survived: int
+    times_revived_by_ally: int
+
+
+class EliminationStats(_EliminationStats):
     """Performance statistics for elimination game modes.
 
     Attributes:
@@ -282,17 +335,24 @@ class EliminationStats(PascalCaseModel):
         elimination_order: The order eliminated.
     """
 
-    allies_revived: int
-    elimination_assists: int
-    eliminations: int
-    enemy_revives_denied: int
-    executions: int
-    kills_as_last_player_standing: int
-    last_players_standing_killed: int
-    rounds_survived: int
-    times_revived_by_ally: int
     lives_remaining: int | None
     elimination_order: int
+
+
+class ServiceRecordEliminationStats(_EliminationStats):
+    """Performance statistics for elimination game modes.
+
+    Attributes:
+        allies_revived: Number of times reviving a teammate.
+        elimination_assists: Number of times contributing to an elimination.
+        eliminations: Number of times eliminating an enemy.
+        enemy_revives_denied: Number of times denying an enemy revive.
+        executions: Number of times executing an enemy.
+        kills_as_last_player_standing: Number of kills as the last player standing.
+        last_players_standing_killed: Number of times killing the last player standing.
+        rounds_survived: Number of rounds survived.
+        times_revived_by_ally: Number of times revived by a teammate.
+    """
 
 
 class ExtractionStats(PascalCaseModel):
@@ -383,6 +443,26 @@ class ZonesStats(PascalCaseModel):
     stronghold_secures: int
     stronghold_occupation_time: dt.timedelta
     stronghold_scoring_ticks: int
+
+
+class ServiceRecordZonesStats(PascalCaseModel):
+    """Performance statistics for zones game modes.
+
+    Attributes:
+        zone_captures: Number of times capturing a zone.
+        zone_defensive_kills: Number of kills defending a zone.
+        zone_offensive_kills: Number of kills attacking a zone.
+        zone_secures: Number of times securing a zone.
+        total_zone_occupation_time: Total time spent in a zone.
+        zone_scoring_ticks: Number of ticks a zone was held.
+    """
+
+    zone_captures: int
+    zone_defensive_kills: int
+    zone_offensive_kills: int
+    zone_secures: int
+    total_zone_occupation_time: dt.timedelta
+    zone_scoring_ticks: int
 
 
 class StockpileStats(PascalCaseModel):
@@ -531,3 +611,60 @@ class MatchStats(PascalCaseModel):
     match_info: MatchInfo
     teams: list[TeamStats]
     players: list[PlayerStats]
+
+
+class ServiceRecordSubqueries(PascalCaseModel):
+    """Subqueries for a service record request.
+
+    Attributes:
+        season_ids: Seasons available for filtering.
+        game_variant_categories: Game variant categories available for filtering.
+        is_ranked: Ranked status available for filtering.
+        playlist_asset_ids: Playlists available for filtering.
+    """
+
+    season_ids: list[str] | None
+    game_variant_categories: list[GameVariantCategory] | None
+    is_ranked: list[bool] | None
+    playlist_asset_ids: list[UUID] | None
+
+
+class ServiceRecord(PascalCaseModel):
+    """A player's service record within a given context.
+
+    Attributes:
+        subqueries: Subquerying options for the service record request.
+        time_played: The player's total time played.
+        matches_completed: The number of matches the player has completed.
+        wins: The number of matches the player has won.
+        losses: The number of matches the player has lost.
+        ties: The number of matches the player has tied.
+        core_stats: The player's core performance statistics.
+        bomb_stats: The player's performance statistics for bomb game modes.
+        capture_the_flag_stats: The player's performance statistics for capture
+            the flag game modes.
+        elimination_stats: The player's performance statistics for elimination
+            game modes.
+        infection_stats: The player's performance statistics for infection game
+            modes.
+        oddball_stats: The player's performance statistics for oddball game
+            modes.
+        zones_stats: The player's performance statistics for zones game modes.
+        stockpile_stats: The player's performance statistics for stockpile game
+            modes.
+    """
+
+    subqueries: ServiceRecordSubqueries
+    time_played: dt.timedelta
+    matches_completed: int
+    wins: int
+    losses: int
+    ties: int
+    core_stats: ServiceRecordCoreStats
+    bomb_stats: BombStats | None = None
+    capture_the_flag_stats: CaptureTheFlagStats | None = None
+    elimination_stats: ServiceRecordEliminationStats | None = None
+    infection_stats: InfectionStats | None = None
+    oddball_stats: OddballStats | None = None
+    zones_stats: ServiceRecordZonesStats | None = None
+    stockpile_stats: StockpileStats | None = None

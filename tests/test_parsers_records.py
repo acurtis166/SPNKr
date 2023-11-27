@@ -19,6 +19,10 @@ TEST_ISO8601_DURATIONS = [
     (dt.timedelta(seconds=3600), "PT1H"),
     (dt.timedelta(minutes=12, seconds=34.1102934), "PT12M34.1102934S"),
     (dt.timedelta(hours=1, seconds=1), "PT1H1S"),
+    (
+        dt.timedelta(days=12, hours=9, minutes=47, seconds=30.0357698),
+        "P12DT9H47M30.0357698S",
+    ),
 ]
 
 
@@ -31,11 +35,6 @@ def load_response(name: str) -> Any:
 def test_parse_iso_duration(delta: dt.timedelta, iso: str):
     result = _parse_iso_duration(iso)
     assert result == delta
-
-
-def test_parse_iso_duration_unsupported_components():
-    with pytest.raises(ValueError):
-        _parse_iso_duration("P1DT1S")
 
 
 def test_parse_medal_metadata():
@@ -67,6 +66,20 @@ def test_parse_match_history():
     result = records.parse_match_history(data)
     expected = "a1219f5c-5942-4cd5-9ff1-4b6ea89905bc"
     assert result[0].match_id == expected
+
+
+def test_parse_service_record():
+    xuid = "xuid(2535445291321133)"
+    data = load_response("get_service_record")
+    result = records.parse_service_record(xuid, data)
+    assert result.player_id == xuid
+
+
+def test_parse_service_record_empty():
+    xuid = "xuid(2535445291321133)"
+    data = load_response("get_service_record_empty")
+    result = records.parse_service_record(xuid, data)
+    assert result.player_id == xuid
 
 
 def test_parse_match_stats_match_info():
