@@ -381,6 +381,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#spnkr.parsers.records.profile" class="md-nav__link">
+    profile
+  </a>
+  
+    <nav class="md-nav" aria-label="profile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.records.profile.User" class="md-nav__link">
+    User
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.records.profile.parse_user" class="md-nav__link">
+    parse_user()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.records.profile.parse_users" class="md-nav__link">
+    parse_users()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#spnkr.parsers.records.skill" class="md-nav__link">
     skill
   </a>
@@ -465,6 +499,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#spnkr.parsers.records.stats.PlayerServiceRecord" class="md-nav__link">
+    PlayerServiceRecord
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#spnkr.parsers.records.stats.TeamCoreStatsRecord" class="md-nav__link">
     TeamCoreStatsRecord
   </a>
@@ -502,6 +543,13 @@
           <li class="md-nav__item">
   <a href="#spnkr.parsers.records.stats.parse_player_medals" class="md-nav__link">
     parse_player_medals()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.records.stats.parse_service_record" class="md-nav__link">
+    parse_service_record()
   </a>
   
 </li>
@@ -655,6 +703,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#spnkr.parsers.records.profile" class="md-nav__link">
+    profile
+  </a>
+  
+    <nav class="md-nav" aria-label="profile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.records.profile.User" class="md-nav__link">
+    User
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.records.profile.parse_user" class="md-nav__link">
+    parse_user()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.records.profile.parse_users" class="md-nav__link">
+    parse_users()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#spnkr.parsers.records.skill" class="md-nav__link">
     skill
   </a>
@@ -739,6 +821,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#spnkr.parsers.records.stats.PlayerServiceRecord" class="md-nav__link">
+    PlayerServiceRecord
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#spnkr.parsers.records.stats.TeamCoreStatsRecord" class="md-nav__link">
     TeamCoreStatsRecord
   </a>
@@ -776,6 +865,13 @@
           <li class="md-nav__item">
   <a href="#spnkr.parsers.records.stats.parse_player_medals" class="md-nav__link">
     parse_player_medals()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.parsers.records.stats.parse_service_record" class="md-nav__link">
+    parse_service_record()
   </a>
   
 </li>
@@ -1069,6 +1165,276 @@ method.</p>
           <td>
             <div class="doc-md-description">
               <p>A list of medal detail records.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="spnkr.parsers.records.profile" class="doc doc-heading">
+            <code>spnkr.parsers.records.profile</code>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+  
+      <p>Parsing functions for the "profile" authority.</p>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="spnkr.parsers.records.profile.User" class="doc doc-heading">
+          <code>User</code>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="typing.NamedTuple">NamedTuple</span></code></p>
+
+  
+      <p>High-level information about an Xbox Live user.</p>
+
+
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>xuid</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Xbox user ID.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>gamertag</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>User's gamertag.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>gamerpic</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>URL to the user's gamerpic (1080x1080 PNG). The URL will
+accept additional query parameters <code>w</code> and <code>h</code> to request a smaller
+image having pixel width and height dimensions, respectively. Known
+sizes are 64x64, 208x208, and 424x424. For example, "&amp;w=424&amp;h=424".</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="spnkr.parsers.records.profile.parse_user" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">parse_user</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Parse a single user.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>data</code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The user data.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="spnkr.parsers.records.profile.User" href="#spnkr.parsers.records.profile.User">User</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Parsed user.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="spnkr.parsers.records.profile.parse_users" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">parse_users</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Parse a list of users from the "get_users" client response.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>data</code></td>
+          <td>
+                <code>list[dict]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A "get_users" response from the client.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>list[<a class="autorefs autorefs-internal" title="spnkr.parsers.records.profile.User" href="#spnkr.parsers.records.profile.User">User</a>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of parsed users.</p>
             </div>
           </td>
         </tr>
@@ -2357,28 +2723,6 @@ method.</p>
           </td>
         </tr>
         <tr>
-          <td><code>outcome</code></td>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="spnkr.parsers.refdata.Outcome" href="../reference-data/#spnkr.parsers.refdata.Outcome">Outcome</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The outcome of the match for the player.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>rank</code></td>
-          <td>
-                <code>int</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The player's rank in the match.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
           <td><code>score</code></td>
           <td>
                 <code>int</code>
@@ -2792,6 +3136,423 @@ method.</p>
           <td>
             <div class="doc-md-description">
               <p>The number of times the medal was earned.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="spnkr.parsers.records.stats.PlayerServiceRecord" class="doc doc-heading">
+          <code>PlayerServiceRecord</code>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="typing.NamedTuple">NamedTuple</span></code></p>
+
+  
+      <p>A player's service record in a given context.</p>
+
+
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>player_id</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The player's Xbox Live ID.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>time_played</code></td>
+          <td>
+                <code><span title="datetime.timedelta">timedelta</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The amount of time the player was present in the match.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>matches_completed</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of matches the player completed.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>wins</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of matches the player won.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>losses</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of matches the player lost.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>ties</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of matches the player tied.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>score</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The player's score.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>personal_score</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The player's personal score.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>rounds_won</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of rounds the player's team won.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>rounds_lost</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of rounds the player's team lost.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>rounds_tied</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of rounds the player's team tied.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>kills</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of kills the player had.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>deaths</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of times the player died.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>assists</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of assists the player had.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>average_kda</code></td>
+          <td>
+                <code>float</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The player's kill-death-assist metric (kills + assists / 3 - deaths).</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>suicides</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of times the player committed suicide.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>betrayals</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of times the player betrayed a teammate.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>grenade_kills</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of grenade kills the player had.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>headshot_kills</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of headshot kills the player had.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>melee_kills</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of melee kills the player had.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>power_weapon_kills</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of power weapon kills the player had.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>shots_fired</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of shots the player fired.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>shots_hit</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of shots the player hit.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>accuracy</code></td>
+          <td>
+                <code>float</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The player's accuracy (shots_hit / shots_fired * 100).</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>damage_dealt</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The amount of damage the player dealt.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>damage_taken</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The amount of damage the player took.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>callout_assists</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of callout assists the player had.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>vehicle_destroys</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of vehicles the player destroyed.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>driver_assists</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of driver assists the player had.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>hijacks</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of vehicles the player hijacked.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>emp_assists</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of EMP assists the player had.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>max_killing_spree</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The maximum killing spree the player had.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>spawns</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of times the player spawned.</p>
             </div>
           </td>
         </tr>
@@ -3600,6 +4361,94 @@ method.</p>
           <td>
             <div class="doc-md-description">
               <p>A list of player medal records.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="spnkr.parsers.records.stats.parse_service_record" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">parse_service_record</span><span class="p">(</span><span class="n">xuid</span><span class="p">,</span> <span class="n">service_record</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Parse a service record response into a player service record.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>xuid</code></td>
+          <td>
+                <code>str | int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The player's Xbox Live ID.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>service_record</code></td>
+          <td>
+                <code>dict[str, <span title="typing.Any">Any</span>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The deserialized JSON from the client's
+<code>get_service_record</code> method.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="spnkr.parsers.records.stats.PlayerServiceRecord" href="#spnkr.parsers.records.stats.PlayerServiceRecord">PlayerServiceRecord</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A player service record.</p>
             </div>
           </td>
         </tr>
