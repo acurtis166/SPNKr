@@ -2,6 +2,8 @@
 
 ::: spnkr.parsers.pydantic.gamecms_hacs
 
+::: spnkr.parsers.pydantic.profile
+
 ::: spnkr.parsers.pydantic.skill
 
 ::: spnkr.parsers.pydantic.stats

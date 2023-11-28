@@ -35,7 +35,7 @@ async def main() -> None:
     async with ClientSession() as session:
         player = await refresh_player_tokens(session, app, REFRESH_TOKEN)
 
-    print(f"Spartan token: {player.spartan_token.token}")
+    print(f"Spartan token: {player.spartan_token.token}")  # Valid for 4 hours.
     print(f"Clearance token: {player.clearance_token.token}")
     print(f"Xbox Live player ID (XUID): {player.player_id}")
     print(f"Xbox Live gamertag: {player.gamertag}")
@@ -50,7 +50,7 @@ The spartan token and clearance token are the main targets of this step, as they
 
 - **Xbox Live player ID (XUID)** - This ID is unique to your Xbox Live account. XUIDs are also the identifying attribute for player-specific data retrieved from the API. Additionally, XUIDs are required for certain endpoints in order to retrieve player-specific data.
 - **Xbox Live gamertag** - This is the display name for Xbox Live accounts.
-- **Xbox Live authorization header value** - This is a value required when making requests to the Xbox Live API. While outside the scope of this project, you could use this to request profile information using XUIDs. Here is an example endpoint for obtaining Xbox Live profiles for a batch of XUIDs: [Batch Profile POST](https://learn.microsoft.com/en-us/gaming/gdk/_content/gc/reference/live/rest/uri/profilev2/uri-usersbatchprofilesettingspost). An alternative solution to making these requests yourself is to use a package such as [xbox-webapi-python](https://github.com/OpenXbox/xbox-webapi-python).
+- **Xbox Live authorization header value** - This is a required request header when making requests to the Xbox Live API, if desired.
 
 ## Initializing the HaloInfiniteClient
 
@@ -90,27 +90,24 @@ from aiohttp import ClientSession
 
 from spnkr.client import HaloInfiniteClient
 
-# Player XUID obtained earlier (or any other XUID)
-PLAYER_ID = "xuid(123)"  # "123" or 123 would also work here
+# Any of the following are acceptable for the below request.
+PLAYER = "xuid(1234567890123456)"  # AuthenticatedPlayer.player_id
+PLAYER = "1234567890123456"
+PLAYER = 1234567890123456
+PLAYER = "MyGamertag"  # AuthenticatedPlayer.gamertag
 
 
 async def main() -> None:
     async with ClientSession() as session:
         client = HaloInfiniteClient(...)
 
-        response = await client.get_match_history(
-            xuid=PLAYER_ID,
-            start=0,  # Optional, indicates the index of the first result to return.
-            count=25,  # Optional, indicates the number of results to return.
-            match_type="all",  # Optional, potentially filter the matches returned.
-        )
+        # Request the 25 most recent matches for the player.
+        response = await client.get_match_history(PLAYER)
 
 
 if __name__ == "__main__":
     asyncio.run(main())
 ```
-
-The above example would retrieve information about your 25 most recent matches.
 
 ## Parsing Responses
 
@@ -140,12 +137,12 @@ async def main() -> None:
         # Deserialize the JSON response
         data = await response.json()
 
-        # Initialize the model
+        # Parse the data into a Pydantic model
         history = MatchHistory(**data)
 
         # Use it
         last_match_info = history.results[0].match_info
-        print(f"Last match played on {last_match_info.start_time:%Y-%m-%d %H:%M}")
+        print(f"Last match played on {last_match_info.start_time:%Y-%m-%d}")
 
 
 if __name__ == "__main__":
