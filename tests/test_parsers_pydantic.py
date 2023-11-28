@@ -143,6 +143,12 @@ def test_parse_playlist():
     assert result.public_name == "Ranked Arena"
 
 
+def test_parse_user():
+    data = load_response("get_user")
+    result = pp.User(**data)
+    assert result.xuid == 1234567890
+
+
 def test_parse_users():
     data = load_response("get_users")
     result = [pp.User(**user) for user in data]

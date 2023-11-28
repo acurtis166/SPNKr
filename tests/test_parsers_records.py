@@ -134,6 +134,12 @@ def test_parse_playlist():
     assert result.name == "Ranked Arena"
 
 
+def test_parse_user():
+    data = load_response("get_user")
+    result = records.parse_user(data)
+    assert result.xuid == 1234567890
+
+
 def test_parse_users():
     data = load_response("get_users")
     result = records.parse_users(data)

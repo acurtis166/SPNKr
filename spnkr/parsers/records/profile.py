@@ -8,7 +8,7 @@ class User(NamedTuple):
 
     Attributes:
         xuid: Xbox user ID.
-        gamertag: User's gamertag.\
+        gamertag: User's gamertag.
         gamerpic: URL to the user's gamerpic (1080x1080 PNG). The URL will
             accept additional query parameters `w` and `h` to request a smaller
             image having pixel width and height dimensions, respectively. Known
@@ -29,11 +29,18 @@ def parse_users(data: list[dict]) -> list[User]:
     Returns:
         List of parsed users.
     """
-    return [_parse_user(user) for user in data]
+    return [parse_user(user) for user in data]
 
 
-def _parse_user(data: dict) -> User:
-    """Parse a single user from an item in the "get_users" array response."""
+def parse_user(data: dict) -> User:
+    """Parse a single user.
+
+    Args:
+        data: The user data.
+
+    Returns:
+        Parsed user.
+    """
     return User(
         xuid=int(data["xuid"]),
         gamertag=data["gamertag"],

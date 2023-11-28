@@ -214,6 +214,30 @@ async def test_get_match_stats(client: HaloInfiniteClient):
 
 
 @pytest.mark.asyncio
+async def test_get_current_user(client: HaloInfiniteClient):
+    await client.get_current_user()
+    SESSION.get.assert_called_with(
+        "https://profile.svc.halowaypoint.com/users/me",
+    )
+
+
+@pytest.mark.asyncio
+async def test_get_user_by_gamertag(client: HaloInfiniteClient):
+    await client.get_user_by_gamertag("MyGamertag")
+    SESSION.get.assert_called_with(
+        "https://profile.svc.halowaypoint.com/users/gt(MyGamertag)",
+    )
+
+
+@pytest.mark.asyncio
+async def test_get_user_by_id(client: HaloInfiniteClient):
+    await client.get_user_by_id("xuid(2345678901234567)")
+    SESSION.get.assert_called_with(
+        "https://profile.svc.halowaypoint.com/users/xuid(2345678901234567)",
+    )
+
+
+@pytest.mark.asyncio
 async def test_get_users_by_id(client: HaloInfiniteClient):
     await client.get_users_by_id(
         ["xuid(1234567890123456)", "xuid(2345678901234567)"]

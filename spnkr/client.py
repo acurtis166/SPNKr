@@ -367,6 +367,51 @@ class HaloInfiniteClient:
         url = f"{UGC_DISCOVERY_HOST}{endpoint}"
         return await self._get(url)
 
+    async def _get_user(self, user: str) -> ClientResponse:
+        return await self._get(f"{PROFILE_HOST}/users/{user}")
+
+    async def get_current_user(self) -> ClientResponse:
+        """Get the current user profile.
+
+        Parsers:
+            - [User][spnkr.parsers.pydantic.profile.User]
+            - [parse_user][spnkr.parsers.records.profile.parse_user]
+
+        Returns:
+            The user.
+        """
+        return await self._get_user("me")
+
+    async def get_user_by_gamertag(self, gamertag: str) -> ClientResponse:
+        """Get user profile for the given gamertag.
+
+        Args:
+            gamertag: The gamertag of the player.
+
+        Parsers:
+            - [User][spnkr.parsers.pydantic.profile.User]
+            - [parse_user][spnkr.parsers.records.profile.parse_user]
+
+        Returns:
+            The user.
+        """
+        return await self._get_user(f"gt({gamertag})")
+
+    async def get_user_by_id(self, xuid: str | int) -> ClientResponse:
+        """Get user profile for the given Xbox Live ID.
+
+        Args:
+            xuid: The Xbox Live ID of the player.
+
+        Parsers:
+            - [User][spnkr.parsers.pydantic.profile.User]
+            - [parse_user][spnkr.parsers.records.profile.parse_user]
+
+        Returns:
+            The user.
+        """
+        return await self._get_user(wrap_xuid(xuid))
+
     async def get_users_by_id(
         self, xuids: Iterable[str | int]
     ) -> ClientResponse:
