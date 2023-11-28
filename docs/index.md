@@ -2,7 +2,7 @@
 
 ## About
 
-[SPNKr](https://www.halopedia.org/M41_SPNKr) is a Python API for retrieving [Halo Infinite](https://www.halowaypoint.com/halo-infinite) multiplayer data. [Halo 5](https://www.halopedia.org/Halo_5:_Guardians), 343 Industries' previous entry in the FPS series, had a [public API](https://developer.haloapi.com/) directly from 343 Industries. It is thorough and has great documentation. It made it incredibly easy to inspect match history, player stats, etc. in a personalized way. Currently, there is no such public API available for Halo Infinite. This project began as an effort to replicate the functionality of the Halo 5 API for Python developers.
+[SPNKr](https://www.halopedia.org/M41_SPNKr) is a Python API for retrieving [Halo Infinite](https://www.halowaypoint.com/halo-infinite) multiplayer data. [Halo 5](https://www.halopedia.org/Halo_5:_Guardians), 343 Industries' previous entry in the FPS series, has a [public API](https://developer.haloapi.com/) available. Currently, there is no such public API available for Halo Infinite. This project began as an effort to replicate the functionality of the Halo 5 API for Python developers.
 
 ### Links
 
