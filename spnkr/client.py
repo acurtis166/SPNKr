@@ -367,7 +367,9 @@ class HaloInfiniteClient:
         url = f"{UGC_DISCOVERY_HOST}{endpoint}"
         return await self._get(url)
 
-    async def get_users(self, xuids: Iterable[str | int]) -> ClientResponse:
+    async def get_users_by_id(
+        self, xuids: Iterable[str | int]
+    ) -> ClientResponse:
         """Get user profiles for the given list of Xbox Live IDs.
 
         Note that the JSON response is an array. This differs from the other
