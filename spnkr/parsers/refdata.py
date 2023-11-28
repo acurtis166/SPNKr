@@ -6,6 +6,8 @@ from enum import Enum, IntEnum, StrEnum
 class AssetKind(IntEnum):
     """Types of assets used by Halo Infinite."""
 
+    UNKNOWN = 0
+    """Unknown asset type."""
     FILM = 1
     """A film asset."""
     MAP = 2
@@ -29,59 +31,109 @@ class AssetKind(IntEnum):
 
 
 class BotDifficulty(IntEnum):
-    """Bot difficulty levels."""
+    """Bot difficulty levels as encoded in stats responses."""
 
-    RECRUIT = 4
-    """Recruit bots. Lowest difficulty."""
+    UNKNOWN = -1
+    """Unknown bot difficulty."""
     MARINE = 1
     """Marine bots. 2nd lowest difficulty."""
     ODST = 2
     """ODST bots. 2nd highest difficulty."""
     SPARTAN = 3
     """Spartan bots. Highest difficulty."""
+    RECRUIT = 4
+    """Recruit bots. Lowest difficulty."""
+    ADAPTIVE = 5
+    """Adaptive bots. Difficulty changes based on player performance."""
 
 
 class GameVariantCategory(IntEnum):
     """Categories of multiplayer game modes."""
 
+    UNKNOWN = -1
+    """Unknown game mode category."""
+    NONE = 0
+    """No game mode category."""
+    CAMPAIGN = 1
+    """Campaign game modes."""
+    FORGE = 2
+    """Forge game modes."""
+    ACADEMY = 3
+    """Academy game modes."""
+    ACADEMY_TUTORIAL = 4
+    """Academy tutorial game modes."""
+    ACADEMY_PRACTICE = 5
+    """Academy practice game modes."""
     SLAYER = 6
-    """Slayer game modes."""
+    """Multiplayer slayer game modes."""
     ATTRITION = 7
-    """Attrition game modes."""
+    """Multiplayer attrition game modes."""
     ELIMINATION = 8
-    """Elimination game modes."""
+    """Multiplayer elimination game modes."""
     FIESTA = 9
-    """Fiesta game modes."""
+    """Multiplayer fiesta game modes."""
+    SWAT = 10
+    """Multiplayer SWAT game modes."""
     STRONGHOLDS = 11
-    """Strongholds game modes."""
+    """Multiplayer strongholds game modes."""
     BASTION = 12
-    """Bastion game modes."""
+    """Multiplayer bastion game modes."""
+    KING_OF_THE_HILL = 13
+    """Multiplayer king of the hill game modes."""
     TOTAL_CONTROL = 14
-    """Total Control game modes."""
+    """Multiplayer total control game modes."""
     CTF = 15
-    """Capture the Flag game modes."""
+    """Multiplayer capture the flag game modes."""
     ASSAULT = 16
-    """Assault game modes."""
+    """Multiplayer assault game modes."""
     EXTRACTION = 17
-    """Extraction game modes."""
+    """Multiplayer extraction game modes."""
     ODDBALL = 18
-    """Oddball game modes."""
+    """Multiplayer oddball game modes."""
     STOCKPILE = 19
-    """Stockpile game modes."""
+    """Multiplayer stockpile game modes."""
     JUGGERNAUT = 20
-    """Juggernaut game modes."""
+    """Multiplayer juggernaut game modes."""
+    REGICIDE = 21
+    """Multiplayer regicide game modes."""
     INFECTION = 22
-    """Infection game modes."""
+    """Multiplayer infection game modes."""
     ESCORT = 23
-    """Escort game modes."""
+    """Multiplayer escort game modes."""
     GUN_GAME = 24
-    """Gun Game game modes."""
+    """Multiplayer gun game game modes."""
     GRIFBALL = 25
-    """Grifball game modes."""
+    """Multiplayer grifball game modes."""
+    RACE = 26
+    """Multiplayer racing game modes."""
+    PROTOTYPE = 27
+    """Multiplayer prototype game modes."""
+    TEST = 28
+    """Test game modes."""
+    TEST_ACADEMY = 29
+    """Test academy game modes."""
+    TEST_AUDIO = 30
+    """Test audio game modes."""
+    TEST_CAMPAIGN = 31
+    """Test campaign game modes."""
     TEST_ENGINE = 32
-    """Test Engine game modes."""
+    """Test engine game modes."""
+    TEST_FORGE = 33
+    """Test forge game modes."""
+    TEST_GRAPHICS = 34
+    """Test graphics game modes."""
+    TEST_MULTIPLAYER = 35
+    """Test multiplayer game modes."""
+    TEST_SANDBOX = 36
+    """Test sandbox game modes."""
+    ACADEMY_TRAINING = 37
+    """Academy training game modes."""
+    ACADEMY_WEAPON_DRILL = 38
+    """Academy weapon drill game modes."""
     LAND_GRAB = 39
-    """Land Grab game modes."""
+    """Multiplayer land grab game modes."""
+    MINIGAME = 41
+    """Minigame game modes."""
 
 
 class LifecycleMode(IntEnum):
@@ -128,6 +180,10 @@ class MedalType(IntEnum):
 class Outcome(IntEnum):
     """Match outcome options."""
 
+    UNKNOWN = -1
+    """Unknown match outcome."""
+    NONE = 0
+    """No match outcome."""
     TIE = 1
     """Match ended in a tie."""
     WIN = 2
@@ -136,11 +192,15 @@ class Outcome(IntEnum):
     """Match was lost."""
     DID_NOT_FINISH = 4
     """Match was not finished."""
+    DID_NOT_START = 5
+    """Match was not started."""
 
 
 class PlayerType(IntEnum):
     """Types of players."""
 
+    UNKNOWN = -1
+    """Unknown player type."""
     HUMAN = 1
     """Human players."""
     BOT = 2
@@ -150,12 +210,18 @@ class PlayerType(IntEnum):
 class PlaylistExperience(IntEnum):
     """General categories of playlists."""
 
+    UNKNOWN = -1
+    """Unknown playlist experience."""
+    NONE = 0
+    """No playlist experience."""
+    UNTRACKED = 1
+    """Untracked playlist experience."""
     ARENA = 2
     """Arena playlists. Typically 4v4."""
     BIG_TEAM_BATTLE = 3
     """Big team battle playlists. Typically 12v12."""
     PVE = 4
-    """Player vs. environment playlists."""
+    """Player vs. bots playlists."""
     FEATURED = 5
     """Featured playlists. Rotates frequently."""
 
@@ -165,6 +231,14 @@ class SkillResultCode(IntEnum):
 
     SUCCESS = 0
     """Skill request was successful."""
+    NOT_FOUND = 1
+    """Skill request failed as a requested resource was not found."""
+    SERVICE_FAILURE = 2
+    """Skill request failed due to a service failure."""
+    SERVICE_UNAVAILABLE = 3
+    """Skill request failed as the service is unavailable."""
+    FORBIDDEN = 4
+    """Skill request failed as the request was forbidden."""
 
 
 class SubTier(Enum):
@@ -201,8 +275,8 @@ class SubTier(Enum):
 class Tier(StrEnum):
     """Tiers of skill rankings."""
 
-    NOT_APPLICABLE = ""
-    """Not applicable."""
+    UNRANKED = ""
+    """Not yet ranked or not applicable."""
     BRONZE = "Bronze"
     """Bronze tier. Lowest tier."""
     SILVER = "Silver"
