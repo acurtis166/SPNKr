@@ -12,7 +12,7 @@
         <link rel="prev" href="../authentication/">
       
       
-        <link rel="next" href="../pydantic-parsing/">
+        <link rel="next" href="../services/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Halo Infinite Client - SPNKr Documentation</title>
+        <title>Client - SPNKr Documentation</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#halo-infinite-client" class="md-skip">
+        <a href="#client" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Halo Infinite Client
+              Client
             
           </span>
         </div>
@@ -281,7 +281,7 @@
           
   
   <span class="md-ellipsis">
-    Halo Infinite Client
+    Client
   </span>
   
 
@@ -292,7 +292,7 @@
         
   
   <span class="md-ellipsis">
-    Halo Infinite Client
+    Client
   </span>
   
 
@@ -314,6 +314,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#spnkr.client" class="md-nav__link">
+    spnkr.client
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#spnkr.client.HaloInfiniteClient" class="md-nav__link">
     HaloInfiniteClient
   </a>
@@ -322,106 +329,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_current_user" class="md-nav__link">
-    get_current_user()
+  <a href="#spnkr.client.HaloInfiniteClient.discovery_ugc" class="md-nav__link">
+    discovery_ugc
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_map" class="md-nav__link">
-    get_map()
+  <a href="#spnkr.client.HaloInfiniteClient.gamecms_hacs" class="md-nav__link">
+    gamecms_hacs
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_map_mode_pair" class="md-nav__link">
-    get_map_mode_pair()
+  <a href="#spnkr.client.HaloInfiniteClient.profile" class="md-nav__link">
+    profile
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_match_count" class="md-nav__link">
-    get_match_count()
+  <a href="#spnkr.client.HaloInfiniteClient.skill" class="md-nav__link">
+    skill
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_match_history" class="md-nav__link">
-    get_match_history()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_match_skill" class="md-nav__link">
-    get_match_skill()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_match_stats" class="md-nav__link">
-    get_match_stats()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_medal_metadata" class="md-nav__link">
-    get_medal_metadata()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_playlist" class="md-nav__link">
-    get_playlist()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_playlist_csr" class="md-nav__link">
-    get_playlist_csr()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_service_record" class="md-nav__link">
-    get_service_record()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_ugc_game_variant" class="md-nav__link">
-    get_ugc_game_variant()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_user_by_gamertag" class="md-nav__link">
-    get_user_by_gamertag()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_user_by_id" class="md-nav__link">
-    get_user_by_id()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_users_by_id" class="md-nav__link">
-    get_users_by_id()
+  <a href="#spnkr.client.HaloInfiniteClient.stats" class="md-nav__link">
+    stats
   </a>
   
 </li>
@@ -435,6 +372,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Services
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -554,6 +511,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#spnkr.client" class="md-nav__link">
+    spnkr.client
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#spnkr.client.HaloInfiniteClient" class="md-nav__link">
     HaloInfiniteClient
   </a>
@@ -562,106 +526,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_current_user" class="md-nav__link">
-    get_current_user()
+  <a href="#spnkr.client.HaloInfiniteClient.discovery_ugc" class="md-nav__link">
+    discovery_ugc
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_map" class="md-nav__link">
-    get_map()
+  <a href="#spnkr.client.HaloInfiniteClient.gamecms_hacs" class="md-nav__link">
+    gamecms_hacs
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_map_mode_pair" class="md-nav__link">
-    get_map_mode_pair()
+  <a href="#spnkr.client.HaloInfiniteClient.profile" class="md-nav__link">
+    profile
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_match_count" class="md-nav__link">
-    get_match_count()
+  <a href="#spnkr.client.HaloInfiniteClient.skill" class="md-nav__link">
+    skill
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_match_history" class="md-nav__link">
-    get_match_history()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_match_skill" class="md-nav__link">
-    get_match_skill()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_match_stats" class="md-nav__link">
-    get_match_stats()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_medal_metadata" class="md-nav__link">
-    get_medal_metadata()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_playlist" class="md-nav__link">
-    get_playlist()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_playlist_csr" class="md-nav__link">
-    get_playlist_csr()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_service_record" class="md-nav__link">
-    get_service_record()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_ugc_game_variant" class="md-nav__link">
-    get_ugc_game_variant()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_user_by_gamertag" class="md-nav__link">
-    get_user_by_gamertag()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_user_by_id" class="md-nav__link">
-    get_user_by_id()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spnkr.client.HaloInfiniteClient.get_users_by_id" class="md-nav__link">
-    get_users_by_id()
+  <a href="#spnkr.client.HaloInfiniteClient.stats" class="md-nav__link">
+    stats
   </a>
   
 </li>
@@ -686,7 +580,26 @@
                   
 
 
-<h1 id="halo-infinite-client">Halo Infinite Client</h1>
+<h1 id="client">Client</h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+<a id="spnkr.client"></a>
+  <div class="doc doc-contents first">
+  
+      <p>Provides a client for the Halo Infinite API.</p>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
 
 
 <div class="doc doc-object doc-class">
@@ -694,17 +607,17 @@
 
 
 <h2 id="spnkr.client.HaloInfiniteClient" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">spnkr</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HaloInfiniteClient</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">spartan_token</span><span class="p">,</span> <span class="n">clearance_token</span><span class="p">,</span> <span class="n">requests_per_second</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">HaloInfiniteClient</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">spartan_token</span><span class="p">,</span> <span class="n">clearance_token</span><span class="p">,</span> <span class="n">requests_per_second</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span></code>
 
 </h2>
 
 
-  <div class="doc doc-contents first">
+  <div class="doc doc-contents ">
 
   
       <p>A client for the Halo Infinite API.</p>
   
-      <p>Raw <code>aiohttp</code> <code>ClientResponses</code> are returned from each method. The
+      <p>Raw <code>aiohttp.ClientResponses</code> are returned from each method. The
 caller is responsible for handling the response via custom parsing or by
 using one of the provided parsers from the <code>spnkr.parsers</code> module.</p>
 
@@ -771,8 +684,9 @@ API.</p>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>The rate limit to use. Defaults to 5 requests
-per second. Set to None to disable rate limiting.</p>
+              <p>The rate limit to use. Note that this rate
+limit is enforced per service, not globally. Defaults to 5
+requests per second. Set to None to disable rate limiting.</p>
             </div>
           </td>
           <td>
@@ -793,18 +707,16 @@ per second. Set to None to disable rate limiting.</p>
 
 
 
+<div class="doc doc-object doc-attribute">
 
 
 
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="spnkr.client.HaloInfiniteClient.get_current_user" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_current_user</span><span class="p">()</span></code>
+<h3 id="spnkr.client.HaloInfiniteClient.discovery_ugc" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">discovery_ugc</span><span class="p">:</span> <span class="n">DiscoveryUgcService</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
+      <small class="doc doc-label doc-label-cached"><code>cached</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
 
 </h3>
@@ -812,53 +724,21 @@ per second. Set to None to disable rate limiting.</p>
 
   <div class="doc doc-contents ">
   
-      <p>Get the current user profile.</p>
-
-<details class="parsers" open>
-  <summary>Parsers</summary>
-  <ul>
-<li><a class="autorefs autorefs-internal" href="../pydantic-parsing/#spnkr.parsers.pydantic.profile.User">User</a></li>
-<li><a class="autorefs autorefs-internal" href="../records-parsing/#spnkr.parsers.records.profile.parse_user">parse_user</a></li>
-</ul>
-</details>
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="aiohttp.ClientResponse">ClientResponse</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The user.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
+      <p>User-generated content discovery data service (maps, modes, etc.).</p>
   </div>
 
 </div>
 
-
-<div class="doc doc-object doc-function">
-
+<div class="doc doc-object doc-attribute">
 
 
-<h3 id="spnkr.client.HaloInfiniteClient.get_map" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_map</span><span class="p">(</span><span class="n">asset_id</span><span class="p">,</span> <span class="n">version_id</span><span class="p">)</span></code>
+
+<h3 id="spnkr.client.HaloInfiniteClient.gamecms_hacs" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">gamecms_hacs</span><span class="p">:</span> <span class="n">GameCmsHacsService</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
+      <small class="doc doc-label doc-label-cached"><code>cached</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
 
 </h3>
@@ -866,97 +746,21 @@ per second. Set to None to disable rate limiting.</p>
 
   <div class="doc doc-contents ">
   
-      <p>Get details about a map.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>asset_id</code></td>
-          <td>
-                <code>str | <span title="uuid.UUID">UUID</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The asset ID of the map.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>version_id</code></td>
-          <td>
-                <code>str | <span title="uuid.UUID">UUID</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The version ID of the map.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-<details class="parsers" open>
-  <summary>Parsers</summary>
-  <ul>
-<li><a class="autorefs autorefs-internal" href="../pydantic-parsing/#spnkr.parsers.pydantic.ugc_discovery.Map">Map</a></li>
-<li><a class="autorefs autorefs-internal" href="../records-parsing/#spnkr.parsers.records.ugc_discovery.parse_asset">parse_asset</a></li>
-</ul>
-</details>
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="aiohttp.ClientResponse">ClientResponse</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The map details.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
+      <p>Game content management data service (e.g., medal metadata)</p>
   </div>
 
 </div>
 
-
-<div class="doc doc-object doc-function">
-
+<div class="doc doc-object doc-attribute">
 
 
-<h3 id="spnkr.client.HaloInfiniteClient.get_map_mode_pair" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_map_mode_pair</span><span class="p">(</span><span class="n">asset_id</span><span class="p">,</span> <span class="n">version_id</span><span class="p">)</span></code>
+
+<h3 id="spnkr.client.HaloInfiniteClient.profile" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">profile</span><span class="p">:</span> <span class="n">ProfileService</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
+      <small class="doc doc-label doc-label-cached"><code>cached</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
 
 </h3>
@@ -964,97 +768,21 @@ per second. Set to None to disable rate limiting.</p>
 
   <div class="doc doc-contents ">
   
-      <p>Get details about a map mode pair.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>asset_id</code></td>
-          <td>
-                <code>str | <span title="uuid.UUID">UUID</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The asset ID of the map mode pair.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>version_id</code></td>
-          <td>
-                <code>str | <span title="uuid.UUID">UUID</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The version ID of the map mode pair.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-<details class="parsers" open>
-  <summary>Parsers</summary>
-  <ul>
-<li><a class="autorefs autorefs-internal" href="../pydantic-parsing/#spnkr.parsers.pydantic.ugc_discovery.MapModePair">MapModePair</a></li>
-<li><a class="autorefs autorefs-internal" href="../records-parsing/#spnkr.parsers.records.ugc_discovery.parse_asset">parse_asset</a></li>
-</ul>
-</details>
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="aiohttp.ClientResponse">ClientResponse</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The map mode pair details.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
+      <p>Profile data service. Get user data, such as XUIDs/gamertags.</p>
   </div>
 
 </div>
 
-
-<div class="doc doc-object doc-function">
-
+<div class="doc doc-object doc-attribute">
 
 
-<h3 id="spnkr.client.HaloInfiniteClient.get_match_count" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_match_count</span><span class="p">(</span><span class="n">player</span><span class="p">)</span></code>
+
+<h3 id="spnkr.client.HaloInfiniteClient.skill" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">skill</span><span class="p">:</span> <span class="n">SkillService</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
+      <small class="doc doc-label doc-label-cached"><code>cached</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
 
 </h3>
@@ -1062,87 +790,21 @@ per second. Set to None to disable rate limiting.</p>
 
   <div class="doc doc-contents ">
   
-      <p>Get match counts across different game experiences for a player.</p>
-<p>The counts returned are for custom matches, matchmade matches, local
-matches, and total matches.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>player</code></td>
-          <td>
-                <code>str | int</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Xbox Live ID or gamertag of the player to get counts for.
-Examples of valid inputs include "xuid(1234567890123456)",
-"1234567890123456", 1234567890123456, and "MyGamertag".</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-<details class="parsers" open>
-  <summary>Parsers</summary>
-  <ul>
-<li><a class="autorefs autorefs-internal" href="../pydantic-parsing/#spnkr.parsers.pydantic.stats.MatchCount">MatchCount</a></li>
-<li><a class="autorefs autorefs-internal" href="../records-parsing/#spnkr.parsers.records.stats.parse_match_count">parse_match_count</a></li>
-</ul>
-</details>
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="aiohttp.ClientResponse">ClientResponse</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The match counts.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
+      <p>Skill data service. Retrieve MMR and CSR data by match or playlist.</p>
   </div>
 
 </div>
 
-
-<div class="doc doc-object doc-function">
-
+<div class="doc doc-object doc-attribute">
 
 
-<h3 id="spnkr.client.HaloInfiniteClient.get_match_history" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_match_history</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">match_type</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span></code>
+
+<h3 id="spnkr.client.HaloInfiniteClient.stats" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">stats</span><span class="p">:</span> <span class="n">StatsService</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
+      <small class="doc doc-label doc-label-cached"><code>cached</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
 
 </h3>
@@ -1150,1115 +812,21 @@ Examples of valid inputs include "xuid(1234567890123456)",
 
   <div class="doc doc-contents ">
   
-      <p>Request a batch of matches from a player's match history.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>player</code></td>
-          <td>
-                <code>str | int</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Xbox Live ID or gamertag of the player to get counts for.
-Examples of valid inputs include "xuid(1234567890123456)",
-"1234567890123456", 1234567890123456, and "MyGamertag".</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>start</code></td>
-          <td>
-                <code>int</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Index of the first match to request, starting at 0.</p>
-            </div>
-          </td>
-          <td>
-                <code>0</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>count</code></td>
-          <td>
-                <code>int</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The number of matches to request. Maximum number of results
-returned is 25.</p>
-            </div>
-          </td>
-          <td>
-                <code>25</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>match_type</code></td>
-          <td>
-                <code><span title="typing.Literal">Literal</span>[&#39;all&#39;, &#39;matchmaking&#39;, &#39;custom&#39;, &#39;local&#39;]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The type of matches to return. One of "all",
-"matchmaking", "custom", or "local".</p>
-            </div>
-          </td>
-          <td>
-                <code>&#39;all&#39;</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-<details class="parsers" open>
-  <summary>Parsers</summary>
-  <ul>
-<li><a class="autorefs autorefs-internal" href="../pydantic-parsing/#spnkr.parsers.pydantic.stats.MatchHistory">MatchHistory</a></li>
-<li><a class="autorefs autorefs-internal" href="../records-parsing/#spnkr.parsers.records.stats.parse_match_history">parse_match_history</a></li>
-</ul>
-</details>
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="aiohttp.ClientResponse">ClientResponse</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The requested match history "page" of results.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
+      <p>Stats data service. Retrieve match history and match stats.</p>
   </div>
 
 </div>
 
 
-<div class="doc doc-object doc-function">
 
 
 
-<h3 id="spnkr.client.HaloInfiniteClient.get_match_skill" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_match_skill</span><span class="p">(</span><span class="n">match_id</span><span class="p">,</span> <span class="n">xuids</span><span class="p">)</span></code>
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Get player CSR and team MMR values for a given match and player list.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>match_id</code></td>
-          <td>
-                <code>str | <span title="uuid.UUID">UUID</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Halo Infinite match ID.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>xuids</code></td>
-          <td>
-                <code><span title="typing.Iterable">Iterable</span>[str | int]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The Xbox Live IDs of the match's players. Only
-players in this list will have their skill data returned.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-<details class="parsers" open>
-  <summary>Parsers</summary>
-  <ul>
-<li><a class="autorefs autorefs-internal" href="../pydantic-parsing/#spnkr.parsers.pydantic.skill.MatchSkill">MatchSkill</a></li>
-<li><a class="autorefs autorefs-internal" href="../records-parsing/#spnkr.parsers.records.skill.parse_match_skill">parse_match_skill</a></li>
-</ul>
-</details>
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="aiohttp.ClientResponse">ClientResponse</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The skill data for the match.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
+  </div>
 
   </div>
 
 </div>
 
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="spnkr.client.HaloInfiniteClient.get_match_stats" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_match_stats</span><span class="p">(</span><span class="n">match_id</span><span class="p">)</span></code>
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Request match details using the Halo Infinite match GUID.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>match_id</code></td>
-          <td>
-                <code>str | <span title="uuid.UUID">UUID</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Halo Infinite GUID identifying the match.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-<details class="parsers" open>
-  <summary>Parsers</summary>
-  <ul>
-<li><a class="autorefs autorefs-internal" href="../pydantic-parsing/#spnkr.parsers.pydantic.stats.MatchStats">MatchStats</a></li>
-<li><a class="autorefs autorefs-internal" href="../records-parsing/#spnkr.parsers.records.stats.parse_match_info">parse_match_info</a></li>
-<li><a class="autorefs autorefs-internal" href="../records-parsing/#spnkr.parsers.records.stats.parse_player_core_stats">parse_player_core_stats</a></li>
-<li><a class="autorefs autorefs-internal" href="../records-parsing/#spnkr.parsers.records.stats.parse_player_medals">parse_player_medals</a></li>
-<li><a class="autorefs autorefs-internal" href="../records-parsing/#spnkr.parsers.records.stats.parse_team_core_stats">parse_team_core_stats</a></li>
-</ul>
-</details>
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="aiohttp.ClientResponse">ClientResponse</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The match details.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="spnkr.client.HaloInfiniteClient.get_medal_metadata" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_medal_metadata</span><span class="p">()</span></code>
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Get details for all medals obtainable in the game.</p>
-
-<details class="parsers" open>
-  <summary>Parsers</summary>
-  <ul>
-<li><a class="autorefs autorefs-internal" href="../pydantic-parsing/#spnkr.parsers.pydantic.gamecms_hacs.MedalMetadata">MedalMetadata</a></li>
-<li><a class="autorefs autorefs-internal" href="../records-parsing/#spnkr.parsers.records.gamecms_hacs.parse_medal_metadata">parse_medal_metadata</a></li>
-</ul>
-</details>
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="aiohttp.ClientResponse">ClientResponse</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The medal metadata.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="spnkr.client.HaloInfiniteClient.get_playlist" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_playlist</span><span class="p">(</span><span class="n">asset_id</span><span class="p">,</span> <span class="n">version_id</span><span class="p">)</span></code>
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Get details about a playlist.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>asset_id</code></td>
-          <td>
-                <code>str | <span title="uuid.UUID">UUID</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The asset ID of the playlist.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>version_id</code></td>
-          <td>
-                <code>str | <span title="uuid.UUID">UUID</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The version ID of the playlist.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-<details class="parsers" open>
-  <summary>Parsers</summary>
-  <ul>
-<li><a class="autorefs autorefs-internal" href="../pydantic-parsing/#spnkr.parsers.pydantic.ugc_discovery.Playlist">Playlist</a></li>
-<li><a class="autorefs autorefs-internal" href="../records-parsing/#spnkr.parsers.records.ugc_discovery.parse_asset">parse_asset</a></li>
-</ul>
-</details>
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="aiohttp.ClientResponse">ClientResponse</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The playlist details.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="spnkr.client.HaloInfiniteClient.get_playlist_csr" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_playlist_csr</span><span class="p">(</span><span class="n">playlist_id</span><span class="p">,</span> <span class="n">xuids</span><span class="p">)</span></code>
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Get player CSR values for a given playlist and player list.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>playlist_id</code></td>
-          <td>
-                <code>str | <span title="uuid.UUID">UUID</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Halo Infinite playlist asset ID.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>xuids</code></td>
-          <td>
-                <code><span title="typing.Iterable">Iterable</span>[str | int]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The Xbox Live IDs of the players.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-<details class="parsers" open>
-  <summary>Parsers</summary>
-  <ul>
-<li><a class="autorefs autorefs-internal" href="../pydantic-parsing/#spnkr.parsers.pydantic.skill.PlaylistCsr">PlaylistCsr</a></li>
-<li><a class="autorefs autorefs-internal" href="../records-parsing/#spnkr.parsers.records.skill.parse_playlist_csr">parse_playlist_csr</a></li>
-</ul>
-</details>
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="aiohttp.ClientResponse">ClientResponse</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The summary CSR data for the players in the given playlist.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="spnkr.client.HaloInfiniteClient.get_service_record" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_service_record</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">match_type</span><span class="o">=</span><span class="s1">&#39;matchmade&#39;</span><span class="p">,</span> <span class="n">season_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">game_variant_category</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">is_ranked</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">playlist_asset_id</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Get a service record for a player. Summarizes player stats.</p>
-<p>Note that filters (<code>season_id</code>, <code>game_variant_category</code>, <code>is_ranked</code>,
-and <code>playlist_asset_id</code>) are only applicable to "matchmade"
-<code>match_type</code>. A warning is issued and the filters are ignored if they
-are provided for a non-matchmade <code>match_type</code>.</p>
-<p>Filters must be combined appropriately. The following are valid:
-- <code>season_id</code>
-- <code>season_id</code>, <code>game_variant_category</code>
-- <code>season_id</code>, <code>game_variant_category</code>, <code>playlist_asset_id</code>
-- <code>season_id</code>, <code>game_variant_category</code>, <code>is_ranked</code>
-- <code>season_id</code>, <code>playlist_asset_id</code>
-- <code>game_variant_category</code>
-- <code>game_variant_category</code>, <code>is_ranked</code></p>
-<p>To collect possible values for the filter arguments, look at the
-"subqueries" attribute of an unfiltered service record response.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>player</code></td>
-          <td>
-                <code>str | int</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Xbox Live ID or gamertag of the player to get counts for.
-Examples of valid inputs include "xuid(1234567890123456)",
-"1234567890123456", 1234567890123456, and "MyGamertag".</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>match_type</code></td>
-          <td>
-                <code><span title="typing.Literal">Literal</span>[&#39;matchmade&#39;, &#39;custom&#39;, &#39;local&#39;]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The type of games to include in the service record.
-One of "matchmade", "custom", or "local".</p>
-            </div>
-          </td>
-          <td>
-                <code>&#39;matchmade&#39;</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>season_id</code></td>
-          <td>
-                <code>str | None</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The season ID to get service record for. Optional.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>game_variant_category</code></td>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="spnkr.parsers.refdata.GameVariantCategory" href="../reference-data/#spnkr.parsers.refdata.GameVariantCategory">GameVariantCategory</a> | int | None</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The game variant category to filter service
-record data. See <code>spnkr.parsers.refdata.GameVariantCategory</code> for
-human-readable values. Optional.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>is_ranked</code></td>
-          <td>
-                <code>bool | None</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Filter for ranked or unranked games. Optional.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>playlist_asset_id</code></td>
-          <td>
-                <code>str | <span title="uuid.UUID">UUID</span> | None</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Filter for a specific playlist with its asset ID.
-Optional.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-<details class="parsers" open>
-  <summary>Parsers</summary>
-  <ul>
-<li><a class="autorefs autorefs-internal" href="../pydantic-parsing/#spnkr.parsers.pydantic.stats.ServiceRecord">ServiceRecord</a></li>
-<li><a class="autorefs autorefs-internal" href="../records-parsing/#spnkr.parsers.records.stats.parse_service_record">parse_service_record</a></li>
-</ul>
-</details>
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="aiohttp.ClientResponse">ClientResponse</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The service record for the player with the given filters.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-
-  <p><strong>Raises:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code>ValueError</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>If <code>match_type</code> is not one of "matchmade", "custom", or
-"local".</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code>ValueError</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>If filter arguments are inappropriately combined.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="spnkr.client.HaloInfiniteClient.get_ugc_game_variant" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_ugc_game_variant</span><span class="p">(</span><span class="n">asset_id</span><span class="p">,</span> <span class="n">version_id</span><span class="p">)</span></code>
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Get details about a game mode.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>asset_id</code></td>
-          <td>
-                <code>str | <span title="uuid.UUID">UUID</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The asset ID of the game variant.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>version_id</code></td>
-          <td>
-                <code>str | <span title="uuid.UUID">UUID</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The version ID of the game variant.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-<details class="parsers" open>
-  <summary>Parsers</summary>
-  <ul>
-<li><a class="autorefs autorefs-internal" href="../pydantic-parsing/#spnkr.parsers.pydantic.ugc_discovery.UgcGameVariant">UgcGameVariant</a></li>
-<li><a class="autorefs autorefs-internal" href="../records-parsing/#spnkr.parsers.records.ugc_discovery.parse_asset">parse_asset</a></li>
-</ul>
-</details>
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="aiohttp.ClientResponse">ClientResponse</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The game variant details.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="spnkr.client.HaloInfiniteClient.get_user_by_gamertag" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_user_by_gamertag</span><span class="p">(</span><span class="n">gamertag</span><span class="p">)</span></code>
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Get user profile for the given gamertag.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>gamertag</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The gamertag of the player.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-<details class="parsers" open>
-  <summary>Parsers</summary>
-  <ul>
-<li><a class="autorefs autorefs-internal" href="../pydantic-parsing/#spnkr.parsers.pydantic.profile.User">User</a></li>
-<li><a class="autorefs autorefs-internal" href="../records-parsing/#spnkr.parsers.records.profile.parse_user">parse_user</a></li>
-</ul>
-</details>
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="aiohttp.ClientResponse">ClientResponse</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The user.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="spnkr.client.HaloInfiniteClient.get_user_by_id" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_user_by_id</span><span class="p">(</span><span class="n">xuid</span><span class="p">)</span></code>
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Get user profile for the given Xbox Live ID.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>xuid</code></td>
-          <td>
-                <code>str | int</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The Xbox Live ID of the player.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-<details class="parsers" open>
-  <summary>Parsers</summary>
-  <ul>
-<li><a class="autorefs autorefs-internal" href="../pydantic-parsing/#spnkr.parsers.pydantic.profile.User">User</a></li>
-<li><a class="autorefs autorefs-internal" href="../records-parsing/#spnkr.parsers.records.profile.parse_user">parse_user</a></li>
-</ul>
-</details>
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="aiohttp.ClientResponse">ClientResponse</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The user.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="spnkr.client.HaloInfiniteClient.get_users_by_id" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_users_by_id</span><span class="p">(</span><span class="n">xuids</span><span class="p">)</span></code>
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Get user profiles for the given list of Xbox Live IDs.</p>
-<p>Note that the JSON response is an array. This differs from the other
-endpoints, which return a single JSON object.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>xuids</code></td>
-          <td>
-                <code><span title="typing.Iterable">Iterable</span>[str | int]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The Xbox Live IDs of the players.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-<details class="parsers" open>
-  <summary>Parsers</summary>
-  <ul>
-<li><a class="autorefs autorefs-internal" href="../pydantic-parsing/#spnkr.parsers.pydantic.profile.User">User</a></li>
-<li><a class="autorefs autorefs-internal" href="../records-parsing/#spnkr.parsers.records.profile.parse_users">parse_users</a></li>
-</ul>
-</details>
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="aiohttp.ClientResponse">ClientResponse</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>A list of users.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
 
 
 
