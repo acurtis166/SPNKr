@@ -28,7 +28,7 @@ async def make_request(
     out_path: Path,
 ) -> tuple[str, int, str | None]:
     """Make a request to the Halo Infinite API and save the response."""
-    response = await client.get_match_skill(match_id, xuids)
+    response = await client.skill.get_match_skill(match_id, xuids)
     if not response.ok:
         # Requests may fail as not found or bad request.
         return match_id, response.status, response.reason

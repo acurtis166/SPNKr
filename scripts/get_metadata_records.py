@@ -73,21 +73,22 @@ async def main(match_history_path: Path, out_path: Path) -> None:
 
         # Get the assets and medals.
         maps = await asyncio.gather(
-            get_asset(client.get_map, aid, vid) for aid, vid in map_ids
+            get_asset(client.discovery_ugc.get_map, aid, vid)
+            for aid, vid in map_ids
         )
         modes = await asyncio.gather(
-            get_asset(client.get_ugc_game_variant, aid, vid)
+            get_asset(client.discovery_ugc.get_ugc_game_variant, aid, vid)
             for aid, vid in mode_ids
         )
         playlists = await asyncio.gather(
-            get_asset(client.get_playlist, aid, vid)
+            get_asset(client.discovery_ugc.get_playlist, aid, vid)
             for aid, vid in playlist_ids
         )
         map_modes = await asyncio.gather(
-            get_asset(client.get_map_mode_pair, aid, vid)
+            get_asset(client.discovery_ugc.get_map_mode_pair, aid, vid)
             for aid, vid in map_mode_ids
         )
-        medal_response = await client.get_medal_metadata()
+        medal_response = await client.gamecms_hacs.get_medal_metadata()
         medals = parse_medal_metadata(await medal_response.json())
 
     # Write the assets and medals to CSV files.

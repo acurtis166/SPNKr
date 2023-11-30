@@ -27,7 +27,7 @@ async def make_request(
     out_path: Path,
 ) -> str:
     """Make a request to the Halo Infinite API and save the response."""
-    response = await client.get_match_stats(match_id)
+    response = await client.stats.get_match_stats(match_id)
     file_name = f"{match_id}.json"
     async with aiofiles.open(out_path / file_name, "wb") as f:
         async for data in response.content.iter_chunked(1024):
