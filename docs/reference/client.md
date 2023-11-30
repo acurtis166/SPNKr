@@ -1,3 +1,5 @@
-# Halo Infinite Client
+# Client
 
-::: spnkr.client.HaloInfiniteClient
+::: spnkr.client
+    options:
+        show_root_heading: false

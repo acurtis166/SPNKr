@@ -1,4 +1,8 @@
-"""Halo Infinite data services."""
+"""Services available for retrieving Halo Infinite data.
+
+Access service instances via
+[HaloInfiniteClient][spnkr.client.HaloInfiniteClient] properties.
+"""
 
 from .discovery_ugc import DiscoveryUgcService
 from .gamecms_hacs import GameCmsHacsService

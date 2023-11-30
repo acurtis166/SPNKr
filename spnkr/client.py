@@ -1,10 +1,4 @@
-"""Provides a client for the Halo Infinite API.
-
-Endpoints are documented at:
-https://settings.svc.halowaypoint.com/settings/hipc/e2a0a7c6-6efe-42af-9283-c2ab73250c48
-
-Additionally inspected the network traffic while navigating Halo Waypoint.
-"""
+"""Provides a client for the Halo Infinite API."""
 
 from functools import cached_property
 
