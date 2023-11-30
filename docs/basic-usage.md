@@ -102,7 +102,7 @@ async def main() -> None:
         client = HaloInfiniteClient(...)
 
         # Request the 25 most recent matches for the player.
-        response = await client.get_match_history(PLAYER)
+        response = await client.stats.get_match_history(PLAYER)
 
 
 if __name__ == "__main__":
@@ -111,12 +111,12 @@ if __name__ == "__main__":
 
 ## Parsing Responses
 
-API calls return JSON payloads, but these are not deserialized by the client. Instead, client methods return raw `aiohttp.ClientResponse` objects to be handled by the user. That being said, two built-in parsing strategies are available.
+API calls return JSON payloads, but these are not decoded. Instead, methods return raw `aiohttp.ClientResponse` objects to be handled by the user. That being said, two built-in parsing strategies are available.
 
 - [Pydantic parsing](reference/pydantic-parsing.md) - Parse JSON responses into [Pydantic](https://docs.pydantic.dev/latest/) models.
 - [Records parsing](reference/records-parsing.md) - Parse JSON responses into flat, record-like named tuples with only highlighted information. While not as complete as the Pydantic models, they are likely more convenient to load into a `pandas.DataFrame` or dump to files/databases.
 
-The classes and functions for these parsers are available in the `spnkr.parsers` module. Relevant parsing objects are referenced by the [HaloInfiniteClient](reference/client.md) methods.
+The classes and functions for these parsers are available in the `spnkr.parsers` module. Relevant parsing objects are referenced by the [service methods](reference/services.md).
 
 Below is a continuation of our above script with parsing of the JSON into a [MatchHistory](reference/pydantic-parsing.md#spnkr.parsers.pydantic.stats.MatchHistory) Pydantic model.
 
@@ -132,7 +132,7 @@ from spnkr.parsers.pydantic import MatchHistory
 async def main() -> None:
     async with ClientSession() as session:
         client = HaloInfiniteClient(...)
-        response = await client.get_match_history(...)
+        response = await client.stats.get_match_history(...)
 
         # Deserialize the JSON response
         data = await response.json()
@@ -153,6 +153,6 @@ if __name__ == "__main__":
 
     If you would prefer to parse responses yourself, it may help to look at some [examples](https://github.com/acurtis166/spnkr/tree/master/tests/responses)
 
-Of course, there are additional methods for retrieving statistics or skill information about matches. Click the button below to see them all.
+Of course, there are additional methods for retrieving stats, CSR/MMR, and metadata information.
 
-[Next: Client Methods](reference/client.md#spnkr.client.HaloInfiniteClient){ .md-button }
+[Next: Services](reference/services.md){ .md-button }

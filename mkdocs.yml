@@ -21,6 +21,7 @@ nav:
   - Reference:
     - reference/authentication.md
     - reference/client.md
+    - reference/services.md
     - reference/pydantic-parsing.md
     - reference/records-parsing.md
     - reference/reference-data.md

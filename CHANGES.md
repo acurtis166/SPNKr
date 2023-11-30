@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.3.0] - 2023-11-30
+
+### Changed
+
+- Grouped endpoints by their URL hosts to create a `services` module. The data retrieval methods didn't change, but they did move to their respective service classes. `HaloInfiniteClient` remains the core API entrypoint, but now indirectly serves data via cached service properties `gamecms_hacs`, `profile`, `discovery_ugc`, `skill`, and `stats`. This will make adding more services and endpoints more graceful than just appending more methods to the client class. Additionally, this design makes it easy to rate-limit requests per host rather than globally.
+
 ## [0.2.0] - 2023-11-28
 
 ### Added
@@ -29,8 +35,9 @@
 
 ## [0.1.0] - 2023-08-24
 
-First release.
+First documented release.
 
-[unreleased]: https://github.com/acurtis166/SPNKr/compare/v0.2.0...HEAD
+[unreleased]: https://github.com/acurtis166/SPNKr/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/acurtis166/SPNKr/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/acurtis166/SPNKr/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/acurtis166/SPNKr/releases/tag/v0.1.0

@@ -30,7 +30,7 @@ async def iter_matches(
     start = 0
     while count == 25:
         print(f"Retrieving matches {start + 1} to {start + count}...")
-        response = await client.get_match_history(xuid, start, count)
+        response = await client.stats.get_match_history(xuid, start, count)
         history = parse_match_history(await response.json())
         for match in history:
             yield match
