@@ -93,7 +93,6 @@ async def request_clearance_token(
         "https://settings.svc.halowaypoint.com/oban/flight-configurations/"
         "titles/hi/audiences/RETAIL/active"
     )
-    hdrs = {"x-343-authorization-spartan": spartan_token}
-    params = {"sandbox": "UNUSED", "build": "222249.22.06.08.1730-0"}
-    response = await session.get(url, params=params, headers=hdrs)
+    headers = {"x-343-authorization-spartan": spartan_token}
+    response = await session.get(url, headers=headers)
     return ClearanceToken(await response.json())

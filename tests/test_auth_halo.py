@@ -98,6 +98,5 @@ async def test_request_clearance_token_called_with():
     await halo.request_clearance_token(session, "test")  # type: ignore
     session.get.assert_called_with(
         "https://settings.svc.halowaypoint.com/oban/flight-configurations/titles/hi/audiences/RETAIL/active",
-        params={"sandbox": "UNUSED", "build": "222249.22.06.08.1730-0"},
         headers={"x-343-authorization-spartan": "test"},
     )
