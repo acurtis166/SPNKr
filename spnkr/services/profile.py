@@ -1,8 +1,6 @@
 """Profile data services."""
 
-from typing import Iterable
-
-from aiohttp import ClientResponse
+from typing import Any, Iterable
 
 from ..xuid import unwrap_xuid, wrap_xuid
 from .base import BaseService
@@ -13,10 +11,10 @@ _HOST = "https://profile.svc.halowaypoint.com"
 class ProfileService(BaseService):
     """Profile data services."""
 
-    async def _get_user(self, user: str) -> ClientResponse:
+    async def _get_user(self, user: str) -> dict[str, Any]:
         return await self._get(f"{_HOST}/users/{user}")
 
-    async def get_current_user(self) -> ClientResponse:
+    async def get_current_user(self) -> dict[str, Any]:
         """Get the current user profile.
 
         Parsers:
@@ -28,7 +26,7 @@ class ProfileService(BaseService):
         """
         return await self._get_user("me")
 
-    async def get_user_by_gamertag(self, gamertag: str) -> ClientResponse:
+    async def get_user_by_gamertag(self, gamertag: str) -> dict[str, Any]:
         """Get user profile for the given gamertag.
 
         Args:
@@ -43,7 +41,7 @@ class ProfileService(BaseService):
         """
         return await self._get_user(f"gt({gamertag})")
 
-    async def get_user_by_id(self, xuid: str | int) -> ClientResponse:
+    async def get_user_by_id(self, xuid: str | int) -> dict[str, Any]:
         """Get user profile for the given Xbox Live ID.
 
         Args:
@@ -60,11 +58,8 @@ class ProfileService(BaseService):
 
     async def get_users_by_id(
         self, xuids: Iterable[str | int]
-    ) -> ClientResponse:
+    ) -> list[dict[str, Any]]:
         """Get user profiles for the given list of Xbox Live IDs.
-
-        Note that the JSON response is an array. This differs from the other
-        endpoints, which return a single JSON object.
 
         Args:
             xuids: The Xbox Live IDs of the players.

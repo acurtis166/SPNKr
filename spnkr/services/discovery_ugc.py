@@ -1,8 +1,7 @@
 """User-generated content discovery data services."""
 
+from typing import Any
 from uuid import UUID
-
-from aiohttp import ClientResponse
 
 from .base import BaseService
 
@@ -14,13 +13,13 @@ class DiscoveryUgcService(BaseService):
 
     async def _get_asset(
         self, asset_type: str, asset_id: str | UUID, version_id: str | UUID
-    ) -> ClientResponse:
+    ) -> dict[str, Any]:
         url = f"{_HOST}/hi/{asset_type}/{asset_id}/versions/{version_id}"
         return await self._get(url)
 
     async def get_ugc_game_variant(
         self, asset_id: str | UUID, version_id: str | UUID
-    ) -> ClientResponse:
+    ) -> dict[str, Any]:
         """Get details about a game mode.
 
         Args:
@@ -38,7 +37,7 @@ class DiscoveryUgcService(BaseService):
 
     async def get_map_mode_pair(
         self, asset_id: str | UUID, version_id: str | UUID
-    ) -> ClientResponse:
+    ) -> dict[str, Any]:
         """Get details about a map mode pair.
 
         Args:
@@ -56,7 +55,7 @@ class DiscoveryUgcService(BaseService):
 
     async def get_map(
         self, asset_id: str | UUID, version_id: str | UUID
-    ) -> ClientResponse:
+    ) -> dict[str, Any]:
         """Get details about a map.
 
         Args:
@@ -74,7 +73,7 @@ class DiscoveryUgcService(BaseService):
 
     async def get_playlist(
         self, asset_id: str | UUID, version_id: str | UUID
-    ) -> ClientResponse:
+    ) -> dict[str, Any]:
         """Get details about a playlist.
 
         Args:

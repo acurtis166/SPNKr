@@ -1,6 +1,6 @@
 """Game content management data services."""
 
-from aiohttp import ClientResponse
+from typing import Any
 
 from .base import BaseService
 
@@ -10,7 +10,7 @@ _HOST = "https://gamecms-hacs.svc.halowaypoint.com"
 class GameCmsHacsService(BaseService):
     """Game content management data services."""
 
-    async def get_medal_metadata(self) -> ClientResponse:
+    async def get_medal_metadata(self) -> dict[str, Any]:
         """Get details for all medals obtainable in the game.
 
         Parsers:

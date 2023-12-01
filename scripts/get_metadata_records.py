@@ -25,8 +25,8 @@ REDIRECT_URI = os.environ["SPNKR_REDIRECT_URI"]
 async def get_asset(
     getter: Callable[[str, str], Coroutine], asset_id: str, version_id: str
 ) -> AssetRecord:
-    response = await getter(asset_id, version_id)
-    return parse_asset(await response.json())
+    data = await getter(asset_id, version_id)
+    return parse_asset(data)
 
 
 async def main(match_history_path: Path, out_path: Path) -> None:
@@ -88,8 +88,8 @@ async def main(match_history_path: Path, out_path: Path) -> None:
             get_asset(client.discovery_ugc.get_map_mode_pair, aid, vid)
             for aid, vid in map_mode_ids
         )
-        medal_response = await client.gamecms_hacs.get_medal_metadata()
-        medals = parse_medal_metadata(await medal_response.json())
+        medal_data = await client.gamecms_hacs.get_medal_metadata()
+        medals = parse_medal_metadata(medal_data)
 
     # Write the assets and medals to CSV files.
     write_args = {

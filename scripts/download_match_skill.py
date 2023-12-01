@@ -2,13 +2,14 @@
 
 import argparse
 import asyncio
+import json
 import os
 from pathlib import Path
 
 import aiofiles
 import dotenv
 import pandas as pd
-from aiohttp import ClientSession
+from aiohttp import ClientResponseError, ClientSession
 
 from spnkr.auth import AzureApp, refresh_player_tokens
 from spnkr.client import HaloInfiniteClient
@@ -28,15 +29,14 @@ async def make_request(
     out_path: Path,
 ) -> tuple[str, int, str | None]:
     """Make a request to the Halo Infinite API and save the response."""
-    response = await client.skill.get_match_skill(match_id, xuids)
-    if not response.ok:
-        # Requests may fail as not found or bad request.
-        return match_id, response.status, response.reason
+    try:
+        data = await client.skill.get_match_skill(match_id, xuids)
+    except ClientResponseError as e:
+        return match_id, e.status, e.message
     file_name = f"{match_id}.json"
-    async with aiofiles.open(out_path / file_name, "wb") as f:
-        async for data in response.content.iter_chunked(1024):
-            await f.write(data)
-    return match_id, response.status, response.reason
+    async with aiofiles.open(out_path / file_name, "w") as f:
+        await f.write(json.dumps(data))
+    return match_id, 200, None
 
 
 async def main(player_stats_path: Path, out_dir: Path) -> None:

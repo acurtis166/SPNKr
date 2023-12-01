@@ -1,6 +1,8 @@
 """Base service class."""
 
-from aiohttp import ClientResponse, ClientSession
+from typing import Any
+
+from aiohttp import ClientSession
 from aiolimiter import AsyncLimiter
 
 
@@ -28,9 +30,12 @@ class BaseService:
         if requests_per_second is not None:
             self._rate_limiter = _create_limiter(requests_per_second)
 
-    async def _get(self, url: str, **kwargs) -> ClientResponse:
-        """Make a GET request to the given URL."""
+    async def _get(self, url: str, **kwargs) -> Any:
+        """Make a GET request to `url` and return the decoded JSON response."""
         if self._rate_limiter is None:
-            return await self._session.get(url, **kwargs)
-        async with self._rate_limiter:
-            return await self._session.get(url, **kwargs)
+            response = await self._session.get(url, **kwargs)
+        else:
+            async with self._rate_limiter:
+                response = await self._session.get(url, **kwargs)
+        response.raise_for_status()
+        return await response.json()

@@ -1,9 +1,7 @@
 """Skill data services."""
 
-from typing import Iterable
+from typing import Any, Iterable
 from uuid import UUID
-
-from aiohttp import ClientResponse
 
 from ..xuid import wrap_xuid
 from .base import BaseService
@@ -16,7 +14,7 @@ class SkillService(BaseService):
 
     async def get_match_skill(
         self, match_id: str | UUID, xuids: Iterable[str | int]
-    ) -> ClientResponse:
+    ) -> dict[str, Any]:
         """Get player CSR and team MMR values for a given match and player list.
 
         Args:
@@ -37,7 +35,7 @@ class SkillService(BaseService):
 
     async def get_playlist_csr(
         self, playlist_id: str | UUID, xuids: Iterable[str | int]
-    ) -> ClientResponse:
+    ) -> dict[str, Any]:
         """Get player CSR values for a given playlist and player list.
 
         Args:

@@ -27,8 +27,8 @@ class HaloInfiniteClient:
     ) -> None:
         """Initialize a client for the Halo Infinite API.
 
-        Raw `aiohttp.ClientResponses` are returned from each method. The
-        caller is responsible for handling the response via custom parsing or by
+        Decoded JSON responses are returned from the service methods. The
+        caller is responsible for handling the data via custom parsing or by
         using one of the provided parsers from the `spnkr.parsers` module.
 
         Args:

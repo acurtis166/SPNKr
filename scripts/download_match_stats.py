@@ -2,6 +2,7 @@
 
 import argparse
 import asyncio
+import json
 import os
 from pathlib import Path
 
@@ -22,16 +23,13 @@ REDIRECT_URI = os.environ["SPNKR_REDIRECT_URI"]
 
 
 async def make_request(
-    client: HaloInfiniteClient,
-    match_id: str,
-    out_path: Path,
+    client: HaloInfiniteClient, match_id: str, out_path: Path
 ) -> str:
     """Make a request to the Halo Infinite API and save the response."""
-    response = await client.stats.get_match_stats(match_id)
+    data = await client.stats.get_match_stats(match_id)
     file_name = f"{match_id}.json"
-    async with aiofiles.open(out_path / file_name, "wb") as f:
-        async for data in response.content.iter_chunked(1024):
-            await f.write(data)
+    async with aiofiles.open(out_path / file_name, "w") as f:
+        await f.write(json.dumps(data))
     return file_name
 
 
