@@ -1,5 +1,6 @@
 """Skill data services."""
 
+from pathlib import Path
 from typing import Any, Iterable
 from uuid import UUID
 
@@ -34,13 +35,21 @@ class SkillService(BaseService):
         return await self._get(url, params=params)
 
     async def get_playlist_csr(
-        self, playlist_id: str | UUID, xuids: Iterable[str | int]
+        self,
+        playlist_id: str | UUID,
+        xuids: Iterable[str | int],
+        season_id: str | None = None,
     ) -> dict[str, Any]:
         """Get player CSR values for a given playlist and player list.
 
         Args:
             playlist_id: Halo Infinite playlist asset ID.
             xuids: The Xbox Live IDs of the players.
+            season_id: Halo Infinite season ID. If not provided, the
+                current season will be used. Value can be provided as a path,
+                e.g. "Csr/Seasons/CsrSeason5-1.json", or as a bare ID,
+                e.g. "CsrSeason5-1". If provided as a path, the path prefix
+                and ".json" extension will be removed. Case is not important.
 
         Parsers:
             - [PlaylistCsr][spnkr.parsers.pydantic.skill.PlaylistCsr]
@@ -50,5 +59,16 @@ class SkillService(BaseService):
             The summary CSR data for the players in the given playlist.
         """
         url = f"{_HOST}/hi/playlist/{playlist_id}/csrs"
-        params = {"players": [wrap_xuid(x) for x in xuids]}
+        params: dict[str, Any] = {"players": [wrap_xuid(x) for x in xuids]}
+        if season_id:
+            params["season"] = _clean_season_id(season_id)
         return await self._get(url, params=params)
+
+
+def _clean_season_id(season_id: str) -> str:
+    """Remove the path prefix and ".json" extension from a season ID.
+
+    For example, season "Csr/Seasons/CsrSeason5-1.json" is cleaned to
+    "CsrSeason5-1".
+    """
+    return Path(season_id).stem
