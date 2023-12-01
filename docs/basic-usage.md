@@ -102,7 +102,7 @@ async def main() -> None:
         client = HaloInfiniteClient(...)
 
         # Request the 25 most recent matches for the player.
-        response = await client.stats.get_match_history(PLAYER)
+        data = await client.stats.get_match_history(PLAYER)
 
 
 if __name__ == "__main__":
@@ -111,14 +111,14 @@ if __name__ == "__main__":
 
 ## Parsing Responses
 
-API calls return JSON payloads, but these are not decoded. Instead, methods return raw `aiohttp.ClientResponse` objects to be handled by the user. That being said, two built-in parsing strategies are available.
+API calls return decoded JSON payloads. Two built-in parsing strategies are available.
 
 - [Pydantic parsing](reference/pydantic-parsing.md) - Parse JSON responses into [Pydantic](https://docs.pydantic.dev/latest/) models.
 - [Records parsing](reference/records-parsing.md) - Parse JSON responses into flat, record-like named tuples with only highlighted information. While not as complete as the Pydantic models, they are likely more convenient to load into a `pandas.DataFrame` or dump to files/databases.
 
 The classes and functions for these parsers are available in the `spnkr.parsers` module. Relevant parsing objects are referenced by the [service methods](reference/services.md).
 
-Below is a continuation of our above script with parsing of the JSON into a [MatchHistory](reference/pydantic-parsing.md#spnkr.parsers.pydantic.stats.MatchHistory) Pydantic model.
+Below is a continuation of our above script with parsing of the JSON data into a [MatchHistory](reference/pydantic-parsing.md#spnkr.parsers.pydantic.stats.MatchHistory) Pydantic model.
 
 ```python
 import asyncio
@@ -132,10 +132,7 @@ from spnkr.parsers.pydantic import MatchHistory
 async def main() -> None:
     async with ClientSession() as session:
         client = HaloInfiniteClient(...)
-        response = await client.stats.get_match_history(...)
-
-        # Deserialize the JSON response
-        data = await response.json()
+        data = await client.stats.get_match_history(...)
 
         # Parse the data into a Pydantic model
         history = MatchHistory(**data)

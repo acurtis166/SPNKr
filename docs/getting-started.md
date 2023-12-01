@@ -34,7 +34,7 @@ Authentication requires creating an Azure Active Directory (Azure AD) applicatio
 Before initializing the client object and requesting data, you will need to perform the initial OAuth2 authentication step to acquire OAuth access and refresh tokens. This step requires having the client ID, client secret, and redirect URI information from your Azure AD application setup above. Once you have the credentials, you just need to pass the information into a single [function](reference/authentication.md#spnkr.auth.core.authenticate_player) to get your OAuth2 refresh token for future use. Below is an example script to perform this initial authentication. It will involve opening a web page to retrieve an authorization code, but you only need to do this once.
 
 !!! info "Note"
-    This package depends on [aiohttp](https://docs.aiohttp.org/en/stable/) for making asyncronous requests. You may want to understand the basics of the [ClientSession](https://docs.aiohttp.org/en/stable/client_reference.html#client-session) and [ClientResponse](https://docs.aiohttp.org/en/stable/client_reference.html#response-object) classes to get the most out of this API.
+    This package depends on [aiohttp](https://docs.aiohttp.org/en/stable/) for making asyncronous requests. You may want to understand the basics of the [ClientSession](https://docs.aiohttp.org/en/stable/client_reference.html#client-session) class.
 
 ```python
 import asyncio
