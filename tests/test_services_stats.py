@@ -12,6 +12,7 @@ def service(session):
 
 @pytest.mark.asyncio
 async def test_get_match_count(session, service: StatsService):
+    session.set_response("get_match_count.json")
     await service.get_match_count(1234567890123456)
     session.get.assert_called_with(
         "https://halostats.svc.halowaypoint.com:443/hi/players/xuid(1234567890123456)/matches/count"
@@ -20,6 +21,7 @@ async def test_get_match_count(session, service: StatsService):
 
 @pytest.mark.asyncio
 async def test_get_service_record(session, service: StatsService):
+    session.set_response("get_service_record.json")
     await service.get_service_record(1234567890123456)
     session.get.assert_called_with(
         "https://halostats.svc.halowaypoint.com:443/hi/players/xuid(1234567890123456)/matchmade/servicerecord",
@@ -31,6 +33,7 @@ async def test_get_service_record(session, service: StatsService):
 async def test_get_service_record_season_playlist(
     session, service: StatsService
 ):
+    session.set_response("get_service_record.json")
     await service.get_service_record(
         1234567890123456,
         season_id="season_id",
@@ -49,6 +52,7 @@ async def test_get_service_record_season_playlist(
 async def test_get_service_record_game_variant_category_ranked(
     session, service: StatsService
 ):
+    session.set_response("get_service_record.json")
     await service.get_service_record(
         1234567890123456, game_variant_category=6, is_ranked=True
     )
@@ -77,6 +81,7 @@ async def test_get_service_record_non_matchmade_params_ignored(
     session,
     service: StatsService,
 ):
+    session.set_response("get_service_record.json")
     await service.get_service_record(
         1234567890123456, match_type="custom", is_ranked=True
     )
@@ -88,6 +93,7 @@ async def test_get_service_record_non_matchmade_params_ignored(
 
 @pytest.mark.asyncio
 async def test_get_match_history(session, service: StatsService):
+    session.set_response("get_match_history.json")
     await service.get_match_history(1234567890123456, 0, 10, "all")
     session.get.assert_called_with(
         "https://halostats.svc.halowaypoint.com:443/hi/players/xuid(1234567890123456)/matches",
@@ -97,6 +103,7 @@ async def test_get_match_history(session, service: StatsService):
 
 @pytest.mark.asyncio
 async def test_get_match_stats(session, service: StatsService):
+    session.set_response("get_match_stats.json")
     await service.get_match_stats("match_id")
     session.get.assert_called_with(
         "https://halostats.svc.halowaypoint.com:443/hi/matches/match_id/stats"

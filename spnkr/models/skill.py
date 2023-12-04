@@ -2,8 +2,8 @@
 
 from uuid import UUID
 
-from ..refdata import SkillResultCode, SubTier, Tier
 from .base import PascalCaseModel
+from .refdata import SkillResultCode, SubTier, Tier
 
 
 class CsrContainer(PascalCaseModel):

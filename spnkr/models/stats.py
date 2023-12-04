@@ -5,7 +5,8 @@ from uuid import UUID
 
 from pydantic import Field
 
-from ..refdata import (
+from .base import PascalCaseModel
+from .refdata import (
     AssetKind,
     BotDifficulty,
     GameVariantCategory,
@@ -14,7 +15,6 @@ from ..refdata import (
     PlayerType,
     PlaylistExperience,
 )
-from .base import PascalCaseModel
 
 
 class MatchCount(PascalCaseModel):

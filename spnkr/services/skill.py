@@ -1,9 +1,10 @@
 """Skill data services."""
 
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Iterable
 from uuid import UUID
 
+from ..models.skill import MatchSkill, PlaylistCsr
 from ..xuid import wrap_xuid
 from .base import BaseService
 
@@ -15,7 +16,7 @@ class SkillService(BaseService):
 
     async def get_match_skill(
         self, match_id: str | UUID, xuids: Iterable[str | int]
-    ) -> dict[str, Any]:
+    ) -> MatchSkill:
         """Get player CSR and team MMR values for a given match and player list.
 
         Args:
@@ -23,23 +24,19 @@ class SkillService(BaseService):
             xuids: The Xbox Live IDs of the match's players. Only
                 players in this list will have their skill data returned.
 
-        Parsers:
-            - [MatchSkill][spnkr.parsers.pydantic.skill.MatchSkill]
-            - [parse_match_skill][spnkr.parsers.records.skill.parse_match_skill]
-
         Returns:
             The skill data for the match.
         """
         url = f"{_HOST}/hi/matches/{match_id}/skill"
         params = {"players": [wrap_xuid(x) for x in xuids]}
-        return await self._get(url, params=params)
+        return MatchSkill(**await self._get(url, params=params))
 
     async def get_playlist_csr(
         self,
         playlist_id: str | UUID,
         xuids: Iterable[str | int],
         season_id: str | None = None,
-    ) -> dict[str, Any]:
+    ) -> PlaylistCsr:
         """Get player CSR values for a given playlist and player list.
 
         Args:
@@ -51,18 +48,14 @@ class SkillService(BaseService):
                 e.g. "CsrSeason5-1". If provided as a path, the path prefix
                 and ".json" extension will be removed. Case is not important.
 
-        Parsers:
-            - [PlaylistCsr][spnkr.parsers.pydantic.skill.PlaylistCsr]
-            - [parse_playlist_csr][spnkr.parsers.records.skill.parse_playlist_csr]
-
         Returns:
             The summary CSR data for the players in the given playlist.
         """
         url = f"{_HOST}/hi/playlist/{playlist_id}/csrs"
-        params: dict[str, Any] = {"players": [wrap_xuid(x) for x in xuids]}
+        params: dict = {"players": [wrap_xuid(x) for x in xuids]}
         if season_id:
             params["season"] = _clean_season_id(season_id)
-        return await self._get(url, params=params)
+        return PlaylistCsr(**await self._get(url, params=params))
 
 
 def _clean_season_id(season_id: str) -> str:

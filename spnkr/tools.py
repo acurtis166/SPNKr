@@ -4,7 +4,7 @@ import math
 from enum import IntEnum
 from typing import NamedTuple
 
-from .parsers.refdata import (
+from .models.refdata import (
     BotDifficulty,
     GameVariantCategory,
     LifecycleMode,
