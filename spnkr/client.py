@@ -27,10 +27,6 @@ class HaloInfiniteClient:
     ) -> None:
         """Initialize a client for the Halo Infinite API.
 
-        Decoded JSON responses are returned from the service methods. The
-        caller is responsible for handling the data via custom parsing or by
-        using one of the provided parsers from the `spnkr.parsers` module.
-
         Args:
             session: The aiohttp session to use.
             spartan_token: The spartan token used to authenticate with the API.

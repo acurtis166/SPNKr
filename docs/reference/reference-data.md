@@ -1,3 +1,3 @@
 # Reference Data
 
-::: spnkr.parsers.refdata
+::: spnkr.models.refdata
