@@ -28,5 +28,4 @@ As the authentication process requires usage of personal credentials, **use at y
 - Required Packages:
     - `aiohttp` for making asyncronous HTTP requests
     - `aiolimiter` for limiting requests per second
-- Optional Packages:
-    - `pydantic` for using provided Pydantic models to parse reponses
+    - `pydantic` for parsing responses into Pydantic models

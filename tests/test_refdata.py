@@ -2,7 +2,7 @@
 
 import pytest
 
-from spnkr.parsers.refdata import SubTier
+from spnkr.models.refdata import SubTier
 
 SUBTIER_VALUES = [
     (SubTier.ONE, 1),

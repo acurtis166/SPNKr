@@ -3,6 +3,7 @@
 from typing import Any
 from uuid import UUID
 
+from ..models.discovery_ugc import Map, MapModePair, Playlist, UgcGameVariant
 from .base import BaseService
 
 _HOST = "https://discovery-infiniteugc.svc.halowaypoint.com:443"
@@ -19,72 +20,60 @@ class DiscoveryUgcService(BaseService):
 
     async def get_ugc_game_variant(
         self, asset_id: str | UUID, version_id: str | UUID
-    ) -> dict[str, Any]:
+    ) -> UgcGameVariant:
         """Get details about a game mode.
 
         Args:
             asset_id: The asset ID of the game variant.
             version_id: The version ID of the game variant.
 
-        Parsers:
-            - [UgcGameVariant][spnkr.parsers.pydantic.ugc_discovery.UgcGameVariant]
-            - [parse_asset][spnkr.parsers.records.ugc_discovery.parse_asset]
-
         Returns:
             The game variant details.
         """
-        return await self._get_asset("ugcGameVariants", asset_id, version_id)
+        data = await self._get_asset("ugcGameVariants", asset_id, version_id)
+        return UgcGameVariant(**data)
 
     async def get_map_mode_pair(
         self, asset_id: str | UUID, version_id: str | UUID
-    ) -> dict[str, Any]:
+    ) -> MapModePair:
         """Get details about a map mode pair.
 
         Args:
             asset_id: The asset ID of the map mode pair.
             version_id: The version ID of the map mode pair.
 
-        Parsers:
-            - [MapModePair][spnkr.parsers.pydantic.ugc_discovery.MapModePair]
-            - [parse_asset][spnkr.parsers.records.ugc_discovery.parse_asset]
-
         Returns:
             The map mode pair details.
         """
-        return await self._get_asset("mapModePairs", asset_id, version_id)
+        data = await self._get_asset("mapModePairs", asset_id, version_id)
+        return MapModePair(**data)
 
     async def get_map(
         self, asset_id: str | UUID, version_id: str | UUID
-    ) -> dict[str, Any]:
+    ) -> Map:
         """Get details about a map.
 
         Args:
             asset_id: The asset ID of the map.
             version_id: The version ID of the map.
 
-        Parsers:
-            - [Map][spnkr.parsers.pydantic.ugc_discovery.Map]
-            - [parse_asset][spnkr.parsers.records.ugc_discovery.parse_asset]
-
         Returns:
             The map details.
         """
-        return await self._get_asset("maps", asset_id, version_id)
+        data = await self._get_asset("maps", asset_id, version_id)
+        return Map(**data)
 
     async def get_playlist(
         self, asset_id: str | UUID, version_id: str | UUID
-    ) -> dict[str, Any]:
+    ) -> Playlist:
         """Get details about a playlist.
 
         Args:
             asset_id: The asset ID of the playlist.
             version_id: The version ID of the playlist.
 
-        Parsers:
-            - [Playlist][spnkr.parsers.pydantic.ugc_discovery.Playlist]
-            - [parse_asset][spnkr.parsers.records.ugc_discovery.parse_asset]
-
         Returns:
             The playlist details.
         """
-        return await self._get_asset("playlists", asset_id, version_id)
+        data = await self._get_asset("playlists", asset_id, version_id)
+        return Playlist(**data)

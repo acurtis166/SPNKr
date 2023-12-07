@@ -9,11 +9,6 @@ Basic
 pip install spnkr
 ```
 
-Include Pydantic parsing functionality
-```shell
-pip install spnkr[pydantic]
-```
-
 Development
 ```shell
 pip install spnkr[dev]

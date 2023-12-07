@@ -1,10 +1,11 @@
 """Stats data services."""
 
 import warnings
-from typing import Any, Literal
+from typing import Literal
 from uuid import UUID
 
-from ..parsers.refdata import GameVariantCategory
+from ..models.refdata import GameVariantCategory
+from ..models.stats import MatchCount, MatchHistory, MatchStats, ServiceRecord
 from ..xuid import wrap_xuid_or_gamertag
 from .base import BaseService
 
@@ -23,7 +24,7 @@ _VALID_SERVICE_RECORD_FILTER_SETS = [
 class StatsService(BaseService):
     """Stats data services."""
 
-    async def get_match_count(self, player: str | int) -> dict[str, Any]:
+    async def get_match_count(self, player: str | int) -> MatchCount:
         """Get match counts across different game experiences for a player.
 
         The counts returned are for custom matches, matchmade matches, local
@@ -34,16 +35,12 @@ class StatsService(BaseService):
                 Examples of valid inputs include "xuid(1234567890123456)",
                 "1234567890123456", 1234567890123456, and "MyGamertag".
 
-        Parsers:
-            - [MatchCount][spnkr.parsers.pydantic.stats.MatchCount]
-            - [parse_match_count][spnkr.parsers.records.stats.parse_match_count]
-
         Returns:
             The match counts.
         """
         xuid_or_gamertag = wrap_xuid_or_gamertag(player)
         url = f"{_HOST}/hi/players/{xuid_or_gamertag}/matches/count"
-        return await self._get(url)
+        return MatchCount(**await self._get(url))
 
     async def get_service_record(
         self,
@@ -53,7 +50,7 @@ class StatsService(BaseService):
         game_variant_category: GameVariantCategory | int | None = None,
         is_ranked: bool | None = None,
         playlist_asset_id: str | UUID | None = None,
-    ) -> dict[str, Any]:
+    ) -> ServiceRecord:
         """Get a service record for a player. Summarizes player stats.
 
         Note that filters (`season_id`, `game_variant_category`, `is_ranked`,
@@ -87,10 +84,6 @@ class StatsService(BaseService):
             playlist_asset_id: Filter for a specific playlist with its asset ID.
                 Optional.
 
-        Parsers:
-            - [ServiceRecord][spnkr.parsers.pydantic.stats.ServiceRecord]
-            - [parse_service_record][spnkr.parsers.records.stats.parse_service_record]
-
         Returns:
             The service record for the player with the given filters.
 
@@ -122,7 +115,7 @@ class StatsService(BaseService):
                 f"Invalid filter combination: {filters}. Options:\n{valid}"
             )
         params = {k.replace("_", ""): str(v) for k, v in filters.items()}
-        return await self._get(url, params=params)
+        return ServiceRecord(**await self._get(url, params=params))
 
     async def get_match_history(
         self,
@@ -130,7 +123,7 @@ class StatsService(BaseService):
         start: int = 0,
         count: int = 25,
         match_type: Literal["all", "matchmaking", "custom", "local"] = "all",
-    ) -> dict[str, Any]:
+    ) -> MatchHistory:
         """Request a batch of matches from a player's match history.
 
         Args:
@@ -143,33 +136,22 @@ class StatsService(BaseService):
             match_type: The type of matches to return. One of "all",
                 "matchmaking", "custom", or "local".
 
-        Parsers:
-            - [MatchHistory][spnkr.parsers.pydantic.stats.MatchHistory]
-            - [parse_match_history][spnkr.parsers.records.stats.parse_match_history]
-
         Returns:
             The requested match history "page" of results.
         """
         xuid_or_gamertag = wrap_xuid_or_gamertag(player)
         url = f"{_HOST}/hi/players/{xuid_or_gamertag}/matches"
         params = {"start": start, "count": count, "type": match_type}
-        return await self._get(url, params=params)
+        return MatchHistory(**await self._get(url, params=params))
 
-    async def get_match_stats(self, match_id: str | UUID) -> dict[str, Any]:
+    async def get_match_stats(self, match_id: str | UUID) -> MatchStats:
         """Request match details using the Halo Infinite match GUID.
 
         Args:
             match_id: Halo Infinite GUID identifying the match.
 
-        Parsers:
-            - [MatchStats][spnkr.parsers.pydantic.stats.MatchStats]
-            - [parse_match_info][spnkr.parsers.records.stats.parse_match_info]
-            - [parse_player_core_stats][spnkr.parsers.records.stats.parse_player_core_stats]
-            - [parse_player_medals][spnkr.parsers.records.stats.parse_player_medals]
-            - [parse_team_core_stats][spnkr.parsers.records.stats.parse_team_core_stats]
-
         Returns:
             The match details.
         """
         url = f"{_HOST}/hi/matches/{match_id}/stats"
-        return await self._get(url)
+        return MatchStats(**await self._get(url))

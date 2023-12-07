@@ -5,7 +5,7 @@ from enum import IntEnum
 import pytest
 
 from spnkr import tools
-from spnkr.parsers.refdata import SubTier, Tier
+from spnkr.models.refdata import SubTier, Tier
 
 CSR_TIERS = [
     (0, Tier.BRONZE, SubTier.ONE),

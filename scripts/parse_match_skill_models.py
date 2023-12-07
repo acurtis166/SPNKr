@@ -11,7 +11,7 @@ from pathlib import Path
 
 import pydantic
 
-from spnkr.parsers.pydantic import MatchSkill
+from spnkr.models.skill import MatchSkill
 
 
 def main(input_dir: Path) -> None:

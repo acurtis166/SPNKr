@@ -2,8 +2,8 @@
 
 from pydantic import Field
 
-from ..refdata import MedalDifficulty, MedalType
 from .base import CamelCaseModel
+from .refdata import MedalDifficulty, MedalType
 
 
 class TranslatableString(CamelCaseModel):

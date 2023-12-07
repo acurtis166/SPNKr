@@ -102,42 +102,9 @@ async def main() -> None:
         client = HaloInfiniteClient(...)
 
         # Request the 25 most recent matches for the player.
-        data = await client.stats.get_match_history(PLAYER)
+        history = await client.stats.get_match_history(PLAYER)
 
-
-if __name__ == "__main__":
-    asyncio.run(main())
-```
-
-## Parsing Responses
-
-API calls return decoded JSON payloads. Two built-in parsing strategies are available.
-
-- [Pydantic parsing](reference/pydantic-parsing.md) - Parse JSON responses into [Pydantic](https://docs.pydantic.dev/latest/) models.
-- [Records parsing](reference/records-parsing.md) - Parse JSON responses into flat, record-like named tuples with only highlighted information. While not as complete as the Pydantic models, they are likely more convenient to load into a `pandas.DataFrame` or dump to files/databases.
-
-The classes and functions for these parsers are available in the `spnkr.parsers` module. Relevant parsing objects are referenced by the [service methods](reference/services.md).
-
-Below is a continuation of our above script with parsing of the JSON data into a [MatchHistory](reference/pydantic-parsing.md#spnkr.parsers.pydantic.stats.MatchHistory) Pydantic model.
-
-```python
-import asyncio
-
-from aiohttp import ClientSession
-
-from spnkr.client import HaloInfiniteClient
-from spnkr.parsers.pydantic import MatchHistory
-
-
-async def main() -> None:
-    async with ClientSession() as session:
-        client = HaloInfiniteClient(...)
-        data = await client.stats.get_match_history(...)
-
-        # Parse the data into a Pydantic model
-        history = MatchHistory(**data)
-
-        # Use it
+        # Get the most recent match played and print the start time.
         last_match_info = history.results[0].match_info
         print(f"Last match played on {last_match_info.start_time:%Y-%m-%d}")
 
@@ -146,9 +113,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-!!! info "Note"
-
-    If you would prefer to parse responses yourself, it may help to look at some [examples](https://github.com/acurtis166/spnkr/tree/master/tests/responses)
+Calls to [HaloInfiniteClient](reference/client.md) services return parsed JSON payloads in the form of [Pydantic](https://docs.pydantic.dev/latest/) models. You can browse the information available in those response models [here](reference/models.md).
 
 Of course, there are additional methods for retrieving stats, CSR/MMR, and metadata information.
 

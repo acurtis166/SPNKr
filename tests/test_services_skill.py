@@ -12,6 +12,7 @@ def service(session):
 
 @pytest.mark.asyncio
 async def test_get_match_skill(session, service: SkillService):
+    session.set_response("get_match_skill.json")
     await service.get_match_skill("match_id", [1234567890123456])
     session.get.assert_called_with(
         "https://skill.svc.halowaypoint.com:443/hi/matches/match_id/skill",
@@ -21,6 +22,7 @@ async def test_get_match_skill(session, service: SkillService):
 
 @pytest.mark.asyncio
 async def test_get_playlist_csr(session, service: SkillService):
+    session.set_response("get_playlist_csr.json")
     await service.get_playlist_csr(
         "playlist_id", [1234567890123456, 2345678901234567], "CsrSeason5-1"
     )
