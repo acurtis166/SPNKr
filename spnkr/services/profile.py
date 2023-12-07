@@ -53,7 +53,14 @@ class ProfileService(BaseService):
 
         Returns:
             A list of users.
+
+        Raises:
+            TypeError: If `xuids` is a `str` instead of an iterable of XUIDs.
         """
+        if isinstance(xuids, str):
+            raise TypeError("`xuids` must be an iterable of XUIDs, got `str`")
+        if not xuids:
+            return []
         url = f"{_HOST}/users"
         params = {"xuids": [unwrap_xuid(x) for x in xuids]}
         data = await self._get(url, params=params)

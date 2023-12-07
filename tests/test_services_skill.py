@@ -21,6 +21,18 @@ async def test_get_match_skill(session, service: SkillService):
 
 
 @pytest.mark.asyncio
+async def test_get_match_skill_str(service: SkillService):
+    with pytest.raises(TypeError):
+        await service.get_match_skill("match_id", "1234567890123456")
+
+
+@pytest.mark.asyncio
+async def test_get_match_skill_empty(service: SkillService):
+    with pytest.raises(ValueError):
+        await service.get_match_skill("match_id", [])
+
+
+@pytest.mark.asyncio
 async def test_get_playlist_csr(session, service: SkillService):
     session.set_response("get_playlist_csr.json")
     await service.get_playlist_csr(
@@ -33,6 +45,18 @@ async def test_get_playlist_csr(session, service: SkillService):
             "season": "CsrSeason5-1",
         },
     )
+
+
+@pytest.mark.asyncio
+async def test_get_playlist_csr_str(service: SkillService):
+    with pytest.raises(TypeError):
+        await service.get_playlist_csr("match_id", "1234567890123456")
+
+
+@pytest.mark.asyncio
+async def test_get_playlist_csr_empty(service: SkillService):
+    with pytest.raises(ValueError):
+        await service.get_playlist_csr("match_id", [])
 
 
 def test_clean_season_id():

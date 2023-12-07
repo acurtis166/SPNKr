@@ -26,7 +26,15 @@ class SkillService(BaseService):
 
         Returns:
             The skill data for the match.
+
+        Raises:
+            TypeError: If `xuids` is a `str` instead of an iterable of XUIDs.
+            ValueError: If `xuids` is empty.
         """
+        if isinstance(xuids, str):
+            raise TypeError("`xuids` must be an iterable of XUIDs, got `str`")
+        if not xuids:
+            raise ValueError("`xuids` cannot be empty")
         url = f"{_HOST}/hi/matches/{match_id}/skill"
         params = {"players": [wrap_xuid(x) for x in xuids]}
         return MatchSkill(**await self._get(url, params=params))
@@ -50,7 +58,15 @@ class SkillService(BaseService):
 
         Returns:
             The summary CSR data for the players in the given playlist.
+
+        Raises:
+            TypeError: If `xuids` is a `str` instead of an iterable of XUIDs.
+            ValueError: If `xuids` is empty.
         """
+        if isinstance(xuids, str):
+            raise TypeError("`xuids` must be an iterable of XUIDs, got `str`")
+        if not xuids:
+            raise ValueError("`xuids` cannot be empty")
         url = f"{_HOST}/hi/playlist/{playlist_id}/csrs"
         params: dict = {"players": [wrap_xuid(x) for x in xuids]}
         if season_id:
