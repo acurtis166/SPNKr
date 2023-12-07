@@ -2,6 +2,24 @@
 
 ## [Unreleased]
 
+## [0.4.0] - 2023-12-06
+
+### Changed
+
+- Service methods now return parsed JSON as Pydantic models. In turn, Pydantic is now a required dependency.
+- Record parsing logic was removed.
+- `spnkr.parsers` module was renamed to `spnkr.models` and restructured to contain the Pydantic response models.
+- Removed unnecessary parameters from clearance token request.
+
+### Added
+
+- `SkillService.get_playlist_csr` method now has a `season` parameter.
+
+### Fixed
+
+- `str` and empty `xuids` arguments are now handled appropriately by `ProfileService.get_users_by_id`, `SkillService.get_match_skill`, and `SkillService.get_playlist_csr`.
+- `GameVariantCategory` enum now has an entry for "Firefight Bastion".
+
 ## [0.3.0] - 2023-11-30
 
 ### Changed
