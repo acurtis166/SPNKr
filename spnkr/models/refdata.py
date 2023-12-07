@@ -134,6 +134,8 @@ class GameVariantCategory(IntEnum):
     """Multiplayer land grab game modes."""
     MINIGAME = 41
     """Minigame game modes."""
+    FIREFIGHT_BASTION = 42
+    """Firefight king of the hill game modes."""
 
 
 class LifecycleMode(IntEnum):
