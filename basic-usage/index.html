@@ -259,13 +259,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#parsing-responses" class="md-nav__link">
-    Parsing Responses
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -374,31 +367,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/pydantic-parsing/" class="md-nav__link">
+      <a href="../reference/models/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Pydantic Parsing
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../reference/records-parsing/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Records Parsing
+    Response Models
   </span>
   
 
@@ -498,13 +471,6 @@
         <li class="md-nav__item">
   <a href="#requesting-data" class="md-nav__link">
     Requesting Data
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parsing-responses" class="md-nav__link">
-    Parsing Responses
   </a>
   
 </li>
@@ -617,51 +583,17 @@
 </span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>        <span class="n">client</span> <span class="o">=</span> <span class="n">HaloInfiniteClient</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 </span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
 </span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>        <span class="c1"># Request the 25 most recent matches for the player.</span>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">get_match_history</span><span class="p">(</span><span class="n">PLAYER</span><span class="p">)</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>        <span class="n">history</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">get_match_history</span><span class="p">(</span><span class="n">PLAYER</span><span class="p">)</span>
 </span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>        <span class="c1"># Get the most recent match played and print the start time.</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>        <span class="n">last_match_info</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">match_info</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Last match played on </span><span class="si">{</span><span class="n">last_match_info</span><span class="o">.</span><span class="n">start_time</span><span class="si">:</span><span class="s2">%Y-%m-%d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </span></code></pre></div>
-<h2 id="parsing-responses">Parsing Responses</h2>
-<p>API calls return JSON payloads, but these are not decoded. Instead, methods return raw <code>aiohttp.ClientResponse</code> objects to be handled by the user. That being said, two built-in parsing strategies are available.</p>
-<ul>
-<li><a href="../reference/pydantic-parsing/">Pydantic parsing</a> - Parse JSON responses into <a href="https://docs.pydantic.dev/latest/">Pydantic</a> models.</li>
-<li><a href="../reference/records-parsing/">Records parsing</a> - Parse JSON responses into flat, record-like named tuples with only highlighted information. While not as complete as the Pydantic models, they are likely more convenient to load into a <code>pandas.DataFrame</code> or dump to files/databases.</li>
-</ul>
-<p>The classes and functions for these parsers are available in the <code>spnkr.parsers</code> module. Relevant parsing objects are referenced by the <a href="../reference/services/">service methods</a>.</p>
-<p>Below is a continuation of our above script with parsing of the JSON into a <a href="../reference/pydantic-parsing/#spnkr.parsers.pydantic.stats.MatchHistory">MatchHistory</a> Pydantic model.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">asyncio</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="kn">from</span> <span class="nn">spnkr.client</span> <span class="kn">import</span> <span class="n">HaloInfiniteClient</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="kn">from</span> <span class="nn">spnkr.parsers.pydantic</span> <span class="kn">import</span> <span class="n">MatchHistory</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="k">async</span> <span class="k">with</span> <span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        <span class="n">client</span> <span class="o">=</span> <span class="n">HaloInfiniteClient</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">get_match_history</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        <span class="c1"># Deserialize the JSON response</span>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
-</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>        <span class="c1"># Parse the data into a Pydantic model</span>
-</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>        <span class="n">history</span> <span class="o">=</span> <span class="n">MatchHistory</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span>
-</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
-</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>        <span class="c1"># Use it</span>
-</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>        <span class="n">last_match_info</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">match_info</span>
-</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Last match played on </span><span class="si">{</span><span class="n">last_match_info</span><span class="o">.</span><span class="n">start_time</span><span class="si">:</span><span class="s2">%Y-%m-%d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
-</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
-</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
-</span></code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">Note</p>
-<p>If you would prefer to parse responses yourself, it may help to look at some <a href="https://github.com/acurtis166/spnkr/tree/master/tests/responses">examples</a></p>
-</div>
+<p>Calls to <a href="../reference/client/">HaloInfiniteClient</a> services return parsed JSON payloads in the form of <a href="https://docs.pydantic.dev/latest/">Pydantic</a> models. You can browse the information available in those response models <a href="../reference/models/">here</a>.</p>
 <p>Of course, there are additional methods for retrieving stats, CSR/MMR, and metadata information.</p>
 <p><a class="md-button" href="../reference/services/">Next: Services</a></p>
 
