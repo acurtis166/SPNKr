@@ -1,13 +1,14 @@
 """Models for the HIUGC_Discovery authority."""
 
 import datetime as dt
+import urllib.parse
 from typing import Any
 from uuid import UUID
 
 from pydantic import model_validator
 
 from .base import PascalCaseModel
-from .refdata import AssetKind
+from .refdata import AssetKind, FilmChunkType, FilmStatus
 
 
 class OnlineUriReference(PascalCaseModel):
@@ -355,3 +356,82 @@ class AssetSearchPage(PascalCaseModel):
     result_count: int
     results: list[AssetSearchResult]
     links: dict[Any, Any]
+
+
+class FilmChunk(PascalCaseModel):
+    """A chunk of a saved film.
+
+    Attributes:
+        index: The index of the chunk.
+        chunk_start_time_offset_milliseconds: The start time of the chunk, in
+            milliseconds.
+        duration_milliseconds: The duration of the chunk, in milliseconds.
+        chunk_size: The size of the chunk, in bytes.
+        file_relative_path: The relative path to the chunk's file.
+        chunk_type: The type of chunk - header, replication data, or highlight
+            events.
+    """
+
+    index: int
+    chunk_start_time_offset_milliseconds: int
+    duration_milliseconds: int
+    chunk_size: int
+    file_relative_path: str
+    chunk_type: FilmChunkType
+
+
+class FilmCustomData(PascalCaseModel):
+    """Custom data related to film assets.
+
+    Attributes:
+        film_length: The length of the film, in milliseconds.
+        chunks: The film's chunks.
+        has_game_ended: Whether the game has ended.
+        manifest_refresh_seconds: ...
+        match_id: The UUID of the match.
+        film_major_version: The film's major version.
+    """
+
+    film_length: int
+    chunks: list[FilmChunk]
+    has_game_ended: bool
+    manifest_refresh_seconds: int
+    match_id: UUID
+    film_major_version: int
+
+
+class Film(PascalCaseModel):
+    """A saved film asset for a match.
+
+    Attributes:
+        film_status_bond: The status, such as "complete", of the film.
+        custom_data: Data specific to film assets, such as length and chunks.
+        blob_storage_path_prefix: The prefix for the film's blob storage path.
+        asset_id: The UUID of the film asset.
+    """
+
+    film_status_bond: FilmStatus
+    custom_data: FilmCustomData
+    blob_storage_path_prefix: str
+    asset_id: UUID
+
+    def get_chunks_and_urls(self) -> list[tuple[FilmChunk, str]]:
+        """Get (chunk, URL) tuples for all film chunks, in order of index.
+
+        URLs are public blob storage URLs for downloading the compressed
+        binary chunk data. From the examples that have been examined, the first
+        chunk is always the film header, the last chunk is always highlight
+        events, and all chunks in between are 20-second replication data chunks.
+        The binary data are likely fed into the game engine to reconstruct the
+        match.
+
+        Returns:
+            The chunk and blob storage URL pairs.
+        """
+        out = []
+        for chunk in sorted(self.custom_data.chunks, key=lambda c: c.index):
+            prefix = self.blob_storage_path_prefix
+            name = chunk.file_relative_path.lstrip("/")
+            path = urllib.parse.urljoin(prefix, name)
+            out.append((chunk, path))
+        return out

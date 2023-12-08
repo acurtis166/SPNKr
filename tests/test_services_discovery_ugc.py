@@ -113,3 +113,12 @@ async def test_search_assets_invalid_count(service: DiscoveryUgcService):
         await service.search_assets(start=0, count=0)
     with pytest.raises(ValueError):
         await service.search_assets(start=0, count=102)
+
+
+@pytest.mark.asyncio
+async def test_get_film_by_match_id(session, service: DiscoveryUgcService):
+    session.set_response("get_film_by_match_id.json")
+    await service.get_film_by_match_id("match_id")
+    session.get.assert_called_with(
+        "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/films/matches/match_id/spectate"
+    )

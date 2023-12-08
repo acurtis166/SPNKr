@@ -6,6 +6,7 @@ from uuid import UUID
 
 from ..models.discovery_ugc import (
     AssetSearchPage,
+    Film,
     Map,
     MapModePair,
     Playlist,
@@ -183,3 +184,15 @@ class DiscoveryUgcService(BaseService):
         if to_date_published_utc is not None:
             params["toDatePublishedUtc"] = to_date_published_utc.isoformat()
         return AssetSearchPage(**await self._get(url, params=params))
+
+    async def get_film_by_match_id(self, match_id: str | UUID) -> Film:
+        """Get metadata and download information for a film.
+
+        Args:
+            match_id: The match ID of the film.
+
+        Returns:
+            The film details.
+        """
+        url = f"{_HOST}/hi/films/matches/{match_id}/spectate"
+        return Film(**await self._get(url))

@@ -50,6 +50,32 @@ class BotDifficulty(IntEnum):
     """Adaptive bots. Difficulty changes based on player performance."""
 
 
+class FilmChunkType(IntEnum):
+    """Types of saved film chunks."""
+
+    NONE = 0
+    """No film chunk type."""
+    FILM_HEADER = 1
+    """Film header chunk."""
+    REPLICATION_DATA = 2
+    """Replication data chunk."""
+    HIGHLIGHT_EVENTS = 3
+    """Highlight events chunk."""
+
+
+class FilmStatus(IntEnum):
+    """Status of a saved film."""
+
+    UNKNOWN = 0
+    """Unknown film status."""
+    COMPLETE = 1
+    """Film is complete."""
+    ONGOING = 2
+    """Film is ongoing."""
+    RECOVERED = 3
+    """Film was recovered."""
+
+
 class GameVariantCategory(IntEnum):
     """Categories of multiplayer game modes."""
 

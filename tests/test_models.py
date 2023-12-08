@@ -8,6 +8,7 @@ import pytest
 
 from spnkr.models.discovery_ugc import (
     AssetSearchPage,
+    Film,
     Map,
     MapModePair,
     Playlist,
@@ -164,6 +165,23 @@ def test_parse_asset_search_page():
     result = AssetSearchPage(**data)
     assert len(result.results) == 10
     assert isinstance(result.results[0].date_created_utc, dt.datetime)
+
+
+def test_parse_film():
+    data = load_response("get_film_by_match_id")
+    result = Film(**data)
+    assert len(result.custom_data.chunks) == 27
+
+
+def test_film_get_chunks_and_urls():
+    data = load_response("get_film_by_match_id")
+    result = Film(**data)
+    chunk_urls = result.get_chunks_and_urls()
+    assert len(chunk_urls) == 27
+    assert chunk_urls[0][0].chunk_type == 1  # Chunk header
+    assert chunk_urls[0][1] == (
+        "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/film/3a86cc7e-4a15-49a0-b17d-1b1cdf16c49f/86ab777c-895d-4237-9fa0-43c7932322ac/filmChunk0"
+    )
 
 
 def test_parse_user():
