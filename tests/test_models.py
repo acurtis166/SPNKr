@@ -1,3 +1,4 @@
+import datetime as dt
 import json
 from pathlib import Path
 from typing import Any
@@ -6,6 +7,7 @@ from uuid import UUID
 import pytest
 
 from spnkr.models.discovery_ugc import (
+    AssetSearchPage,
     Map,
     MapModePair,
     Playlist,
@@ -155,6 +157,13 @@ def test_parse_playlist():
     data = load_response("get_playlist")
     result = Playlist(**data)
     assert result.public_name == "Ranked Arena"
+
+
+def test_parse_asset_search_page():
+    data = load_response("search_assets")
+    result = AssetSearchPage(**data)
+    assert len(result.results) == 10
+    assert isinstance(result.results[0].date_created_utc, dt.datetime)
 
 
 def test_parse_user():

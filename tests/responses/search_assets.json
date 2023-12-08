@@ -1,0 +1,380 @@
+{
+    "Tags": [
+        {
+            "Tag": "slayer",
+            "Count": 4652
+        },
+        {
+            "Tag": "arena",
+            "Count": 4269
+        },
+        {
+            "Tag": "4v4",
+            "Count": 3238
+        },
+        {
+            "Tag": "casual",
+            "Count": 2686
+        },
+        {
+            "Tag": "ctf",
+            "Count": 2685
+        }
+    ],
+    "EstimatedTotal": 23489,
+    "Start": 0,
+    "Count": 10,
+    "ResultCount": 10,
+    "Results": [
+        {
+            "AssetId": "ff451042-bcf2-4173-bd87-0ba8c463c3e0",
+            "AssetVersionId": "294c76f7-da29-417a-a60f-b210669c55de",
+            "Name": "Firefight:King of the Hill",
+            "Description": "Capture hills and defeat boss waves to claim victory.",
+            "AssetKind": 6,
+            "Tags": [
+                "343i"
+            ],
+            "ThumbnailUrl": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/ugcgamevariant/ff451042-bcf2-4173-bd87-0ba8c463c3e0/294c76f7-da29-417a-a60f-b210669c55de/images/thumbnail.jpg",
+            "ReferencedAssets": [
+                "5e990f9a-1cb2-44f8-a2f0-3bbb74117744"
+            ],
+            "OriginalAuthor": "aaid(5c7909e9-3620-4920-8abf-f18cfb4333b6)",
+            "Likes": 616,
+            "Bookmarks": 0,
+            "PlaysRecent": 222889,
+            "NumberOfObjects": 0,
+            "DateCreatedUtc": {
+                "ISO8601Date": "2023-06-16T17:37:06.896Z"
+            },
+            "DateModifiedUtc": {
+                "ISO8601Date": "2023-09-11T22:31:44.975Z"
+            },
+            "DatePublishedUtc": {
+                "ISO8601Date": "2023-12-04T18:25:36.05Z"
+            },
+            "HasNodeGraph": false,
+            "ReadOnlyClones": false,
+            "PlaysAllTime": 223092,
+            "Contributors": [],
+            "ParentAssetCount": 20,
+            "AverageRating": 4.404761904761905,
+            "NumberOfRatings": 168
+        },
+        {
+            "AssetId": "1e8cd10b-1496-423b-8699-f98f6f5db67e",
+            "AssetVersionId": "4155142e-b867-4030-a8a0-d5f44f9dce60",
+            "Name": "Arena:Slayer",
+            "Description": "Slay the enemy team.",
+            "AssetKind": 6,
+            "Tags": [
+                "arena",
+                "slayer"
+            ],
+            "ThumbnailUrl": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/ugcgamevariant/1e8cd10b-1496-423b-8699-f98f6f5db67e/4155142e-b867-4030-a8a0-d5f44f9dce60/images/thumbnail.png",
+            "ReferencedAssets": [
+                "1cfee22b-513f-418d-a1d7-2648f1a575e0"
+            ],
+            "OriginalAuthor": "aaid(5c7909e9-3620-4920-8abf-f18cfb4333b6)",
+            "Likes": 189090,
+            "Bookmarks": 0,
+            "PlaysRecent": 137492,
+            "NumberOfObjects": 0,
+            "DateCreatedUtc": {
+                "ISO8601Date": "2020-07-16T21:02:13.205Z"
+            },
+            "DateModifiedUtc": {
+                "ISO8601Date": "2022-11-10T19:27:24.277Z"
+            },
+            "DatePublishedUtc": {
+                "ISO8601Date": "2021-11-04T17:51:28.003Z"
+            },
+            "HasNodeGraph": false,
+            "ReadOnlyClones": false,
+            "PlaysAllTime": 45254803,
+            "Contributors": [],
+            "ParentAssetCount": 292,
+            "AverageRating": 2.857457384559366,
+            "NumberOfRatings": 118091
+        },
+        {
+            "AssetId": "1d641733-7cb2-4556-9ec3-f27923af32a1",
+            "AssetVersionId": "d12797d7-acb0-4b95-b8f5-81a3b5056f26",
+            "Name": "Firefight:Heroic King of the Hill",
+            "Description": "Enemy difficulty escalates from Normal to Heroic. Players start with Thruster equipment, and incur longer auto-respawn timers. A challenge for experienced Spartans.",
+            "AssetKind": 6,
+            "Tags": [
+                "343i"
+            ],
+            "ThumbnailUrl": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/ugcgamevariant/1d641733-7cb2-4556-9ec3-f27923af32a1/d12797d7-acb0-4b95-b8f5-81a3b5056f26/images/thumbnail.jpg",
+            "ReferencedAssets": [
+                "e0d11005-825b-4200-81f5-fd0e6156dd8f"
+            ],
+            "OriginalAuthor": "aaid(5c7909e9-3620-4920-8abf-f18cfb4333b6)",
+            "Likes": 270,
+            "Bookmarks": 0,
+            "PlaysRecent": 127811,
+            "NumberOfObjects": 0,
+            "DateCreatedUtc": {
+                "ISO8601Date": "2023-09-11T22:31:44.335Z"
+            },
+            "DateModifiedUtc": {
+                "ISO8601Date": "2023-09-11T22:31:45.947Z"
+            },
+            "DatePublishedUtc": {
+                "ISO8601Date": "2023-12-04T18:26:44.332Z"
+            },
+            "HasNodeGraph": false,
+            "ReadOnlyClones": false,
+            "PlaysAllTime": 127856,
+            "Contributors": [],
+            "ParentAssetCount": 18,
+            "AverageRating": 4.435897435897436,
+            "NumberOfRatings": 78
+        },
+        {
+            "AssetId": "a5d824f0-c064-4b40-951f-8b6b3005ccf6",
+            "AssetVersionId": "64559bc9-2aa8-492a-ba7a-8c345c8f891a",
+            "Name": "Super Fiesta:Slayer",
+            "Description": "Spawn with random legendary loadouts. Slay the enemy team.",
+            "AssetKind": 6,
+            "Tags": [
+                "343i"
+            ],
+            "ThumbnailUrl": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/ugcgamevariant/a5d824f0-c064-4b40-951f-8b6b3005ccf6/64559bc9-2aa8-492a-ba7a-8c345c8f891a/images/thumbnail.jpg",
+            "ReferencedAssets": [
+                "a65a43f0-9071-4694-aa80-c5510b92dfe5"
+            ],
+            "OriginalAuthor": "aaid(5c7909e9-3620-4920-8abf-f18cfb4333b6)",
+            "Likes": 2358,
+            "Bookmarks": 0,
+            "PlaysRecent": 92440,
+            "NumberOfObjects": 0,
+            "DateCreatedUtc": {
+                "ISO8601Date": "2023-01-31T22:05:56.706Z"
+            },
+            "DateModifiedUtc": {
+                "ISO8601Date": "2023-01-31T22:05:57.252Z"
+            },
+            "DatePublishedUtc": {
+                "ISO8601Date": "2023-05-10T17:26:18.56Z"
+            },
+            "HasNodeGraph": false,
+            "ReadOnlyClones": false,
+            "PlaysAllTime": 3426630,
+            "Contributors": [],
+            "ParentAssetCount": 75,
+            "AverageRating": 4.1151038742279615,
+            "NumberOfRatings": 1781
+        },
+        {
+            "AssetId": "2fa07c0b-88e8-4453-8b3b-dc8c66c49ae0",
+            "AssetVersionId": "f2e585eb-4728-4079-ad3d-6bea2e5e9304",
+            "Name": "Husky Raid:CTF",
+            "Description": "Spawn with random loadouts. Use equipment while holding the flag and Capture the enemy flag while defending your own.",
+            "AssetKind": 6,
+            "Tags": [],
+            "ThumbnailUrl": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/ugcgamevariant/2fa07c0b-88e8-4453-8b3b-dc8c66c49ae0/f2e585eb-4728-4079-ad3d-6bea2e5e9304/images/thumbnail.jpg",
+            "ReferencedAssets": [
+                "2e929efd-2d16-4027-9242-f60cfac6aabc"
+            ],
+            "OriginalAuthor": "aaid(5c7909e9-3620-4920-8abf-f18cfb4333b6)",
+            "Likes": 2745,
+            "Bookmarks": 0,
+            "PlaysRecent": 91657,
+            "NumberOfObjects": 0,
+            "DateCreatedUtc": {
+                "ISO8601Date": "2023-08-02T18:29:58.01Z"
+            },
+            "DateModifiedUtc": {
+                "ISO8601Date": "2023-08-28T22:15:18.177Z"
+            },
+            "DatePublishedUtc": {
+                "ISO8601Date": "2023-08-29T17:29:09.734Z"
+            },
+            "HasNodeGraph": false,
+            "ReadOnlyClones": false,
+            "PlaysAllTime": 1601952,
+            "Contributors": [
+                "xuid(2814640060673099)"
+            ],
+            "ParentAssetCount": 22,
+            "AverageRating": 3.874147551146931,
+            "NumberOfRatings": 1613
+        },
+        {
+            "AssetId": "0e198591-ac15-4f99-8ff2-dd390decad66",
+            "AssetVersionId": "168e6c3a-fdf3-4edd-af79-c0ffe5475026",
+            "Name": "Super Husky Raid:CTF",
+            "Description": "Spawn with random legendary loadouts. Use equipment while holding the flag and Capture the enemy flag while defending your own.",
+            "AssetKind": 6,
+            "Tags": [],
+            "ThumbnailUrl": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/ugcgamevariant/0e198591-ac15-4f99-8ff2-dd390decad66/168e6c3a-fdf3-4edd-af79-c0ffe5475026/images/thumbnail.jpg",
+            "ReferencedAssets": [
+                "55bc3d34-1a20-4291-881b-bf080f300acb"
+            ],
+            "OriginalAuthor": "aaid(5c7909e9-3620-4920-8abf-f18cfb4333b6)",
+            "Likes": 1563,
+            "Bookmarks": 0,
+            "PlaysRecent": 91208,
+            "NumberOfObjects": 0,
+            "DateCreatedUtc": {
+                "ISO8601Date": "2023-08-02T18:29:57.82Z"
+            },
+            "DateModifiedUtc": {
+                "ISO8601Date": "2023-09-21T22:49:27.349Z"
+            },
+            "DatePublishedUtc": {
+                "ISO8601Date": "2023-09-29T22:49:26.266Z"
+            },
+            "HasNodeGraph": false,
+            "ReadOnlyClones": false,
+            "PlaysAllTime": 1130311,
+            "Contributors": [
+                "xuid(2814640060673099)"
+            ],
+            "ParentAssetCount": 13,
+            "AverageRating": 3.952954048140043,
+            "NumberOfRatings": 914
+        },
+        {
+            "AssetId": "71689416-ec07-4f30-86a9-8229ebc20762",
+            "AssetVersionId": "e321c248-5046-4b46-937e-f9f1a970e030",
+            "Name": "Arena:Team Slayer",
+            "Description": "Assault Rifle and BR75 loadouts. Slay the enemy team.",
+            "AssetKind": 6,
+            "Tags": [
+                "343i"
+            ],
+            "ThumbnailUrl": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/ugcgamevariant/71689416-ec07-4f30-86a9-8229ebc20762/e321c248-5046-4b46-937e-f9f1a970e030/images/thumbnail.jpg",
+            "ReferencedAssets": [
+                "d5fefa26-1d98-4ddb-a886-4c329d38c88a"
+            ],
+            "OriginalAuthor": "aaid(5c7909e9-3620-4920-8abf-f18cfb4333b6)",
+            "Likes": 2191,
+            "Bookmarks": 0,
+            "PlaysRecent": 68390,
+            "NumberOfObjects": 0,
+            "DateCreatedUtc": {
+                "ISO8601Date": "2022-11-29T00:10:35.764Z"
+            },
+            "DateModifiedUtc": {
+                "ISO8601Date": "2022-11-29T00:10:36.696Z"
+            },
+            "DatePublishedUtc": {
+                "ISO8601Date": "2023-10-17T16:22:23.75Z"
+            },
+            "HasNodeGraph": false,
+            "ReadOnlyClones": false,
+            "PlaysAllTime": 1450552,
+            "Contributors": [],
+            "ParentAssetCount": 72,
+            "AverageRating": 3.6129679144385025,
+            "NumberOfRatings": 1496
+        },
+        {
+            "AssetId": "b0c65df9-0b2c-4040-b018-ad3e1baab832",
+            "AssetVersionId": "9e8f9dae-007d-4eb4-a131-4e5d526d9130",
+            "Name": "Ranked:Doubles Slayer",
+            "Description": "Bandit Evo loadouts, Friendly-Fire enabled, Motion Tracker disabled. Slay the enemy team.",
+            "AssetKind": 6,
+            "Tags": [
+                "343i"
+            ],
+            "ThumbnailUrl": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/ugcgamevariant/b0c65df9-0b2c-4040-b018-ad3e1baab832/9e8f9dae-007d-4eb4-a131-4e5d526d9130/images/thumbnail.jpg",
+            "ReferencedAssets": [
+                "184f5ace-c422-4125-abd8-0886b24ec93b"
+            ],
+            "OriginalAuthor": "aaid(5c7909e9-3620-4920-8abf-f18cfb4333b6)",
+            "Likes": 1153,
+            "Bookmarks": 0,
+            "PlaysRecent": 67712,
+            "NumberOfObjects": 0,
+            "DateCreatedUtc": {
+                "ISO8601Date": "2022-01-28T23:39:48.203Z"
+            },
+            "DateModifiedUtc": {
+                "ISO8601Date": "2023-10-19T20:59:16.636Z"
+            },
+            "DatePublishedUtc": {
+                "ISO8601Date": "2023-10-19T20:59:21.361Z"
+            },
+            "HasNodeGraph": false,
+            "ReadOnlyClones": false,
+            "PlaysAllTime": 1810331,
+            "Contributors": [],
+            "ParentAssetCount": 45,
+            "AverageRating": 3.4009269988412516,
+            "NumberOfRatings": 863
+        },
+        {
+            "AssetId": "b6aca0c7-8ba7-4066-bf91-693571374c3c",
+            "AssetVersionId": "67bf316f-e891-4e85-8f3d-b129ef5fcb2e",
+            "Name": "Live Fire",
+            "Description": "Instructors at the Avery J. Johnson Academy of Military Science ensure their Spartans are prepared for any challenge.",
+            "AssetKind": 2,
+            "Tags": [
+                "343i",
+                "training mode"
+            ],
+            "ThumbnailUrl": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/map/b6aca0c7-8ba7-4066-bf91-693571374c3c/67bf316f-e891-4e85-8f3d-b129ef5fcb2e/images/thumbnail.jpg",
+            "ReferencedAssets": [],
+            "OriginalAuthor": "aaid(5c7909e9-3620-4920-8abf-f18cfb4333b6)",
+            "Likes": 5697,
+            "Bookmarks": 0,
+            "PlaysRecent": 56575,
+            "NumberOfObjects": 0,
+            "DateCreatedUtc": {
+                "ISO8601Date": "2020-07-16T20:59:40.812Z"
+            },
+            "DateModifiedUtc": {
+                "ISO8601Date": "2023-12-01T22:27:25.527Z"
+            },
+            "DatePublishedUtc": {
+                "ISO8601Date": "2023-12-01T22:27:46.79Z"
+            },
+            "HasNodeGraph": false,
+            "ReadOnlyClones": false,
+            "PlaysAllTime": 37555752,
+            "Contributors": [],
+            "ParentAssetCount": 342,
+            "AverageRating": 3.872345618745423,
+            "NumberOfRatings": 4097
+        },
+        {
+            "AssetId": "f0a1760f-0d4a-4bcc-ac7a-e8f9aee331dc",
+            "AssetVersionId": "7cfb2ea5-2f69-4ed5-9d54-73988bebe8d7",
+            "Name": "Streets",
+            "Description": "The tranquility of this Mombasa back alley is pierced by the sound of heavy gunfire.",
+            "AssetKind": 2,
+            "Tags": [
+                "343i",
+                "training mode"
+            ],
+            "ThumbnailUrl": "https://blobs-infiniteugc.svc.halowaypoint.com/ugcstorage/map/f0a1760f-0d4a-4bcc-ac7a-e8f9aee331dc/7cfb2ea5-2f69-4ed5-9d54-73988bebe8d7/images/thumbnail.png",
+            "ReferencedAssets": [],
+            "OriginalAuthor": "aaid(5c7909e9-3620-4920-8abf-f18cfb4333b6)",
+            "Likes": 6983,
+            "Bookmarks": 0,
+            "PlaysRecent": 56260,
+            "NumberOfObjects": 0,
+            "DateCreatedUtc": {
+                "ISO8601Date": "2020-07-16T20:59:11.947Z"
+            },
+            "DateModifiedUtc": {
+                "ISO8601Date": "2023-12-04T18:14:56.372Z"
+            },
+            "DatePublishedUtc": {
+                "ISO8601Date": "2023-12-04T18:16:00.205Z"
+            },
+            "HasNodeGraph": false,
+            "ReadOnlyClones": false,
+            "PlaysAllTime": 35785563,
+            "Contributors": [],
+            "ParentAssetCount": 241,
+            "AverageRating": 3.616067740603057,
+            "NumberOfRatings": 4842
+        }
+    ],
+    "Links": {}
+}

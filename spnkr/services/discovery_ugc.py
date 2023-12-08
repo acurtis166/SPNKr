@@ -1,12 +1,33 @@
 """User-generated content discovery data services."""
 
-from typing import Any
+import datetime as dt
+from typing import Any, Literal
 from uuid import UUID
 
-from ..models.discovery_ugc import Map, MapModePair, Playlist, UgcGameVariant
+from ..models.discovery_ugc import (
+    AssetSearchPage,
+    Map,
+    MapModePair,
+    Playlist,
+    UgcGameVariant,
+)
 from .base import BaseService
 
 _HOST = "https://discovery-infiniteugc.svc.halowaypoint.com:443"
+_SORT_PROPERTY = Literal[
+    "name",
+    "likes",
+    "bookmarks",
+    "plays_recent",
+    "number_of_objects",
+    "date_created_utc",
+    "date_modified_utc",
+    "date_published_utc",
+    "plays_all_time",
+    "parent_asset_count",
+    "average_rating",
+    "number_of_ratings",
+]
 
 
 class DiscoveryUgcService(BaseService):
@@ -77,3 +98,88 @@ class DiscoveryUgcService(BaseService):
         """
         data = await self._get_asset("playlists", asset_id, version_id)
         return Playlist(**data)
+
+    async def search_assets(
+        self,
+        start: int = 0,
+        count: int = 25,
+        sort: _SORT_PROPERTY = "plays_recent",
+        order: Literal["asc", "desc"] = "desc",
+        asset_kind: Literal["map", "prefab", "ugc_game_variant"] | None = None,
+        term: str | None = None,
+        tags: list[str] | None = None,
+        author: str | None = None,
+        average_rating_min: float | None = None,
+        from_date_created_utc: dt.datetime | dt.date | None = None,
+        to_date_created_utc: dt.datetime | dt.date | None = None,
+        from_date_modified_utc: dt.datetime | dt.date | None = None,
+        to_date_modified_utc: dt.datetime | dt.date | None = None,
+        from_date_published_utc: dt.datetime | dt.date | None = None,
+        to_date_published_utc: dt.datetime | dt.date | None = None,
+    ) -> AssetSearchPage:
+        """Search for map, mode, and prefab assets.
+
+        Args:
+            start: Index of the first result to return, starting at 0.
+            count: Count of results to return. Must be between 1 and 101.
+            sort: Property by which to sort the results. Must be one of the
+                following: "name", "likes", "bookmarks", "plays_recent",
+                "number_of_objects", "date_created_utc", "date_modified_utc",
+                "date_published_utc", "plays_all_time", "parent_asset_count",
+                "average_rating", "number_of_ratings". Defaults to
+                "plays_recent".
+            order: Pass "asc" for ascending or "desc" for descending.
+            asset_kind: Type of asset to be searched. Optional. If a value is
+                provided, it must be be one of the following: "map", "prefab",
+                "ugc_game_variant". By default, no filter is applied.
+            term: Search term. Optional.
+            tags: List of tags. Multiple tags are applied with an OR operator.
+                Optional.
+            author: Author ID. Valid values would be in one of the following
+                formats: "xuid(<xuid>)", "aaid(<aaid>)", or "atui(<atui>)",
+                where <xuid> is a 16-digit Xbox user ID, <aaid> is a UUID, and
+                <atui> is a pair of UUIDs separated by a period. Optional.
+            average_rating_min: Minimum average rating between 0 and 5.
+                Optional.
+            from_date_created_utc: Minimum date created. Optional.
+            to_date_created_utc: Maximum date created. Optional.
+            from_date_modified_utc: Minimum date modified. Optional.
+            to_date_modified_utc: Maximum date modified. Optional.
+            from_date_published_utc: Minimum date published. Optional.
+            to_date_published_utc: Maximum date published. Optional.
+
+        Returns:
+            The search results.
+        """
+        if count < 1 or count > 101:
+            raise ValueError("Count must be between 1 and 101.")
+        url = f"{_HOST}/hi/search"
+        params = {
+            "start": start,
+            "count": count,
+            "sort": sort.replace("_", ""),
+            "order": order,
+        }
+        if asset_kind is not None:
+            params["assetKind"] = asset_kind.replace("_", "")
+        if term is not None:
+            params["term"] = term
+        if tags is not None:
+            params["tags"] = tags
+        if author is not None:
+            params["author"] = author
+        if average_rating_min is not None:
+            params["averageRatingMin"] = average_rating_min
+        if from_date_created_utc is not None:
+            params["fromDateCreatedUtc"] = from_date_created_utc.isoformat()
+        if to_date_created_utc is not None:
+            params["toDateCreatedUtc"] = to_date_created_utc.isoformat()
+        if from_date_modified_utc is not None:
+            params["fromDateModifiedUtc"] = from_date_modified_utc.isoformat()
+        if to_date_modified_utc is not None:
+            params["toDateModifiedUtc"] = to_date_modified_utc.isoformat()
+        if from_date_published_utc is not None:
+            params["fromDatePublishedUtc"] = from_date_published_utc.isoformat()
+        if to_date_published_utc is not None:
+            params["toDatePublishedUtc"] = to_date_published_utc.isoformat()
+        return AssetSearchPage(**await self._get(url, params=params))

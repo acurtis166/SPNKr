@@ -1,9 +1,13 @@
 """Models for the HIUGC_Discovery authority."""
 
+import datetime as dt
 from typing import Any
 from uuid import UUID
 
+from pydantic import model_validator
+
 from .base import PascalCaseModel
+from .refdata import AssetKind
 
 
 class OnlineUriReference(PascalCaseModel):
@@ -256,3 +260,98 @@ class UgcGameVariant(Asset):
     custom_data: UgcGameVariantCustomData
     tags: list[str]
     engine_game_variant_link: Asset
+
+
+class AssetSearchTagCount(PascalCaseModel):
+    """A tag name and count.
+
+    Attributes:
+        tag: The tag name.
+        count: The number of times the tag appears in the filtered search results.
+    """
+
+    tag: str
+    count: int
+
+
+class AssetSearchResult(PascalCaseModel):
+    """An individual asset search result.
+
+    Attributes:
+        asset_id: The UUID of the asset.
+        asset_version_id: The UUID of the asset version.
+        name: The asset's name.
+        description: The asset's description.
+        asset_kind: The kind of asset, such as "map".
+        tags: Keywords for the asset, such as "343i".
+        thumbnail_url: The URL of the asset's thumbnail image.
+        referenced_assets: The UUIDs of assets referenced by the asset.
+        original_author: The ID of the asset's original author.
+        likes: The number of times the asset has been liked.
+        bookmarks: The number of times the asset has been bookmarked.
+        plays_recent: The number of times the asset has been played recently.
+        number_of_objects: The number of objects in a map/prefab asset.
+        date_created_utc: The asset's creation date.
+        date_modified_utc: The asset's modification date.
+        date_published_utc: The asset's publication date.
+        has_node_graph: Whether the map has a node graph.
+        read_only_clones: Whether clones of the asset can be modified.
+        plays_all_time: The number of times the asset has been played in total.
+        contributors: The IDs of the asset's contributors.
+        parent_asset_count: The number of assets that link to this asset.
+        average_rating: The asset's average rating.
+        number_of_ratings: The number of ratings the asset has received.
+    """
+
+    asset_id: UUID
+    asset_version_id: UUID
+    name: str
+    description: str
+    asset_kind: AssetKind
+    tags: list[str]
+    thumbnail_url: str
+    referenced_assets: list[UUID]
+    original_author: str
+    likes: int
+    bookmarks: int
+    plays_recent: int
+    number_of_objects: int
+    date_created_utc: dt.datetime
+    date_modified_utc: dt.datetime
+    date_published_utc: dt.datetime
+    has_node_graph: bool
+    read_only_clones: bool
+    plays_all_time: int
+    contributors: list[str]
+    parent_asset_count: int
+    average_rating: float
+    number_of_ratings: int
+
+    @model_validator(mode="before")
+    def _flatten_dates(cls, values):
+        """Flatten the date objects."""
+        for key in ("DateCreatedUtc", "DateModifiedUtc", "DatePublishedUtc"):
+            values[key] = values[key]["ISO8601Date"]
+        return values
+
+
+class AssetSearchPage(PascalCaseModel):
+    """A page of map/mode/prefab search results.
+
+    Attributes:
+        tags: The tags that appear in the filtered search results.
+        estimated_total: The estimated total number of results.
+        start: The index of the first result returned.
+        count: The number of results requested.
+        result_count: The number of results returned.
+        results: The search results.
+        links: ...
+    """
+
+    tags: list[AssetSearchTagCount]
+    estimated_total: int
+    start: int
+    count: int
+    result_count: int
+    results: list[AssetSearchResult]
+    links: dict[Any, Any]
