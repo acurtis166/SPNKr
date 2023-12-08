@@ -1,6 +1,9 @@
 """Enumerated data types used by the Halo Infinite API."""
 
+import logging
 from enum import Enum, IntEnum, StrEnum
+
+logger = logging.getLogger(__name__)
 
 
 class AssetKind(IntEnum):
@@ -136,6 +139,12 @@ class GameVariantCategory(IntEnum):
     """Minigame game modes."""
     FIREFIGHT_BASTION = 42
     """Firefight king of the hill game modes."""
+
+    @classmethod
+    def _missing_(cls, value: int) -> "GameVariantCategory":
+        """Return the default game mode category for an unknown value."""
+        logger.error(f"Unknown game mode category: {value}")
+        return cls.UNKNOWN
 
 
 class LifecycleMode(IntEnum):
