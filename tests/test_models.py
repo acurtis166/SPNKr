@@ -14,7 +14,7 @@ from spnkr.models.discovery_ugc import (
     Playlist,
     UgcGameVariant,
 )
-from spnkr.models.gamecms_hacs import MedalMetadata
+from spnkr.models.gamecms_hacs import CsrSeasonCalendar, MedalMetadata
 from spnkr.models.profile import User
 from spnkr.models.skill import MatchSkill, PlaylistCsr
 from spnkr.models.stats import (
@@ -36,6 +36,13 @@ def test_parse_medal_metadata():
     data = load_response("get_medal_metadata")
     result = MedalMetadata(**data)
     assert result.medals[0].name_id == 622331684
+
+
+def test_parse_csr_season_calendar():
+    data = load_response("get_csr_season_calendar")
+    result = CsrSeasonCalendar(**data)
+    assert len(result.seasons) == 8
+    assert isinstance(result.seasons[0].start_date, dt.datetime)
 
 
 def test_parse_match_skill():

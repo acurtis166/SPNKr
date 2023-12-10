@@ -1,8 +1,10 @@
 """Models for the "gamecms_hacs" authority."""
 
-from pydantic import Field
+import datetime as dt
 
-from .base import CamelCaseModel
+from pydantic import Field, model_validator
+
+from .base import CamelCaseModel, PascalCaseModel
 from .refdata import MedalDifficulty, MedalType
 
 
@@ -84,3 +86,35 @@ class MedalMetadata(CamelCaseModel):
     types: list[str]
     sprites: SpriteSheets
     medals: list[Medal]
+
+
+class CsrSeason(PascalCaseModel):
+    """A CSR season.
+
+    Attributes:
+        csr_season_file_path: The relative path to the CSR season file. The stem
+            of the path is the CSR season's ID, e.g., "CsrSeason5-1".
+        start_date: The UTC start date of the season.
+        end_date: The UTC end date of the season.
+    """
+
+    csr_season_file_path: str
+    start_date: dt.datetime
+    end_date: dt.datetime
+
+    @model_validator(mode="before")
+    def _flatten_dates(cls, values):
+        """Flatten the date objects."""
+        for key in ("StartDate", "EndDate"):
+            values[key] = values[key]["ISO8601Date"]
+        return values
+
+
+class CsrSeasonCalendar(PascalCaseModel):
+    """A collection of past and current CSR seasons.
+
+    Attributes:
+        seasons: The list of CSR seasons.
+    """
+
+    seasons: list[CsrSeason]

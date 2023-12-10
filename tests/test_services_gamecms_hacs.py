@@ -17,3 +17,12 @@ async def test_get_medal_metadata(session, service: GameCmsHacsService):
     session.get.assert_called_with(
         "https://gamecms-hacs.svc.halowaypoint.com/hi/Waypoint/file/medals/metadata.json"
     )
+
+
+@pytest.mark.asyncio
+async def test_get_csr_season_calendar(session, service: GameCmsHacsService):
+    session.set_response("get_csr_season_calendar.json")
+    await service.get_csr_season_calendar()
+    session.get.assert_called_with(
+        "https://gamecms-hacs.svc.halowaypoint.com/hi/Progression/file/Csr/Calendars/CsrSeasonCalendar.json"
+    )
