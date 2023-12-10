@@ -429,8 +429,8 @@ class Film(PascalCaseModel):
             The chunk and blob storage URL pairs.
         """
         out = []
+        prefix = self.blob_storage_path_prefix
         for chunk in sorted(self.custom_data.chunks, key=lambda c: c.index):
-            prefix = self.blob_storage_path_prefix
             name = chunk.file_relative_path.lstrip("/")
             path = urllib.parse.urljoin(prefix, name)
             out.append((chunk, path))

@@ -1,7 +1,7 @@
 """User-generated content discovery data services."""
 
 import datetime as dt
-from typing import Any, Literal
+from typing import Any, Iterable, Literal
 from uuid import UUID
 
 from ..models.discovery_ugc import (
@@ -15,7 +15,7 @@ from ..models.discovery_ugc import (
 from .base import BaseService
 
 _HOST = "https://discovery-infiniteugc.svc.halowaypoint.com:443"
-_SORT_PROPERTY = Literal[
+_SortProperty = Literal[
     "name",
     "likes",
     "bookmarks",
@@ -104,11 +104,11 @@ class DiscoveryUgcService(BaseService):
         self,
         start: int = 0,
         count: int = 25,
-        sort: _SORT_PROPERTY = "plays_recent",
+        sort: _SortProperty = "plays_recent",
         order: Literal["asc", "desc"] = "desc",
         asset_kind: Literal["map", "prefab", "ugc_game_variant"] | None = None,
         term: str | None = None,
-        tags: list[str] | None = None,
+        tags: Iterable[str] | None = None,
         author: str | None = None,
         average_rating_min: float | None = None,
         from_date_created_utc: dt.datetime | dt.date | None = None,
@@ -150,10 +150,10 @@ class DiscoveryUgcService(BaseService):
             to_date_published_utc: Maximum date published. Optional.
 
         Returns:
-            The search results.
+            A page of up to `count` search results.
         """
         if count < 1 or count > 101:
-            raise ValueError("Count must be between 1 and 101.")
+            raise ValueError("`count` must be between 1 and 101.")
         url = f"{_HOST}/hi/search"
         params = {
             "start": start,
@@ -166,7 +166,7 @@ class DiscoveryUgcService(BaseService):
         if term is not None:
             params["term"] = term
         if tags is not None:
-            params["tags"] = tags
+            params["tags"] = [tags] if isinstance(tags, str) else list(tags)
         if author is not None:
             params["author"] = author
         if average_rating_min is not None:
