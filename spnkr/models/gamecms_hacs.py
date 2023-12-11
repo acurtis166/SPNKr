@@ -237,7 +237,7 @@ class RankRewards(PascalCaseModel):
 class CareerRewardTrackRank(PascalCaseModel):
     """A rank in the career rank progression reward track.
 
-    Title, subtitle, and grade can be combined for the rank's full name, such as
+    Title, subtitle, and grade can be combined for the rank's full name, e.g.,
     "Sergeant Bronze 2".
 
     Attributes:
@@ -250,11 +250,13 @@ class CareerRewardTrackRank(PascalCaseModel):
         rank_sub_title: The rank's subtitle, such as "Bronze" or "Onyx".
         rank_tier: The rank's integer tier/grade - the smallest unit of rank
             progression.
-        rank_icon: The relative path to the rank's icon file.
+        rank_icon: The relative path to the rank's icon file. Has a height of
+            280px.
         rank_large_icon: The relative path to the rank's large icon file. This
-            is the icon presented after a player acheives the rank.
+            is the icon presented after a player acheives the rank. Has a height
+            of 600px.
         rank_adornment_icon: The relative path to the rank's adornment icon
-            file.
+            file. Has a height of 196px.
         tier_type: The rank's tier type, such as "Bronze" or "Onyx".
         rank_grade: The rank's integer grade. Max is 3.
     """
