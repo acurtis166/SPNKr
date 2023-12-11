@@ -6,6 +6,17 @@ from enum import Enum, IntEnum, StrEnum
 logger = logging.getLogger(__name__)
 
 
+class AssetHome(IntEnum):
+    """Source of an asset."""
+
+    UNKNOWN = 0
+    """Unknown asset source."""
+    STUDIO = 1
+    """Developer-sourced asset."""
+    PLAYER = 2
+    """Player-sourced asset."""
+
+
 class AssetKind(IntEnum):
     """Types of assets used by Halo Infinite."""
 
@@ -48,6 +59,17 @@ class BotDifficulty(IntEnum):
     """Recruit bots. Lowest difficulty."""
     ADAPTIVE = 5
     """Adaptive bots. Difficulty changes based on player performance."""
+
+
+class CloneBehavior(IntEnum):
+    """Permission levels for cloning assets."""
+
+    DEFAULT = 0
+    """Default clone behavior."""
+    TEMPLATE = 1
+    """Clone as a template."""
+    PROHIBITED = 2
+    """Cloning is prohibited."""
 
 
 class FilmChunkType(IntEnum):
@@ -173,6 +195,17 @@ class GameVariantCategory(IntEnum):
         return cls.UNKNOWN
 
 
+class InspectionResult(IntEnum):
+    """Related to readiness of user-generated content?"""
+
+    UNKNOWN = 0
+    """Unknown inspection result."""
+    TOLERABLE = 5
+    """Tolerable inspection result."""
+    STUDIO_CONTENT = 50
+    """Studio content inspection result."""
+
+
 class LifecycleMode(IntEnum):
     """General categories of game modes."""
 
@@ -242,6 +275,41 @@ class PlayerType(IntEnum):
     """Human players."""
     BOT = 2
     """AI players."""
+
+
+class PlaylistBotDifficulty(IntEnum):
+    """Bot difficulty options for matchmaking playlists."""
+
+    AUTOMATIC = 0
+    """Bot difficulty is automatically determined."""
+    RECRUIT = 1
+    """Recruit bot difficulty."""
+    MARINE = 2
+    """Marine bot difficulty."""
+    ODST = 3
+    """ODST bot difficulty."""
+    SPARTAN = 4
+    """Spartan bot difficulty."""
+
+
+class PlaylistDeviceInput(IntEnum):
+    """Device input options for matchmaking playlists."""
+
+    UNKNOWN = 0
+    """Unknown device input."""
+    CONTROLLER = 1
+    """Controller."""
+    MOUSE_KEYBOARD = 2
+    """Keyboard and mouse."""
+
+
+class PlaylistEntrySelectionStrategy(IntEnum):
+    """Selection strategies for playlist entries."""
+
+    WEIGHTED = 0
+    """Selection strategy that uses weighted probabilities."""
+    NO_REPEAT = 1
+    """Selection strategy that avoids repeating map mode pairs."""
 
 
 class PlaylistExperience(IntEnum):

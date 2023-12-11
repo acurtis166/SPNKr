@@ -8,7 +8,17 @@ from uuid import UUID
 from pydantic import model_validator
 
 from .base import PascalCaseModel
-from .refdata import AssetKind, FilmChunkType, FilmStatus
+from .refdata import (
+    AssetHome,
+    AssetKind,
+    CloneBehavior,
+    FilmChunkType,
+    FilmStatus,
+    InspectionResult,
+    PlaylistBotDifficulty,
+    PlaylistDeviceInput,
+    PlaylistEntrySelectionStrategy,
+)
 
 
 class OnlineUriReference(PascalCaseModel):
@@ -96,10 +106,10 @@ class Asset(PascalCaseModel):
     description: str
     files: AssetFiles
     contributors: list[str]
-    asset_home: int
+    asset_home: AssetHome
     asset_stats: AssetStats
-    inspection_result: int
-    clone_behavior: int
+    inspection_result: InspectionResult
+    clone_behavior: CloneBehavior
     order: int
 
 
@@ -170,7 +180,7 @@ class PlaylistCustomData(PascalCaseModel):
 
     Attributes:
         playlist_entries: The map-mode pairs in the playlist.
-        strategy: The playlist's strategy ID.
+        strategy: The strategy used to select map-mode pairs in the playlist.
         min_teams: The minimum number of teams needed to make a match.
         min_team_size: The minimum number of team members needed to make a match.
         max_teams: The maximum number of teams allowed in a match.
@@ -183,14 +193,14 @@ class PlaylistCustomData(PascalCaseModel):
         exit_experience_duration_sec: The duration of the exit experience, in seconds.
         fireteam_leader_kick_allowed: Whether fireteam leaders are allowed to kick members.
         disable_midgame_chat: Whether chat is disabled in game.
-        allowed_device_inputs: The input device IDs allowed in the playlist (KB/M, controller, etc.).
+        allowed_device_inputs: The input devices allowed in the playlist (KB/M, controller, etc.).
         bot_difficulty: The difficulty of bots in the playlist.
         min_fireteam_size: The minimum number of players expected in a fireteam.
         max_fireteam_size: The maximum number of players allowed in a fireteam.
     """
 
     playlist_entries: list[PlaylistEntry]
-    strategy: int
+    strategy: PlaylistEntrySelectionStrategy
     min_teams: int
     min_team_size: int
     max_teams: int
@@ -203,8 +213,8 @@ class PlaylistCustomData(PascalCaseModel):
     exit_experience_duration_sec: int
     fireteam_leader_kick_allowed: bool
     disable_midgame_chat: bool
-    allowed_device_inputs: list[int]
-    bot_difficulty: int
+    allowed_device_inputs: list[PlaylistDeviceInput]
+    bot_difficulty: PlaylistBotDifficulty
     min_fireteam_size: int
     max_fireteam_size: int
 
