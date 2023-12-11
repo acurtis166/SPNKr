@@ -20,8 +20,8 @@ class GameCmsHacsService(BaseService):
         Returns:
             The medal metadata.
         """
-        data = await self._get(f"{_HOST}/hi/Waypoint/file/medals/metadata.json")
-        return MedalMetadata(**data)
+        url = f"{_HOST}/hi/Waypoint/file/medals/metadata.json"
+        return MedalMetadata(**await self._get_json(url))
 
     async def get_csr_season_calendar(self) -> CsrSeasonCalendar:
         """Get IDs and dates for past and current CSR seasons.
@@ -34,7 +34,7 @@ class GameCmsHacsService(BaseService):
         url = (
             f"{_HOST}/hi/Progression/file/Csr/Calendars/CsrSeasonCalendar.json"
         )
-        return CsrSeasonCalendar(**await self._get(url))
+        return CsrSeasonCalendar(**await self._get_json(url))
 
     async def get_season_calendar(self) -> SeasonCalendar:
         """Get IDs and dates for past/current reward track events/operations.
@@ -48,7 +48,7 @@ class GameCmsHacsService(BaseService):
         url = (
             f"{_HOST}/hi/progression/file/calendars/seasons/seasoncalendar.json"
         )
-        return SeasonCalendar(**await self._get(url))
+        return SeasonCalendar(**await self._get_json(url))
 
     async def get_career_reward_track(self) -> CareerRewardTrack:
         """Get details for the career rank progression reward track.
@@ -57,4 +57,17 @@ class GameCmsHacsService(BaseService):
             The career rank reward track.
         """
         url = f"{_HOST}/hi/Progression/file/RewardTracks/CareerRanks/careerRank1.json"
-        return CareerRewardTrack(**await self._get(url))
+        return CareerRewardTrack(**await self._get_json(url))
+
+    async def get_image(self, relative_path: str) -> bytes:
+        """Get an image from the game content management service.
+
+        Args:
+            relative_path: The relative path to the image, such as
+                "career_rank/ProgressWidget/272_Hero.png".
+
+        Returns:
+            The image data.
+        """
+        url = f"{_HOST}/hi/images/file/{relative_path.lstrip('/')}"
+        return await self._get_bytes(url)

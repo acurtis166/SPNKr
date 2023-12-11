@@ -14,8 +14,11 @@ class MockResponse:
     def raise_for_status(self) -> None:
         pass
 
-    async def json(self) -> Any:
+    async def read(self) -> bytes:
         return self._data
+
+    async def json(self) -> Any:
+        return json.loads(self._data)
 
 
 class MockSession:
@@ -27,7 +30,7 @@ class MockSession:
     def set_response(self, file_name: str) -> None:
         """Set the response for the next GET request."""
         with open(f"tests/responses/{file_name}", "rb") as f:
-            self.get.return_value = MockResponse(json.load(f))
+            self.get.return_value = MockResponse(f.read())
 
 
 @pytest.fixture

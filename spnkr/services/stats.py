@@ -40,7 +40,7 @@ class StatsService(BaseService):
         """
         xuid_or_gamertag = wrap_xuid_or_gamertag(player)
         url = f"{_HOST}/hi/players/{xuid_or_gamertag}/matches/count"
-        return MatchCount(**await self._get(url))
+        return MatchCount(**await self._get_json(url))
 
     async def get_service_record(
         self,
@@ -115,7 +115,7 @@ class StatsService(BaseService):
                 f"Invalid filter combination: {filters}. Options:\n{valid}"
             )
         params = {k.replace("_", ""): str(v) for k, v in filters.items()}
-        return ServiceRecord(**await self._get(url, params=params))
+        return ServiceRecord(**await self._get_json(url, params=params))
 
     async def get_match_history(
         self,
@@ -142,7 +142,7 @@ class StatsService(BaseService):
         xuid_or_gamertag = wrap_xuid_or_gamertag(player)
         url = f"{_HOST}/hi/players/{xuid_or_gamertag}/matches"
         params = {"start": start, "count": count, "type": match_type}
-        return MatchHistory(**await self._get(url, params=params))
+        return MatchHistory(**await self._get_json(url, params=params))
 
     async def get_match_stats(self, match_id: str | UUID) -> MatchStats:
         """Request match details using the Halo Infinite match GUID.
@@ -154,4 +154,4 @@ class StatsService(BaseService):
             The match details.
         """
         url = f"{_HOST}/hi/matches/{match_id}/stats"
-        return MatchStats(**await self._get(url))
+        return MatchStats(**await self._get_json(url))

@@ -38,7 +38,7 @@ class DiscoveryUgcService(BaseService):
         self, asset_type: str, asset_id: str | UUID, version_id: str | UUID
     ) -> dict[str, Any]:
         url = f"{_HOST}/hi/{asset_type}/{asset_id}/versions/{version_id}"
-        return await self._get(url)
+        return await self._get_json(url)
 
     async def get_ugc_game_variant(
         self, asset_id: str | UUID, version_id: str | UUID
@@ -183,7 +183,7 @@ class DiscoveryUgcService(BaseService):
             params["fromDatePublishedUtc"] = from_date_published_utc.isoformat()
         if to_date_published_utc is not None:
             params["toDatePublishedUtc"] = to_date_published_utc.isoformat()
-        return AssetSearchPage(**await self._get(url, params=params))
+        return AssetSearchPage(**await self._get_json(url, params=params))
 
     async def get_film_by_match_id(self, match_id: str | UUID) -> Film:
         """Get metadata and download information for a film.
@@ -195,4 +195,4 @@ class DiscoveryUgcService(BaseService):
             The film details.
         """
         url = f"{_HOST}/hi/films/matches/{match_id}/spectate"
-        return Film(**await self._get(url))
+        return Film(**await self._get_json(url))

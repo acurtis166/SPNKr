@@ -13,7 +13,7 @@ class ProfileService(BaseService):
     """Profile data services."""
 
     async def _get_user(self, user: str) -> User:
-        return User(**await self._get(f"{_HOST}/users/{user}"))
+        return User(**await self._get_json(f"{_HOST}/users/{user}"))
 
     async def get_current_user(self) -> User:
         """Get the current user profile.
@@ -63,5 +63,5 @@ class ProfileService(BaseService):
             return []
         url = f"{_HOST}/users"
         params = {"xuids": [unwrap_xuid(x) for x in xuids]}
-        data = await self._get(url, params=params)
+        data = await self._get_json(url, params=params)
         return [User(**u) for u in data]

@@ -37,7 +37,7 @@ class SkillService(BaseService):
             raise ValueError("`xuids` cannot be empty")
         url = f"{_HOST}/hi/matches/{match_id}/skill"
         params = {"players": [wrap_xuid(x) for x in xuids]}
-        return MatchSkill(**await self._get(url, params=params))
+        return MatchSkill(**await self._get_json(url, params=params))
 
     async def get_playlist_csr(
         self,
@@ -71,7 +71,7 @@ class SkillService(BaseService):
         params: dict = {"players": [wrap_xuid(x) for x in xuids]}
         if season_id:
             params["season"] = _clean_season_id(season_id)
-        return PlaylistCsr(**await self._get(url, params=params))
+        return PlaylistCsr(**await self._get_json(url, params=params))
 
 
 def _clean_season_id(season_id: str) -> str:

@@ -2,7 +2,7 @@
 
 from typing import Any
 
-from aiohttp import ClientSession
+from aiohttp import ClientResponse, ClientSession
 from aiolimiter import AsyncLimiter
 
 
@@ -30,12 +30,22 @@ class BaseService:
         if requests_per_second is not None:
             self._rate_limiter = _create_limiter(requests_per_second)
 
-    async def _get(self, url: str, **kwargs) -> Any:
-        """Make a GET request to `url` and return the decoded JSON response."""
+    async def _get(self, url: str, **kwargs) -> ClientResponse:
+        """Make a GET request to `url` and return the response."""
         if self._rate_limiter is None:
             response = await self._session.get(url, **kwargs)
         else:
             async with self._rate_limiter:
                 response = await self._session.get(url, **kwargs)
         response.raise_for_status()
+        return response
+
+    async def _get_json(self, url: str, **kwargs) -> Any:
+        """Make a GET request to `url` and return the decoded JSON response."""
+        response = await self._get(url, **kwargs)
         return await response.json()
+
+    async def _get_bytes(self, url: str, **kwargs) -> bytes:
+        """Make a GET request to `url` and return the response content."""
+        response = await self._get(url, **kwargs)
+        return await response.read()
