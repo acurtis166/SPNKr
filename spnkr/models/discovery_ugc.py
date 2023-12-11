@@ -320,7 +320,7 @@ class AssetSearchResult(PascalCaseModel):
     date_created_utc: dt.datetime
     date_modified_utc: dt.datetime
     date_published_utc: dt.datetime
-    has_node_graph: bool
+    has_node_graph: bool | None
     read_only_clones: bool
     plays_all_time: int
     contributors: list[str]
