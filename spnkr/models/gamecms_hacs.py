@@ -118,3 +118,79 @@ class CsrSeasonCalendar(PascalCaseModel):
     """
 
     seasons: list[CsrSeason]
+
+
+class Season(PascalCaseModel):
+    """An promotional, reward-track operation contained within a CSR season.
+
+    Attributes:
+        csr_season_file_path: The relative path to the CSR season file. The stem
+            of the path is the CSR season's ID, e.g., "CsrSeason5-1".
+        operation_track_path: The relative path to the operation's reward track
+            file.
+        season_metadata: The relative path to the operation metadata file.
+        start_date: The UTC start date of the season.
+        end_date: The UTC end date of the season.
+    """
+
+    csr_season_file_path: str
+    operation_track_path: str
+    season_metadata: str
+    start_date: dt.datetime
+    end_date: dt.datetime
+
+    @model_validator(mode="before")
+    def _flatten_dates(cls, values):
+        """Flatten the date objects."""
+        for key in ("StartDate", "EndDate"):
+            values[key] = values[key]["ISO8601Date"]
+        return values
+
+
+class Event(PascalCaseModel):
+    """A promotional, reward-track event contained within a CSR season.
+
+    Events were superseded by operations as of October 2023.
+
+    Attributes:
+        reward_track_path: The relative path to the event's reward track file.
+        start_date: The UTC start date of the event.
+        end_date: The UTC end date of the event.
+    """
+
+    reward_track_path: str
+    start_date: dt.datetime
+    end_date: dt.datetime
+
+    @model_validator(mode="before")
+    def _flatten_dates(cls, values):
+        """Flatten the date objects."""
+        for key in ("StartDate", "EndDate"):
+            values[key] = values[key]["ISO8601Date"]
+        return values
+
+
+class CareerRank(PascalCaseModel):
+    """Information related to career rank progression.
+
+    Attributes:
+        reward_track_path: The relative path to the career rank reward track
+            file.
+    """
+
+    reward_track_path: str
+
+
+class SeasonCalendar(PascalCaseModel):
+    """A collection of past and current reward tracks.
+
+    Attributes:
+        seasons: The list of "operation" reward tracks.
+        events: The list of "event" reward tracks. Events were superseded by
+            operations as of October 2023.
+        career_rank: Information about career rank progression.
+    """
+
+    seasons: list[Season]
+    events: list[Event]
+    career_rank: CareerRank

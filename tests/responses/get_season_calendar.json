@@ -1,0 +1,367 @@
+{
+    "Seasons": [
+        {
+            "CsrSeasonFilePath": "Csr/Seasons/CsrSeason1-2.json",
+            "OperationTrackPath": "RewardTracks/Operations/battlepass-noblesacrifice.json",
+            "SeasonMetadata": "Seasons/Season1.json",
+            "StartDate": {
+                "ISO8601Date": "2021-06-20T17:00:00.000Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2022-05-03T17:00:00.000Z"
+            }
+        },
+        {
+            "CsrSeasonFilePath": "Csr/Seasons/CsrSeason2-3.json",
+            "OperationTrackPath": "RewardTracks/Operations/battlepass-lonewolves.json",
+            "SeasonMetadata": "Seasons/Season2.json",
+            "StartDate": {
+                "ISO8601Date": "2022-05-03T17:00:00.000Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2022-11-08T17:00:00.000Z"
+            }
+        },
+        {
+            "CsrSeasonFilePath": "Csr/Seasons/CsrSeason2-3.json",
+            "OperationTrackPath": "RewardTracks/Operations/battlepass-WinterBreak.json",
+            "SeasonMetadata": "Seasons/Season-Winter-Break-22.json",
+            "StartDate": {
+                "ISO8601Date": "2022-11-08T17:00:00.000Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2023-03-07T17:00:00.000Z"
+            }
+        },
+        {
+            "CsrSeasonFilePath": "Csr/Seasons/CsrSeason3-1.json",
+            "OperationTrackPath": "RewardTracks/Operations/S03BattlePass.json",
+            "SeasonMetadata": "Seasons/Season3.json",
+            "StartDate": {
+                "ISO8601Date": "2023-03-07T17:00:00.000Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2023-06-20T17:00:00.000Z"
+            }
+        },
+        {
+            "CsrSeasonFilePath": "Csr/Seasons/CsrSeason4-1.json",
+            "OperationTrackPath": "RewardTracks/Operations/S04BattlePass.json",
+            "SeasonMetadata": "Seasons/Season4.json",
+            "StartDate": {
+                "ISO8601Date": "2023-06-20T17:00:00.000Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2023-10-17T17:00:00.000Z"
+            }
+        },
+        {
+            "CsrSeasonFilePath": "Csr/Seasons/CsrSeason5-1.json",
+            "OperationTrackPath": "RewardTracks/Operations/S05OpPassL01.json",
+            "SeasonMetadata": "Seasons/Season5-Op1.json",
+            "StartDate": {
+                "ISO8601Date": "2023-10-17T17:00:00.000Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2023-11-14T17:00:00.000Z"
+            }
+        },
+        {
+            "CsrSeasonFilePath": "Csr/Seasons/CsrSeason5-1.json",
+            "OperationTrackPath": "RewardTracks/Operations/S05OpPassM01.json",
+            "SeasonMetadata": "Seasons/Season5-Op2.json",
+            "StartDate": {
+                "ISO8601Date": "2023-11-14T17:00:00.000Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2023-12-19T17:00:00.000Z"
+            }
+        },
+        {
+            "CsrSeasonFilePath": "Csr/Seasons/CsrSeason5-1.json",
+            "OperationTrackPath": "RewardTracks/Operations/S05OpPassM02.json",
+            "SeasonMetadata": "Seasons/Season5-Op3.json",
+            "StartDate": {
+                "ISO8601Date": "2023-12-19T17:00:00.000Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2024-01-30T17:00:00.000Z"
+            }
+        }
+    ],
+    "Events": [
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/ritualWotWSamurai.json",
+            "StartDate": {
+                "ISO8601Date": "2021-09-18T21:30:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2021-11-07T17:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/ritualWinterGiveaway.json",
+            "StartDate": {
+                "ISO8601Date": "2021-11-16T17:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2021-12-03T17:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/ritualWinterGiveaway.json",
+            "StartDate": {
+                "ISO8601Date": "2021-12-21T17:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2022-01-04T17:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/ritualWotWSamurai.json",
+            "StartDate": {
+                "ISO8601Date": "2022-01-04T17:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2022-01-11T17:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/ritualLoneWolf1.json",
+            "StartDate": {
+                "ISO8601Date": "2022-04-27T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2022-04-28T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/ritualLoneWolf1.json",
+            "StartDate": {
+                "ISO8601Date": "2022-05-03T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2022-05-17T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/ritualEagleStrike.json",
+            "StartDate": {
+                "ISO8601Date": "2022-05-24T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2022-05-31T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/ritualEagleStrike.json",
+            "StartDate": {
+                "ISO8601Date": "2022-06-14T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2022-06-21T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/ritualEagleStrike.json",
+            "StartDate": {
+                "ISO8601Date": "2022-07-05T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2022-07-12T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/ritualLoneWolf2.json",
+            "StartDate": {
+                "ISO8601Date": "2022-07-19T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2022-08-02T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/ritualEagleStrike.json",
+            "StartDate": {
+                "ISO8601Date": "2022-08-16T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2022-08-23T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/ritualJointFire.json",
+            "StartDate": {
+                "ISO8601Date": "2022-08-23T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2022-09-24T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/S03Fracture.json",
+            "StartDate": {
+                "ISO8601Date": "2022-09-26T17:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2022-10-25T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/S03Narrative1.json",
+            "StartDate": {
+                "ISO8601Date": "2022-10-25T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2022-12-19T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/ritualWinterContingencyII.json",
+            "StartDate": {
+                "ISO8601Date": "2022-12-20T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2023-01-03T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/ritualJointFire.json",
+            "StartDate": {
+                "ISO8601Date": "2023-01-17T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2023-01-31T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/S04Narrative1.json",
+            "StartDate": {
+                "ISO8601Date": "2023-02-27T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2023-03-07T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/S03Narrative1.json",
+            "StartDate": {
+                "ISO8601Date": "2023-03-07T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2023-03-21T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/S03Fracture.json",
+            "StartDate": {
+                "ISO8601Date": "2023-03-21T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2023-04-11T17:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/S03Fracture.json",
+            "StartDate": {
+                "ISO8601Date": "2023-04-11T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2023-04-18T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/S03Narrative2.json",
+            "StartDate": {
+                "ISO8601Date": "2023-05-02T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2023-05-16T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/S03Fracture.json",
+            "StartDate": {
+                "ISO8601Date": "2023-05-23T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2023-05-30T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/S03Fracture.json",
+            "StartDate": {
+                "ISO8601Date": "2023-06-13T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2023-06-20T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/S04Narrative1.json",
+            "StartDate": {
+                "ISO8601Date": "2023-06-20T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2023-07-04T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/S04Fracture.json",
+            "StartDate": {
+                "ISO8601Date": "2023-07-04T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2023-07-11T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/S04Casual.json",
+            "StartDate": {
+                "ISO8601Date": "2023-07-18T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2023-08-01T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/S04Fracture.json",
+            "StartDate": {
+                "ISO8601Date": "2023-08-08T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2023-08-15T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/S04Narrative2.json",
+            "StartDate": {
+                "ISO8601Date": "2023-08-22T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2023-09-05T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/S04Fracture.json",
+            "StartDate": {
+                "ISO8601Date": "2023-09-12T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2023-09-19T18:00:00.00Z"
+            }
+        },
+        {
+            "RewardTrackPath": "RewardTracks/Events/Rituals/S04Fracture.json",
+            "StartDate": {
+                "ISO8601Date": "2023-09-26T18:00:00.00Z"
+            },
+            "EndDate": {
+                "ISO8601Date": "2023-10-03T18:00:00.00Z"
+            }
+        }
+    ],
+    "CareerRank": {
+        "RewardTrackPath": "RewardTracks/CareerRanks/careerrank1.json"
+    }
+}

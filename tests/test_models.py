@@ -14,7 +14,11 @@ from spnkr.models.discovery_ugc import (
     Playlist,
     UgcGameVariant,
 )
-from spnkr.models.gamecms_hacs import CsrSeasonCalendar, MedalMetadata
+from spnkr.models.gamecms_hacs import (
+    CsrSeasonCalendar,
+    MedalMetadata,
+    SeasonCalendar,
+)
 from spnkr.models.profile import User
 from spnkr.models.skill import MatchSkill, PlaylistCsr
 from spnkr.models.stats import (
@@ -43,6 +47,14 @@ def test_parse_csr_season_calendar():
     result = CsrSeasonCalendar(**data)
     assert len(result.seasons) == 8
     assert isinstance(result.seasons[0].start_date, dt.datetime)
+
+
+def test_parse_season_calendar():
+    data = load_response("get_season_calendar")
+    result = SeasonCalendar(**data)
+    assert len(result.events) == 30
+    assert isinstance(result.seasons[0].start_date, dt.datetime)
+    assert isinstance(result.events[0].start_date, dt.datetime)
 
 
 def test_parse_match_skill():
