@@ -194,3 +194,122 @@ class SeasonCalendar(PascalCaseModel):
     seasons: list[Season]
     events: list[Event]
     career_rank: CareerRank
+
+
+class InventoryReward(PascalCaseModel):
+    """An inventory item reward, such as a weapon skin or armor piece.
+
+    Attributes:
+        inventory_item_path: The relative path to the inventory item file.
+        amount: The quantity of the inventory item awarded.
+        type: The type of inventory item, such as "ArmorCoating".
+    """
+
+    inventory_item_path: str
+    amount: int
+    type: str
+
+
+class CurrencyReward(PascalCaseModel):
+    """A currency reward, such as an XP boost.
+
+    Attributes:
+        currency_path: The relative path to the currency file.
+        amount: The quantity of the currency awarded.
+    """
+
+    currency_path: str
+    amount: int
+
+
+class RankRewards(PascalCaseModel):
+    """A collection of inventory and currency rewards earned at a rank.
+
+    Attributes:
+        inventory_rewards: The list of inventory item rewards.
+        currency_rewards: The list of currency rewards.
+    """
+
+    inventory_rewards: list[InventoryReward]
+    currency_rewards: list[CurrencyReward]
+
+
+class CareerRewardTrackRank(PascalCaseModel):
+    """A rank in the career rank progression reward track.
+
+    Title, subtitle, and grade can be combined for the rank's full name, such as
+    "Sergeant Bronze 2".
+
+    Attributes:
+        rank: The rank number.
+        free_rewards: The rewards earned by all players that reach the rank.
+        paid_rewards: The rewards earned by players that purchase the battle
+            pass and reach the rank.
+        xp_required_for_rank: The amount of XP required to reach the rank.
+        rank_title: The rank's title, such as "Private" or "General".
+        rank_sub_title: The rank's subtitle, such as "Bronze" or "Onyx".
+        rank_tier: The rank's integer tier/grade - the smallest unit of rank
+            progression.
+        rank_icon: The relative path to the rank's icon file.
+        rank_large_icon: The relative path to the rank's large icon file. This
+            is the icon presented after a player acheives the rank.
+        rank_adornment_icon: The relative path to the rank's adornment icon
+            file.
+        tier_type: The rank's tier type, such as "Bronze" or "Onyx".
+        rank_grade: The rank's integer grade. Max is 3.
+    """
+
+    rank: int
+    free_rewards: RankRewards
+    paid_rewards: RankRewards
+    xp_required_for_rank: int
+    rank_title: str
+    rank_sub_title: str
+    rank_tier: str
+    rank_icon: str
+    rank_large_icon: str
+    rank_adornment_icon: str
+    tier_type: str
+    rank_grade: int
+
+    @model_validator(mode="before")
+    def _flatten_values(cls, values):
+        """Flatten the translatable string values."""
+        for key in ("RankTitle", "RankSubTitle", "RankTier"):
+            values[key] = values[key]["value"]
+        return values
+
+
+class CareerRewardTrack(PascalCaseModel):
+    """The career rank progression reward track.
+
+    Attributes:
+        track_id: The reward track's ID.
+        ranks: The list of ranks in the reward track.
+        name: The reward track's name.
+        description: The reward track's description.
+        operation_number: The reward track's operation number.
+        date_range: The reward track's date range.
+        is_ritual: ...
+        summary_image_path: The relative path to the reward track's summary
+            image file.
+        xp_per_rank: The amount of XP awarded per rank.
+    """
+
+    track_id: str
+    ranks: list[CareerRewardTrackRank]
+    name: str
+    description: str
+    operation_number: int
+    date_range: str
+    is_ritual: bool
+    summary_image_path: str
+    # week_number: None
+    xp_per_rank: int
+
+    @model_validator(mode="before")
+    def _flatten_values(cls, values):
+        """Flatten the translatable string values."""
+        for key in ("Name", "Description", "DateRange"):
+            values[key] = values[key]["value"]
+        return values

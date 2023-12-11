@@ -15,6 +15,7 @@ from spnkr.models.discovery_ugc import (
     UgcGameVariant,
 )
 from spnkr.models.gamecms_hacs import (
+    CareerRewardTrack,
     CsrSeasonCalendar,
     MedalMetadata,
     SeasonCalendar,
@@ -55,6 +56,13 @@ def test_parse_season_calendar():
     assert len(result.events) == 30
     assert isinstance(result.seasons[0].start_date, dt.datetime)
     assert isinstance(result.events[0].start_date, dt.datetime)
+
+
+def test_parse_career_reward_track():
+    data = load_response("get_career_reward_track")
+    result = CareerRewardTrack(**data)
+    assert len(result.ranks) == 272
+    assert result.name == "Career Rank"
 
 
 def test_parse_match_skill():

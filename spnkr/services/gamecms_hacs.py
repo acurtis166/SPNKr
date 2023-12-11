@@ -1,6 +1,7 @@
 """Game content management data services."""
 
 from ..models.gamecms_hacs import (
+    CareerRewardTrack,
     CsrSeasonCalendar,
     MedalMetadata,
     SeasonCalendar,
@@ -48,3 +49,12 @@ class GameCmsHacsService(BaseService):
             f"{_HOST}/hi/progression/file/calendars/seasons/seasoncalendar.json"
         )
         return SeasonCalendar(**await self._get(url))
+
+    async def get_career_reward_track(self) -> CareerRewardTrack:
+        """Get details for the career rank progression reward track.
+
+        Returns:
+            The career rank reward track.
+        """
+        url = f"{_HOST}/hi/Progression/file/RewardTracks/CareerRanks/careerRank1.json"
+        return CareerRewardTrack(**await self._get(url))

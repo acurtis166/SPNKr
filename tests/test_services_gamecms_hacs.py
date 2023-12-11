@@ -35,3 +35,12 @@ async def test_get_season_calendar(session, service: GameCmsHacsService):
     session.get.assert_called_with(
         "https://gamecms-hacs.svc.halowaypoint.com/hi/progression/file/calendars/seasons/seasoncalendar.json"
     )
+
+
+@pytest.mark.asyncio
+async def test_get_career_reward_track(session, service: GameCmsHacsService):
+    session.set_response("get_career_reward_track.json")
+    await service.get_career_reward_track()
+    session.get.assert_called_with(
+        "https://gamecms-hacs.svc.halowaypoint.com/hi/Progression/file/RewardTracks/CareerRanks/careerRank1.json"
+    )
