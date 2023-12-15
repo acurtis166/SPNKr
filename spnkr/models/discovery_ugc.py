@@ -21,7 +21,7 @@ from .refdata import (
 )
 
 
-class OnlineUriReference(PascalCaseModel):
+class OnlineUriReference(PascalCaseModel, frozen=True):
     """A reference to an online resource.
 
     Attributes:
@@ -45,7 +45,7 @@ class OnlineUriReference(PascalCaseModel):
     clearance_aware: bool
 
 
-class AssetFiles(PascalCaseModel):
+class AssetFiles(PascalCaseModel, frozen=True):
     """Information about the files that make up an asset.
 
     Attributes:
@@ -59,7 +59,7 @@ class AssetFiles(PascalCaseModel):
     prefix_endpoint: OnlineUriReference
 
 
-class AssetStats(PascalCaseModel):
+class AssetStats(PascalCaseModel, frozen=True):
     """Statistics about an asset.
 
     Attributes:
@@ -83,7 +83,7 @@ class AssetStats(PascalCaseModel):
     number_of_ratings: int
 
 
-class Asset(PascalCaseModel):
+class Asset(PascalCaseModel, frozen=True):
     """A game asset, such as a map or game mode.
 
     Attributes:
@@ -113,7 +113,7 @@ class Asset(PascalCaseModel):
     order: int
 
 
-class MapCustomData(PascalCaseModel):
+class MapCustomData(PascalCaseModel, frozen=True):
     """Custom data related to map variant assets.
 
     Attributes:
@@ -129,7 +129,7 @@ class MapCustomData(PascalCaseModel):
     has_node_graph: bool
 
 
-class Map(Asset):
+class Map(Asset, frozen=True):
     """A map variant asset.
 
     Attributes:
@@ -143,7 +143,7 @@ class Map(Asset):
     prefab_links: list[Asset] | None
 
 
-class RotationWeight(PascalCaseModel):
+class RotationWeight(PascalCaseModel, frozen=True):
     """A weighting for a map-mode pair in a playlist.
 
     Attributes:
@@ -153,7 +153,7 @@ class RotationWeight(PascalCaseModel):
     weight: float
 
 
-class RotationEntry(Asset):
+class RotationEntry(Asset, frozen=True):
     """A map-mode pair in a playlist.
 
     Attributes:
@@ -163,7 +163,7 @@ class RotationEntry(Asset):
     metadata: RotationWeight
 
 
-class PlaylistEntry(PascalCaseModel):
+class PlaylistEntry(PascalCaseModel, frozen=True):
     """A map-mode pair in a playlist.
 
     Attributes:
@@ -175,7 +175,7 @@ class PlaylistEntry(PascalCaseModel):
     metadata: RotationWeight
 
 
-class PlaylistCustomData(PascalCaseModel):
+class PlaylistCustomData(PascalCaseModel, frozen=True):
     """Custom data related to playlist assets.
 
     Attributes:
@@ -219,7 +219,7 @@ class PlaylistCustomData(PascalCaseModel):
     max_fireteam_size: int
 
 
-class Playlist(Asset):
+class Playlist(Asset, frozen=True):
     """A playlist asset.
 
     Attributes:
@@ -233,7 +233,7 @@ class Playlist(Asset):
     rotation_entries: list[RotationEntry]
 
 
-class MapModePair(Asset):
+class MapModePair(Asset, frozen=True):
     """A map-mode pair asset.
 
     Attributes:
@@ -249,7 +249,7 @@ class MapModePair(Asset):
     ugc_game_variant_link: Asset
 
 
-class UgcGameVariantCustomData(PascalCaseModel):
+class UgcGameVariantCustomData(PascalCaseModel, frozen=True):
     """Custom data related to game variant assets.
 
     Attributes:
@@ -259,7 +259,7 @@ class UgcGameVariantCustomData(PascalCaseModel):
     key_values: dict[Any, Any]
 
 
-class UgcGameVariant(Asset):
+class UgcGameVariant(Asset, frozen=True):
     """A user-generated game variant asset.
 
     Attributes:
@@ -273,7 +273,7 @@ class UgcGameVariant(Asset):
     engine_game_variant_link: Asset
 
 
-class AssetSearchTagCount(PascalCaseModel):
+class AssetSearchTagCount(PascalCaseModel, frozen=True):
     """A tag name and count.
 
     Attributes:
@@ -285,7 +285,7 @@ class AssetSearchTagCount(PascalCaseModel):
     count: int
 
 
-class AssetSearchResult(PascalCaseModel):
+class AssetSearchResult(PascalCaseModel, frozen=True):
     """An individual asset search result.
 
     Attributes:
@@ -346,7 +346,7 @@ class AssetSearchResult(PascalCaseModel):
         return values
 
 
-class AssetSearchPage(PascalCaseModel):
+class AssetSearchPage(PascalCaseModel, frozen=True):
     """A page of map/mode/prefab search results.
 
     Attributes:
@@ -368,7 +368,7 @@ class AssetSearchPage(PascalCaseModel):
     links: dict[Any, Any]
 
 
-class FilmChunk(PascalCaseModel):
+class FilmChunk(PascalCaseModel, frozen=True):
     """A chunk of a saved film.
 
     Attributes:
@@ -390,7 +390,7 @@ class FilmChunk(PascalCaseModel):
     chunk_type: FilmChunkType
 
 
-class FilmCustomData(PascalCaseModel):
+class FilmCustomData(PascalCaseModel, frozen=True):
     """Custom data related to film assets.
 
     Attributes:
@@ -410,7 +410,7 @@ class FilmCustomData(PascalCaseModel):
     film_major_version: int
 
 
-class Film(PascalCaseModel):
+class Film(PascalCaseModel, frozen=True):
     """A saved film asset for a match.
 
     Attributes:

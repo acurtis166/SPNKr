@@ -3,7 +3,7 @@
 from pydantic import BaseModel
 
 
-class GamerPicture(BaseModel):
+class GamerPicture(BaseModel, frozen=True):
     """URLs to different sizes of a user's gamerpic.
 
     Attributes:
@@ -19,7 +19,7 @@ class GamerPicture(BaseModel):
     xlarge: str
 
 
-class User(BaseModel):
+class User(BaseModel, frozen=True):
     """High-level information about an Xbox Live user.
 
     Attributes:

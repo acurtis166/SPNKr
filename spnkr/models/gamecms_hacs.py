@@ -8,7 +8,7 @@ from .base import CamelCaseModel, PascalCaseModel
 from .refdata import MedalDifficulty, MedalType
 
 
-class TranslatableString(CamelCaseModel):
+class TranslatableString(CamelCaseModel, frozen=True):
     """A string value accompanied by a dictionary of translations.
 
     Attributes:
@@ -20,7 +20,7 @@ class TranslatableString(CamelCaseModel):
     translations: dict[str, str]
 
 
-class Medal(CamelCaseModel):
+class Medal(CamelCaseModel, frozen=True):
     """Metadata for a single medal.
 
     Attributes:
@@ -44,7 +44,7 @@ class Medal(CamelCaseModel):
     personal_score: int
 
 
-class SpriteSheet(CamelCaseModel):
+class SpriteSheet(CamelCaseModel, frozen=True):
     """Information about a sprite sheet that contains medal sprites.
 
     Attributes:
@@ -58,7 +58,7 @@ class SpriteSheet(CamelCaseModel):
     size: int
 
 
-class SpriteSheets(CamelCaseModel):
+class SpriteSheets(CamelCaseModel, frozen=True):
     """Sizes of sprite sheets that contain medal sprites.
 
     Attributes:
@@ -72,7 +72,7 @@ class SpriteSheets(CamelCaseModel):
     extra_large: SpriteSheet = Field(alias="extra-large")
 
 
-class MedalMetadata(CamelCaseModel):
+class MedalMetadata(CamelCaseModel, frozen=True):
     """Metadata for all medals.
 
     Attributes:
@@ -88,7 +88,7 @@ class MedalMetadata(CamelCaseModel):
     medals: list[Medal]
 
 
-class CsrSeason(PascalCaseModel):
+class CsrSeason(PascalCaseModel, frozen=True):
     """A CSR season.
 
     Attributes:
@@ -110,7 +110,7 @@ class CsrSeason(PascalCaseModel):
         return values
 
 
-class CsrSeasonCalendar(PascalCaseModel):
+class CsrSeasonCalendar(PascalCaseModel, frozen=True):
     """A collection of past and current CSR seasons.
 
     Attributes:
@@ -120,7 +120,7 @@ class CsrSeasonCalendar(PascalCaseModel):
     seasons: list[CsrSeason]
 
 
-class Season(PascalCaseModel):
+class Season(PascalCaseModel, frozen=True):
     """An promotional, reward-track operation contained within a CSR season.
 
     Attributes:
@@ -147,7 +147,7 @@ class Season(PascalCaseModel):
         return values
 
 
-class Event(PascalCaseModel):
+class Event(PascalCaseModel, frozen=True):
     """A promotional, reward-track event contained within a CSR season.
 
     Events were superseded by operations as of October 2023.
@@ -170,7 +170,7 @@ class Event(PascalCaseModel):
         return values
 
 
-class CareerRank(PascalCaseModel):
+class CareerRank(PascalCaseModel, frozen=True):
     """Information related to career rank progression.
 
     Attributes:
@@ -181,7 +181,7 @@ class CareerRank(PascalCaseModel):
     reward_track_path: str
 
 
-class SeasonCalendar(PascalCaseModel):
+class SeasonCalendar(PascalCaseModel, frozen=True):
     """A collection of past and current reward tracks.
 
     Attributes:
@@ -196,7 +196,7 @@ class SeasonCalendar(PascalCaseModel):
     career_rank: CareerRank
 
 
-class InventoryReward(PascalCaseModel):
+class InventoryReward(PascalCaseModel, frozen=True):
     """An inventory item reward, such as a weapon skin or armor piece.
 
     Attributes:
@@ -210,7 +210,7 @@ class InventoryReward(PascalCaseModel):
     type: str
 
 
-class CurrencyReward(PascalCaseModel):
+class CurrencyReward(PascalCaseModel, frozen=True):
     """A currency reward, such as an XP boost.
 
     Attributes:
@@ -222,7 +222,7 @@ class CurrencyReward(PascalCaseModel):
     amount: int
 
 
-class RankRewards(PascalCaseModel):
+class RankRewards(PascalCaseModel, frozen=True):
     """A collection of inventory and currency rewards earned at a rank.
 
     Attributes:
@@ -234,7 +234,7 @@ class RankRewards(PascalCaseModel):
     currency_rewards: list[CurrencyReward]
 
 
-class CareerRewardTrackRank(PascalCaseModel):
+class CareerRewardTrackRank(PascalCaseModel, frozen=True):
     """A rank in the career rank progression reward track.
 
     Title, subtitle, and grade can be combined for the rank's full name, e.g.,
@@ -282,7 +282,7 @@ class CareerRewardTrackRank(PascalCaseModel):
         return values
 
 
-class CareerRewardTrack(PascalCaseModel):
+class CareerRewardTrack(PascalCaseModel, frozen=True):
     """The career rank progression reward track.
 
     Attributes:

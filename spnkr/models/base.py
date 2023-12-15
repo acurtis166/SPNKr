@@ -14,7 +14,7 @@ def _to_pascal_case(string: str) -> str:
     return "".join(word.capitalize() for word in string.split("_"))
 
 
-class CamelCaseModel(BaseModel):
+class CamelCaseModel(BaseModel, frozen=True):
     """A Pydantic model that uses camelCase for its field names."""
 
     model_config = {
@@ -23,7 +23,7 @@ class CamelCaseModel(BaseModel):
     }
 
 
-class PascalCaseModel(BaseModel):
+class PascalCaseModel(BaseModel, frozen=True):
     """A Pydantic model that uses PascalCase for its field names."""
 
     model_config = {

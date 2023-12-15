@@ -6,7 +6,7 @@ from .base import PascalCaseModel
 from .refdata import SkillResultCode, SubTier, Tier
 
 
-class CsrContainer(PascalCaseModel):
+class CsrContainer(PascalCaseModel, frozen=True):
     """Container for a player's CSR info.
 
     Attributes:
@@ -32,7 +32,7 @@ class CsrContainer(PascalCaseModel):
     initial_measurement_matches: int
 
 
-class RankRecap(PascalCaseModel):
+class RankRecap(PascalCaseModel, frozen=True):
     """Summary of the player's CSR change.
 
     Attributes:
@@ -44,7 +44,7 @@ class RankRecap(PascalCaseModel):
     post_match_csr: CsrContainer
 
 
-class StatPerformance(PascalCaseModel):
+class StatPerformance(PascalCaseModel, frozen=True):
     """Comparison of actual to expected values for a game metric.
 
     Attributes:
@@ -58,7 +58,7 @@ class StatPerformance(PascalCaseModel):
     std_dev: float
 
 
-class StatPerformances(PascalCaseModel):
+class StatPerformances(PascalCaseModel, frozen=True):
     """Comparison of actual to expected values for game metrics.
 
     Attributes:
@@ -70,7 +70,7 @@ class StatPerformances(PascalCaseModel):
     deaths: StatPerformance
 
 
-class Counterfactual(PascalCaseModel):
+class Counterfactual(PascalCaseModel, frozen=True):
     """Expected performance for a given player or skill tier in a match.
 
     Attributes:
@@ -82,7 +82,7 @@ class Counterfactual(PascalCaseModel):
     deaths: float
 
 
-class Counterfactuals(PascalCaseModel):
+class Counterfactuals(PascalCaseModel, frozen=True):
     """Expected performances for the player and all skill tiers in a match.
 
     Attributes:
@@ -94,7 +94,7 @@ class Counterfactuals(PascalCaseModel):
     tier_counterfactuals: dict[Tier, Counterfactual]
 
 
-class RankedRewards(PascalCaseModel):
+class RankedRewards(PascalCaseModel, frozen=True):
     """Rewards awarded to players based on skill acheivement.
 
     Attributes:
@@ -104,7 +104,7 @@ class RankedRewards(PascalCaseModel):
     reward_id: UUID
 
 
-class MatchSkillResult(PascalCaseModel):
+class MatchSkillResult(PascalCaseModel, frozen=True):
     """Skill data for a player in a match.
 
     Attributes:
@@ -126,7 +126,7 @@ class MatchSkillResult(PascalCaseModel):
     counterfactuals: Counterfactuals
 
 
-class MatchSkillValue(PascalCaseModel):
+class MatchSkillValue(PascalCaseModel, frozen=True):
     """Skill data for a player in a match.
 
     Attributes:
@@ -140,7 +140,7 @@ class MatchSkillValue(PascalCaseModel):
     result: MatchSkillResult
 
 
-class MatchSkill(PascalCaseModel):
+class MatchSkill(PascalCaseModel, frozen=True):
     """Summary of skill data for teams and players in a match.
 
     Attributes:
@@ -150,7 +150,7 @@ class MatchSkill(PascalCaseModel):
     value: list[MatchSkillValue]
 
 
-class PlaylistCsrResult(PascalCaseModel):
+class PlaylistCsrResult(PascalCaseModel, frozen=True):
     """CSR details for a player in a playlist.
 
     Attributes:
@@ -164,7 +164,7 @@ class PlaylistCsrResult(PascalCaseModel):
     all_time_max: CsrContainer
 
 
-class PlaylistCsrValue(PascalCaseModel):
+class PlaylistCsrValue(PascalCaseModel, frozen=True):
     """Playlist CSR result for a single player.
 
     Attributes:
@@ -178,7 +178,7 @@ class PlaylistCsrValue(PascalCaseModel):
     result: PlaylistCsrResult
 
 
-class PlaylistCsr(PascalCaseModel):
+class PlaylistCsr(PascalCaseModel, frozen=True):
     """Summary of CSR data for players in a playlist.
 
     Attributes:

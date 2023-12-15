@@ -17,7 +17,7 @@ from .refdata import (
 )
 
 
-class MatchCount(PascalCaseModel):
+class MatchCount(PascalCaseModel, frozen=True):
     """A player's match count summary.
 
     Attributes:
@@ -33,7 +33,7 @@ class MatchCount(PascalCaseModel):
     local_matches_played_count: int
 
 
-class Asset(PascalCaseModel):
+class Asset(PascalCaseModel, frozen=True):
     """ID information about a game asset, such as a map or game mode.
 
     Attributes:
@@ -47,7 +47,7 @@ class Asset(PascalCaseModel):
     version_id: UUID
 
 
-class MatchInfo(PascalCaseModel):
+class MatchInfo(PascalCaseModel, frozen=True):
     """Information about a match.
 
     Attributes:
@@ -87,7 +87,7 @@ class MatchInfo(PascalCaseModel):
     team_scoring_enabled: bool
 
 
-class MatchHistoryResult(PascalCaseModel):
+class MatchHistoryResult(PascalCaseModel, frozen=True):
     """A match history entry.
 
     Attributes:
@@ -107,7 +107,7 @@ class MatchHistoryResult(PascalCaseModel):
     present_at_end_of_match: bool
 
 
-class MatchHistory(PascalCaseModel):
+class MatchHistory(PascalCaseModel, frozen=True):
     """A page of a player's match history.
 
     Attributes:
@@ -123,7 +123,7 @@ class MatchHistory(PascalCaseModel):
     results: list[MatchHistoryResult]
 
 
-class AwardCount(PascalCaseModel):
+class AwardCount(PascalCaseModel, frozen=True):
     """A count of a medal or personal score award.
 
     Attributes:
@@ -137,7 +137,7 @@ class AwardCount(PascalCaseModel):
     total_personal_score_awarded: int
 
 
-class _CoreStats(PascalCaseModel):
+class _CoreStats(PascalCaseModel, frozen=True):
     """Core statistics about a player or team performance in a match."""
 
     score: int
@@ -170,7 +170,7 @@ class _CoreStats(PascalCaseModel):
     spawns: int
 
 
-class CoreStats(_CoreStats):
+class CoreStats(_CoreStats, frozen=True):
     """Core statistics about a player or team performance in a match.
 
     Attributes:
@@ -210,7 +210,7 @@ class CoreStats(_CoreStats):
     average_life_duration: dt.timedelta
 
 
-class ServiceRecordCoreStats(_CoreStats):
+class ServiceRecordCoreStats(_CoreStats, frozen=True):
     """Core statistics about a player or team performance in a match.
 
     Attributes:
@@ -248,7 +248,7 @@ class ServiceRecordCoreStats(_CoreStats):
     average_kda: float = Field(alias="AverageKDA")
 
 
-class BombStats(PascalCaseModel):
+class BombStats(PascalCaseModel, frozen=True):
     """Performance statistics for bomb game modes.
 
     Attributes:
@@ -274,7 +274,7 @@ class BombStats(PascalCaseModel):
     time_as_bomb_carrier: dt.timedelta
 
 
-class CaptureTheFlagStats(PascalCaseModel):
+class CaptureTheFlagStats(PascalCaseModel, frozen=True):
     """Performance statistics for capture the flag game modes.
 
     Attributes:
@@ -304,7 +304,7 @@ class CaptureTheFlagStats(PascalCaseModel):
     time_as_flag_carrier: dt.timedelta
 
 
-class _EliminationStats(PascalCaseModel):
+class _EliminationStats(PascalCaseModel, frozen=True):
     """Performance statistics for elimination game modes."""
 
     allies_revived: int
@@ -318,7 +318,7 @@ class _EliminationStats(PascalCaseModel):
     times_revived_by_ally: int
 
 
-class EliminationStats(_EliminationStats):
+class EliminationStats(_EliminationStats, frozen=True):
     """Performance statistics for elimination game modes.
 
     Attributes:
@@ -339,7 +339,7 @@ class EliminationStats(_EliminationStats):
     elimination_order: int
 
 
-class ServiceRecordEliminationStats(_EliminationStats):
+class ServiceRecordEliminationStats(_EliminationStats, frozen=True):
     """Performance statistics for elimination game modes.
 
     Attributes:
@@ -355,7 +355,7 @@ class ServiceRecordEliminationStats(_EliminationStats):
     """
 
 
-class ExtractionStats(PascalCaseModel):
+class ExtractionStats(PascalCaseModel, frozen=True):
     """Performance statistics for extraction game modes.
 
     Attributes:
@@ -373,7 +373,7 @@ class ExtractionStats(PascalCaseModel):
     successful_extractions: int
 
 
-class InfectionStats(PascalCaseModel):
+class InfectionStats(PascalCaseModel, frozen=True):
     """Performance statistics for infection game modes.
 
     Attributes:
@@ -405,7 +405,7 @@ class InfectionStats(PascalCaseModel):
     infected_killed: int
 
 
-class OddballStats(PascalCaseModel):
+class OddballStats(PascalCaseModel, frozen=True):
     """Performance statistics for oddball game modes.
 
     Attributes:
@@ -425,7 +425,7 @@ class OddballStats(PascalCaseModel):
     skull_scoring_ticks: int
 
 
-class ZonesStats(PascalCaseModel):
+class ZonesStats(PascalCaseModel, frozen=True):
     """Performance statistics for zones game modes.
 
     Attributes:
@@ -445,7 +445,7 @@ class ZonesStats(PascalCaseModel):
     stronghold_scoring_ticks: int
 
 
-class ServiceRecordZonesStats(PascalCaseModel):
+class ServiceRecordZonesStats(PascalCaseModel, frozen=True):
     """Performance statistics for zones game modes.
 
     Attributes:
@@ -465,7 +465,7 @@ class ServiceRecordZonesStats(PascalCaseModel):
     zone_scoring_ticks: int
 
 
-class StockpileStats(PascalCaseModel):
+class StockpileStats(PascalCaseModel, frozen=True):
     """Performance statistics for stockpile game modes.
 
     Attributes:
@@ -485,7 +485,7 @@ class StockpileStats(PascalCaseModel):
     time_as_power_seed_driver: dt.timedelta
 
 
-class Stats(PascalCaseModel):
+class Stats(PascalCaseModel, frozen=True):
     """Performance statistics for a player or team in a match.
 
     Attributes:
@@ -511,7 +511,7 @@ class Stats(PascalCaseModel):
     stockpile_stats: StockpileStats | None = None
 
 
-class TeamStats(PascalCaseModel):
+class TeamStats(PascalCaseModel, frozen=True):
     """Statistics for a team in a match.
 
     Attributes:
@@ -527,7 +527,7 @@ class TeamStats(PascalCaseModel):
     stats: Stats
 
 
-class BotAttributes(PascalCaseModel):
+class BotAttributes(PascalCaseModel, frozen=True):
     """Attributes of a bot player.
 
     Attributes:
@@ -537,7 +537,7 @@ class BotAttributes(PascalCaseModel):
     difficulty: BotDifficulty
 
 
-class ParticipationInfo(PascalCaseModel):
+class ParticipationInfo(PascalCaseModel, frozen=True):
     """Information about a player's participation in a match.
 
     Attributes:
@@ -561,7 +561,7 @@ class ParticipationInfo(PascalCaseModel):
     confirmed_participation: bool | None
 
 
-class PlayerTeamStats(PascalCaseModel):
+class PlayerTeamStats(PascalCaseModel, frozen=True):
     """Statistics for a player on a team in a match.
 
     Attributes:
@@ -573,7 +573,7 @@ class PlayerTeamStats(PascalCaseModel):
     stats: Stats
 
 
-class PlayerStats(PascalCaseModel):
+class PlayerStats(PascalCaseModel, frozen=True):
     """Statistics for a player in a match.
 
     Attributes:
@@ -597,7 +597,7 @@ class PlayerStats(PascalCaseModel):
     player_team_stats: list[PlayerTeamStats]
 
 
-class MatchStats(PascalCaseModel):
+class MatchStats(PascalCaseModel, frozen=True):
     """Player and team performance details for a match.
 
     Attributes:
@@ -613,7 +613,7 @@ class MatchStats(PascalCaseModel):
     players: list[PlayerStats]
 
 
-class ServiceRecordSubqueries(PascalCaseModel):
+class ServiceRecordSubqueries(PascalCaseModel, frozen=True):
     """Subqueries for a service record request.
 
     Attributes:
@@ -629,7 +629,7 @@ class ServiceRecordSubqueries(PascalCaseModel):
     playlist_asset_ids: list[UUID] | None
 
 
-class ServiceRecord(PascalCaseModel):
+class ServiceRecord(PascalCaseModel, frozen=True):
     """A player's service record within a given context.
 
     Attributes:
