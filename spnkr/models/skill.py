@@ -147,7 +147,7 @@ class MatchSkill(PascalCaseModel, frozen=True):
         value: List of player skill data entries.
     """
 
-    value: list[MatchSkillValue]
+    value: tuple[MatchSkillValue, ...]
 
 
 class PlaylistCsrResult(PascalCaseModel, frozen=True):
@@ -185,4 +185,4 @@ class PlaylistCsr(PascalCaseModel, frozen=True):
         value: List of playlist-player CSR entries.
     """
 
-    value: list[PlaylistCsrValue]
+    value: tuple[PlaylistCsrValue, ...]

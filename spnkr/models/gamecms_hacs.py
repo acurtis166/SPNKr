@@ -82,10 +82,10 @@ class MedalMetadata(CamelCaseModel, frozen=True):
         medals: The list of available medals.
     """
 
-    difficulties: list[str]
-    types: list[str]
+    difficulties: tuple[str, ...]
+    types: tuple[str, ...]
     sprites: SpriteSheets
-    medals: list[Medal]
+    medals: tuple[Medal, ...]
 
 
 class CsrSeason(PascalCaseModel, frozen=True):
@@ -117,7 +117,7 @@ class CsrSeasonCalendar(PascalCaseModel, frozen=True):
         seasons: The list of CSR seasons.
     """
 
-    seasons: list[CsrSeason]
+    seasons: tuple[CsrSeason, ...]
 
 
 class Season(PascalCaseModel, frozen=True):
@@ -191,8 +191,8 @@ class SeasonCalendar(PascalCaseModel, frozen=True):
         career_rank: Information about career rank progression.
     """
 
-    seasons: list[Season]
-    events: list[Event]
+    seasons: tuple[Season, ...]
+    events: tuple[Event, ...]
     career_rank: CareerRank
 
 
@@ -230,8 +230,8 @@ class RankRewards(PascalCaseModel, frozen=True):
         currency_rewards: The list of currency rewards.
     """
 
-    inventory_rewards: list[InventoryReward]
-    currency_rewards: list[CurrencyReward]
+    inventory_rewards: tuple[InventoryReward, ...]
+    currency_rewards: tuple[CurrencyReward, ...]
 
 
 class CareerRewardTrackRank(PascalCaseModel, frozen=True):
@@ -299,7 +299,7 @@ class CareerRewardTrack(PascalCaseModel, frozen=True):
     """
 
     track_id: str
-    ranks: list[CareerRewardTrackRank]
+    ranks: tuple[CareerRewardTrackRank, ...]
     name: str
     description: str
     operation_number: int

@@ -55,7 +55,7 @@ class AssetFiles(PascalCaseModel, frozen=True):
     """
 
     prefix: str
-    file_relative_paths: list[str]
+    file_relative_paths: tuple[str, ...]
     prefix_endpoint: OnlineUriReference
 
 
@@ -105,7 +105,7 @@ class Asset(PascalCaseModel, frozen=True):
     public_name: str
     description: str
     files: AssetFiles
-    contributors: list[str]
+    contributors: tuple[str, ...]
     asset_home: AssetHome
     asset_stats: AssetStats
     inspection_result: InspectionResult
@@ -139,8 +139,8 @@ class Map(Asset, frozen=True):
     """
 
     custom_data: MapCustomData
-    tags: list[str]
-    prefab_links: list[Asset] | None
+    tags: tuple[str, ...]
+    prefab_links: tuple[Asset, ...] | None
 
 
 class RotationWeight(PascalCaseModel, frozen=True):
@@ -199,7 +199,7 @@ class PlaylistCustomData(PascalCaseModel, frozen=True):
         max_fireteam_size: The maximum number of players allowed in a fireteam.
     """
 
-    playlist_entries: list[PlaylistEntry]
+    playlist_entries: tuple[PlaylistEntry, ...]
     strategy: PlaylistEntrySelectionStrategy
     min_teams: int
     min_team_size: int
@@ -213,7 +213,7 @@ class PlaylistCustomData(PascalCaseModel, frozen=True):
     exit_experience_duration_sec: int
     fireteam_leader_kick_allowed: bool
     disable_midgame_chat: bool
-    allowed_device_inputs: list[PlaylistDeviceInput]
+    allowed_device_inputs: tuple[PlaylistDeviceInput, ...]
     bot_difficulty: PlaylistBotDifficulty
     min_fireteam_size: int
     max_fireteam_size: int
@@ -229,8 +229,8 @@ class Playlist(Asset, frozen=True):
     """
 
     custom_data: PlaylistCustomData
-    tags: list[str]
-    rotation_entries: list[RotationEntry]
+    tags: tuple[str, ...]
+    rotation_entries: tuple[RotationEntry, ...]
 
 
 class MapModePair(Asset, frozen=True):
@@ -244,7 +244,7 @@ class MapModePair(Asset, frozen=True):
     """
 
     custom_data: dict[Any, Any]
-    tags: list[str]
+    tags: tuple[str, ...]
     map_link: Asset | None
     ugc_game_variant_link: Asset
 
@@ -269,7 +269,7 @@ class UgcGameVariant(Asset, frozen=True):
     """
 
     custom_data: UgcGameVariantCustomData
-    tags: list[str]
+    tags: tuple[str, ...]
     engine_game_variant_link: Asset
 
 
@@ -319,9 +319,9 @@ class AssetSearchResult(PascalCaseModel, frozen=True):
     name: str
     description: str
     asset_kind: AssetKind
-    tags: list[str]
+    tags: tuple[str, ...]
     thumbnail_url: str
-    referenced_assets: list[UUID]
+    referenced_assets: tuple[UUID, ...]
     original_author: str
     likes: int
     bookmarks: int
@@ -333,7 +333,7 @@ class AssetSearchResult(PascalCaseModel, frozen=True):
     has_node_graph: bool | None
     read_only_clones: bool
     plays_all_time: int
-    contributors: list[str]
+    contributors: tuple[str, ...]
     parent_asset_count: int
     average_rating: float
     number_of_ratings: int
@@ -359,12 +359,12 @@ class AssetSearchPage(PascalCaseModel, frozen=True):
         links: ...
     """
 
-    tags: list[AssetSearchTagCount]
+    tags: tuple[AssetSearchTagCount, ...]
     estimated_total: int
     start: int
     count: int
     result_count: int
-    results: list[AssetSearchResult]
+    results: tuple[AssetSearchResult, ...]
     links: dict[Any, Any]
 
 
@@ -403,7 +403,7 @@ class FilmCustomData(PascalCaseModel, frozen=True):
     """
 
     film_length: int
-    chunks: list[FilmChunk]
+    chunks: tuple[FilmChunk, ...]
     has_game_ended: bool
     manifest_refresh_seconds: int
     match_id: UUID

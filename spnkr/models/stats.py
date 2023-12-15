@@ -120,7 +120,7 @@ class MatchHistory(PascalCaseModel, frozen=True):
     start: int
     count: int
     result_count: int
-    results: list[MatchHistoryResult]
+    results: tuple[MatchHistoryResult, ...]
 
 
 class AwardCount(PascalCaseModel, frozen=True):
@@ -165,8 +165,8 @@ class _CoreStats(PascalCaseModel, frozen=True):
     hijacks: int
     emp_assists: int
     max_killing_spree: int
-    medals: list[AwardCount]
-    personal_scores: list[AwardCount]
+    medals: tuple[AwardCount, ...]
+    personal_scores: tuple[AwardCount, ...]
     spawns: int
 
 
@@ -594,7 +594,7 @@ class PlayerStats(PascalCaseModel, frozen=True):
     outcome: Outcome
     rank: int
     participation_info: ParticipationInfo
-    player_team_stats: list[PlayerTeamStats]
+    player_team_stats: tuple[PlayerTeamStats, ...]
 
 
 class MatchStats(PascalCaseModel, frozen=True):
@@ -609,8 +609,8 @@ class MatchStats(PascalCaseModel, frozen=True):
 
     match_id: UUID
     match_info: MatchInfo
-    teams: list[TeamStats]
-    players: list[PlayerStats]
+    teams: tuple[TeamStats, ...]
+    players: tuple[PlayerStats, ...]
 
 
 class ServiceRecordSubqueries(PascalCaseModel, frozen=True):
@@ -623,10 +623,10 @@ class ServiceRecordSubqueries(PascalCaseModel, frozen=True):
         playlist_asset_ids: Playlists available for filtering.
     """
 
-    season_ids: list[str] | None
-    game_variant_categories: list[GameVariantCategory] | None
-    is_ranked: list[bool] | None
-    playlist_asset_ids: list[UUID] | None
+    season_ids: tuple[str, ...] | None
+    game_variant_categories: tuple[GameVariantCategory, ...] | None
+    is_ranked: tuple[bool, ...] | None
+    playlist_asset_ids: tuple[UUID, ...] | None
 
 
 class ServiceRecord(PascalCaseModel, frozen=True):
