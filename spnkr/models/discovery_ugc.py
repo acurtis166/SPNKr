@@ -1,11 +1,8 @@
 """Models for the HIUGC_Discovery authority."""
 
-import datetime as dt
 import urllib.parse
 from typing import Any
 from uuid import UUID
-
-from pydantic import model_validator
 
 from .base import PascalCaseModel
 from .refdata import (
@@ -19,7 +16,7 @@ from .refdata import (
     PlaylistDeviceInput,
     PlaylistEntrySelectionStrategy,
 )
-from .types import ReadOnlyDict
+from .types import ISO8601DateObject, ReadOnlyDict
 
 
 class OnlineUriReference(PascalCaseModel, frozen=True):
@@ -328,9 +325,9 @@ class AssetSearchResult(PascalCaseModel, frozen=True):
     bookmarks: int
     plays_recent: int
     number_of_objects: int
-    date_created_utc: dt.datetime
-    date_modified_utc: dt.datetime
-    date_published_utc: dt.datetime
+    date_created_utc: ISO8601DateObject
+    date_modified_utc: ISO8601DateObject
+    date_published_utc: ISO8601DateObject
     has_node_graph: bool | None
     read_only_clones: bool
     plays_all_time: int
@@ -338,13 +335,6 @@ class AssetSearchResult(PascalCaseModel, frozen=True):
     parent_asset_count: int
     average_rating: float
     number_of_ratings: int
-
-    @model_validator(mode="before")
-    def _flatten_dates(cls, values):
-        """Flatten the date objects."""
-        for key in ("DateCreatedUtc", "DateModifiedUtc", "DatePublishedUtc"):
-            values[key] = values[key]["ISO8601Date"]
-        return values
 
 
 class AssetSearchPage(PascalCaseModel, frozen=True):

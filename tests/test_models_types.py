@@ -1,5 +1,7 @@
 """Test the spnkr.models.types module."""
 
+import datetime as dt
+
 import pytest
 from pydantic import BaseModel
 
@@ -57,3 +59,20 @@ def test_read_only_dict_annotation():
     assert foo.bar["foo"] == "bar"
     assert foo.model_dump() == {"bar": {"foo": "bar"}}
     assert foo.model_dump_json() == '{"bar":{"foo":"bar"}}'
+
+
+def test_iso8601_date_object_annotation():
+    class Foo(BaseModel):
+        bar: types.ISO8601DateObject
+
+    # From object
+    foo = Foo(**{"bar": {"ISO8601Date": "2021-01-01T12:00:00Z"}})  # type: ignore
+    assert isinstance(foo.bar, dt.datetime)
+    # From datetime
+    datetime = dt.datetime(2021, 1, 1, 12, 0, 0, tzinfo=dt.timezone.utc)
+    foo = Foo(bar=datetime)
+    assert isinstance(foo.bar, dt.datetime)
+    # Serialize
+    assert foo.model_dump() == {"bar": {"ISO8601Date": datetime}}
+    as_json = foo.model_dump_json()
+    assert as_json == '{"bar":{"ISO8601Date":"2021-01-01T12:00:00Z"}}'

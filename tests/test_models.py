@@ -1,4 +1,3 @@
-import datetime as dt
 import json
 from pathlib import Path
 from typing import Any
@@ -47,15 +46,12 @@ def test_parse_csr_season_calendar():
     data = load_response("get_csr_season_calendar")
     result = CsrSeasonCalendar(**data)
     assert len(result.seasons) == 8
-    assert isinstance(result.seasons[0].start_date, dt.datetime)
 
 
 def test_parse_season_calendar():
     data = load_response("get_season_calendar")
     result = SeasonCalendar(**data)
     assert len(result.events) == 30
-    assert isinstance(result.seasons[0].start_date, dt.datetime)
-    assert isinstance(result.events[0].start_date, dt.datetime)
 
 
 def test_parse_career_reward_track():
@@ -191,7 +187,6 @@ def test_parse_asset_search_page():
     data = load_response("search_assets")
     result = AssetSearchPage(**data)
     assert len(result.results) == 10
-    assert isinstance(result.results[0].date_created_utc, dt.datetime)
 
 
 def test_parse_film():

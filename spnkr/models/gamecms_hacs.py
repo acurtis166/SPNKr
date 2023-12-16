@@ -1,12 +1,10 @@
 """Models for the "gamecms_hacs" authority."""
 
-import datetime as dt
-
 from pydantic import Field, model_validator
 
 from .base import CamelCaseModel, PascalCaseModel
 from .refdata import MedalDifficulty, MedalType
-from .types import ReadOnlyDict
+from .types import ISO8601DateObject, ReadOnlyDict
 
 
 class TranslatableString(CamelCaseModel, frozen=True):
@@ -100,15 +98,8 @@ class CsrSeason(PascalCaseModel, frozen=True):
     """
 
     csr_season_file_path: str
-    start_date: dt.datetime
-    end_date: dt.datetime
-
-    @model_validator(mode="before")
-    def _flatten_dates(cls, values):
-        """Flatten the date objects."""
-        for key in ("StartDate", "EndDate"):
-            values[key] = values[key]["ISO8601Date"]
-        return values
+    start_date: ISO8601DateObject
+    end_date: ISO8601DateObject
 
 
 class CsrSeasonCalendar(PascalCaseModel, frozen=True):
@@ -137,15 +128,8 @@ class Season(PascalCaseModel, frozen=True):
     csr_season_file_path: str
     operation_track_path: str
     season_metadata: str
-    start_date: dt.datetime
-    end_date: dt.datetime
-
-    @model_validator(mode="before")
-    def _flatten_dates(cls, values):
-        """Flatten the date objects."""
-        for key in ("StartDate", "EndDate"):
-            values[key] = values[key]["ISO8601Date"]
-        return values
+    start_date: ISO8601DateObject
+    end_date: ISO8601DateObject
 
 
 class Event(PascalCaseModel, frozen=True):
@@ -160,15 +144,8 @@ class Event(PascalCaseModel, frozen=True):
     """
 
     reward_track_path: str
-    start_date: dt.datetime
-    end_date: dt.datetime
-
-    @model_validator(mode="before")
-    def _flatten_dates(cls, values):
-        """Flatten the date objects."""
-        for key in ("StartDate", "EndDate"):
-            values[key] = values[key]["ISO8601Date"]
-        return values
+    start_date: ISO8601DateObject
+    end_date: ISO8601DateObject
 
 
 class CareerRank(PascalCaseModel, frozen=True):

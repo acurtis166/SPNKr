@@ -1,9 +1,15 @@
 """Custom types for pydantic models."""
 
+import datetime as dt
 from collections.abc import Mapping
 from typing import Annotated, TypeVar
 
-from pydantic import AfterValidator, PlainSerializer
+from pydantic import (
+    AfterValidator,
+    BeforeValidator,
+    PlainSerializer,
+    WrapSerializer,
+)
 
 K = TypeVar("K")
 V = TypeVar("V")
@@ -36,4 +42,25 @@ _ReadOnlyDictSerializer = PlainSerializer(lambda v: dict(v), return_type=dict)
 
 ReadOnlyDict = Annotated[
     Mapping[K, V], _ReadOnlyDictValidator, _ReadOnlyDictSerializer
+]
+
+
+def _date_object_validator(value):
+    if isinstance(value, dict):
+        try:
+            return value["ISO8601Date"]
+        except KeyError:
+            raise ValueError(f"Expected ISO8601Date key: {value}")
+    return value
+
+
+def _date_object_serializer(value: dt.datetime, nxt):
+    return {"ISO8601Date": nxt(value)}
+
+
+_ISO8601DateObjectValidator = BeforeValidator(_date_object_validator)
+_ISO8601DateObjectSerializer = WrapSerializer(_date_object_serializer, dict)
+
+ISO8601DateObject = Annotated[
+    dt.datetime, _ISO8601DateObjectValidator, _ISO8601DateObjectSerializer
 ]
