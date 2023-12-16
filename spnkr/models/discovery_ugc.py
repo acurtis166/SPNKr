@@ -19,6 +19,7 @@ from .refdata import (
     PlaylistDeviceInput,
     PlaylistEntrySelectionStrategy,
 )
+from .types import ReadOnlyDict
 
 
 class OnlineUriReference(PascalCaseModel, frozen=True):
@@ -243,7 +244,7 @@ class MapModePair(Asset, frozen=True):
         ugc_game_variant_link: Details about the game variant asset.
     """
 
-    custom_data: dict[Any, Any]
+    custom_data: ReadOnlyDict[Any, Any]
     tags: tuple[str, ...]
     map_link: Asset | None
     ugc_game_variant_link: Asset
@@ -256,7 +257,7 @@ class UgcGameVariantCustomData(PascalCaseModel, frozen=True):
         key_values: Key-value pairs of custom data.
     """
 
-    key_values: dict[Any, Any]
+    key_values: ReadOnlyDict[Any, Any]
 
 
 class UgcGameVariant(Asset, frozen=True):
@@ -365,7 +366,7 @@ class AssetSearchPage(PascalCaseModel, frozen=True):
     count: int
     result_count: int
     results: tuple[AssetSearchResult, ...]
-    links: dict[Any, Any]
+    links: ReadOnlyDict[Any, Any]
 
 
 class FilmChunk(PascalCaseModel, frozen=True):

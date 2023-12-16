@@ -4,6 +4,7 @@ from uuid import UUID
 
 from .base import PascalCaseModel
 from .refdata import SkillResultCode, SubTier, Tier
+from .types import ReadOnlyDict
 
 
 class CsrContainer(PascalCaseModel, frozen=True):
@@ -91,7 +92,7 @@ class Counterfactuals(PascalCaseModel, frozen=True):
     """
 
     self_counterfactuals: Counterfactual
-    tier_counterfactuals: dict[Tier, Counterfactual]
+    tier_counterfactuals: ReadOnlyDict[Tier, Counterfactual]
 
 
 class RankedRewards(PascalCaseModel, frozen=True):
@@ -121,7 +122,7 @@ class MatchSkillResult(PascalCaseModel, frozen=True):
     rank_recap: RankRecap
     stat_performances: StatPerformances
     team_id: int
-    team_mmrs: dict[int, float]
+    team_mmrs: ReadOnlyDict[int, float]
     ranked_rewards: RankedRewards | None
     counterfactuals: Counterfactuals
 

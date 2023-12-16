@@ -6,6 +6,7 @@ from pydantic import Field, model_validator
 
 from .base import CamelCaseModel, PascalCaseModel
 from .refdata import MedalDifficulty, MedalType
+from .types import ReadOnlyDict
 
 
 class TranslatableString(CamelCaseModel, frozen=True):
@@ -17,7 +18,7 @@ class TranslatableString(CamelCaseModel, frozen=True):
     """
 
     value: str
-    translations: dict[str, str]
+    translations: ReadOnlyDict[str, str]
 
 
 class Medal(CamelCaseModel, frozen=True):
