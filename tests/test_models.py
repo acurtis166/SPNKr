@@ -58,7 +58,7 @@ def test_parse_career_reward_track():
     data = load_response("get_career_reward_track")
     result = CareerRewardTrack(**data)
     assert len(result.ranks) == 272
-    assert result.name == "Career Rank"
+    assert result.name.value == "Career Rank"
 
 
 def test_parse_match_skill():

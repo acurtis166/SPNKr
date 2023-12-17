@@ -1,6 +1,6 @@
 """Models for the "gamecms_hacs" authority."""
 
-from pydantic import Field, model_validator
+from pydantic import Field
 
 from .base import CamelCaseModel, PascalCaseModel
 from .refdata import MedalDifficulty, MedalType
@@ -212,6 +212,21 @@ class RankRewards(PascalCaseModel, frozen=True):
     currency_rewards: tuple[CurrencyReward, ...]
 
 
+class TranslatableStringWithStatus(CamelCaseModel, frozen=True):
+    """A string value accompanied by a dictionary of translations.
+
+    Attributes:
+        status: The status of the attribute.
+        value: The string value.
+        translations: A dictionary of language codes to translations for the
+            string value.
+    """
+
+    status: str
+    value: str
+    translations: ReadOnlyDict[str, str]
+
+
 class CareerRewardTrackRank(PascalCaseModel, frozen=True):
     """A rank in the career rank progression reward track.
 
@@ -243,21 +258,14 @@ class CareerRewardTrackRank(PascalCaseModel, frozen=True):
     free_rewards: RankRewards
     paid_rewards: RankRewards
     xp_required_for_rank: int
-    rank_title: str
-    rank_sub_title: str
-    rank_tier: str
+    rank_title: TranslatableStringWithStatus
+    rank_sub_title: TranslatableStringWithStatus
+    rank_tier: TranslatableStringWithStatus
     rank_icon: str
     rank_large_icon: str
     rank_adornment_icon: str
     tier_type: str
     rank_grade: int
-
-    @model_validator(mode="before")
-    def _flatten_values(cls, values):
-        """Flatten the translatable string values."""
-        for key in ("RankTitle", "RankSubTitle", "RankTier"):
-            values[key] = values[key]["value"]
-        return values
 
 
 class CareerRewardTrack(PascalCaseModel, frozen=True):
@@ -278,18 +286,11 @@ class CareerRewardTrack(PascalCaseModel, frozen=True):
 
     track_id: str
     ranks: tuple[CareerRewardTrackRank, ...]
-    name: str
-    description: str
+    name: TranslatableStringWithStatus
+    description: TranslatableStringWithStatus
     operation_number: int
-    date_range: str
+    date_range: TranslatableStringWithStatus
     is_ritual: bool
     summary_image_path: str
-    # week_number: None
+    week_number: None
     xp_per_rank: int
-
-    @model_validator(mode="before")
-    def _flatten_values(cls, values):
-        """Flatten the translatable string values."""
-        for key in ("Name", "Description", "DateRange"):
-            values[key] = values[key]["value"]
-        return values
