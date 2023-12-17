@@ -1,8 +1,11 @@
 """Models for the HIUGC_Discovery authority."""
 
+import datetime as dt
 import urllib.parse
 from typing import Any
 from uuid import UUID
+
+from pydantic import Field
 
 from .base import PascalCaseModel
 from .refdata import (
@@ -16,7 +19,7 @@ from .refdata import (
     PlaylistDeviceInput,
     PlaylistEntrySelectionStrategy,
 )
-from .types import ISO8601DateObject, ReadOnlyDict
+from .types import ReadOnlyDict
 
 
 class OnlineUriReference(PascalCaseModel, frozen=True):
@@ -283,6 +286,16 @@ class AssetSearchTagCount(PascalCaseModel, frozen=True):
     count: int
 
 
+class Date(PascalCaseModel, frozen=True):
+    """A date object.
+
+    Attributes:
+        value: The date value.
+    """
+
+    value: dt.datetime = Field(alias="ISO8601Date")
+
+
 class AssetSearchResult(PascalCaseModel, frozen=True):
     """An individual asset search result.
 
@@ -325,9 +338,9 @@ class AssetSearchResult(PascalCaseModel, frozen=True):
     bookmarks: int
     plays_recent: int
     number_of_objects: int
-    date_created_utc: ISO8601DateObject
-    date_modified_utc: ISO8601DateObject
-    date_published_utc: ISO8601DateObject
+    date_created_utc: Date
+    date_modified_utc: Date
+    date_published_utc: Date
     has_node_graph: bool | None
     read_only_clones: bool
     plays_all_time: int

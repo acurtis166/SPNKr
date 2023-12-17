@@ -1,10 +1,12 @@
 """Models for the "gamecms_hacs" authority."""
 
+import datetime as dt
+
 from pydantic import Field
 
 from .base import CamelCaseModel, PascalCaseModel
 from .refdata import MedalDifficulty, MedalType
-from .types import ISO8601DateObject, ReadOnlyDict
+from .types import ReadOnlyDict
 
 
 class TranslatableString(CamelCaseModel, frozen=True):
@@ -87,6 +89,16 @@ class MedalMetadata(CamelCaseModel, frozen=True):
     medals: tuple[Medal, ...]
 
 
+class Date(PascalCaseModel, frozen=True):
+    """A date object.
+
+    Attributes:
+        value: The date value.
+    """
+
+    value: dt.datetime = Field(alias="ISO8601Date")
+
+
 class CsrSeason(PascalCaseModel, frozen=True):
     """A CSR season.
 
@@ -98,8 +110,8 @@ class CsrSeason(PascalCaseModel, frozen=True):
     """
 
     csr_season_file_path: str
-    start_date: ISO8601DateObject
-    end_date: ISO8601DateObject
+    start_date: Date
+    end_date: Date
 
 
 class CsrSeasonCalendar(PascalCaseModel, frozen=True):
@@ -128,8 +140,8 @@ class Season(PascalCaseModel, frozen=True):
     csr_season_file_path: str
     operation_track_path: str
     season_metadata: str
-    start_date: ISO8601DateObject
-    end_date: ISO8601DateObject
+    start_date: Date
+    end_date: Date
 
 
 class Event(PascalCaseModel, frozen=True):
@@ -144,8 +156,8 @@ class Event(PascalCaseModel, frozen=True):
     """
 
     reward_track_path: str
-    start_date: ISO8601DateObject
-    end_date: ISO8601DateObject
+    start_date: Date
+    end_date: Date
 
 
 class CareerRank(PascalCaseModel, frozen=True):
