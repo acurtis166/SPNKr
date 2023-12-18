@@ -2,6 +2,29 @@
 
 ## [Unreleased]
 
+## [0.5.0] - 2023-12-17
+
+### Changed
+
+- Changed some `int` types on `discovery_ugc` response models to enumerated data types where applicable. The new types include `AssetHome`, `CloneBehavior`, `InspectionResult`, `PlaylistBotDifficulty`, `PlaylistDeviceInput`, and `PlaylistEntrySelectionStrategy`.
+- Response models are now "faux immutable".
+    - Set all models to be "frozen" via Pydantic configuration.
+    - Replaced `list` types with `tuple` types.
+    - Replaced `dict` types with a simple, read-only mapping type.
+
+### Added
+
+- `DiscoveryUgcService.search_assets` method.
+- `DiscoveryUgcService.get_film_by_match_id` method.
+- `GameCmsHacsService.get_csr_season_calendar` method.
+- `GameCmsHacsService.get_season_calendar` method.
+- `GameCmsHacsService.get_career_reward_track` method.
+- `GameCmsHacsService.get_image` method.
+
+### Fixed
+
+- Unregistered `GameVariantCategory` variants are handled by assigning them to a default `UNKNOWN` variant.
+
 ## [0.4.0] - 2023-12-06
 
 ### Changed
@@ -55,7 +78,9 @@
 
 First documented release.
 
-[unreleased]: https://github.com/acurtis166/SPNKr/compare/v0.3.0...HEAD
+[unreleased]: https://github.com/acurtis166/SPNKr/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/acurtis166/SPNKr/compare/v0.4.0...v0.5.0
+[0.4.0]: https://github.com/acurtis166/SPNKr/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/acurtis166/SPNKr/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/acurtis166/SPNKr/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/acurtis166/SPNKr/releases/tag/v0.1.0
