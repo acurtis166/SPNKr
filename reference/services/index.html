@@ -349,6 +349,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#spnkr.services.discovery_ugc.DiscoveryUgcService.get_film_by_match_id" class="md-nav__link">
+    get_film_by_match_id()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#spnkr.services.discovery_ugc.DiscoveryUgcService.get_map" class="md-nav__link">
     get_map()
   </a>
@@ -376,6 +383,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#spnkr.services.discovery_ugc.DiscoveryUgcService.search_assets" class="md-nav__link">
+    search_assets()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -390,8 +404,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#spnkr.services.gamecms_hacs.GameCmsHacsService.get_career_reward_track" class="md-nav__link">
+    get_career_reward_track()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.services.gamecms_hacs.GameCmsHacsService.get_csr_season_calendar" class="md-nav__link">
+    get_csr_season_calendar()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.services.gamecms_hacs.GameCmsHacsService.get_image" class="md-nav__link">
+    get_image()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#spnkr.services.gamecms_hacs.GameCmsHacsService.get_medal_metadata" class="md-nav__link">
     get_medal_metadata()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.services.gamecms_hacs.GameCmsHacsService.get_season_calendar" class="md-nav__link">
+    get_season_calendar()
   </a>
   
 </li>
@@ -628,6 +670,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#spnkr.services.discovery_ugc.DiscoveryUgcService.get_film_by_match_id" class="md-nav__link">
+    get_film_by_match_id()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#spnkr.services.discovery_ugc.DiscoveryUgcService.get_map" class="md-nav__link">
     get_map()
   </a>
@@ -655,6 +704,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#spnkr.services.discovery_ugc.DiscoveryUgcService.search_assets" class="md-nav__link">
+    search_assets()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -669,8 +725,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#spnkr.services.gamecms_hacs.GameCmsHacsService.get_career_reward_track" class="md-nav__link">
+    get_career_reward_track()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.services.gamecms_hacs.GameCmsHacsService.get_csr_season_calendar" class="md-nav__link">
+    get_csr_season_calendar()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.services.gamecms_hacs.GameCmsHacsService.get_image" class="md-nav__link">
+    get_image()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#spnkr.services.gamecms_hacs.GameCmsHacsService.get_medal_metadata" class="md-nav__link">
     get_medal_metadata()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.services.gamecms_hacs.GameCmsHacsService.get_season_calendar" class="md-nav__link">
+    get_season_calendar()
   </a>
   
 </li>
@@ -856,6 +940,83 @@
 
 
 
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="spnkr.services.discovery_ugc.DiscoveryUgcService.get_film_by_match_id" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_film_by_match_id</span><span class="p">(</span><span class="n">match_id</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get metadata and download information for a film.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>match_id</code></td>
+          <td>
+                <code>str | <span title="uuid.UUID">UUID</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The match ID of the film.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="spnkr.models.discovery_ugc.Film" href="../models/#spnkr.models.discovery_ugc.Film">Film</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The film details.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
 
 
 <div class="doc doc-object doc-function">
@@ -1222,6 +1383,291 @@
 </div>
 
 
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="spnkr.services.discovery_ugc.DiscoveryUgcService.search_assets" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">search_assets</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="s1">&#39;plays_recent&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;desc&#39;</span><span class="p">,</span> <span class="n">asset_kind</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">term</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">author</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">average_rating_min</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">from_date_created_utc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">to_date_created_utc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">from_date_modified_utc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">to_date_modified_utc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">from_date_published_utc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">to_date_published_utc</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Search for map, mode, and prefab assets.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>start</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Index of the first result to return, starting at 0.</p>
+            </div>
+          </td>
+          <td>
+                <code>0</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>count</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Count of results to return. Must be between 1 and 101.</p>
+            </div>
+          </td>
+          <td>
+                <code>25</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>sort</code></td>
+          <td>
+                <code><span title="spnkr.services.discovery_ugc._SortProperty">_SortProperty</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Property by which to sort the results. Must be one of the
+following: "name", "likes", "bookmarks", "plays_recent",
+"number_of_objects", "date_created_utc", "date_modified_utc",
+"date_published_utc", "plays_all_time", "parent_asset_count",
+"average_rating", "number_of_ratings". Defaults to
+"plays_recent".</p>
+            </div>
+          </td>
+          <td>
+                <code>&#39;plays_recent&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>order</code></td>
+          <td>
+                <code><span title="typing.Literal">Literal</span>[&#39;asc&#39;, &#39;desc&#39;]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Pass "asc" for ascending or "desc" for descending.</p>
+            </div>
+          </td>
+          <td>
+                <code>&#39;desc&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>asset_kind</code></td>
+          <td>
+                <code><span title="typing.Literal">Literal</span>[&#39;map&#39;, &#39;prefab&#39;, &#39;ugc_game_variant&#39;] | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Type of asset to be searched. Optional. If a value is
+provided, it must be be one of the following: "map", "prefab",
+"ugc_game_variant". By default, no filter is applied.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>term</code></td>
+          <td>
+                <code>str | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Search term. Optional.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>tags</code></td>
+          <td>
+                <code><span title="typing.Iterable">Iterable</span>[str] | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of tags. Multiple tags are applied with an OR operator.
+Optional.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>author</code></td>
+          <td>
+                <code>str | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Author ID. Valid values would be in one of the following
+formats: "xuid(<xuid>)", "aaid(<aaid>)", or "atui(<atui>)",
+where <xuid> is a 16-digit Xbox user ID, <aaid> is a UUID, and
+<atui> is a pair of UUIDs separated by a period. Optional.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>average_rating_min</code></td>
+          <td>
+                <code>float | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Minimum average rating between 0 and 5.
+Optional.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>from_date_created_utc</code></td>
+          <td>
+                <code><span title="datetime.datetime">datetime</span> | <span title="datetime.date">date</span> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Minimum date created. Optional.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>to_date_created_utc</code></td>
+          <td>
+                <code><span title="datetime.datetime">datetime</span> | <span title="datetime.date">date</span> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Maximum date created. Optional.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>from_date_modified_utc</code></td>
+          <td>
+                <code><span title="datetime.datetime">datetime</span> | <span title="datetime.date">date</span> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Minimum date modified. Optional.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>to_date_modified_utc</code></td>
+          <td>
+                <code><span title="datetime.datetime">datetime</span> | <span title="datetime.date">date</span> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Maximum date modified. Optional.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>from_date_published_utc</code></td>
+          <td>
+                <code><span title="datetime.datetime">datetime</span> | <span title="datetime.date">date</span> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Minimum date published. Optional.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>to_date_published_utc</code></td>
+          <td>
+                <code><span title="datetime.datetime">datetime</span> | <span title="datetime.date">date</span> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Maximum date published. Optional.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="spnkr.models.discovery_ugc.AssetSearchPage" href="../models/#spnkr.models.discovery_ugc.AssetSearchPage">AssetSearchPage</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A page of up to <code>count</code> search results.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
 
   </div>
 
@@ -1263,6 +1709,179 @@
 
 
 
+<h3 id="spnkr.services.gamecms_hacs.GameCmsHacsService.get_career_reward_track" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_career_reward_track</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get details for the career rank progression reward track.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="spnkr.models.gamecms_hacs.CareerRewardTrack" href="../models/#spnkr.models.gamecms_hacs.CareerRewardTrack">CareerRewardTrack</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The career rank reward track.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="spnkr.services.gamecms_hacs.GameCmsHacsService.get_csr_season_calendar" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_csr_season_calendar</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get IDs and dates for past and current CSR seasons.</p>
+<p>CSR seasons represent the time periods between CSR resets.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="spnkr.models.gamecms_hacs.CsrSeasonCalendar" href="../models/#spnkr.models.gamecms_hacs.CsrSeasonCalendar">CsrSeasonCalendar</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The CSR season calendar.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="spnkr.services.gamecms_hacs.GameCmsHacsService.get_image" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_image</span><span class="p">(</span><span class="n">relative_path</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get an image from the game content management service.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>relative_path</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The relative path to the image, such as
+"career_rank/ProgressWidget/272_Hero.png".</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>bytes</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The image data.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
 <h3 id="spnkr.services.gamecms_hacs.GameCmsHacsService.get_medal_metadata" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">get_medal_metadata</span><span class="p">()</span></code>
   
@@ -1295,6 +1914,55 @@
           <td>
             <div class="doc-md-description">
               <p>The medal metadata.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="spnkr.services.gamecms_hacs.GameCmsHacsService.get_season_calendar" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_season_calendar</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get IDs and dates for past/current reward track events/operations.</p>
+<p>Reward tracks are the progression systems that allow players to earn
+rewards from the XP earned by playing the game.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="spnkr.models.gamecms_hacs.SeasonCalendar" href="../models/#spnkr.models.gamecms_hacs.SeasonCalendar">SeasonCalendar</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The calendar of reward tracks.</p>
             </div>
           </td>
         </tr>
