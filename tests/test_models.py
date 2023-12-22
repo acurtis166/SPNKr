@@ -20,6 +20,7 @@ from spnkr.models.gamecms_hacs import (
     SeasonCalendar,
 )
 from spnkr.models.profile import User
+from spnkr.models.refdata import PlayerType
 from spnkr.models.skill import MatchSkill, PlaylistCsr
 from spnkr.models.stats import (
     MatchCount,
@@ -157,6 +158,16 @@ def test_parse_match_stats_extraction():
     assert result.match_id == expected
     mode = result.players[0].player_team_stats[0].stats.extraction_stats
     assert mode is not None
+
+
+def test_player_stats_is_human():
+    data = load_response("get_match_stats")
+    result = MatchStats(**data)
+    player = result.players[0]
+    player = player.model_copy(update={"player_type": PlayerType.HUMAN})
+    assert player.is_human
+    player = player.model_copy(update={"player_type": PlayerType.BOT})
+    assert not player.is_human
 
 
 def test_parse_game_variant():

@@ -596,6 +596,11 @@ class PlayerStats(PascalCaseModel, frozen=True):
     participation_info: ParticipationInfo
     player_team_stats: tuple[PlayerTeamStats, ...]
 
+    @property
+    def is_human(self) -> bool:
+        """Whether the player is a human player."""
+        return self.player_type is PlayerType.HUMAN
+
 
 class MatchStats(PascalCaseModel, frozen=True):
     """Player and team performance details for a match.

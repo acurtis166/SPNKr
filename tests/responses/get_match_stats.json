@@ -339,7 +339,7 @@
     ],
     "Players": [
         {
-            "PlayerId": "xuid(2535445291321133)",
+            "PlayerId": "bid(1.0)",
             "PlayerType": 2,
             "BotAttributes": {
                 "Difficulty": 1
