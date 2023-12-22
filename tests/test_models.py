@@ -216,7 +216,7 @@ def test_parse_users():
     data = load_response("get_users")
     result = [User(**user) for user in data]
     assert len(result) == 1
-    assert result[0].xuid == 1234567890
+    assert result[0].xuid == 1234567890123456
 
 
 if __name__ == "__main__":
