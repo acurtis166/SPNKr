@@ -79,7 +79,7 @@ def test_match_init_uuid(client):
 
 
 @pytest.mark.asyncio
-async def test_match_caching(client, match: Match):
+async def test_match_get_stats_caching(client, match: Match):
     await match.get_stats()
     await match.get_stats()
     assert client.stats.get_match_stats.call_count == 1
@@ -87,10 +87,19 @@ async def test_match_caching(client, match: Match):
 
 @pytest.mark.asyncio
 async def test_match_get_stats(match: Match):
+    assert match._stats is None
     assert match._info is None
     stats = await match.get_stats()
     assert str(stats.match_id) == "6f050134-bede-47bc-a6df-eeafdcb9f97f"
+    assert isinstance(match._stats, MatchStats)
     assert isinstance(match._info, MatchInfo)
+
+
+@pytest.mark.asyncio
+async def test_match_get_stats_already_set(match: Match):
+    stats_a = await match.get_stats()
+    stats_b = await match.get_stats()
+    assert id(stats_a) == id(stats_b)
 
 
 @pytest.mark.asyncio
