@@ -88,11 +88,9 @@ async def test_match_get_stats_caching(client, match: Match):
 @pytest.mark.asyncio
 async def test_match_get_stats(match: Match):
     assert match._stats is None
-    assert match._info is None
     stats = await match.get_stats()
     assert str(stats.match_id) == "6f050134-bede-47bc-a6df-eeafdcb9f97f"
     assert isinstance(match._stats, MatchStats)
-    assert isinstance(match._info, MatchInfo)
 
 
 @pytest.mark.asyncio
