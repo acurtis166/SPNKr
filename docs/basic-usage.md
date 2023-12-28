@@ -117,4 +117,44 @@ Calls to [HaloInfiniteClient](reference/client.md) services return parsed JSON p
 
 Of course, there are additional methods for retrieving stats, CSR/MMR, and metadata information.
 
-[Next: Services](reference/services.md){ .md-button }
+[Services](reference/services.md){ .md-button }
+
+## Match API
+
+An alternative API for requesting match-related data is available via a client-wrapping [Match](reference/match.md) class. A `Match` instance maintains a reference to the client and a match ID to abstract from some of the details of integrating API calls. A basic example involving a metadata request is shown below.
+
+```python
+import asyncio
+
+from aiohttp import ClientSession
+
+from spnkr.client import HaloInfiniteClient
+from spnkr.match import Match
+
+
+async def main() -> None:
+    async with ClientSession() as session:
+        client = HaloInfiniteClient(...)
+        history = await client.stats.get_match_history(...)
+        most_recent = history.results[0]
+
+        # Using the `HaloInfiniteClient` directly.
+        map_mode_pair = most_recent.playlist_map_mode_pair
+        map_mode_pair_model = await client.discovery_ugc.get_map_mode_pair(
+            map_mode_pair.asset_id, map_mode_pair.version_id
+        )
+        print(f"Last match: {map_mode_pair_model.public_name}")
+
+        # Using the `Match` wrapper. Match info argument is optional.
+        match_ = Match(client, most_recent.match_id, most_recent.match_info)
+        map_mode_pair = await match_.get_map_mode_pair()
+        print(f"Last match: {map_mode_pair.public_name}")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+Follow the link below to see all methods available.
+
+[Match](reference/match.md){ .md-button }

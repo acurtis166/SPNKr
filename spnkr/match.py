@@ -24,7 +24,7 @@ class Match:
 
         Args:
             client: The Halo Infinite client to use for requests.
-            match: The ID of the match.
+            match_id: The ID of the match.
             match_info: The match info. If not provided, it will be retrieved
                 with a match stats request when needed. Providing this argument
                 saves a stats request if the desired information is limited to
@@ -41,33 +41,53 @@ class Match:
         return self._id
 
     async def get_stats(self) -> MatchStats:
-        """Get the stats for this match."""
+        """Get the stats for this match.
+
+        Returns:
+            The match stats.
+        """
         if self._stats is None:
             self._stats = await self._client.stats.get_match_stats(self._id)
         return self._stats
 
     async def get_info(self) -> MatchInfo:
-        """Get the match info for this match."""
+        """Get the match info for this match.
+
+        Returns:
+            The match info.
+        """
         if self._info is None:
             self._info = (await self.get_stats()).match_info
         return self._info
 
     async def get_map(self) -> Map:
-        """Get the map this match was played on."""
+        """Get the map this match was played on.
+
+        Returns:
+            The map.
+        """
         info = await self.get_info()
         return await self._client.discovery_ugc.get_map(
             info.map_variant.asset_id, info.map_variant.version_id
         )
 
     async def get_mode(self) -> UgcGameVariant:
-        """Get the game mode this match was played on."""
+        """Get the game mode this match was played on.
+
+        Returns:
+            The game mode.
+        """
         info = await self.get_info()
         return await self._client.discovery_ugc.get_ugc_game_variant(
             info.ugc_game_variant.asset_id, info.ugc_game_variant.version_id
         )
 
     async def get_playlist(self) -> Playlist | None:
-        """Get the playlist this match was found in. Matchmaking only."""
+        """Get the playlist this match was found in. Matchmaking only.
+
+        Returns:
+            The playlist if available, otherwise None.
+        """
         info = await self.get_info()
         if info.playlist is None:
             return None
@@ -76,7 +96,11 @@ class Match:
         )
 
     async def get_map_mode_pair(self) -> MapModePair | None:
-        """Get the map-mode pair selected for this match. Matchmaking only."""
+        """Get the map-mode pair selected for this match. Matchmaking only.
+
+        Returns:
+            The map-mode pair if available, otherwise None.
+        """
         info = await self.get_info()
         map_mode_pair = info.playlist_map_mode_pair
         if map_mode_pair is None:
@@ -86,14 +110,22 @@ class Match:
         )
 
     async def get_users(self) -> dict[str, User]:
-        """Get a mapping of XUIDs to profiles for players in this match."""
+        """Get a mapping of XUIDs to profiles for players in this match.
+
+        Returns:
+            A mapping of XUIDs to profiles.
+        """
         stats = await self.get_stats()
         xuids = [p.player_id for p in stats.players if p.is_human]
         users = await self._client.profile.get_users_by_id(xuids)
         return {wrap_xuid(user.xuid): user for user in users}
 
     async def get_skill(self) -> MatchSkill | None:
-        """Get CSR/MMR information for this match. Matchmaking only."""
+        """Get CSR/MMR information for this match. Matchmaking only.
+
+        Returns:
+            The skill data if available, otherwise None.
+        """
         info = await self.get_info()
         if info.lifecycle_mode is not LifecycleMode.MATCHMADE:
             # Skill data is only available for matchmade games.
