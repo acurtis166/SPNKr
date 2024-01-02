@@ -2,8 +2,6 @@
 
 from functools import cached_property
 
-from aiohttp import ClientSession
-
 from .services import (
     DiscoveryUgcService,
     GameCmsHacsService,
@@ -11,6 +9,7 @@ from .services import (
     SkillService,
     StatsService,
 )
+from .session import Session
 
 __all__ = ["HaloInfiniteClient"]
 
@@ -20,7 +19,7 @@ class HaloInfiniteClient:
 
     def __init__(
         self,
-        session: ClientSession,
+        session: Session,
         spartan_token: str,
         clearance_token: str,
         requests_per_second: int | None = 5,
@@ -28,7 +27,8 @@ class HaloInfiniteClient:
         """Initialize a client for the Halo Infinite API.
 
         Args:
-            session: The aiohttp session to use.
+            session: The `aiohttp.ClientSession` to use. Support for caching is
+                available via a `CachedSession` from `aiohttp-client-cache`.
             spartan_token: The spartan token used to authenticate with the API.
             clearance_token: The clearance token used to authenticate with the
                 API.

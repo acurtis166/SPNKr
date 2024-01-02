@@ -2,8 +2,14 @@
 
 from typing import Any
 
-from aiohttp import ClientResponse, ClientSession
 from aiolimiter import AsyncLimiter
+
+try:
+    from aiohttp_client_cache.response import CachedResponse
+except ImportError:
+    CachedResponse = None
+
+from ..session import Response, Session
 
 
 def _create_limiter(rate_per_second: int) -> AsyncLimiter:
@@ -12,11 +18,16 @@ def _create_limiter(rate_per_second: int) -> AsyncLimiter:
     return AsyncLimiter(1, 1 / rate_per_second)
 
 
+def _is_cached_response(response: Response) -> bool:
+    """Return `True` if the response is a cached response."""
+    return CachedResponse is not None and isinstance(response, CachedResponse)
+
+
 class BaseService:
     """Base service class. Handles initialization and rate limiting requests."""
 
     def __init__(
-        self, session: ClientSession, requests_per_second: int | None = 5
+        self, session: Session, requests_per_second: int | None = 5
     ) -> None:
         """Initialize a service.
 
@@ -30,13 +41,12 @@ class BaseService:
         if requests_per_second is not None:
             self._rate_limiter = _create_limiter(requests_per_second)
 
-    async def _get(self, url: str, **kwargs) -> ClientResponse:
+    async def _get(self, url: str, **kwargs) -> Response:
         """Make a GET request to `url` and return the response."""
-        if self._rate_limiter is None:
-            response = await self._session.get(url, **kwargs)
-        else:
-            async with self._rate_limiter:
-                response = await self._session.get(url, **kwargs)
+        response = await self._session.get(url, **kwargs)
+        if not _is_cached_response(response) and self._rate_limiter is not None:
+            # Only rate limit non-cached responses.
+            await self._rate_limiter.acquire()
         response.raise_for_status()
         return response
 

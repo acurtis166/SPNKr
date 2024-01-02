@@ -117,4 +117,47 @@ Calls to [HaloInfiniteClient](reference/client.md) services return parsed JSON p
 
 Of course, there are additional methods for retrieving stats, CSR/MMR, and metadata information.
 
+## Caching
+
+Caching is supported via the `aiohttp-client-cache` [package](https://pypi.org/project/aiohttp-client-cache/), which provides a drop-in replacement for `aiohttp.ClientSession` as `aiohttp_client_cache.CachedSession` and reduces the number of repeat requests. Below is an example backend configuration, which relies on the "Cache-Control" header available on certain responses. A SQLite backend is used here, but any backend should work.
+
+```python
+from aiohttp_client_cache import CachedSession, SQLiteBackend
+from spnkr.client import HaloInfiniteClient
+
+
+async def filter_by_cache_control(response):
+    """Only cache responses with a cache-control header."""
+    return "Cache-Control" in response.headers
+
+
+async def main() -> None:
+    cache = SQLiteBackend(
+        "cache.sqlite",
+        cache_control=True,
+        filter_fn=filter_by_cache_control,
+    )
+    async with CachedSession(cache=cache) as session:
+        client = HaloInfiniteClient(...)
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+Here are the cached response max ages as obtained from sample responses on 1/2/2024:
+
+| Service | Method | Max-Age |
+| ------- | ------ | ------------ |
+| discovery_ugc | get_map | 5 hours |
+| discovery_ugc | get_ugc_game_variant | 5 hours |
+| discovery_ugc | get_playlist | 5 hours |
+| discovery_ugc | get_map_mode_pair | 5 hours |
+| gamecms_hacs | get_medal_metadata | 1 day |
+| gamecms_hacs | get_csr_season_calendar | 1 day |
+| gamecms_hacs | get_season_calendar | 1 day |
+| gamecms_hacs | get_career_reward_track | 1 day |
+| gamecms_hacs | get_image | 1 day |
+| stats | get_match_stats | 1 day |
+
 [Next: Services](reference/services.md){ .md-button }
