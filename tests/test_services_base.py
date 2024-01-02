@@ -74,7 +74,6 @@ def test_is_cached_response_no_import(cached_response, monkeypatch):
     assert not spnkr.services.base._is_cached_response(cached_response)
 
 
-def test_is_cached_response_not_cached_response(session):
+def test_is_cached_response_not_cached_response(response):
     """Test that _is_cached_response returns False if the response isn't cached"""
-    response = session.get("url")
     assert not spnkr.services.base._is_cached_response(response)

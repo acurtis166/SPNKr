@@ -36,3 +36,8 @@ class MockSession:
 @pytest.fixture
 def session():
     return MockSession()
+
+
+@pytest.fixture
+def response():
+    return MockResponse(b"{}")
