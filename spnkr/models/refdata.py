@@ -213,6 +213,8 @@ class LifecycleMode(IntEnum):
     """Custom games."""
     MATCHMADE = 3
     """Matchmade games."""
+    LOCAL_AREA_NETWORK = 7
+    """Games played on LAN."""
 
 
 class MedalDifficulty(IntEnum):
