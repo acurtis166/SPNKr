@@ -2,6 +2,19 @@
 
 ## [Unreleased]
 
+## [0.6.0] - 2024-02-23
+
+### Added
+
+- `is_human` property to `PlayerStats` model.
+- Caching support via `aiohttp-client-cache`.
+- Integration tests.
+
+### Fixed
+
+- AsyncMock warning in tests.
+- Added `LOCAL_AREA_NETWORK` enum value to `LifecycleMode`.
+
 ## [0.5.0] - 2023-12-17
 
 ### Changed
@@ -78,7 +91,8 @@
 
 First documented release.
 
-[unreleased]: https://github.com/acurtis166/SPNKr/compare/v0.5.0...HEAD
+[unreleased]: https://github.com/acurtis166/SPNKr/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/acurtis166/SPNKr/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/acurtis166/SPNKr/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/acurtis166/SPNKr/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/acurtis166/SPNKr/compare/v0.2.0...v0.3.0
