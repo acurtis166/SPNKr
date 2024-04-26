@@ -9,13 +9,15 @@ import pytest
 from aiohttp import ClientSession
 
 from spnkr.auth import app, oauth
+from spnkr.errors import OAuth2Error
 
 RESPONSES = Path("tests/responses")
 
 
 class MockResponse:
-    def __init__(self, json_data: Any):
+    def __init__(self, json_data: Any, ok: bool = True):
         self.json_data = json_data
+        self.ok = ok
 
     async def json(self) -> Any:
         return self.json_data
@@ -106,3 +108,10 @@ async def test_oauth_token_request(azure_app):
     session = MockSession(MockResponse(response))
     token = await oauth._oauth2_token_request(session, {}, azure_app)  # type: ignore
     assert token.access_token == "abcdefg"
+
+
+@pytest.mark.asyncio
+async def test_oauth_token_error(azure_app):
+    session = MockSession(MockResponse({"error": "invalid_grant"}, ok=False))
+    with pytest.raises(OAuth2Error):
+        await oauth._oauth2_token_request(session, {}, azure_app)  # type: ignore

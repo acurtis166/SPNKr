@@ -6,7 +6,8 @@ from typing import Any
 
 from aiohttp import ClientSession
 
-from .app import AzureApp
+from spnkr.auth.app import AzureApp
+from spnkr.errors import OAuth2Error
 
 DEFAULT_SCOPES = ["Xboxlive.signin", "Xboxlive.offline_access"]
 
@@ -109,4 +110,6 @@ async def _oauth2_token_request(
         "client_secret": app.client_secret,
     }
     response = await session.post(url, data=request_data)
+    if not response.ok:
+        raise OAuth2Error(await response.json())
     return OAuth2Token(await response.json())
