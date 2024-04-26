@@ -331,6 +331,8 @@ class PlaylistExperience(IntEnum):
     """Player vs. bots playlists."""
     FEATURED = 5
     """Featured playlists. Rotates frequently."""
+    FIREFIGHT = 6
+    """Firefight PvE playlist"""
 
 
 class SkillResultCode(IntEnum):
