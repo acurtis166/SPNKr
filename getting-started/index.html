@@ -227,16 +227,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-halo-waypoint" class="md-nav__link">
+    Option 1 - Halo Waypoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-azure-app-registration" class="md-nav__link">
+    Option 2 - Azure App Registration
+  </a>
+  
+    <nav class="md-nav" aria-label="Option 2 - Azure App Registration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#azure-active-directory-setup" class="md-nav__link">
     Azure Active Directory Setup
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#initial-authentication" class="md-nav__link">
     Initial Authentication
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtaining-spartan-and-clearance-tokens" class="md-nav__link">
+    Obtaining Spartan and Clearance Tokens
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -462,16 +502,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-halo-waypoint" class="md-nav__link">
+    Option 1 - Halo Waypoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-azure-app-registration" class="md-nav__link">
+    Option 2 - Azure App Registration
+  </a>
+  
+    <nav class="md-nav" aria-label="Option 2 - Azure App Registration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#azure-active-directory-setup" class="md-nav__link">
     Azure Active Directory Setup
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#initial-authentication" class="md-nav__link">
     Initial Authentication
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtaining-spartan-and-clearance-tokens" class="md-nav__link">
+    Obtaining Spartan and Clearance Tokens
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -499,21 +579,38 @@
 <p>Development
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>spnkr<span class="o">[</span>dev<span class="o">]</span>
 </span></code></pre></div></p>
-<h2 id="azure-active-directory-setup">Azure Active Directory Setup</h2>
-<p>Authentication requires creating an Azure Active Directory (Azure AD) application. Use the account that you play Halo Infinite with, as you will need to be able to acquire Xbox Live and Halo Infinite credentials.</p>
-<ol>
-<li>Sign up for a <a href="https://azure.microsoft.com/en-us">Microsoft Azure</a> account.</li>
-<li>Register a new application in <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade">Azure AD</a>.</li>
-<li>Add "https://localhost" as a redirect URI of type "web".</li>
-<li>Go to "Certificates &amp; secrets" for your app to create a client secret.</li>
-<li>Save your app's client ID, client secret, and redirect URI information.</li>
-</ol>
-<h2 id="initial-authentication">Initial Authentication</h2>
-<p>Before initializing the client object and requesting data, you will need to perform the initial OAuth2 authentication step to acquire OAuth access and refresh tokens. This step requires having the client ID, client secret, and redirect URI information from your Azure AD application setup above. Once you have the credentials, you just need to pass the information into a single <a href="../reference/authentication/#spnkr.auth.core.authenticate_player">function</a> to get your OAuth2 refresh token for future use. Below is an example script to perform this initial authentication. It will involve opening a web page to retrieve an authorization code, but you only need to do this once.</p>
 <div class="admonition info">
 <p class="admonition-title">Note</p>
 <p>This package depends on <a href="https://docs.aiohttp.org/en/stable/">aiohttp</a> for making asyncronous requests. You may want to understand the basics of the <a href="https://docs.aiohttp.org/en/stable/client_reference.html#client-session">ClientSession</a> class.</p>
 </div>
+<h2 id="authentication">Authentication</h2>
+<p>There are a couple ways to obtain credentials for API authentication.</p>
+<h3 id="option-1-halo-waypoint">Option 1 - Halo Waypoint</h3>
+<p>The simple, manual way of getting your tokens is to obtain them by inspecting network traffic while navigating Halo Waypoint in your web browser. This is great for getting started, but as the spartan token is only valid for 4 hours, it might become tedious if you need to consistently get new tokens. The following instructions are for Google Chrome.</p>
+<ol>
+<li>Navigate to <a href="https://www.halowaypoint.com/">Halo Waypoint</a>.</li>
+<li>Click "SIGN IN" at the top right and log in.</li>
+<li>Click your gamer picture at the top right and select "SERVICE RECORDS" in the dropdown.</li>
+<li>Under "HALO INFINITE", click "GO TO SERVICE RECORD".</li>
+<li>Open developer tools (F12 in Google Chrome).</li>
+<li>Click the "Network" tab</li>
+<li>Refresh the Waypoint webpage.</li>
+<li>In developer tools, search the logged network activity for "X-343-Authorization-Spartan" and "343-Clearance" headers. These are your spartan and clearance tokens, respectively. Record them for use in the next step.</li>
+</ol>
+<h3 id="option-2-azure-app-registration">Option 2 - Azure App Registration</h3>
+<p>The 2nd way to obtain tokens takes a little time to set up but automates the token refresh process.</p>
+<h4 id="azure-active-directory-setup">Azure Active Directory Setup</h4>
+<p>Authentication requires creating an Azure Active Directory (Azure AD) application. Use the account that you play Halo Infinite with, as you will need to be able to acquire Xbox Live and Halo Infinite credentials.</p>
+<ol>
+<li>Sign up for a <a href="https://azure.microsoft.com/en-us">Microsoft Azure</a> account.</li>
+<li>Register a new application in <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade">Azure AD</a>.</li>
+<li>Record the client ID, which is available as "Application (client) ID" under the "Overview" tab for your app.</li>
+<li>Add "https://localhost" as a redirect URI of type "web".</li>
+<li>Go to "Certificates &amp; secrets" for your app to add a client secret.</li>
+<li>Record the "Value" of your newly added secret.</li>
+</ol>
+<h4 id="initial-authentication">Initial Authentication</h4>
+<p>Before initializing the client object and requesting data, you will need to perform the initial OAuth2 authentication step to acquire OAuth access and refresh tokens. This step requires having the client ID, client secret, and redirect URI information from your Azure AD application setup above. Once you have the credentials, you just need to pass the information into a single <a href="../reference/authentication/#spnkr.auth.core.authenticate_player">function</a> to get your OAuth2 refresh token for future use. Below is an example script to perform this initial authentication. It will involve opening a web page to retrieve an authorization code, but you only need to do this once.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">asyncio</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
@@ -537,6 +634,51 @@
 </span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
 </span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </span></code></pre></div>
+<h4 id="obtaining-spartan-and-clearance-tokens">Obtaining Spartan and Clearance Tokens</h4>
+<p>With your OAuth2 refresh token, you need to perform a series of token requests:</p>
+<ol>
+<li>Refresh the OAuth2 access token</li>
+<li>Request an Xbox Live user token</li>
+<li>Request an Xbox Live XSTS token scoped to Xbox Live services (not strictly necessary, but it returns profile information like your player ID (XUID) and gamertag)</li>
+<li>Request an Xbox Live XSTS token scoped to Halo services</li>
+<li>Request a "spartan token", which is required for all endpoints</li>
+<li>Request a "clearance ID", which is required for some endpoints</li>
+</ol>
+<p>However, you will again just make a single <a href="../reference/authentication/#spnkr.auth.core.refresh_player_tokens">function</a> call to refresh/request tokens and return the needed information. The example script below will look similar to our step above, but now we are retrieving spartan and clearance tokens that will be headers for our API calls.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">asyncio</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="kn">from</span> <span class="nn">spnkr.auth</span> <span class="kn">import</span> <span class="n">AzureApp</span><span class="p">,</span> <span class="n">refresh_player_tokens</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">CLIENT_ID</span> <span class="o">=</span> <span class="s2">&quot;CLIENT_ID&quot;</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">CLIENT_SECRET</span> <span class="o">=</span> <span class="s2">&quot;CLIENT_SECRET&quot;</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">REDIRECT_URI</span> <span class="o">=</span> <span class="s2">&quot;REDIRECT_URI&quot;</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="n">REFRESH_TOKEN</span> <span class="o">=</span> <span class="s2">&quot;REFRESH_TOKEN&quot;</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="n">app</span> <span class="o">=</span> <span class="n">AzureApp</span><span class="p">(</span><span class="n">CLIENT_ID</span><span class="p">,</span> <span class="n">CLIENT_SECRET</span><span class="p">,</span> <span class="n">REDIRECT_URI</span><span class="p">)</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    <span class="k">async</span> <span class="k">with</span> <span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>        <span class="n">player</span> <span class="o">=</span> <span class="k">await</span> <span class="n">refresh_player_tokens</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">app</span><span class="p">,</span> <span class="n">REFRESH_TOKEN</span><span class="p">)</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Spartan token: </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">spartan_token</span><span class="o">.</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Valid for 4 hours.</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Clearance token: </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">clearance_token</span><span class="o">.</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Xbox Live player ID (XUID): </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">player_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Xbox Live gamertag: </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">gamertag</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Xbox Live authorization: </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">xbl_authorization_header_value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</span></code></pre></div>
+<p>The spartan token and clearance token are the main targets of this step, as they are needed to initialize the client object. However, the <a href="../reference/authentication/#spnkr.auth.player.AuthenticatedPlayer">AuthenticatedPlayer</a> instance also carries Xbox Live information that you may find useful:</p>
+<ul>
+<li><strong>Xbox Live player ID (XUID)</strong> - This ID is unique to your Xbox Live account. XUIDs are also the identifying attribute for player-specific data retrieved from the API. Additionally, XUIDs are required for certain endpoints in order to retrieve player-specific data.</li>
+<li><strong>Xbox Live gamertag</strong> - This is the display name for Xbox Live accounts.</li>
+<li><strong>Xbox Live authorization header value</strong> - This is a required request header when making requests to the Xbox Live API, if desired.</li>
+</ul>
 <p><a class="md-button" href="../basic-usage/">Next: Basic Usage</a></p>
 
 
