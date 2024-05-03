@@ -168,3 +168,8 @@ async def test_match_stats(client):
     await client.stats.get_match_stats(
         match_id="01b687a8-2f21-4041-997b-a60ff5fdce15"
     )
+
+
+@pytest.mark.asyncio
+async def test_get_player_customization(client):
+    await client.economy.get_player_customization(xuid=2535445291321133)

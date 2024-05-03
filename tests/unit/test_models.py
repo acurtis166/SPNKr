@@ -13,6 +13,7 @@ from spnkr.models.discovery_ugc import (
     Playlist,
     UgcGameVariant,
 )
+from spnkr.models.economy import PlayerCustomization
 from spnkr.models.gamecms_hacs import (
     CareerRewardTrack,
     CsrSeasonCalendar,
@@ -228,6 +229,12 @@ def test_parse_users():
     result = [User(**user) for user in data]
     assert len(result) == 1
     assert result[0].xuid == 1234567890123456
+
+
+def test_parse_player_customization():
+    data = load_response("get_player_customization")
+    result = PlayerCustomization(**data)
+    assert result.spartan_body.left_arm == "None"
 
 
 if __name__ == "__main__":

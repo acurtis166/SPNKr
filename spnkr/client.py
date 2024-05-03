@@ -4,6 +4,7 @@ from functools import cached_property
 
 from .services import (
     DiscoveryUgcService,
+    EconomyService,
     GameCmsHacsService,
     ProfileService,
     SkillService,
@@ -67,3 +68,8 @@ class HaloInfiniteClient:
     def discovery_ugc(self) -> DiscoveryUgcService:
         """User-generated content discovery data service (maps, modes, etc.)."""
         return DiscoveryUgcService(self._session, self._requests_per_second)
+
+    @cached_property
+    def economy(self) -> EconomyService:
+        """Store and customization data service."""
+        return EconomyService(self._session, self._requests_per_second)

@@ -1,0 +1,503 @@
+{
+    "ArmorCores": {
+        "ArmorCores": [
+            {
+                "CorePath": "Cores/ArmorCores/017-001-spi-c13d0b38.json",
+                "IsEquipped": true,
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2023-03-29T03:54:36.964Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2024-03-26T00:52:03.434Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Armor/Themes/007-001-spi-c13d0b38.json",
+                        "CoatingPath": "Inventory/Armor/Coatings/002-001-spi-1b9e1638.json",
+                        "GlovePath": "Inventory/Armor/Gloves/003-001-spi-0ff8a73c.json",
+                        "HelmetPath": "Inventory/Armor/Helmets/005-001-reach-f9b4b07e.json",
+                        "HelmetAttachmentPath": "",
+                        "ChestAttachmentPath": "Inventory/Armor/ChestAttachments/001-001-spi-5d7a8e0a.json",
+                        "KneePadPath": "Inventory/Armor/KneePads/006-001-spi-24d5f4ff.json",
+                        "LeftShoulderPadPath": "Inventory/Armor/ShouldersLeft/008-001-reach-4108d71b.json",
+                        "RightShoulderPadPath": "Inventory/Armor/ShouldersRight/009-001-fwl-1b3412f2.json",
+                        "Emblems": [],
+                        "ArmorFxPath": "",
+                        "MythicFxPath": "",
+                        "VisorPath": "Inventory/Armor/Visors/012-001-f48e7b66.json",
+                        "HipAttachmentPath": "Inventory/Armor/HipAttachments/010-001-spi-7a2034c8.json",
+                        "WristAttachmentPath": "Inventory/Armor/WristAttachments/011-001-spi-d322a674.json",
+                        "ArmorFxPaths": null
+                    }
+                ],
+                "CoreId": "017-001-spi-c13d0b38",
+                "CoreType": "Armor"
+            }
+        ]
+    },
+    "SpartanBody": {
+        "LastModifiedDateUtc": {
+            "ISO8601Date": "2023-07-26T01:42:06.989Z"
+        },
+        "LeftArm": "None",
+        "RightArm": "None",
+        "LeftLeg": "None",
+        "RightLeg": "None",
+        "BodyType": "Medium",
+        "VoicePath": "Inventory/Spartan/Voices/105-000-voice-002-d9802f9d.json"
+    },
+    "Appearance": {
+        "LastModifiedDateUtc": {
+            "ISO8601Date": "2023-07-26T01:44:51.698Z"
+        },
+        "ActionPosePath": "Inventory/Spartan/ActionPoses/101-000-menu-stance-r-de5c5081.json",
+        "BackdropImagePath": "Inventory/Spartan/BackdropImages/103-000-ui-s2-backgro-5c565f83.json",
+        "Emblem": {
+            "EmblemPath": "Inventory/Spartan/Emblems/104-001-csr-tier00-em-01f9d047.json",
+            "ConfigurationId": 567098062
+        },
+        "ServiceTag": "ANDY",
+        "IntroEmotePath": null,
+        "PlayerTitlePath": null
+    },
+    "WeaponCores": {
+        "WeaponCores": [
+            {
+                "CorePath": "Cores/Weapon/209-200-olympus-aa30213b.json",
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2021-11-15T22:45:08.176Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2023-07-26T01:39:41.108Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Weapon/Themes/207-200-olympus-aa30213b.json",
+                        "CoatingPath": "Inventory/Weapon/Coatings/203-200-olympus-ced94cf7.json",
+                        "Emblems": [
+                            {
+                                "Path": "Inventory/Weapon/Emblems/205-201-30f48361.json",
+                                "LocationId": -1140904703,
+                                "ConfigurationId": -1391772538
+                            }
+                        ],
+                        "DeathFxPath": "",
+                        "AmmoCounterColorPath": "",
+                        "StatTrackerPath": "",
+                        "WeaponCharmPath": "",
+                        "AlternateGeometryRegionPath": ""
+                    }
+                ],
+                "CoreId": "209-200-olympus-aa30213b",
+                "CoreType": "WeaponSidekick"
+            },
+            {
+                "CorePath": "Cores/Weapon/209-201-olympus-aa30213b.json",
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2021-11-15T22:43:28.886Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2023-07-26T01:39:13.887Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Weapon/Themes/207-201-olympus-aa30213b.json",
+                        "CoatingPath": "Inventory/Weapon/Coatings/203-201-olympus-ced94cf7.json",
+                        "Emblems": [
+                            {
+                                "Path": "Inventory/Weapon/Emblems/205-201-3eab7999.json",
+                                "LocationId": -1140904703,
+                                "ConfigurationId": 2088371238
+                            }
+                        ],
+                        "DeathFxPath": "",
+                        "AmmoCounterColorPath": "",
+                        "StatTrackerPath": "",
+                        "WeaponCharmPath": "",
+                        "AlternateGeometryRegionPath": ""
+                    }
+                ],
+                "CoreId": "209-201-olympus-aa30213b",
+                "CoreType": "WeaponAR"
+            },
+            {
+                "CorePath": "Cores/Weapon/209-202-olympus-aa30213b.json",
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2021-12-12T04:19:20.308Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2023-12-19T02:15:15.157Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Weapon/Themes/207-202-olympus-aa30213b.json",
+                        "CoatingPath": "Inventory/Weapon/Coatings/203-202-olympus-3686db25.json",
+                        "Emblems": [],
+                        "DeathFxPath": "",
+                        "AmmoCounterColorPath": "",
+                        "StatTrackerPath": "",
+                        "WeaponCharmPath": "",
+                        "AlternateGeometryRegionPath": ""
+                    }
+                ],
+                "CoreId": "209-202-olympus-aa30213b",
+                "CoreType": "WeaponBR"
+            },
+            {
+                "CorePath": "Cores/Weapon/209-203-olympus-aa30213b.json",
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2022-12-28T01:58:17.977Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2022-12-28T01:58:17.98Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Weapon/Themes/207-203-olympus-aa30213b.json",
+                        "CoatingPath": "Inventory/Weapon/Coatings/203-203-olympus-75e62d67.json",
+                        "Emblems": [],
+                        "DeathFxPath": "",
+                        "AmmoCounterColorPath": "",
+                        "StatTrackerPath": "",
+                        "WeaponCharmPath": "",
+                        "AlternateGeometryRegionPath": ""
+                    }
+                ],
+                "CoreId": "209-203-olympus-aa30213b",
+                "CoreType": "WeaponCommando"
+            },
+            {
+                "CorePath": "Cores/Weapon/209-204-olympus-aa30213b.json",
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2021-12-12T04:19:55.173Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2021-12-12T04:19:55.173Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Weapon/Themes/207-204-olympus-aa30213b.json",
+                        "CoatingPath": "Inventory/Weapon/Coatings/203-204-olympus-75e62d67.json",
+                        "Emblems": [],
+                        "DeathFxPath": "",
+                        "AmmoCounterColorPath": "",
+                        "StatTrackerPath": "",
+                        "WeaponCharmPath": "",
+                        "AlternateGeometryRegionPath": ""
+                    }
+                ],
+                "CoreId": "209-204-olympus-aa30213b",
+                "CoreType": "WeaponSPnKr"
+            },
+            {
+                "CorePath": "Cores/Weapon/209-205-olympus-aa30213b.json",
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2022-12-28T01:58:36.113Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2022-12-28T01:58:36.118Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Weapon/Themes/207-205-olympus-aa30213b.json",
+                        "CoatingPath": "Inventory/Weapon/Coatings/203-205-olympus-4639abfe.json",
+                        "Emblems": [],
+                        "DeathFxPath": "",
+                        "AmmoCounterColorPath": "",
+                        "StatTrackerPath": "",
+                        "WeaponCharmPath": "",
+                        "AlternateGeometryRegionPath": ""
+                    }
+                ],
+                "CoreId": "209-205-olympus-aa30213b",
+                "CoreType": "WeaponSniper"
+            },
+            {
+                "CorePath": "Cores/Weapon/209-206-olympus-aa30213b.json",
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2021-12-12T04:20:13.869Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2023-03-29T03:58:36.326Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Weapon/Themes/207-206-olympus-aa30213b.json",
+                        "CoatingPath": "Inventory/Weapon/Coatings/203-206-olympus-d8e29ecf.json",
+                        "Emblems": [],
+                        "DeathFxPath": "",
+                        "AmmoCounterColorPath": "",
+                        "StatTrackerPath": "",
+                        "WeaponCharmPath": "",
+                        "AlternateGeometryRegionPath": ""
+                    }
+                ],
+                "CoreId": "209-206-olympus-aa30213b",
+                "CoreType": "WeaponShotgun"
+            },
+            {
+                "CorePath": "Cores/Weapon/209-207-olympus-aa30213b.json",
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2022-12-28T01:58:47.775Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2022-12-28T01:58:47.778Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Weapon/Themes/207-207-olympus-aa30213b.json",
+                        "CoatingPath": "Inventory/Weapon/Coatings/203-207-olympus-d9a6b15e.json",
+                        "Emblems": [],
+                        "DeathFxPath": "",
+                        "AmmoCounterColorPath": "",
+                        "StatTrackerPath": "",
+                        "WeaponCharmPath": "",
+                        "AlternateGeometryRegionPath": ""
+                    }
+                ],
+                "CoreId": "209-207-olympus-aa30213b",
+                "CoreType": "WeaponHydra"
+            },
+            {
+                "CorePath": "Cores/Weapon/209-208-olympus-aa30213b.json",
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2023-03-29T03:58:46.001Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2023-07-26T01:40:34.937Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Weapon/Themes/207-208-olympus-aa30213b.json",
+                        "CoatingPath": "Inventory/Weapon/Coatings/203-208-olympus-72c9f746.json",
+                        "Emblems": [],
+                        "DeathFxPath": "",
+                        "AmmoCounterColorPath": "",
+                        "StatTrackerPath": "",
+                        "WeaponCharmPath": "",
+                        "AlternateGeometryRegionPath": ""
+                    }
+                ],
+                "CoreId": "209-208-olympus-aa30213b",
+                "CoreType": "WeaponBandit"
+            }
+        ]
+    },
+    "AiCores": {
+        "AiCores": [
+            {
+                "CorePath": "Cores/Ai/304-100-ai-core-debb20e3.json",
+                "IsEquipped": true,
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2021-11-15T22:42:21.851Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2023-07-26T01:41:16.218Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Ai/Themes/303-100-ai-theme-debb20e3.json",
+                        "ModelPath": "Inventory/Ai/Models/302-100-teardrop-0f17439a.json",
+                        "ColorPath": "Inventory/Ai/Colors/301-100-rare-maize-ra-09415b0d.json"
+                    }
+                ],
+                "CoreId": "304-100-ai-core-debb20e3",
+                "CoreType": "Ai"
+            }
+        ]
+    },
+    "VehicleCores": {
+        "VehicleCores": [
+            {
+                "CoreId": "409-300-olympus-aa30213b",
+                "CorePath": "Cores/Vehicle/409-300-olympus-aa30213b.json",
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2021-12-12T04:20:37.769Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2021-12-12T04:20:37.769Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Vehicle/Themes/408-300-olympus-aa30213b.json",
+                        "CoatingPath": "Inventory/Vehicle/Coatings/404-300-olympus-75e62d67.json",
+                        "HornPath": "",
+                        "VehicleFxPath": "",
+                        "VehicleCharmPath": "",
+                        "Emblems": [],
+                        "AlternateGeometryRegionPath": ""
+                    }
+                ],
+                "CoreType": "VehicleWarthog"
+            },
+            {
+                "CoreId": "409-301-olympus-aa30213b",
+                "CorePath": "Cores/Vehicle/409-301-olympus-aa30213b.json",
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2013-12-09T00:00:00Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2013-12-09T00:00:00Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Vehicle/Themes/408-301-olympus-aa30213b.json",
+                        "CoatingPath": "Inventory/Vehicle/Coatings/404-301-olympus-aa30213b.json",
+                        "HornPath": "",
+                        "VehicleFxPath": "",
+                        "VehicleCharmPath": "",
+                        "Emblems": [],
+                        "AlternateGeometryRegionPath": ""
+                    }
+                ],
+                "CoreType": "VehicleMongoose"
+            },
+            {
+                "CoreId": "409-302-olympus-aa30213b",
+                "CorePath": "Cores/Vehicle/409-302-olympus-aa30213b.json",
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2013-12-09T00:00:00Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2013-12-09T00:00:00Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Vehicle/Themes/408-302-olympus-aa30213b.json",
+                        "CoatingPath": "Inventory/Vehicle/Coatings/404-302-olympus-aa30213b.json",
+                        "HornPath": "",
+                        "VehicleFxPath": "",
+                        "VehicleCharmPath": "",
+                        "Emblems": [],
+                        "AlternateGeometryRegionPath": ""
+                    }
+                ],
+                "CoreType": "VehicleScorpion"
+            },
+            {
+                "CoreId": "409-303-olympus-aa30213b",
+                "CorePath": "Cores/Vehicle/409-303-olympus-aa30213b.json",
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2013-12-09T00:00:00Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2013-12-09T00:00:00Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Vehicle/Themes/408-303-olympus-aa30213b.json",
+                        "CoatingPath": "Inventory/Vehicle/Coatings/404-303-olympus-aa30213b.json",
+                        "HornPath": "",
+                        "VehicleFxPath": "",
+                        "VehicleCharmPath": "",
+                        "Emblems": [],
+                        "AlternateGeometryRegionPath": ""
+                    }
+                ],
+                "CoreType": "VehicleWasp"
+            },
+            {
+                "CoreId": "409-304-olympus-e8b8a8b3",
+                "CorePath": "Cores/Vehicle/409-304-olympus-e8b8a8b3.json",
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2013-12-09T00:00:00Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2013-12-09T00:00:00Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Vehicle/Themes/408-304-olympus-aa30213b.json",
+                        "CoatingPath": "Inventory/Vehicle/Coatings/404-304-olympus-adaf8dd5.json",
+                        "HornPath": "",
+                        "VehicleFxPath": "",
+                        "VehicleCharmPath": "",
+                        "Emblems": [],
+                        "AlternateGeometryRegionPath": ""
+                    }
+                ],
+                "CoreType": "VehicleRazorBack"
+            },
+            {
+                "CoreId": "409-305-olympus-90c5035c",
+                "CorePath": "Cores/Vehicle/409-305-olympus-90c5035c.json",
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2013-12-09T00:00:00Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2013-12-09T00:00:00Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Vehicle/Themes/408-305-olympus-aa30213b.json",
+                        "CoatingPath": "Inventory/Vehicle/Coatings/404-305-olympus-aa30213b.json",
+                        "HornPath": "",
+                        "VehicleFxPath": "",
+                        "VehicleCharmPath": "",
+                        "Emblems": [],
+                        "AlternateGeometryRegionPath": ""
+                    }
+                ],
+                "CoreType": "VehicleGungoose"
+            },
+            {
+                "CoreId": "409-306-olympus-174b9a04",
+                "CorePath": "Cores/Vehicle/409-306-olympus-174b9a04.json",
+                "Themes": [
+                    {
+                        "FirstModifiedDateUtc": {
+                            "ISO8601Date": "2013-12-09T00:00:00Z"
+                        },
+                        "LastModifiedDateUtc": {
+                            "ISO8601Date": "2013-12-09T00:00:00Z"
+                        },
+                        "IsEquipped": true,
+                        "IsDefault": true,
+                        "ThemePath": "Inventory/Vehicle/Themes/408-306-olympus-aa30213b.json",
+                        "CoatingPath": "Inventory/Vehicle/Coatings/404-304-olympus-aa30213b.json",
+                        "HornPath": "",
+                        "VehicleFxPath": "",
+                        "VehicleCharmPath": "",
+                        "Emblems": [],
+                        "AlternateGeometryRegionPath": ""
+                    }
+                ],
+                "CoreType": "VehicleRockethog"
+            }
+        ]
+    }
+}
