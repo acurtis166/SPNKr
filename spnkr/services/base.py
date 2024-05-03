@@ -9,7 +9,7 @@ try:
 except ImportError:
     CachedResponse = None
 
-from ..session import Response, Session
+from spnkr.session import Response, Session
 
 
 def _create_limiter(rate_per_second: int) -> AsyncLimiter:

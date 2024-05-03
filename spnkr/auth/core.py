@@ -2,7 +2,7 @@
 
 from aiohttp import ClientSession
 
-from . import app, halo, oauth, player, xbox
+from spnkr.auth import app, halo, oauth, player, xbox
 
 XSTS_V3_XBOX_AUDIENCE = "http://xboxlive.com"
 XSTS_V3_HALO_AUDIENCE = "https://prod.xsts.halowaypoint.com/"

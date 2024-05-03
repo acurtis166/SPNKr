@@ -2,9 +2,9 @@
 
 from typing import Iterable
 
-from ..models.profile import User
-from ..xuid import unwrap_xuid, wrap_xuid
-from .base import BaseService
+from spnkr.models.profile import User
+from spnkr.services.base import BaseService
+from spnkr.xuid import unwrap_xuid, wrap_xuid
 
 _HOST = "https://profile.svc.halowaypoint.com"
 

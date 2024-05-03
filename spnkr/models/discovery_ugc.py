@@ -7,8 +7,8 @@ from uuid import UUID
 
 from pydantic import Field
 
-from .base import PascalCaseModel
-from .refdata import (
+from spnkr.models.base import PascalCaseModel
+from spnkr.models.refdata import (
     AssetHome,
     AssetKind,
     CloneBehavior,
@@ -19,7 +19,7 @@ from .refdata import (
     PlaylistDeviceInput,
     PlaylistEntrySelectionStrategy,
 )
-from .types import ReadOnlyDict
+from spnkr.models.types import ReadOnlyDict
 
 
 class OnlineUriReference(PascalCaseModel, frozen=True):

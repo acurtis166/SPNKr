@@ -4,7 +4,7 @@ import datetime as dt
 
 from pydantic import ConfigDict, Field
 
-from .base import PascalCaseModel
+from spnkr.models.base import PascalCaseModel
 
 
 class Date(PascalCaseModel, frozen=True):

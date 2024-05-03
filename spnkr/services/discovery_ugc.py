@@ -4,7 +4,7 @@ import datetime as dt
 from typing import Any, Iterable, Literal
 from uuid import UUID
 
-from ..models.discovery_ugc import (
+from spnkr.models.discovery_ugc import (
     AssetSearchPage,
     Film,
     Map,
@@ -12,7 +12,7 @@ from ..models.discovery_ugc import (
     Playlist,
     UgcGameVariant,
 )
-from .base import BaseService
+from spnkr.services.base import BaseService
 
 _HOST = "https://discovery-infiniteugc.svc.halowaypoint.com:443"
 _SortProperty = Literal[

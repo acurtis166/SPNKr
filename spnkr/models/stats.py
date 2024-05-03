@@ -5,8 +5,8 @@ from uuid import UUID
 
 from pydantic import Field
 
-from .base import PascalCaseModel
-from .refdata import (
+from spnkr.models.base import PascalCaseModel
+from spnkr.models.refdata import (
     AssetKind,
     BotDifficulty,
     GameVariantCategory,

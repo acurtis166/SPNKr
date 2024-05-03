@@ -4,10 +4,15 @@ import warnings
 from typing import Literal
 from uuid import UUID
 
-from ..models.refdata import GameVariantCategory
-from ..models.stats import MatchCount, MatchHistory, MatchStats, ServiceRecord
-from ..xuid import wrap_xuid_or_gamertag
-from .base import BaseService
+from spnkr.models.refdata import GameVariantCategory
+from spnkr.models.stats import (
+    MatchCount,
+    MatchHistory,
+    MatchStats,
+    ServiceRecord,
+)
+from spnkr.services.base import BaseService
+from spnkr.xuid import wrap_xuid_or_gamertag
 
 _HOST = "https://halostats.svc.halowaypoint.com:443"
 _VALID_SERVICE_RECORD_FILTER_SETS = [

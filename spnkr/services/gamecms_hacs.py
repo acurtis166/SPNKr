@@ -1,12 +1,12 @@
 """Game content management data services."""
 
-from ..models.gamecms_hacs import (
+from spnkr.models.gamecms_hacs import (
     CareerRewardTrack,
     CsrSeasonCalendar,
     MedalMetadata,
     SeasonCalendar,
 )
-from .base import BaseService
+from spnkr.services.base import BaseService
 
 _HOST = "https://gamecms-hacs.svc.halowaypoint.com"
 

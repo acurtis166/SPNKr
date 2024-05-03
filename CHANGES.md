@@ -6,6 +6,10 @@
 
 - Economy service, `get_player_customization` method, and associated response model.
 
+### Changed
+
+- Use absolute imports instead of relative.
+
 ## [0.7.0] - 2024-04-25
 
 ### Added

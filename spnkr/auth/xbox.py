@@ -5,7 +5,7 @@ from typing import Any
 
 from aiohttp import ClientSession
 
-from ..xuid import wrap_xuid
+from spnkr.xuid import wrap_xuid
 
 
 @dataclass(frozen=True)

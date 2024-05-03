@@ -4,7 +4,7 @@ import math
 from enum import IntEnum
 from typing import NamedTuple
 
-from .models.refdata import (
+from spnkr.models.refdata import (
     BotDifficulty,
     GameVariantCategory,
     LifecycleMode,
@@ -16,7 +16,7 @@ from .models.refdata import (
     SubTier,
     Tier,
 )
-from .xuid import unwrap_xuid, wrap_xuid
+from spnkr.xuid import unwrap_xuid, wrap_xuid
 
 __all__ = [
     "wrap_xuid",

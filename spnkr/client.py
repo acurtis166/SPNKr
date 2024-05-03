@@ -2,7 +2,7 @@
 
 from functools import cached_property
 
-from .services import (
+from spnkr.services import (
     DiscoveryUgcService,
     EconomyService,
     GameCmsHacsService,
@@ -10,7 +10,7 @@ from .services import (
     SkillService,
     StatsService,
 )
-from .session import Session
+from spnkr.session import Session
 
 __all__ = ["HaloInfiniteClient"]
 

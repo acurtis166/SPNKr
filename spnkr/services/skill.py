@@ -4,9 +4,9 @@ from pathlib import Path
 from typing import Iterable
 from uuid import UUID
 
-from ..models.skill import MatchSkill, PlaylistCsr
-from ..xuid import wrap_xuid
-from .base import BaseService
+from spnkr.models.skill import MatchSkill, PlaylistCsr
+from spnkr.services.base import BaseService
+from spnkr.xuid import wrap_xuid
 
 _HOST = "https://skill.svc.halowaypoint.com:443"
 

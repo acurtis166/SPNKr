@@ -4,12 +4,12 @@ Access service instances via
 [HaloInfiniteClient][spnkr.client.HaloInfiniteClient] properties.
 """
 
-from .discovery_ugc import DiscoveryUgcService
-from .economy import EconomyService
-from .gamecms_hacs import GameCmsHacsService
-from .profile import ProfileService
-from .skill import SkillService
-from .stats import StatsService
+from spnkr.services.discovery_ugc import DiscoveryUgcService
+from spnkr.services.economy import EconomyService
+from spnkr.services.gamecms_hacs import GameCmsHacsService
+from spnkr.services.profile import ProfileService
+from spnkr.services.skill import SkillService
+from spnkr.services.stats import StatsService
 
 __all__ = [
     "DiscoveryUgcService",

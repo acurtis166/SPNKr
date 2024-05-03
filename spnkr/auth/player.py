@@ -3,7 +3,7 @@
 import datetime as dt
 from dataclasses import dataclass
 
-from .halo import ClearanceToken, SpartanToken
+from spnkr.auth.halo import ClearanceToken, SpartanToken
 
 
 @dataclass(frozen=True)

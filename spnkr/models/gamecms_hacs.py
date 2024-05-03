@@ -4,9 +4,9 @@ import datetime as dt
 
 from pydantic import Field
 
-from .base import CamelCaseModel, PascalCaseModel
-from .refdata import MedalDifficulty, MedalType
-from .types import ReadOnlyDict
+from spnkr.models.base import CamelCaseModel, PascalCaseModel
+from spnkr.models.refdata import MedalDifficulty, MedalType
+from spnkr.models.types import ReadOnlyDict
 
 
 class TranslatableString(CamelCaseModel, frozen=True):

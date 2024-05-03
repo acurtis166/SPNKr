@@ -3,7 +3,7 @@
 import math
 import re
 
-from .errors import InvalidXuidError
+from spnkr.errors import InvalidXuidError
 
 _XUID_PATTERN = re.compile(r"^xuid\((\d{16})\)$")
 

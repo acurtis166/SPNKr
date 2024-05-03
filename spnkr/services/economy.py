@@ -2,9 +2,9 @@
 
 from typing import Literal
 
-from ..models.economy import PlayerCustomization
-from ..xuid import wrap_xuid
-from .base import BaseService
+from spnkr.models.economy import PlayerCustomization
+from spnkr.services.base import BaseService
+from spnkr.xuid import wrap_xuid
 
 _HOST = "https://economy.svc.halowaypoint.com:443"
 

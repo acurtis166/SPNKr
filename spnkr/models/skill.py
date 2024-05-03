@@ -2,9 +2,9 @@
 
 from uuid import UUID
 
-from .base import PascalCaseModel
-from .refdata import SkillResultCode, SubTier, Tier
-from .types import ReadOnlyDict
+from spnkr.models.base import PascalCaseModel
+from spnkr.models.refdata import SkillResultCode, SubTier, Tier
+from spnkr.models.types import ReadOnlyDict
 
 
 class CsrContainer(PascalCaseModel, frozen=True):
