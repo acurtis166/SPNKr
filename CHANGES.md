@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- Economy service, `get_player_customization` method, and associated response model.
+
 ## [0.7.0] - 2024-04-25
 
 ### Added
