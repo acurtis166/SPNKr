@@ -9,6 +9,7 @@
 ### Changed
 
 - Use absolute imports instead of relative.
+- Simplify session and response typing.
 
 ## [0.7.0] - 2024-04-25
 

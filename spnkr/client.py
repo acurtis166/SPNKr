@@ -1,6 +1,11 @@
 """Provides a client for the Halo Infinite API."""
 
 from functools import cached_property
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from aiohttp import ClientSession
+    from aiohttp_client_cache.session import CachedSession
 
 from spnkr.services import (
     DiscoveryUgcService,
@@ -10,7 +15,6 @@ from spnkr.services import (
     SkillService,
     StatsService,
 )
-from spnkr.session import Session
 
 __all__ = ["HaloInfiniteClient"]
 
@@ -20,7 +24,7 @@ class HaloInfiniteClient:
 
     def __init__(
         self,
-        session: Session,
+        session: "ClientSession | CachedSession",
         spartan_token: str,
         clearance_token: str,
         requests_per_second: int | None = 5,

@@ -1,15 +1,16 @@
 """Base service class."""
 
-from typing import Any
+from typing import TYPE_CHECKING, Any, TypeAlias
 
 from aiolimiter import AsyncLimiter
 
-try:
+if TYPE_CHECKING:
+    from aiohttp import ClientResponse, ClientSession
     from aiohttp_client_cache.response import CachedResponse
-except ImportError:
-    CachedResponse = None
+    from aiohttp_client_cache.session import CachedSession
 
-from spnkr.session import Response, Session
+Response: TypeAlias = "ClientResponse | CachedResponse"
+Session: TypeAlias = "ClientSession | CachedSession"
 
 
 def _create_limiter(rate_per_second: int) -> AsyncLimiter:
@@ -20,7 +21,7 @@ def _create_limiter(rate_per_second: int) -> AsyncLimiter:
 
 def _is_cached_response(response: Response) -> bool:
     """Return `True` if the response is a cached response."""
-    return CachedResponse is not None and isinstance(response, CachedResponse)
+    return hasattr(response, "from_cache")
 
 
 class BaseService:

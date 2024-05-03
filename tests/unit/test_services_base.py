@@ -68,12 +68,6 @@ def test_is_cached_response_true(cached_response):
     assert spnkr.services.base._is_cached_response(cached_response)
 
 
-def test_is_cached_response_no_import(cached_response, monkeypatch):
-    """Test that _is_cached_response returns False if the library isn't installed"""
-    monkeypatch.setattr(spnkr.services.base, "CachedResponse", None)
-    assert not spnkr.services.base._is_cached_response(cached_response)
-
-
 def test_is_cached_response_not_cached_response(response):
     """Test that _is_cached_response returns False if the response isn't cached"""
     assert not spnkr.services.base._is_cached_response(response)
