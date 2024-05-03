@@ -37,25 +37,25 @@ class ArmorCoreTheme(PascalCaseModel, frozen=True):
     knee_pad_path: str
     left_shoulder_pad_path: str
     right_shoulder_pad_path: str
-    emblems: list[ThemeEmblem]
+    emblems: tuple[ThemeEmblem, ...]
     armor_fx_path: str
     mythic_fx_path: str
     visor_path: str
     hip_attachment_path: str
     wrist_attachment_path: str
-    armor_fx_paths: list[str] | None
+    armor_fx_paths: tuple[str, ...] | None
 
 
 class ArmorCore(PascalCaseModel, frozen=True):
     core_path: str
     is_equipped: bool
-    themes: list[ArmorCoreTheme]
+    themes: tuple[ArmorCoreTheme, ...]
     core_id: str
     core_type: str
 
 
 class ArmorCores(PascalCaseModel, frozen=True):
-    armor_cores: list[ArmorCore]
+    armor_cores: tuple[ArmorCore, ...]
 
 
 class SpartanBody(PascalCaseModel, frozen=True):
@@ -90,7 +90,7 @@ class WeaponCoreTheme(PascalCaseModel, frozen=True):
     is_default: bool
     theme_path: str
     coating_path: str
-    emblems: list[ThemeEmblem]
+    emblems: tuple[ThemeEmblem, ...]
     death_fx_path: str
     ammo_counter_color_path: str
     stat_tracker_path: str
@@ -100,13 +100,13 @@ class WeaponCoreTheme(PascalCaseModel, frozen=True):
 
 class WeaponCore(PascalCaseModel, frozen=True):
     core_path: str
-    themes: list[WeaponCoreTheme]
+    themes: tuple[WeaponCoreTheme, ...]
     core_id: str
     core_type: str
 
 
 class WeaponCores(PascalCaseModel, frozen=True):
-    weapon_cores: list[WeaponCore]
+    weapon_cores: tuple[WeaponCore, ...]
 
 
 class AiCoreTheme(PascalCaseModel, frozen=True):
@@ -124,13 +124,13 @@ class AiCoreTheme(PascalCaseModel, frozen=True):
 class AiCore(PascalCaseModel, frozen=True):
     core_path: str
     is_equipped: bool
-    themes: list[AiCoreTheme]
+    themes: tuple[AiCoreTheme, ...]
     core_id: str
     core_type: str
 
 
 class AiCores(PascalCaseModel, frozen=True):
-    ai_cores: list[AiCore]
+    ai_cores: tuple[AiCore, ...]
 
 
 class VehicleCoreTheme(PascalCaseModel, frozen=True):
@@ -143,19 +143,19 @@ class VehicleCoreTheme(PascalCaseModel, frozen=True):
     horn_path: str
     vehicle_fx_path: str
     vehicle_charm_path: str
-    emblems: list[ThemeEmblem]
+    emblems: tuple[ThemeEmblem, ...]
     alternate_geometry_region_path: str
 
 
 class VehicleCore(PascalCaseModel, frozen=True):
     core_id: str
     core_path: str
-    themes: list[VehicleCoreTheme]
+    themes: tuple[VehicleCoreTheme, ...]
     core_type: str
 
 
 class VehicleCores(PascalCaseModel, frozen=True):
-    vehicle_cores: list[VehicleCore]
+    vehicle_cores: tuple[VehicleCore, ...]
 
 
 class PlayerCustomization(PascalCaseModel, frozen=True):
