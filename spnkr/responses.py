@@ -22,9 +22,12 @@ class JsonResponse(Generic[T]):
         """Whether the response is from cache or not."""
         return hasattr(self.response, "from_cache")
 
-    async def parse(self) -> T:
-        """Parse the response data into the appropriate response model."""
-        return self._parser(await self.response.json())
+    async def parse(self, **kwargs) -> T:
+        """Parse the response data into the appropriate response model.
+
+        Keyword arguments are passed to [aiohttp.ClientResponse.json](https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse.json).
+        """
+        return self._parser(await self.response.json(**kwargs))
 
 
 @dataclass(frozen=True)
