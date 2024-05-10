@@ -3,6 +3,7 @@
 from typing import Iterable
 
 from spnkr.models.profile import User
+from spnkr.responses import JsonResponse
 from spnkr.services.base import BaseService
 from spnkr.xuid import unwrap_xuid, wrap_xuid
 
@@ -12,10 +13,11 @@ _HOST = "https://profile.svc.halowaypoint.com"
 class ProfileService(BaseService):
     """Profile data services."""
 
-    async def _get_user(self, user: str) -> User:
-        return User(**await self._get_json(f"{_HOST}/users/{user}"))
+    async def _get_user(self, user: str) -> JsonResponse[User]:
+        resp = await self._get(f"{_HOST}/users/{user}")
+        return JsonResponse(resp, lambda data: User(**data))
 
-    async def get_current_user(self) -> User:
+    async def get_current_user(self) -> JsonResponse[User]:
         """Get the current user profile.
 
         Returns:
@@ -23,7 +25,7 @@ class ProfileService(BaseService):
         """
         return await self._get_user("me")
 
-    async def get_user_by_gamertag(self, gamertag: str) -> User:
+    async def get_user_by_gamertag(self, gamertag: str) -> JsonResponse[User]:
         """Get user profile for the given gamertag.
 
         Args:
@@ -34,7 +36,7 @@ class ProfileService(BaseService):
         """
         return await self._get_user(f"gt({gamertag})")
 
-    async def get_user_by_id(self, xuid: str | int) -> User:
+    async def get_user_by_id(self, xuid: str | int) -> JsonResponse[User]:
         """Get user profile for the given Xbox Live ID.
 
         Args:
@@ -45,7 +47,9 @@ class ProfileService(BaseService):
         """
         return await self._get_user(wrap_xuid(xuid))
 
-    async def get_users_by_id(self, xuids: Iterable[str | int]) -> list[User]:
+    async def get_users_by_id(
+        self, xuids: Iterable[str | int]
+    ) -> JsonResponse[list[User]]:
         """Get user profiles for the given list of Xbox Live IDs.
 
         Args:
@@ -59,9 +63,7 @@ class ProfileService(BaseService):
         """
         if isinstance(xuids, str):
             raise TypeError("`xuids` must be an iterable of XUIDs, got `str`")
-        if not xuids:
-            return []
         url = f"{_HOST}/users"
         params = {"xuids": [unwrap_xuid(x) for x in xuids]}
-        data = await self._get_json(url, params=params)
-        return [User(**u) for u in data]
+        resp = await self._get(url, params=params)
+        return JsonResponse(resp, lambda data: [User(**u) for u in data])

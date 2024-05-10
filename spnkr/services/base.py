@@ -1,6 +1,6 @@
 """Base service class."""
 
-from typing import TYPE_CHECKING, Any, TypeAlias
+from typing import TYPE_CHECKING, TypeAlias
 
 from aiolimiter import AsyncLimiter
 
@@ -50,13 +50,3 @@ class BaseService:
             await self._rate_limiter.acquire()
         response.raise_for_status()
         return response
-
-    async def _get_json(self, url: str, **kwargs) -> Any:
-        """Make a GET request to `url` and return the decoded JSON response."""
-        response = await self._get(url, **kwargs)
-        return await response.json()
-
-    async def _get_bytes(self, url: str, **kwargs) -> bytes:
-        """Make a GET request to `url` and return the response content."""
-        response = await self._get(url, **kwargs)
-        return await response.read()

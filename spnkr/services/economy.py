@@ -3,6 +3,7 @@
 from typing import Literal
 
 from spnkr.models.economy import PlayerCustomization
+from spnkr.responses import JsonResponse
 from spnkr.services.base import BaseService
 from spnkr.xuid import wrap_xuid
 
@@ -16,7 +17,7 @@ class EconomyService(BaseService):
         self,
         xuid: str | int,
         view_type: Literal["public", "private"] = "public",
-    ) -> PlayerCustomization:
+    ) -> JsonResponse[PlayerCustomization]:
         """Get the customization selections for a player.
 
         Args:
@@ -31,4 +32,5 @@ class EconomyService(BaseService):
         """
         url = f"{_HOST}/hi/players/{wrap_xuid(xuid)}/customization"
         params = {"view": view_type}
-        return PlayerCustomization(**await self._get_json(url, params=params))
+        resp = await self._get(url, params=params)
+        return JsonResponse(resp, lambda data: PlayerCustomization(**data))

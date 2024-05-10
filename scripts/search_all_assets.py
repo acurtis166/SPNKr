@@ -33,7 +33,8 @@ async def main() -> None:
         records = []
         while result_count == 101:
             print(f"Getting assets {start} to {start + 101}")
-            page = await client.discovery_ugc.search_assets(start, count=101)
+            resp = await client.discovery_ugc.search_assets(start, count=101)
+            page = await resp.parse()
             for asset in page.results:
                 record = (
                     str(asset.asset_id),

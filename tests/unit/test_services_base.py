@@ -4,7 +4,6 @@ import time
 from unittest.mock import AsyncMock
 
 import pytest
-from aiohttp_client_cache.response import CachedResponse
 
 import spnkr.services.base
 from spnkr.services.base import BaseService
@@ -13,13 +12,6 @@ from spnkr.services.base import BaseService
 @pytest.fixture
 def service(session):
     return BaseService(session)
-
-
-@pytest.fixture
-def cached_response():
-    return CachedResponse(
-        method="GET", reason="OK", status=200, url="url", version="1.1"
-    )
 
 
 def test_async_limiter_set(service: BaseService):

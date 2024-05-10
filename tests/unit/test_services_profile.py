@@ -50,12 +50,6 @@ async def test_get_users_by_id(session, service: ProfileService):
 
 
 @pytest.mark.asyncio
-async def test_get_users_by_id_empty(session, service: ProfileService):
-    await service.get_users_by_id([])
-    session.get.assert_not_called()
-
-
-@pytest.mark.asyncio
 async def test_get_users_by_id_invalid(service: ProfileService):
     with pytest.raises(TypeError):
         await service.get_users_by_id("xuid(1234567890123456)")

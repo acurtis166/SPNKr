@@ -50,7 +50,7 @@ async def test_get_career_reward_track(session, service: GameCmsHacsService):
 async def test_get_image(session, service: GameCmsHacsService):
     session.set_response("career_rank_corporal_gold_III.png")
     result = await service.get_image("path/to/image.png")
-    assert round(len(result) / 1024) == 15
+    assert round(len(await result.read()) / 1024) == 15
     session.get.assert_called_with(
         "https://gamecms-hacs.svc.halowaypoint.com/hi/images/file/path/to/image.png"
     )

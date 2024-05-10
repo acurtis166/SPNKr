@@ -22,6 +22,7 @@ nav:
     - reference/authentication.md
     - reference/client.md
     - reference/services.md
+    - reference/responses.md
     - reference/models.md
     - reference/reference-data.md
     - reference/tools.md

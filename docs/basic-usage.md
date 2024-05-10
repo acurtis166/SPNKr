@@ -53,7 +53,9 @@ async def main() -> None:
         client = HaloInfiniteClient(...)
 
         # Request the 25 most recent matches for the player.
-        history = await client.stats.get_match_history(PLAYER)
+        resp = await client.stats.get_match_history(PLAYER)
+        # Parse the response JSON into a Pydantic model
+        history = await resp.parse()
 
         # Get the most recent match played and print the start time.
         last_match_info = history.results[0].match_info
@@ -64,7 +66,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-Calls to [HaloInfiniteClient](reference/client.md) services return parsed JSON payloads in the form of [Pydantic](https://docs.pydantic.dev/latest/) models. You can browse the information available in those response models [here](reference/models.md).
+Calls to [HaloInfiniteClient](reference/client.md) services return `aiohttp.ClientResponse` [wrappers](reference/responses.md) to provide access to the raw response, if needed, while also providing a convenient `parse()` method to more cleanly access data from the payload as [Pydantic](https://docs.pydantic.dev/latest/) models. You can browse the information available in those response models [here](reference/models.md).
 
 Of course, there are additional methods for retrieving stats, CSR/MMR, and metadata information.
 

@@ -1,4 +1,4 @@
-# Response Models
+# Models
 
 ::: spnkr.models.discovery_ugc
 

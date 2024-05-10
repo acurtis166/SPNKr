@@ -33,7 +33,8 @@ async def main(match_id: str, output_dir: Path) -> None:
             spartan_token=player.spartan_token.token,
             clearance_token=player.clearance_token.token,
         )
-        film = await client.discovery_ugc.get_film_by_match_id(match_id)
+        resp = await client.discovery_ugc.get_film_by_match_id(match_id)
+        film = await resp.parse()
 
         for chunk, url in film.get_chunks_and_urls():
             chunk_type = chunk.chunk_type.name.lower()

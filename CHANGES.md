@@ -8,6 +8,7 @@
 
 ### Changed
 
+- Return `aiohttp.ClientResponse` wrappers from service methods instead of returning Pydantic response models directly. This provides access to the raw response data and doesn't force users to subscribe to parsing the full payload.
 - Use absolute imports instead of relative.
 - Simplify session and response typing.
 

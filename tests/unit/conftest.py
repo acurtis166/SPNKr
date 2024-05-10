@@ -5,6 +5,7 @@ from typing import Any
 from unittest.mock import AsyncMock
 
 import pytest
+from aiohttp_client_cache.response import CachedResponse
 
 
 class MockResponse:
@@ -41,3 +42,10 @@ def session():
 @pytest.fixture
 def response():
     return MockResponse(b"{}")
+
+
+@pytest.fixture
+def cached_response():
+    return CachedResponse(
+        method="GET", reason="OK", status=200, url="url", version="1.1"
+    )
