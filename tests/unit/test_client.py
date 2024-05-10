@@ -20,12 +20,18 @@ def client(session):
     return HaloInfiniteClient(session, "spartan", "clearance", 5)
 
 
-def test_client_header_update(client: HaloInfiniteClient):
-    """Test that the client headers are updated as expected."""
+def test_client_set_tokens(client: HaloInfiniteClient):
+    """Test that the client headers are set in the `set_tokens` method."""
     assert client._session.headers == {
         "Accept": "application/json",
         "x-343-authorization-spartan": "spartan",
         "343-clearance": "clearance",
+    }
+    client.set_tokens("new_spartan", "new_clearance")
+    assert client._session.headers == {
+        "Accept": "application/json",
+        "x-343-authorization-spartan": "new_spartan",
+        "343-clearance": "new_clearance",
     }
 
 

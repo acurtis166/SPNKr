@@ -35,18 +35,31 @@ class HaloInfiniteClient:
             session: The `aiohttp.ClientSession` to use. Support for caching is
                 available via a `CachedSession` from `aiohttp-client-cache`.
             spartan_token: The spartan token used to authenticate with the API.
-            clearance_token: The clearance token used to authenticate with the
-                API.
+            clearance_token: The clearance token used to authenticate with the API.
             requests_per_second: The rate limit to use. Note that this rate
                 limit is enforced per service, not globally. Defaults to 5
                 requests per second. Set to None to disable rate limiting.
         """
-        session.headers.clear()
-        session.headers["Accept"] = "application/json"
-        session.headers["x-343-authorization-spartan"] = spartan_token
-        session.headers["343-clearance"] = clearance_token
         self._session = session
         self._requests_per_second = requests_per_second
+        self.set_tokens(spartan_token, clearance_token)
+
+    def set_tokens(self, spartan_token: str, clearance_token: str) -> None:
+        """Update the tokens used for authentication.
+
+        This method is called during initialization, but can be used after
+        initialization to replace expiring tokens.
+
+        Args:
+            spartan_token: The spartan token used to authenticate with the API.
+            clearance_token: The clearance token used to authenticate with the API.
+        """
+        update = {
+            "Accept": "application/json",
+            "x-343-authorization-spartan": spartan_token,
+            "343-clearance": clearance_token,
+        }
+        self._session.headers.update(update)
 
     @cached_property
     def profile(self) -> ProfileService:
