@@ -27,11 +27,11 @@ async def main() -> None:
             spartan_token=player.spartan_token.token,
             clearance_token=player.clearance_token.token,
         )
-        image = await client.gamecms_hacs.get_image(
+        resp = await client.gamecms_hacs.get_image(
             "career_rank/ProgressWidget/64_Corporal_Gold_III.png"
         )
         with open("test.png", "wb") as f:
-            f.write(image)
+            f.write(await resp.read())
 
 
 if __name__ == "__main__":
