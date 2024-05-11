@@ -11,8 +11,7 @@ Now that we have the spartan and clearance tokens, we are ready to create a [Hal
 import asyncio
 
 from aiohttp import ClientSession
-
-from spnkr.client import HaloInfiniteClient
+from spnkr import HaloInfiniteClient
 
 
 async def main() -> None:
@@ -38,8 +37,7 @@ Now that we have the [HaloInfiniteClient](reference/client.md) initialized, we c
 import asyncio
 
 from aiohttp import ClientSession
-
-from spnkr.client import HaloInfiniteClient
+from spnkr import HaloInfiniteClient
 
 # Any of the following are acceptable for the below request.
 PLAYER = "xuid(1234567890123456)"  # AuthenticatedPlayer.player_id
@@ -76,7 +74,7 @@ Caching is supported via the `aiohttp-client-cache` [package](https://pypi.org/p
 
 ```python
 from aiohttp_client_cache import CachedSession, SQLiteBackend
-from spnkr.client import HaloInfiniteClient
+from spnkr import HaloInfiniteClient
 
 
 async def filter_by_cache_control(response):

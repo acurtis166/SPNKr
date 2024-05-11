@@ -6,6 +6,7 @@
 
 - Economy service, `get_player_customization` method, and associated response model.
 - Exposed token updating for `HaloInfiniteClient` via a `set_tokens` method.
+- Primary imports are available directly from `spnkr`.
 
 ### Changed
 

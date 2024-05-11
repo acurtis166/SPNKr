@@ -9,8 +9,7 @@ from pathlib import Path
 import dotenv
 from aiohttp import ClientSession
 
-from spnkr.auth import AzureApp, refresh_player_tokens
-from spnkr.client import HaloInfiniteClient
+from spnkr import AzureApp, HaloInfiniteClient, refresh_player_tokens
 
 dotenv.load_dotenv()
 

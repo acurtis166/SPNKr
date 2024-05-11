@@ -6,7 +6,7 @@ import os
 import dotenv
 from aiohttp import ClientSession
 
-from spnkr.auth import AzureApp, authenticate_player
+from spnkr import AzureApp, authenticate_player
 
 dotenv.load_dotenv()
 

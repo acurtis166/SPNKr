@@ -58,7 +58,7 @@ import asyncio
 
 from aiohttp import ClientSession
 
-from spnkr.auth import AzureApp, authenticate_player
+from spnkr import AzureApp, authenticate_player
 
 CLIENT_ID = "CLIENT_ID"
 CLIENT_SECRET = "CLIENT_SECRET"
@@ -96,7 +96,7 @@ import asyncio
 
 from aiohttp import ClientSession
 
-from spnkr.auth import AzureApp, refresh_player_tokens
+from spnkr import AzureApp, refresh_player_tokens
 
 CLIENT_ID = "CLIENT_ID"
 CLIENT_SECRET = "CLIENT_SECRET"
