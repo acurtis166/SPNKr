@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Remove ability to pass `None` as an argument for `requests_per_second` when creating a client.
+
 ## [0.8.0] - 2024-05-11
 
 ### Added

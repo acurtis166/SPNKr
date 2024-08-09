@@ -27,7 +27,7 @@ class HaloInfiniteClient:
         session: "ClientSession | CachedSession",
         spartan_token: str,
         clearance_token: str,
-        requests_per_second: int | None = 5,
+        requests_per_second: int = 5,
     ) -> None:
         """Initialize a client for the Halo Infinite API.
 
@@ -38,7 +38,7 @@ class HaloInfiniteClient:
             clearance_token: The clearance token used to authenticate with the API.
             requests_per_second: The rate limit to use. Note that this rate
                 limit is enforced per service, not globally. Defaults to 5
-                requests per second. Set to None to disable rate limiting.
+                requests per second.
         """
         self._session = session
         self._requests_per_second = requests_per_second

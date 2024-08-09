@@ -32,7 +32,6 @@ async def client(authenticated_player):
             session=session,
             spartan_token=authenticated_player.spartan_token.token,
             clearance_token=authenticated_player.clearance_token.token,
-            requests_per_second=None,
         )
 
 

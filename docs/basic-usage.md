@@ -20,7 +20,7 @@ async def main() -> None:
             session=session,
             spartan_token="SPARTAN_TOKEN",
             clearance_token="CLEARANCE_TOKEN",
-            # Optional, default rate is 5. Pass None for no rate-limiting
+            # Optional, default rate is 5.
             requests_per_second=5,
         )
 
