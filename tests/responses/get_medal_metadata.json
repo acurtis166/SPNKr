@@ -5398,6 +5398,1282 @@
             "typeIndex": 5,
             "personalScore": 0,
             "nameId": 1331361851
+        },
+        {
+            "name": {
+                "value": "Sole Survivor",
+                "translations": {
+                    "pt-BR": "Único Sobrevivente",
+                    "zh-CN": "唯一幸存者",
+                    "zh-TW": "唯一倖存者",
+                    "de-DE": "Einziger Überlebender",
+                    "fr-FR": "Unique survivant",
+                    "it-IT": "Unico superstite",
+                    "ja-JP": "ラスト サバイバー",
+                    "ko-KR": "최후의 생존자",
+                    "es-MX": "Único sobreviviente",
+                    "nl-NL": "De enige overlevende",
+                    "pl-PL": "Jedyny ocalały",
+                    "ru-RU": "Единственный выживший",
+                    "es-ES": "Único superviviente"
+                }
+            },
+            "description": {
+                "value": "Be the final Survivor in an Infection round",
+                "translations": {
+                    "pt-BR": "Seja o último Sobrevivente em uma rodada de Infecção",
+                    "zh-CN": "在感染游戏的一回合内成为最后的幸存者",
+                    "zh-TW": "在單一感染回合中成為最後倖存者",
+                    "de-DE": "Eine Infektionsrunde als letzter Überlebender abschließen",
+                    "fr-FR": "Soyez le dernier survivant dans une manche d'Infection.",
+                    "it-IT": "Diventa l'ultimo superstite in un turno di Infezione",
+                    "ja-JP": "インフェクションのラウンドで最後の生存者となる",
+                    "ko-KR": "감염 게임 한 라운드에서 마지막 생존자가 되십시오",
+                    "es-MX": "Conviértete en el Superviviente final en una ronda de Infección",
+                    "nl-NL": "Overleef als laatste in een Infection-ronde",
+                    "pl-PL": "Przetrwaj jako ostatnia osoba na placu boju w rundzie infekcji.",
+                    "ru-RU": "Станьте последним выжившим в раунде «Заражения».",
+                    "es-ES": "Sobrevive hasta el final en una ronda de Infección."
+                }
+            },
+            "spriteIndex": 26,
+            "sortingWeight": 50,
+            "difficultyIndex": 0,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 2717755703
+        },
+        {
+            "name": {
+                "value": "Culling",
+                "translations": {
+                    "pt-BR": "Abate",
+                    "zh-CN": "扑杀",
+                    "zh-TW": "撲殺",
+                    "de-DE": "Ausmerzen",
+                    "fr-FR": "Bourreau",
+                    "it-IT": "Abbattimento",
+                    "ja-JP": "カリング",
+                    "ko-KR": "솎아내기",
+                    "es-MX": "Sacrificio",
+                    "nl-NL": "Slachting",
+                    "pl-PL": "Ubój",
+                    "ru-RU": "Отстрел",
+                    "es-ES": "Sacrificio"
+                }
+            },
+            "description": {
+                "value": "Kill 2 Infected in quick succession",
+                "translations": {
+                    "pt-BR": "Mate 2 Infectados em sequência",
+                    "zh-CN": "快速连续击杀 2 名感染者",
+                    "zh-TW": "快速連續擊殺 2 名感染者",
+                    "de-DE": "2 Infizierte schnell hintereinander eliminieren",
+                    "fr-FR": "Tuez 2 infectés d'affilée.",
+                    "it-IT": "Uccidi 2 infetti in rapida successione",
+                    "ja-JP": "連続で 2 人の感染者を倒す",
+                    "ko-KR": "빠르게 연속해서 감염자 2명을 처치하십시오",
+                    "es-MX": "Abate 2 Infectados en sucesión rápida",
+                    "nl-NL": "Dood snel achter elkaar 2 geïnfecteerden",
+                    "pl-PL": "Zabij 2 zainfekowanych w krótkich odstępach czasu.",
+                    "ru-RU": "Быстро убейте 2 заражённых.",
+                    "es-ES": "Mata a 2 infectados en una rápida sucesión."
+                }
+            },
+            "spriteIndex": 27,
+            "sortingWeight": 100,
+            "difficultyIndex": 1,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 1025827095
+        },
+        {
+            "name": {
+                "value": "Blight",
+                "translations": {
+                    "pt-BR": "Praga",
+                    "zh-CN": "祸害将至",
+                    "zh-TW": "禍害將至",
+                    "de-DE": "Verderbnis",
+                    "fr-FR": "Fléau",
+                    "it-IT": "Rovina",
+                    "ja-JP": "ブライト",
+                    "ko-KR": "역병",
+                    "es-MX": "Plaga",
+                    "nl-NL": "Plaag",
+                    "pl-PL": "Gorączka",
+                    "ru-RU": "Мор",
+                    "es-ES": "Plaga"
+                }
+            },
+            "description": {
+                "value": "Kill 2 Survivors in quick succession",
+                "translations": {
+                    "pt-BR": "Mate 2 Sobreviventes em sequência",
+                    "zh-CN": "快速连续击杀 2 名幸存者",
+                    "zh-TW": "快速連續擊殺 2 名倖存者",
+                    "de-DE": "2 Überlebende schnell hintereinander eliminieren.",
+                    "fr-FR": "Tuez 2 survivants d'affilée.",
+                    "it-IT": "Uccidi 2 superstiti in rapida successione",
+                    "ja-JP": "連続で生存者 2 人を倒す",
+                    "ko-KR": "빠르게 연속해서 생존자 2명을 처치하십시오",
+                    "es-MX": "Mata a 2 Supervivientes en sucesión rápida",
+                    "nl-NL": "Dood snel achter elkaar 2 overlevenden",
+                    "pl-PL": "Zabij 2 ocalałych w krótkich odstępach czasu.",
+                    "ru-RU": "Быстро убейте 2 выживших.",
+                    "es-ES": "Mata a 2 supervivientes en una rápida sucesión."
+                }
+            },
+            "spriteIndex": 28,
+            "sortingWeight": 100,
+            "difficultyIndex": 1,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 88914608
+        },
+        {
+            "name": {
+                "value": "Zombie Slayer",
+                "translations": {
+                    "pt-BR": "Assassino de Thrall",
+                    "zh-CN": "奴仆杀敌之王",
+                    "zh-TW": "奴隸殺戮之王",
+                    "de-DE": "Sklavenschlächter",
+                    "fr-FR": "Serviteur assassin",
+                    "it-IT": "Uccisore di schiavi",
+                    "ja-JP": "スロール スレイヤー",
+                    "ko-KR": "노예 슬레이어",
+                    "es-MX": "Asesino de Thrall",
+                    "nl-NL": "Thrall Slayer",
+                    "pl-PL": "Zabójca niewolników",
+                    "ru-RU": "Убийца Рабов",
+                    "es-ES": "Thrallslayer"
+                }
+            },
+            "description": {
+                "value": "Kill 10 Infected without dying",
+                "translations": {
+                    "pt-BR": "Mate 10 Infectados sem morrer",
+                    "zh-CN": "在不死亡的情况下杀死 10 名感染者",
+                    "zh-TW": "活著連續殺死 10 個殭屍",
+                    "de-DE": "10 Infizierte ausschalten, ohne selbst zu sterben.",
+                    "fr-FR": "Tuez 10 infectés sans mourir.",
+                    "it-IT": "Uccidi 10 infetti senza morire",
+                    "ja-JP": "自分は倒されずに感染者 10 名を倒す",
+                    "ko-KR": "감염된 적 10명을 죽지 않고 처치하십시오",
+                    "es-MX": "Mata a 10 zombis sin morir",
+                    "nl-NL": "Dood 10 geïnfecteerden zonder dood te gaan",
+                    "pl-PL": "Zabij 10 zainfekowanych, pozostając przy życiu.",
+                    "ru-RU": "Убейте 10 заражённых подряд, не умирая.",
+                    "es-ES": "Mata a 10 infectados sin morir."
+                }
+            },
+            "spriteIndex": 29,
+            "sortingWeight": 100,
+            "difficultyIndex": 1,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 557309779
+        },
+        {
+            "name": {
+                "value": "Purge",
+                "translations": {
+                    "pt-BR": "Eliminação",
+                    "zh-CN": "肃清",
+                    "zh-TW": "肅清",
+                    "de-DE": "Säuberung",
+                    "fr-FR": "Purgateur",
+                    "it-IT": "Epurazione",
+                    "ja-JP": "パージ",
+                    "ko-KR": "청소",
+                    "es-MX": "Purga",
+                    "nl-NL": "Zuivering",
+                    "pl-PL": "Czystka",
+                    "ru-RU": "Чистка",
+                    "es-ES": "Purga"
+                }
+            },
+            "description": {
+                "value": "Kill 4 Infected in quick succession",
+                "translations": {
+                    "pt-BR": "Mate 4 Infectados em sequência",
+                    "zh-CN": "快速连续击杀 4 名感染者",
+                    "zh-TW": "快速連續擊殺 4 名感染者",
+                    "de-DE": "4 Infizierte schnell hintereinander eliminieren",
+                    "fr-FR": "Tuez 4 infectés d'affilée.",
+                    "it-IT": "Uccidi 4 infetti in rapida successione",
+                    "ja-JP": "連続で 4 人の感染者を倒す",
+                    "ko-KR": "빠르게 연속해서 감염자 4명을 처치하십시오",
+                    "es-MX": "Abate 4 Infectados en sucesión rápida",
+                    "nl-NL": "Dood snel achter elkaar 4 geïnfecteerden",
+                    "pl-PL": "Zabij 4 zainfekowanych w krótkich odstępach czasu.",
+                    "ru-RU": "Быстро убейте 4 заражённых.",
+                    "es-ES": "Mata a 4 infectados en una rápida sucesión."
+                }
+            },
+            "spriteIndex": 30,
+            "sortingWeight": 150,
+            "difficultyIndex": 2,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 3467301935
+        },
+        {
+            "name": {
+                "value": "Disease",
+                "translations": {
+                    "pt-BR": "Doença",
+                    "zh-CN": "害病缠身",
+                    "zh-TW": "害病纏身",
+                    "de-DE": "Krankheit",
+                    "fr-FR": "Maladie",
+                    "it-IT": "Malattia",
+                    "ja-JP": "ディジーズ",
+                    "ko-KR": "질병",
+                    "es-MX": "Enfermedad",
+                    "nl-NL": "Ziekte",
+                    "pl-PL": "Choroba",
+                    "ru-RU": "Болезнь",
+                    "es-ES": "Dolencia"
+                }
+            },
+            "description": {
+                "value": "Kill 3 Survivors in quick succession",
+                "translations": {
+                    "pt-BR": "Mate 3 Sobreviventes em sequência",
+                    "zh-CN": "快速连续击杀 3 名幸存者",
+                    "zh-TW": "快速連續擊殺 3 名倖存者",
+                    "de-DE": "3 Überlebende schnell hintereinander eliminieren.",
+                    "fr-FR": "Tuez 3 survivants d'affilée.",
+                    "it-IT": "Uccidi 3 superstiti in rapida successione",
+                    "ja-JP": "連続で生存者 3 人を倒す",
+                    "ko-KR": "빠르게 연속해서 생존자 3명을 처치하십시오",
+                    "es-MX": "Mata a 3 Supervivientes en sucesión rápida",
+                    "nl-NL": "Dood snel achter elkaar 3 overlevenden",
+                    "pl-PL": "Zabij 3 ocalałych w krótkich odstępach czasu.",
+                    "ru-RU": "Быстро убейте 3 выживших.",
+                    "es-ES": "Mata a 3 supervivientes en una rápida sucesión."
+                }
+            },
+            "spriteIndex": 31,
+            "sortingWeight": 150,
+            "difficultyIndex": 2,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 1155542859
+        },
+        {
+            "name": {
+                "value": "Undead Hunter",
+                "translations": {
+                    "pt-BR": "Caçador de Mortos-vivos",
+                    "zh-CN": "僵尸杀手",
+                    "zh-TW": "感染者殺手",
+                    "de-DE": "Jäger der Untoten",
+                    "fr-FR": "Traqueur immortel",
+                    "it-IT": "Cacciatore non-morto",
+                    "ja-JP": "アンデッド ハンター",
+                    "ko-KR": "언데드 헌터",
+                    "es-MX": "Cazador no-muerto",
+                    "nl-NL": "Ondodenjager",
+                    "pl-PL": "Łowca nieumarłych",
+                    "ru-RU": "Охотник на зомби",
+                    "es-ES": "A cazar no-muertos"
+                }
+            },
+            "description": {
+                "value": "Kill 20 Infected without dying",
+                "translations": {
+                    "pt-BR": "Mate 20 Infectados sem morrer",
+                    "zh-CN": "在不死亡的情况下杀死 20 个僵尸",
+                    "zh-TW": "活著連續殺死 20 個殭屍",
+                    "de-DE": "20 Infizierte ausschalten, ohne selbst zu sterben.",
+                    "fr-FR": "Tuez 20 infectés sans mourir.",
+                    "it-IT": "Uccidi 20 infetti senza morire",
+                    "ja-JP": "自分は倒されずに感染者 20 名を倒す",
+                    "ko-KR": "감염된 적 20명을 죽지 않고 처치하십시오",
+                    "es-MX": "Mata a 20 oponentes sin morir",
+                    "nl-NL": "Dood 20 geïnfecteerden zonder dood te gaan",
+                    "pl-PL": "Zabij 20 zainfekowanych, pozostając przy życiu.",
+                    "ru-RU": "Убейте 20 заражённых подряд, не умирая.",
+                    "es-ES": "Mata a 20 infectados sin morir."
+                }
+            },
+            "spriteIndex": 32,
+            "sortingWeight": 150,
+            "difficultyIndex": 2,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 1447057920
+        },
+        {
+            "name": {
+                "value": "Untainted",
+                "translations": {
+                    "pt-BR": "Puro",
+                    "zh-CN": "洁白无暇",
+                    "zh-TW": "潔白無暇",
+                    "de-DE": "Makellos",
+                    "fr-FR": "Résistant",
+                    "it-IT": "Immacolato",
+                    "ja-JP": "アンテイント",
+                    "ko-KR": "무감염",
+                    "es-MX": "Inmaculado",
+                    "nl-NL": "Ongeschonden",
+                    "pl-PL": "Nieskalany",
+                    "ru-RU": "Чистая репутация",
+                    "es-ES": "Pureza"
+                }
+            },
+            "description": {
+                "value": "Maintain your humanity in Infection",
+                "translations": {
+                    "pt-BR": "Conserve a sua humanidade em uma Infecção",
+                    "zh-CN": "在感染中保持你的人性",
+                    "zh-TW": "在感染中保持你的人性",
+                    "de-DE": "In Infektion die Menschlichkeit bewahren.",
+                    "fr-FR": "Conservez votre humanité en Infection.",
+                    "it-IT": "Mantieni la tua umanità in Infezione",
+                    "ja-JP": "インフェクションにおいて人間であり続ける",
+                    "ko-KR": "감염 게임에서 인간성을 유지하십시오",
+                    "es-MX": "Mantén tu humanidad en Infección",
+                    "nl-NL": "Blijf menselijk in Infection",
+                    "pl-PL": "Zachowaj człowieczeństwo podczas infekcji.",
+                    "ru-RU": "Сохраните человечность в «Заражении».",
+                    "es-ES": "Conserva tu humanidad en Infección."
+                }
+            },
+            "spriteIndex": 33,
+            "sortingWeight": 150,
+            "difficultyIndex": 2,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 1064731598
+        },
+        {
+            "name": {
+                "value": "Cleansing",
+                "translations": {
+                    "pt-BR": "Limpeza",
+                    "zh-CN": "净化",
+                    "zh-TW": "洗滌罪惡",
+                    "de-DE": "Reinigung",
+                    "fr-FR": "Nettoyage",
+                    "it-IT": "Pulizia",
+                    "ja-JP": "クレンジング",
+                    "ko-KR": "청소",
+                    "es-MX": "Purificar",
+                    "nl-NL": "Zuivering",
+                    "pl-PL": "Oczyszczenie",
+                    "ru-RU": "Очищение",
+                    "es-ES": "Limpieza"
+                }
+            },
+            "description": {
+                "value": "Kill 6 Infected in quick succession",
+                "translations": {
+                    "pt-BR": "Mate 6 Infectados em sequência",
+                    "zh-CN": "快速连续击杀 6 名感染者",
+                    "zh-TW": "快速連續擊殺 6 名感染者",
+                    "de-DE": "6 Infizierte schnell hintereinander eliminieren",
+                    "fr-FR": "Tuez 6 infectés d'affilée.",
+                    "it-IT": "Uccidi 6 infetti in rapida successione",
+                    "ja-JP": "連続で 6 人の感染者を倒す",
+                    "ko-KR": "빠르게 연속해서 감염자 6명을 처치하십시오",
+                    "es-MX": "Abate 6 Infectados en sucesión rápida",
+                    "nl-NL": "Dood snel achter elkaar 6 geïnfecteerden",
+                    "pl-PL": "Zabij 6 zainfekowanych w krótkich odstępach czasu.",
+                    "ru-RU": "Быстро убейте 6 заражённых.",
+                    "es-ES": "Mata a 6 infectados en una rápida sucesión."
+                }
+            },
+            "spriteIndex": 34,
+            "sortingWeight": 205,
+            "difficultyIndex": 3,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 1765213446
+        },
+        {
+            "name": {
+                "value": "Plague",
+                "translations": {
+                    "pt-BR": "Epidemia",
+                    "zh-CN": "瘟疫散布",
+                    "zh-TW": "疫病擴散",
+                    "de-DE": "Pest",
+                    "fr-FR": "Peste",
+                    "it-IT": "Piaga",
+                    "ja-JP": "プレイグ",
+                    "ko-KR": "역병 운반자",
+                    "es-MX": "Plaga",
+                    "nl-NL": "Pest",
+                    "pl-PL": "Plaga",
+                    "ru-RU": "Чума",
+                    "es-ES": "Peste"
+                }
+            },
+            "description": {
+                "value": "Kill 4 Survivors in quick succession",
+                "translations": {
+                    "pt-BR": "Mate 4 Sobreviventes em sequência",
+                    "zh-CN": "快速连续击杀 4 名幸存者",
+                    "zh-TW": "快速連續擊殺 4 名倖存者",
+                    "de-DE": "4 Überlebende schnell hintereinander eliminieren.",
+                    "fr-FR": "Tuez 4 survivants d'affilée.",
+                    "it-IT": "Uccidi 4 superstiti in rapida successione",
+                    "ja-JP": "連続で生存者 4 人を倒す",
+                    "ko-KR": "빠르게 연속해서 생존자 4명을 처치하십시오",
+                    "es-MX": "Mata a 4 Supervivientes en sucesión rápida",
+                    "nl-NL": "Dood snel achter elkaar 4 overlevenden",
+                    "pl-PL": "Zabij 4 ocalałych w krótkich odstępach czasu.",
+                    "ru-RU": "Быстро убейте 4 выживших.",
+                    "es-ES": "Mata a 4 supervivientes en una rápida sucesión."
+                }
+            },
+            "spriteIndex": 35,
+            "sortingWeight": 205,
+            "difficultyIndex": 3,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 3786134933
+        },
+        {
+            "name": {
+                "value": "Hell's Janitor",
+                "translations": {
+                    "pt-BR": "Zelador do Inferno",
+                    "zh-CN": "地狱清洁工",
+                    "zh-TW": "地獄清潔工",
+                    "de-DE": "Hausmeister der Hölle",
+                    "fr-FR": "Gardien des enfers",
+                    "it-IT": "Custode dell'Inferno",
+                    "ja-JP": "ヘル ジャニター",
+                    "ko-KR": "지옥의 청소부",
+                    "es-MX": "Conserje infernal",
+                    "nl-NL": "Helse conciërge",
+                    "pl-PL": "Z piekła rodem",
+                    "ru-RU": "Уборщик из ада",
+                    "es-ES": "La conserjería del infierno"
+                }
+            },
+            "description": {
+                "value": "Kill 30 Infected without dying",
+                "translations": {
+                    "pt-BR": "Mate 30 Infectados sem morrer",
+                    "zh-CN": "在不死亡的情况下杀死 30 个僵尸",
+                    "zh-TW": "活著連續殺死 30 個殭屍",
+                    "de-DE": "30 Infizierte ausschalten, ohne selbst zu sterben.",
+                    "fr-FR": "Tuez 30 infectés sans mourir.",
+                    "it-IT": "Uccidi 30 infetti senza morire",
+                    "ja-JP": "自分は倒されずに感染者 30 名を倒す",
+                    "ko-KR": "감염된 적 30명을 죽지 않고 처치하십시오",
+                    "es-MX": "Mata a 30 oponentes sin morir",
+                    "nl-NL": "Dood 30 geïnfecteerden zonder dood te gaan",
+                    "pl-PL": "Zabij 30 zainfekowanych, nie umierając.",
+                    "ru-RU": "Убейте 30 заражённых подряд, не умирая.",
+                    "es-ES": "Mata a 30 infectados sin morir."
+                }
+            },
+            "spriteIndex": 36,
+            "sortingWeight": 200,
+            "difficultyIndex": 3,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 217730222
+        },
+        {
+            "name": {
+                "value": "The Sickness",
+                "translations": {
+                    "pt-BR": "A Doença",
+                    "zh-CN": "疫病来源",
+                    "zh-TW": "疫病來源",
+                    "de-DE": "Infektiös",
+                    "fr-FR": "Affection",
+                    "it-IT": "La malattia",
+                    "ja-JP": "シクネス",
+                    "ko-KR": "돌림병",
+                    "es-MX": "La Enfermedad",
+                    "nl-NL": "Potje pesten",
+                    "pl-PL": "Przypadłość",
+                    "ru-RU": "Эпидемия",
+                    "es-ES": "Convalecencia"
+                }
+            },
+            "description": {
+                "value": "Infect all Survivors in an Infection round",
+                "translations": {
+                    "pt-BR": "Contamine todos os Sobreviventes em uma rodada de Infecção",
+                    "zh-CN": "在一个感染回合中感染所有幸存者",
+                    "zh-TW": "在單一感染回合中，感染所有倖存者",
+                    "de-DE": "In einer Infektionsrunde alle Überlebenden infizieren",
+                    "fr-FR": "Infectez tous les survivants d'une manche d'Infection.",
+                    "it-IT": "Infetta tutti i sopravvissuti in un turno di Infezione",
+                    "ja-JP": "インフェクションのラウンドですべての生存者を感染させる",
+                    "ko-KR": "감염 게임 한 라운드에서 생존자를 모두 감염시키십시오",
+                    "es-MX": "Infecta a todos los sobrevivientes en una ronda de Infección",
+                    "nl-NL": "Infecteer alle overlevenden in een Infection-ronde",
+                    "pl-PL": "Zaraź wszystkich ocalałych w rundzie infekcji.",
+                    "ru-RU": "Заразите всех выживших в раунде «Заражения».",
+                    "es-ES": "Infecta a todos los supervivientes en una ronda de Infección."
+                }
+            },
+            "spriteIndex": 37,
+            "sortingWeight": 200,
+            "difficultyIndex": 3,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 17866865
+        },
+        {
+            "name": {
+                "value": "Purification",
+                "translations": {
+                    "pt-BR": "Purificação",
+                    "zh-CN": "净化",
+                    "zh-TW": "淨化",
+                    "de-DE": "Läuterung",
+                    "fr-FR": "Purificateur",
+                    "it-IT": "Bonifica",
+                    "ja-JP": "ピューリフィケーション",
+                    "ko-KR": "정화",
+                    "es-MX": "Purificación",
+                    "nl-NL": "Purificatie",
+                    "pl-PL": "Wyzwolenie",
+                    "ru-RU": "Дезинфекция",
+                    "es-ES": "Purificación"
+                }
+            },
+            "description": {
+                "value": "Kill 8 Infected in quick succession",
+                "translations": {
+                    "pt-BR": "Mate 8 Infectados em sequência",
+                    "zh-CN": "快速连续击杀 8 名感染者",
+                    "zh-TW": "快速連續擊殺 8 名感染者",
+                    "de-DE": "8 Infizierte schnell hintereinander eliminieren",
+                    "fr-FR": "Tuez 8 infectés d'affilée.",
+                    "it-IT": "Uccidi 8 infetti in rapida successione",
+                    "ja-JP": "連続で 8 人の感染者を倒す",
+                    "ko-KR": "빠르게 연속해서 감염자 8명을 처치하십시오",
+                    "es-MX": "Abate 8 Infectados en sucesión rápida",
+                    "nl-NL": "Dood snel achter elkaar 8 geïnfecteerden",
+                    "pl-PL": "Zabij 8 zainfekowanych w krótkich odstępach czasu.",
+                    "ru-RU": "Быстро убейте 8 заражённых.",
+                    "es-ES": "Mata a 8 infectados en una rápida sucesión."
+                }
+            },
+            "spriteIndex": 38,
+            "sortingWeight": 220,
+            "difficultyIndex": 3,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 496411737
+        },
+        {
+            "name": {
+                "value": "Pestilence",
+                "translations": {
+                    "pt-BR": "Pestilência",
+                    "zh-CN": "瘟疫",
+                    "zh-TW": "疫災肆虐",
+                    "de-DE": "Seuche",
+                    "fr-FR": "Calamité",
+                    "it-IT": "Pestilenza",
+                    "ja-JP": "ペスティレンス",
+                    "ko-KR": "역병 창궐",
+                    "es-MX": "Pestilencia",
+                    "nl-NL": "Epidemie",
+                    "pl-PL": "Pomór",
+                    "ru-RU": "Мор",
+                    "es-ES": "Pestilencia"
+                }
+            },
+            "description": {
+                "value": "Kill 5 Survivors in quick succession",
+                "translations": {
+                    "pt-BR": "Mate 5 Sobreviventes em sequência",
+                    "zh-CN": "快速连续击杀 5 名幸存者",
+                    "zh-TW": "快速連續擊殺 5 名倖存者",
+                    "de-DE": "5 Überlebende schnell hintereinander eliminieren.",
+                    "fr-FR": "Tuez 5 survivants d'affilée.",
+                    "it-IT": "Uccidi 5 superstiti in rapida successione",
+                    "ja-JP": "連続で生存者 5 人を倒す",
+                    "ko-KR": "빠르게 연속해서 생존자 5명을 처치하십시오",
+                    "es-MX": "Mata a 5 Supervivientes en sucesión rápida",
+                    "nl-NL": "Dood snel achter elkaar 5 overlevenden",
+                    "pl-PL": "Zabij 5 ocalałych w krótkich odstępach czasu.",
+                    "ru-RU": "Быстро убейте 5 выживших.",
+                    "es-ES": "Mata a 5 supervivientes en una rápida sucesión."
+                }
+            },
+            "spriteIndex": 39,
+            "sortingWeight": 210,
+            "difficultyIndex": 3,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 1719203329
+        },
+        {
+            "name": {
+                "value": "Divine Intervention",
+                "translations": {
+                    "pt-BR": "Intervenção Divina",
+                    "zh-CN": "天罚",
+                    "zh-TW": "天罰",
+                    "de-DE": "Göttliche Intervention",
+                    "fr-FR": "Jugement divin",
+                    "it-IT": "Intervento divino",
+                    "ja-JP": "ディバイン インターベンション",
+                    "ko-KR": "신의 개입",
+                    "es-MX": "Intervención divina",
+                    "nl-NL": "Goddelijke interventie",
+                    "pl-PL": "Boska interwencja",
+                    "ru-RU": "Божественное вмешательство",
+                    "es-ES": "Intervención divina"
+                }
+            },
+            "description": {
+                "value": "Kill 10 Infected in quick succession",
+                "translations": {
+                    "pt-BR": "Mate 10 Infectados em sequência",
+                    "zh-CN": "快速连续击杀 10 名感染者",
+                    "zh-TW": "快速連續擊殺 10 名感染者",
+                    "de-DE": "10 Infizierte schnell hintereinander eliminieren",
+                    "fr-FR": "Tuez 10 infectés d'affilée.",
+                    "it-IT": "Uccidi 10 infetti in rapida successione",
+                    "ja-JP": "連続で 10 人の感染者を倒す",
+                    "ko-KR": "빠르게 연속해서 감염자 10명을 처치하십시오",
+                    "es-MX": "Abate 10 Infectados en sucesión rápida",
+                    "nl-NL": "Dood snel achter elkaar 10 geïnfecteerden",
+                    "pl-PL": "Zabij 10 zainfekowanych w krótkich odstępach czasu.",
+                    "ru-RU": "Быстро убейте 10 заражённых.",
+                    "es-ES": "Mata a 10 infectados en una rápida sucesión."
+                }
+            },
+            "spriteIndex": 40,
+            "sortingWeight": 230,
+            "difficultyIndex": 3,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 2164872967
+        },
+        {
+            "name": {
+                "value": "Scourge",
+                "translations": {
+                    "pt-BR": "Calamidade",
+                    "zh-CN": "天谴",
+                    "zh-TW": "疾厄降臨",
+                    "de-DE": "Geißel",
+                    "fr-FR": "Fléau",
+                    "it-IT": "Flagello",
+                    "ja-JP": "スコージ",
+                    "ko-KR": "채찍",
+                    "es-MX": "Azote",
+                    "nl-NL": "Kwaad",
+                    "pl-PL": "Zaraza",
+                    "ru-RU": "Чёрная смерть",
+                    "es-ES": "Azote"
+                }
+            },
+            "description": {
+                "value": "Kill 6 Survivors in quick succession",
+                "translations": {
+                    "pt-BR": "Mate 6 Sobreviventes em sequência",
+                    "zh-CN": "快速连续击杀 6 名幸存者",
+                    "zh-TW": "快速連續擊殺 6 名倖存者",
+                    "de-DE": "6 Überlebende schnell hintereinander eliminieren.",
+                    "fr-FR": "Tuez 6 survivants d'affilée.",
+                    "it-IT": "Uccidi 6 superstiti in rapida successione",
+                    "ja-JP": "連続で生存者 6 人を倒す",
+                    "ko-KR": "빠르게 연속해서 생존자 6명을 처치하십시오",
+                    "es-MX": "Mata a 6 Supervivientes en sucesión rápida",
+                    "nl-NL": "Dood snel achter elkaar 6 overlevenden",
+                    "pl-PL": "Zabij 6 ocalałych w krótkich odstępach czasu.",
+                    "ru-RU": "Быстро убейте 6 выживших.",
+                    "es-ES": "Mata a 6 supervivientes en una rápida sucesión."
+                }
+            },
+            "spriteIndex": 41,
+            "sortingWeight": 220,
+            "difficultyIndex": 3,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 3520382976
+        },
+        {
+            "name": {
+                "value": "Apocalypse",
+                "translations": {
+                    "pt-BR": "Apocalipse",
+                    "zh-CN": "末日降临",
+                    "zh-TW": "末日降臨",
+                    "de-DE": "Apokalypse",
+                    "fr-FR": "Apocalypse",
+                    "it-IT": "Apocalisse",
+                    "ja-JP": "アポカリプス",
+                    "ko-KR": "아포칼립스",
+                    "es-MX": "Apocalipsis",
+                    "nl-NL": "Apocalyps",
+                    "pl-PL": "Apokalipsa",
+                    "ru-RU": "Апокалипсис",
+                    "es-ES": "Apocalipsis"
+                }
+            },
+            "description": {
+                "value": "Kill 7 Survivors in quick succession",
+                "translations": {
+                    "pt-BR": "Mate 7 Sobreviventes em sequência",
+                    "zh-CN": "快速连续击杀 7 名幸存者",
+                    "zh-TW": "快速連續擊殺 7 名倖存者",
+                    "de-DE": "7 Überlebende schnell hintereinander eliminieren.",
+                    "fr-FR": "Tuez 7 survivants d'affilée.",
+                    "it-IT": "Uccidi 7 superstiti in rapida successione",
+                    "ja-JP": "連続で生存者 7 人を倒す",
+                    "ko-KR": "빠르게 연속해서 생존자 7명을 처치하십시오",
+                    "es-MX": "Mata a 7 Supervivientes en sucesión rápida",
+                    "nl-NL": "Dood snel achter elkaar 7 overlevenden",
+                    "pl-PL": "Zabij 7 ocalałych w krótkich odstępach czasu.",
+                    "ru-RU": "Быстро убейте 7 выживших.",
+                    "es-ES": "Mata a 7 supervivientes en una rápida sucesión."
+                }
+            },
+            "spriteIndex": 42,
+            "sortingWeight": 230,
+            "difficultyIndex": 3,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 3653884673
+        },
+        {
+            "name": {
+                "value": "Clear Reception",
+                "translations": {
+                    "pt-BR": "Limpar Recepção",
+                    "zh-CN": "清晰接收",
+                    "zh-TW": "清晰接收",
+                    "de-DE": "Klarer Empfang",
+                    "fr-FR": "Bonne réception",
+                    "it-IT": "Rimuovi ricezione",
+                    "ja-JP": "クリア レセプション",
+                    "ko-KR": "명확한 수신",
+                    "es-MX": "Recepción clara",
+                    "nl-NL": "Duidelijke ontvangst",
+                    "pl-PL": "Dobry odbiór",
+                    "ru-RU": "Четкий прием",
+                    "es-ES": "Eliminar señal"
+                }
+            },
+            "description": {
+                "value": "Complete an Extraction from Deploy to Completion without the device being Converted",
+                "translations": {
+                    "pt-BR": "Conclua uma Extração da Implantação para a Conclusão sem que o dispositivo seja Convertido",
+                    "zh-CN": "在设备不转变的情况下部署并完成汲取",
+                    "zh-TW": "在裝置於部署到完成之間都不曾轉變的情況下，完成一場撤離",
+                    "de-DE": "Schließe eine Extraktion vom Aufstellen bis zur Fertigstellung ab, ohne dass das Gerät umgewandelt wird",
+                    "fr-FR": "Effectuer une extraction du déploiement jusqu'à la fin sans que l’appareil soit converti",
+                    "it-IT": "Completa un'estrazione dallo schieramento al completamento evitando la conversione del dispositivo",
+                    "ja-JP": "デバイスをコンバートせずに展開から完了までの抽出を完了する",
+                    "ko-KR": "장비를 전환하지 않고 배치에서 완료까지 회수를 완료하십시오.",
+                    "es-MX": "Completa una extracción desde despliegue a término sin que el dispositivo sea convertido",
+                    "nl-NL": "Voltooi een extractie, van plaatsing tot voltooiing, zonder dat het apparaat wordt geconverteerd",
+                    "pl-PL": "Ukończ pozyskanie od rozmieszczenia do zakończenia bez konwertowania urządzenia",
+                    "ru-RU": "Завершить извлечение без преобразования устройства",
+                    "es-ES": "Completa una extracción desde el despliegue hasta la finalización sin que el dispositivo se convierta"
+                }
+            },
+            "spriteIndex": 168,
+            "sortingWeight": 101,
+            "difficultyIndex": 1,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 394349536
+        },
+        {
+            "name": {
+                "value": "Hang Up",
+                "translations": {
+                    "pt-BR": "Desligar",
+                    "zh-CN": "挂断",
+                    "zh-TW": "掛斷",
+                    "de-DE": "Auflegen",
+                    "fr-FR": "Raccrocher",
+                    "it-IT": "Interrompi",
+                    "ja-JP": "通信を切る",
+                    "ko-KR": "끊어",
+                    "es-MX": "Colgar",
+                    "nl-NL": "Ophangen",
+                    "pl-PL": "Rozłącz się",
+                    "ru-RU": "Прервать",
+                    "es-ES": "Cuelga tú"
+                }
+            },
+            "description": {
+                "value": "Kill an enemy deploying the device",
+                "translations": {
+                    "pt-BR": "Abata um inimigo implantando o dispositivo",
+                    "zh-CN": "击杀一名正在部署设备的敌人",
+                    "zh-TW": "殺死正在部署設備的敵人",
+                    "de-DE": "Töte einen Gegner, der das Gerät einsetzt",
+                    "fr-FR": "Tuer un ennemi qui déploie l’appareil",
+                    "it-IT": "Uccidi un nemico impegnato a schierare il dispositivo",
+                    "ja-JP": "デバイスを展開中の敵を倒す",
+                    "ko-KR": "장비를 배치하는 적을 처치하십시오.",
+                    "es-MX": "Mata a un enemigo desplegando el dispositivo",
+                    "nl-NL": "Dood een vijand die het apparaat plaatst",
+                    "pl-PL": "Zabij wroga rozmieszczającego urządzenie",
+                    "ru-RU": "Убейте врага, развернув устройство",
+                    "es-ES": "Mata a un enemigo mientras despliega el dispositivo"
+                }
+            },
+            "spriteIndex": 166,
+            "sortingWeight": 51,
+            "difficultyIndex": 0,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 4285712605
+        },
+        {
+            "name": {
+                "value": "Call Blocked",
+                "translations": {
+                    "pt-BR": "Chamada Bloqueada",
+                    "zh-CN": "呼叫被屏蔽",
+                    "zh-TW": "呼叫受阻",
+                    "de-DE": "Ruf blockiert",
+                    "fr-FR": "Appel bloqué",
+                    "it-IT": "Chiamata bloccata",
+                    "ja-JP": "通話がブロックされました",
+                    "ko-KR": "통화 차단됨",
+                    "es-MX": "Llamada bloqueada",
+                    "nl-NL": "Oproep geblokkeerd",
+                    "pl-PL": "Połączenie zablokowane",
+                    "ru-RU": "Вызов заблокирован",
+                    "es-ES": "Llamada bloqueada"
+                }
+            },
+            "description": {
+                "value": "Kill an enemy converting the device",
+                "translations": {
+                    "pt-BR": "Abata um inimigo convertendo o dispositivo",
+                    "zh-CN": "击倒一名正在转变设备的敌人",
+                    "zh-TW": "殺死正在轉變裝置的敵人",
+                    "de-DE": "Töten Sie einen Gegner, indem Sie das Gerät umwandeln",
+                    "fr-FR": "Tuez un ennemi qui convertit l'appareil",
+                    "it-IT": "Uccidi un nemico impegnato a convertire il dispositivo",
+                    "ja-JP": "デバイスをコンバート中の敵を倒す",
+                    "ko-KR": "장치를 바꾸는 적을 처치하십시오.",
+                    "es-MX": "Mata a un enemigo que esté convirtiendo el dispositivo",
+                    "nl-NL": "Dood een vijand die het apparaat converteert",
+                    "pl-PL": "Zabij wroga przechwytującego urządzenie",
+                    "ru-RU": "Убейте врага, преобразовав устройство",
+                    "es-ES": "Mata a un enemigo convirtiendo el dispositivo"
+                }
+            },
+            "spriteIndex": 167,
+            "sortingWeight": 52,
+            "difficultyIndex": 0,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 2964157454
+        },
+        {
+            "name": {
+                "value": "Secure Line",
+                "translations": {
+                    "pt-BR": "Linha Protegida",
+                    "zh-CN": "保卫防线",
+                    "zh-TW": "保衛防線",
+                    "de-DE": "Gesicherte Linie",
+                    "fr-FR": "Ligne sécurisée",
+                    "it-IT": "Linea sicura",
+                    "ja-JP": "セキュア ライン",
+                    "ko-KR": "퇴로 확보",
+                    "es-MX": "Línea segura",
+                    "nl-NL": "Nippertje",
+                    "pl-PL": "Bezpieczna linia",
+                    "ru-RU": "Надёжная связь",
+                    "es-ES": "Línea segura"
+                }
+            },
+            "description": {
+                "value": "Kill an enemy converting your Extraction moments before they succeed",
+                "translations": {
+                    "pt-BR": "Mate um inimigo convertendo sua Extração momentos antes de eles conseguirem",
+                    "zh-CN": "在敌人成功转变你的撤离点前一刻杀死该名敌人",
+                    "zh-TW": "在敵人成功轉變您的撤離點前一刻殺死該名敵人",
+                    "de-DE": "Einen Gegner kurz vor dem erfolgreichen Umwandeln einer Extraktion ausschalten.",
+                    "fr-FR": "Tuez un ennemi qui convertit votre extraction juste avant qu'il y parvienne.",
+                    "it-IT": "Uccidi un nemico che sta convertendo la tua estrazione pochi istanti prima che ci riesca",
+                    "ja-JP": "撤収を直前で邪魔しようとしている敵をその前に倒す",
+                    "ko-KR": "아군 회수 지점을 탈환 중인 적을 성공하기 직전에 처치하십시오",
+                    "es-MX": "Mata aun enemigo convirtiendo tu Extracción momentos antes de terminar",
+                    "nl-NL": "Dood een vijand die jouw extractie probeert te converteren vlak voor het hem lukt",
+                    "pl-PL": "Zabij wroga, na chwilę zanim przejmie twoje pozyskanie.",
+                    "ru-RU": "Убейте врага, который пытается перехватить ваше извлечение, за мгновения до завершения перехвата.",
+                    "es-ES": "Mata a un enemigo que interfiera en tu extracción momentos antes de que lo consiga."
+                }
+            },
+            "spriteIndex": 24,
+            "sortingWeight": 101,
+            "difficultyIndex": 1,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 2426456555
+        },
+        {
+            "name": {
+                "value": "Signal Block",
+                "translations": {
+                    "pt-BR": "Bloqueio de Sinal",
+                    "zh-CN": "信号阻碍",
+                    "zh-TW": "訊號阻礙",
+                    "de-DE": "Signal blockiert",
+                    "fr-FR": "Signal bloqué",
+                    "it-IT": "Blocco del segnale",
+                    "ja-JP": "シグナル ブロック",
+                    "ko-KR": "신호 차단",
+                    "es-MX": "Bloqueo de señal",
+                    "nl-NL": "Blokkage",
+                    "pl-PL": "Blokada sygnału",
+                    "ru-RU": "Блокировка сигнала",
+                    "es-ES": "Bloqueo de señal"
+                }
+            },
+            "description": {
+                "value": "Convert an enemy Extraction within moments of its completion",
+                "translations": {
+                    "pt-BR": "Converta uma Extração inimiga momentos antes de ela ser concluída",
+                    "zh-CN": "在完成时间结束前一刻转变敌人的撤离点",
+                    "zh-TW": "在完成時間結束前一刻轉變敵人的撤離點",
+                    "de-DE": "Eine gegnerische Extraktion kurz vor Abschluss umwandeln.",
+                    "fr-FR": "Convertissez l'extraction d'un ennemi juste avant qu'elle se termine.",
+                    "it-IT": "Converti una estrazione nemica pochi istanti prima che venga completata",
+                    "ja-JP": "敵が撤収を完了する直前に邪魔する",
+                    "ko-KR": "적군 회수 지점을 회수 성공 직전에 탈환하십시오",
+                    "es-MX": "Convierte una Extracción enemiga momentos antes de terminar",
+                    "nl-NL": "Converteer vlak na voltooiing een vijandelijke extractie",
+                    "pl-PL": "Przejmij wrogie pozyskanie na chwilę przed jego zakończeniem.",
+                    "ru-RU": "Перехватите вражеское извлечение за мгновения до его завершения.",
+                    "es-ES": "Interfiere en una extracción enemiga momentos antes de que la completen."
+                }
+            },
+            "spriteIndex": 25,
+            "sortingWeight": 101,
+            "difficultyIndex": 1,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 3931425309
+        },
+        {
+            "name": {
+                "value": "Blind Fire",
+                "translations": {
+                    "pt-BR": "Fogo Cego",
+                    "zh-CN": "随意开火",
+                    "zh-TW": "隨意開火",
+                    "de-DE": "Blinder Beschuss",
+                    "fr-FR": "Tir au jugé",
+                    "it-IT": "Fuoco cieco",
+                    "ja-JP": "ブラインド ファイア",
+                    "ko-KR": "안 보여도 쏜다",
+                    "es-MX": "Fuego ciego",
+                    "nl-NL": "Blind schieten",
+                    "pl-PL": "Na ślepo",
+                    "ru-RU": "Стрельба вслепую",
+                    "es-ES": "Fuego a ciegas"
+                }
+            },
+            "description": {
+                "value": "Kill a distant enemy by shooting them from inside a Shroud Screen",
+                "translations": {
+                    "pt-BR": "Mate um inimigo distante atirando nele de dentro de uma Tela de Cobertura",
+                    "zh-CN": "在遮蔽屏障内通过射击消灭一名远处的敌人",
+                    "zh-TW": "在隱蔽罩內射擊，消滅一名遠處的敵人",
+                    "de-DE": "Einen entfernten Gegner töten, indem du ihn aus einem Tarnschirm heraus erschießt",
+                    "fr-FR": "Tuez un ennemi éloigné en lui tirant dessus depuis un écran de dissimulation.",
+                    "it-IT": "Uccidi un nemico lontano sparandogli da dietro a un velo schermante",
+                    "ja-JP": "シュラウド スクリーンの中から遠くの敵を撃ってキルする",
+                    "ko-KR": "슈라우드 스크린 안에서 사격하여 멀리 있는 적을 사살하십시오.",
+                    "es-MX": "Mata a un enemigo lejano disparándole desde el interior del camuflaje de un Shroud",
+                    "nl-NL": "Dood een vijand op afstand vanuit een Sluierscherm",
+                    "pl-PL": "Zabij oddalonego przeciwnika, strzelając do niego z wnętrza całunu.",
+                    "ru-RU": "Убейте врага с большого расстояния выстрелом из-под завесы.",
+                    "es-ES": "Mata a un enemigo lejano disparándole desde el interior de una pantalla de Shroud."
+                }
+            },
+            "spriteIndex": 165,
+            "sortingWeight": 150,
+            "difficultyIndex": 2,
+            "typeIndex": 5,
+            "personalScore": 0,
+            "nameId": 4007438389
+        },
+        {
+            "name": {
+                "value": "Counter-snipe",
+                "translations": {
+                    "pt-BR": "Revide Preciso",
+                    "zh-CN": "反狙击",
+                    "zh-TW": "反狙擊",
+                    "de-DE": "Scharfschützen-Konter",
+                    "fr-FR": "Sniper snipé",
+                    "it-IT": "Controcecchino",
+                    "ja-JP": "カウンタースナイプ",
+                    "ko-KR": "카운터 스나이퍼",
+                    "es-MX": "Pelea de francotiradores",
+                    "nl-NL": "Tegenschutter",
+                    "pl-PL": "Pogromca snajperów",
+                    "ru-RU": "Антиснайпер",
+                    "es-ES": "Contragolpe"
+                }
+            },
+            "description": {
+                "value": "Headshot an enemy while you both are zoomed with Power sniper rifles",
+                "translations": {
+                    "pt-BR": "Dê um tiro na cabeça de um inimigo enquanto ambos estiverem usando zoom com rifles de precisão poderosos",
+                    "zh-CN": "在敌我都使用能量狙击步枪开镜瞄准时爆头该敌人",
+                    "zh-TW": "在使用強力狙擊步槍與敵人互相瞄準對方的情況下，將敵人爆頭",
+                    "de-DE": "Einen Gegner per Kopfschuss mit einem Spezial-Scharfschützengewehr ausschalten, während ihr beide den Waffenzoom nutzt.",
+                    "fr-FR": "Tuez un ennemi d'un tir à la tête alors que vous visez tous les deux en zoomant avec un fusil sniper lourd.",
+                    "it-IT": "Colpisci alla testa un nemico mentre entrambi state utilizzando lo zoom di fucili di precisione potenziati",
+                    "ja-JP": "両者がズームされている状態でパワースナイパーライフルを使って敵をヘッドショットする",
+                    "ko-KR": "서로 강력한 스나이퍼 라이플로 확대 조준 중인 상태에서 적에게 헤드샷을 맞히십시오",
+                    "es-MX": "Dispara en la cabeza a un enemigo mientras ambos usan la mira de un rifle de francotirador de poder",
+                    "nl-NL": "Dood een vijand met een headshot terwijl jullie allebei inzoomen met een power-snipergeweer",
+                    "pl-PL": "Zabij przeciwnika strzałem w głowę, gdy oboje będziecie korzystać z przybliżenia potężnego karabinu snajperskiego.",
+                    "ru-RU": "Убейте выстрелом в голову врага, который целится из тяжёлой снайперской винтовки, используя оптический прицел аналогичной винтовки.",
+                    "es-ES": "Mata a un enemigo con un tiro en la cabeza mientras ambos hacéis zoom con rifles de francotirador de energía"
+                }
+            },
+            "spriteIndex": 158,
+            "sortingWeight": 100,
+            "difficultyIndex": 1,
+            "typeIndex": 4,
+            "personalScore": 0,
+            "nameId": 1477806194
+        },
+        {
+            "name": {
+                "value": "Monopoly",
+                "translations": {
+                    "pt-BR": "Monopólio",
+                    "zh-CN": "垄断。",
+                    "zh-TW": "壟斷",
+                    "de-DE": "Monopol",
+                    "fr-FR": "Monopole",
+                    "it-IT": "Monopolio.",
+                    "ja-JP": "モノポリー",
+                    "ko-KR": "독점",
+                    "es-MX": "Monopolio",
+                    "nl-NL": "Monopoly",
+                    "pl-PL": "Monopol",
+                    "ru-RU": "Монополия",
+                    "es-ES": "Monopoly"
+                }
+            },
+            "description": {
+                "value": "Capture all zones in a set of 3+ without dying in Land Grab",
+                "translations": {
+                    "pt-BR": "Capture todas as zonas em um conjunto de 3 ou mais sem morrer em Posse de Terra",
+                    "zh-CN": "在领土攫取中不死亡的情况下，夺取一组区域 (3 个区域以上)",
+                    "zh-TW": "在陸上霸王中將一組 3 個以上的區域全部佔領而不死亡",
+                    "de-DE": "In Landnahme alle Zonen in einer Kombination von 3+ erobern, ohne zu sterben.",
+                    "fr-FR": "Prenez le contrôle de toutes les zones d'un set de 3 au moins, sans mourir, en Possession du terrain.",
+                    "it-IT": "Conquista tutte le zone di un'area da 3 o più senza morire in Conquista territorio",
+                    "ja-JP": "ランド グラブで倒されずに 3 セット以上で全ゾーンを制圧する",
+                    "ko-KR": "영토 쟁탈전에서 한 번도 죽지 않고 3개 이상의 모든 지역을 점령하십시오",
+                    "es-MX": "Captura todas las zonas en un conjunto de 3+ sin morir en Land Grab",
+                    "nl-NL": "Verover alle zones in een set van meer dan drie zonder dood te gaan in Land Grab",
+                    "pl-PL": "Przechwyć wszystkie strefy w zestawach po 3+ bez utraty życia w Przejęciu ziemi.",
+                    "ru-RU": "Захватите все зоны в серии из трёх или более, не погибнув, в режиме «Захват местности».",
+                    "es-ES": "Captura todas las zonas en un grupo de 3 o más sin morir en Toma de terreno"
+                }
+            },
+            "spriteIndex": 159,
+            "sortingWeight": 100,
+            "difficultyIndex": 1,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 1090931685
+        },
+        {
+            "name": {
+                "value": "Hill Guardian",
+                "translations": {
+                    "pt-BR": "Guardião da Colina",
+                    "zh-CN": "山丘守护者",
+                    "zh-TW": "山丘守護者",
+                    "de-DE": "Hügel-Wächter",
+                    "fr-FR": "Garde de colline",
+                    "it-IT": "Guardiano della collina",
+                    "ja-JP": "ヒル ガーディアン",
+                    "ko-KR": "고지의 수호자",
+                    "es-MX": "Guardián de la colina",
+                    "nl-NL": "Heuvel-bewaker",
+                    "pl-PL": "Strażnik wzgórza",
+                    "ru-RU": "Защитник горы",
+                    "es-ES": "Guardián de la colina"
+                }
+            },
+            "description": {
+                "value": "Occupy the Hill for 30 seconds without leaving in King of the Hill",
+                "translations": {
+                    "pt-BR": "Ocupe a Colina por 30 segundos sem sair dela em Rei da Colina",
+                    "zh-CN": "在山丘之王中，持续占领山丘 30 秒",
+                    "zh-TW": "在山丘之王中佔據山丘 30 秒而不離開",
+                    "de-DE": "Bei Hügelkönig den Hügel 30 Sekunden durchgängig besetzen.",
+                    "fr-FR": "Occupez la colline pendant 30 secondes sans la quitter en mode Roi de la colline.",
+                    "it-IT": "Occupa la collina per 30 secondi senza mai abbandonarla in Re della collina",
+                    "ja-JP": "キング オブ ザ ヒルで丘から出ずに 30 秒間占領し続ける",
+                    "ko-KR": "고지 점령에서 30초 동안 고지에서 나가지 않고 점령을 유지하십시오",
+                    "es-MX": "Controla la colina durante 30 segundos sin salir de ella en Rey de la colina",
+                    "nl-NL": "Bezet de heuvel 30 seconden zonder de heuvel te verlaten in King of the Hill",
+                    "pl-PL": "Zajmuj wzgórze na 30 sekund bez opuszczania go w trybie Króla wzgórza.",
+                    "ru-RU": "Удерживайте гору в течение 30 секунд, не покидая её, в режиме «Царь горы».",
+                    "es-ES": "Ocupa la colina durante 30 segundos sin abandonarla en Rey de la colina"
+                }
+            },
+            "spriteIndex": 62,
+            "sortingWeight": 100,
+            "difficultyIndex": 1,
+            "typeIndex": 1,
+            "personalScore": 0,
+            "nameId": 580478179
+        },
+        {
+            "name": {
+                "value": "Death Cabbie",
+                "translations": {
+                    "pt-BR": "Taxista da Morte",
+                    "zh-CN": "死亡计程车",
+                    "zh-TW": "死亡計程車",
+                    "de-DE": "Taxifahrer des Todes",
+                    "fr-FR": "Chauffard de la mort",
+                    "it-IT": "Tassista letale",
+                    "ja-JP": "デス キャビー",
+                    "ko-KR": "사신 택시",
+                    "es-MX": "Taxista de la muerte",
+                    "nl-NL": "Dodelijke chauffeur",
+                    "pl-PL": "Zabójczy taksiarz",
+                    "ru-RU": "Таксист смерти",
+                    "es-ES": "Taxista mortal"
+                }
+            },
+            "description": {
+                "value": "Earn 10 Driver Assists without dying",
+                "translations": {
+                    "pt-BR": "Consiga 10 Assistências de Piloto sem morrer",
+                    "zh-CN": "在不死亡的情况下获得 10 次驾驶助攻",
+                    "zh-TW": "活著連續獲得 10 次駕駛助攻",
+                    "de-DE": "10 Fahrerunterstützungen erhalten, ohne zu sterben",
+                    "fr-FR": "Réalisez 10 assistances par pilotage sans mourir.",
+                    "it-IT": "Ottieni 10 assist guida senza morire",
+                    "ja-JP": "倒れることなくドライバー アシストを 10 回達成する",
+                    "ko-KR": "죽지 않고 운전자 지원을 10회 달성하십시오",
+                    "es-MX": "Consigue 10 asistencias de conductor sin morir",
+                    "nl-NL": "Verdien 10 chauffeur-assists zonder dood te gaan",
+                    "pl-PL": "Zalicz 10 asyst kierowcy, pozostając przy życiu.",
+                    "ru-RU": "Окажите помощь в роли водителя 10 раз, не погибнув.",
+                    "es-ES": "Da apoyo al mando de vehículos 10 veces sin morir."
+                }
+            },
+            "spriteIndex": 163,
+            "sortingWeight": 150,
+            "difficultyIndex": 2,
+            "typeIndex": 0,
+            "personalScore": 0,
+            "nameId": 2848470465
+        },
+        {
+            "name": {
+                "value": "Driving Spree",
+                "translations": {
+                    "pt-BR": "Farra na Direção",
+                    "zh-CN": "疾驰狂欢",
+                    "zh-TW": "疾馳狂歡",
+                    "de-DE": "Fahrerserie",
+                    "fr-FR": "Violence routière",
+                    "it-IT": "Pilota seriale",
+                    "ja-JP": "ドライビング スプリー",
+                    "ko-KR": "운전 연속 지원",
+                    "es-MX": "Racha de conducción",
+                    "nl-NL": "Dodenrit",
+                    "pl-PL": "Seria z pojazdu",
+                    "ru-RU": "Серийный автоманьяк",
+                    "es-ES": "Racha conductora"
+                }
+            },
+            "description": {
+                "value": "Earn 5 Driver Assists without dying",
+                "translations": {
+                    "pt-BR": "Consiga 5 Assistências de Piloto sem morrer",
+                    "zh-CN": "在不死亡的情况下获得 5 次驾驶助攻",
+                    "zh-TW": "活著連續獲得 5 次駕駛助攻",
+                    "de-DE": "5 Fahrerunterstützungen erhalten, ohne zu sterben",
+                    "fr-FR": "Réalisez 5 assistances par pilotage sans mourir.",
+                    "it-IT": "Ottieni 5 assist guida senza morire",
+                    "ja-JP": "倒れることなくドライバー アシストを 5 回達成する",
+                    "ko-KR": "죽지 않고 운전자 지원을 5회 달성하십시오",
+                    "es-MX": "Consigue 5 asistencias de conductor sin morir",
+                    "nl-NL": "Verdien 5 chauffeur-assists zonder dood te gaan",
+                    "pl-PL": "Zalicz 5 asyst kierowcy, pozostając przy życiu.",
+                    "ru-RU": "Окажите помощь в роли водителя 5 раз, не погибнув.",
+                    "es-ES": "Da apoyo al mando de vehículos 5 veces sin morir."
+                }
+            },
+            "spriteIndex": 162,
+            "sortingWeight": 100,
+            "difficultyIndex": 1,
+            "typeIndex": 0,
+            "personalScore": 0,
+            "nameId": 3169118333
+        },
+        {
+            "name": {
+                "value": "Immortal Chauffeur",
+                "translations": {
+                    "pt-BR": "Chofer Imortal",
+                    "zh-CN": "钢铁司机",
+                    "zh-TW": "鋼鐵司機",
+                    "de-DE": "Unsterblicher Chauffeur",
+                    "fr-FR": "Chauffeur immortel",
+                    "it-IT": "Autista immortale",
+                    "ja-JP": "不死身の運転手",
+                    "ko-KR": "불멸의 운전기사",
+                    "es-MX": "Chofer inmortal",
+                    "nl-NL": "Onsterfelijke chauffeur",
+                    "pl-PL": "Nieśmiertelny szofer",
+                    "ru-RU": "Бессмертный шофёр",
+                    "es-ES": "Chófer inmortal"
+                }
+            },
+            "description": {
+                "value": "Earn 15 Driver Assists without dying",
+                "translations": {
+                    "pt-BR": "Consiga 15 Assistências de Piloto sem morrer",
+                    "zh-CN": "在不死亡的情况下获得 15 次驾驶助攻",
+                    "zh-TW": "活著連續獲得 15 次駕駛助攻",
+                    "de-DE": "15 Fahrerunterstützungen erhalten, ohne zu sterben",
+                    "fr-FR": "Réalisez 15 assistances par pilotage sans mourir.",
+                    "it-IT": "Ottieni 15 assist guida senza morire",
+                    "ja-JP": "倒れることなくドライバー アシストを 15 回達成する",
+                    "ko-KR": "죽지 않고 운전자 지원을 15회 달성하십시오",
+                    "es-MX": "Consigue 15 asistencias de conductor sin morir",
+                    "nl-NL": "Verdien 15 chauffeur-assists zonder dood te gaan",
+                    "pl-PL": "Zalicz 15 asyst kierowcy, pozostając przy życiu.",
+                    "ru-RU": "Окажите помощь в роли водителя 15 раз, не погибнув.",
+                    "es-ES": "Da apoyo al mando de vehículos 15 veces sin morir."
+                }
+            },
+            "spriteIndex": 164,
+            "sortingWeight": 200,
+            "difficultyIndex": 3,
+            "typeIndex": 0,
+            "personalScore": 0,
+            "nameId": 1739996188
         }
     ]
 }
