@@ -429,15 +429,19 @@ class Film(PascalCaseModel, frozen=True):
     blob_storage_path_prefix: str
     asset_id: UUID
 
+    @property
+    def highlight_events_url(self) -> str | None:
+        """Get the URL for the "highlight events" chunk of the film, if available."""
+        chunk, url = self.get_chunks_and_urls()[-1]
+        if chunk.chunk_type is FilmChunkType.HIGHLIGHT_EVENTS:
+            return url
+
     def get_chunks_and_urls(self) -> list[tuple[FilmChunk, str]]:
         """Get (chunk, URL) tuples for all film chunks, in order of index.
 
-        URLs are public blob storage URLs for downloading the compressed
-        binary chunk data. From the examples that have been examined, the first
-        chunk is always the film header, the last chunk is always highlight
-        events, and all chunks in between are 20-second replication data chunks.
-        The binary data are likely fed into the game engine to reconstruct the
-        match.
+        URLs are public blob storage URLs for downloading the compressed binary chunk
+        data. The first is the film header, the last chunk is highlight events, and all
+        chunks in between are 20-second replication data chunks.
 
         Returns:
             The chunk and blob storage URL pairs.
