@@ -27,7 +27,7 @@ async def main(xuids: list[str]) -> None:
         resp = await client.profile.get_users_by_id(xuids)
         users = await resp.parse()
         for user in users:
-            print(user.gamertag)
+            print(user.xuid, user.gamertag)
 
 
 if __name__ == "__main__":
