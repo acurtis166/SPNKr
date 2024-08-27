@@ -3,7 +3,6 @@
 import argparse
 import asyncio
 import os
-import zlib
 from pathlib import Path
 
 import dotenv
@@ -39,9 +38,9 @@ async def main(match_id: str, output_dir: Path) -> None:
             chunk_type = chunk.chunk_type.name.lower()
             print(f"Chunk(index={chunk.index} type={chunk_type})")
             response = await session.get(url)
-            uncompressed = zlib.decompress(await response.content.read())
-            with open(directory / f"{chunk.index}_{chunk_type}.bin", "wb") as f:
-                f.write(uncompressed)
+            dest = directory / f"{str(chunk.index).zfill(2)}_{chunk_type}.gzip"
+            with open(dest, "wb") as f:
+                f.write(await response.read())
 
 
 if __name__ == "__main__":
