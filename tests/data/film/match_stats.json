@@ -1,0 +1,331 @@
+{
+    "MatchId": "01ee3491-1ca1-4822-b23e-63e836104f32",
+    "MatchInfo": {
+        "StartTime": "2024-08-22T03:06:11.064000Z",
+        "EndTime": "2024-08-22T03:07:45.089000Z",
+        "Duration": "PT1M16.384823S",
+        "LifecycleMode": 1,
+        "GameVariantCategory": 18,
+        "LevelId": "fc878857-e778-4daf-b0ef-5d826b922f3f",
+        "MapVariant": {
+            "AssetKind": 2,
+            "AssetId": "c395f3ac-4614-45f9-a83a-56f69e8ae962",
+            "VersionId": "25b4f2e7-7245-4358-8f14-5ab8c085d97f"
+        },
+        "UgcGameVariant": {
+            "AssetKind": 6,
+            "AssetId": "d3aa10fe-502d-4778-8bc2-db5c3a9242ad",
+            "VersionId": "bf90f526-d11a-4619-a84d-bfe7d6e9ac8d"
+        },
+        "ClearanceId": "96178cac-1a9f-4fa8-a53f-1a4bb276040a",
+        "Playlist": null,
+        "PlaylistExperience": null,
+        "PlaylistMapModePair": null,
+        "SeasonId": null,
+        "PlayableDuration": "PT1M16.375S",
+        "TeamsEnabled": true,
+        "TeamScoringEnabled": true
+    },
+    "Teams": [
+        {
+            "TeamId": 0,
+            "Outcome": 3,
+            "Rank": 2,
+            "Stats": {
+                "CoreStats": {
+                    "Score": 2,
+                    "PersonalScore": 235,
+                    "RoundsWon": 0,
+                    "RoundsLost": 1,
+                    "RoundsTied": 0,
+                    "Kills": 2,
+                    "Deaths": 1,
+                    "Assists": 0,
+                    "Suicides": 0,
+                    "Betrayals": 0,
+                    "GrenadeKills": 0,
+                    "HeadshotKills": 1,
+                    "MeleeKills": 0,
+                    "PowerWeaponKills": 0,
+                    "ShotsFired": 25,
+                    "ShotsHit": 20,
+                    "Accuracy": 80.0,
+                    "DamageDealt": 445,
+                    "DamageTaken": 229,
+                    "CalloutAssists": 0,
+                    "VehicleDestroys": 0,
+                    "DriverAssists": 0,
+                    "Hijacks": 0,
+                    "EmpAssists": 0,
+                    "MaxKillingSpree": 1,
+                    "Medals": [
+                        {
+                            "NameId": 265478668,
+                            "Count": 1,
+                            "TotalPersonalScoreAwarded": 0
+                        }
+                    ],
+                    "PersonalScores": [
+                        {
+                            "NameId": 204144695,
+                            "Count": 1,
+                            "TotalPersonalScoreAwarded": 10
+                        },
+                        {
+                            "NameId": 1024030246,
+                            "Count": 2,
+                            "TotalPersonalScoreAwarded": 200
+                        },
+                        {
+                            "NameId": 746397417,
+                            "Count": 1,
+                            "TotalPersonalScoreAwarded": 25
+                        }
+                    ],
+                    "Spawns": 2,
+                    "KDA": 1.0,
+                    "AverageLifeDuration": "PT24.8S"
+                },
+                "BombStats": null,
+                "CaptureTheFlagStats": null,
+                "EliminationStats": null,
+                "ExtractionStats": null,
+                "InfectionStats": null,
+                "OddballStats": {
+                    "KillsAsSkullCarrier": 0,
+                    "LongestTimeAsSkullCarrier": "PT2.2S",
+                    "SkullCarriersKilled": 1,
+                    "SkullGrabs": 1,
+                    "TimeAsSkullCarrier": "PT2.2S",
+                    "SkullScoringTicks": 2
+                },
+                "ZonesStats": null,
+                "StockpileStats": null
+            }
+        },
+        {
+            "TeamId": 1,
+            "Outcome": 2,
+            "Rank": 1,
+            "Stats": {
+                "CoreStats": {
+                    "Score": 4,
+                    "PersonalScore": 110,
+                    "RoundsWon": 1,
+                    "RoundsLost": 0,
+                    "RoundsTied": 0,
+                    "Kills": 1,
+                    "Deaths": 2,
+                    "Assists": 0,
+                    "Suicides": 0,
+                    "Betrayals": 0,
+                    "GrenadeKills": 0,
+                    "HeadshotKills": 0,
+                    "MeleeKills": 1,
+                    "PowerWeaponKills": 0,
+                    "ShotsFired": 39,
+                    "ShotsHit": 2,
+                    "Accuracy": 5.12,
+                    "DamageDealt": 229,
+                    "DamageTaken": 445,
+                    "CalloutAssists": 0,
+                    "VehicleDestroys": 0,
+                    "DriverAssists": 0,
+                    "Hijacks": 0,
+                    "EmpAssists": 0,
+                    "MaxKillingSpree": 1,
+                    "Medals": [],
+                    "PersonalScores": [],
+                    "Spawns": 2,
+                    "KDA": -1.0,
+                    "AverageLifeDuration": "PT22.2S"
+                },
+                "BombStats": null,
+                "CaptureTheFlagStats": null,
+                "EliminationStats": null,
+                "ExtractionStats": null,
+                "InfectionStats": null,
+                "OddballStats": {
+                    "KillsAsSkullCarrier": 0,
+                    "LongestTimeAsSkullCarrier": "PT4.8S",
+                    "SkullCarriersKilled": 0,
+                    "SkullGrabs": 1,
+                    "TimeAsSkullCarrier": "PT4.8S",
+                    "SkullScoringTicks": 4
+                },
+                "ZonesStats": null,
+                "StockpileStats": null
+            }
+        }
+    ],
+    "Players": [
+        {
+            "PlayerId": "xuid(2535445291321133)",
+            "PlayerType": 1,
+            "BotAttributes": null,
+            "LastTeamId": 0,
+            "Outcome": 3,
+            "Rank": 2,
+            "ParticipationInfo": {
+                "FirstJoinedTime": "2024-08-22T03:06:28.696000Z",
+                "LastLeaveTime": null,
+                "PresentAtBeginning": true,
+                "JoinedInProgress": false,
+                "LeftInProgress": false,
+                "PresentAtCompletion": true,
+                "TimePlayed": "PT1M16.375S",
+                "ConfirmedParticipation": null
+            },
+            "PlayerTeamStats": [
+                {
+                    "TeamId": 0,
+                    "Stats": {
+                        "CoreStats": {
+                            "Score": 2,
+                            "PersonalScore": 235,
+                            "RoundsWon": 0,
+                            "RoundsLost": 1,
+                            "RoundsTied": 0,
+                            "Kills": 2,
+                            "Deaths": 1,
+                            "Assists": 0,
+                            "Suicides": 0,
+                            "Betrayals": 0,
+                            "GrenadeKills": 0,
+                            "HeadshotKills": 1,
+                            "MeleeKills": 0,
+                            "PowerWeaponKills": 0,
+                            "ShotsFired": 25,
+                            "ShotsHit": 20,
+                            "Accuracy": 80.0,
+                            "DamageDealt": 445,
+                            "DamageTaken": 229,
+                            "CalloutAssists": 0,
+                            "VehicleDestroys": 0,
+                            "DriverAssists": 0,
+                            "Hijacks": 0,
+                            "EmpAssists": 0,
+                            "MaxKillingSpree": 1,
+                            "Medals": [
+                                {
+                                    "NameId": 265478668,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
+                                }
+                            ],
+                            "PersonalScores": [
+                                {
+                                    "NameId": 204144695,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 10
+                                },
+                                {
+                                    "NameId": 1024030246,
+                                    "Count": 2,
+                                    "TotalPersonalScoreAwarded": 200
+                                },
+                                {
+                                    "NameId": 746397417,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 25
+                                }
+                            ],
+                            "Spawns": 2,
+                            "KDA": 1.0,
+                            "AverageLifeDuration": "PT24.8S"
+                        },
+                        "BombStats": null,
+                        "CaptureTheFlagStats": null,
+                        "EliminationStats": null,
+                        "ExtractionStats": null,
+                        "InfectionStats": null,
+                        "OddballStats": {
+                            "KillsAsSkullCarrier": 0,
+                            "LongestTimeAsSkullCarrier": "PT2.2S",
+                            "SkullCarriersKilled": 1,
+                            "SkullGrabs": 1,
+                            "TimeAsSkullCarrier": "PT2.2S",
+                            "SkullScoringTicks": 2
+                        },
+                        "ZonesStats": null,
+                        "StockpileStats": null
+                    }
+                }
+            ]
+        },
+        {
+            "PlayerId": "bid(8.0)",
+            "PlayerType": 2,
+            "BotAttributes": {
+                "Difficulty": 4
+            },
+            "LastTeamId": 1,
+            "Outcome": 2,
+            "Rank": 1,
+            "ParticipationInfo": {
+                "FirstJoinedTime": "2024-08-22T03:06:30.151000Z",
+                "LastLeaveTime": null,
+                "PresentAtBeginning": false,
+                "JoinedInProgress": false,
+                "LeftInProgress": false,
+                "PresentAtCompletion": true,
+                "TimePlayed": "PT1M16.375S",
+                "ConfirmedParticipation": null
+            },
+            "PlayerTeamStats": [
+                {
+                    "TeamId": 1,
+                    "Stats": {
+                        "CoreStats": {
+                            "Score": 4,
+                            "PersonalScore": 110,
+                            "RoundsWon": 1,
+                            "RoundsLost": 0,
+                            "RoundsTied": 0,
+                            "Kills": 1,
+                            "Deaths": 2,
+                            "Assists": 0,
+                            "Suicides": 0,
+                            "Betrayals": 0,
+                            "GrenadeKills": 0,
+                            "HeadshotKills": 0,
+                            "MeleeKills": 1,
+                            "PowerWeaponKills": 0,
+                            "ShotsFired": 39,
+                            "ShotsHit": 2,
+                            "Accuracy": 5.12,
+                            "DamageDealt": 229,
+                            "DamageTaken": 445,
+                            "CalloutAssists": 0,
+                            "VehicleDestroys": 0,
+                            "DriverAssists": 0,
+                            "Hijacks": 0,
+                            "EmpAssists": 0,
+                            "MaxKillingSpree": 1,
+                            "Medals": [],
+                            "PersonalScores": [],
+                            "Spawns": 2,
+                            "KDA": -1.0,
+                            "AverageLifeDuration": "PT22.2S"
+                        },
+                        "BombStats": null,
+                        "CaptureTheFlagStats": null,
+                        "EliminationStats": null,
+                        "ExtractionStats": null,
+                        "InfectionStats": null,
+                        "OddballStats": {
+                            "KillsAsSkullCarrier": 0,
+                            "LongestTimeAsSkullCarrier": "PT4.8S",
+                            "SkullCarriersKilled": 0,
+                            "SkullGrabs": 1,
+                            "TimeAsSkullCarrier": "PT4.8S",
+                            "SkullScoringTicks": 4
+                        },
+                        "ZonesStats": null,
+                        "StockpileStats": null
+                    }
+                }
+            ]
+        }
+    ]
+}
