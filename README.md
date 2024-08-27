@@ -29,6 +29,7 @@ As the authentication process requires usage of personal credentials, **use at y
     - `aiohttp` for making asyncronous HTTP requests
     - `aiolimiter` for limiting requests per second
     - `pydantic` for parsing responses into Pydantic models
+    - `bitstring` for unpacking data from binary film files
 
 ## Contributions
 

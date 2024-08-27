@@ -13,3 +13,7 @@ class InvalidXuidError(ValueError):
 
     def __init__(self, xuid: str | int) -> None:
         super().__init__(f"Invalid XUID: {xuid!r}")
+
+
+class FilmReadError(Exception):
+    """Error occurred while reading attributes from a film chunk."""
