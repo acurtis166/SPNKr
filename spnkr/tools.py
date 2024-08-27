@@ -55,9 +55,7 @@ OUTCOME_MAP: dict[int, str] = _intenum_to_mapping(Outcome)
 """Mapping of match outcome values to names."""
 PLAYER_TYPE_MAP: dict[int, str] = _intenum_to_mapping(PlayerType)
 """Mapping of player type values to names."""
-PLAYLIST_EXPERIENCE_MAP: dict[int, str] = _intenum_to_mapping(
-    PlaylistExperience
-)
+PLAYLIST_EXPERIENCE_MAP: dict[int, str] = _intenum_to_mapping(PlaylistExperience)
 """Mapping of playlist experience values to names."""
 BOT_MAP: dict[str, str] = {
     "bid(1.0)": "343 Connmando",

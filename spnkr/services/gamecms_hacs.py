@@ -33,9 +33,7 @@ class GameCmsHacsService(BaseService):
         Returns:
             The CSR season calendar.
         """
-        url = (
-            f"{_HOST}/hi/Progression/file/Csr/Calendars/CsrSeasonCalendar.json"
-        )
+        url = f"{_HOST}/hi/Progression/file/Csr/Calendars/CsrSeasonCalendar.json"
         resp = await self._get(url)
         return JsonResponse(resp, lambda data: CsrSeasonCalendar(**data))
 
@@ -48,9 +46,7 @@ class GameCmsHacsService(BaseService):
         Returns:
             The calendar of reward tracks.
         """
-        url = (
-            f"{_HOST}/hi/progression/file/calendars/seasons/seasoncalendar.json"
-        )
+        url = f"{_HOST}/hi/progression/file/calendars/seasons/seasoncalendar.json"
         resp = await self._get(url)
         return JsonResponse(resp, lambda data: SeasonCalendar(**data))
 

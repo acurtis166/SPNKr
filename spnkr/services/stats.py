@@ -30,9 +30,7 @@ _VALID_SERVICE_RECORD_FILTER_SETS = [
 class StatsService(BaseService):
     """Stats data services."""
 
-    async def get_match_count(
-        self, player: str | int
-    ) -> JsonResponse[MatchCount]:
+    async def get_match_count(self, player: str | int) -> JsonResponse[MatchCount]:
         """Get match counts across different game experiences for a player.
 
         The counts returned are for custom matches, matchmade matches, local
@@ -155,9 +153,7 @@ class StatsService(BaseService):
         resp = await self._get(url, params=params)
         return JsonResponse(resp, lambda data: MatchHistory(**data))
 
-    async def get_match_stats(
-        self, match_id: str | UUID
-    ) -> JsonResponse[MatchStats]:
+    async def get_match_stats(self, match_id: str | UUID) -> JsonResponse[MatchStats]:
         """Request match details using the Halo Infinite match GUID.
 
         Args:

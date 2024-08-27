@@ -34,6 +34,4 @@ class _ReadOnlyDict(Mapping[K, V]):
 _ReadOnlyDictValidator = AfterValidator(lambda v: _ReadOnlyDict(v))
 _ReadOnlyDictSerializer = PlainSerializer(lambda v: dict(v), return_type=dict)
 
-ReadOnlyDict = Annotated[
-    Mapping[K, V], _ReadOnlyDictValidator, _ReadOnlyDictSerializer
-]
+ReadOnlyDict = Annotated[Mapping[K, V], _ReadOnlyDictValidator, _ReadOnlyDictSerializer]

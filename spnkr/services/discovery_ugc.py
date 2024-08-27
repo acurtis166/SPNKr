@@ -187,9 +187,7 @@ class DiscoveryUgcService(BaseService):
         resp = await self._get(url, params=params)
         return JsonResponse(resp, lambda data: AssetSearchPage(**data))
 
-    async def get_film_by_match_id(
-        self, match_id: str | UUID
-    ) -> JsonResponse[Film]:
+    async def get_film_by_match_id(self, match_id: str | UUID) -> JsonResponse[Film]:
         """Get metadata and download information for a film.
 
         Args:

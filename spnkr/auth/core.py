@@ -57,24 +57,16 @@ async def refresh_player_tokens(
     Returns:
         The authenticated player information.
     """
-    oauth_token = await oauth.refresh_oauth_token(
-        session, oauth_refresh_token, app
-    )
-    user_token = await xbox.request_user_token(
-        session, oauth_token.access_token
-    )
+    oauth_token = await oauth.refresh_oauth_token(session, oauth_refresh_token, app)
+    user_token = await xbox.request_user_token(session, oauth_token.access_token)
     xsts_token = await xbox.request_xsts_token(
         session, user_token.token, XSTS_V3_XBOX_AUDIENCE
     )
     halo_xsts_token = await xbox.request_xsts_token(
         session, user_token.token, XSTS_V3_HALO_AUDIENCE
     )
-    spartan_token = await halo.request_spartan_token(
-        session, halo_xsts_token.token
-    )
-    clearance_token = await halo.request_clearance_token(
-        session, spartan_token.token
-    )
+    spartan_token = await halo.request_spartan_token(session, halo_xsts_token.token)
+    clearance_token = await halo.request_clearance_token(session, spartan_token.token)
     return player.AuthenticatedPlayer(
         player_id=xsts_token.xuid,
         gamertag=xsts_token.gamertag,
