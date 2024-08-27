@@ -30,7 +30,7 @@ class MockSession:
 
     def set_response(self, file_name: str) -> None:
         """Set the response for the next GET request."""
-        with open(f"tests/responses/{file_name}", "rb") as f:
+        with open(f"tests/data/responses/{file_name}", "rb") as f:
             self.get.return_value = MockResponse(f.read())
 
 

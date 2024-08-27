@@ -10,7 +10,7 @@ import pytest
 
 from spnkr.auth import halo
 
-RESPONSES = Path("tests/responses")
+RESPONSES = Path("tests/data/responses")
 
 
 class MockResponse:

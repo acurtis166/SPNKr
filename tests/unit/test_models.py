@@ -30,7 +30,7 @@ from spnkr.models.stats import (
     ServiceRecord,
 )
 
-RESPONSES = Path("tests/responses")
+RESPONSES = Path("tests/data/responses")
 
 
 def load_response(name: str) -> Any:

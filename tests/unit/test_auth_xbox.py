@@ -9,7 +9,7 @@ import pytest
 
 from spnkr.auth import xbox
 
-RESPONSES = Path("tests/responses")
+RESPONSES = Path("tests/data/responses")
 
 
 class MockResponse:

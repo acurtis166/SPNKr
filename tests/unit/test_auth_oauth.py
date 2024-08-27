@@ -11,7 +11,7 @@ from aiohttp import ClientSession
 from spnkr.auth import app, oauth
 from spnkr.errors import OAuth2Error
 
-RESPONSES = Path("tests/responses")
+RESPONSES = Path("tests/data/responses")
 
 
 class MockResponse:
