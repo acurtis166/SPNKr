@@ -12,7 +12,7 @@
         <link rel="prev" href="../responses/">
       
       
-        <link rel="next" href="../reference-data/">
+        <link rel="next" href="../film/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -437,6 +437,13 @@
   
     <nav class="md-nav" aria-label="Film">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.models.discovery_ugc.Film.highlight_events_url" class="md-nav__link">
+    highlight_events_url
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#spnkr.models.discovery_ugc.Film.get_chunks_and_urls" class="md-nav__link">
@@ -1046,6 +1053,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../film/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Film
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../reference-data/" class="md-nav__link">
         
   
@@ -1177,6 +1204,13 @@
   
     <nav class="md-nav" aria-label="Film">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.models.discovery_ugc.Film.highlight_events_url" class="md-nav__link">
+    highlight_events_url
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#spnkr.models.discovery_ugc.Film.get_chunks_and_urls" class="md-nav__link">
@@ -2885,6 +2919,27 @@
 
 
 
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.models.discovery_ugc.Film.highlight_events_url" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">highlight_events_url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the URL for the "highlight events" chunk of the film, if available.</p>
+  </div>
+
+</div>
+
 
 
 
@@ -2901,12 +2956,9 @@
   <div class="doc doc-contents ">
   
       <p>Get (chunk, URL) tuples for all film chunks, in order of index.</p>
-<p>URLs are public blob storage URLs for downloading the compressed
-binary chunk data. From the examples that have been examined, the first
-chunk is always the film header, the last chunk is always highlight
-events, and all chunks in between are 20-second replication data chunks.
-The binary data are likely fed into the game engine to reconstruct the
-match.</p>
+<p>URLs are public blob storage URLs for downloading the compressed binary chunk
+data. The first is the film header, the last chunk is highlight events, and all
+chunks in between are 20-second replication data chunks.</p>
 
 
 
