@@ -28,6 +28,7 @@ dev = [
     'mkdocstrings[python]',
     'mkdocs-material>=9',
     'python-dotenv>=1.0',
+    'ruff',
 ]
 
 [project.urls]
