@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- Include "spnkr/film/medal_codes.json" as package data via MANIFEST.in file.
+
 ## [0.9.0] - 2024-08-26
 
 ### Added
