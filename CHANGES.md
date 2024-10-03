@@ -2,14 +2,14 @@
 
 ## [Unreleased]
 
-## [0.9.2]
+## [0.9.2] - 2024-10-02
 
 ### Added
 
 - New medal encodings for highlight event parsing.
 - Medal name ID to name mapping.
 
-## [0.9.1]
+## [0.9.1] - 2024-08-27
 
 ### Fixed
 
