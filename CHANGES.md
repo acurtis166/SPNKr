@@ -6,6 +6,10 @@
 
 - New `xuids` property on `MatchStats` as a convenience to get all user IDs.
 
+### Fixed
+
+- Use single, shared event loop for tests to fix error with unclosed event loop.
+
 ## [0.9.2] - 2024-10-02
 
 ### Added

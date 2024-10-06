@@ -1,8 +1,6 @@
-import asyncio
 import os
 
 import dotenv
-import pytest
 import pytest_asyncio
 from aiohttp import ClientSession
 
@@ -31,11 +29,3 @@ async def client(authenticated_player):
             spartan_token=authenticated_player.spartan_token.token,
             clearance_token=authenticated_player.clearance_token.token,
         )
-
-
-@pytest.fixture(scope="session")
-def event_loop():
-    """Redefine the event loop to be session-scoped."""
-    loop = asyncio.get_event_loop()
-    yield loop
-    loop.close()
