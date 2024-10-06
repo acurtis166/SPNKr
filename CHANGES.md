@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- New `xuids` property on `MatchStats` as a convenience to get all user IDs.
+
 ## [0.9.2] - 2024-10-02
 
 ### Added

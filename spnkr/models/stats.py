@@ -617,6 +617,11 @@ class MatchStats(PascalCaseModel, frozen=True):
     teams: tuple[TeamStats, ...]
     players: tuple[PlayerStats, ...]
 
+    @property
+    def xuids(self) -> list[int]:
+        """Xbox user IDs for all human players in the match."""
+        return [int(p.player_id[5:-1]) for p in self.players if p.is_human]
+
 
 class ServiceRecordSubqueries(PascalCaseModel, frozen=True):
     """Subqueries for a service record request.
