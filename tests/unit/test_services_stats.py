@@ -30,9 +30,7 @@ async def test_get_service_record(session, service: StatsService):
 
 
 @pytest.mark.asyncio
-async def test_get_service_record_season_playlist(
-    session, service: StatsService
-):
+async def test_get_service_record_season_playlist(session, service: StatsService):
     session.set_response("get_service_record.json")
     await service.get_service_record(
         1234567890123456,
@@ -77,9 +75,9 @@ async def test_get_service_record_invalid_filter_combination(
 
 
 @pytest.mark.asyncio
+@pytest.mark.filterwarnings("ignore")
 async def test_get_service_record_non_matchmade_params_ignored(
-    session,
-    service: StatsService,
+    session, service: StatsService
 ):
     session.set_response("get_service_record.json")
     await service.get_service_record(
