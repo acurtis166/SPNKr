@@ -22,7 +22,7 @@ requires-python = '>=3.11'
 dev = [
     'aiohttp-client-cache==0.10.0',
     'pytest>=7',
-    'pytest-asyncio',
+    'pytest-asyncio>=0.24',
     'coverage>=7',
     'mkdocs>=1',
     'mkdocstrings[python]',
@@ -37,3 +37,6 @@ Documentation = 'https://acurtis166.github.io/SPNKr/'
 
 [tool.setuptools.packages.find]
 include = ['spnkr*']
+
+[tool.pytest.ini_options]
+asyncio_default_fixture_loop_scope = 'session'

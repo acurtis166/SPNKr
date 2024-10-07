@@ -8,7 +8,7 @@ from spnkr.auth import AzureApp, refresh_player_tokens
 from spnkr.client import HaloInfiniteClient
 
 
-@pytest_asyncio.fixture(scope="session")
+@pytest_asyncio.fixture(scope="session", loop_scope="session")
 async def authenticated_player():
     dotenv.load_dotenv()
     refresh_token = os.environ["SPNKR_REFRESH_TOKEN"]
@@ -20,7 +20,7 @@ async def authenticated_player():
         return await refresh_player_tokens(session, app, refresh_token)
 
 
-@pytest_asyncio.fixture(scope="session")
+@pytest_asyncio.fixture(scope="session", loop_scope="session")
 async def client(authenticated_player):
     """Return a client."""
     async with ClientSession() as session:
