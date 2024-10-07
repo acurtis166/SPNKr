@@ -41,3 +41,17 @@ include = ['spnkr*']
 
 [tool.pytest.ini_options]
 asyncio_default_fixture_loop_scope = 'session'
+
+[tool.tox]
+requires = ["tox>=4.21.2"]
+env_list = ["3.11", "3.12"]
+
+[tool.tox.env_run_base]
+deps = [
+    "pytest>=8",
+    "pytest-asyncio>=0.24",
+    "python-dotenv>=1.0",
+    "aiohttp-client-cache>=0.10",
+]
+description = "Run test under {base_python}"
+commands = [["pytest", "--color=yes"]]
