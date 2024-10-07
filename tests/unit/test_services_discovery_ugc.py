@@ -51,9 +51,7 @@ async def test_get_ugc_game_variant(session, service: DiscoveryUgcService):
 @pytest.mark.asyncio
 async def test_search_assets_default(session, service: DiscoveryUgcService):
     session.set_response("search_assets.json")
-    await service.search_assets(
-        start=0, count=10, sort="plays_recent", order="desc"
-    )
+    await service.search_assets(start=0, count=10, sort="plays_recent", order="desc")
     session.get.assert_called_with(
         "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/search",
         params={

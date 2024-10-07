@@ -24,7 +24,5 @@ async def test_json_response_json(response):
 
 @pytest.mark.asyncio
 async def test_json_response_parse(response):
-    result: JsonResponse[dict] = JsonResponse(
-        response, lambda data: data | {"test": 1}
-    )
+    result: JsonResponse[dict] = JsonResponse(response, lambda data: data | {"test": 1})
     assert (await result.parse())["test"] == 1

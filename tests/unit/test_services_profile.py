@@ -40,9 +40,7 @@ async def test_get_user_by_id(session, service: ProfileService):
 @pytest.mark.asyncio
 async def test_get_users_by_id(session, service: ProfileService):
     session.set_response("get_users.json")
-    await service.get_users_by_id(
-        ["xuid(1234567890123456)", "xuid(2345678901234567)"]
-    )
+    await service.get_users_by_id(["xuid(1234567890123456)", "xuid(2345678901234567)"])
     session.get.assert_called_with(
         "https://profile.svc.halowaypoint.com/users",
         params={"xuids": [1234567890123456, 2345678901234567]},
