@@ -44,7 +44,7 @@ asyncio_default_fixture_loop_scope = 'session'
 
 [tool.tox]
 requires = ["tox>=4.21.2"]
-env_list = ["3.11", "3.12"]
+env_list = ["3.11", "3.12", "lint"]
 
 [tool.tox.env_run_base]
 deps = [
@@ -55,3 +55,8 @@ deps = [
 ]
 description = "Run test under {base_python}"
 commands = [["pytest", "--color=yes"]]
+
+[tool.tox.env.lint]
+description = "Lint source code"
+deps = ["ruff"]
+commands = [["ruff", "check", "."], ["ruff", "format", "."]]
