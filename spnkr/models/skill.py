@@ -2,6 +2,8 @@
 
 from uuid import UUID
 
+from pydantic import field_validator
+
 from spnkr.models.base import PascalCaseModel
 from spnkr.models.refdata import SkillResultCode, SubTier, Tier
 from spnkr.models.types import ReadOnlyDict
@@ -112,19 +114,27 @@ class MatchSkillResult(PascalCaseModel, frozen=True):
         team_mmr: The MMR of the player's team.
         rank_recap: Summary of the player's CSR change.
         stat_performances: Comparison of actual to expected values for player performance metrics.
+            `None` if the skill result could not be found.
         team_id: The ID of the player's team.
         team_mmrs: The MMRs of all teams in the match.
         ranked_rewards: Always null.
         counterfactuals: Expected performances for the player and all skill tiers in a match.
+            `None` if the skill result could not be found.
     """
 
     team_mmr: float
     rank_recap: RankRecap
-    stat_performances: StatPerformances
+    stat_performances: StatPerformances | None
     team_id: int
     team_mmrs: ReadOnlyDict[int, float]
     ranked_rewards: RankedRewards | None
-    counterfactuals: Counterfactuals
+    counterfactuals: Counterfactuals | None
+
+    @field_validator("stat_performances", mode="before")
+    @classmethod
+    def _set_stat_performances_to_none(cls, v):
+        """If `stat_performances` is falsy (e.g. {}), set it to None."""
+        return v if v else None
 
 
 class MatchSkillValue(PascalCaseModel, frozen=True):

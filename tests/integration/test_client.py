@@ -114,8 +114,8 @@ async def test_get_users_by_id(client):
 @pytest.mark.asyncio(loop_scope="session")
 async def test_get_match_skill(client):
     resp = await client.skill.get_match_skill(
-        match_id="44fedab3-6cc3-4eff-a154-5a2a26e4965f",
-        xuids=[2535445291321133, 2533274880629884],
+        match_id="a6106664-fd07-4973-9251-d2196502a8da",
+        xuids=[2533274824889939, 2533274792954103],
     )
     await resp.parse()
 

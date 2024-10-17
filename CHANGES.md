@@ -8,6 +8,7 @@
 
 ### Fixed
 
+- Fix `MatchSkillResult` model to handle missing attributes in skill response parsing.
 - Use single, shared event loop for tests to fix error with unclosed event loop.
 
 ## [0.9.2] - 2024-10-02
