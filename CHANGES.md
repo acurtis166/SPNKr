@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.9.4] - 2024-10-17
+
 ### Fixed
 
 - Fix `tools.BOT_MAP`. Original values were pulled from Halo Waypoint network traffic. New values line up to bot names used in-game.
@@ -153,7 +155,8 @@
 
 First documented release.
 
-[unreleased]: https://github.com/acurtis166/SPNKr/compare/v0.9.3...HEAD
+[unreleased]: https://github.com/acurtis166/SPNKr/compare/v0.9.4...HEAD
+[0.9.4]: https://github.com/acurtis166/SPNKr/compare/v0.9.3...v0.9.4
 [0.9.3]: https://github.com/acurtis166/SPNKr/compare/v0.9.2...v0.9.3
 [0.9.2]: https://github.com/acurtis166/SPNKr/compare/v0.9.1...v0.9.2
 [0.9.1]: https://github.com/acurtis166/SPNKr/compare/v0.9.0...v0.9.1
