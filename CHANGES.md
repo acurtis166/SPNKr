@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- Fix `tools.BOT_MAP`. Original values were pulled from Halo Waypoint network traffic. New values line up to bot names used in-game.
+
 ## [0.9.3] - 2024-10-16
 
 ### Added
