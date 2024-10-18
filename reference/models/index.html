@@ -927,6 +927,19 @@
     MatchStats
   </a>
   
+    <nav class="md-nav" aria-label="MatchStats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.models.stats.MatchStats.xuids" class="md-nav__link">
+    xuids
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1693,6 +1706,19 @@
   <a href="#spnkr.models.stats.MatchStats" class="md-nav__link">
     MatchStats
   </a>
+  
+    <nav class="md-nav" aria-label="MatchStats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.models.stats.MatchStats.xuids" class="md-nav__link">
+    xuids
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -6808,11 +6834,12 @@ string value.</p>
         <tr>
           <td><code>stat_performances</code></td>
           <td>
-                <code><a class="autorefs autorefs-internal" title="spnkr.models.skill.StatPerformances" href="#spnkr.models.skill.StatPerformances">StatPerformances</a></code>
+                <code><a class="autorefs autorefs-internal" title="spnkr.models.skill.StatPerformances" href="#spnkr.models.skill.StatPerformances">StatPerformances</a> | None</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Comparison of actual to expected values for player performance metrics.</p>
+              <p>Comparison of actual to expected values for player performance metrics.
+<code>None</code> if the skill result could not be found.</p>
             </div>
           </td>
         </tr>
@@ -6852,11 +6879,12 @@ string value.</p>
         <tr>
           <td><code>counterfactuals</code></td>
           <td>
-                <code><a class="autorefs autorefs-internal" title="spnkr.models.skill.Counterfactuals" href="#spnkr.models.skill.Counterfactuals">Counterfactuals</a></code>
+                <code><a class="autorefs autorefs-internal" title="spnkr.models.skill.Counterfactuals" href="#spnkr.models.skill.Counterfactuals">Counterfactuals</a> | None</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Expected performances for the player and all skill tiers in a match.</p>
+              <p>Expected performances for the player and all skill tiers in a match.
+<code>None</code> if the skill result could not be found.</p>
             </div>
           </td>
         </tr>
@@ -9585,6 +9613,27 @@ string value.</p>
 
 
 
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="spnkr.models.stats.MatchStats.xuids" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">xuids</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Xbox user IDs for all human players in the match.</p>
+  </div>
+
+</div>
 
 
 
