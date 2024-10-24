@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+### Added
+
+- Add medal encodings for highlight event parsing.
+- Add medal name ID to name mapping entries.
+
 ## [0.9.4] - 2024-10-17
 
 ### Fixed
