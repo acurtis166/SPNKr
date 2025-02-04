@@ -168,6 +168,7 @@ class _CoreStats(PascalCaseModel, frozen=True):
     medals: tuple[AwardCount, ...]
     personal_scores: tuple[AwardCount, ...]
     spawns: int
+    objectives_completed: int
 
 
 class CoreStats(_CoreStats, frozen=True):
@@ -204,6 +205,7 @@ class CoreStats(_CoreStats, frozen=True):
         medals: Medals earned.
         personal_scores: Personal score awards earned.
         spawns: The number of times spawned.
+        objectives_completed: Number of objectives completed.
     """
 
     kda: float = Field(alias="KDA")
@@ -243,6 +245,7 @@ class ServiceRecordCoreStats(_CoreStats, frozen=True):
         medals: Medals earned.
         personal_scores: Personal score awards earned.
         spawns: The number of times spawned.
+        objectives_completed: Number of objectives completed.
     """
 
     average_kda: float = Field(alias="AverageKDA")
