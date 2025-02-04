@@ -1,46 +1,35 @@
 [build-system]
-requires = ['setuptools>=61.0.0', 'wheel']
-build-backend = 'setuptools.build_meta'
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
 
 [project]
-name = 'spnkr'
-version = '0.9.4'
-description = 'Python API for retrieving Halo Infinite multiplayer data.'
-readme = 'README.md'
-authors = [{ name = 'Andy Curtis' }]
-license = { file = 'LICENSE' }
+name = "spnkr"
+version = "0.9.4"
+description = "Python API for retrieving Halo Infinite multiplayer data."
+readme = "README.md"
+authors = [{ name = "Andy Curtis" }]
+license = { file = "LICENSE" }
 classifiers = [
-    'License :: OSI Approved :: MIT License',
-    'Programming Language :: Python',
-    'Programming Language :: Python :: 3',
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
 ]
-keywords = ['halo', 'infinite', 'api']
-dependencies = ['aiohttp>=3', 'aiolimiter>=1', 'pydantic>=2', 'bitstring>=4.2']
-requires-python = '>=3.11'
+keywords = ["halo", "infinite", "api"]
+dependencies = ["aiohttp>=3", "aiolimiter>=1", "pydantic>=2", "bitstring>=4.2"]
+requires-python = ">=3.11"
 
 [project.optional-dependencies]
-cache = ['aiohttp-client-cache>=0.10']
-dev = [
-    'aiohttp-client-cache>=0.10',
-    'pytest>=8',
-    'pytest-asyncio>=0.24',
-    'coverage>=7',
-    'mkdocs>=1',
-    'mkdocstrings[python]',
-    'mkdocs-material>=9',
-    'python-dotenv>=1.0',
-    'ruff',
-]
+cache = ["aiohttp-client-cache>=0.10"]
 
 [project.urls]
-Homepage = 'https://github.com/acurtis166/SPNKr'
-Documentation = 'https://acurtis166.github.io/SPNKr/'
+Homepage = "https://github.com/acurtis166/SPNKr"
+Documentation = "https://acurtis166.github.io/SPNKr/"
 
 [tool.setuptools.packages.find]
-include = ['spnkr*']
+include = ["spnkr*"]
 
 [tool.pytest.ini_options]
-asyncio_default_fixture_loop_scope = 'session'
+asyncio_default_fixture_loop_scope = "session"
 
 [tool.tox]
 requires = ["tox>=4.21.2"]
@@ -48,15 +37,28 @@ env_list = ["3.11", "3.12", "3.13", "lint"]
 
 [tool.tox.env_run_base]
 deps = [
-    "pytest>=8",
-    "pytest-asyncio>=0.24",
-    "python-dotenv>=1.0",
-    "aiohttp-client-cache>=0.10",
+    "pytest==8.3.4",
+    "pytest-asyncio==0.25.3",
+    "python-dotenv==1.0.1",
+    "aiohttp-client-cache==0.10",
 ]
 description = "Run test under {base_python}"
-commands = [["pytest", "--color=yes"]]
+commands = [["python", "-m", "pytest", "--color=yes"]]
 
 [tool.tox.env.lint]
 description = "Lint source code"
 deps = ["ruff"]
 commands = [["ruff", "check", "."], ["ruff", "format", "."]]
+
+[dependency-groups]
+dev = [
+    "aiohttp-client-cache==0.12.4",
+    "pytest==8.3.4",
+    "pytest-asyncio>=0.25.3",
+    "coverage==7.6.10",
+    "mkdocs==1.6.1",
+    "mkdocstrings[python]==0.28.0",
+    "mkdocs-material==9.6.2",
+    "python-dotenv==1.0.1",
+    "ruff==0.9.4",
+]
