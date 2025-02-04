@@ -3,7 +3,8 @@
         "SeasonIds": null,
         "GameVariantCategories": null,
         "IsRanked": null,
-        "PlaylistAssetIds": null
+        "PlaylistAssetIds": null,
+        "GameplayInteractions": null
     },
     "TimePlayed": "PT0S",
     "MatchesCompleted": 0,

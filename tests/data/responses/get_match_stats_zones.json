@@ -1,36 +1,36 @@
 {
-    "MatchId": "ff9af871-ea6b-40c4-abe6-9aab6bfe1808",
+    "MatchId": "1b527ad3-80c8-44bf-abee-2d28fe9feafb",
     "MatchInfo": {
-        "StartTime": "2022-10-26T00:59:01.107Z",
-        "EndTime": "2022-10-26T01:04:58.222Z",
-        "Duration": "PT5M1.2456199S",
+        "StartTime": "2025-01-29T03:39:56.024Z",
+        "EndTime": "2025-01-29T03:52:21.151Z",
+        "Duration": "PT12M1.6982866S",
         "LifecycleMode": 3,
-        "GameVariantCategory": 39,
-        "LevelId": "1ddfa173-a544-46e6-9dae-671e7e369a0c",
+        "GameVariantCategory": 11,
+        "LevelId": "c0264785-90c8-4946-bf16-06dbfd056bff",
         "MapVariant": {
             "AssetKind": 2,
-            "AssetId": "298d5036-cd43-47b3-a4bd-31e127566593",
-            "VersionId": "faf02446-df41-4324-998c-23ec1adf6b39"
+            "AssetId": "336b5174-3579-4fd8-b2f0-922e4a5f7628",
+            "VersionId": "2e797a30-dad8-4236-8e1d-30c175435ca9"
         },
         "UgcGameVariant": {
             "AssetKind": 6,
-            "AssetId": "8d6e16cd-7e95-4166-92fd-d280163b7ab7",
-            "VersionId": "6ce17bcf-6af5-4d26-9181-9583ed35af56"
+            "AssetId": "22b8a0eb-0d02-4eb3-8f56-5f63fc254f83",
+            "VersionId": "7a6d2582-284c-4728-bec9-118e32cd0cc0"
         },
-        "ClearanceId": "170b6631-a6ea-4b43-8c78-432a1cd52839",
+        "ClearanceId": "0b91d9c9-819e-4ac2-97bd-e537a4b05b5a",
         "Playlist": {
             "AssetKind": 3,
-            "AssetId": "3facc347-6e49-40c9-b9e7-503d26092eed",
-            "VersionId": "c18a81c8-d989-49a9-960c-3ea5fb490123"
+            "AssetId": "edfef3ac-9cbe-4fa2-b949-8f29deafd483",
+            "VersionId": "9236ea00-b852-4611-a7ec-51f38be1a030"
         },
-        "PlaylistExperience": 5,
+        "PlaylistExperience": 2,
         "PlaylistMapModePair": {
             "AssetKind": 7,
-            "AssetId": "103af91d-7eb9-42e8-9ea8-9c221abc20d0",
-            "VersionId": "18a1edb5-7b8f-4def-a8b4-909e9db63c21"
+            "AssetId": "2f033099-4c32-414e-b9a3-d5b79084f1bd",
+            "VersionId": "7ac06eb6-6964-4203-8c5f-503245d970d3"
         },
-        "SeasonId": "Seasons/Season7.json",
-        "PlayableDuration": "PT5M1.25S",
+        "SeasonId": "Csr/Seasons/CsrSeason9-1.json",
+        "PlayableDuration": "PT12M1.672S",
         "TeamsEnabled": true,
         "TeamScoringEnabled": true,
         "GameplayInteraction": 1
@@ -42,51 +42,76 @@
             "Rank": 1,
             "Stats": {
                 "CoreStats": {
-                    "Score": 11,
-                    "PersonalScore": 3850,
+                    "Score": 250,
+                    "PersonalScore": 8820,
                     "RoundsWon": 1,
                     "RoundsLost": 0,
                     "RoundsTied": 0,
-                    "Kills": 20,
-                    "Deaths": 23,
-                    "Assists": 7,
-                    "KDA": -0.66,
+                    "Kills": 56,
+                    "Deaths": 52,
+                    "Assists": 29,
+                    "KDA": 13.66,
                     "Suicides": 0,
                     "Betrayals": 0,
-                    "AverageLifeDuration": "PT37.9S",
-                    "GrenadeKills": 2,
-                    "HeadshotKills": 2,
-                    "MeleeKills": 4,
-                    "PowerWeaponKills": 2,
-                    "ShotsFired": 725,
-                    "ShotsHit": 348,
-                    "Accuracy": 48.0,
-                    "DamageDealt": 6614,
-                    "DamageTaken": 7497,
-                    "CalloutAssists": 0,
+                    "AverageLifeDuration": "PT31.3S",
+                    "GrenadeKills": 5,
+                    "HeadshotKills": 37,
+                    "MeleeKills": 7,
+                    "PowerWeaponKills": 0,
+                    "ShotsFired": 870,
+                    "ShotsHit": 413,
+                    "Accuracy": 47.47,
+                    "DamageDealt": 19146,
+                    "DamageTaken": 20583,
+                    "CalloutAssists": 7,
                     "VehicleDestroys": 0,
                     "DriverAssists": 0,
                     "Hijacks": 0,
                     "EmpAssists": 0,
-                    "MaxKillingSpree": 3,
+                    "MaxKillingSpree": 5,
                     "Medals": [
                         {
-                            "NameId": 3233952928,
-                            "Count": 1,
-                            "TotalPersonalScoreAwarded": 0
-                        },
-                        {
-                            "NameId": 2123530881,
+                            "NameId": 548533137,
                             "Count": 2,
                             "TotalPersonalScoreAwarded": 0
                         },
                         {
-                            "NameId": 548533137,
+                            "NameId": 1169571763,
+                            "Count": 5,
+                            "TotalPersonalScoreAwarded": 0
+                        },
+                        {
+                            "NameId": 3091261182,
+                            "Count": 1,
+                            "TotalPersonalScoreAwarded": 0
+                        },
+                        {
+                            "NameId": 1512363953,
+                            "Count": 4,
+                            "TotalPersonalScoreAwarded": 0
+                        },
+                        {
+                            "NameId": 2852571933,
+                            "Count": 4,
+                            "TotalPersonalScoreAwarded": 0
+                        },
+                        {
+                            "NameId": 2780740615,
+                            "Count": 2,
+                            "TotalPersonalScoreAwarded": 0
+                        },
+                        {
+                            "NameId": 3655682764,
                             "Count": 1,
                             "TotalPersonalScoreAwarded": 0
                         },
                         {
                             "NameId": 622331684,
+                            "Count": 2,
+                            "TotalPersonalScoreAwarded": 0
+                        },
+                        {
+                            "NameId": 3233952928,
                             "Count": 1,
                             "TotalPersonalScoreAwarded": 0
                         },
@@ -96,12 +121,17 @@
                             "TotalPersonalScoreAwarded": 0
                         },
                         {
-                            "NameId": 2418616582,
+                            "NameId": 2477555653,
                             "Count": 1,
                             "TotalPersonalScoreAwarded": 0
                         },
                         {
-                            "NameId": 1283796619,
+                            "NameId": 1284032216,
+                            "Count": 1,
+                            "TotalPersonalScoreAwarded": 0
+                        },
+                        {
+                            "NameId": 2123530881,
                             "Count": 1,
                             "TotalPersonalScoreAwarded": 0
                         }
@@ -109,32 +139,48 @@
                     "PersonalScores": [
                         {
                             "NameId": 1024030246,
-                            "Count": 20,
-                            "TotalPersonalScoreAwarded": 2000
-                        },
-                        {
-                            "NameId": 757037588,
-                            "Count": 15,
-                            "TotalPersonalScoreAwarded": 1500
+                            "Count": 56,
+                            "TotalPersonalScoreAwarded": 5600
                         },
                         {
                             "NameId": 638246808,
+                            "Count": 29,
+                            "TotalPersonalScoreAwarded": 1450
+                        },
+                        {
+                            "NameId": 3507884073,
+                            "Count": 28,
+                            "TotalPersonalScoreAwarded": 1400
+                        },
+                        {
+                            "NameId": 709346128,
+                            "Count": 12,
+                            "TotalPersonalScoreAwarded": 300
+                        },
+                        {
+                            "NameId": 152718958,
                             "Count": 7,
-                            "TotalPersonalScoreAwarded": 350
+                            "TotalPersonalScoreAwarded": 70
                         }
                     ],
-                    "DeprecatedDamageDealt": 6614.0,
-                    "DeprecatedDamageTaken": 7497.0,
-                    "Spawns": 29,
+                    "DeprecatedDamageDealt": 19146.0,
+                    "DeprecatedDamageTaken": 20583.0,
+                    "Spawns": 55,
                     "ObjectivesCompleted": 0
                 },
                 "ZonesStats": {
-                    "StrongholdCaptures": 11,
-                    "StrongholdDefensiveKills": 0,
-                    "StrongholdOffensiveKills": 7,
-                    "StrongholdSecures": 0,
-                    "StrongholdOccupationTime": "PT3M13.2S",
-                    "StrongholdScoringTicks": 0
+                    "StrongholdCaptures": 17,
+                    "StrongholdDefensiveKills": 15,
+                    "StrongholdOffensiveKills": 16,
+                    "StrongholdSecures": 12,
+                    "StrongholdOccupationTime": "PT6M23.5S",
+                    "StrongholdScoringTicks": 249
+                },
+                "PvpStats": {
+                    "Kills": 56,
+                    "Deaths": 52,
+                    "Assists": 29,
+                    "KDA": 13.66
                 }
             }
         },
@@ -144,46 +190,41 @@
             "Rank": 2,
             "Stats": {
                 "CoreStats": {
-                    "Score": 8,
-                    "PersonalScore": 4100,
+                    "Score": 198,
+                    "PersonalScore": 7120,
                     "RoundsWon": 0,
                     "RoundsLost": 1,
                     "RoundsTied": 0,
-                    "Kills": 23,
-                    "Deaths": 20,
-                    "Assists": 9,
-                    "KDA": 6.0,
+                    "Kills": 52,
+                    "Deaths": 56,
+                    "Assists": 14,
+                    "KDA": 0.66,
                     "Suicides": 0,
                     "Betrayals": 0,
-                    "AverageLifeDuration": "PT46.7S",
+                    "AverageLifeDuration": "PT44.1S",
                     "GrenadeKills": 3,
-                    "HeadshotKills": 2,
-                    "MeleeKills": 5,
-                    "PowerWeaponKills": 3,
-                    "ShotsFired": 1001,
-                    "ShotsHit": 431,
-                    "Accuracy": 43.05,
-                    "DamageDealt": 7284,
-                    "DamageTaken": 6829,
-                    "CalloutAssists": 0,
+                    "HeadshotKills": 31,
+                    "MeleeKills": 9,
+                    "PowerWeaponKills": 0,
+                    "ShotsFired": 959,
+                    "ShotsHit": 487,
+                    "Accuracy": 50.78,
+                    "DamageDealt": 20341,
+                    "DamageTaken": 19146,
+                    "CalloutAssists": 2,
                     "VehicleDestroys": 0,
                     "DriverAssists": 0,
                     "Hijacks": 0,
                     "EmpAssists": 0,
-                    "MaxKillingSpree": 8,
+                    "MaxKillingSpree": 5,
                     "Medals": [
                         {
-                            "NameId": 3217141618,
-                            "Count": 1,
+                            "NameId": 1512363953,
+                            "Count": 5,
                             "TotalPersonalScoreAwarded": 0
                         },
                         {
                             "NameId": 2123530881,
-                            "Count": 1,
-                            "TotalPersonalScoreAwarded": 0
-                        },
-                        {
-                            "NameId": 2780740615,
                             "Count": 1,
                             "TotalPersonalScoreAwarded": 0
                         },
@@ -193,40 +234,86 @@
                             "TotalPersonalScoreAwarded": 0
                         },
                         {
+                            "NameId": 548533137,
+                            "Count": 2,
+                            "TotalPersonalScoreAwarded": 0
+                        },
+                        {
+                            "NameId": 3233952928,
+                            "Count": 2,
+                            "TotalPersonalScoreAwarded": 0
+                        },
+                        {
                             "NameId": 2852571933,
+                            "Count": 3,
+                            "TotalPersonalScoreAwarded": 0
+                        },
+                        {
+                            "NameId": 3334154676,
                             "Count": 1,
+                            "TotalPersonalScoreAwarded": 0
+                        },
+                        {
+                            "NameId": 2780740615,
+                            "Count": 1,
+                            "TotalPersonalScoreAwarded": 0
+                        },
+                        {
+                            "NameId": 3091261182,
+                            "Count": 1,
+                            "TotalPersonalScoreAwarded": 0
+                        },
+                        {
+                            "NameId": 3630529364,
+                            "Count": 2,
                             "TotalPersonalScoreAwarded": 0
                         }
                     ],
                     "PersonalScores": [
                         {
                             "NameId": 1024030246,
-                            "Count": 23,
-                            "TotalPersonalScoreAwarded": 2300
+                            "Count": 52,
+                            "TotalPersonalScoreAwarded": 5200
+                        },
+                        {
+                            "NameId": 3507884073,
+                            "Count": 20,
+                            "TotalPersonalScoreAwarded": 1000
                         },
                         {
                             "NameId": 638246808,
-                            "Count": 10,
-                            "TotalPersonalScoreAwarded": 500
+                            "Count": 14,
+                            "TotalPersonalScoreAwarded": 700
                         },
                         {
-                            "NameId": 757037588,
-                            "Count": 13,
-                            "TotalPersonalScoreAwarded": 1300
+                            "NameId": 152718958,
+                            "Count": 2,
+                            "TotalPersonalScoreAwarded": 20
+                        },
+                        {
+                            "NameId": 709346128,
+                            "Count": 8,
+                            "TotalPersonalScoreAwarded": 200
                         }
                     ],
-                    "DeprecatedDamageDealt": 7284.0,
-                    "DeprecatedDamageTaken": 6829.0,
-                    "Spawns": 23,
+                    "DeprecatedDamageDealt": 20341.0,
+                    "DeprecatedDamageTaken": 19146.0,
+                    "Spawns": 58,
                     "ObjectivesCompleted": 0
                 },
                 "ZonesStats": {
-                    "StrongholdCaptures": 8,
-                    "StrongholdDefensiveKills": 0,
-                    "StrongholdOffensiveKills": 8,
-                    "StrongholdSecures": 0,
-                    "StrongholdOccupationTime": "PT2M35.7S",
-                    "StrongholdScoringTicks": 0
+                    "StrongholdCaptures": 16,
+                    "StrongholdDefensiveKills": 13,
+                    "StrongholdOffensiveKills": 11,
+                    "StrongholdSecures": 8,
+                    "StrongholdOccupationTime": "PT6M56.6S",
+                    "StrongholdScoringTicks": 198
+                },
+                "PvpStats": {
+                    "Kills": 52,
+                    "Deaths": 56,
+                    "Assists": 14,
+                    "KDA": 0.66
                 }
             }
         }
@@ -238,15 +325,15 @@
             "BotAttributes": null,
             "LastTeamId": 1,
             "Outcome": 3,
-            "Rank": 8,
+            "Rank": 5,
             "ParticipationInfo": {
-                "FirstJoinedTime": "2022-10-26T00:59:51.195Z",
+                "FirstJoinedTime": "2025-01-29T03:40:19.444Z",
                 "LastLeaveTime": null,
                 "PresentAtBeginning": true,
-                "JoinedInProgress": true,
+                "JoinedInProgress": false,
                 "LeftInProgress": false,
                 "PresentAtCompletion": true,
-                "TimePlayed": "PT5M1.25S",
+                "TimePlayed": "PT12M1.672S",
                 "ConfirmedParticipation": null
             },
             "PlayerTeamStats": [
@@ -254,195 +341,148 @@
                     "TeamId": 1,
                     "Stats": {
                         "CoreStats": {
-                            "Score": 2,
-                            "PersonalScore": 550,
+                            "Score": 0,
+                            "PersonalScore": 2175,
                             "RoundsWon": 0,
                             "RoundsLost": 1,
                             "RoundsTied": 0,
-                            "Kills": 2,
-                            "Deaths": 6,
-                            "Assists": 3,
-                            "KDA": -3.0,
+                            "Kills": 16,
+                            "Deaths": 15,
+                            "Assists": 2,
+                            "KDA": 1.66,
                             "Suicides": 0,
                             "Betrayals": 0,
-                            "AverageLifeDuration": "PT36.2S",
-                            "GrenadeKills": 0,
-                            "HeadshotKills": 2,
-                            "MeleeKills": 0,
+                            "AverageLifeDuration": "PT36.7S",
+                            "GrenadeKills": 1,
+                            "HeadshotKills": 12,
+                            "MeleeKills": 3,
                             "PowerWeaponKills": 0,
-                            "ShotsFired": 215,
-                            "ShotsHit": 87,
-                            "Accuracy": 40.46,
-                            "DamageDealt": 1370,
-                            "DamageTaken": 1445,
+                            "ShotsFired": 226,
+                            "ShotsHit": 130,
+                            "Accuracy": 57.52,
+                            "DamageDealt": 6161,
+                            "DamageTaken": 4689,
                             "CalloutAssists": 0,
                             "VehicleDestroys": 0,
                             "DriverAssists": 0,
                             "Hijacks": 0,
                             "EmpAssists": 0,
-                            "MaxKillingSpree": 2,
-                            "Medals": [],
-                            "PersonalScores": [
+                            "MaxKillingSpree": 3,
+                            "Medals": [
                                 {
-                                    "NameId": 638246808,
-                                    "Count": 3,
-                                    "TotalPersonalScoreAwarded": 150
+                                    "NameId": 1512363953,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
                                 },
                                 {
-                                    "NameId": 1024030246,
-                                    "Count": 2,
-                                    "TotalPersonalScoreAwarded": 200
+                                    "NameId": 548533137,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
                                 },
                                 {
-                                    "NameId": 757037588,
-                                    "Count": 2,
-                                    "TotalPersonalScoreAwarded": 200
+                                    "NameId": 2852571933,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
+                                },
+                                {
+                                    "NameId": 3233952928,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
+                                },
+                                {
+                                    "NameId": 3630529364,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
                                 }
                             ],
-                            "DeprecatedDamageDealt": 1370.0,
-                            "DeprecatedDamageTaken": 1445.0,
-                            "Spawns": 6,
-                            "ObjectivesCompleted": 0
-                        },
-                        "ZonesStats": {
-                            "StrongholdCaptures": 2,
-                            "StrongholdDefensiveKills": 0,
-                            "StrongholdOffensiveKills": 1,
-                            "StrongholdSecures": 0,
-                            "StrongholdOccupationTime": "PT27.4S",
-                            "StrongholdScoringTicks": 0
-                        }
-                    }
-                }
-            ]
-        },
-        {
-            "PlayerId": "xuid(2533274876057175)",
-            "PlayerType": 1,
-            "BotAttributes": null,
-            "LastTeamId": 0,
-            "Outcome": 2,
-            "Rank": 1,
-            "ParticipationInfo": {
-                "FirstJoinedTime": "2022-10-26T00:59:56.975Z",
-                "LastLeaveTime": null,
-                "PresentAtBeginning": true,
-                "JoinedInProgress": false,
-                "LeftInProgress": false,
-                "PresentAtCompletion": true,
-                "TimePlayed": "PT5M1.25S",
-                "ConfirmedParticipation": null
-            },
-            "PlayerTeamStats": [
-                {
-                    "TeamId": 0,
-                    "Stats": {
-                        "CoreStats": {
-                            "Score": 6,
-                            "PersonalScore": 650,
-                            "RoundsWon": 1,
-                            "RoundsLost": 0,
-                            "RoundsTied": 0,
-                            "Kills": 1,
-                            "Deaths": 6,
-                            "Assists": 1,
-                            "KDA": -4.66,
-                            "Suicides": 0,
-                            "Betrayals": 0,
-                            "AverageLifeDuration": "PT30.5S",
-                            "GrenadeKills": 0,
-                            "HeadshotKills": 1,
-                            "MeleeKills": 0,
-                            "PowerWeaponKills": 0,
-                            "ShotsFired": 132,
-                            "ShotsHit": 49,
-                            "Accuracy": 37.12,
-                            "DamageDealt": 955,
-                            "DamageTaken": 1448,
-                            "CalloutAssists": 0,
-                            "VehicleDestroys": 0,
-                            "DriverAssists": 0,
-                            "Hijacks": 0,
-                            "EmpAssists": 0,
-                            "MaxKillingSpree": 1,
-                            "Medals": [],
                             "PersonalScores": [
                                 {
-                                    "NameId": 757037588,
-                                    "Count": 5,
-                                    "TotalPersonalScoreAwarded": 500
+                                    "NameId": 1024030246,
+                                    "Count": 16,
+                                    "TotalPersonalScoreAwarded": 1600
+                                },
+                                {
+                                    "NameId": 3507884073,
+                                    "Count": 8,
+                                    "TotalPersonalScoreAwarded": 400
                                 },
                                 {
                                     "NameId": 638246808,
-                                    "Count": 1,
-                                    "TotalPersonalScoreAwarded": 50
-                                },
-                                {
-                                    "NameId": 1024030246,
-                                    "Count": 1,
+                                    "Count": 2,
                                     "TotalPersonalScoreAwarded": 100
+                                },
+                                {
+                                    "NameId": 709346128,
+                                    "Count": 3,
+                                    "TotalPersonalScoreAwarded": 75
                                 }
                             ],
-                            "DeprecatedDamageDealt": 955.0,
-                            "DeprecatedDamageTaken": 1448.0,
-                            "Spawns": 7,
+                            "DeprecatedDamageDealt": 6161.0,
+                            "DeprecatedDamageTaken": 4689.0,
+                            "Spawns": 15,
                             "ObjectivesCompleted": 0
                         },
                         "ZonesStats": {
-                            "StrongholdCaptures": 6,
-                            "StrongholdDefensiveKills": 0,
-                            "StrongholdOffensiveKills": 0,
-                            "StrongholdSecures": 0,
-                            "StrongholdOccupationTime": "PT1M0.2S",
+                            "StrongholdCaptures": 8,
+                            "StrongholdDefensiveKills": 1,
+                            "StrongholdOffensiveKills": 4,
+                            "StrongholdSecures": 3,
+                            "StrongholdOccupationTime": "PT2M16.5S",
                             "StrongholdScoringTicks": 0
+                        },
+                        "PvpStats": {
+                            "Kills": 16,
+                            "Deaths": 15,
+                            "Assists": 2,
+                            "KDA": 1.66
                         }
                     }
                 }
             ]
         },
         {
-            "PlayerId": "xuid(2535468094922922)",
+            "PlayerId": "xuid(2533274964913144)",
             "PlayerType": 1,
             "BotAttributes": null,
-            "LastTeamId": 0,
-            "Outcome": 2,
-            "Rank": 1,
+            "LastTeamId": 1,
+            "Outcome": 3,
+            "Rank": 5,
             "ParticipationInfo": {
-                "FirstJoinedTime": "2022-10-26T00:59:56.975Z",
+                "FirstJoinedTime": "2025-01-29T03:40:19.452Z",
                 "LastLeaveTime": null,
                 "PresentAtBeginning": true,
                 "JoinedInProgress": false,
                 "LeftInProgress": false,
                 "PresentAtCompletion": true,
-                "TimePlayed": "PT5M1.25S",
+                "TimePlayed": "PT12M1.672S",
                 "ConfirmedParticipation": null
             },
             "PlayerTeamStats": [
                 {
-                    "TeamId": 0,
+                    "TeamId": 1,
                     "Stats": {
                         "CoreStats": {
-                            "Score": 6,
-                            "PersonalScore": 1450,
-                            "RoundsWon": 1,
-                            "RoundsLost": 0,
+                            "Score": 0,
+                            "PersonalScore": 900,
+                            "RoundsWon": 0,
+                            "RoundsLost": 1,
                             "RoundsTied": 0,
-                            "Kills": 8,
-                            "Deaths": 5,
-                            "Assists": 1,
-                            "KDA": 3.33,
+                            "Kills": 6,
+                            "Deaths": 15,
+                            "Assists": 2,
+                            "KDA": -8.33,
                             "Suicides": 0,
                             "Betrayals": 0,
-                            "AverageLifeDuration": "PT37.3S",
-                            "GrenadeKills": 2,
-                            "HeadshotKills": 0,
-                            "MeleeKills": 2,
+                            "AverageLifeDuration": "PT33.9S",
+                            "GrenadeKills": 1,
+                            "HeadshotKills": 2,
+                            "MeleeKills": 1,
                             "PowerWeaponKills": 0,
-                            "ShotsFired": 219,
-                            "ShotsHit": 119,
-                            "Accuracy": 54.33,
-                            "DamageDealt": 1926,
-                            "DamageTaken": 1801,
+                            "ShotsFired": 174,
+                            "ShotsHit": 81,
+                            "Accuracy": 46.55,
+                            "DamageDealt": 3591,
+                            "DamageTaken": 4893,
                             "CalloutAssists": 0,
                             "VehicleDestroys": 0,
                             "DriverAssists": 0,
@@ -452,6 +492,369 @@
                             "Medals": [
                                 {
                                     "NameId": 3233952928,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
+                                }
+                            ],
+                            "PersonalScores": [
+                                {
+                                    "NameId": 1024030246,
+                                    "Count": 6,
+                                    "TotalPersonalScoreAwarded": 600
+                                },
+                                {
+                                    "NameId": 3507884073,
+                                    "Count": 4,
+                                    "TotalPersonalScoreAwarded": 200
+                                },
+                                {
+                                    "NameId": 638246808,
+                                    "Count": 2,
+                                    "TotalPersonalScoreAwarded": 100
+                                }
+                            ],
+                            "DeprecatedDamageDealt": 3591.0,
+                            "DeprecatedDamageTaken": 4893.0,
+                            "Spawns": 16,
+                            "ObjectivesCompleted": 0
+                        },
+                        "ZonesStats": {
+                            "StrongholdCaptures": 4,
+                            "StrongholdDefensiveKills": 1,
+                            "StrongholdOffensiveKills": 2,
+                            "StrongholdSecures": 0,
+                            "StrongholdOccupationTime": "PT1M38.5S",
+                            "StrongholdScoringTicks": 0
+                        },
+                        "PvpStats": {
+                            "Kills": 6,
+                            "Deaths": 15,
+                            "Assists": 2,
+                            "KDA": -8.33
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "PlayerId": "xuid(2535412760927018)",
+            "PlayerType": 1,
+            "BotAttributes": null,
+            "LastTeamId": 1,
+            "Outcome": 3,
+            "Rank": 5,
+            "ParticipationInfo": {
+                "FirstJoinedTime": "2025-01-29T03:40:19.452Z",
+                "LastLeaveTime": null,
+                "PresentAtBeginning": true,
+                "JoinedInProgress": false,
+                "LeftInProgress": false,
+                "PresentAtCompletion": true,
+                "TimePlayed": "PT12M1.672S",
+                "ConfirmedParticipation": null
+            },
+            "PlayerTeamStats": [
+                {
+                    "TeamId": 1,
+                    "Stats": {
+                        "CoreStats": {
+                            "Score": 0,
+                            "PersonalScore": 2420,
+                            "RoundsWon": 0,
+                            "RoundsLost": 1,
+                            "RoundsTied": 0,
+                            "Kills": 17,
+                            "Deaths": 12,
+                            "Assists": 7,
+                            "KDA": 7.33,
+                            "Suicides": 0,
+                            "Betrayals": 0,
+                            "AverageLifeDuration": "PT44.1S",
+                            "GrenadeKills": 1,
+                            "HeadshotKills": 10,
+                            "MeleeKills": 2,
+                            "PowerWeaponKills": 0,
+                            "ShotsFired": 308,
+                            "ShotsHit": 152,
+                            "Accuracy": 49.35,
+                            "DamageDealt": 6277,
+                            "DamageTaken": 4826,
+                            "CalloutAssists": 2,
+                            "VehicleDestroys": 0,
+                            "DriverAssists": 0,
+                            "Hijacks": 0,
+                            "EmpAssists": 0,
+                            "MaxKillingSpree": 5,
+                            "Medals": [
+                                {
+                                    "NameId": 2123530881,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
+                                },
+                                {
+                                    "NameId": 622331684,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
+                                },
+                                {
+                                    "NameId": 3334154676,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
+                                },
+                                {
+                                    "NameId": 1512363953,
+                                    "Count": 3,
+                                    "TotalPersonalScoreAwarded": 0
+                                },
+                                {
+                                    "NameId": 2852571933,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
+                                },
+                                {
+                                    "NameId": 548533137,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
+                                },
+                                {
+                                    "NameId": 2780740615,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
+                                },
+                                {
+                                    "NameId": 3091261182,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
+                                }
+                            ],
+                            "PersonalScores": [
+                                {
+                                    "NameId": 3507884073,
+                                    "Count": 5,
+                                    "TotalPersonalScoreAwarded": 250
+                                },
+                                {
+                                    "NameId": 1024030246,
+                                    "Count": 17,
+                                    "TotalPersonalScoreAwarded": 1700
+                                },
+                                {
+                                    "NameId": 638246808,
+                                    "Count": 7,
+                                    "TotalPersonalScoreAwarded": 350
+                                },
+                                {
+                                    "NameId": 152718958,
+                                    "Count": 2,
+                                    "TotalPersonalScoreAwarded": 20
+                                },
+                                {
+                                    "NameId": 709346128,
+                                    "Count": 4,
+                                    "TotalPersonalScoreAwarded": 100
+                                }
+                            ],
+                            "DeprecatedDamageDealt": 6277.0,
+                            "DeprecatedDamageTaken": 4826.0,
+                            "Spawns": 13,
+                            "ObjectivesCompleted": 0
+                        },
+                        "ZonesStats": {
+                            "StrongholdCaptures": 5,
+                            "StrongholdDefensiveKills": 8,
+                            "StrongholdOffensiveKills": 2,
+                            "StrongholdSecures": 4,
+                            "StrongholdOccupationTime": "PT1M24.4S",
+                            "StrongholdScoringTicks": 0
+                        },
+                        "PvpStats": {
+                            "Kills": 17,
+                            "Deaths": 12,
+                            "Assists": 7,
+                            "KDA": 7.33
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "PlayerId": "xuid(2535455774036214)",
+            "PlayerType": 1,
+            "BotAttributes": null,
+            "LastTeamId": 0,
+            "Outcome": 2,
+            "Rank": 1,
+            "ParticipationInfo": {
+                "FirstJoinedTime": "2025-01-29T03:40:19.452Z",
+                "LastLeaveTime": null,
+                "PresentAtBeginning": true,
+                "JoinedInProgress": false,
+                "LeftInProgress": false,
+                "PresentAtCompletion": true,
+                "TimePlayed": "PT12M1.672S",
+                "ConfirmedParticipation": null
+            },
+            "PlayerTeamStats": [
+                {
+                    "TeamId": 0,
+                    "Stats": {
+                        "CoreStats": {
+                            "Score": 0,
+                            "PersonalScore": 2725,
+                            "RoundsWon": 1,
+                            "RoundsLost": 0,
+                            "RoundsTied": 0,
+                            "Kills": 18,
+                            "Deaths": 11,
+                            "Assists": 5,
+                            "KDA": 8.66,
+                            "Suicides": 0,
+                            "Betrayals": 0,
+                            "AverageLifeDuration": "PT53.8S",
+                            "GrenadeKills": 1,
+                            "HeadshotKills": 10,
+                            "MeleeKills": 3,
+                            "PowerWeaponKills": 0,
+                            "ShotsFired": 161,
+                            "ShotsHit": 102,
+                            "Accuracy": 63.35,
+                            "DamageDealt": 4635,
+                            "DamageTaken": 4404,
+                            "CalloutAssists": 0,
+                            "VehicleDestroys": 0,
+                            "DriverAssists": 0,
+                            "Hijacks": 0,
+                            "EmpAssists": 0,
+                            "MaxKillingSpree": 4,
+                            "Medals": [
+                                {
+                                    "NameId": 548533137,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
+                                },
+                                {
+                                    "NameId": 3655682764,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
+                                },
+                                {
+                                    "NameId": 2852571933,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
+                                },
+                                {
+                                    "NameId": 622331684,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
+                                }
+                            ],
+                            "PersonalScores": [
+                                {
+                                    "NameId": 3507884073,
+                                    "Count": 11,
+                                    "TotalPersonalScoreAwarded": 550
+                                },
+                                {
+                                    "NameId": 1024030246,
+                                    "Count": 18,
+                                    "TotalPersonalScoreAwarded": 1800
+                                },
+                                {
+                                    "NameId": 709346128,
+                                    "Count": 5,
+                                    "TotalPersonalScoreAwarded": 125
+                                },
+                                {
+                                    "NameId": 638246808,
+                                    "Count": 5,
+                                    "TotalPersonalScoreAwarded": 250
+                                }
+                            ],
+                            "DeprecatedDamageDealt": 4635.0,
+                            "DeprecatedDamageTaken": 4404.0,
+                            "Spawns": 11,
+                            "ObjectivesCompleted": 0
+                        },
+                        "ZonesStats": {
+                            "StrongholdCaptures": 11,
+                            "StrongholdDefensiveKills": 5,
+                            "StrongholdOffensiveKills": 8,
+                            "StrongholdSecures": 5,
+                            "StrongholdOccupationTime": "PT1M9.7S",
+                            "StrongholdScoringTicks": 0
+                        },
+                        "PvpStats": {
+                            "Kills": 18,
+                            "Deaths": 11,
+                            "Assists": 5,
+                            "KDA": 8.66
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "PlayerId": "xuid(2535448052987285)",
+            "PlayerType": 1,
+            "BotAttributes": null,
+            "LastTeamId": 0,
+            "Outcome": 2,
+            "Rank": 1,
+            "ParticipationInfo": {
+                "FirstJoinedTime": "2025-01-29T03:40:19.452Z",
+                "LastLeaveTime": null,
+                "PresentAtBeginning": true,
+                "JoinedInProgress": false,
+                "LeftInProgress": false,
+                "PresentAtCompletion": true,
+                "TimePlayed": "PT12M1.672S",
+                "ConfirmedParticipation": null
+            },
+            "PlayerTeamStats": [
+                {
+                    "TeamId": 0,
+                    "Stats": {
+                        "CoreStats": {
+                            "Score": 0,
+                            "PersonalScore": 2810,
+                            "RoundsWon": 1,
+                            "RoundsLost": 0,
+                            "RoundsTied": 0,
+                            "Kills": 20,
+                            "Deaths": 12,
+                            "Assists": 8,
+                            "KDA": 10.66,
+                            "Suicides": 0,
+                            "Betrayals": 0,
+                            "AverageLifeDuration": "PT44.1S",
+                            "GrenadeKills": 2,
+                            "HeadshotKills": 14,
+                            "MeleeKills": 3,
+                            "PowerWeaponKills": 0,
+                            "ShotsFired": 223,
+                            "ShotsHit": 125,
+                            "Accuracy": 56.05,
+                            "DamageDealt": 6597,
+                            "DamageTaken": 6215,
+                            "CalloutAssists": 1,
+                            "VehicleDestroys": 0,
+                            "DriverAssists": 0,
+                            "Hijacks": 0,
+                            "EmpAssists": 0,
+                            "MaxKillingSpree": 5,
+                            "Medals": [
+                                {
+                                    "NameId": 1169571763,
+                                    "Count": 4,
+                                    "TotalPersonalScoreAwarded": 0
+                                },
+                                {
+                                    "NameId": 1512363953,
+                                    "Count": 3,
+                                    "TotalPersonalScoreAwarded": 0
+                                },
+                                {
+                                    "NameId": 2852571933,
                                     "Count": 1,
                                     "TotalPersonalScoreAwarded": 0
                                 },
@@ -466,60 +869,76 @@
                                     "TotalPersonalScoreAwarded": 0
                                 },
                                 {
-                                    "NameId": 2625820422,
+                                    "NameId": 2780740615,
                                     "Count": 1,
                                     "TotalPersonalScoreAwarded": 0
                                 }
                             ],
                             "PersonalScores": [
                                 {
-                                    "NameId": 757037588,
-                                    "Count": 6,
-                                    "TotalPersonalScoreAwarded": 600
+                                    "NameId": 638246808,
+                                    "Count": 8,
+                                    "TotalPersonalScoreAwarded": 400
                                 },
                                 {
                                     "NameId": 1024030246,
-                                    "Count": 8,
-                                    "TotalPersonalScoreAwarded": 800
+                                    "Count": 20,
+                                    "TotalPersonalScoreAwarded": 2000
                                 },
                                 {
-                                    "NameId": 638246808,
+                                    "NameId": 3507884073,
+                                    "Count": 6,
+                                    "TotalPersonalScoreAwarded": 300
+                                },
+                                {
+                                    "NameId": 152718958,
                                     "Count": 1,
-                                    "TotalPersonalScoreAwarded": 50
+                                    "TotalPersonalScoreAwarded": 10
+                                },
+                                {
+                                    "NameId": 709346128,
+                                    "Count": 4,
+                                    "TotalPersonalScoreAwarded": 100
                                 }
                             ],
-                            "DeprecatedDamageDealt": 1926.0,
-                            "DeprecatedDamageTaken": 1801.0,
-                            "Spawns": 6,
+                            "DeprecatedDamageDealt": 6597.0,
+                            "DeprecatedDamageTaken": 6215.0,
+                            "Spawns": 13,
                             "ObjectivesCompleted": 0
                         },
                         "ZonesStats": {
                             "StrongholdCaptures": 6,
-                            "StrongholdDefensiveKills": 0,
+                            "StrongholdDefensiveKills": 8,
                             "StrongholdOffensiveKills": 4,
-                            "StrongholdSecures": 0,
-                            "StrongholdOccupationTime": "PT1M1.7S",
+                            "StrongholdSecures": 4,
+                            "StrongholdOccupationTime": "PT1M28.7S",
                             "StrongholdScoringTicks": 0
+                        },
+                        "PvpStats": {
+                            "Kills": 20,
+                            "Deaths": 12,
+                            "Assists": 8,
+                            "KDA": 10.66
                         }
                     }
                 }
             ]
         },
         {
-            "PlayerId": "xuid(2535452921185270)",
+            "PlayerId": "xuid(2535424855880476)",
             "PlayerType": 1,
             "BotAttributes": null,
             "LastTeamId": 0,
-            "Outcome": 4,
-            "Rank": 9,
+            "Outcome": 2,
+            "Rank": 1,
             "ParticipationInfo": {
-                "FirstJoinedTime": "2022-10-26T00:59:56.975Z",
-                "LastLeaveTime": "2022-10-26T01:02:11.517Z",
+                "FirstJoinedTime": "2025-01-29T03:40:19.452Z",
+                "LastLeaveTime": null,
                 "PresentAtBeginning": true,
                 "JoinedInProgress": false,
-                "LeftInProgress": true,
-                "PresentAtCompletion": false,
-                "TimePlayed": "PT2M14.5410298S",
+                "LeftInProgress": false,
+                "PresentAtCompletion": true,
+                "TimePlayed": "PT12M1.672S",
                 "ConfirmedParticipation": null
             },
             "PlayerTeamStats": [
@@ -528,198 +947,50 @@
                     "Stats": {
                         "CoreStats": {
                             "Score": 0,
-                            "PersonalScore": 100,
-                            "RoundsWon": 0,
-                            "RoundsLost": 0,
-                            "RoundsTied": 0,
-                            "Kills": 1,
-                            "Deaths": 3,
-                            "Assists": 0,
-                            "KDA": -2.0,
-                            "Suicides": 0,
-                            "Betrayals": 0,
-                            "AverageLifeDuration": "PT23.8S",
-                            "GrenadeKills": 0,
-                            "HeadshotKills": 0,
-                            "MeleeKills": 0,
-                            "PowerWeaponKills": 0,
-                            "ShotsFired": 68,
-                            "ShotsHit": 26,
-                            "Accuracy": 38.23,
-                            "DamageDealt": 427,
-                            "DamageTaken": 893,
-                            "CalloutAssists": 0,
-                            "VehicleDestroys": 0,
-                            "DriverAssists": 0,
-                            "Hijacks": 0,
-                            "EmpAssists": 0,
-                            "MaxKillingSpree": 1,
-                            "Medals": [],
-                            "PersonalScores": [
-                                {
-                                    "NameId": 1024030246,
-                                    "Count": 1,
-                                    "TotalPersonalScoreAwarded": 100
-                                }
-                            ],
-                            "DeprecatedDamageDealt": 427.0,
-                            "DeprecatedDamageTaken": 893.0,
-                            "Spawns": 4,
-                            "ObjectivesCompleted": 0
-                        },
-                        "ZonesStats": {
-                            "StrongholdCaptures": 0,
-                            "StrongholdDefensiveKills": 0,
-                            "StrongholdOffensiveKills": 0,
-                            "StrongholdSecures": 0,
-                            "StrongholdOccupationTime": "PT0S",
-                            "StrongholdScoringTicks": 0
-                        }
-                    }
-                }
-            ]
-        },
-        {
-            "PlayerId": "xuid(2535412760927018)",
-            "PlayerType": 1,
-            "BotAttributes": null,
-            "LastTeamId": 1,
-            "Outcome": 3,
-            "Rank": 5,
-            "ParticipationInfo": {
-                "FirstJoinedTime": "2022-10-26T00:59:56.975Z",
-                "LastLeaveTime": null,
-                "PresentAtBeginning": true,
-                "JoinedInProgress": false,
-                "LeftInProgress": false,
-                "PresentAtCompletion": true,
-                "TimePlayed": "PT5M1.25S",
-                "ConfirmedParticipation": null
-            },
-            "PlayerTeamStats": [
-                {
-                    "TeamId": 1,
-                    "Stats": {
-                        "CoreStats": {
-                            "Score": 4,
-                            "PersonalScore": 1150,
-                            "RoundsWon": 0,
-                            "RoundsLost": 1,
-                            "RoundsTied": 0,
-                            "Kills": 6,
-                            "Deaths": 6,
-                            "Assists": 3,
-                            "KDA": 1.0,
-                            "Suicides": 0,
-                            "Betrayals": 0,
-                            "AverageLifeDuration": "PT30.5S",
-                            "GrenadeKills": 0,
-                            "HeadshotKills": 0,
-                            "MeleeKills": 2,
-                            "PowerWeaponKills": 0,
-                            "ShotsFired": 282,
-                            "ShotsHit": 129,
-                            "Accuracy": 45.74,
-                            "DamageDealt": 1842,
-                            "DamageTaken": 2196,
-                            "CalloutAssists": 0,
-                            "VehicleDestroys": 0,
-                            "DriverAssists": 0,
-                            "Hijacks": 0,
-                            "EmpAssists": 0,
-                            "MaxKillingSpree": 3,
-                            "Medals": [],
-                            "PersonalScores": [
-                                {
-                                    "NameId": 638246808,
-                                    "Count": 3,
-                                    "TotalPersonalScoreAwarded": 150
-                                },
-                                {
-                                    "NameId": 757037588,
-                                    "Count": 4,
-                                    "TotalPersonalScoreAwarded": 400
-                                },
-                                {
-                                    "NameId": 1024030246,
-                                    "Count": 6,
-                                    "TotalPersonalScoreAwarded": 600
-                                }
-                            ],
-                            "DeprecatedDamageDealt": 1842.0,
-                            "DeprecatedDamageTaken": 2196.0,
-                            "Spawns": 7,
-                            "ObjectivesCompleted": 0
-                        },
-                        "ZonesStats": {
-                            "StrongholdCaptures": 4,
-                            "StrongholdDefensiveKills": 0,
-                            "StrongholdOffensiveKills": 2,
-                            "StrongholdSecures": 0,
-                            "StrongholdOccupationTime": "PT48.6S",
-                            "StrongholdScoringTicks": 0
-                        }
-                    }
-                }
-            ]
-        },
-        {
-            "PlayerId": "xuid(2535405194807511)",
-            "PlayerType": 1,
-            "BotAttributes": null,
-            "LastTeamId": 0,
-            "Outcome": 2,
-            "Rank": 3,
-            "ParticipationInfo": {
-                "FirstJoinedTime": "2022-10-26T00:59:56.975Z",
-                "LastLeaveTime": null,
-                "PresentAtBeginning": true,
-                "JoinedInProgress": false,
-                "LeftInProgress": false,
-                "PresentAtCompletion": true,
-                "TimePlayed": "PT5M1.25S",
-                "ConfirmedParticipation": null
-            },
-            "PlayerTeamStats": [
-                {
-                    "TeamId": 0,
-                    "Stats": {
-                        "CoreStats": {
-                            "Score": 4,
-                            "PersonalScore": 900,
+                            "PersonalScore": 1950,
                             "RoundsWon": 1,
                             "RoundsLost": 0,
                             "RoundsTied": 0,
-                            "Kills": 5,
-                            "Deaths": 7,
-                            "Assists": 4,
-                            "KDA": -0.66,
+                            "Kills": 11,
+                            "Deaths": 13,
+                            "Assists": 10,
+                            "KDA": 1.33,
                             "Suicides": 0,
                             "Betrayals": 0,
-                            "AverageLifeDuration": "PT25.4S",
-                            "GrenadeKills": 0,
-                            "HeadshotKills": 0,
-                            "MeleeKills": 2,
-                            "PowerWeaponKills": 2,
-                            "ShotsFired": 132,
-                            "ShotsHit": 75,
-                            "Accuracy": 56.81,
-                            "DamageDealt": 2076,
-                            "DamageTaken": 2312,
+                            "AverageLifeDuration": "PT40.2S",
+                            "GrenadeKills": 1,
+                            "HeadshotKills": 7,
+                            "MeleeKills": 1,
+                            "PowerWeaponKills": 0,
+                            "ShotsFired": 228,
+                            "ShotsHit": 85,
+                            "Accuracy": 37.28,
+                            "DamageDealt": 4152,
+                            "DamageTaken": 4795,
                             "CalloutAssists": 0,
                             "VehicleDestroys": 0,
                             "DriverAssists": 0,
                             "Hijacks": 0,
                             "EmpAssists": 0,
-                            "MaxKillingSpree": 2,
+                            "MaxKillingSpree": 5,
                             "Medals": [
                                 {
-                                    "NameId": 2418616582,
+                                    "NameId": 3091261182,
                                     "Count": 1,
                                     "TotalPersonalScoreAwarded": 0
                                 },
                                 {
-                                    "NameId": 1283796619,
+                                    "NameId": 2852571933,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
+                                },
+                                {
+                                    "NameId": 2780740615,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
+                                },
+                                {
+                                    "NameId": 1284032216,
                                     "Count": 1,
                                     "TotalPersonalScoreAwarded": 0
                                 }
@@ -727,32 +998,43 @@
                             "PersonalScores": [
                                 {
                                     "NameId": 1024030246,
-                                    "Count": 5,
-                                    "TotalPersonalScoreAwarded": 500
+                                    "Count": 11,
+                                    "TotalPersonalScoreAwarded": 1100
                                 },
                                 {
                                     "NameId": 638246808,
-                                    "Count": 4,
-                                    "TotalPersonalScoreAwarded": 200
+                                    "Count": 10,
+                                    "TotalPersonalScoreAwarded": 500
                                 },
                                 {
-                                    "NameId": 757037588,
+                                    "NameId": 3507884073,
+                                    "Count": 6,
+                                    "TotalPersonalScoreAwarded": 300
+                                },
+                                {
+                                    "NameId": 709346128,
                                     "Count": 2,
-                                    "TotalPersonalScoreAwarded": 200
+                                    "TotalPersonalScoreAwarded": 50
                                 }
                             ],
-                            "DeprecatedDamageDealt": 2076.0,
-                            "DeprecatedDamageTaken": 2312.0,
-                            "Spawns": 8,
+                            "DeprecatedDamageDealt": 4152.0,
+                            "DeprecatedDamageTaken": 4795.0,
+                            "Spawns": 14,
                             "ObjectivesCompleted": 0
                         },
                         "ZonesStats": {
-                            "StrongholdCaptures": 4,
-                            "StrongholdDefensiveKills": 0,
-                            "StrongholdOffensiveKills": 1,
-                            "StrongholdSecures": 0,
-                            "StrongholdOccupationTime": "PT39.8S",
+                            "StrongholdCaptures": 6,
+                            "StrongholdDefensiveKills": 1,
+                            "StrongholdOffensiveKills": 0,
+                            "StrongholdSecures": 2,
+                            "StrongholdOccupationTime": "PT1M28.7S",
                             "StrongholdScoringTicks": 0
+                        },
+                        "PvpStats": {
+                            "Kills": 11,
+                            "Deaths": 13,
+                            "Assists": 10,
+                            "KDA": 1.33
                         }
                     }
                 }
@@ -764,15 +1046,15 @@
             "BotAttributes": null,
             "LastTeamId": 1,
             "Outcome": 3,
-            "Rank": 7,
+            "Rank": 5,
             "ParticipationInfo": {
-                "FirstJoinedTime": "2022-10-26T00:59:56.975Z",
+                "FirstJoinedTime": "2025-01-29T03:40:19.452Z",
                 "LastLeaveTime": null,
                 "PresentAtBeginning": true,
                 "JoinedInProgress": false,
                 "LeftInProgress": false,
                 "PresentAtCompletion": true,
-                "TimePlayed": "PT5M1.25S",
+                "TimePlayed": "PT12M1.672S",
                 "ConfirmedParticipation": null
             },
             "PlayerTeamStats": [
@@ -780,126 +1062,162 @@
                     "TeamId": 1,
                     "Stats": {
                         "CoreStats": {
-                            "Score": 3,
-                            "PersonalScore": 1000,
+                            "Score": 0,
+                            "PersonalScore": 1625,
                             "RoundsWon": 0,
                             "RoundsLost": 1,
                             "RoundsTied": 0,
-                            "Kills": 6,
-                            "Deaths": 4,
-                            "Assists": 2,
-                            "KDA": 2.66,
+                            "Kills": 13,
+                            "Deaths": 14,
+                            "Assists": 3,
+                            "KDA": 0.0,
                             "Suicides": 0,
                             "Betrayals": 0,
-                            "AverageLifeDuration": "PT46.7S",
-                            "GrenadeKills": 2,
-                            "HeadshotKills": 0,
-                            "MeleeKills": 1,
-                            "PowerWeaponKills": 3,
-                            "ShotsFired": 142,
-                            "ShotsHit": 69,
-                            "Accuracy": 48.59,
-                            "DamageDealt": 1822,
-                            "DamageTaken": 1320,
+                            "AverageLifeDuration": "PT39.9S",
+                            "GrenadeKills": 0,
+                            "HeadshotKills": 7,
+                            "MeleeKills": 3,
+                            "PowerWeaponKills": 0,
+                            "ShotsFired": 251,
+                            "ShotsHit": 124,
+                            "Accuracy": 49.4,
+                            "DamageDealt": 4312,
+                            "DamageTaken": 4738,
                             "CalloutAssists": 0,
                             "VehicleDestroys": 0,
                             "DriverAssists": 0,
                             "Hijacks": 0,
                             "EmpAssists": 0,
-                            "MaxKillingSpree": 4,
+                            "MaxKillingSpree": 3,
                             "Medals": [
                                 {
-                                    "NameId": 622331684,
+                                    "NameId": 1512363953,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
+                                },
+                                {
+                                    "NameId": 2852571933,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
+                                },
+                                {
+                                    "NameId": 3630529364,
                                     "Count": 1,
                                     "TotalPersonalScoreAwarded": 0
                                 }
                             ],
                             "PersonalScores": [
                                 {
-                                    "NameId": 757037588,
+                                    "NameId": 3507884073,
                                     "Count": 3,
-                                    "TotalPersonalScoreAwarded": 300
+                                    "TotalPersonalScoreAwarded": 150
                                 },
                                 {
                                     "NameId": 1024030246,
-                                    "Count": 6,
-                                    "TotalPersonalScoreAwarded": 600
+                                    "Count": 13,
+                                    "TotalPersonalScoreAwarded": 1300
                                 },
                                 {
                                     "NameId": 638246808,
-                                    "Count": 2,
-                                    "TotalPersonalScoreAwarded": 100
+                                    "Count": 3,
+                                    "TotalPersonalScoreAwarded": 150
+                                },
+                                {
+                                    "NameId": 709346128,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 25
                                 }
                             ],
-                            "DeprecatedDamageDealt": 1822.0,
-                            "DeprecatedDamageTaken": 1320.0,
-                            "Spawns": 5,
+                            "DeprecatedDamageDealt": 4312.0,
+                            "DeprecatedDamageTaken": 4738.0,
+                            "Spawns": 14,
                             "ObjectivesCompleted": 0
                         },
                         "ZonesStats": {
                             "StrongholdCaptures": 3,
-                            "StrongholdDefensiveKills": 0,
-                            "StrongholdOffensiveKills": 2,
-                            "StrongholdSecures": 0,
-                            "StrongholdOccupationTime": "PT38.4S",
+                            "StrongholdDefensiveKills": 3,
+                            "StrongholdOffensiveKills": 3,
+                            "StrongholdSecures": 1,
+                            "StrongholdOccupationTime": "PT1M37.2S",
                             "StrongholdScoringTicks": 0
+                        },
+                        "PvpStats": {
+                            "Kills": 13,
+                            "Deaths": 14,
+                            "Assists": 3,
+                            "KDA": 0.0
                         }
                     }
                 }
             ]
         },
         {
-            "PlayerId": "xuid(2533275034722665)",
+            "PlayerId": "xuid(2533274808740136)",
             "PlayerType": 1,
             "BotAttributes": null,
-            "LastTeamId": 1,
-            "Outcome": 3,
-            "Rank": 5,
+            "LastTeamId": 0,
+            "Outcome": 2,
+            "Rank": 1,
             "ParticipationInfo": {
-                "FirstJoinedTime": "2022-10-26T00:59:56.975Z",
+                "FirstJoinedTime": "2025-01-29T03:40:19.452Z",
                 "LastLeaveTime": null,
                 "PresentAtBeginning": true,
                 "JoinedInProgress": false,
                 "LeftInProgress": false,
                 "PresentAtCompletion": true,
-                "TimePlayed": "PT5M1.25S",
+                "TimePlayed": "PT12M1.672S",
                 "ConfirmedParticipation": null
             },
             "PlayerTeamStats": [
                 {
-                    "TeamId": 1,
+                    "TeamId": 0,
                     "Stats": {
                         "CoreStats": {
-                            "Score": 4,
-                            "PersonalScore": 1400,
-                            "RoundsWon": 0,
-                            "RoundsLost": 1,
+                            "Score": 0,
+                            "PersonalScore": 1335,
+                            "RoundsWon": 1,
+                            "RoundsLost": 0,
                             "RoundsTied": 0,
-                            "Kills": 9,
-                            "Deaths": 4,
-                            "Assists": 2,
-                            "KDA": 5.66,
+                            "Kills": 7,
+                            "Deaths": 16,
+                            "Assists": 6,
+                            "KDA": -7.0,
                             "Suicides": 0,
                             "Betrayals": 0,
-                            "AverageLifeDuration": "PT46.7S",
+                            "AverageLifeDuration": "PT31.3S",
                             "GrenadeKills": 1,
-                            "HeadshotKills": 0,
-                            "MeleeKills": 2,
+                            "HeadshotKills": 6,
+                            "MeleeKills": 0,
                             "PowerWeaponKills": 0,
-                            "ShotsFired": 362,
-                            "ShotsHit": 146,
-                            "Accuracy": 40.33,
-                            "DamageDealt": 2250,
-                            "DamageTaken": 1868,
-                            "CalloutAssists": 0,
+                            "ShotsFired": 258,
+                            "ShotsHit": 101,
+                            "Accuracy": 39.14,
+                            "DamageDealt": 3762,
+                            "DamageTaken": 5169,
+                            "CalloutAssists": 6,
                             "VehicleDestroys": 0,
                             "DriverAssists": 0,
                             "Hijacks": 0,
                             "EmpAssists": 0,
-                            "MaxKillingSpree": 8,
+                            "MaxKillingSpree": 1,
                             "Medals": [
                                 {
-                                    "NameId": 3217141618,
+                                    "NameId": 1169571763,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
+                                },
+                                {
+                                    "NameId": 3233952928,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
+                                },
+                                {
+                                    "NameId": 2625820422,
+                                    "Count": 1,
+                                    "TotalPersonalScoreAwarded": 0
+                                },
+                                {
+                                    "NameId": 2477555653,
                                     "Count": 1,
                                     "TotalPersonalScoreAwarded": 0
                                 },
@@ -909,7 +1227,7 @@
                                     "TotalPersonalScoreAwarded": 0
                                 },
                                 {
-                                    "NameId": 2780740615,
+                                    "NameId": 1512363953,
                                     "Count": 1,
                                     "TotalPersonalScoreAwarded": 0
                                 },
@@ -921,193 +1239,49 @@
                             ],
                             "PersonalScores": [
                                 {
-                                    "NameId": 1024030246,
-                                    "Count": 9,
-                                    "TotalPersonalScoreAwarded": 900
-                                },
-                                {
-                                    "NameId": 757037588,
-                                    "Count": 4,
-                                    "TotalPersonalScoreAwarded": 400
-                                },
-                                {
                                     "NameId": 638246808,
-                                    "Count": 2,
-                                    "TotalPersonalScoreAwarded": 100
-                                }
-                            ],
-                            "DeprecatedDamageDealt": 2250.0,
-                            "DeprecatedDamageTaken": 1868.0,
-                            "Spawns": 5,
-                            "ObjectivesCompleted": 0
-                        },
-                        "ZonesStats": {
-                            "StrongholdCaptures": 4,
-                            "StrongholdDefensiveKills": 0,
-                            "StrongholdOffensiveKills": 3,
-                            "StrongholdSecures": 0,
-                            "StrongholdOccupationTime": "PT41.3S",
-                            "StrongholdScoringTicks": 0
-                        }
-                    }
-                }
-            ]
-        },
-        {
-            "PlayerId": "bid(37.0)",
-            "PlayerType": 2,
-            "BotAttributes": {
-                "Difficulty": 2
-            },
-            "LastTeamId": 0,
-            "Outcome": 4,
-            "Rank": 9,
-            "ParticipationInfo": {
-                "FirstJoinedTime": "2022-10-26T01:02:11.504Z",
-                "LastLeaveTime": "2022-10-26T01:02:34.275Z",
-                "PresentAtBeginning": false,
-                "JoinedInProgress": true,
-                "LeftInProgress": true,
-                "PresentAtCompletion": false,
-                "TimePlayed": "PT22.7704251S",
-                "ConfirmedParticipation": null
-            },
-            "PlayerTeamStats": [
-                {
-                    "TeamId": 0,
-                    "Stats": {
-                        "CoreStats": {
-                            "Score": 0,
-                            "PersonalScore": 0,
-                            "RoundsWon": 0,
-                            "RoundsLost": 0,
-                            "RoundsTied": 0,
-                            "Kills": 0,
-                            "Deaths": 0,
-                            "Assists": 0,
-                            "KDA": 0.0,
-                            "Suicides": 0,
-                            "Betrayals": 0,
-                            "AverageLifeDuration": "PT0S",
-                            "GrenadeKills": 0,
-                            "HeadshotKills": 0,
-                            "MeleeKills": 0,
-                            "PowerWeaponKills": 0,
-                            "ShotsFired": 10,
-                            "ShotsHit": 0,
-                            "Accuracy": 0.0,
-                            "DamageDealt": 0,
-                            "DamageTaken": 0,
-                            "CalloutAssists": 0,
-                            "VehicleDestroys": 0,
-                            "DriverAssists": 0,
-                            "Hijacks": 0,
-                            "EmpAssists": 0,
-                            "MaxKillingSpree": 0,
-                            "Medals": [],
-                            "PersonalScores": [],
-                            "DeprecatedDamageDealt": 0.0,
-                            "DeprecatedDamageTaken": 0.0,
-                            "Spawns": 1,
-                            "ObjectivesCompleted": 0
-                        },
-                        "ZonesStats": {
-                            "StrongholdCaptures": 0,
-                            "StrongholdDefensiveKills": 0,
-                            "StrongholdOffensiveKills": 0,
-                            "StrongholdSecures": 0,
-                            "StrongholdOccupationTime": "PT0S",
-                            "StrongholdScoringTicks": 0
-                        }
-                    }
-                }
-            ]
-        },
-        {
-            "PlayerId": "xuid(2533274914260591)",
-            "PlayerType": 1,
-            "BotAttributes": null,
-            "LastTeamId": 0,
-            "Outcome": 2,
-            "Rank": 4,
-            "ParticipationInfo": {
-                "FirstJoinedTime": "2022-10-26T01:02:15.086Z",
-                "LastLeaveTime": null,
-                "PresentAtBeginning": false,
-                "JoinedInProgress": true,
-                "LeftInProgress": false,
-                "PresentAtCompletion": true,
-                "TimePlayed": "PT2M43.1360699S",
-                "ConfirmedParticipation": null
-            },
-            "PlayerTeamStats": [
-                {
-                    "TeamId": 0,
-                    "Stats": {
-                        "CoreStats": {
-                            "Score": 2,
-                            "PersonalScore": 750,
-                            "RoundsWon": 1,
-                            "RoundsLost": 0,
-                            "RoundsTied": 0,
-                            "Kills": 5,
-                            "Deaths": 2,
-                            "Assists": 1,
-                            "KDA": 3.33,
-                            "Suicides": 0,
-                            "Betrayals": 0,
-                            "AverageLifeDuration": "PT37.9S",
-                            "GrenadeKills": 0,
-                            "HeadshotKills": 1,
-                            "MeleeKills": 0,
-                            "PowerWeaponKills": 0,
-                            "ShotsFired": 164,
-                            "ShotsHit": 79,
-                            "Accuracy": 48.17,
-                            "DamageDealt": 1230,
-                            "DamageTaken": 1043,
-                            "CalloutAssists": 0,
-                            "VehicleDestroys": 0,
-                            "DriverAssists": 0,
-                            "Hijacks": 0,
-                            "EmpAssists": 0,
-                            "MaxKillingSpree": 3,
-                            "Medals": [
+                                    "Count": 6,
+                                    "TotalPersonalScoreAwarded": 300
+                                },
                                 {
-                                    "NameId": 2123530881,
-                                    "Count": 2,
-                                    "TotalPersonalScoreAwarded": 0
-                                }
-                            ],
-                            "PersonalScores": [
-                                {
-                                    "NameId": 1024030246,
+                                    "NameId": 3507884073,
                                     "Count": 5,
-                                    "TotalPersonalScoreAwarded": 500
+                                    "TotalPersonalScoreAwarded": 250
                                 },
                                 {
-                                    "NameId": 757037588,
-                                    "Count": 2,
-                                    "TotalPersonalScoreAwarded": 200
+                                    "NameId": 1024030246,
+                                    "Count": 7,
+                                    "TotalPersonalScoreAwarded": 700
                                 },
                                 {
-                                    "NameId": 638246808,
+                                    "NameId": 152718958,
+                                    "Count": 6,
+                                    "TotalPersonalScoreAwarded": 60
+                                },
+                                {
+                                    "NameId": 709346128,
                                     "Count": 1,
-                                    "TotalPersonalScoreAwarded": 50
+                                    "TotalPersonalScoreAwarded": 25
                                 }
                             ],
-                            "DeprecatedDamageDealt": 1230.0,
-                            "DeprecatedDamageTaken": 1043.0,
-                            "Spawns": 3,
+                            "DeprecatedDamageDealt": 3762.0,
+                            "DeprecatedDamageTaken": 5169.0,
+                            "Spawns": 17,
                             "ObjectivesCompleted": 0
                         },
                         "ZonesStats": {
-                            "StrongholdCaptures": 2,
-                            "StrongholdDefensiveKills": 0,
-                            "StrongholdOffensiveKills": 2,
-                            "StrongholdSecures": 0,
-                            "StrongholdOccupationTime": "PT31.5S",
+                            "StrongholdCaptures": 5,
+                            "StrongholdDefensiveKills": 1,
+                            "StrongholdOffensiveKills": 4,
+                            "StrongholdSecures": 1,
+                            "StrongholdOccupationTime": "PT2M16.4S",
                             "StrongholdScoringTicks": 0
+                        },
+                        "PvpStats": {
+                            "Kills": 7,
+                            "Deaths": 16,
+                            "Assists": 6,
+                            "KDA": -7.0
                         }
                     }
                 }
