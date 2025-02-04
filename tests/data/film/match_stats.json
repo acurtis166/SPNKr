@@ -1,9 +1,9 @@
 {
     "MatchId": "01ee3491-1ca1-4822-b23e-63e836104f32",
     "MatchInfo": {
-        "StartTime": "2024-08-22T03:06:11.064000Z",
-        "EndTime": "2024-08-22T03:07:45.089000Z",
-        "Duration": "PT1M16.384823S",
+        "StartTime": "2024-08-22T03:06:11.064Z",
+        "EndTime": "2024-08-22T03:07:45.089Z",
+        "Duration": "PT1M16.3848228S",
         "LifecycleMode": 1,
         "GameVariantCategory": 18,
         "LevelId": "fc878857-e778-4daf-b0ef-5d826b922f3f",
@@ -24,7 +24,8 @@
         "SeasonId": null,
         "PlayableDuration": "PT1M16.375S",
         "TeamsEnabled": true,
-        "TeamScoringEnabled": true
+        "TeamScoringEnabled": true,
+        "GameplayInteraction": 1
     },
     "Teams": [
         {
@@ -41,8 +42,10 @@
                     "Kills": 2,
                     "Deaths": 1,
                     "Assists": 0,
+                    "KDA": 1.0,
                     "Suicides": 0,
                     "Betrayals": 0,
+                    "AverageLifeDuration": "PT24.8S",
                     "GrenadeKills": 0,
                     "HeadshotKills": 1,
                     "MeleeKills": 0,
@@ -82,15 +85,11 @@
                             "TotalPersonalScoreAwarded": 25
                         }
                     ],
+                    "DeprecatedDamageDealt": 445.0,
+                    "DeprecatedDamageTaken": 229.0,
                     "Spawns": 2,
-                    "KDA": 1.0,
-                    "AverageLifeDuration": "PT24.8S"
+                    "ObjectivesCompleted": 0
                 },
-                "BombStats": null,
-                "CaptureTheFlagStats": null,
-                "EliminationStats": null,
-                "ExtractionStats": null,
-                "InfectionStats": null,
                 "OddballStats": {
                     "KillsAsSkullCarrier": 0,
                     "LongestTimeAsSkullCarrier": "PT2.2S",
@@ -99,8 +98,12 @@
                     "TimeAsSkullCarrier": "PT2.2S",
                     "SkullScoringTicks": 2
                 },
-                "ZonesStats": null,
-                "StockpileStats": null
+                "PvpStats": {
+                    "Kills": 2,
+                    "Deaths": 1,
+                    "Assists": 0,
+                    "KDA": 1.0
+                }
             }
         },
         {
@@ -117,8 +120,10 @@
                     "Kills": 1,
                     "Deaths": 2,
                     "Assists": 0,
+                    "KDA": -1.0,
                     "Suicides": 0,
                     "Betrayals": 0,
+                    "AverageLifeDuration": "PT22.2S",
                     "GrenadeKills": 0,
                     "HeadshotKills": 0,
                     "MeleeKills": 1,
@@ -136,15 +141,11 @@
                     "MaxKillingSpree": 1,
                     "Medals": [],
                     "PersonalScores": [],
+                    "DeprecatedDamageDealt": 229.0,
+                    "DeprecatedDamageTaken": 445.0,
                     "Spawns": 2,
-                    "KDA": -1.0,
-                    "AverageLifeDuration": "PT22.2S"
+                    "ObjectivesCompleted": 0
                 },
-                "BombStats": null,
-                "CaptureTheFlagStats": null,
-                "EliminationStats": null,
-                "ExtractionStats": null,
-                "InfectionStats": null,
                 "OddballStats": {
                     "KillsAsSkullCarrier": 0,
                     "LongestTimeAsSkullCarrier": "PT4.8S",
@@ -153,8 +154,12 @@
                     "TimeAsSkullCarrier": "PT4.8S",
                     "SkullScoringTicks": 4
                 },
-                "ZonesStats": null,
-                "StockpileStats": null
+                "PvpStats": {
+                    "Kills": 1,
+                    "Deaths": 2,
+                    "Assists": 0,
+                    "KDA": -1.0
+                }
             }
         }
     ],
@@ -167,7 +172,7 @@
             "Outcome": 3,
             "Rank": 2,
             "ParticipationInfo": {
-                "FirstJoinedTime": "2024-08-22T03:06:28.696000Z",
+                "FirstJoinedTime": "2024-08-22T03:06:28.696Z",
                 "LastLeaveTime": null,
                 "PresentAtBeginning": true,
                 "JoinedInProgress": false,
@@ -189,8 +194,10 @@
                             "Kills": 2,
                             "Deaths": 1,
                             "Assists": 0,
+                            "KDA": 1.0,
                             "Suicides": 0,
                             "Betrayals": 0,
+                            "AverageLifeDuration": "PT24.8S",
                             "GrenadeKills": 0,
                             "HeadshotKills": 1,
                             "MeleeKills": 0,
@@ -230,15 +237,11 @@
                                     "TotalPersonalScoreAwarded": 25
                                 }
                             ],
+                            "DeprecatedDamageDealt": 445.0,
+                            "DeprecatedDamageTaken": 229.0,
                             "Spawns": 2,
-                            "KDA": 1.0,
-                            "AverageLifeDuration": "PT24.8S"
+                            "ObjectivesCompleted": 0
                         },
-                        "BombStats": null,
-                        "CaptureTheFlagStats": null,
-                        "EliminationStats": null,
-                        "ExtractionStats": null,
-                        "InfectionStats": null,
                         "OddballStats": {
                             "KillsAsSkullCarrier": 0,
                             "LongestTimeAsSkullCarrier": "PT2.2S",
@@ -247,8 +250,12 @@
                             "TimeAsSkullCarrier": "PT2.2S",
                             "SkullScoringTicks": 2
                         },
-                        "ZonesStats": null,
-                        "StockpileStats": null
+                        "PvpStats": {
+                            "Kills": 2,
+                            "Deaths": 1,
+                            "Assists": 0,
+                            "KDA": 1.0
+                        }
                     }
                 }
             ]
@@ -263,7 +270,7 @@
             "Outcome": 2,
             "Rank": 1,
             "ParticipationInfo": {
-                "FirstJoinedTime": "2024-08-22T03:06:30.151000Z",
+                "FirstJoinedTime": "2024-08-22T03:06:30.151Z",
                 "LastLeaveTime": null,
                 "PresentAtBeginning": false,
                 "JoinedInProgress": false,
@@ -285,8 +292,10 @@
                             "Kills": 1,
                             "Deaths": 2,
                             "Assists": 0,
+                            "KDA": -1.0,
                             "Suicides": 0,
                             "Betrayals": 0,
+                            "AverageLifeDuration": "PT22.2S",
                             "GrenadeKills": 0,
                             "HeadshotKills": 0,
                             "MeleeKills": 1,
@@ -304,15 +313,11 @@
                             "MaxKillingSpree": 1,
                             "Medals": [],
                             "PersonalScores": [],
+                            "DeprecatedDamageDealt": 229.0,
+                            "DeprecatedDamageTaken": 445.0,
                             "Spawns": 2,
-                            "KDA": -1.0,
-                            "AverageLifeDuration": "PT22.2S"
+                            "ObjectivesCompleted": 0
                         },
-                        "BombStats": null,
-                        "CaptureTheFlagStats": null,
-                        "EliminationStats": null,
-                        "ExtractionStats": null,
-                        "InfectionStats": null,
                         "OddballStats": {
                             "KillsAsSkullCarrier": 0,
                             "LongestTimeAsSkullCarrier": "PT4.8S",
@@ -321,8 +326,12 @@
                             "TimeAsSkullCarrier": "PT4.8S",
                             "SkullScoringTicks": 4
                         },
-                        "ZonesStats": null,
-                        "StockpileStats": null
+                        "PvpStats": {
+                            "Kills": 1,
+                            "Deaths": 2,
+                            "Assists": 0,
+                            "KDA": -1.0
+                        }
                     }
                 }
             ]
