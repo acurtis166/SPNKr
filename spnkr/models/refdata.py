@@ -98,6 +98,17 @@ class FilmStatus(IntEnum):
     """Film was recovered."""
 
 
+class GameplayInteraction(IntEnum):
+    """Types of enemies interacted with in-game."""
+
+    # Retrieved from JavaScript files in Waypoint network traffic.
+    UNKNOWN = -1
+    NONE = 0
+    PVP = 1
+    PVE = 2
+    PVPVE = 3
+
+
 class GameVariantCategory(IntEnum):
     """Categories of multiplayer game modes."""
 

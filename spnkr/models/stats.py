@@ -9,6 +9,7 @@ from spnkr.models.base import PascalCaseModel
 from spnkr.models.refdata import (
     AssetKind,
     BotDifficulty,
+    GameplayInteraction,
     GameVariantCategory,
     LifecycleMode,
     Outcome,
@@ -67,6 +68,7 @@ class MatchInfo(PascalCaseModel, frozen=True):
         playable_duration: The match's playable duration.
         teams_enabled: Whether teams were enabled in the match.
         team_scoring_enabled: Whether team scoring was enabled in the match.
+        gameplay_interaction: Types of enemies fought in the match (e.g., PVP).
     """
 
     start_time: dt.datetime
@@ -85,6 +87,7 @@ class MatchInfo(PascalCaseModel, frozen=True):
     playable_duration: dt.timedelta
     teams_enabled: bool
     team_scoring_enabled: bool
+    gameplay_interaction: GameplayInteraction
 
 
 class MatchHistoryResult(PascalCaseModel, frozen=True):
@@ -683,12 +686,14 @@ class ServiceRecordSubqueries(PascalCaseModel, frozen=True):
         game_variant_categories: Game variant categories available for filtering.
         is_ranked: Ranked status available for filtering.
         playlist_asset_ids: Playlists available for filtering.
+        gameplay_interactions: Gameplay interactions available for filtering.
     """
 
     season_ids: tuple[str, ...] | None
     game_variant_categories: tuple[GameVariantCategory, ...] | None
     is_ranked: tuple[bool, ...] | None
     playlist_asset_ids: tuple[UUID, ...] | None
+    gameplay_interactions: tuple[GameplayInteraction, ...] | None
 
 
 class ServiceRecord(PascalCaseModel, frozen=True):
