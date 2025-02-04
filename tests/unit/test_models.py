@@ -96,7 +96,7 @@ def test_parse_service_record_empty():
 def test_parse_match_history():
     data = load_response("get_match_history")
     result = MatchHistory(**data)
-    expected = UUID("a1219f5c-5942-4cd5-9ff1-4b6ea89905bc")
+    expected = UUID("63391382-6b88-43f9-9ff4-6313404c419c")
     assert result.results[0].match_id == expected
 
 
