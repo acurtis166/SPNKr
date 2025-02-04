@@ -105,6 +105,8 @@ def test_parse_match_stats():
     result = MatchStats(**data)
     expected = UUID("b4be1c44-5782-42b3-8cf8-0d76dd87230c")
     assert result.match_id == expected
+    mode = result.players[0].player_team_stats[0].stats.pvp_stats
+    assert mode is not None
 
 
 def test_parse_match_stats_ctf():
@@ -158,6 +160,15 @@ def test_parse_match_stats_extraction():
     expected = UUID("79ec883a-1450-42b1-a9f8-0bb6175b85fd")
     assert result.match_id == expected
     mode = result.players[0].player_team_stats[0].stats.extraction_stats
+    assert mode is not None
+
+
+def test_parse_match_stats_pve():
+    data = load_response("get_match_stats_pve")
+    result = MatchStats(**data)
+    expected = UUID("e6b701df-6e69-4b74-98f8-c72e83d76622")
+    assert result.match_id == expected
+    mode = result.players[0].player_team_stats[0].stats.pve_stats
     assert mode is not None
 
 

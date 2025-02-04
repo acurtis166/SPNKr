@@ -488,6 +488,51 @@ class StockpileStats(PascalCaseModel, frozen=True):
     time_as_power_seed_driver: dt.timedelta
 
 
+class _PvpStats(PascalCaseModel, frozen=True):
+    """Player vs. player stats."""
+
+    kills: int
+    deaths: int
+    assists: int
+
+
+class PvpStats(_PvpStats, frozen=True):
+    """Player vs. player stats."""
+
+    kda: float = Field(alias="KDA")
+
+
+class ServiceRecordPvpStats(_PvpStats, frozen=True):
+    """Player vs. player stats."""
+
+
+class _PveStats(PascalCaseModel, frozen=True):
+    """Player vs. environment stats."""
+
+    kills: int
+    deaths: int
+    assists: int
+    marine_kills: int
+    grunt_kills: int
+    jackal_kills: int
+    elite_kills: int
+    brute_kills: int
+    hunter_kills: int
+    skimmer_kills: int
+    sentinel_kills: int
+    boss_kills: int
+
+
+class PveStats(_PveStats, frozen=True):
+    """Player vs. environment stats."""
+
+    kda: float = Field(alias="KDA")
+
+
+class ServiceRecordPveStats(_PveStats, frozen=True):
+    """Player vs. environment stats."""
+
+
 class Stats(PascalCaseModel, frozen=True):
     """Performance statistics for a player or team in a match.
 
@@ -501,6 +546,8 @@ class Stats(PascalCaseModel, frozen=True):
         oddball_stats: Performance statistics for oddball game modes.
         zones_stats: Performance statistics for zones game modes.
         stockpile_stats: Performance statistics for stockpile game modes.
+        pvp_stats: Player vs. player stats.
+        pve_stats: Player vs. environment stats.
     """
 
     core_stats: CoreStats
@@ -512,6 +559,8 @@ class Stats(PascalCaseModel, frozen=True):
     oddball_stats: OddballStats | None = None
     zones_stats: ZonesStats | None = None
     stockpile_stats: StockpileStats | None = None
+    pvp_stats: PvpStats | None = None
+    pve_stats: PveStats | None = None
 
 
 class TeamStats(PascalCaseModel, frozen=True):
@@ -665,6 +714,8 @@ class ServiceRecord(PascalCaseModel, frozen=True):
         zones_stats: The player's performance statistics for zones game modes.
         stockpile_stats: The player's performance statistics for stockpile game
             modes.
+        pvp_stats: Player vs. player stats.
+        pve_stats: Player vs. environment stats.
     """
 
     subqueries: ServiceRecordSubqueries
@@ -681,3 +732,5 @@ class ServiceRecord(PascalCaseModel, frozen=True):
     oddball_stats: OddballStats | None = None
     zones_stats: ServiceRecordZonesStats | None = None
     stockpile_stats: StockpileStats | None = None
+    pvp_stats: ServiceRecordPvpStats | None = None
+    pve_stats: ServiceRecordPveStats | None = None
