@@ -4,14 +4,8 @@ Requires Python >=3.11
 
 ## Install
 
-Basic
 ```shell
 pip install spnkr
-```
-
-Development
-```shell
-pip install spnkr[dev]
 ```
 
 !!! info "Note"
