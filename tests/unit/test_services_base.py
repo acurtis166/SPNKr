@@ -24,6 +24,7 @@ async def test_rate_limiter(service: BaseService):
     assert t1 - t0 >= 1
 
 
+@pytest.mark.filterwarnings("ignore::DeprecationWarning")
 @pytest.mark.asyncio
 async def test_get_cached_bypass_rate_limiter(
     session, service: BaseService, cached_response

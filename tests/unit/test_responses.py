@@ -5,6 +5,7 @@ import pytest
 from spnkr.responses import JsonResponse, _BaseResponse
 
 
+@pytest.mark.filterwarnings("ignore::DeprecationWarning")
 def test_response_from_cache(cached_response):
     result = _BaseResponse(cached_response)
     assert result.from_cache
