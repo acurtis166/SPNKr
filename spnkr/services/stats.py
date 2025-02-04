@@ -4,7 +4,7 @@ import warnings
 from typing import Literal
 from uuid import UUID
 
-from spnkr.models.refdata import GameVariantCategory
+from spnkr.models.refdata import GameplayInteraction, GameVariantCategory
 from spnkr.models.stats import (
     MatchCount,
     MatchHistory,
@@ -22,6 +22,7 @@ _VALID_SERVICE_RECORD_FILTER_SETS = [
     {"season_id", "game_variant_category", "playlist_asset_id"},
     {"season_id", "game_variant_category", "is_ranked"},
     {"season_id", "playlist_asset_id"},
+    {"season_id", "gameplay_interaction"},
     {"game_variant_category"},
     {"game_variant_category", "is_ranked"},
 ]
@@ -57,6 +58,7 @@ class StatsService(BaseService):
         game_variant_category: GameVariantCategory | int | None = None,
         is_ranked: bool | None = None,
         playlist_asset_id: str | UUID | None = None,
+        gameplay_interaction: GameplayInteraction | None = None,
     ) -> JsonResponse[ServiceRecord]:
         """Get a service record for a player. Summarizes player stats.
 
@@ -66,11 +68,13 @@ class StatsService(BaseService):
         are provided for a non-matchmade `match_type`.
 
         Filters must be combined appropriately. The following are valid:
+
         - `season_id`
         - `season_id`, `game_variant_category`
         - `season_id`, `game_variant_category`, `playlist_asset_id`
         - `season_id`, `game_variant_category`, `is_ranked`
         - `season_id`, `playlist_asset_id`
+        - `season_id`, `gameplay_interaction`
         - `game_variant_category`
         - `game_variant_category`, `is_ranked`
 
@@ -90,6 +94,8 @@ class StatsService(BaseService):
             is_ranked: Filter for ranked or unranked games. Optional.
             playlist_asset_id: Filter for a specific playlist with its asset ID.
                 Optional.
+            gameplay_interaction: Filter for a specific gameplay interaction
+                (e.g., PVP).
 
         Returns:
             The service record for the player with the given filters.
@@ -109,6 +115,7 @@ class StatsService(BaseService):
             "game_variant_category": game_variant_category,
             "is_ranked": is_ranked,
             "playlist_asset_id": playlist_asset_id,
+            "gameplay_interaction": gameplay_interaction,
         }
         filters = {k: v for k, v in filters.items() if v is not None}
         if match_type.lower() != "matchmade" and filters:
