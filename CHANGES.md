@@ -2,10 +2,14 @@
 
 ## [Unreleased]
 
+## [0.9.5] - 2025-02-04
+
 ### Added
 
 - Add medal encodings for highlight event parsing.
 - Add medal name ID to name mapping entries.
+- Add additional attributes to match stats and service record models.
+- Add "gameplay_interaction" parameter to service record request.
 
 ## [0.9.4] - 2024-10-17
 
@@ -160,7 +164,8 @@
 
 First documented release.
 
-[unreleased]: https://github.com/acurtis166/SPNKr/compare/v0.9.4...HEAD
+[unreleased]: https://github.com/acurtis166/SPNKr/compare/v0.9.5...HEAD
+[0.9.5]: https://github.com/acurtis166/SPNKr/compare/v0.9.4...v0.9.5
 [0.9.4]: https://github.com/acurtis166/SPNKr/compare/v0.9.3...v0.9.4
 [0.9.3]: https://github.com/acurtis166/SPNKr/compare/v0.9.2...v0.9.3
 [0.9.2]: https://github.com/acurtis166/SPNKr/compare/v0.9.1...v0.9.2
