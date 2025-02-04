@@ -3,6 +3,7 @@
 import asyncio
 
 import pytest
+import pytest_asyncio
 from aiohttp import ClientSession
 
 from spnkr.auth import app, core, halo, oauth, xbox
@@ -13,7 +14,7 @@ def azure_app():
     return app.AzureApp("test_client_id", "test_client_secret")
 
 
-@pytest.fixture
+@pytest_asyncio.fixture
 async def session():
     async with ClientSession() as session:
         yield session
