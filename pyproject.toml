@@ -15,7 +15,12 @@ classifiers = [
     "Programming Language :: Python :: 3",
 ]
 keywords = ["halo", "infinite", "api"]
-dependencies = ["aiohttp>=3", "aiolimiter>=1", "pydantic>=2", "bitstring>=4.2"]
+dependencies = [
+    "aiohttp>=3.9,<4.0",
+    "aiolimiter~=1.0",
+    "pydantic>=2.8,<3.0",
+    "bitstring~=4.0",
+]
 requires-python = ">=3.11"
 
 [project.optional-dependencies]
@@ -32,15 +37,15 @@ include = ["spnkr*"]
 asyncio_default_fixture_loop_scope = "session"
 
 [tool.tox]
-requires = ["tox>=4.21.2"]
+requires = ["tox>=4.28.1"]
 env_list = ["3.11", "3.12", "3.13", "lint"]
 
 [tool.tox.env_run_base]
 deps = [
-    "pytest==8.3.4",
-    "pytest-asyncio==0.25.3",
-    "python-dotenv==1.0.1",
-    "aiohttp-client-cache==0.10",
+    "pytest==8.4.1",
+    "pytest-asyncio==1.1.0",
+    "python-dotenv==1.1.1",
+    "aiohttp-client-cache==0.13.0",
 ]
 description = "Run test under {base_python}"
 commands = [["python", "-m", "pytest", "--color=yes"]]
@@ -52,13 +57,13 @@ commands = [["ruff", "check", "."], ["ruff", "format", "."]]
 
 [tool.uv]
 dev-dependencies = [
-    "aiohttp-client-cache==0.12.4",
-    "pytest==8.3.4",
-    "pytest-asyncio>=0.25.3",
-    "coverage==7.6.10",
+    "aiohttp-client-cache==0.13.0",
+    "pytest==8.4.1",
+    "pytest-asyncio>=1.1.0",
+    "coverage==7.10.0",
     "mkdocs==1.6.1",
-    "mkdocstrings[python]==0.28.0",
-    "mkdocs-material==9.6.2",
-    "python-dotenv==1.0.1",
-    "ruff==0.9.4",
+    "mkdocstrings[python]==0.30.0",
+    "mkdocs-material==9.6.15",
+    "python-dotenv==1.1.1",
+    "ruff==0.12.5",
 ]
