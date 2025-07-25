@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.9.6] - 2025-07-24
+
+### Fixed
+
+- Fix film highlight event parsing for major versions >=39.
+
 ## [0.9.5] - 2025-02-04
 
 ### Added
@@ -164,7 +170,8 @@
 
 First documented release.
 
-[unreleased]: https://github.com/acurtis166/SPNKr/compare/v0.9.5...HEAD
+[unreleased]: https://github.com/acurtis166/SPNKr/compare/v0.9.6...HEAD
+[0.9.6]: https://github.com/acurtis166/SPNKr/compare/v0.9.5...v0.9.6
 [0.9.5]: https://github.com/acurtis166/SPNKr/compare/v0.9.4...v0.9.5
 [0.9.4]: https://github.com/acurtis166/SPNKr/compare/v0.9.3...v0.9.4
 [0.9.3]: https://github.com/acurtis166/SPNKr/compare/v0.9.2...v0.9.3
