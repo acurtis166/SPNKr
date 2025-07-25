@@ -60,18 +60,20 @@ class HighlightEvent(NamedTuple):
     """Name of the medal awarded for 'medal' event types. Otherwise `None`."""
 
 
-def read(data: bytes):
+def read(data: bytes, version: int):
     """Iterate events found in highlight event file content.
 
     Args:
         data: The gzip-compressed file data.
+        version: The major version of the film, available from either the film metadata
+            or the film header.
 
     Yields:
         Highlight events.
     """
     bits = Bits(bytes=zlib.decompress(data))
     for start, _ in _find_xuids(bits):
-        yield _parse_event(bits, start)
+        yield _parse_event(bits, start, version)
 
 
 def _find_xuids(bits: Bits):
@@ -105,15 +107,23 @@ def _infer_event_type(hint: int, is_medal: bool) -> EventType:
     raise FilmReadError(f"Unhandled event type args: {hint=}, {is_medal=}")
 
 
-def _parse_event(bits: Bits, start: int) -> HighlightEvent:
-    """Parse an event from `bits` starting at `start`."""
-    selected = bits[start : start + 20_000]  # 20,000 bits just to capture the event
-    # Grab the relevent 60 bytes of event data and unpack the attributes
-    end = selected.find(Bits(hex="00002ee0"))[0]  # type: ignore
-    event_bits = selected[end - (60 * 8) : end]
-    tokens = [
+def _tokens(version: int) -> list[str]:
+    """Determine unpacking strategy based on the film major version."""
+    if version <= 38:
+        return [
+            "bytes:32",  # 16-character utf-16 gamertag (32 bytes)
+            "pad:120",  # Skip (15 bytes)
+            "uint:8",  # Type hint (1 byte)
+            "uint:32",  # Timestamp in milliseconds (4 bytes)
+            "pad:24",  # Skip (3 bytes)
+            "uint:8",  # 1 if event is medal, otherwise 0 (1 byte)
+            "pad:24",  # Skip (3 bytes)
+            "uint:8",  # Medal type (1 byte)
+        ]
+    return [
+        "pad:96",  # Skip (12 bytes)
         "bytes:32",  # 16-character utf-16 gamertag (32 bytes)
-        "pad:120",  # Skip (15 bytes)
+        "pad:24",  # Skip (3 bytes)
         "uint:8",  # Type hint (1 byte)
         "uint:32",  # Timestamp in milliseconds (4 bytes)
         "pad:24",  # Skip (3 bytes)
@@ -121,7 +131,15 @@ def _parse_event(bits: Bits, start: int) -> HighlightEvent:
         "pad:24",  # Skip (3 bytes)
         "uint:8",  # Medal type (1 byte)
     ]
-    values: list[Any] = event_bits.unpack(fmt=", ".join(tokens))
+
+
+def _parse_event(bits: Bits, start: int, version: int) -> HighlightEvent:
+    """Parse an event from `bits` starting at `start`."""
+    selected = bits[start : start + 20_000]  # 20,000 bits just to capture the event
+    # Grab the relevent 60 bytes of event data and unpack the attributes
+    end = selected.find(Bits(hex="00002ee0"))[0]  # type: ignore
+    event_bits = selected[end - (60 * 8) : end]
+    values: list[Any] = event_bits.unpack(fmt=", ".join(_tokens(version)))
     gamertag_bytes, type_hint, time_ms, is_medal, medal_value = values
     event_type = _infer_event_type(type_hint, is_medal == 1)
     medal_name = MEDALS.get(medal_value) if event_type == "medal" else None

@@ -57,4 +57,6 @@ async def read_highlight_events(client: HaloInfiniteClient, match_id: str | UUID
         raise FilmReadError(
             f"Error downloading highlight events film chunk: {ex}"
         ) from ex
-    return list(highlight_events.read(await response.read()))
+
+    version = film.custom_data.film_major_version
+    return list(highlight_events.read(await response.read(), version))
