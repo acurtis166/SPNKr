@@ -110,100 +110,51 @@ class GameplayInteraction(IntEnum):
 
 
 class GameVariantCategory(IntEnum):
-    """Categories of multiplayer game modes."""
+    """Game mode category enumeration."""
 
     UNKNOWN = -1
-    """Unknown game mode category."""
     NONE = 0
-    """No game mode category."""
     CAMPAIGN = 1
-    """Campaign game modes."""
     FORGE = 2
-    """Forge game modes."""
     ACADEMY = 3
-    """Academy game modes."""
     ACADEMY_TUTORIAL = 4
-    """Academy tutorial game modes."""
     ACADEMY_PRACTICE = 5
-    """Academy practice game modes."""
-    SLAYER = 6
-    """Multiplayer slayer game modes."""
-    ATTRITION = 7
-    """Multiplayer attrition game modes."""
-    ELIMINATION = 8
-    """Multiplayer elimination game modes."""
-    FIESTA = 9
-    """Multiplayer fiesta game modes."""
-    SWAT = 10
-    """Multiplayer SWAT game modes."""
-    STRONGHOLDS = 11
-    """Multiplayer strongholds game modes."""
-    BASTION = 12
-    """Multiplayer bastion game modes."""
-    KING_OF_THE_HILL = 13
-    """Multiplayer king of the hill game modes."""
-    TOTAL_CONTROL = 14
-    """Multiplayer total control game modes."""
-    CTF = 15
-    """Multiplayer capture the flag game modes."""
-    ASSAULT = 16
-    """Multiplayer assault game modes."""
-    EXTRACTION = 17
-    """Multiplayer extraction game modes."""
-    ODDBALL = 18
-    """Multiplayer oddball game modes."""
-    STOCKPILE = 19
-    """Multiplayer stockpile game modes."""
-    JUGGERNAUT = 20
-    """Multiplayer juggernaut game modes."""
-    REGICIDE = 21
-    """Multiplayer regicide game modes."""
-    INFECTION = 22
-    """Multiplayer infection game modes."""
-    ESCORT = 23
-    """Multiplayer escort game modes."""
-    GUN_GAME = 24
-    """Multiplayer gun game game modes."""
-    GRIFBALL = 25
-    """Multiplayer grifball game modes."""
-    RACE = 26
-    """Multiplayer racing game modes."""
-    PROTOTYPE = 27
-    """Multiplayer prototype game modes."""
+    MULTIPLAYER_SLAYER = 6
+    MULTIPLAYER_ATTRITION = 7
+    MULTIPLAYER_ELIMINATION = 8
+    MULTIPLAYER_FIESTA = 9
+    MULTIPLAYER_SWAT = 10
+    MULTIPLAYER_STRONGHOLDS = 11
+    MULTIPLAYER_BASTION = 12
+    MULTIPLAYER_KING_OF_THE_HILL = 13
+    MULTIPLAYER_TOTAL_CONTROL = 14
+    MULTIPLAYER_CTF = 15
+    MULTIPLAYER_ASSAULT = 16
+    MULTIPLAYER_EXTRACTION = 17
+    MULTIPLAYER_ODDBALL = 18
+    MULTIPLAYER_STOCKPILE = 19
+    MULTIPLAYER_JUGGERNAUT = 20
+    MULTIPLAYER_REGICIDE = 21
+    MULTIPLAYER_INFECTION = 22
+    MULTIPLAYER_ESCORT = 23
+    MULTIPLAYER_GUN_GAME = 24
+    MULTIPLAYER_GRIFBALL = 25
+    MULTIPLAYER_RACE = 26
+    MULTIPLAYER_PROTOTYPE = 27
     TEST = 28
-    """Test game modes."""
     TEST_ACADEMY = 29
-    """Test academy game modes."""
     TEST_AUDIO = 30
-    """Test audio game modes."""
     TEST_CAMPAIGN = 31
-    """Test campaign game modes."""
     TEST_ENGINE = 32
-    """Test engine game modes."""
     TEST_FORGE = 33
-    """Test forge game modes."""
     TEST_GRAPHICS = 34
-    """Test graphics game modes."""
     TEST_MULTIPLAYER = 35
-    """Test multiplayer game modes."""
     TEST_SANDBOX = 36
-    """Test sandbox game modes."""
     ACADEMY_TRAINING = 37
-    """Academy training game modes."""
     ACADEMY_WEAPON_DRILL = 38
-    """Academy weapon drill game modes."""
-    LAND_GRAB = 39
-    """Multiplayer land grab game modes."""
-    MINIGAME = 41
-    """Minigame game modes."""
-    FIREFIGHT_BASTION = 42
-    """Firefight king of the hill game modes."""
-
-    @classmethod
-    def _missing_(cls, value: int) -> "GameVariantCategory":
-        """Return the default game mode category for an unknown value."""
-        logger.error(f"Unknown game mode category: {value}")
-        return cls.UNKNOWN
+    MULTIPLAYER_LAND_GRAB = 39
+    MULTIPLAYER_MINIGAME = 41
+    MULTIPLAYER_FIREFIGHT = 42
 
 
 class InspectionResult(IntEnum):
