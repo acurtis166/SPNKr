@@ -135,11 +135,11 @@ class InspectionResult(IntEnum):
 
 
 class LifecycleMode(IntEnum):
-    """General categories of game modes."""
+    """Match origin/hosting method enumeration."""
 
     CUSTOM = 1
     MATCHMADE = 3
-    LOCAL_AREA_NETWORK = 7
+    CUSTOM_LAN = 7
 
 
 class MedalDifficulty(IntEnum):
