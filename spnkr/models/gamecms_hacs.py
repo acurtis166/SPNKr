@@ -5,7 +5,7 @@ import datetime as dt
 from pydantic import Field
 
 from spnkr.models.base import CamelCaseModel, PascalCaseModel
-from spnkr.models.refdata import MedalDifficulty, MedalType
+from spnkr.models.refdata import MedalDifficulty, MedalNameId, MedalType
 from spnkr.models.types import ReadOnlyDict
 
 
@@ -35,7 +35,7 @@ class Medal(CamelCaseModel, frozen=True):
         personal_score: The amount of personal score awarded by obtaining the medal.
     """
 
-    name_id: int
+    name_id: MedalNameId
     name: TranslatableString
     description: TranslatableString
     sprite_index: int

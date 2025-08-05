@@ -2,7 +2,7 @@
 
 import pytest
 
-from spnkr.models.refdata import SubTier
+from spnkr.models.refdata import MedalNameId, SubTier
 
 SUBTIER_VALUES = [
     (SubTier.ONE, 1),
@@ -24,3 +24,8 @@ def test_subtier_from_int(subtier: SubTier, value: int):
 def test_subtier_to_int(subtier: SubTier, value: int):
     """Test the as_int method of the SubTier class."""
     assert subtier.to_int() == value
+
+
+def test_medal_display_name():
+    result = MedalNameId.ACE
+    assert result.display_name == "Ace"

@@ -12,6 +12,7 @@ from spnkr.models.refdata import (
     GameplayInteraction,
     GameVariantCategory,
     LifecycleMode,
+    MedalNameId,
     Outcome,
     PlayerType,
     PlaylistExperience,
@@ -126,13 +127,27 @@ class MatchHistory(PascalCaseModel, frozen=True):
     results: tuple[MatchHistoryResult, ...]
 
 
-class AwardCount(PascalCaseModel, frozen=True):
-    """A count of a medal or personal score award.
+class MatchResultMedalStats(PascalCaseModel, frozen=True):
+    """A count of a medal award.
 
     Attributes:
-        name_id: The ID of the medal or personal score award.
-        count: The number of times the medal or personal score award was earned.
-        total_personal_score_awarded: The total personal score awarded by obtaining the medal or personal score award.
+        name_id: The ID of the medal award.
+        count: The number of times the medal award was earned.
+        total_personal_score_awarded: The total personal score awarded by obtaining the medal award.
+    """
+
+    name_id: MedalNameId
+    count: int
+    total_personal_score_awarded: int
+
+
+class MatchResultPersonalScoreStats(PascalCaseModel, frozen=True):
+    """A count of a personal score award.
+
+    Attributes:
+        name_id: The ID of the personal score award.
+        count: The number of times the personal score award was earned.
+        total_personal_score_awarded: The total personal score awarded by obtaining the personal score award.
     """
 
     name_id: int
@@ -168,8 +183,8 @@ class _CoreStats(PascalCaseModel, frozen=True):
     hijacks: int
     emp_assists: int
     max_killing_spree: int
-    medals: tuple[AwardCount, ...]
-    personal_scores: tuple[AwardCount, ...]
+    medals: tuple[MatchResultMedalStats, ...]
+    personal_scores: tuple[MatchResultPersonalScoreStats, ...]
     spawns: int
     objectives_completed: int
 
