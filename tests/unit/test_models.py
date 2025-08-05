@@ -23,12 +23,7 @@ from spnkr.models.gamecms_hacs import (
 from spnkr.models.profile import User
 from spnkr.models.refdata import PlayerType
 from spnkr.models.skill import MatchSkill, PlaylistCsr
-from spnkr.models.stats import (
-    MatchCount,
-    MatchHistory,
-    MatchStats,
-    ServiceRecord,
-)
+from spnkr.models.stats import MatchCount, MatchHistory, MatchStats, ServiceRecord
 
 RESPONSES = Path("tests/data/responses")
 
@@ -169,6 +164,15 @@ def test_parse_match_stats_pve():
     expected = UUID("e6b701df-6e69-4b74-98f8-c72e83d76622")
     assert result.match_id == expected
     mode = result.players[0].player_team_stats[0].stats.pve_stats
+    assert mode is not None
+
+
+def test_parse_match_stats_vip():
+    data = load_response("get_match_stats_vip")
+    result = MatchStats(**data)
+    expected = UUID("bb12c16a-f7e5-4b4c-934c-6ea7527f5139")
+    assert result.match_id == expected
+    mode = result.players[0].player_team_stats[0].stats.vip_stats
     assert mode is not None
 
 

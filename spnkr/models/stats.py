@@ -551,6 +551,16 @@ class ServiceRecordPveStats(_PveStats, frozen=True):
     """Player vs. environment stats."""
 
 
+class VipStats(PascalCaseModel, frozen=True):
+    kills_as_vip: int
+    longest_time_as_vip: dt.timedelta
+    max_killing_spree_as_vip: int
+    time_as_vip: dt.timedelta
+    times_selected_as_vip: int
+    vip_assists: int
+    vip_kills: int
+
+
 class Stats(PascalCaseModel, frozen=True):
     """Performance statistics for a player or team in a match.
 
@@ -579,6 +589,7 @@ class Stats(PascalCaseModel, frozen=True):
     stockpile_stats: StockpileStats | None = None
     pvp_stats: PvpStats | None = None
     pve_stats: PveStats | None = None
+    vip_stats: VipStats | None = None
 
 
 class TeamStats(PascalCaseModel, frozen=True):
