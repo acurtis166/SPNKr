@@ -210,16 +210,16 @@ class PlaylistEntrySelectionStrategy(IntEnum):
 
 
 class PlaylistExperience(IntEnum):
-    """General categories of playlists."""
+    """Type of experience provided by a matchmaking playlist."""
 
     UNKNOWN = -1
     NONE = 0
     UNTRACKED = 1
     ARENA = 2
-    BIG_TEAM_BATTLE = 3
-    PVE = 4
+    BTB = 3
+    PVE_BOTS = 4
     FEATURED = 5
-    FIREFIGHT = 6
+    PVE = 6
 
 
 class SkillResultCode(IntEnum):
