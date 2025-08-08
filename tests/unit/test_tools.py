@@ -6,18 +6,18 @@ from spnkr import tools
 from spnkr.models.refdata import SubTier, Tier
 
 CSR_TIERS = [
-    (0, Tier.BRONZE, SubTier.ONE),
-    (299, Tier.BRONZE, SubTier.SIX),
-    (300, Tier.SILVER, SubTier.ONE),
-    (599, Tier.SILVER, SubTier.SIX),
-    (600, Tier.GOLD, SubTier.ONE),
-    (899, Tier.GOLD, SubTier.SIX),
-    (900, Tier.PLATINUM, SubTier.ONE),
-    (1199, Tier.PLATINUM, SubTier.SIX),
-    (1200, Tier.DIAMOND, SubTier.ONE),
-    (1499, Tier.DIAMOND, SubTier.SIX),
-    (1500, Tier.ONYX, SubTier.ONE),
-    (3000, Tier.ONYX, SubTier.ONE),
+    (0, Tier.BRONZE, SubTier.I),
+    (299, Tier.BRONZE, SubTier.VI),
+    (300, Tier.SILVER, SubTier.I),
+    (599, Tier.SILVER, SubTier.VI),
+    (600, Tier.GOLD, SubTier.I),
+    (899, Tier.GOLD, SubTier.VI),
+    (900, Tier.PLATINUM, SubTier.I),
+    (1199, Tier.PLATINUM, SubTier.VI),
+    (1200, Tier.DIAMOND, SubTier.I),
+    (1499, Tier.DIAMOND, SubTier.VI),
+    (1500, Tier.ONYX, SubTier.I),
+    (3000, Tier.ONYX, SubTier.I),
 ]
 
 

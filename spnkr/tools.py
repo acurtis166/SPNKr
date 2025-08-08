@@ -106,7 +106,7 @@ class CompetitiveSkillRank:
         >>>
         >>> csr = CompetitiveSkillRank(1065)
         >>> (csr.tier, csr.sub_tier)
-        (<Tier.PLATINUM: 'Platinum'>, <SubTier.FOUR: 3>)
+        (<Tier.PLATINUM: 'Platinum'>, <SubTier.IV: 3>)
     """
 
     csr: int | float
@@ -119,7 +119,6 @@ class CompetitiveSkillRank:
         Tier.DIAMOND,
         Tier.ONYX,
     ]
-    NUMERALS = ["I", "II", "III", "IV", "V", "VI"]
 
     @property
     def tier(self) -> Tier:
@@ -130,14 +129,14 @@ class CompetitiveSkillRank:
     def sub_tier(self) -> SubTier:
         """The sub-tier of the ranking (1-6).
 
-        Onyx doesn't have sub-tiers, but a return value of `SubTier.ONE` in that case
+        Onyx doesn't have sub-tiers, but a return value of `SubTier.I` in that case
         aligns with the skill payload.
         """
         if self.tier is Tier.ONYX:
-            return SubTier.ONE
+            return SubTier.I
         return SubTier((math.floor(self.csr) % 300) // 50)  # SubTier is 0-based
 
     def __str__(self) -> str:
         if self.tier is Tier.ONYX:
             return self.tier.value
-        return f"{self.tier.value} {self.NUMERALS[self.sub_tier.value]}"
+        return f"{self.tier.value} {self.sub_tier.name}"

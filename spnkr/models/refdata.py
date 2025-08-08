@@ -499,12 +499,12 @@ class SubTier(Enum):
     The `to_int` method returns the true sub-tier value, e.g., "ONE" returns 1.
     """
 
-    ONE = 0
-    TWO = 1
-    THREE = 2
-    FOUR = 3
-    FIVE = 4
-    SIX = 5
+    I = 0  # noqa: E741
+    II = 1
+    III = 2
+    IV = 3
+    V = 4
+    VI = 5
 
     @classmethod
     def from_int(cls, value: int) -> "SubTier":

@@ -5,12 +5,12 @@ import pytest
 from spnkr.models.refdata import MedalNameId, PersonalScoreNameId, SubTier
 
 SUBTIER_VALUES = [
-    (SubTier.ONE, 1),
-    (SubTier.TWO, 2),
-    (SubTier.THREE, 3),
-    (SubTier.FOUR, 4),
-    (SubTier.FIVE, 5),
-    (SubTier.SIX, 6),
+    (SubTier.I, 1),
+    (SubTier.II, 2),
+    (SubTier.III, 3),
+    (SubTier.IV, 4),
+    (SubTier.V, 5),
+    (SubTier.VI, 6),
 ]
 
 
