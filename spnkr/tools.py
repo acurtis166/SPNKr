@@ -1,5 +1,5 @@
 import math
-from typing import NamedTuple
+from dataclasses import dataclass
 
 from spnkr.models.refdata import SubTier, Tier
 
@@ -80,45 +80,64 @@ TEAM_MAP: dict[int, str] = {
 """Mapping of team IDs to names. For example, 0 -> 'Eagle'."""
 
 
-class Rank(NamedTuple):
-    """A CSR tier and sub-tier.
+@dataclass(frozen=True)
+class CompetitiveSkillRank:
+    """Represents a Competitive Skill Rank (CSR).
+
+    CSR is broken up into a rank/tier and sub-rank/sub-tier. Each tier increment
+    (Bronze to Onyx) represents an increase of 300 points and each sub-tier increment
+    (1-6) represents an increase of 50 points (Onyx doesn't have sub-tiers).
+    Bronze 1 starts at 0 and any value greater than or equal to 1500 is Onyx rank.
+
+    - BRONZE (1-6)
+    - SILVER (1-6)
+    - GOLD (1-6)
+    - PLATINUM (1-6)
+    - DIAMOND (1-6)
+    - ONYX
 
     Attributes:
-        tier: CSR tier.
-        sub_tier: CSR sub-tier.
+        csr: The CSR value.
+
+    Examples:
+        >>> from spnkr.tools import CompetitiveSkillRank
+        >>> str(CompetitiveSkillRank(25))
+        'Bronze I'
+        >>>
+        >>> csr = CompetitiveSkillRank(1065)
+        >>> (csr.tier, csr.sub_tier)
+        (<Tier.PLATINUM: 'Platinum'>, <SubTier.FOUR: 3>)
     """
 
-    tier: Tier
-    sub_tier: SubTier
+    csr: int | float
+
+    TIERS = [
+        Tier.BRONZE,
+        Tier.SILVER,
+        Tier.GOLD,
+        Tier.PLATINUM,
+        Tier.DIAMOND,
+        Tier.ONYX,
+    ]
+    NUMERALS = ["I", "II", "III", "IV", "V", "VI"]
+
+    @property
+    def tier(self) -> Tier:
+        """The tier of the ranking (e.g., "Diamond")."""
+        return self.TIERS[min(math.floor(self.csr) // 300, 5)]
+
+    @property
+    def sub_tier(self) -> SubTier:
+        """The sub-tier of the ranking (1-6).
+
+        Onyx doesn't have sub-tiers, but a return value of `SubTier.ONE` in that case
+        aligns with the skill payload.
+        """
+        if self.tier is Tier.ONYX:
+            return SubTier.ONE
+        return SubTier((math.floor(self.csr) % 300) // 50)  # SubTier is 0-based
 
     def __str__(self) -> str:
         if self.tier is Tier.ONYX:
             return self.tier.value
-        return f"{self.tier.value} {self.sub_tier.to_int()}"
-
-
-def get_rank_from_csr(csr: int | float) -> Rank:
-    """Get the tier and sub-tier from a CSR value.
-
-    Args:
-        csr: CSR value to convert.
-
-    Returns:
-        A ranking named tuple containing `tier` and `subtier`.
-    """
-    csr = math.floor(csr)
-    quotient, remainder = divmod(csr, 300)
-    if quotient == 0:
-        tier = Tier.BRONZE
-    elif quotient == 1:
-        tier = Tier.SILVER
-    elif quotient == 2:
-        tier = Tier.GOLD
-    elif quotient == 3:
-        tier = Tier.PLATINUM
-    elif quotient == 4:
-        tier = Tier.DIAMOND
-    else:
-        return Rank(Tier.ONYX, SubTier.ONE)
-    sub_tier = SubTier.from_int((remainder // 50) + 1)
-    return Rank(tier, sub_tier)
+        return f"{self.tier.value} {self.NUMERALS[self.sub_tier.value]}"

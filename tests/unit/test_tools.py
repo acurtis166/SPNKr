@@ -21,19 +21,27 @@ CSR_TIERS = [
 ]
 
 
-def test_ranking_str():
-    """Test the __str__ method of the Rank class."""
-    ranking = tools.Rank(Tier.BRONZE, SubTier.ONE)
-    assert str(ranking) == "Bronze 1"
-
-
-def test_ranking_str_onyx():
-    """Test the __str__ method of the Rank class when the tier is Onyx."""
-    ranking = tools.Rank(Tier.ONYX, SubTier.ONE)
-    assert str(ranking) == "Onyx"
-
-
 @pytest.mark.parametrize("csr,tier,sub_tier", CSR_TIERS)
-def test_get_rank_from_csr(csr: float, tier: Tier, sub_tier: SubTier):
+def test_rank_init(csr: float, tier: Tier, sub_tier: SubTier):
     """Test that the correct tier and sub-tier are returned."""
-    assert tools.get_rank_from_csr(csr) == (tier, sub_tier)
+    result = tools.CompetitiveSkillRank(csr)
+    assert result.tier == tier
+    assert result.sub_tier == sub_tier
+
+
+def test_rank_str_low():
+    """Test the __str__ method of the Rank class."""
+    ranking = tools.CompetitiveSkillRank(25)
+    assert str(ranking) == "Bronze I"
+
+
+def test_rank_str_high():
+    """Test the __str__ method of the Rank class."""
+    ranking = tools.CompetitiveSkillRank(1475)
+    assert str(ranking) == "Diamond VI"
+
+
+def test_rank_str_onyx():
+    """Test the __str__ method of the Rank class when the tier is Onyx."""
+    ranking = tools.CompetitiveSkillRank(1550)
+    assert str(ranking) == "Onyx"
