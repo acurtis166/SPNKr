@@ -100,7 +100,7 @@ class CompetitiveSkillRank:
         csr: The CSR value.
 
     Examples:
-        >>> from spnkr.tools import CompetitiveSkillRank
+        >>> from spnkr.extras import CompetitiveSkillRank
         >>> str(CompetitiveSkillRank(25))
         'Bronze I'
         >>>

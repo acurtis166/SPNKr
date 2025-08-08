@@ -1,8 +1,8 @@
-"""Test the spnkr.tools module."""
+"""Test the spnkr.extras module."""
 
 import pytest
 
-from spnkr import tools
+from spnkr import extras
 from spnkr.models.refdata import SubTier, Tier
 
 CSR_TIERS = [
@@ -24,24 +24,24 @@ CSR_TIERS = [
 @pytest.mark.parametrize("csr,tier,sub_tier", CSR_TIERS)
 def test_rank_init(csr: float, tier: Tier, sub_tier: SubTier):
     """Test that the correct tier and sub-tier are returned."""
-    result = tools.CompetitiveSkillRank(csr)
+    result = extras.CompetitiveSkillRank(csr)
     assert result.tier == tier
     assert result.sub_tier == sub_tier
 
 
 def test_rank_str_low():
     """Test the __str__ method of the Rank class."""
-    ranking = tools.CompetitiveSkillRank(25)
+    ranking = extras.CompetitiveSkillRank(25)
     assert str(ranking) == "Bronze I"
 
 
 def test_rank_str_high():
     """Test the __str__ method of the Rank class."""
-    ranking = tools.CompetitiveSkillRank(1475)
+    ranking = extras.CompetitiveSkillRank(1475)
     assert str(ranking) == "Diamond VI"
 
 
 def test_rank_str_onyx():
     """Test the __str__ method of the Rank class when the tier is Onyx."""
-    ranking = tools.CompetitiveSkillRank(1550)
+    ranking = extras.CompetitiveSkillRank(1550)
     assert str(ranking) == "Onyx"
