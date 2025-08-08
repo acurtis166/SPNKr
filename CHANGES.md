@@ -2,6 +2,24 @@
 
 ## [Unreleased]
 
+## [0.10.0] - 2025-08-08
+
+### Added
+
+- Add `VipStats` model for the match stats response.
+- Add `MedalNameId` class to enumerate medal name ids in stats and metadata responses.
+- Add `PersonalScoreNameId` class to enumerate personal score name ids in stats responses.
+
+### Changed
+
+- Rename some members of `GameVariantCategory`, `LifecycleMode`, `PlaylistExperience`, and `SubTier` enums to align with data sources.
+- Rename `tools` module to `extras`.
+- Refactor `tools.Rank` class (now `extras.CompetitiveSkillRank`)
+
+### Removed
+
+- Remove several items from the `tools` module that are accessible elsewhere.
+
 ## [0.9.6] - 2025-07-24
 
 ### Fixed
@@ -170,7 +188,8 @@
 
 First documented release.
 
-[unreleased]: https://github.com/acurtis166/SPNKr/compare/v0.9.6...HEAD
+[unreleased]: https://github.com/acurtis166/SPNKr/compare/v0.10.0...HEAD
+[0.10.0]: https://github.com/acurtis166/SPNKr/compare/v0.9.6...v0.10.0
 [0.9.6]: https://github.com/acurtis166/SPNKr/compare/v0.9.5...v0.9.6
 [0.9.5]: https://github.com/acurtis166/SPNKr/compare/v0.9.4...v0.9.5
 [0.9.4]: https://github.com/acurtis166/SPNKr/compare/v0.9.3...v0.9.4

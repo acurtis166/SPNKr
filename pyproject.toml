@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "spnkr"
-version = "0.9.6"
-description = "Python API for retrieving Halo Infinite multiplayer data."
+version = "0.10.0"
+description = "Unofficial Python SDK for the Halo Infinite web API."
 readme = "README.md"
 authors = [{ name = "Andy Curtis" }]
 license = { file = "LICENSE" }
