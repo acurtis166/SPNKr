@@ -1,0 +1,2562 @@
+<MatchHistoryResponse xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite.Match.MatchHistory">
+    <Count xmlns="http://schemas.datacontract.org/2004/07/Microsoft.Studios.Bond.Contract">25</Count>
+    <Links xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+        xmlns="http://schemas.datacontract.org/2004/07/Microsoft.Studios.Bond.Contract" />
+    <ResultCount xmlns="http://schemas.datacontract.org/2004/07/Microsoft.Studios.Bond.Contract">25</ResultCount>
+    <Results
+        xmlns:d2p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite.Match.MatchHistory"
+        xmlns="http://schemas.datacontract.org/2004/07/Microsoft.Studios.Bond.Contract">
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>1</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>3838416769</d4p1:Data1>
+                <d4p1:Data2>4029</d4p1:Data2>
+                <d4p1:Data3>16617</d4p1:Data3>
+                <d4p1:Data4>6359509664877553568</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>1749337209</d5p1:Data1>
+                    <d5p1:Data2>29788</d5p1:Data2>
+                    <d5p1:Data3>17646</d5p1:Data3>
+                    <d5p1:Data4>10143496032485297833</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT11M8.4184442S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-17T03:08:57.481Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerSlayer</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>1823533968</d5p1:Data1>
+                    <d5p1:Data2>10265</d5p1:Data2>
+                    <d5p1:Data3>19311</d5p1:Data3>
+                    <d5p1:Data4>4475656261232855715</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1393781465</d6p1:Data1>
+                        <d6p1:Data2>4054</d6p1:Data2>
+                        <d6p1:Data3>17009</d6p1:Data3>
+                        <d6p1:Data4>2186138168195109511</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>842229055</d6p1:Data1>
+                        <d6p1:Data2>57525</d6p1:Data2>
+                        <d6p1:Data3>18231</d6p1:Data3>
+                        <d6p1:Data4>17576868676494835615</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT11M8.407S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2856449705</d6p1:Data1>
+                        <d6p1:Data2>20926</d6p1:Data2>
+                        <d6p1:Data3>20261</d6p1:Data3>
+                        <d6p1:Data4>16667225375487049637</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3057516567</d6p1:Data1>
+                        <d6p1:Data2>6177</d6p1:Data2>
+                        <d6p1:Data3>16434</d6p1:Data3>
+                        <d6p1:Data4>4331266256909323442</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>4201295488</d6p1:Data1>
+                        <d6p1:Data2>15234</d6p1:Data2>
+                        <d6p1:Data3>17848</d6p1:Data3>
+                        <d6p1:Data4>9328348545635968395</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1253636703</d6p1:Data1>
+                        <d6p1:Data2>24903</d6p1:Data2>
+                        <d6p1:Data3>20460</d6p1:Data3>
+                        <d6p1:Data4>4862417568802037127</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-17T02:57:20.522Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>true</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>true</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>753076703</d6p1:Data1>
+                        <d6p1:Data2>17707</d6p1:Data2>
+                        <d6p1:Data3>19004</d6p1:Data3>
+                        <d6p1:Data4>5058328391954315449</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>981412484</d6p1:Data1>
+                        <d6p1:Data2>21064</d6p1:Data2>
+                        <d6p1:Data3>17703</d6p1:Data3>
+                        <d6p1:Data4>13750095570928197812</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Loss</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>5</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>1</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>3524112612</d4p1:Data1>
+                <d4p1:Data2>49831</d4p1:Data2>
+                <d4p1:Data3>18588</d4p1:Data3>
+                <d4p1:Data4>635594566881157285</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>1749337209</d5p1:Data1>
+                    <d5p1:Data2>29788</d5p1:Data2>
+                    <d5p1:Data3>17646</d5p1:Data3>
+                    <d5p1:Data4>10143496032485297833</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT8M25.9806624S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-17T02:55:21.616Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerSlayer</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>3223734149</d5p1:Data1>
+                    <d5p1:Data2>37064</d5p1:Data2>
+                    <d5p1:Data3>18758</d5p1:Data3>
+                    <d5p1:Data4>18404810890039137983</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2216706315</d6p1:Data1>
+                        <d6p1:Data2>1101</d6p1:Data2>
+                        <d6p1:Data3>17623</d6p1:Data3>
+                        <d6p1:Data4>11512265415713142400</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3341049932</d6p1:Data1>
+                        <d6p1:Data2>15529</d6p1:Data2>
+                        <d6p1:Data3>17528</d6p1:Data3>
+                        <d6p1:Data4>10138769844639769264</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT8M25.969S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2856449705</d6p1:Data1>
+                        <d6p1:Data2>20926</d6p1:Data2>
+                        <d6p1:Data3>20261</d6p1:Data3>
+                        <d6p1:Data4>16667225375487049637</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3057516567</d6p1:Data1>
+                        <d6p1:Data2>6177</d6p1:Data2>
+                        <d6p1:Data3>16434</d6p1:Data3>
+                        <d6p1:Data4>4331266256909323442</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1432127288</d6p1:Data1>
+                        <d6p1:Data2>54082</d6p1:Data2>
+                        <d6p1:Data3>18019</d6p1:Data3>
+                        <d6p1:Data4>11063529308611063690</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2266189911</d6p1:Data1>
+                        <d6p1:Data2>27265</d6p1:Data2>
+                        <d6p1:Data3>19200</d6p1:Data3>
+                        <d6p1:Data4>1447708827927918777</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-17T02:46:41.563Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>true</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>true</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>512545035</d6p1:Data1>
+                        <d6p1:Data2>5270</d6p1:Data2>
+                        <d6p1:Data3>16955</d6p1:Data3>
+                        <d6p1:Data4>9130588028278512006</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1096094766</d6p1:Data1>
+                        <d6p1:Data2>47207</d6p1:Data2>
+                        <d6p1:Data3>16432</d6p1:Data3>
+                        <d6p1:Data4>6975685839579095208</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Loss</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>5</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>0</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>1399582796</d4p1:Data1>
+                <d4p1:Data2>32172</d4p1:Data2>
+                <d4p1:Data3>18755</d4p1:Data3>
+                <d4p1:Data4>3325265303896613289</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>1749337209</d5p1:Data1>
+                    <d5p1:Data2>29788</d5p1:Data2>
+                    <d5p1:Data3>17646</d5p1:Data3>
+                    <d5p1:Data4>10143496032485297833</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT9M15.4400607S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-17T02:45:43.824Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerSlayer</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>4236740695</d5p1:Data1>
+                    <d5p1:Data2>59256</d5p1:Data2>
+                    <d5p1:Data3>19887</d5p1:Data3>
+                    <d5p1:Data4>4553018738741211056</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>868251244</d6p1:Data1>
+                        <d6p1:Data2>61205</d6p1:Data2>
+                        <d6p1:Data3>18680</d6p1:Data3>
+                        <d6p1:Data4>13038976064430577842</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1685465590</d6p1:Data1>
+                        <d6p1:Data2>14048</d6p1:Data2>
+                        <d6p1:Data3>19351</d6p1:Data3>
+                        <d6p1:Data4>9310214293644101052</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT9M15.422S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>844896421</d6p1:Data1>
+                        <d6p1:Data2>55387</d6p1:Data2>
+                        <d6p1:Data3>19366</d6p1:Data3>
+                        <d6p1:Data4>16292225051411976121</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2488203417</d6p1:Data1>
+                        <d6p1:Data2>4951</d6p1:Data2>
+                        <d6p1:Data3>16539</d6p1:Data3>
+                        <d6p1:Data4>4769897405911819436</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2819165100</d6p1:Data1>
+                        <d6p1:Data2>15067</d6p1:Data2>
+                        <d6p1:Data3>19002</d6p1:Data3>
+                        <d6p1:Data4>806669793419881373</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3996856851</d6p1:Data1>
+                        <d6p1:Data2>17330</d6p1:Data2>
+                        <d6p1:Data3>18375</d6p1:Data3>
+                        <d6p1:Data4>8877880927349111979</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-17T02:36:02.239Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>true</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>true</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1199475204</d6p1:Data1>
+                        <d6p1:Data2>24056</d6p1:Data2>
+                        <d6p1:Data3>20363</d6p1:Data3>
+                        <d6p1:Data4>2897571527268217519</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>618875002</d6p1:Data1>
+                        <d6p1:Data2>46832</d6p1:Data2>
+                        <d6p1:Data3>19061</d6p1:Data3>
+                        <d6p1:Data4>1346847473258999974</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Loss</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>5</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>0</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>3610233126</d4p1:Data1>
+                <d4p1:Data2>55952</d4p1:Data2>
+                <d4p1:Data3>17605</d4p1:Data3>
+                <d4p1:Data4>4821602944454035624</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>1749337209</d5p1:Data1>
+                    <d5p1:Data2>29788</d5p1:Data2>
+                    <d5p1:Data3>17646</d5p1:Data3>
+                    <d5p1:Data4>10143496032485297833</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT10M14.0789184S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-17T02:35:05.818Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerSlayer</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>3717520570</d5p1:Data1>
+                    <d5p1:Data2>2281</d5p1:Data2>
+                    <d5p1:Data3>18301</d5p1:Data3>
+                    <d5p1:Data4>17511564940810631057</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3898199925</d6p1:Data1>
+                        <d6p1:Data2>39818</d6p1:Data2>
+                        <d6p1:Data3>17050</d6p1:Data3>
+                        <d6p1:Data4>4000635078972784273</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3510525897</d6p1:Data1>
+                        <d6p1:Data2>27377</d6p1:Data2>
+                        <d6p1:Data3>19613</d6p1:Data3>
+                        <d6p1:Data4>16613754554326090661</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT10M14.062S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>844896421</d6p1:Data1>
+                        <d6p1:Data2>55387</d6p1:Data2>
+                        <d6p1:Data3>19366</d6p1:Data3>
+                        <d6p1:Data4>16292225051411976121</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2488203417</d6p1:Data1>
+                        <d6p1:Data2>4951</d6p1:Data2>
+                        <d6p1:Data3>16539</d6p1:Data3>
+                        <d6p1:Data4>4769897405911819436</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1212409967</d6p1:Data1>
+                        <d6p1:Data2>40293</d6p1:Data2>
+                        <d6p1:Data3>17568</d6p1:Data3>
+                        <d6p1:Data4>5140703790056504998</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>4056096933</d6p1:Data1>
+                        <d6p1:Data2>20612</d6p1:Data2>
+                        <d6p1:Data3>18307</d6p1:Data3>
+                        <d6p1:Data4>3744782108099029669</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-17T02:24:13.727Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>true</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>true</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1199475204</d6p1:Data1>
+                        <d6p1:Data2>24056</d6p1:Data2>
+                        <d6p1:Data3>20363</d6p1:Data3>
+                        <d6p1:Data4>2897571527268217519</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>618875002</d6p1:Data1>
+                        <d6p1:Data2>46832</d6p1:Data2>
+                        <d6p1:Data3>19061</d6p1:Data3>
+                        <d6p1:Data4>1346847473258999974</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Win</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>2</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>1</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>930693892</d4p1:Data1>
+                <d4p1:Data2>6664</d4p1:Data2>
+                <d4p1:Data3>17936</d4p1:Data3>
+                <d4p1:Data4>2077300745549381001</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>1749337209</d5p1:Data1>
+                    <d5p1:Data2>29788</d5p1:Data2>
+                    <d5p1:Data3>17646</d5p1:Data3>
+                    <d5p1:Data4>10143496032485297833</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT9M1.6745498S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-17T02:23:00.183Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerBastion</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>434097886</d5p1:Data1>
+                    <d5p1:Data2>56529</d5p1:Data2>
+                    <d5p1:Data3>17832</d5p1:Data3>
+                    <d5p1:Data4>5712928064236386186</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>4037113359</d6p1:Data1>
+                        <d6p1:Data2>3402</d6p1:Data2>
+                        <d6p1:Data3>19404</d6p1:Data3>
+                        <d6p1:Data4>15866713302859545260</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2394331008</d6p1:Data1>
+                        <d6p1:Data2>23994</d6p1:Data2>
+                        <d6p1:Data3>20067</d6p1:Data3>
+                        <d6p1:Data4>14617988583274052284</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT9M1.657S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3184455603</d6p1:Data1>
+                        <d6p1:Data2>7250</d6p1:Data2>
+                        <d6p1:Data3>18504</d6p1:Data3>
+                        <d6p1:Data4>11317567637368911782</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3383182405</d6p1:Data1>
+                        <d6p1:Data2>17688</d6p1:Data2>
+                        <d6p1:Data3>17954</d6p1:Data3>
+                        <d6p1:Data4>2993789345858452360</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1210513152</d6p1:Data1>
+                        <d6p1:Data2>44966</d6p1:Data2>
+                        <d6p1:Data3>18694</d6p1:Data3>
+                        <d6p1:Data4>10397216088534928284</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>4076141076</d6p1:Data1>
+                        <d6p1:Data2>32189</d6p1:Data2>
+                        <d6p1:Data3>18695</d6p1:Data3>
+                        <d6p1:Data4>7464209059491150985</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-17T02:13:07.276Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>true</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>true</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>926891303</d6p1:Data1>
+                        <d6p1:Data2>52044</d6p1:Data2>
+                        <d6p1:Data3>19835</d6p1:Data3>
+                        <d6p1:Data4>3679789296186280374</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2910590353</d6p1:Data1>
+                        <d6p1:Data2>65111</d6p1:Data2>
+                        <d6p1:Data3>20215</d6p1:Data3>
+                        <d6p1:Data4>15553215976641399691</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Win</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>1</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>1</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>509750896</d4p1:Data1>
+                <d4p1:Data2>54792</d4p1:Data2>
+                <d4p1:Data3>17390</d4p1:Data3>
+                <d4p1:Data4>11801328378003141546</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>1749337209</d5p1:Data1>
+                    <d5p1:Data2>29788</d5p1:Data2>
+                    <d5p1:Data3>17646</d5p1:Data3>
+                    <d5p1:Data4>10143496032485297833</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT6M51.5953211S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-17T02:11:56.391Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerBastion</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>3223734149</d5p1:Data1>
+                    <d5p1:Data2>37064</d5p1:Data2>
+                    <d5p1:Data3>18758</d5p1:Data3>
+                    <d5p1:Data4>18404810890039137983</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2216706315</d6p1:Data1>
+                        <d6p1:Data2>1101</d6p1:Data2>
+                        <d6p1:Data3>17623</d6p1:Data3>
+                        <d6p1:Data4>11512265415713142400</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3437408322</d6p1:Data1>
+                        <d6p1:Data2>49625</d6p1:Data2>
+                        <d6p1:Data3>17895</d6p1:Data3>
+                        <d6p1:Data4>3716434189663794360</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT6M51.593S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3184455603</d6p1:Data1>
+                        <d6p1:Data2>7250</d6p1:Data2>
+                        <d6p1:Data3>18504</d6p1:Data3>
+                        <d6p1:Data4>11317567637368911782</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3383182405</d6p1:Data1>
+                        <d6p1:Data2>17688</d6p1:Data2>
+                        <d6p1:Data3>17954</d6p1:Data3>
+                        <d6p1:Data4>2993789345858452360</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3333053596</d6p1:Data1>
+                        <d6p1:Data2>32302</d6p1:Data2>
+                        <d6p1:Data3>18758</d6p1:Data3>
+                        <d6p1:Data4>7893529590280504493</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>292236325</d6p1:Data1>
+                        <d6p1:Data2>54503</d6p1:Data2>
+                        <d6p1:Data3>20200</d6p1:Data3>
+                        <d6p1:Data4>4602282658661839282</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-17T02:04:27.797Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>true</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>true</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>926891303</d6p1:Data1>
+                        <d6p1:Data2>52044</d6p1:Data2>
+                        <d6p1:Data3>19835</d6p1:Data3>
+                        <d6p1:Data4>3679789296186280374</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2910590353</d6p1:Data1>
+                        <d6p1:Data2>65111</d6p1:Data2>
+                        <d6p1:Data3>20215</d6p1:Data3>
+                        <d6p1:Data4>15553215976641399691</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Win</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>1</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>1</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>2660793978</d4p1:Data1>
+                <d4p1:Data2>2903</d4p1:Data2>
+                <d4p1:Data3>16621</d4p1:Data3>
+                <d4p1:Data4>1338205278829276297</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>1749337209</d5p1:Data1>
+                    <d5p1:Data2>29788</d5p1:Data2>
+                    <d5p1:Data3>17646</d5p1:Data3>
+                    <d5p1:Data4>10143496032485297833</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT6M37.6049431S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-17T01:25:44.057Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerLandGrab</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>3694811946</d5p1:Data1>
+                    <d5p1:Data2>6154</d5p1:Data2>
+                    <d5p1:Data3>17732</d5p1:Data3>
+                    <d5p1:Data4>38618839716381067</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3064766663</d6p1:Data1>
+                        <d6p1:Data2>35751</d6p1:Data2>
+                        <d6p1:Data3>16486</d6p1:Data3>
+                        <d6p1:Data4>4344908699872629183</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1266203056</d6p1:Data1>
+                        <d6p1:Data2>32680</d6p1:Data2>
+                        <d6p1:Data3>17082</d6p1:Data3>
+                        <d6p1:Data4>3843277612678771110</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT6M37.61S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1068286791</d6p1:Data1>
+                        <d6p1:Data2>28233</d6p1:Data2>
+                        <d6p1:Data3>16585</d6p1:Data3>
+                        <d6p1:Data4>17090607695759730617</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3247079880</d6p1:Data1>
+                        <d6p1:Data2>55689</d6p1:Data2>
+                        <d6p1:Data3>18857</d6p1:Data3>
+                        <d6p1:Data4>2522378611462114454</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Featured</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>4201806327</d6p1:Data1>
+                        <d6p1:Data2>54154</d6p1:Data2>
+                        <d6p1:Data3>16420</d6p1:Data3>
+                        <d6p1:Data4>16229328764987805839</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2991793211</d6p1:Data1>
+                        <d6p1:Data2>26487</d6p1:Data2>
+                        <d6p1:Data3>16963</d6p1:Data3>
+                        <d6p1:Data4>4434364225778855084</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-17T01:18:18.927Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>true</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>true</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2372802253</d6p1:Data1>
+                        <d6p1:Data2>32405</d6p1:Data2>
+                        <d6p1:Data3>16742</d6p1:Data3>
+                        <d6p1:Data4>13220944623936142738</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1826716623</d6p1:Data1>
+                        <d6p1:Data2>27381</d6p1:Data2>
+                        <d6p1:Data3>19750</d6p1:Data3>
+                        <d6p1:Data4>6246270502417301905</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Win</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>1</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>1</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>507105461</d4p1:Data1>
+                <d4p1:Data2>14002</d4p1:Data2>
+                <d4p1:Data3>18881</d4p1:Data3>
+                <d4p1:Data4>7845519417721477285</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>2625699149</d5p1:Data1>
+                    <d5p1:Data2>53856</d5p1:Data2>
+                    <d5p1:Data3>19841</d5p1:Data3>
+                    <d5p1:Data4>12169876285732298903</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT8M26.44015S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-12T21:47:49.86Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerSlayer</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>3694811946</d5p1:Data1>
+                    <d5p1:Data2>6154</d5p1:Data2>
+                    <d5p1:Data3>17732</d5p1:Data3>
+                    <d5p1:Data4>38618839716381067</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3064766663</d6p1:Data1>
+                        <d6p1:Data2>35751</d6p1:Data2>
+                        <d6p1:Data3>16486</d6p1:Data3>
+                        <d6p1:Data4>4344908699872629183</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1109783731</d6p1:Data1>
+                        <d6p1:Data2>14493</d6p1:Data2>
+                        <d6p1:Data3>18432</d6p1:Data3>
+                        <d6p1:Data4>11583944585511337605</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT8M26.422S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3992908716</d6p1:Data1>
+                        <d6p1:Data2>40126</d6p1:Data2>
+                        <d6p1:Data3>20386</d6p1:Data3>
+                        <d6p1:Data4>9499410882746075577</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1813756039</d6p1:Data1>
+                        <d6p1:Data2>25231</d6p1:Data2>
+                        <d6p1:Data3>18966</d6p1:Data3>
+                        <d6p1:Data4>4078805347856323751</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3175110366</d6p1:Data1>
+                        <d6p1:Data2>41751</d6p1:Data2>
+                        <d6p1:Data3>18585</d6p1:Data3>
+                        <d6p1:Data4>5417678796743647659</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1900425118</d6p1:Data1>
+                        <d6p1:Data2>7560</d6p1:Data2>
+                        <d6p1:Data3>18323</d6p1:Data3>
+                        <d6p1:Data4>13107987691699333781</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-12T21:39:09.491Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>true</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>true</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3268545860</d6p1:Data1>
+                        <d6p1:Data2>34310</d6p1:Data2>
+                        <d6p1:Data3>18025</d6p1:Data3>
+                        <d6p1:Data4>5715827782793008312</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2666407422</d6p1:Data1>
+                        <d6p1:Data2>14811</d6p1:Data2>
+                        <d6p1:Data3>18751</d6p1:Data3>
+                        <d6p1:Data4>13287552956004634027</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Win</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>1</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>0</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>2101980214</d4p1:Data1>
+                <d4p1:Data2>48297</d4p1:Data2>
+                <d4p1:Data3>18278</d4p1:Data3>
+                <d4p1:Data4>17153978919900369841</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>2625699149</d5p1:Data1>
+                    <d5p1:Data2>53856</d5p1:Data2>
+                    <d5p1:Data3>19841</d5p1:Data3>
+                    <d5p1:Data4>12169876285732298903</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT14M6.1430908S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-12T21:37:01.105Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerBastion</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>3223734149</d5p1:Data1>
+                    <d5p1:Data2>37064</d5p1:Data2>
+                    <d5p1:Data3>18758</d5p1:Data3>
+                    <d5p1:Data4>18404810890039137983</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2216706315</d6p1:Data1>
+                        <d6p1:Data2>1101</d6p1:Data2>
+                        <d6p1:Data3>17623</d6p1:Data3>
+                        <d6p1:Data4>11512265415713142400</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2156314701</d6p1:Data1>
+                        <d6p1:Data2>15963</d6p1:Data2>
+                        <d6p1:Data3>19105</d6p1:Data3>
+                        <d6p1:Data4>476485147158591390</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT14M6.109S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3992908716</d6p1:Data1>
+                        <d6p1:Data2>40126</d6p1:Data2>
+                        <d6p1:Data3>20386</d6p1:Data3>
+                        <d6p1:Data4>9499410882746075577</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1813756039</d6p1:Data1>
+                        <d6p1:Data2>25231</d6p1:Data2>
+                        <d6p1:Data3>18966</d6p1:Data3>
+                        <d6p1:Data4>4078805347856323751</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3440110986</d6p1:Data1>
+                        <d6p1:Data2>9574</d6p1:Data2>
+                        <d6p1:Data3>16444</d6p1:Data3>
+                        <d6p1:Data4>11066884584399975846</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3107267530</d6p1:Data1>
+                        <d6p1:Data2>37604</d6p1:Data2>
+                        <d6p1:Data3>16433</d6p1:Data3>
+                        <d6p1:Data4>13881664228018135455</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-12T21:22:33.886Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>true</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>true</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2294426399</d6p1:Data1>
+                        <d6p1:Data2>11620</d6p1:Data2>
+                        <d6p1:Data3>18617</d6p1:Data3>
+                        <d6p1:Data4>2592702603572195770</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1061803255</d6p1:Data1>
+                        <d6p1:Data2>62481</d6p1:Data2>
+                        <d6p1:Data3>18623</d6p1:Data3>
+                        <d6p1:Data4>6025184261877788290</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Win</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>1</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>1</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>876723797</d4p1:Data1>
+                <d4p1:Data2>1612</d4p1:Data2>
+                <d4p1:Data3>18979</d4p1:Data3>
+                <d4p1:Data4>8957057508243985581</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>2625699149</d5p1:Data1>
+                    <d5p1:Data2>53856</d5p1:Data2>
+                    <d5p1:Data3>19841</d5p1:Data3>
+                    <d5p1:Data4>12169876285732298903</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT12M15.1815094S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-12T21:19:46.55Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerBastion</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>434097886</d5p1:Data1>
+                    <d5p1:Data2>56529</d5p1:Data2>
+                    <d5p1:Data3>17832</d5p1:Data3>
+                    <d5p1:Data4>5712928064236386186</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>4037113359</d6p1:Data1>
+                        <d6p1:Data2>3402</d6p1:Data2>
+                        <d6p1:Data3>19404</d6p1:Data3>
+                        <d6p1:Data4>15866713302859545260</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1367082969</d6p1:Data1>
+                        <d6p1:Data2>49700</d6p1:Data2>
+                        <d6p1:Data3>20398</d6p1:Data3>
+                        <d6p1:Data4>9222040961820215969</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT12M15.156S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3992908716</d6p1:Data1>
+                        <d6p1:Data2>40126</d6p1:Data2>
+                        <d6p1:Data3>20386</d6p1:Data3>
+                        <d6p1:Data4>9499410882746075577</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1813756039</d6p1:Data1>
+                        <d6p1:Data2>25231</d6p1:Data2>
+                        <d6p1:Data3>18966</d6p1:Data3>
+                        <d6p1:Data4>4078805347856323751</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2748284568</d6p1:Data1>
+                        <d6p1:Data2>4380</d6p1:Data2>
+                        <d6p1:Data3>19589</d6p1:Data3>
+                        <d6p1:Data4>9624567117099050143</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2759670326</d6p1:Data1>
+                        <d6p1:Data2>55930</d6p1:Data2>
+                        <d6p1:Data3>17781</d6p1:Data3>
+                        <d6p1:Data4>642560332313147831</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-12T21:07:02.825Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>true</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>true</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2294426399</d6p1:Data1>
+                        <d6p1:Data2>11620</d6p1:Data2>
+                        <d6p1:Data3>18617</d6p1:Data3>
+                        <d6p1:Data4>2592702603572195770</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1061803255</d6p1:Data1>
+                        <d6p1:Data2>62481</d6p1:Data2>
+                        <d6p1:Data3>18623</d6p1:Data3>
+                        <d6p1:Data4>6025184261877788290</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Loss</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>5</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>0</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>2350547852</d4p1:Data1>
+                <d4p1:Data2>61114</d4p1:Data2>
+                <d4p1:Data3>16560</d4p1:Data3>
+                <d4p1:Data4>13844179135850394508</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>2625699149</d5p1:Data1>
+                    <d5p1:Data2>53856</d5p1:Data2>
+                    <d5p1:Data3>19841</d5p1:Data3>
+                    <d5p1:Data4>12169876285732298903</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT5M55.2382674S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-12T21:07:10.379Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerBastion</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>3694811946</d5p1:Data1>
+                    <d5p1:Data2>6154</d5p1:Data2>
+                    <d5p1:Data3>17732</d5p1:Data3>
+                    <d5p1:Data4>38618839716381067</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3064766663</d6p1:Data1>
+                        <d6p1:Data2>35751</d6p1:Data2>
+                        <d6p1:Data3>16486</d6p1:Data3>
+                        <d6p1:Data4>4344908699872629183</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1109783731</d6p1:Data1>
+                        <d6p1:Data2>14493</d6p1:Data2>
+                        <d6p1:Data3>18432</d6p1:Data3>
+                        <d6p1:Data4>11583944585511337605</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT5M55.219S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3992908716</d6p1:Data1>
+                        <d6p1:Data2>40126</d6p1:Data2>
+                        <d6p1:Data3>20386</d6p1:Data3>
+                        <d6p1:Data4>9499410882746075577</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1813756039</d6p1:Data1>
+                        <d6p1:Data2>25231</d6p1:Data2>
+                        <d6p1:Data3>18966</d6p1:Data3>
+                        <d6p1:Data4>4078805347856323751</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2730160733</d6p1:Data1>
+                        <d6p1:Data2>45467</d6p1:Data2>
+                        <d6p1:Data3>20162</d6p1:Data3>
+                        <d6p1:Data4>2379841387442194068</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2277228964</d6p1:Data1>
+                        <d6p1:Data2>32881</d6p1:Data2>
+                        <d6p1:Data3>19366</d6p1:Data3>
+                        <d6p1:Data4>7554513281368920482</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-12T21:00:43.021Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>true</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>true</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2294426399</d6p1:Data1>
+                        <d6p1:Data2>11620</d6p1:Data2>
+                        <d6p1:Data3>18617</d6p1:Data3>
+                        <d6p1:Data4>2592702603572195770</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1061803255</d6p1:Data1>
+                        <d6p1:Data2>62481</d6p1:Data2>
+                        <d6p1:Data3>18623</d6p1:Data3>
+                        <d6p1:Data4>6025184261877788290</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>DidNotFinish</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>false</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>6</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>1</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>2010088607</d4p1:Data1>
+                <d4p1:Data2>17420</d4p1:Data2>
+                <d4p1:Data3>16722</d4p1:Data3>
+                <d4p1:Data4>13701201760190981008</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>2625699149</d5p1:Data1>
+                    <d5p1:Data2>53856</d5p1:Data2>
+                    <d5p1:Data3>19841</d5p1:Data3>
+                    <d5p1:Data4>12169876285732298903</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT10M21.8673665S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-12T20:59:31.799Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerSlayer</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>3717520570</d5p1:Data1>
+                    <d5p1:Data2>2281</d5p1:Data2>
+                    <d5p1:Data3>18301</d5p1:Data3>
+                    <d5p1:Data4>17511564940810631057</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3898199925</d6p1:Data1>
+                        <d6p1:Data2>39818</d6p1:Data2>
+                        <d6p1:Data3>17050</d6p1:Data3>
+                        <d6p1:Data4>4000635078972784273</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3441400398</d6p1:Data1>
+                        <d6p1:Data2>45103</d6p1:Data2>
+                        <d6p1:Data3>20152</d6p1:Data3>
+                        <d6p1:Data4>5909850402550376329</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT10M21.843S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3992908716</d6p1:Data1>
+                        <d6p1:Data2>40126</d6p1:Data2>
+                        <d6p1:Data3>20386</d6p1:Data3>
+                        <d6p1:Data4>9499410882746075577</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1813756039</d6p1:Data1>
+                        <d6p1:Data2>25231</d6p1:Data2>
+                        <d6p1:Data3>18966</d6p1:Data3>
+                        <d6p1:Data4>4078805347856323751</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>20858712</d6p1:Data1>
+                        <d6p1:Data2>57788</d6p1:Data2>
+                        <d6p1:Data3>19145</d6p1:Data3>
+                        <d6p1:Data4>16842311284387599275</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>727105528</d6p1:Data1>
+                        <d6p1:Data2>43179</d6p1:Data2>
+                        <d6p1:Data3>16507</d6p1:Data3>
+                        <d6p1:Data4>8628864897058595768</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-12T20:48:27.133Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>true</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>true</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3268545860</d6p1:Data1>
+                        <d6p1:Data2>34310</d6p1:Data2>
+                        <d6p1:Data3>18025</d6p1:Data3>
+                        <d6p1:Data4>5715827782793008312</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2666407422</d6p1:Data1>
+                        <d6p1:Data2>14811</d6p1:Data2>
+                        <d6p1:Data3>18751</d6p1:Data3>
+                        <d6p1:Data4>13287552956004634027</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Win</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>1</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>1</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>3583358449</d4p1:Data1>
+                <d4p1:Data2>44419</d4p1:Data2>
+                <d4p1:Data3>18865</d4p1:Data3>
+                <d4p1:Data4>5484309979374716050</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>2625699149</d5p1:Data1>
+                    <d5p1:Data2>53856</d5p1:Data2>
+                    <d5p1:Data3>19841</d5p1:Data3>
+                    <d5p1:Data4>12169876285732298903</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT10M40.8893145S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-12T20:47:30.032Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerStrongholds</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>3694811946</d5p1:Data1>
+                    <d5p1:Data2>6154</d5p1:Data2>
+                    <d5p1:Data3>17732</d5p1:Data3>
+                    <d5p1:Data4>38618839716381067</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3064766663</d6p1:Data1>
+                        <d6p1:Data2>35751</d6p1:Data2>
+                        <d6p1:Data3>16486</d6p1:Data3>
+                        <d6p1:Data4>4344908699872629183</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1109783731</d6p1:Data1>
+                        <d6p1:Data2>14493</d6p1:Data2>
+                        <d6p1:Data3>18432</d6p1:Data3>
+                        <d6p1:Data4>11583944585511337605</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT10M40.875S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3992908716</d6p1:Data1>
+                        <d6p1:Data2>40126</d6p1:Data2>
+                        <d6p1:Data3>20386</d6p1:Data3>
+                        <d6p1:Data4>9499410882746075577</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1813756039</d6p1:Data1>
+                        <d6p1:Data2>25231</d6p1:Data2>
+                        <d6p1:Data3>18966</d6p1:Data3>
+                        <d6p1:Data4>4078805347856323751</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1679663441</d6p1:Data1>
+                        <d6p1:Data2>38556</d6p1:Data2>
+                        <d6p1:Data3>17439</d6p1:Data3>
+                        <d6p1:Data4>12242228888812882867</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>493073398</d6p1:Data1>
+                        <d6p1:Data2>52639</d6p1:Data2>
+                        <d6p1:Data3>16410</d6p1:Data3>
+                        <d6p1:Data4>16565404547588577970</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-12T20:36:07.549Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>true</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>true</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>582525163</d6p1:Data1>
+                        <d6p1:Data2>3330</d6p1:Data2>
+                        <d6p1:Data3>20147</d6p1:Data3>
+                        <d6p1:Data4>9461823108057880207</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>752582832</d6p1:Data1>
+                        <d6p1:Data2>10754</d6p1:Data2>
+                        <d6p1:Data3>18740</d6p1:Data3>
+                        <d6p1:Data4>16233661595189332390</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Win</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>1</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>0</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>2923444725</d4p1:Data1>
+                <d4p1:Data2>24635</d4p1:Data2>
+                <d4p1:Data3>18920</d4p1:Data3>
+                <d4p1:Data4>7989825243980431509</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>2625699149</d5p1:Data1>
+                    <d5p1:Data2>53856</d5p1:Data2>
+                    <d5p1:Data3>19841</d5p1:Data3>
+                    <d5p1:Data4>12169876285732298903</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT16M26.0817759S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-12T20:28:44.808Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerBastion</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>3694811946</d5p1:Data1>
+                    <d5p1:Data2>6154</d5p1:Data2>
+                    <d5p1:Data3>17732</d5p1:Data3>
+                    <d5p1:Data4>38618839716381067</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3064766663</d6p1:Data1>
+                        <d6p1:Data2>35751</d6p1:Data2>
+                        <d6p1:Data3>16486</d6p1:Data3>
+                        <d6p1:Data4>4344908699872629183</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1109783731</d6p1:Data1>
+                        <d6p1:Data2>14493</d6p1:Data2>
+                        <d6p1:Data3>18432</d6p1:Data3>
+                        <d6p1:Data4>11583944585511337605</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT16M26.047S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3992908716</d6p1:Data1>
+                        <d6p1:Data2>40126</d6p1:Data2>
+                        <d6p1:Data3>20386</d6p1:Data3>
+                        <d6p1:Data4>9499410882746075577</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1813756039</d6p1:Data1>
+                        <d6p1:Data2>25231</d6p1:Data2>
+                        <d6p1:Data3>18966</d6p1:Data3>
+                        <d6p1:Data4>4078805347856323751</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2730160733</d6p1:Data1>
+                        <d6p1:Data2>45467</d6p1:Data2>
+                        <d6p1:Data3>20162</d6p1:Data3>
+                        <d6p1:Data4>2379841387442194068</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2277228964</d6p1:Data1>
+                        <d6p1:Data2>32881</d6p1:Data2>
+                        <d6p1:Data3>19366</d6p1:Data3>
+                        <d6p1:Data4>7554513281368920482</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-12T20:12:03.168Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>true</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>true</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2294426399</d6p1:Data1>
+                        <d6p1:Data2>11620</d6p1:Data2>
+                        <d6p1:Data3>18617</d6p1:Data3>
+                        <d6p1:Data4>2592702603572195770</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1061803255</d6p1:Data1>
+                        <d6p1:Data2>62481</d6p1:Data2>
+                        <d6p1:Data3>18623</d6p1:Data3>
+                        <d6p1:Data4>6025184261877788290</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Loss</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>7</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>1</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>3728123635</d4p1:Data1>
+                <d4p1:Data2>35380</d4p1:Data2>
+                <d4p1:Data3>16649</d4p1:Data3>
+                <d4p1:Data4>7787672232029078439</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>2625699149</d5p1:Data1>
+                    <d5p1:Data2>53856</d5p1:Data2>
+                    <d5p1:Data3>19841</d5p1:Data3>
+                    <d5p1:Data4>12169876285732298903</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT10M33.5234991S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-12T20:10:56.49Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerSlayer</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>3223734149</d5p1:Data1>
+                    <d5p1:Data2>37064</d5p1:Data2>
+                    <d5p1:Data3>18758</d5p1:Data3>
+                    <d5p1:Data4>18404810890039137983</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2216706315</d6p1:Data1>
+                        <d6p1:Data2>1101</d6p1:Data2>
+                        <d6p1:Data3>17623</d6p1:Data3>
+                        <d6p1:Data4>11512265415713142400</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2156314701</d6p1:Data1>
+                        <d6p1:Data2>15963</d6p1:Data2>
+                        <d6p1:Data3>19105</d6p1:Data3>
+                        <d6p1:Data4>476485147158591390</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT10M33.5S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3992908716</d6p1:Data1>
+                        <d6p1:Data2>40126</d6p1:Data2>
+                        <d6p1:Data3>20386</d6p1:Data3>
+                        <d6p1:Data4>9499410882746075577</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1813756039</d6p1:Data1>
+                        <d6p1:Data2>25231</d6p1:Data2>
+                        <d6p1:Data3>18966</d6p1:Data3>
+                        <d6p1:Data4>4078805347856323751</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>51143347</d6p1:Data1>
+                        <d6p1:Data2>38375</d6p1:Data2>
+                        <d6p1:Data3>17648</d6p1:Data3>
+                        <d6p1:Data4>14662428899504393882</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1375182219</d6p1:Data1>
+                        <d6p1:Data2>28714</d6p1:Data2>
+                        <d6p1:Data3>18891</d6p1:Data3>
+                        <d6p1:Data4>176173569411065268</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-12T20:00:02.414Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>true</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>true</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3268545860</d6p1:Data1>
+                        <d6p1:Data2>34310</d6p1:Data2>
+                        <d6p1:Data3>18025</d6p1:Data3>
+                        <d6p1:Data4>5715827782793008312</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2666407422</d6p1:Data1>
+                        <d6p1:Data2>14811</d6p1:Data2>
+                        <d6p1:Data3>18751</d6p1:Data3>
+                        <d6p1:Data4>13287552956004634027</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Loss</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>5</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>1</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>1482546745</d4p1:Data1>
+                <d4p1:Data2>52098</d4p1:Data2>
+                <d4p1:Data3>19922</d4p1:Data3>
+                <d4p1:Data4>13180408164873322368</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>2625699149</d5p1:Data1>
+                    <d5p1:Data2>53856</d5p1:Data2>
+                    <d5p1:Data3>19841</d5p1:Data3>
+                    <d5p1:Data4>12169876285732298903</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT8M2.6560822S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-12T19:59:02.52Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerOddball</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>3694811946</d5p1:Data1>
+                    <d5p1:Data2>6154</d5p1:Data2>
+                    <d5p1:Data3>17732</d5p1:Data3>
+                    <d5p1:Data4>38618839716381067</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3064766663</d6p1:Data1>
+                        <d6p1:Data2>35751</d6p1:Data2>
+                        <d6p1:Data3>16486</d6p1:Data3>
+                        <d6p1:Data4>4344908699872629183</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1109783731</d6p1:Data1>
+                        <d6p1:Data2>14493</d6p1:Data2>
+                        <d6p1:Data3>18432</d6p1:Data3>
+                        <d6p1:Data4>11583944585511337605</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT7M55.094S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3992908716</d6p1:Data1>
+                        <d6p1:Data2>40126</d6p1:Data2>
+                        <d6p1:Data3>20386</d6p1:Data3>
+                        <d6p1:Data4>9499410882746075577</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1813756039</d6p1:Data1>
+                        <d6p1:Data2>25231</d6p1:Data2>
+                        <d6p1:Data3>18966</d6p1:Data3>
+                        <d6p1:Data4>4078805347856323751</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2690834464</d6p1:Data1>
+                        <d6p1:Data2>57667</d6p1:Data2>
+                        <d6p1:Data3>19612</d6p1:Data3>
+                        <d6p1:Data4>13051676315378661248</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2913122668</d6p1:Data1>
+                        <d6p1:Data2>2618</d6p1:Data2>
+                        <d6p1:Data3>20088</d6p1:Data3>
+                        <d6p1:Data4>11939325119061535131</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-12T19:50:31.332Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>true</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>true</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1964756125</d6p1:Data1>
+                        <d6p1:Data2>43726</d6p1:Data2>
+                        <d6p1:Data3>17825</d6p1:Data3>
+                        <d6p1:Data4>9124231322048754061</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>703816264</d6p1:Data1>
+                        <d6p1:Data2>385</d6p1:Data2>
+                        <d6p1:Data3>17594</d6p1:Data3>
+                        <d6p1:Data4>9601835600965312662</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Loss</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>6</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>0</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>3247645440</d4p1:Data1>
+                <d4p1:Data2>26531</d4p1:Data2>
+                <d4p1:Data3>18914</d4p1:Data3>
+                <d4p1:Data4>7197825671222071445</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>2625699149</d5p1:Data1>
+                    <d5p1:Data2>53856</d5p1:Data2>
+                    <d5p1:Data3>19841</d5p1:Data3>
+                    <d5p1:Data4>12169876285732298903</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT13M0.0106766S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-12T19:49:04.8Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerBastion</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>434097886</d5p1:Data1>
+                    <d5p1:Data2>56529</d5p1:Data2>
+                    <d5p1:Data3>17832</d5p1:Data3>
+                    <d5p1:Data4>5712928064236386186</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>4037113359</d6p1:Data1>
+                        <d6p1:Data2>3402</d6p1:Data2>
+                        <d6p1:Data3>19404</d6p1:Data3>
+                        <d6p1:Data4>15866713302859545260</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1367082969</d6p1:Data1>
+                        <d6p1:Data2>49700</d6p1:Data2>
+                        <d6p1:Data3>20398</d6p1:Data3>
+                        <d6p1:Data4>9222040961820215969</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT13M</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3992908716</d6p1:Data1>
+                        <d6p1:Data2>40126</d6p1:Data2>
+                        <d6p1:Data3>20386</d6p1:Data3>
+                        <d6p1:Data4>9499410882746075577</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1813756039</d6p1:Data1>
+                        <d6p1:Data2>25231</d6p1:Data2>
+                        <d6p1:Data3>18966</d6p1:Data3>
+                        <d6p1:Data4>4078805347856323751</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2748284568</d6p1:Data1>
+                        <d6p1:Data2>4380</d6p1:Data2>
+                        <d6p1:Data3>19589</d6p1:Data3>
+                        <d6p1:Data4>9624567117099050143</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2759670326</d6p1:Data1>
+                        <d6p1:Data2>55930</d6p1:Data2>
+                        <d6p1:Data3>17781</d6p1:Data3>
+                        <d6p1:Data4>642560332313147831</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-12T19:35:30.306Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>true</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>true</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2294426399</d6p1:Data1>
+                        <d6p1:Data2>11620</d6p1:Data2>
+                        <d6p1:Data3>18617</d6p1:Data3>
+                        <d6p1:Data4>2592702603572195770</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1061803255</d6p1:Data1>
+                        <d6p1:Data2>62481</d6p1:Data2>
+                        <d6p1:Data3>18623</d6p1:Data3>
+                        <d6p1:Data4>6025184261877788290</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Win</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>1</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>1</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>4014624003</d4p1:Data1>
+                <d4p1:Data2>35592</d4p1:Data2>
+                <d4p1:Data3>17537</d4p1:Data3>
+                <d4p1:Data4>4581670577678886273</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>2625699149</d5p1:Data1>
+                    <d5p1:Data2>53856</d5p1:Data2>
+                    <d5p1:Data3>19841</d5p1:Data3>
+                    <d5p1:Data4>12169876285732298903</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT6M11.0946745S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-12T19:33:27.331Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerOddball</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>3223734149</d5p1:Data1>
+                    <d5p1:Data2>37064</d5p1:Data2>
+                    <d5p1:Data3>18758</d5p1:Data3>
+                    <d5p1:Data4>18404810890039137983</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2216706315</d6p1:Data1>
+                        <d6p1:Data2>1101</d6p1:Data2>
+                        <d6p1:Data3>17623</d6p1:Data3>
+                        <d6p1:Data4>11512265415713142400</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3437408322</d6p1:Data1>
+                        <d6p1:Data2>49625</d6p1:Data2>
+                        <d6p1:Data3>17895</d6p1:Data3>
+                        <d6p1:Data4>3716434189663794360</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT6M3.515S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3184455603</d6p1:Data1>
+                        <d6p1:Data2>7250</d6p1:Data2>
+                        <d6p1:Data3>18504</d6p1:Data3>
+                        <d6p1:Data4>11317567637368911782</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3383182405</d6p1:Data1>
+                        <d6p1:Data2>17688</d6p1:Data2>
+                        <d6p1:Data3>17954</d6p1:Data3>
+                        <d6p1:Data4>2993789345858452360</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1971063005</d6p1:Data1>
+                        <d6p1:Data2>38327</d6p1:Data2>
+                        <d6p1:Data3>17288</d6p1:Data3>
+                        <d6p1:Data4>15544805931624584851</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3482204114</d6p1:Data1>
+                        <d6p1:Data2>33781</d6p1:Data2>
+                        <d6p1:Data3>19602</d6p1:Data3>
+                        <d6p1:Data4>13681098587162773944</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-12T19:26:34.663Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>true</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>true</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3551138046</d6p1:Data1>
+                        <d6p1:Data2>20525</d6p1:Data2>
+                        <d6p1:Data3>18296</d6p1:Data3>
+                        <d6p1:Data4>12484701896388100747</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3213948198</d6p1:Data1>
+                        <d6p1:Data2>53530</d6p1:Data2>
+                        <d6p1:Data3>17945</d6p1:Data3>
+                        <d6p1:Data4>10208791564562419112</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Loss</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>6</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>0</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>3576038192</d4p1:Data1>
+                <d4p1:Data2>9929</d4p1:Data2>
+                <d4p1:Data3>17753</d4p1:Data3>
+                <d4p1:Data4>6362341634216839558</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>2625699149</d5p1:Data1>
+                    <d5p1:Data2>53856</d5p1:Data2>
+                    <d5p1:Data3>19841</d5p1:Data3>
+                    <d5p1:Data4>12169876285732298903</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT7M7.0543606S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-12T19:25:09.655Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerOddball</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>3717520570</d5p1:Data1>
+                    <d5p1:Data2>2281</d5p1:Data2>
+                    <d5p1:Data3>18301</d5p1:Data3>
+                    <d5p1:Data4>17511564940810631057</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3898199925</d6p1:Data1>
+                        <d6p1:Data2>39818</d6p1:Data2>
+                        <d6p1:Data3>17050</d6p1:Data3>
+                        <d6p1:Data4>4000635078972784273</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1669747701</d6p1:Data1>
+                        <d6p1:Data2>44570</d6p1:Data2>
+                        <d6p1:Data3>18776</d6p1:Data3>
+                        <d6p1:Data4>3954360130097832351</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT6M59.485S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3184455603</d6p1:Data1>
+                        <d6p1:Data2>7250</d6p1:Data2>
+                        <d6p1:Data3>18504</d6p1:Data3>
+                        <d6p1:Data4>11317567637368911782</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3383182405</d6p1:Data1>
+                        <d6p1:Data2>17688</d6p1:Data2>
+                        <d6p1:Data3>17954</d6p1:Data3>
+                        <d6p1:Data4>2993789345858452360</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3757498121</d6p1:Data1>
+                        <d6p1:Data2>16837</d6p1:Data2>
+                        <d6p1:Data3>18634</d6p1:Data3>
+                        <d6p1:Data4>12021690819013255352</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>587585701</d6p1:Data1>
+                        <d6p1:Data2>17784</d6p1:Data2>
+                        <d6p1:Data3>16660</d6p1:Data3>
+                        <d6p1:Data4>4556940484891149452</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-12T19:17:37.651Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>true</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>true</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3551138046</d6p1:Data1>
+                        <d6p1:Data2>20525</d6p1:Data2>
+                        <d6p1:Data3>18296</d6p1:Data3>
+                        <d6p1:Data4>12484701896388100747</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3213948198</d6p1:Data1>
+                        <d6p1:Data2>53530</d6p1:Data2>
+                        <d6p1:Data3>17945</d6p1:Data3>
+                        <d6p1:Data4>10208791564562419112</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Win</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>3</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>1</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>3567523556</d4p1:Data1>
+                <d4p1:Data2>4301</d4p1:Data2>
+                <d4p1:Data3>16458</d4p1:Data3>
+                <d4p1:Data4>6134519588833158046</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>2625699149</d5p1:Data1>
+                    <d5p1:Data2>53856</d5p1:Data2>
+                    <d5p1:Data3>19841</d5p1:Data3>
+                    <d5p1:Data4>12169876285732298903</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT3M53.007175S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-12T19:16:17.841Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerBastion</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>3223734149</d5p1:Data1>
+                    <d5p1:Data2>37064</d5p1:Data2>
+                    <d5p1:Data3>18758</d5p1:Data3>
+                    <d5p1:Data4>18404810890039137983</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2216706315</d6p1:Data1>
+                        <d6p1:Data2>1101</d6p1:Data2>
+                        <d6p1:Data3>17623</d6p1:Data3>
+                        <d6p1:Data4>11512265415713142400</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3437408322</d6p1:Data1>
+                        <d6p1:Data2>49625</d6p1:Data2>
+                        <d6p1:Data3>17895</d6p1:Data3>
+                        <d6p1:Data4>3716434189663794360</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT3M53S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3184455603</d6p1:Data1>
+                        <d6p1:Data2>7250</d6p1:Data2>
+                        <d6p1:Data3>18504</d6p1:Data3>
+                        <d6p1:Data4>11317567637368911782</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3383182405</d6p1:Data1>
+                        <d6p1:Data2>17688</d6p1:Data2>
+                        <d6p1:Data3>17954</d6p1:Data3>
+                        <d6p1:Data4>2993789345858452360</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3333053596</d6p1:Data1>
+                        <d6p1:Data2>32302</d6p1:Data2>
+                        <d6p1:Data3>18758</d6p1:Data3>
+                        <d6p1:Data4>7893529590280504493</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>292236325</d6p1:Data1>
+                        <d6p1:Data2>54503</d6p1:Data2>
+                        <d6p1:Data3>20200</d6p1:Data3>
+                        <d6p1:Data4>4602282658661839282</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-12T19:11:53.205Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>true</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>true</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>926891303</d6p1:Data1>
+                        <d6p1:Data2>52044</d6p1:Data2>
+                        <d6p1:Data3>19835</d6p1:Data3>
+                        <d6p1:Data4>3679789296186280374</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2910590353</d6p1:Data1>
+                        <d6p1:Data2>65111</d6p1:Data2>
+                        <d6p1:Data3>20215</d6p1:Data3>
+                        <d6p1:Data4>15553215976641399691</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Win</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>1</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>6</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>2560709666</d4p1:Data1>
+                <d4p1:Data2>35979</d4p1:Data2>
+                <d4p1:Data3>20078</d4p1:Data3>
+                <d4p1:Data4>5818127237806651577</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>2625699149</d5p1:Data1>
+                    <d5p1:Data2>53856</d5p1:Data2>
+                    <d5p1:Data3>19841</d5p1:Data3>
+                    <d5p1:Data4>12169876285732298903</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT7M15.9477788S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-12T19:10:40.072Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerSlayer</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>434097886</d5p1:Data1>
+                    <d5p1:Data2>56529</d5p1:Data2>
+                    <d5p1:Data3>17832</d5p1:Data3>
+                    <d5p1:Data4>5712928064236386186</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>4037113359</d6p1:Data1>
+                        <d6p1:Data2>3402</d6p1:Data2>
+                        <d6p1:Data3>19404</d6p1:Data3>
+                        <d6p1:Data4>15866713302859545260</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2695859889</d6p1:Data1>
+                        <d6p1:Data2>49251</d6p1:Data2>
+                        <d6p1:Data3>18821</d6p1:Data3>
+                        <d6p1:Data4>11239576622720573880</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT7M15.938S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2107123911</d6p1:Data1>
+                        <d6p1:Data2>33156</d6p1:Data2>
+                        <d6p1:Data3>17441</d6p1:Data3>
+                        <d6p1:Data4>13726566830531810477</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2876559644</d6p1:Data1>
+                        <d6p1:Data2>63105</d6p1:Data2>
+                        <d6p1:Data3>16932</d6p1:Data3>
+                        <d6p1:Data4>3004544281073848253</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2104757517</d6p1:Data1>
+                        <d6p1:Data2>14153</d6p1:Data2>
+                        <d6p1:Data3>16927</d6p1:Data3>
+                        <d6p1:Data4>13883019466698396299</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>224358458</d6p1:Data1>
+                        <d6p1:Data2>21076</d6p1:Data2>
+                        <d6p1:Data3>17969</d6p1:Data3>
+                        <d6p1:Data4>8333447620809826491</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-12T19:02:59.686Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>false</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>false</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3576714617</d6p1:Data1>
+                        <d6p1:Data2>21264</d6p1:Data2>
+                        <d6p1:Data3>17832</d6p1:Data3>
+                        <d6p1:Data4>4544435400025640580</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1743864254</d6p1:Data1>
+                        <d6p1:Data2>23424</d6p1:Data2>
+                        <d6p1:Data3>16410</d6p1:Data3>
+                        <d6p1:Data4>4922537859967846300</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Loss</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>4</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>5</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>2289243383</d4p1:Data1>
+                <d4p1:Data2>5765</d4p1:Data2>
+                <d4p1:Data3>20449</d4p1:Data3>
+                <d4p1:Data4>17291416546574177687</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>2625699149</d5p1:Data1>
+                    <d5p1:Data2>53856</d5p1:Data2>
+                    <d5p1:Data3>19841</d5p1:Data3>
+                    <d5p1:Data4>12169876285732298903</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT6M27.146722S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-12T19:01:43.891Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerSlayer</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>1823533968</d5p1:Data1>
+                    <d5p1:Data2>10265</d5p1:Data2>
+                    <d5p1:Data3>19311</d5p1:Data3>
+                    <d5p1:Data4>4475656261232855715</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1393781465</d6p1:Data1>
+                        <d6p1:Data2>4054</d6p1:Data2>
+                        <d6p1:Data3>17009</d6p1:Data3>
+                        <d6p1:Data4>2186138168195109511</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2414216685</d6p1:Data1>
+                        <d6p1:Data2>16816</d6p1:Data2>
+                        <d6p1:Data3>18176</d6p1:Data3>
+                        <d6p1:Data4>16045946783878374844</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT6M27.141S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2107123911</d6p1:Data1>
+                        <d6p1:Data2>33156</d6p1:Data2>
+                        <d6p1:Data3>17441</d6p1:Data3>
+                        <d6p1:Data4>13726566830531810477</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2876559644</d6p1:Data1>
+                        <d6p1:Data2>63105</d6p1:Data2>
+                        <d6p1:Data3>16932</d6p1:Data3>
+                        <d6p1:Data4>3004544281073848253</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2743592599</d6p1:Data1>
+                        <d6p1:Data2>8411</d6p1:Data2>
+                        <d6p1:Data3>20386</d6p1:Data3>
+                        <d6p1:Data4>7519193491906825110</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>758814258</d6p1:Data1>
+                        <d6p1:Data2>60597</d6p1:Data2>
+                        <d6p1:Data3>19174</d6p1:Data3>
+                        <d6p1:Data4>16360400820162892183</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-12T18:54:41.091Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>false</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>false</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3827918049</d6p1:Data1>
+                        <d6p1:Data2>57755</d6p1:Data2>
+                        <d6p1:Data3>18164</d6p1:Data3>
+                        <d6p1:Data4>17851957947943866257</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>469319546</d6p1:Data1>
+                        <d6p1:Data2>59603</d6p1:Data2>
+                        <d6p1:Data3>18940</d6p1:Data3>
+                        <d6p1:Data4>4993190412982230673</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Loss</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>3</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>0</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>2693727901</d4p1:Data1>
+                <d4p1:Data2>35185</d4p1:Data2>
+                <d4p1:Data3>17427</d4p1:Data3>
+                <d4p1:Data4>4126026042478892172</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>2625699149</d5p1:Data1>
+                    <d5p1:Data2>53856</d5p1:Data2>
+                    <d5p1:Data3>19841</d5p1:Data3>
+                    <d5p1:Data4>12169876285732298903</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT6M52.2050759S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-12T18:53:02.632Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerSlayer</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>3717520570</d5p1:Data1>
+                    <d5p1:Data2>2281</d5p1:Data2>
+                    <d5p1:Data3>18301</d5p1:Data3>
+                    <d5p1:Data4>17511564940810631057</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3898199925</d6p1:Data1>
+                        <d6p1:Data2>39818</d6p1:Data2>
+                        <d6p1:Data3>17050</d6p1:Data3>
+                        <d6p1:Data4>4000635078972784273</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3510525897</d6p1:Data1>
+                        <d6p1:Data2>27377</d6p1:Data2>
+                        <d6p1:Data3>19613</d6p1:Data3>
+                        <d6p1:Data4>16613754554326090661</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT6M52.219S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>844896421</d6p1:Data1>
+                        <d6p1:Data2>55387</d6p1:Data2>
+                        <d6p1:Data3>19366</d6p1:Data3>
+                        <d6p1:Data4>16292225051411976121</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2488203417</d6p1:Data1>
+                        <d6p1:Data2>4951</d6p1:Data2>
+                        <d6p1:Data3>16539</d6p1:Data3>
+                        <d6p1:Data4>4769897405911819436</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3442141781</d6p1:Data1>
+                        <d6p1:Data2>18529</d6p1:Data2>
+                        <d6p1:Data3>20405</d6p1:Data3>
+                        <d6p1:Data4>17285837531492368775</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1339891669</d6p1:Data1>
+                        <d6p1:Data2>26753</d6p1:Data2>
+                        <d6p1:Data3>19196</d6p1:Data3>
+                        <d6p1:Data4>3150141593547764667</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-12T18:45:19.411Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>true</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>true</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2007651223</d6p1:Data1>
+                        <d6p1:Data2>58063</d6p1:Data2>
+                        <d6p1:Data3>19750</d6p1:Data3>
+                        <d6p1:Data4>9714140410762730170</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>86803390</d6p1:Data1>
+                        <d6p1:Data2>29482</d6p1:Data2>
+                        <d6p1:Data3>16979</d6p1:Data3>
+                        <d6p1:Data4>12513278192082187680</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Win</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>3</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>1</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>3198996407</d4p1:Data1>
+                <d4p1:Data2>56100</d4p1:Data2>
+                <d4p1:Data3>16901</d4p1:Data3>
+                <d4p1:Data4>6326281344741784499</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>2625699149</d5p1:Data1>
+                    <d5p1:Data2>53856</d5p1:Data2>
+                    <d5p1:Data3>19841</d5p1:Data3>
+                    <d5p1:Data4>12169876285732298903</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT8M59.26834S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-12T18:43:32.797Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerSlayer</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>3717520570</d5p1:Data1>
+                    <d5p1:Data2>2281</d5p1:Data2>
+                    <d5p1:Data3>18301</d5p1:Data3>
+                    <d5p1:Data4>17511564940810631057</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3898199925</d6p1:Data1>
+                        <d6p1:Data2>39818</d6p1:Data2>
+                        <d6p1:Data3>17050</d6p1:Data3>
+                        <d6p1:Data4>4000635078972784273</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3510525897</d6p1:Data1>
+                        <d6p1:Data2>27377</d6p1:Data2>
+                        <d6p1:Data3>19613</d6p1:Data3>
+                        <d6p1:Data4>16613754554326090661</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT8M59.234S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>844896421</d6p1:Data1>
+                        <d6p1:Data2>55387</d6p1:Data2>
+                        <d6p1:Data3>19366</d6p1:Data3>
+                        <d6p1:Data4>16292225051411976121</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>2488203417</d6p1:Data1>
+                        <d6p1:Data2>4951</d6p1:Data2>
+                        <d6p1:Data3>16539</d6p1:Data3>
+                        <d6p1:Data4>4769897405911819436</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1212409967</d6p1:Data1>
+                        <d6p1:Data2>40293</d6p1:Data2>
+                        <d6p1:Data3>17568</d6p1:Data3>
+                        <d6p1:Data4>5140703790056504998</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>4056096933</d6p1:Data1>
+                        <d6p1:Data2>20612</d6p1:Data2>
+                        <d6p1:Data3>18307</d6p1:Data3>
+                        <d6p1:Data4>3744782108099029669</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-12T18:34:11.498Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>true</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>true</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1199475204</d6p1:Data1>
+                        <d6p1:Data2>24056</d6p1:Data2>
+                        <d6p1:Data3>20363</d6p1:Data3>
+                        <d6p1:Data4>2897571527268217519</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>618875002</d6p1:Data1>
+                        <d6p1:Data2>46832</d6p1:Data2>
+                        <d6p1:Data3>19061</d6p1:Data3>
+                        <d6p1:Data4>1346847473258999974</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Win</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>3</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+        <d2p1:PlayerMatchHistoryRecord>
+            <d2p1:LastTeamId>0</d2p1:LastTeamId>
+            <d2p1:MatchId xmlns:d4p1="http://schemas.datacontract.org/2004/07/Bond">
+                <d4p1:Data1>1792535853</d4p1:Data1>
+                <d4p1:Data2>38506</d4p1:Data2>
+                <d4p1:Data3>19846</d4p1:Data3>
+                <d4p1:Data4>7205959853126254004</d4p1:Data4>
+            </d2p1:MatchId>
+            <d2p1:MatchInfo
+                xmlns:d4p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite">
+                <d4p1:ClearanceId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>2625699149</d5p1:Data1>
+                    <d5p1:Data2>53856</d5p1:Data2>
+                    <d5p1:Data3>19841</d5p1:Data3>
+                    <d5p1:Data4>12169876285732298903</d5p1:Data4>
+                </d4p1:ClearanceId>
+                <d4p1:Duration>PT8M40.9117721S</d4p1:Duration>
+                <d4p1:EndTime>2022-08-12T18:32:40.376Z</d4p1:EndTime>
+                <d4p1:GameVariantCategory>MultiplayerSlayer</d4p1:GameVariantCategory>
+                <d4p1:GameplayInteraction>Pvp</d4p1:GameplayInteraction>
+                <d4p1:LevelId xmlns:d5p1="http://schemas.datacontract.org/2004/07/Bond">
+                    <d5p1:Data1>3717520570</d5p1:Data1>
+                    <d5p1:Data2>2281</d5p1:Data2>
+                    <d5p1:Data3>18301</d5p1:Data3>
+                    <d5p1:Data4>17511564940810631057</d5p1:Data4>
+                </d4p1:LevelId>
+                <d4p1:LifecycleMode>Matchmade</d4p1:LifecycleMode>
+                <d4p1:MapVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3898199925</d6p1:Data1>
+                        <d6p1:Data2>39818</d6p1:Data2>
+                        <d6p1:Data3>17050</d6p1:Data3>
+                        <d6p1:Data4>4000635078972784273</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Map</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1669747701</d6p1:Data1>
+                        <d6p1:Data2>44570</d6p1:Data2>
+                        <d6p1:Data3>18776</d6p1:Data3>
+                        <d6p1:Data4>3954360130097832351</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:MapVariant>
+                <d4p1:PlayableDuration>PT8M40.906S</d4p1:PlayableDuration>
+                <d4p1:Playlist
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3184455603</d6p1:Data1>
+                        <d6p1:Data2>7250</d6p1:Data2>
+                        <d6p1:Data3>18504</d6p1:Data3>
+                        <d6p1:Data4>11317567637368911782</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>Playlist</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>3383182405</d6p1:Data1>
+                        <d6p1:Data2>17688</d6p1:Data2>
+                        <d6p1:Data3>17954</d6p1:Data3>
+                        <d6p1:Data4>2993789345858452360</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:Playlist>
+                <d4p1:PlaylistExperience>Arena</d4p1:PlaylistExperience>
+                <d4p1:PlaylistMapModePair
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>654017993</d6p1:Data1>
+                        <d6p1:Data2>49581</d6p1:Data2>
+                        <d6p1:Data3>17549</d6p1:Data3>
+                        <d6p1:Data4>14516120853562318013</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>MapModePair</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1231825243</d6p1:Data1>
+                        <d6p1:Data2>16513</d6p1:Data2>
+                        <d6p1:Data3>19106</d6p1:Data3>
+                        <d6p1:Data4>12403318126750547594</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:PlaylistMapModePair>
+                <d4p1:SeasonId>Seasons/Season7.json</d4p1:SeasonId>
+                <d4p1:StartTime>2022-08-12T18:23:30.971Z</d4p1:StartTime>
+                <d4p1:TeamScoringEnabled>true</d4p1:TeamScoringEnabled>
+                <d4p1:TeamsEnabled>true</d4p1:TeamsEnabled>
+                <d4p1:UgcGameVariant
+                    xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.Halo.InfiniteUGC.Bond">
+                    <d5p1:AssetId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>512545035</d6p1:Data1>
+                        <d6p1:Data2>5270</d6p1:Data2>
+                        <d6p1:Data3>16955</d6p1:Data3>
+                        <d6p1:Data4>9130588028278512006</d6p1:Data4>
+                    </d5p1:AssetId>
+                    <d5p1:AssetKind>UgcGameVariant</d5p1:AssetKind>
+                    <d5p1:VersionId xmlns:d6p1="http://schemas.datacontract.org/2004/07/Bond">
+                        <d6p1:Data1>1096094766</d6p1:Data1>
+                        <d6p1:Data2>47207</d6p1:Data2>
+                        <d6p1:Data3>16432</d6p1:Data3>
+                        <d6p1:Data4>6975685839579095208</d6p1:Data4>
+                    </d5p1:VersionId>
+                </d4p1:UgcGameVariant>
+            </d2p1:MatchInfo>
+            <d2p1:Outcome>Win</d2p1:Outcome>
+            <d2p1:PresentAtEndOfMatch>true</d2p1:PresentAtEndOfMatch>
+            <d2p1:Rank>2</d2p1:Rank>
+        </d2p1:PlayerMatchHistoryRecord>
+    </Results>
+    <Start xmlns="http://schemas.datacontract.org/2004/07/Microsoft.Studios.Bond.Contract">2320</Start>
+</MatchHistoryResponse>

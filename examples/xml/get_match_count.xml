@@ -1,0 +1,7 @@
+<MatchCount xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://schemas.datacontract.org/2004/07/Microsoft.Halo.HaloStats.Bond.HaloInfinite.Player">
+    <CustomMatchesPlayedCount>200</CustomMatchesPlayedCount>
+    <LocalMatchesPlayedCount>1</LocalMatchesPlayedCount>
+    <MatchesPlayedCount>3133</MatchesPlayedCount>
+    <MatchmadeMatchesPlayedCount>2932</MatchmadeMatchesPlayedCount>
+</MatchCount>

@@ -1,0 +1,9 @@
+<ActiveFlightConfigurationResponse xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://schemas.datacontract.org/2004/07/Microsoft.Halo.RegisterClient.Bond">
+    <FlightConfigurationId xmlns:d2p1="http://schemas.datacontract.org/2004/07/Bond">
+        <d2p1:Data1>4207901936</d2p1:Data1>
+        <d2p1:Data2>23402</d2p1:Data2>
+        <d2p1:Data3>19242</d2p1:Data3>
+        <d2p1:Data4>17794855230727814844</d2p1:Data4>
+    </FlightConfigurationId>
+</ActiveFlightConfigurationResponse>
