@@ -358,6 +358,83 @@ class Outcome(IntEnum):
     DID_NOT_START = 5
 
 
+class PersonalScoreNameId(IntEnum):
+    """Personal score award enumeration."""
+
+    def __new__(cls, value: int, display_name: str):
+        obj = int.__new__(cls, value)
+        obj._value_ = value
+        obj._display_name = display_name  # type: ignore
+        return obj
+
+    @property
+    def display_name(self) -> str:
+        """Get the name of the personal score award as displayed in-game."""
+        return self._display_name  # type: ignore
+
+    BALL_CONTROL = 454168309, "Ball Control"  # 50
+    BALL_TAKEN = 204144695, "Ball Taken"  # 10
+    BETRAYED_PLAYER = 911992497, "Betrayed Player"  # -100
+    CARRIER_KILLED = 4128329646, "Carrier Killed"  # 10, Stockpile
+    CARRIER_STOPPED = 746397417, "Carrier Stopped"  # 25, Oddball
+    COLLECTED_BONUS_XP = 522435689, "Collected Bonus XP"  # 300, Last Spartan Standing
+    CONVERSION_DENIED = 4247243561, "Conversion Denied"  # 25
+    CUSTOM = 4294967295, "Custom"  # Variable, scripted in a node graph
+    DESTROYED_BANSHEE = 597066859, "Destroyed Banshee"  # 50
+    DESTROYED_CHOPPER = 3472794399, "Destroyed Chopper"  # 50
+    DESTROYED_FALCON = 395875864, "Destroyed Falcon"  # 75
+    DESTROYED_GHOST = 4254982885, "Destroyed Ghost"  # 50
+    DESTROYED_GUNGOOSE = 2107631925, "Destroyed Gungoose"  # 25
+    DESTROYED_MONGOOSE = 1416267372, "Destroyed Mongoose"  # 25
+    DESTROYED_PHANTOM = 2742351765, "Destroyed Phantom"  # 100
+    DESTROYED_RAZORBACK = 1661163286, "Destroyed Razorback"  # 50
+    DESTROYED_ROCKET_WARTHOG = 2008690931, "Destroyed Rocket Warthog"  # 50
+    DESTROYED_SCORPION = 3454330054, "Destroyed Scorpion"  # 100
+    DESTROYED_WARTHOG = 3107879375, "Destroyed Warthog"  # 50
+    DESTROYED_WASP = 2106274556, "Destroyed Wasp"  # 50
+    DESTROYED_WRAITH = 3243589708, "Destroyed Wraith"  # 100
+    DRIVER_ASSIST = 963594075, "Driver Assist"  # 50
+    EMP_ASSIST = 221060588, "EMP Assist"  # 50
+    ELIMINATED_PLAYER = 2408971842, "Eliminated Player"  # 200
+    EXTRACTION_COMPLETED = 4130011565, "Extraction Completed"  # 200
+    EXTRACTION_CONVERTED = 1117301492, "Extraction Converted"  # 50
+    EXTRACTION_DENIED = 1552628741, "Extraction Denied"  # 25
+    EXTRACTION_INITIATED = 1825517751, "Extraction Initiated"  # 50
+    FLAG_CAPTURE_ASSIST = 555570945, "Flag Capture Assist"  # 100
+    FLAG_CAPTURED = 601966503, "Flag Captured"  # 300
+    FLAG_RETURNED = 22113181, "Flag Returned"  # 25
+    FLAG_STOLEN = 3002710045, "Flag Stolen"  # 25
+    FLAG_TAKEN = 2387185397, "Flag Taken"  # 10
+    HACKED_TERMINAL = 665081740, "Hacked Terminal"  # 100
+    HIJACKED_BANSHEE = 3150095814, "Hijacked Banshee"  # 25
+    HIJACKED_CHOPPER = 1059880024, "Hijacked Chopper"  # 25
+    HIJACKED_FALCON = 586857799, "Hijacked Falcon"  # 25
+    HIJACKED_GHOST = 1614285349, "Hijacked Ghost"  # 25
+    HIJACKED_GUNGOOSE = 4186766732, "Hijacked Gungoose"  # 25
+    HIJACKED_MONGOOSE = 2191528998, "Hijacked Mongoose"  # 25
+    HIJACKED_RAZORBACK = 2848565291, "Hijacked Razorback"  # 25
+    HIJACKED_ROCKET_WARTHOG = 4294405210, "Hijacked Rocket Warthog"  # 25
+    HIJACKED_WARTHOG = 1834653062, "Hijacked Warthog"  # 25
+    HIJACKED_WASP = 674964649, "Hijacked Wasp"  # 25
+    HILL_CONTROL = 340198991, "Hill Control"  # 25
+    HILL_SCORED = 1032565232, "Hill Scored"  # 100
+    KILL_ASSIST = 638246808, "Kill Assist"  # 50
+    KILLED_PLAYER = 1024030246, "Killed Player"  # 100
+    MARK_ASSIST = 152718958, "Mark Assist"  # 10
+    POWER_SEED_SECURED = 2188620691, "Power Seed Secured"  # 100
+    POWER_SEED_STOLEN = 3996338664, "Power Seed Stolen"  # 50
+    REVIVE_DENIED = 2130209372, "Revive Denied"  # 25
+    REVIVED_PLAYER = 3428202435, "Revived Player"  # 100
+    RUNNER_STOPPED = 316828380, "Runner Stopped"  # 25, CTF
+    SELF_DESTRUCTION = 249491819, "Self-destruction"  # -100
+    SENSOR_ASSIST = 1267013266, "Sensor Assist"  # 10
+    STOCKPILE_SCORED = 2801241965, "Stockpile Scored"  # 150
+    ZONE_CAPTURED_50 = 3507884073, "Zone Captured"  # 50
+    ZONE_CAPTURED_75 = 4026987576, "Zone Captured"  # 75
+    ZONE_CAPTURED_100 = 757037588, "Zone Captured"  # 100
+    ZONE_SECURED = 709346128, "Zone Secured"  # 25
+
+
 class PlayerType(IntEnum):
     """Types of players."""
 

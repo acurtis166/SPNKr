@@ -2,7 +2,7 @@
 
 import pytest
 
-from spnkr.models.refdata import MedalNameId, SubTier
+from spnkr.models.refdata import MedalNameId, PersonalScoreNameId, SubTier
 
 SUBTIER_VALUES = [
     (SubTier.ONE, 1),
@@ -29,3 +29,8 @@ def test_subtier_to_int(subtier: SubTier, value: int):
 def test_medal_display_name():
     result = MedalNameId.ACE
     assert result.display_name == "Ace"
+
+
+def test_personal_score_display_name():
+    result = PersonalScoreNameId.EMP_ASSIST
+    assert result.display_name == "EMP Assist"

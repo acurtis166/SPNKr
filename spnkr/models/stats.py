@@ -14,6 +14,7 @@ from spnkr.models.refdata import (
     LifecycleMode,
     MedalNameId,
     Outcome,
+    PersonalScoreNameId,
     PlayerType,
     PlaylistExperience,
 )
@@ -150,7 +151,7 @@ class MatchResultPersonalScoreStats(PascalCaseModel, frozen=True):
         total_personal_score_awarded: The total personal score awarded by obtaining the personal score award.
     """
 
-    name_id: int
+    name_id: PersonalScoreNameId
     count: int
     total_personal_score_awarded: int
 
