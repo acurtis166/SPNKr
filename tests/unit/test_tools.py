@@ -1,7 +1,5 @@
 """Test the spnkr.tools module."""
 
-from enum import IntEnum
-
 import pytest
 
 from spnkr import tools
@@ -39,14 +37,3 @@ def test_ranking_str_onyx():
 def test_get_rank_from_csr(csr: float, tier: Tier, sub_tier: SubTier):
     """Test that the correct tier and sub-tier are returned."""
     assert tools.get_rank_from_csr(csr) == (tier, sub_tier)
-
-
-def test_intenum_to_mapping():
-    """Test the _intenum_to_mapping function."""
-
-    class TestEnum(IntEnum):
-        A = 1
-        B = 2
-        C = 3
-
-    assert tools._intenum_to_mapping(TestEnum) == {1: "A", 2: "B", 3: "C"}
