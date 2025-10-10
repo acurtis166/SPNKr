@@ -38,7 +38,7 @@ asyncio_default_fixture_loop_scope = "session"
 
 [tool.tox]
 requires = ["tox>=4.28.1"]
-env_list = ["3.11", "3.12", "3.13", "lint"]
+env_list = ["3.11", "3.12", "3.13", "3.14", "lint"]
 
 [tool.tox.env_run_base]
 deps = [
