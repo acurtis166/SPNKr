@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- Fix film highlight event parsing for major version 41.
+
 ## [0.10.0] - 2025-08-08
 
 ### Added
