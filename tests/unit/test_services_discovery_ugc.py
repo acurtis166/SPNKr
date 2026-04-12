@@ -1,6 +1,7 @@
 """Test DiscoveryUgcService."""
 
 import datetime as dt
+from types import SimpleNamespace
 
 import pytest
 
@@ -73,6 +74,35 @@ async def test_get_asset_with_language(
             "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/"
             f"{asset_path}/asset_id/versions/version_id"
         ),
+        headers={"Accept-Language": "fr-FR"},
+    )
+
+
+@pytest.mark.asyncio
+async def test_get_asset_with_language_disables_cache_without_header_keys(
+    session,
+    service: DiscoveryUgcService,
+):
+    session.cache = SimpleNamespace(include_headers=False)
+    session.set_response("get_map.json")
+    await service.get_map("asset_id", "version_id", language="fr-FR")
+    session.get.assert_called_with(
+        "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/maps/asset_id/versions/version_id",
+        headers={"Accept-Language": "fr-FR"},
+        expire_after=0,
+    )
+
+
+@pytest.mark.asyncio
+async def test_get_asset_with_language_keeps_cache_when_headers_are_keyed(
+    session,
+    service: DiscoveryUgcService,
+):
+    session.cache = SimpleNamespace(include_headers=True)
+    session.set_response("get_map.json")
+    await service.get_map("asset_id", "version_id", language="fr-FR")
+    session.get.assert_called_with(
+        "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/maps/asset_id/versions/version_id",
         headers={"Accept-Language": "fr-FR"},
     )
 

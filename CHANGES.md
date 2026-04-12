@@ -4,6 +4,9 @@
 
 ### Added
 
+- Add player progression helpers for Economy, Stats, and GameCMS endpoints:
+    `get_player_reward_track_operations()`, `get_player_career_rank()`,
+    `get_player_decks()`, and `get_progression_file()`.
 - Allow localized Discovery UGC asset lookups via an optional `language` parameter on `get_map`, `get_playlist`, `get_map_mode_pair`, and `get_ugc_game_variant`.
 
 ## [0.10.1] - 2026-01-28

@@ -35,6 +35,23 @@ _SortProperty = Literal[
 class DiscoveryUgcService(BaseService):
     """User-generated content discovery data services."""
 
+    def _get_localized_asset_kwargs(self, language: str | None) -> dict[str, object]:
+        """Build request kwargs for localized asset lookups.
+
+        When a cached aiohttp-client-cache session is configured without
+        ``include_headers=True``, requests that differ only by
+        ``Accept-Language`` would otherwise share the same cache key. In that
+        case we disable cache reads and writes for the request.
+        """
+        if language is None:
+            return {}
+
+        kwargs: dict[str, object] = {"headers": {"Accept-Language": language}}
+        cache = getattr(self._session, "cache", None)
+        if cache is not None and not getattr(cache, "include_headers", False):
+            kwargs["expire_after"] = 0
+        return kwargs
+
     async def _get_asset(
         self,
         asset_type: str,
@@ -44,9 +61,7 @@ class DiscoveryUgcService(BaseService):
         language: str | None = None,
     ):
         url = f"{_HOST}/hi/{asset_type}/{asset_id}/versions/{version_id}"
-        if language is None:
-            return await self._get(url)
-        return await self._get(url, headers={"Accept-Language": language})
+        return await self._get(url, **self._get_localized_asset_kwargs(language))
 
     async def get_ugc_game_variant(
         self,
