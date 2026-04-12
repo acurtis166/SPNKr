@@ -36,69 +36,124 @@ class DiscoveryUgcService(BaseService):
     """User-generated content discovery data services."""
 
     async def _get_asset(
-        self, asset_type: str, asset_id: str | UUID, version_id: str | UUID
+        self,
+        asset_type: str,
+        asset_id: str | UUID,
+        version_id: str | UUID,
+        *,
+        language: str | None = None,
     ):
         url = f"{_HOST}/hi/{asset_type}/{asset_id}/versions/{version_id}"
-        return await self._get(url)
+        if language is None:
+            return await self._get(url)
+        return await self._get(url, headers={"Accept-Language": language})
 
     async def get_ugc_game_variant(
-        self, asset_id: str | UUID, version_id: str | UUID
+        self,
+        asset_id: str | UUID,
+        version_id: str | UUID,
+        *,
+        language: str | None = None,
     ) -> JsonResponse[UgcGameVariant]:
         """Get details about a game mode.
 
         Args:
             asset_id: The asset ID of the game variant.
             version_id: The version ID of the game variant.
+            language: Optional BCP-47 locale sent via the Accept-Language
+                header. Use this to retrieve localized PublicName and
+                Description fields.
 
         Returns:
             The game variant details.
         """
-        resp = await self._get_asset("ugcGameVariants", asset_id, version_id)
+        resp = await self._get_asset(
+            "ugcGameVariants",
+            asset_id,
+            version_id,
+            language=language,
+        )
         return JsonResponse(resp, lambda data: UgcGameVariant(**data))
 
     async def get_map_mode_pair(
-        self, asset_id: str | UUID, version_id: str | UUID
+        self,
+        asset_id: str | UUID,
+        version_id: str | UUID,
+        *,
+        language: str | None = None,
     ) -> JsonResponse[MapModePair]:
         """Get details about a map mode pair.
 
         Args:
             asset_id: The asset ID of the map mode pair.
             version_id: The version ID of the map mode pair.
+            language: Optional BCP-47 locale sent via the Accept-Language
+                header. Use this to retrieve localized PublicName and
+                Description fields.
 
         Returns:
             The map mode pair details.
         """
-        resp = await self._get_asset("mapModePairs", asset_id, version_id)
+        resp = await self._get_asset(
+            "mapModePairs",
+            asset_id,
+            version_id,
+            language=language,
+        )
         return JsonResponse(resp, lambda data: MapModePair(**data))
 
     async def get_map(
-        self, asset_id: str | UUID, version_id: str | UUID
+        self,
+        asset_id: str | UUID,
+        version_id: str | UUID,
+        *,
+        language: str | None = None,
     ) -> JsonResponse[Map]:
         """Get details about a map.
 
         Args:
             asset_id: The asset ID of the map.
             version_id: The version ID of the map.
+            language: Optional BCP-47 locale sent via the Accept-Language
+                header. Use this to retrieve localized PublicName and
+                Description fields.
 
         Returns:
             The map details.
         """
-        resp = await self._get_asset("maps", asset_id, version_id)
+        resp = await self._get_asset(
+            "maps",
+            asset_id,
+            version_id,
+            language=language,
+        )
         return JsonResponse(resp, lambda data: Map(**data))
 
     async def get_playlist(
-        self, asset_id: str | UUID, version_id: str | UUID
+        self,
+        asset_id: str | UUID,
+        version_id: str | UUID,
+        *,
+        language: str | None = None,
     ) -> JsonResponse[Playlist]:
         """Get details about a playlist.
 
         Args:
             asset_id: The asset ID of the playlist.
             version_id: The version ID of the playlist.
+            language: Optional BCP-47 locale sent via the Accept-Language
+                header. Use this to retrieve localized PublicName and
+                Description fields.
 
         Returns:
             The playlist details.
         """
-        resp = await self._get_asset("playlists", asset_id, version_id)
+        resp = await self._get_asset(
+            "playlists",
+            asset_id,
+            version_id,
+            language=language,
+        )
         return JsonResponse(resp, lambda data: Playlist(**data))
 
     async def search_assets(

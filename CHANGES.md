@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- Allow localized Discovery UGC asset lookups via an optional `language` parameter on `get_map`, `get_playlist`, `get_map_mode_pair`, and `get_ugc_game_variant`.
+
 ## [0.10.1] - 2026-01-28
 
 ### Fixed

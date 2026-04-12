@@ -49,6 +49,35 @@ async def test_get_ugc_game_variant(session, service: DiscoveryUgcService):
 
 
 @pytest.mark.asyncio
+@pytest.mark.parametrize(
+    ("method_name", "response_name", "asset_path"),
+    [
+        ("get_map_mode_pair", "get_map_mode_pair.json", "mapModePairs"),
+        ("get_playlist", "get_playlist.json", "playlists"),
+        ("get_map", "get_map.json", "maps"),
+        ("get_ugc_game_variant", "get_ugc_game_variant.json", "ugcGameVariants"),
+    ],
+)
+async def test_get_asset_with_language(
+    session,
+    service: DiscoveryUgcService,
+    method_name: str,
+    response_name: str,
+    asset_path: str,
+):
+    session.set_response(response_name)
+    method = getattr(service, method_name)
+    await method("asset_id", "version_id", language="fr-FR")
+    session.get.assert_called_with(
+        (
+            "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/"
+            f"{asset_path}/asset_id/versions/version_id"
+        ),
+        headers={"Accept-Language": "fr-FR"},
+    )
+
+
+@pytest.mark.asyncio
 async def test_search_assets_default(session, service: DiscoveryUgcService):
     session.set_response("search_assets.json")
     await service.search_assets(start=0, count=10, sort="plays_recent", order="desc")
