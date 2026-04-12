@@ -20,6 +20,15 @@ async def test_get_match_count(session, service: StatsService):
 
 
 @pytest.mark.asyncio
+async def test_get_player_decks(session, service: StatsService):
+    session.set_response("get_match_count.json")
+    await service.get_player_decks(1234567890123456)
+    session.get.assert_called_with(
+        "https://halostats.svc.halowaypoint.com:443/hi/players/xuid(1234567890123456)/decks"
+    )
+
+
+@pytest.mark.asyncio
 async def test_get_service_record(session, service: StatsService):
     session.set_response("get_service_record.json")
     await service.get_service_record(1234567890123456)

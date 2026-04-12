@@ -1,5 +1,6 @@
 """Economy/customization data services."""
 
+from typing import Any
 from typing import Literal
 
 from spnkr.models.economy import PlayerCustomization
@@ -12,6 +13,40 @@ _HOST = "https://economy.svc.halowaypoint.com:443"
 
 class EconomyService(BaseService):
     """Economy/customization data services."""
+
+    async def get_player_reward_track_operations(
+        self,
+        xuid: str | int,
+    ) -> JsonResponse[dict[str, Any]]:
+        """Get the active and available operation reward tracks for a player.
+
+        Args:
+            xuid: The Xbox Live ID of the player to retrieve data for.
+
+        Returns:
+            The raw reward track operations payload returned by the API.
+        """
+        url = f"{_HOST}/hi/players/{wrap_xuid(xuid)}/rewardtracks/operations"
+        resp = await self._get(url)
+        return JsonResponse(resp, lambda data: data)
+
+    async def get_player_career_rank(
+        self,
+        xuid: str | int,
+        reward_track_id: str = "careerrank1",
+    ) -> JsonResponse[dict[str, Any]]:
+        """Get the player's current progress on a career rank reward track.
+
+        Args:
+            xuid: The Xbox Live ID of the player to retrieve data for.
+            reward_track_id: The career rank reward track identifier.
+
+        Returns:
+            The raw career rank progress payload returned by the API.
+        """
+        url = f"{_HOST}/hi/players/{wrap_xuid(xuid)}/rewardtracks/careerranks/{reward_track_id}"
+        resp = await self._get(url)
+        return JsonResponse(resp, lambda data: data)
 
     async def get_player_customization(
         self,

@@ -1,5 +1,7 @@
 """Game content management data services."""
 
+from typing import Any
+
 from spnkr.models.gamecms_hacs import (
     CareerRewardTrack,
     CsrSeasonCalendar,
@@ -14,6 +16,22 @@ _HOST = "https://gamecms-hacs.svc.halowaypoint.com"
 
 class GameCmsHacsService(BaseService):
     """Game content management data services."""
+
+    async def get_progression_file(
+        self,
+        relative_path: str,
+    ) -> JsonResponse[dict[str, Any]]:
+        """Get a raw progression file from the GameCMS service.
+
+        Args:
+            relative_path: The relative path to the progression file.
+
+        Returns:
+            The raw JSON payload for the requested progression file.
+        """
+        url = f"{_HOST}/hi/Progression/file/{relative_path.lstrip('/')}"
+        resp = await self._get(url)
+        return JsonResponse(resp, lambda data: data)
 
     async def get_medal_metadata(self) -> JsonResponse[MedalMetadata]:
         """Get details for all medals obtainable in the game.
