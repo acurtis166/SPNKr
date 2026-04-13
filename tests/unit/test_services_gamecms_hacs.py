@@ -29,6 +29,22 @@ async def test_get_progression_file(session, service: GameCmsHacsService):
 
 
 @pytest.mark.asyncio
+async def test_get_operation_reward_track(session, service: GameCmsHacsService):
+    session.set_response("get_operation_reward_track.json")
+    response = await service.get_operation_reward_track(
+        "RewardTracks/Operations/S05OpPassM01.json"
+    )
+    payload = await response.parse()
+
+    assert payload.total_ranks == 6
+    assert payload.name is not None
+    assert payload.name.value == "Combined Arms"
+    session.get.assert_called_with(
+        "https://gamecms-hacs.svc.halowaypoint.com/hi/Progression/file/RewardTracks/Operations/S05OpPassM01.json"
+    )
+
+
+@pytest.mark.asyncio
 async def test_get_csr_season_calendar(session, service: GameCmsHacsService):
     session.set_response("get_csr_season_calendar.json")
     await service.get_csr_season_calendar()

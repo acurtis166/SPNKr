@@ -6,6 +6,7 @@ from spnkr.models.gamecms_hacs import (
     CareerRewardTrack,
     CsrSeasonCalendar,
     MedalMetadata,
+    OperationRewardTrack,
     SeasonCalendar,
 )
 from spnkr.responses import ImageResponse, JsonResponse
@@ -77,6 +78,23 @@ class GameCmsHacsService(BaseService):
         url = f"{_HOST}/hi/Progression/file/RewardTracks/CareerRanks/careerRank1.json"
         resp = await self._get(url)
         return JsonResponse(resp, lambda data: CareerRewardTrack(**data))
+
+    async def get_operation_reward_track(
+        self,
+        reward_track_path: str,
+    ) -> JsonResponse[OperationRewardTrack]:
+        """Get details for a single operation reward track.
+
+        Args:
+            reward_track_path: The relative path to the operation reward track
+                file, such as "RewardTracks/Operations/S05OpPassM01.json".
+
+        Returns:
+            The operation reward track definition.
+        """
+        url = f"{_HOST}/hi/Progression/file/{reward_track_path.lstrip('/')}"
+        resp = await self._get(url)
+        return JsonResponse(resp, lambda data: OperationRewardTrack(**data))
 
     async def get_image(self, relative_path: str) -> ImageResponse:
         """Get an image from the game content management service.

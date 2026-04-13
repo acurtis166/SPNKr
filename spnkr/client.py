@@ -1,5 +1,6 @@
 """Provides a client for the Halo Infinite API."""
 
+import asyncio
 from functools import cached_property
 from typing import TYPE_CHECKING
 
@@ -15,6 +16,7 @@ from spnkr.services import (
     SkillService,
     StatsService,
 )
+from spnkr.models.economy import OperationPassSummary
 
 __all__ = ["HaloInfiniteClient"]
 
@@ -60,6 +62,87 @@ class HaloInfiniteClient:
             "343-clearance": clearance_token,
         }
         self._session.headers.update(update)
+
+    async def get_operation_passes(
+        self,
+        player: str | int,
+        *,
+        language: str | None = None,
+    ) -> tuple[OperationPassSummary, ...]:
+        """Get summarized operation pass progress for a player.
+
+        This helper combines live Economy progress with static GameCMS reward
+        track metadata.
+
+        Args:
+            player: Xbox Live ID or gamertag of the player to retrieve data
+                for.
+            language: Optional BCP-47 locale used to select translated names
+                and descriptions from the GameCMS metadata when available.
+
+        Returns:
+            The player's available operation passes with summarized progress.
+        """
+        operations = await (await self.economy.get_player_reward_track_operations(player)).parse()
+        track_definitions = await asyncio.gather(
+            *(
+                self._get_operation_reward_track_definition(operation.reward_track_path)
+                for operation in operations.operation_reward_tracks
+            )
+        )
+        return tuple(
+            OperationPassSummary.from_models(
+                operation,
+                definition,
+                is_active=(
+                    operation.reward_track_path == operations.active_operation_reward_track_path
+                ),
+                language=language,
+            )
+            for operation, definition in zip(
+                operations.operation_reward_tracks,
+                track_definitions,
+            )
+        )
+
+    async def get_active_operation_pass(
+        self,
+        player: str | int,
+        *,
+        language: str | None = None,
+    ) -> OperationPassSummary | None:
+        """Get summarized progress for the player's active operation pass.
+
+        Args:
+            player: Xbox Live ID or gamertag of the player to retrieve data
+                for.
+            language: Optional BCP-47 locale used to select translated names
+                and descriptions from the GameCMS metadata when available.
+
+        Returns:
+            The active operation pass summary, if one is available.
+        """
+        operations = await (await self.economy.get_player_reward_track_operations(player)).parse()
+        active_operation = operations.active
+        if active_operation is None:
+            return None
+        definition = await self._get_operation_reward_track_definition(
+            active_operation.reward_track_path
+        )
+        return OperationPassSummary.from_models(
+            active_operation,
+            definition,
+            is_active=True,
+            language=language,
+        )
+
+    async def _get_operation_reward_track_definition(self, reward_track_path: str):
+        try:
+            return await (
+                await self.gamecms_hacs.get_operation_reward_track(reward_track_path)
+            ).parse()
+        except Exception:
+            return None
 
     @cached_property
     def profile(self) -> ProfileService:
