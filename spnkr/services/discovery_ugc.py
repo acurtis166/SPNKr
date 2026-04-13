@@ -1,6 +1,7 @@
 """User-generated content discovery data services."""
 
 import datetime as dt
+import warnings
 from typing import Iterable, Literal
 from uuid import UUID
 
@@ -49,6 +50,15 @@ class DiscoveryUgcService(BaseService):
         kwargs: dict[str, object] = {"headers": {"Accept-Language": language}}
         cache = getattr(self._session, "cache", None)
         if cache is not None and not getattr(cache, "include_headers", False):
+            warnings.warn(
+                "Localized Discovery UGC requests are using a cached session "
+                "without include_headers=True. Caching is disabled for this "
+                "request; configure aiohttp-client-cache with "
+                "include_headers=True to cache Accept-Language variants "
+                "safely.",
+                UserWarning,
+                stacklevel=4,
+            )
             kwargs["expire_after"] = 0
         return kwargs
 

@@ -1,8 +1,7 @@
 """Stats data services."""
 
-from typing import Any
 import warnings
-from typing import Literal
+from typing import Any, Literal
 from uuid import UUID
 
 from spnkr.models.refdata import GameplayInteraction, GameVariantCategory
@@ -14,7 +13,6 @@ from spnkr.models.stats import (
 )
 from spnkr.responses import JsonResponse
 from spnkr.services.base import BaseService
-from spnkr.xuid import wrap_xuid
 from spnkr.xuid import wrap_xuid_or_gamertag
 
 _HOST = "https://halostats.svc.halowaypoint.com:443"
@@ -33,16 +31,22 @@ _VALID_SERVICE_RECORD_FILTER_SETS = [
 class StatsService(BaseService):
     """Stats data services."""
 
-    async def get_player_decks(self, xuid: str | int) -> JsonResponse[dict[str, Any]]:
+    async def get_challenge_decks(
+        self, player: str | int
+    ) -> JsonResponse[dict[str, Any]]:
         """Get the current challenge decks assigned to a player.
 
         Args:
-            xuid: The Xbox Live ID of the player to retrieve data for.
+            player: Xbox Live ID or gamertag of the player to retrieve data
+                for. Examples of valid inputs include
+                "xuid(1234567890123456)", "1234567890123456",
+                1234567890123456, and "MyGamertag".
 
         Returns:
             The raw decks payload returned by the API.
         """
-        url = f"{_HOST}/hi/players/{wrap_xuid(xuid)}/decks"
+        xuid_or_gamertag = wrap_xuid_or_gamertag(player)
+        url = f"{_HOST}/hi/players/{xuid_or_gamertag}/decks"
         resp = await self._get(url)
         return JsonResponse(resp, lambda data: data)
 

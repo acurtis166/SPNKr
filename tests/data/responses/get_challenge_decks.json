@@ -1,0 +1,17 @@
+{
+  "Decks": [
+    {
+      "DeckId": "weekly-challenges",
+      "Title": "Weekly Challenges",
+      "Challenges": [
+        {
+          "Id": "weekly-win-matches",
+          "Description": "Win matchmaking matches.",
+          "CurrentProgress": 1,
+          "GoalProgress": 3
+        }
+      ]
+    }
+  ],
+  "CapstoneDeckId": "ultimate-weekly"
+}
