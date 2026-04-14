@@ -47,53 +47,6 @@ def test_client_services(client: HaloInfiniteClient):
 
 
 @pytest.mark.asyncio
-async def test_client_get_active_operation_pass(session, client: HaloInfiniteClient):
-    session.set_responses(
-        "get_player_reward_track_operations.json",
-        "get_operation_reward_track.json",
-    )
-
-    operation_pass = await client.get_active_operation_pass("MyGamertag")
-
-    assert operation_pass is not None
-    assert operation_pass.is_active
-    assert operation_pass.track_id == "S05OpPassM01"
-    assert operation_pass.name == "Combined Arms"
-    assert operation_pass.last_unlocked_rank == 5
-    assert operation_pass.next_rank == 6
-    assert operation_pass.progress_fraction == 0.25
-    assert operation_pass.status == "in_progress"
-    assert [call.args[0] for call in session.get.await_args_list] == [
-        "https://economy.svc.halowaypoint.com:443/hi/players/MyGamertag/rewardtracks/operations",
-        "https://gamecms-hacs.svc.halowaypoint.com/hi/Progression/file/RewardTracks/Operations/S05OpPassM01.json",
-    ]
-
-
-@pytest.mark.asyncio
-async def test_client_get_operation_passes(session, client: HaloInfiniteClient):
-    session.set_responses(
-        "get_player_reward_track_operations.json",
-        "get_operation_reward_track.json",
-        "get_operation_reward_track.json",
-        "get_operation_reward_track.json",
-    )
-
-    operation_passes = await client.get_operation_passes("MyGamertag")
-
-    assert [operation_pass.track_id for operation_pass in operation_passes] == [
-        "S05OpPassL01",
-        "S05OpPassM01",
-        "S05OpPassM02",
-    ]
-    assert [operation_pass.status for operation_pass in operation_passes] == [
-        "completed",
-        "in_progress",
-        "not_started",
-    ]
-    assert operation_passes[1].is_active
-
-
-@pytest.mark.asyncio
 async def test_client_requests_per_second_multiple_services(
     client: HaloInfiniteClient,
 ):
