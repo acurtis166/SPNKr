@@ -2,7 +2,7 @@
 
 import datetime as dt
 
-from pydantic import Field
+from pydantic import ConfigDict, Field
 
 from spnkr.models.base import CamelCaseModel, PascalCaseModel
 from spnkr.models.refdata import MedalDifficulty, MedalNameId, MedalType
@@ -306,3 +306,40 @@ class CareerRewardTrack(PascalCaseModel, frozen=True):
     summary_image_path: str
     week_number: None
     xp_per_rank: int
+
+
+class _ExtraPascalCaseModel(PascalCaseModel, frozen=True):
+    model_config = ConfigDict(
+        alias_generator=PascalCaseModel.model_config["alias_generator"],
+        populate_by_name=True,
+        extra="allow",
+    )
+
+
+class OperationRewardTrackRank(_ExtraPascalCaseModel, frozen=True):
+    rank: int
+    free_rewards: RankRewards
+    paid_rewards: RankRewards
+
+    @property
+    def has_rewards(self) -> bool:
+        return bool(
+            self.free_rewards.inventory_rewards
+            or self.free_rewards.currency_rewards
+            or self.paid_rewards.inventory_rewards
+            or self.paid_rewards.currency_rewards
+        )
+
+
+class OperationRewardTrack(_ExtraPascalCaseModel, frozen=True):
+    track_id: str | None = None
+    ranks: tuple[OperationRewardTrackRank, ...]
+    name: TranslatableStringWithStatus | None = None
+    description: TranslatableStringWithStatus | None = None
+    xp_per_rank: int | None = None
+    battle_pass_image: str | None = None
+    background_image_path: str | None = None
+
+    @property
+    def total_ranks(self) -> int:
+        return max((rank.rank for rank in self.ranks), default=0)

@@ -1,0 +1,32 @@
+{
+  "ActiveOperationRewardTrackPath": "RewardTracks/Operations/S05OpPassM01.json",
+  "OperationRewardTracks": [
+    {
+      "RewardTrackPath": "RewardTracks/Operations/S05OpPassL01.json",
+      "IsOwned": true,
+      "CurrentProgress": {
+        "Rank": 6,
+        "PartialProgress": 0,
+        "HasReachedMaxRank": true
+      }
+    },
+    {
+      "RewardTrackPath": "RewardTracks/Operations/S05OpPassM01.json",
+      "IsOwned": true,
+      "CurrentProgress": {
+        "Rank": 5,
+        "PartialProgress": 250,
+        "HasReachedMaxRank": false
+      }
+    },
+    {
+      "RewardTrackPath": "RewardTracks/Operations/S05OpPassM02.json",
+      "IsOwned": false,
+      "CurrentProgress": {
+        "Rank": 0,
+        "PartialProgress": 0,
+        "HasReachedMaxRank": false
+      }
+    }
+  ]
+}

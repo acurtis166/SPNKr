@@ -20,6 +20,19 @@ async def test_get_match_count(session, service: StatsService):
 
 
 @pytest.mark.asyncio
+async def test_get_challenge_decks(session, service: StatsService):
+    session.set_response("get_challenge_decks.json")
+    response = await service.get_challenge_decks("MyGamertag")
+    payload = await response.parse()
+
+    assert payload["CapstoneDeckId"] == "ultimate-weekly"
+    assert payload["Decks"][0]["Challenges"][0]["Id"] == "weekly-win-matches"
+    session.get.assert_called_with(
+        "https://halostats.svc.halowaypoint.com:443/hi/players/MyGamertag/decks"
+    )
+
+
+@pytest.mark.asyncio
 async def test_get_service_record(session, service: StatsService):
     session.set_response("get_service_record.json")
     await service.get_service_record(1234567890123456)

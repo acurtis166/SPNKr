@@ -1,0 +1,92 @@
+{
+  "Name": {
+    "status": "Published",
+    "value": "Combined Arms",
+    "translations": {
+      "fr-FR": "Armes combinees"
+    }
+  },
+  "Description": {
+    "status": "Published",
+    "value": "Earn rewards during the operation.",
+    "translations": {
+      "fr-FR": "Gagnez des recompenses pendant l operation."
+    }
+  },
+  "XpPerRank": 1000,
+  "BattlePassImage": "progression/operations/combined_arms.png",
+  "BackgroundImagePath": "progression/operations/combined_arms_background.png",
+  "Ranks": [
+    {
+      "Rank": 1,
+      "FreeRewards": {
+        "InventoryRewards": [],
+        "CurrencyRewards": []
+      },
+      "PaidRewards": {
+        "InventoryRewards": [],
+        "CurrencyRewards": []
+      }
+    },
+    {
+      "Rank": 2,
+      "FreeRewards": {
+        "InventoryRewards": [],
+        "CurrencyRewards": []
+      },
+      "PaidRewards": {
+        "InventoryRewards": [],
+        "CurrencyRewards": []
+      }
+    },
+    {
+      "Rank": 3,
+      "FreeRewards": {
+        "InventoryRewards": [],
+        "CurrencyRewards": []
+      },
+      "PaidRewards": {
+        "InventoryRewards": [],
+        "CurrencyRewards": []
+      }
+    },
+    {
+      "Rank": 4,
+      "FreeRewards": {
+        "InventoryRewards": [],
+        "CurrencyRewards": []
+      },
+      "PaidRewards": {
+        "InventoryRewards": [],
+        "CurrencyRewards": []
+      }
+    },
+    {
+      "Rank": 5,
+      "FreeRewards": {
+        "InventoryRewards": [],
+        "CurrencyRewards": []
+      },
+      "PaidRewards": {
+        "InventoryRewards": [],
+        "CurrencyRewards": []
+      }
+    },
+    {
+      "Rank": 6,
+      "FreeRewards": {
+        "InventoryRewards": [],
+        "CurrencyRewards": [
+          {
+            "CurrencyPath": "Currency/xpboost.json",
+            "Amount": 1
+          }
+        ]
+      },
+      "PaidRewards": {
+        "InventoryRewards": [],
+        "CurrencyRewards": []
+      }
+    }
+  ]
+}

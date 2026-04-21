@@ -1,7 +1,7 @@
 """Stats data services."""
 
 import warnings
-from typing import Literal
+from typing import Any, Literal
 from uuid import UUID
 
 from spnkr.models.refdata import GameplayInteraction, GameVariantCategory
@@ -30,6 +30,25 @@ _VALID_SERVICE_RECORD_FILTER_SETS = [
 
 class StatsService(BaseService):
     """Stats data services."""
+
+    async def get_challenge_decks(
+        self, player: str | int
+    ) -> JsonResponse[dict[str, Any]]:
+        """Get the current challenge decks assigned to a player.
+
+        Args:
+            player: Xbox Live ID or gamertag of the player to retrieve data
+                for. Examples of valid inputs include
+                "xuid(1234567890123456)", "1234567890123456",
+                1234567890123456, and "MyGamertag".
+
+        Returns:
+            The raw decks payload returned by the API.
+        """
+        xuid_or_gamertag = wrap_xuid_or_gamertag(player)
+        url = f"{_HOST}/hi/players/{xuid_or_gamertag}/decks"
+        resp = await self._get(url)
+        return JsonResponse(resp, lambda data: data)
 
     async def get_match_count(self, player: str | int) -> JsonResponse[MatchCount]:
         """Get match counts across different game experiences for a player.

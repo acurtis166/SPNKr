@@ -2,6 +2,19 @@
 
 ## [Unreleased]
 
+### Added
+
+- Add player progression helpers for Economy, Stats, and GameCMS endpoints:
+    `get_player_reward_track_operations()`, `get_player_career_rank()`,
+    `get_challenge_decks()`, and `get_progression_file()`.
+- Allow localized Discovery UGC asset lookups via an optional `language` parameter on `get_map`, `get_playlist`, `get_map_mode_pair`, and `get_ugc_game_variant`.
+- Add typed operation pass models `PlayerOperationPass`, `PlayerOperationPasses`, and `PlayerCareerRank` for player reward track progress.
+- Add `get_operation_reward_track()` to `GameCmsHacsService`.
+
+### Changed
+
+- Emit a `UserWarning` and bypass cache for localized Discovery UGC requests when using a cached session without `include_headers=True`.
+
 ## [0.10.1] - 2026-01-28
 
 ### Fixed

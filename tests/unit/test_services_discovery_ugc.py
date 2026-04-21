@@ -1,6 +1,7 @@
 """Test DiscoveryUgcService."""
 
 import datetime as dt
+from types import SimpleNamespace
 
 import pytest
 
@@ -45,6 +46,65 @@ async def test_get_ugc_game_variant(session, service: DiscoveryUgcService):
     await service.get_ugc_game_variant("asset_id", "version_id")
     session.get.assert_called_with(
         "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/ugcGameVariants/asset_id/versions/version_id"
+    )
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize(
+    ("method_name", "response_name", "asset_path"),
+    [
+        ("get_map_mode_pair", "get_map_mode_pair.json", "mapModePairs"),
+        ("get_playlist", "get_playlist.json", "playlists"),
+        ("get_map", "get_map.json", "maps"),
+        ("get_ugc_game_variant", "get_ugc_game_variant.json", "ugcGameVariants"),
+    ],
+)
+async def test_get_asset_with_language(
+    session,
+    service: DiscoveryUgcService,
+    method_name: str,
+    response_name: str,
+    asset_path: str,
+):
+    session.set_response(response_name)
+    method = getattr(service, method_name)
+    await method("asset_id", "version_id", language="fr-FR")
+    session.get.assert_called_with(
+        (
+            "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/"
+            f"{asset_path}/asset_id/versions/version_id"
+        ),
+        headers={"Accept-Language": "fr-FR"},
+    )
+
+
+@pytest.mark.asyncio
+async def test_get_asset_with_language_disables_cache_without_header_keys(
+    session,
+    service: DiscoveryUgcService,
+):
+    session.cache = SimpleNamespace(include_headers=False)
+    session.set_response("get_map.json")
+    with pytest.warns(UserWarning, match="include_headers=True"):
+        await service.get_map("asset_id", "version_id", language="fr-FR")
+    session.get.assert_called_with(
+        "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/maps/asset_id/versions/version_id",
+        headers={"Accept-Language": "fr-FR"},
+        expire_after=0,
+    )
+
+
+@pytest.mark.asyncio
+async def test_get_asset_with_language_keeps_cache_when_headers_are_keyed(
+    session,
+    service: DiscoveryUgcService,
+):
+    session.cache = SimpleNamespace(include_headers=True)
+    session.set_response("get_map.json")
+    await service.get_map("asset_id", "version_id", language="fr-FR")
+    session.get.assert_called_with(
+        "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/maps/asset_id/versions/version_id",
+        headers={"Accept-Language": "fr-FR"},
     )
 
 

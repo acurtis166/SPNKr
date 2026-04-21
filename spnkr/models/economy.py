@@ -165,3 +165,88 @@ class PlayerCustomization(PascalCaseModel, frozen=True):
     weapon_cores: WeaponCores
     ai_cores: AiCores
     vehicle_cores: VehicleCores
+
+
+class _ExtraPascalCaseModel(PascalCaseModel, frozen=True):
+    model_config = ConfigDict(
+        alias_generator=PascalCaseModel.model_config["alias_generator"],
+        populate_by_name=True,
+        extra="allow",
+    )
+
+
+class RewardTrackProgress(_ExtraPascalCaseModel, frozen=True):
+    rank: int = 0
+    partial_progress: int = 0
+    has_reached_max_rank: bool = False
+    is_owned: bool | None = None
+
+
+class PlayerOperationPass(_ExtraPascalCaseModel, frozen=True):
+    reward_track_path: str
+    current_progress: RewardTrackProgress = Field(default_factory=RewardTrackProgress)
+    is_owned: bool = False
+
+    @property
+    def track_id(self) -> str:
+        return self.reward_track_path.rsplit("/", 1)[-1].removesuffix(".json")
+
+    @property
+    def last_unlocked_rank(self) -> int:
+        return self.current_progress.rank
+
+    @property
+    def partial_progress(self) -> int:
+        return self.current_progress.partial_progress
+
+    @property
+    def has_reached_max_rank(self) -> bool:
+        return self.current_progress.has_reached_max_rank
+
+    @property
+    def is_completed(self) -> bool:
+        return self.has_reached_max_rank
+
+    @property
+    def is_not_started(self) -> bool:
+        return not self.is_completed and self.last_unlocked_rank == 0 and self.partial_progress == 0
+
+    @property
+    def is_in_progress(self) -> bool:
+        return not self.is_completed and not self.is_not_started
+
+
+class PlayerOperationPasses(_ExtraPascalCaseModel, frozen=True):
+    active_operation_reward_track_path: str | None = None
+    operation_reward_tracks: tuple[PlayerOperationPass, ...] = ()
+
+    @property
+    def active(self) -> PlayerOperationPass | None:
+        if self.active_operation_reward_track_path is None:
+            return None
+        return next(
+            (
+                operation
+                for operation in self.operation_reward_tracks
+                if operation.reward_track_path == self.active_operation_reward_track_path
+            ),
+            None,
+        )
+
+    @property
+    def completed(self) -> tuple[PlayerOperationPass, ...]:
+        return tuple(operation for operation in self.operation_reward_tracks if operation.is_completed)
+
+    @property
+    def not_started(self) -> tuple[PlayerOperationPass, ...]:
+        return tuple(operation for operation in self.operation_reward_tracks if operation.is_not_started)
+
+    @property
+    def in_progress(self) -> tuple[PlayerOperationPass, ...]:
+        return tuple(operation for operation in self.operation_reward_tracks if operation.is_in_progress)
+
+
+class PlayerCareerRank(_ExtraPascalCaseModel, frozen=True):
+    current_progress: RewardTrackProgress = Field(default_factory=RewardTrackProgress)
+    spartan_id: str | None = None
+
