@@ -153,3 +153,39 @@ async def test_match_stats(client):
 async def test_get_player_customization(client):
     resp = await client.economy.get_player_customization(xuid=2535445291321133)
     await resp.parse()
+
+
+@pytest.mark.asyncio(loop_scope="session")
+async def test_get_player_reward_track_operations(client):
+    resp = await client.economy.get_player_reward_track_operations(
+        xuid=2535445291321133
+    )
+    await resp.parse()
+
+
+@pytest.mark.asyncio(loop_scope="session")
+async def test_get_player_career_rank(client):
+    resp = await client.economy.get_player_career_rank(xuid=2535445291321133)
+    await resp.parse()
+
+
+@pytest.mark.asyncio(loop_scope="session")
+async def test_get_progression_file(client):
+    resp = await client.gamecms_hacs.get_progression_file(
+        relative_path="RewardTracks/CareerRanks/careerRank1.json"
+    )
+    await resp.parse()
+
+
+@pytest.mark.asyncio(loop_scope="session")
+async def test_get_operation_reward_track(client):
+    resp = await client.gamecms_hacs.get_operation_reward_track(
+        reward_track_path="RewardTracks/Operations/S05OpPassM01.json"
+    )
+    await resp.parse()
+
+
+@pytest.mark.asyncio(loop_scope="session")
+async def test_get_challenge_decks(client):
+    resp = await client.stats.get_challenge_decks(player="aCurtis X89")
+    await resp.parse()
