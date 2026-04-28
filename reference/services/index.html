@@ -446,9 +446,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#spnkr.services.EconomyService.get_player_career_rank" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_player_career_rank
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#spnkr.services.EconomyService.get_player_customization" class="md-nav__link">
     <span class="md-ellipsis">
       get_player_customization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.services.EconomyService.get_player_reward_track_operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_player_reward_track_operations
     </span>
   </a>
   
@@ -500,6 +518,24 @@
   <a href="#spnkr.services.GameCmsHacsService.get_medal_metadata" class="md-nav__link">
     <span class="md-ellipsis">
       get_medal_metadata
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.services.GameCmsHacsService.get_operation_reward_track" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_operation_reward_track
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.services.GameCmsHacsService.get_progression_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_progression_file
     </span>
   </a>
   
@@ -612,6 +648,15 @@
   
     <nav class="md-nav" aria-label="StatsService">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.services.StatsService.get_challenge_decks" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_challenge_decks
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#spnkr.services.StatsService.get_match_count" class="md-nav__link">
@@ -900,9 +945,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#spnkr.services.EconomyService.get_player_career_rank" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_player_career_rank
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#spnkr.services.EconomyService.get_player_customization" class="md-nav__link">
     <span class="md-ellipsis">
       get_player_customization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.services.EconomyService.get_player_reward_track_operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_player_reward_track_operations
     </span>
   </a>
   
@@ -954,6 +1017,24 @@
   <a href="#spnkr.services.GameCmsHacsService.get_medal_metadata" class="md-nav__link">
     <span class="md-ellipsis">
       get_medal_metadata
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.services.GameCmsHacsService.get_operation_reward_track" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_operation_reward_track
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spnkr.services.GameCmsHacsService.get_progression_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_progression_file
     </span>
   </a>
   
@@ -1068,6 +1149,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#spnkr.services.StatsService.get_challenge_decks" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_challenge_decks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#spnkr.services.StatsService.get_match_count" class="md-nav__link">
     <span class="md-ellipsis">
       get_match_count
@@ -1146,7 +1236,9 @@
 
 
 
-  <div class="doc doc-children">
+
+<div class="doc doc-children">
+
 
 
 
@@ -1168,6 +1260,7 @@
     <div class="doc doc-contents ">
 
 
+
         <p>User-generated content discovery data services.</p>
 
 
@@ -1179,7 +1272,9 @@
 
 
 
-  <div class="doc doc-children">
+
+<div class="doc doc-children">
+
 
 
 
@@ -1273,7 +1368,7 @@
 
 
 <h3 id="spnkr.services.DiscoveryUgcService.get_map" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">get_map</span><span class="p">(</span><span class="n">asset_id</span><span class="p">,</span> <span class="n">version_id</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">get_map</span><span class="p">(</span><span class="n">asset_id</span><span class="p">,</span> <span class="n">version_id</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -1330,6 +1425,24 @@
                 <em>required</em>
             </td>
           </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>language</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional BCP-47 locale sent via the Accept-Language
+header. Use this to retrieve localized PublicName and
+Description fields.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
       </tbody>
     </table>
 
@@ -1369,7 +1482,7 @@
 
 
 <h3 id="spnkr.services.DiscoveryUgcService.get_map_mode_pair" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">get_map_mode_pair</span><span class="p">(</span><span class="n">asset_id</span><span class="p">,</span> <span class="n">version_id</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">get_map_mode_pair</span><span class="p">(</span><span class="n">asset_id</span><span class="p">,</span> <span class="n">version_id</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -1426,6 +1539,24 @@
                 <em>required</em>
             </td>
           </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>language</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional BCP-47 locale sent via the Accept-Language
+header. Use this to retrieve localized PublicName and
+Description fields.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
       </tbody>
     </table>
 
@@ -1465,7 +1596,7 @@
 
 
 <h3 id="spnkr.services.DiscoveryUgcService.get_playlist" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">get_playlist</span><span class="p">(</span><span class="n">asset_id</span><span class="p">,</span> <span class="n">version_id</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">get_playlist</span><span class="p">(</span><span class="n">asset_id</span><span class="p">,</span> <span class="n">version_id</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -1522,6 +1653,24 @@
                 <em>required</em>
             </td>
           </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>language</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional BCP-47 locale sent via the Accept-Language
+header. Use this to retrieve localized PublicName and
+Description fields.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
       </tbody>
     </table>
 
@@ -1561,7 +1710,7 @@
 
 
 <h3 id="spnkr.services.DiscoveryUgcService.get_ugc_game_variant" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">get_ugc_game_variant</span><span class="p">(</span><span class="n">asset_id</span><span class="p">,</span> <span class="n">version_id</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">get_ugc_game_variant</span><span class="p">(</span><span class="n">asset_id</span><span class="p">,</span> <span class="n">version_id</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -1616,6 +1765,24 @@
             </td>
             <td>
                 <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>language</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional BCP-47 locale sent via the Accept-Language
+header. Use this to retrieve localized PublicName and
+Description fields.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
             </td>
           </tr>
       </tbody>
@@ -1990,6 +2157,7 @@ Optional.</p>
     <div class="doc doc-contents ">
 
 
+
         <p>Economy/customization data services.</p>
 
 
@@ -2001,7 +2169,8 @@ Optional.</p>
 
 
 
-  <div class="doc doc-children">
+
+<div class="doc doc-children">
 
 
 
@@ -2010,6 +2179,105 @@ Optional.</p>
 
 
 
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="spnkr.services.EconomyService.get_player_career_rank" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_player_career_rank</span><span class="p">(</span><span class="n">xuid</span><span class="p">,</span> <span class="n">reward_track_id</span><span class="o">=</span><span class="s1">&#39;careerrank1&#39;</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get the player's current progress on a career rank reward track.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>xuid</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span> | <span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The Xbox Live ID of the player to retrieve data for.
+Examples of valid inputs include "xuid(1234567890123456)",
+"1234567890123456", and 1234567890123456.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>reward_track_id</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The career rank reward track identifier.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;careerrank1&#39;</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="JsonResponse(response, _parser)
+
+  
+      dataclass
+   (spnkr.responses.JsonResponse)" href="../responses/#spnkr.responses.JsonResponse">JsonResponse</a>[<span title="spnkr.models.economy.PlayerCareerRank">PlayerCareerRank</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The player's current career rank progress.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
 
 <div class="doc doc-object doc-function">
 
@@ -2110,6 +2378,88 @@ not visible using the "public" view type.</p>
 
 </div>
 
+<div class="doc doc-object doc-function">
+
+
+<h3 id="spnkr.services.EconomyService.get_player_reward_track_operations" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_player_reward_track_operations</span><span class="p">(</span><span class="n">xuid</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get the active and available operation reward tracks for a player.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>xuid</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span> | <span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The Xbox Live ID of the player to retrieve data for.
+Examples of valid inputs include "xuid(1234567890123456)",
+"1234567890123456", and 1234567890123456.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="JsonResponse(response, _parser)
+
+  
+      dataclass
+   (spnkr.responses.JsonResponse)" href="../responses/#spnkr.responses.JsonResponse">JsonResponse</a>[<span title="spnkr.models.economy.PlayerOperationPasses">PlayerOperationPasses</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The player's active and available operation reward tracks.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
 
 
   </div>
@@ -2131,6 +2481,7 @@ not visible using the "public" view type.</p>
     <div class="doc doc-contents ">
 
 
+
         <p>Game content management data services.</p>
 
 
@@ -2142,7 +2493,9 @@ not visible using the "public" view type.</p>
 
 
 
-  <div class="doc doc-children">
+
+<div class="doc doc-children">
+
 
 
 
@@ -2384,6 +2737,167 @@ not visible using the "public" view type.</p>
 <div class="doc doc-object doc-function">
 
 
+<h3 id="spnkr.services.GameCmsHacsService.get_operation_reward_track" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_operation_reward_track</span><span class="p">(</span><span class="n">reward_track_path</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get details for a single operation reward track.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>reward_track_path</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The relative path to the operation reward track
+file, such as "RewardTracks/Operations/S05OpPassM01.json".</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="JsonResponse(response, _parser)
+
+  
+      dataclass
+   (spnkr.responses.JsonResponse)" href="../responses/#spnkr.responses.JsonResponse">JsonResponse</a>[<span title="spnkr.models.gamecms_hacs.OperationRewardTrack">OperationRewardTrack</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The operation reward track definition.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="spnkr.services.GameCmsHacsService.get_progression_file" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_progression_file</span><span class="p">(</span><span class="n">relative_path</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get a raw progression file from the GameCMS service.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>relative_path</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The relative path to the progression file.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="JsonResponse(response, _parser)
+
+  
+      dataclass
+   (spnkr.responses.JsonResponse)" href="../responses/#spnkr.responses.JsonResponse">JsonResponse</a>[<span title="dict">dict</span>[<span title="str">str</span>, <span title="typing.Any">Any</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The raw JSON payload for the requested progression file.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="spnkr.services.GameCmsHacsService.get_season_calendar" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">get_season_calendar</span><span class="p">()</span></code>
 
@@ -2453,6 +2967,7 @@ rewards from the XP earned by playing the game.</p>
     <div class="doc doc-contents ">
 
 
+
         <p>Profile data services.</p>
 
 
@@ -2464,7 +2979,9 @@ rewards from the XP earned by playing the game.</p>
 
 
 
-  <div class="doc doc-children">
+
+<div class="doc doc-children">
+
 
 
 
@@ -2807,6 +3324,7 @@ rewards from the XP earned by playing the game.</p>
     <div class="doc doc-contents ">
 
 
+
         <p>Skill data services.</p>
 
 
@@ -2818,7 +3336,9 @@ rewards from the XP earned by playing the game.</p>
 
 
 
-  <div class="doc doc-children">
+
+<div class="doc doc-children">
+
 
 
 
@@ -3128,6 +3648,7 @@ and ".json" extension will be removed. Case is not important.</p>
     <div class="doc doc-contents ">
 
 
+
         <p>Stats data services.</p>
 
 
@@ -3139,7 +3660,8 @@ and ".json" extension will be removed. Case is not important.</p>
 
 
 
-  <div class="doc doc-children">
+
+<div class="doc doc-children">
 
 
 
@@ -3148,6 +3670,90 @@ and ".json" extension will be removed. Case is not important.</p>
 
 
 
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="spnkr.services.StatsService.get_challenge_decks" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_challenge_decks</span><span class="p">(</span><span class="n">player</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get the current challenge decks assigned to a player.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>player</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span> | <span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Xbox Live ID or gamertag of the player to retrieve data
+for. Examples of valid inputs include
+"xuid(1234567890123456)", "1234567890123456",
+1234567890123456, and "MyGamertag".</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="JsonResponse(response, _parser)
+
+  
+      dataclass
+   (spnkr.responses.JsonResponse)" href="../responses/#spnkr.responses.JsonResponse">JsonResponse</a>[<span title="dict">dict</span>[<span title="str">str</span>, <span title="typing.Any">Any</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The raw decks payload returned by the API.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
 
 <div class="doc doc-object doc-function">
 
