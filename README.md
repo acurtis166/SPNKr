@@ -142,6 +142,31 @@ moments such as kills, deaths, medals, and mode-specific events.
 
 ![Theater timeline highlight-event markers](assets/highlight_events_timeline.png)
 
+Here is a minimal example script to dump highlight events for a match to JSON.
+
+```python
+import asyncio
+import json
+
+from aiohttp import ClientSession
+from spnkr import HaloInfiniteClient, film
+
+
+async def main():
+    async with ClientSession() as session:
+        client = HaloInfiniteClient(
+            session, spartan_token="SPARTAN_TOKEN", clearance_token=""
+        )
+        events = await film.read_highlight_events(client, match_id="MATCH_GUID")
+
+    with open("highlight_events.json", "w") as fp:
+        json.dump([e._asdict() for e in events], fp)
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
 Reference: https://acurtis166.github.io/SPNKr/reference/film/
 
 ## Acknowledgements
