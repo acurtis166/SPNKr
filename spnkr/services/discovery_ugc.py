@@ -42,7 +42,10 @@ class DiscoveryUgcService(BaseService):
         When a cached aiohttp-client-cache session is configured without
         ``include_headers=True``, requests that differ only by
         ``Accept-Language`` would otherwise share the same cache key. In that
-        case we disable cache reads and writes for the request.
+        case we disable cache reads and writes for the request. If
+        ``include_headers=True`` is enabled to cache localized variants, make
+        sure authentication headers are excluded from the cache key via
+        ``ignored_params`` so token rotation does not fragment the cache.
         """
         if language is None:
             return {}
@@ -55,7 +58,9 @@ class DiscoveryUgcService(BaseService):
                 "without include_headers=True. Caching is disabled for this "
                 "request; configure aiohttp-client-cache with "
                 "include_headers=True to cache Accept-Language variants "
-                "safely.",
+                "safely, and exclude auth headers from the cache key via "
+                "ignored_params to avoid duplicate entries when tokens "
+                "change.",
                 UserWarning,
                 stacklevel=4,
             )

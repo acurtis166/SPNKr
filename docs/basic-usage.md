@@ -72,6 +72,8 @@ Of course, there are additional methods for retrieving stats, CSR/MMR, and metad
 
 Caching is supported via the `aiohttp-client-cache` [package](https://pypi.org/project/aiohttp-client-cache/), which provides a drop-in replacement for `aiohttp.ClientSession` as `aiohttp_client_cache.CachedSession` and reduces the number of repeat requests. It can be installed as an optional dependency with `pip install spnkr[cache]`. Below is an example backend configuration, which relies on the "Cache-Control" header available on certain responses. A SQLite backend is used here, but any backend should work.
 
+If you want localized Discovery UGC responses to be cached separately per `Accept-Language`, enable `include_headers=True`. When you do that, also exclude the client's authentication headers from the cache key with `ignored_params`; otherwise refreshed Spartan or clearance tokens will create duplicate cache entries for the same resource.
+
 ```python
 from aiohttp_client_cache import CachedSession, SQLiteBackend
 from spnkr import HaloInfiniteClient
@@ -87,14 +89,19 @@ async def main() -> None:
         "cache.sqlite",
         cache_control=True,
         filter_fn=filter_by_cache_control,
+        ignored_params=[
+            "x-343-authorization-spartan",
+            "343-clearance",
+        ],
     )
     async with CachedSession(cache=cache) as session:
         client = HaloInfiniteClient(...)
 
-
 if __name__ == "__main__":
     asyncio.run(main())
 ```
+
+Add `include_headers=True` to that backend configuration if you plan to call localized Discovery UGC methods such as `get_map(..., language="fr-FR")` and want those language variants cached independently.
 
 Here are the cached response max ages as obtained from sample responses on 1/2/2024:
 
