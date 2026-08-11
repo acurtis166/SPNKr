@@ -48,7 +48,7 @@ async def test_search_assets(client):
 @pytest.mark.asyncio(loop_scope="session")
 async def test_get_film_by_match_id(client):
     resp = await client.discovery_ugc.get_film_by_match_id(
-        match_id="63391382-6b88-43f9-9ff4-6313404c419c",
+        match_id="7f38edcc-7a9f-44a3-856e-7345f4c03175",
     )
     await resp.parse()
 
