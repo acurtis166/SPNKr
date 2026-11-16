@@ -12,6 +12,8 @@
 - All error classes are now exported from the root `spnkr` package for easier access.
 - Add retries for appropriate API error responses.
 - Add `HaloInfiniteClient` properties for session and tokens.
+- `HaloInfiniteClient` can now be used as an async context manager to automatically
+  manage an internal session. The `session` parameter is now optional.
 
 ### Changed
 

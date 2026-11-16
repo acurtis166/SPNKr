@@ -5,7 +5,35 @@
 
 ## Initializing the HaloInfiniteClient
 
-Now that we have the spartan and clearance tokens, we are ready to create a [HaloInfiniteClient](reference/client.md) object. The initializer takes a `aiohttp.ClientSession` instance and the tokens as arguments. An example is shown below.
+There are two ways to use `HaloInfiniteClient`: with an explicit session, or with an internally managed one.
+
+### With an Internal Session (Recommended for Simple Use)
+
+Use the client as an async context manager to automatically manage a session:
+
+```python
+import asyncio
+
+from spnkr import HaloInfiniteClient
+
+
+async def main() -> None:
+    async with HaloInfiniteClient(
+        spartan_token="SPARTAN_TOKEN",
+        clearance_token="CLEARANCE_TOKEN",
+        requests_per_second=5,
+    ) as client:
+        # Use the client - session is automatically created and managed
+        history = await client.get_match_history("MyGamertag")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+### With an Explicit Session
+
+If you need more control over the session, provide one explicitly:
 
 ```python
 import asyncio
@@ -20,14 +48,18 @@ async def main() -> None:
             session=session,
             spartan_token="SPARTAN_TOKEN",
             clearance_token="CLEARANCE_TOKEN",
-            # Optional, default rate is 5.
             requests_per_second=5,
         )
+        # Use the client - you manage the session lifecycle
+        history = await client.get_match_history("MyGamertag")
 
 
 if __name__ == "__main__":
     asyncio.run(main())
 ```
+
+!!! tip "Caching Support"
+    If using caching via `aiohttp-client-cache`, provide a `CachedSession` as shown in the [Caching](#caching) section below.
 
 ## Requesting Data
 
@@ -91,12 +123,22 @@ async def main() -> None:
         ],
     )
     async with CachedSession(cache=cache) as session:
-        client = HaloInfiniteClient(...)
+        async with HaloInfiniteClient(
+            session=session,
+            spartan_token="SPARTAN_TOKEN",
+            clearance_token="CLEARANCE_TOKEN",
+        ) as client:
+            history = await client.get_match_history("MyGamertag")
 
 
 if __name__ == "__main__":
     asyncio.run(main())
 ```
+
+!!! note "Session Ownership"
+    When you provide an explicit session to the client (as shown above with `CachedSession`), 
+    the client will not close it. You remain responsible for the session lifecycle.
+    When no session is provided, the client manages the session automatically.
 
 Add `include_headers=True` to that backend configuration if you plan to call localized Discovery UGC methods such as `get_map(..., language="fr-FR")` and want those language variants cached independently.
 

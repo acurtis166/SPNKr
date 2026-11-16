@@ -55,19 +55,15 @@ Detailed steps are in the docs:
 ```python
 import asyncio
 
-from aiohttp import ClientSession
 from spnkr import HaloInfiniteClient
 
 
 async def main() -> None:
-    async with ClientSession() as session:
-        client = HaloInfiniteClient(
-            session=session,
-            spartan_token="SPARTAN_TOKEN",
-            clearance_token="CLEARANCE_TOKEN",
-            requests_per_second=5,
-        )
-
+    async with HaloInfiniteClient(
+        spartan_token="SPARTAN_TOKEN",
+        clearance_token="CLEARANCE_TOKEN",
+        requests_per_second=5,
+    ) as client:
         # Accepts gamertag, raw XUID, or wrapped xuid(...) formats.
         history = await client.get_match_history("MyGamertag", start=0, count=5)
 
@@ -140,15 +136,13 @@ Medal events include both the numeric `medal` value and its `medal_name`.
 import asyncio
 import json
 
-from aiohttp import ClientSession
 from spnkr import HaloInfiniteClient, film
 
 
 async def main():
-    async with ClientSession() as session:
-        client = HaloInfiniteClient(
-            session, spartan_token="SPARTAN_TOKEN", clearance_token=""
-        )
+    async with HaloInfiniteClient(
+        spartan_token="SPARTAN_TOKEN", clearance_token="CLEARANCE_TOKEN"
+    ) as client:
         events = await film.read_highlight_events(client, match_id="MATCH_GUID")
 
     with open("highlight_events.json", "w") as fp:

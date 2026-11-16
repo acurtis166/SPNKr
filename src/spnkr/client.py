@@ -3,9 +3,10 @@
 import collections
 import datetime as dt
 from collections.abc import Iterable
-from typing import Any, TypeVar, cast
+from typing import TYPE_CHECKING, Any, Self, TypeVar, cast
 from uuid import UUID
 
+from aiohttp import ClientSession
 from aiolimiter import AsyncLimiter
 from pydantic import BaseModel
 
@@ -49,6 +50,9 @@ from spnkr.request_helpers import (
 )
 from spnkr.xuid import unwrap_xuid, wrap_xuid, wrap_xuid_or_gamertag
 
+if TYPE_CHECKING:
+    from aiohttp_client_cache.session import CachedSession
+
 __all__ = ["HaloInfiniteClient"]
 
 T = TypeVar("T", bound=BaseModel)
@@ -66,28 +70,31 @@ class HaloInfiniteClient:
 
     def __init__(
         self,
-        session: Session,
         spartan_token: str,
         clearance_token: str,
         max_retries: int = 2,
         requests_per_second: float = 5,
+        session: "ClientSession | CachedSession | None" = None,
     ) -> None:
         """Initialize a client for the Halo Infinite API.
 
         Args:
-            session: The `aiohttp.ClientSession` to use. Support for caching is
-                available via a `CachedSession` from `aiohttp-client-cache`.
             spartan_token: The spartan token used to authenticate with the API.
             clearance_token: The clearance token used to authenticate with the API.
             max_retries: The maximum number of times to retry a request on failure.
             requests_per_second: The rate limit to use. Note that this rate
                 limit is enforced per service, not globally. Defaults to 5
                 requests per second.
+            session: The `aiohttp.ClientSession` to use. Support for caching is
+                available via a `CachedSession` from `aiohttp-client-cache`.
+                If not provided, one will be created when entering the client
+                as an async context manager. Defaults to None.
         """
         if requests_per_second <= 0:
             raise ValueError("requests_per_second must be greater than 0")
 
         self._session = session
+        self._own_session = session is None
         self._spartan_token = spartan_token
         self._clearance_token = clearance_token
         self._max_retries = max(0, max_retries)
@@ -96,8 +103,24 @@ class HaloInfiniteClient:
             lambda: AsyncLimiter(1, 1 / requests_per_second)
         )
 
+    async def __aenter__(self) -> Self:
+        """Enter async context manager."""
+        if self._session is None:
+            self._session = ClientSession()
+        return self
+
+    async def __aexit__(self, exc_type, exc_val, exc_tb) -> None:
+        """Exit async context manager and close internally managed session."""
+        if self._own_session and self._session is not None:
+            await self._session.close()
+
     @property
     def session(self) -> Session:
+        if self._session is None:
+            raise RuntimeError(
+                "Client session is not initialized. Use the async context manager to "
+                "initialize it or provide a session explicitly."
+            )
         return self._session
 
     @property
@@ -119,7 +142,7 @@ class HaloInfiniteClient:
     async def _get(self, authority: str, endpoint: str, **kwargs) -> Response:
         """Make a GET request to `url` and return the response."""
         return await send_api_request(
-            session=self._session,
+            session=self.session,
             method="GET",
             url=f"https://{authority.rstrip('/')}/{endpoint.lstrip('/')}",
             spartan_token=self._spartan_token,
