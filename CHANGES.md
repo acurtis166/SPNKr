@@ -33,6 +33,8 @@
 - All error classes now store relevant context (status codes, response data, XUID values)
   as instance attributes for programmatic access.
 - Use properties to set spartan/clearance tokens instead of the `set_tokens` method.
+- Make clearance token optional and only required for economy endpoints
+  (`get_player_customization`, `get_player_career_rank`, `get_player_reward_track_operations`).
 
 ### Fixed
 

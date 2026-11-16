@@ -1,7 +1,7 @@
 # Basic Usage
 
 !!! info "Note"
-    These steps assume you have already obtained spartan and clearance tokens as described [here](getting-started.md).
+    These steps assume you have obtained a spartan token as described [here](getting-started.md). The clearance token is optional and only required for economy endpoints.
 
 ## Initializing the HaloInfiniteClient
 
@@ -20,7 +20,7 @@ from spnkr import HaloInfiniteClient
 async def main() -> None:
     async with HaloInfiniteClient(
         spartan_token="SPARTAN_TOKEN",
-        clearance_token="CLEARANCE_TOKEN",
+        clearance_token="CLEARANCE_TOKEN",  # Optional; required only for economy endpoints
         requests_per_second=5,
     ) as client:
         # Use the client - session is automatically created and managed
@@ -30,6 +30,9 @@ async def main() -> None:
 if __name__ == "__main__":
     asyncio.run(main())
 ```
+
+!!! tip "Clearance Token Optional"
+    If you're not using economy endpoints (`get_player_customization`, `get_player_career_rank`, `get_player_reward_track_operations`), you can omit the `clearance_token` parameter.
 
 ### With an Explicit Session
 
@@ -47,7 +50,7 @@ async def main() -> None:
         client = HaloInfiniteClient(
             session=session,
             spartan_token="SPARTAN_TOKEN",
-            clearance_token="CLEARANCE_TOKEN",
+            clearance_token="CLEARANCE_TOKEN",  # Optional; required only for economy endpoints
             requests_per_second=5,
         )
         # Use the client - you manage the session lifecycle
@@ -60,6 +63,33 @@ if __name__ == "__main__":
 
 !!! tip "Caching Support"
     If using caching via `aiohttp-client-cache`, provide a `CachedSession` as shown in the [Caching](#caching) section below.
+
+### Without Clearance Token (Economy Endpoints Not Required)
+
+If you only need public endpoints and don't plan to use economy endpoints, you can omit the clearance token:
+
+```python
+import asyncio
+
+from spnkr import HaloInfiniteClient
+
+
+async def main() -> None:
+    async with HaloInfiniteClient(
+        spartan_token="SPARTAN_TOKEN",
+        requests_per_second=5,
+    ) as client:
+        # Use the client - all public endpoints work without clearance
+        history = await client.get_match_history("MyGamertag")
+        matches = await client.get_match_stats("MATCH_GUID")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+!!! note "Economy Endpoints Require Clearance"
+    If you try to call `get_player_customization`, `get_player_career_rank`, or `get_player_reward_track_operations` without providing a clearance token, an `SPNKrError` will be raised.
 
 ## Requesting Data
 

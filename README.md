@@ -36,10 +36,10 @@ pip install "spnkr[cache]"
 
 ### 1. Get tokens
 
-SPNKr needs these Halo headers:
+SPNKr requires these Halo headers:
 
-- `x-343-authorization-spartan`
-- `343-clearance`
+- `x-343-authorization-spartan` (required for all endpoints)
+- `343-clearance` (optional, required only for economy endpoints)
 
 You can get them in two ways:
 
@@ -61,7 +61,7 @@ from spnkr import HaloInfiniteClient
 async def main() -> None:
     async with HaloInfiniteClient(
         spartan_token="SPARTAN_TOKEN",
-        clearance_token="CLEARANCE_TOKEN",
+        clearance_token="CLEARANCE_TOKEN",  # Optional; required for economy endpoints
         requests_per_second=5,
     ) as client:
         # Accepts gamertag, raw XUID, or wrapped xuid(...) formats.
@@ -96,15 +96,16 @@ Reference: https://acurtis166.github.io/SPNKr/reference/authentication/
 
 `HaloInfiniteClient` provides direct access to all API endpoints. Methods are grouped logically by their purpose:
 
-| Category | Methods |
-| --- | --- |
-| **Match Stats** | `get_match_history`, `get_match_count`, `get_match_stats` |
-| **Skill/CSR** | `get_match_skill`, `get_playlist_csr` |
-| **Player Profile** | `get_current_user`, `get_user_by_gamertag`, `get_user_by_id`, `get_users_by_id` |
-| **Service Records** | `get_service_record` |
-| **Discovery UGC** | `get_map`, `get_playlist`, `get_ugc_game_variant`, `get_map_mode_pair`, `search_assets`, `get_film_by_match_id` |
-| **Game CMS** | `get_medal_metadata`, `get_csr_season_calendar`, `get_season_calendar`, `get_career_reward_track`, `get_image` |
-| **Economy** | `get_player_customization`, `get_player_career_rank`, `get_challenge_decks`, `get_player_reward_track_operations`, `get_progression_file` |
+| Category | Methods | Requires Clearance? |
+| --- | --- | --- |
+| **Match Stats** | `get_match_history`, `get_match_count`, `get_match_stats` | No |
+| **Skill/CSR** | `get_match_skill`, `get_playlist_csr` | No |
+| **Player Profile** | `get_current_user`, `get_user_by_gamertag`, `get_user_by_id`, `get_users_by_id` | No |
+| **Service Records** | `get_service_record` | No |
+| **Discovery UGC** | `get_map`, `get_playlist`, `get_ugc_game_variant`, `get_map_mode_pair`, `search_assets`, `get_film_by_match_id` | No |
+| **Game CMS** | `get_medal_metadata`, `get_csr_season_calendar`, `get_season_calendar`, `get_career_reward_track`, `get_image`, `get_progression_file` | No |
+| **Economy** | `get_player_customization`, `get_player_career_rank`, `get_player_reward_track_operations` | **Yes** |
+| **Challenge Decks** | `get_challenge_decks` | No |
 
 Reference: https://acurtis166.github.io/SPNKr/reference/client/
 

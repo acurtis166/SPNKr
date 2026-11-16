@@ -74,7 +74,7 @@ async def send_api_request(
     method: str,
     url: str,
     spartan_token: str,
-    clearance_token: str,
+    clearance_token: str | None,
     max_retries: int,
     limiter: AsyncLimiter,
     **kwargs,
@@ -84,7 +84,8 @@ async def send_api_request(
     headers = kwargs.pop("headers", {})
     headers.setdefault("Accept", "application/json")
     headers.setdefault("x-343-authorization-spartan", spartan_token)
-    headers.setdefault("343-clearance", clearance_token)
+    if clearance_token is not None:
+        headers.setdefault("343-clearance", clearance_token)
     kwargs["headers"] = headers
 
     for attempt in range(max_retries + 1):

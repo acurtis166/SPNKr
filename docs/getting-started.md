@@ -13,7 +13,7 @@ pip install spnkr
 
 ## Authentication
 
-There are a couple ways to obtain credentials for API authentication.
+SPNKr requires a Spartan token for all endpoints. Clearance token is optional and only required for economy endpoints. There are a couple ways to obtain these credentials.
 
 ### Option 1 - Halo Waypoint
 
@@ -27,6 +27,9 @@ The simple, manual way of getting your tokens is to obtain them by inspecting ne
 1. Click the "Network" tab
 1. Refresh the Waypoint webpage.
 1. In developer tools, search the logged network activity for "X-343-Authorization-Spartan" and "343-Clearance" headers. These are your spartan and clearance tokens, respectively. Record them for use in the next step.
+
+!!! note "Clearance Token"
+    The clearance token is optional. You only need it if you plan to use economy endpoints like `get_player_customization`, `get_player_career_rank`, or `get_player_reward_track_operations`. All other endpoints work with just the spartan token.
 
 ### Option 2 - Azure App Registration
 
@@ -81,7 +84,7 @@ With your OAuth2 refresh token, you need to perform a series of token requests:
 1. Request an Xbox Live XSTS token scoped to Xbox Live services (not strictly necessary, but it returns profile information like your player ID (XUID) and gamertag)
 1. Request an Xbox Live XSTS token scoped to Halo services
 1. Request a "spartan token", which is required for all endpoints
-1. Request a "clearance ID", which is required for some endpoints
+1. Request a "clearance ID", which is optional but required for some economy endpoints
 
 However, you will again just make a single [function](reference/authentication.md#spnkr.auth.core.refresh_player_tokens) call to refresh/request tokens and return the needed information. The example script below will look similar to our step above, but now we are retrieving spartan and clearance tokens that will be headers for our API calls.
 

@@ -10,6 +10,7 @@ from aiohttp import ClientSession
 from aiolimiter import AsyncLimiter
 from pydantic import BaseModel
 
+from spnkr.errors import SPNKrError
 from spnkr.http_helpers import Response, Session, send_api_request
 from spnkr.models.discovery_ugc import (
     AssetSearchPage,
@@ -71,7 +72,7 @@ class HaloInfiniteClient:
     def __init__(
         self,
         spartan_token: str,
-        clearance_token: str,
+        clearance_token: str | None = None,
         max_retries: int = 2,
         requests_per_second: float = 5,
         session: "ClientSession | CachedSession | None" = None,
@@ -81,6 +82,10 @@ class HaloInfiniteClient:
         Args:
             spartan_token: The spartan token used to authenticate with the API.
             clearance_token: The clearance token used to authenticate with the API.
+                Optional, but required for economy endpoints
+                (get_player_customization, get_player_career_rank,
+                get_player_reward_track_operations). If not provided, calls to
+                those methods will raise SPNKrError. Defaults to None.
             max_retries: The maximum number of times to retry a request on failure.
             requests_per_second: The rate limit to use. Note that this rate
                 limit is enforced per service, not globally. Defaults to 5
@@ -132,12 +137,19 @@ class HaloInfiniteClient:
         self._spartan_token = value
 
     @property
-    def clearance_token(self) -> str:
+    def clearance_token(self) -> str | None:
         return self._clearance_token
 
     @clearance_token.setter
-    def clearance_token(self, value: str) -> None:
+    def clearance_token(self, value: str | None) -> None:
         self._clearance_token = value
+
+    def _require_clearance_token(self) -> None:
+        if not self._clearance_token:
+            raise SPNKrError(
+                "Clearance token is required for this request. Provide it via "
+                "`HaloInfiniteClient(clearance_token=...)`"
+            )
 
     async def _get(self, authority: str, endpoint: str, **kwargs) -> Response:
         """Make a GET request to `url` and return the response."""
@@ -661,6 +673,9 @@ class HaloInfiniteClient:
     ) -> PlayerOperationPasses:
         """Get the active and available operation reward tracks for a player.
 
+        Note:
+            Requires clearance token. Will raise SPNKrError if not provided.
+
         Args:
             xuid: The Xbox Live ID of the player to retrieve data for.
                 Examples of valid inputs include "xuid(1234567890123456)",
@@ -668,7 +683,11 @@ class HaloInfiniteClient:
 
         Returns:
             The player's active and available operation reward tracks.
+
+        Raises:
+            SPNKrError: If clearance token is not provided.
         """
+        self._require_clearance_token()
         return await self._get_model(
             self.ECONOMY_AUTHORITY,
             f"hi/players/{wrap_xuid(xuid)}/rewardtracks/operations",
@@ -680,6 +699,9 @@ class HaloInfiniteClient:
     ) -> PlayerCareerRank:
         """Get the player's current progress on a career rank reward track.
 
+        Note:
+            Requires clearance token. Will raise SPNKrError if not provided.
+
         Args:
             xuid: The Xbox Live ID of the player to retrieve data for.
                 Examples of valid inputs include "xuid(1234567890123456)",
@@ -688,7 +710,11 @@ class HaloInfiniteClient:
 
         Returns:
             The player's current career rank progress.
+
+        Raises:
+            SPNKrError: If clearance token is not provided.
         """
+        self._require_clearance_token()
         return await self._get_model(
             self.ECONOMY_AUTHORITY,
             f"hi/players/{wrap_xuid(xuid)}/rewardtracks/careerranks/{reward_track_id}",
@@ -700,6 +726,9 @@ class HaloInfiniteClient:
     ) -> PlayerCustomization:
         """Get the customization selections for a player.
 
+        Note:
+            Requires clearance token. Will raise SPNKrError if not provided.
+
         Args:
             xuid: The Xbox Live ID of the player to retrieve data for.
             view_type: Use "public" when requesting customization for players
@@ -709,7 +738,11 @@ class HaloInfiniteClient:
 
         Returns:
             The player's customization selections.
+
+        Raises:
+            SPNKrError: If clearance token is not provided.
         """
+        self._require_clearance_token()
         return await self._get_model(
             self.ECONOMY_AUTHORITY,
             f"hi/players/{wrap_xuid(xuid)}/customization",
