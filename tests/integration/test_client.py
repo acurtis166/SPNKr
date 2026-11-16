@@ -119,7 +119,7 @@ async def test_get_match_count(client):
 
 @pytest.mark.asyncio(loop_scope="session")
 async def test_get_service_record(client):
-    await client.get_match_history(player="aCurtis X89", count=5)
+    await client.get_service_record(player="aCurtis X89")
 
 
 @pytest.mark.asyncio(loop_scope="session")
