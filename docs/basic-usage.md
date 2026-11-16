@@ -31,7 +31,7 @@ if __name__ == "__main__":
 
 ## Requesting Data
 
-Now that we have the [HaloInfiniteClient](reference/client.md) initialized, we can begin retrieving data. A simple continuation of the above script is shown below.
+Now that we have the [HaloInfiniteClient](reference/client.md) initialized, we can begin retrieving data. A simple example is shown below.
 
 ```python
 import asyncio
@@ -51,9 +51,7 @@ async def main() -> None:
         client = HaloInfiniteClient(...)
 
         # Request the 25 most recent matches for the player.
-        resp = await client.stats.get_match_history(PLAYER)
-        # Parse the response JSON into a Pydantic model
-        history = await resp.parse()
+        history = await client.get_match_history(PLAYER)
 
         # Get the most recent match played and print the start time.
         last_match_info = history.results[0].match_info
@@ -64,9 +62,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-Calls to [HaloInfiniteClient](reference/client.md) services return [Pydantic](https://docs.pydantic.dev/latest/) models. You can browse the information available in those response models [here](reference/models.md).
-
-Of course, there are additional methods for retrieving stats, CSR/MMR, and metadata information.
+Calls to [HaloInfiniteClient](reference/client.md) methods return [Pydantic](https://docs.pydantic.dev/latest/) models or image bytes. You can browse the information available in those response models [here](reference/models.md).
 
 ## Caching
 
@@ -119,4 +115,4 @@ Here are the cached response max ages as obtained from sample responses on 1/2/2
 | gamecms_hacs | get_image | 1 day |
 | stats | get_match_stats | 1 day |
 
-[Next: Services](reference/services.md){ .md-button }
+[Next: Client](reference/client.md){ .md-button }

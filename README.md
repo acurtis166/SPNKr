@@ -69,7 +69,7 @@ async def main() -> None:
         )
 
         # Accepts gamertag, raw XUID, or wrapped xuid(...) formats.
-        history = await client.stats.get_match_history("MyGamertag", start=0, count=5)
+        history = await client.get_match_history("MyGamertag", start=0, count=5)
 
         if history.results:
             latest = history.results[0].match_info
@@ -96,20 +96,21 @@ For automated token refresh, see auth helpers:
 
 Reference: https://acurtis166.github.io/SPNKr/reference/authentication/
 
-## Service Overview
+# Service Overview
 
-`HaloInfiniteClient` exposes service properties for the main API domains:
+`HaloInfiniteClient` provides direct access to all API endpoints. Methods are grouped logically by their purpose:
 
-| Property | Purpose |
-| - | - |
-| `client.stats` | Match history, service records, and match stats |
-| `client.skill` | MMR/CSR and other skill-related data |
-| `client.profile` | Player identity/profile lookups |
-| `client.discovery_ugc` | Maps, game variants, playlists, and UGC metadata |
-| `client.gamecms_hacs` | Medals, seasons, career reward track, and other CMS data |
-| `client.economy` | Store/customization related data |
+| Category | Methods |
+| --- | --- |
+| **Match Stats** | `get_match_history`, `get_match_count`, `get_match_stats` |
+| **Skill/CSR** | `get_match_skill`, `get_playlist_csr` |
+| **Player Profile** | `get_current_user`, `get_user_by_gamertag`, `get_user_by_id`, `get_users_by_id` |
+| **Service Records** | `get_service_record` |
+| **Discovery UGC** | `get_map`, `get_playlist`, `get_ugc_game_variant`, `get_map_mode_pair`, `search_assets`, `get_film_by_match_id` |
+| **Game CMS** | `get_medal_metadata`, `get_csr_season_calendar`, `get_season_calendar`, `get_career_reward_track`, `get_image` |
+| **Economy** | `get_player_customization`, `get_player_career_rank`, `get_challenge_decks`, `get_player_reward_track_operations`, `get_progression_file` |
 
-Reference: https://acurtis166.github.io/SPNKr/reference/services/
+Reference: https://acurtis166.github.io/SPNKr/reference/client/
 
 ## Caching
 

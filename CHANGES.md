@@ -15,6 +15,11 @@
 
 ### Changed
 
+- Consolidate all service methods directly into `HaloInfiniteClient` for a simpler,
+  more direct API. Previously accessible via service properties
+  (e.g., `client.stats.get_match_history()`), all methods are now direct on the
+  client (e.g., `client.get_match_history()`). The separate service architecture
+  has been removed.
 - Return Pydantic models or image bytes instead of response wrappers.
 - Replace `HighlightEvent`'s `NamedTuple` with an immutable Pydantic model that
   validates event and medal consistency. Use the `EventType` and `Medal` enums

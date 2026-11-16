@@ -27,12 +27,17 @@ class MockSession:
         self.headers = {}
         self.get = AsyncMock()
         self.get.return_value = MockResponse({})
+        self.request = AsyncMock()
+        self.request.return_value = MockResponse({})
 
     def set_response(self, file_name: str) -> None:
         """Set the response for the next GET request."""
         self.get.side_effect = None
         with open(f"tests/data/responses/{file_name}", "rb") as f:
-            self.get.return_value = MockResponse(f.read())
+            response_data = f.read()
+            mock_response = MockResponse(response_data)
+            self.get.return_value = mock_response
+            self.request.return_value = mock_response
 
     def set_responses(self, *file_names: str) -> None:
         """Set a sequence of responses for successive GET requests."""
@@ -41,6 +46,7 @@ class MockSession:
             with open(f"tests/data/responses/{file_name}", "rb") as f:
                 responses.append(MockResponse(f.read()))
         self.get.side_effect = responses
+        self.request.side_effect = responses
 
 
 @pytest.fixture
