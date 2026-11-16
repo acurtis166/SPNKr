@@ -209,7 +209,11 @@ class PlayerOperationPass(_ExtraPascalCaseModel, frozen=True):
 
     @property
     def is_not_started(self) -> bool:
-        return not self.is_completed and self.last_unlocked_rank == 0 and self.partial_progress == 0
+        return (
+            not self.is_completed
+            and self.last_unlocked_rank == 0
+            and self.partial_progress == 0
+        )
 
     @property
     def is_in_progress(self) -> bool:
@@ -228,25 +232,37 @@ class PlayerOperationPasses(_ExtraPascalCaseModel, frozen=True):
             (
                 operation
                 for operation in self.operation_reward_tracks
-                if operation.reward_track_path == self.active_operation_reward_track_path
+                if operation.reward_track_path
+                == self.active_operation_reward_track_path
             ),
             None,
         )
 
     @property
     def completed(self) -> tuple[PlayerOperationPass, ...]:
-        return tuple(operation for operation in self.operation_reward_tracks if operation.is_completed)
+        return tuple(
+            operation
+            for operation in self.operation_reward_tracks
+            if operation.is_completed
+        )
 
     @property
     def not_started(self) -> tuple[PlayerOperationPass, ...]:
-        return tuple(operation for operation in self.operation_reward_tracks if operation.is_not_started)
+        return tuple(
+            operation
+            for operation in self.operation_reward_tracks
+            if operation.is_not_started
+        )
 
     @property
     def in_progress(self) -> tuple[PlayerOperationPass, ...]:
-        return tuple(operation for operation in self.operation_reward_tracks if operation.is_in_progress)
+        return tuple(
+            operation
+            for operation in self.operation_reward_tracks
+            if operation.is_in_progress
+        )
 
 
 class PlayerCareerRank(_ExtraPascalCaseModel, frozen=True):
     current_progress: RewardTrackProgress = Field(default_factory=RewardTrackProgress)
     spartan_id: str | None = None
-

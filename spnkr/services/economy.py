@@ -2,7 +2,11 @@
 
 from typing import Literal
 
-from spnkr.models.economy import PlayerCareerRank, PlayerCustomization, PlayerOperationPasses
+from spnkr.models.economy import (
+    PlayerCareerRank,
+    PlayerCustomization,
+    PlayerOperationPasses,
+)
 from spnkr.responses import JsonResponse
 from spnkr.services.base import BaseService
 from spnkr.xuid import wrap_xuid

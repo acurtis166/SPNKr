@@ -44,7 +44,6 @@ def test_read_highlight_events(events: list[highlight_events.HighlightEvent]):
 @pytest.mark.parametrize(
     "file_name,xuid,gamertag,time_ms,kills,deaths,modes,medals",
     [
-        # fmt: off
         ("30_f3aea1fc-2382-4281-abfd-ddc864f83991.gzip", 2533274796688502, "ColeMiner4", 29375, 60, 60, 104, 21),
         ("31_2b29d32d-b2f5-4b0b-9b3e-11e68680ed6a.gzip", 2533274912097531, "TheSon0fFlynn", 50017, 160, 165, 123, 80),
         ("33_61190383-64a0-456e-9862-5798c36c6e61.gzip", 2535469531821339, "TwiningIsland83", 34133, 84, 84, 0, 81),
@@ -56,10 +55,9 @@ def test_read_highlight_events(events: list[highlight_events.HighlightEvent]):
         ("39_73607aca-3a23-4733-9e84-b7c2ea679ce2.gzip", 2712212454167317, "I1 DUCE", 45858, 130, 130, 98, 59),
         ("40_fbf6b19e-2b1d-419e-8d64-756f33fda990.gzip", 2535445291321133, "aCurtis X89", 57801, 96, 96, 0, 34),
         ("41_e4309281-7d3c-420c-a9a4-ca2798e56692.gzip", 2535445291321133, "aCurtis X89", 37907, 116, 116, 86, 47),
-        # fmt: on
     ],
     ids=[30, 31, 33, 34, 35, 36, 37, 38, 39, 40, 41],
-)
+)  # fmt: skip
 def test_read_film_major_versions(
     file_name: str, xuid, gamertag, time_ms, kills, deaths, modes, medals
 ):
