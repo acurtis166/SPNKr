@@ -38,16 +38,29 @@ def read(data: bytes, version: int):
     """Iterate events found in highlight event file content.
 
     Args:
-        data: The gzip-compressed file data.
+        data: The zlib-compressed or uncompressed file data.
         version: The major version of the film, available from either the film metadata
             or the film header.
 
     Yields:
         Highlight events.
     """
-    bits = Bits(bytes=zlib.decompress(data))
+    if _is_zlib_compressed(data):
+        data = zlib.decompress(data)
+    bits = Bits(bytes=data)
     for start, _ in _find_xuids(bits):
         yield _parse_event(bits, start, version)
+
+
+def _is_zlib_compressed(data: bytes) -> bool:
+    if len(data) < 2:
+        return False
+    cmf, flg = data[:2]
+    return (
+        (cmf & 0x0F) == 8
+        and (cmf >> 4) <= 7
+        and ((cmf << 8) | flg) % 31 == 0
+    )
 
 
 def _find_xuids(bits: Bits):

@@ -1,5 +1,6 @@
 import collections
 import json
+import zlib
 from pathlib import Path
 
 import pytest
@@ -40,6 +41,11 @@ def test_read_highlight_events(events: list[HighlightEvent]):
     assert len(result) == 6
     for event in expected:
         assert event in result
+
+
+def test_read_uncompressed_highlight_events(events: list[HighlightEvent]):
+    data = zlib.decompress(HIGHLIGHT_EVENTS_FILE.read_bytes())
+    assert list(highlight_events.read(data, 37)) == events
 
 
 @pytest.mark.parametrize(

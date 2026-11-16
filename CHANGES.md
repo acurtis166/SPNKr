@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- Add support for uncompressed highlight event file content in read.
+
 ### Changed
 
 - Replace `HighlightEvent`'s `NamedTuple` with an immutable Pydantic model that
