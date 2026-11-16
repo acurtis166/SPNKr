@@ -51,8 +51,6 @@ class HaloInfiniteClient:
         self._max_retries = max(0, max_retries)
         self._requests_per_second = requests_per_second
 
-        self._session.headers["Accept"] = "application/json"
-
     @property
     def session(self) -> "ClientSession | CachedSession":
         return self._session

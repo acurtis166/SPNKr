@@ -96,6 +96,10 @@ class BaseService:
         """Make a GET request to `url` and return the response."""
         last_exception: Exception | None = None
 
+        headers = kwargs.pop("headers", {})
+        headers.setdefault("Accept", "application/json")
+        kwargs["headers"] = headers
+
         for attempt in range(self._max_retries + 1):
             response = None
             try:

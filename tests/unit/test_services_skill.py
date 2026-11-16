@@ -16,6 +16,7 @@ async def test_get_match_skill(session, service: SkillService):
     await service.get_match_skill("match_id", [1234567890123456])
     session.get.assert_called_with(
         "https://skill.svc.halowaypoint.com:443/hi/matches/match_id/skill",
+        headers={"Accept": "application/json"},
         params={"players": ["xuid(1234567890123456)"]},
     )
 
@@ -40,6 +41,7 @@ async def test_get_playlist_csr(session, service: SkillService):
     )
     session.get.assert_called_with(
         "https://skill.svc.halowaypoint.com:443/hi/playlist/playlist_id/csrs",
+        headers={"Accept": "application/json"},
         params={
             "players": ["xuid(1234567890123456)", "xuid(2345678901234567)"],
             "season": "CsrSeason5-1",

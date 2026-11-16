@@ -16,6 +16,7 @@ async def test_get_player_customization(session, service: EconomyService):
     await service.get_player_customization(1234567890123456)
     session.get.assert_called_with(
         "https://economy.svc.halowaypoint.com:443/hi/players/xuid(1234567890123456)/customization",
+        headers={"Accept": "application/json"},
         params={"view": "public"},
     )
 
@@ -31,7 +32,8 @@ async def test_get_player_reward_track_operations(session, service: EconomyServi
     assert [operation.track_id for operation in payload.in_progress] == ["S05OpPassM01"]
     assert [operation.track_id for operation in payload.not_started] == ["S05OpPassM02"]
     session.get.assert_called_with(
-        "https://economy.svc.halowaypoint.com:443/hi/players/xuid(1234567890123456)/rewardtracks/operations"
+        "https://economy.svc.halowaypoint.com:443/hi/players/xuid(1234567890123456)/rewardtracks/operations",
+        headers={"Accept": "application/json"},
     )
 
 
@@ -44,5 +46,6 @@ async def test_get_player_career_rank(session, service: EconomyService):
     assert payload.current_progress.partial_progress == 500
     assert payload.spartan_id == "spartan-1234"
     session.get.assert_called_with(
-        "https://economy.svc.halowaypoint.com:443/hi/players/xuid(1234567890123456)/rewardtracks/careerranks/careerrank1"
+        "https://economy.svc.halowaypoint.com:443/hi/players/xuid(1234567890123456)/rewardtracks/careerranks/careerrank1",
+        headers={"Accept": "application/json"},
     )

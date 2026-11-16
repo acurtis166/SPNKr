@@ -15,7 +15,8 @@ async def test_get_match_count(session, service: StatsService):
     session.set_response("get_match_count.json")
     await service.get_match_count(1234567890123456)
     session.get.assert_called_with(
-        "https://halostats.svc.halowaypoint.com:443/hi/players/xuid(1234567890123456)/matches/count"
+        "https://halostats.svc.halowaypoint.com:443/hi/players/xuid(1234567890123456)/matches/count",
+        headers={"Accept": "application/json"},
     )
 
 
@@ -27,7 +28,8 @@ async def test_get_challenge_decks(session, service: StatsService):
     assert payload["CapstoneDeckId"] == "ultimate-weekly"
     assert payload["Decks"][0]["Challenges"][0]["Id"] == "weekly-win-matches"
     session.get.assert_called_with(
-        "https://halostats.svc.halowaypoint.com:443/hi/players/MyGamertag/decks"
+        "https://halostats.svc.halowaypoint.com:443/hi/players/MyGamertag/decks",
+        headers={"Accept": "application/json"},
     )
 
 
@@ -37,6 +39,7 @@ async def test_get_service_record(session, service: StatsService):
     await service.get_service_record(1234567890123456)
     session.get.assert_called_with(
         "https://halostats.svc.halowaypoint.com:443/hi/players/xuid(1234567890123456)/matchmade/servicerecord",
+        headers={"Accept": "application/json"},
         params={},
     )
 
@@ -51,6 +54,7 @@ async def test_get_service_record_season_playlist(session, service: StatsService
     )
     session.get.assert_called_with(
         "https://halostats.svc.halowaypoint.com:443/hi/players/xuid(1234567890123456)/matchmade/servicerecord",
+        headers={"Accept": "application/json"},
         params={
             "seasonid": "season_id",
             "playlistassetid": "playlist_asset_id",
@@ -68,6 +72,7 @@ async def test_get_service_record_game_variant_category_ranked(
     )
     session.get.assert_called_with(
         "https://halostats.svc.halowaypoint.com:443/hi/players/xuid(1234567890123456)/matchmade/servicerecord",
+        headers={"Accept": "application/json"},
         params={"gamevariantcategory": "6", "isranked": "True"},
     )
 
@@ -97,6 +102,7 @@ async def test_get_service_record_non_matchmade_params_ignored(
     )
     session.get.assert_called_with(
         "https://halostats.svc.halowaypoint.com:443/hi/players/xuid(1234567890123456)/custom/servicerecord",
+        headers={"Accept": "application/json"},
         params={},
     )
 
@@ -107,6 +113,7 @@ async def test_get_match_history(session, service: StatsService):
     await service.get_match_history(1234567890123456, 0, 10, "all")
     session.get.assert_called_with(
         "https://halostats.svc.halowaypoint.com:443/hi/players/xuid(1234567890123456)/matches",
+        headers={"Accept": "application/json"},
         params={"start": 0, "count": 10, "type": "all"},
     )
 
@@ -116,5 +123,6 @@ async def test_get_match_stats(session, service: StatsService):
     session.set_response("get_match_stats.json")
     await service.get_match_stats("match_id")
     session.get.assert_called_with(
-        "https://halostats.svc.halowaypoint.com:443/hi/matches/match_id/stats"
+        "https://halostats.svc.halowaypoint.com:443/hi/matches/match_id/stats",
+        headers={"Accept": "application/json"},
     )

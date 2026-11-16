@@ -18,7 +18,8 @@ async def test_get_map_mode_pair(session, service: DiscoveryUgcService):
     session.set_response("get_map_mode_pair.json")
     await service.get_map_mode_pair("asset_id", "version_id")
     session.get.assert_called_with(
-        "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/mapModePairs/asset_id/versions/version_id"
+        "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/mapModePairs/asset_id/versions/version_id",
+        headers={"Accept": "application/json"},
     )
 
 
@@ -27,7 +28,8 @@ async def test_get_playlist(session, service: DiscoveryUgcService):
     session.set_response("get_playlist.json")
     await service.get_playlist("asset_id", "version_id")
     session.get.assert_called_with(
-        "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/playlists/asset_id/versions/version_id"
+        "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/playlists/asset_id/versions/version_id",
+        headers={"Accept": "application/json"},
     )
 
 
@@ -36,7 +38,8 @@ async def test_get_map(session, service: DiscoveryUgcService):
     session.set_response("get_map.json")
     await service.get_map("asset_id", "version_id")
     session.get.assert_called_with(
-        "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/maps/asset_id/versions/version_id"
+        "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/maps/asset_id/versions/version_id",
+        headers={"Accept": "application/json"},
     )
 
 
@@ -45,7 +48,8 @@ async def test_get_ugc_game_variant(session, service: DiscoveryUgcService):
     session.set_response("get_ugc_game_variant.json")
     await service.get_ugc_game_variant("asset_id", "version_id")
     session.get.assert_called_with(
-        "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/ugcGameVariants/asset_id/versions/version_id"
+        "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/ugcGameVariants/asset_id/versions/version_id",
+        headers={"Accept": "application/json"},
     )
 
 
@@ -74,7 +78,7 @@ async def test_get_asset_with_language(
             "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/"
             f"{asset_path}/asset_id/versions/version_id"
         ),
-        headers={"Accept-Language": "fr-FR"},
+        headers={"Accept": "application/json", "Accept-Language": "fr-FR"},
     )
 
 
@@ -89,7 +93,7 @@ async def test_get_asset_with_language_disables_cache_without_header_keys(
         await service.get_map("asset_id", "version_id", language="fr-FR")
     session.get.assert_called_with(
         "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/maps/asset_id/versions/version_id",
-        headers={"Accept-Language": "fr-FR"},
+        headers={"Accept": "application/json", "Accept-Language": "fr-FR"},
         expire_after=0,
     )
 
@@ -104,7 +108,7 @@ async def test_get_asset_with_language_keeps_cache_when_headers_are_keyed(
     await service.get_map("asset_id", "version_id", language="fr-FR")
     session.get.assert_called_with(
         "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/maps/asset_id/versions/version_id",
-        headers={"Accept-Language": "fr-FR"},
+        headers={"Accept": "application/json", "Accept-Language": "fr-FR"},
     )
 
 
@@ -114,6 +118,7 @@ async def test_search_assets_default(session, service: DiscoveryUgcService):
     await service.search_assets(start=0, count=10, sort="plays_recent", order="desc")
     session.get.assert_called_with(
         "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/search",
+        headers={"Accept": "application/json"},
         params={
             "start": 0,
             "count": 10,
@@ -145,6 +150,7 @@ async def test_search_assets_all(session, service: DiscoveryUgcService):
     )
     session.get.assert_called_with(
         "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/search",
+        headers={"Accept": "application/json"},
         params={
             "start": 0,
             "count": 10,
@@ -178,5 +184,6 @@ async def test_get_film_by_match_id(session, service: DiscoveryUgcService):
     session.set_response("get_film_by_match_id.json")
     await service.get_film_by_match_id("match_id")
     session.get.assert_called_with(
-        "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/films/matches/match_id/spectate"
+        "https://discovery-infiniteugc.svc.halowaypoint.com:443/hi/films/matches/match_id/spectate",
+        headers={"Accept": "application/json"},
     )

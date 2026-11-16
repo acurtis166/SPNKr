@@ -32,14 +32,12 @@ def test_client_invalid_requests_per_second(session):
 def test_client_set_tokens(client: HaloInfiniteClient):
     """Test that the client headers are set in the `set_tokens` method."""
     assert client._session.headers == {
-        "Accept": "application/json",
         "x-343-authorization-spartan": "spartan",
         "343-clearance": "clearance",
     }
     client.spartan_token = "new_spartan"
     client.clearance_token = "new_clearance"
     assert client._session.headers == {
-        "Accept": "application/json",
         "x-343-authorization-spartan": "new_spartan",
         "343-clearance": "new_clearance",
     }

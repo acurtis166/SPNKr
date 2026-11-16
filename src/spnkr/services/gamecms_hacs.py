@@ -98,5 +98,5 @@ class GameCmsHacsService(BaseService):
             The image data.
         """
         url = f"{_HOST}/hi/images/file/{relative_path.lstrip('/')}"
-        resp = await self._get(url)
+        resp = await self._get(url, headers={"Accept": "image/*"})
         return await resp.read()

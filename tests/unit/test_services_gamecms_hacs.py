@@ -15,7 +15,8 @@ async def test_get_medal_metadata(session, service: GameCmsHacsService):
     session.set_response("get_medal_metadata.json")
     await service.get_medal_metadata()
     session.get.assert_called_with(
-        "https://gamecms-hacs.svc.halowaypoint.com/hi/Waypoint/file/medals/metadata.json"
+        "https://gamecms-hacs.svc.halowaypoint.com/hi/Waypoint/file/medals/metadata.json",
+        headers={"Accept": "application/json"},
     )
 
 
@@ -24,7 +25,8 @@ async def test_get_progression_file(session, service: GameCmsHacsService):
     session.set_response("get_career_reward_track.json")
     await service.get_progression_file("RewardTracks/Operations/S03BattlePass.json")
     session.get.assert_called_with(
-        "https://gamecms-hacs.svc.halowaypoint.com/hi/Progression/file/RewardTracks/Operations/S03BattlePass.json"
+        "https://gamecms-hacs.svc.halowaypoint.com/hi/Progression/file/RewardTracks/Operations/S03BattlePass.json",
+        headers={"Accept": "application/json"},
     )
 
 
@@ -39,7 +41,8 @@ async def test_get_operation_reward_track(session, service: GameCmsHacsService):
     assert payload.name is not None
     assert payload.name.value == "Combined Arms"
     session.get.assert_called_with(
-        "https://gamecms-hacs.svc.halowaypoint.com/hi/Progression/file/RewardTracks/Operations/S05OpPassM01.json"
+        "https://gamecms-hacs.svc.halowaypoint.com/hi/Progression/file/RewardTracks/Operations/S05OpPassM01.json",
+        headers={"Accept": "application/json"},
     )
 
 
@@ -48,7 +51,8 @@ async def test_get_csr_season_calendar(session, service: GameCmsHacsService):
     session.set_response("get_csr_season_calendar.json")
     await service.get_csr_season_calendar()
     session.get.assert_called_with(
-        "https://gamecms-hacs.svc.halowaypoint.com/hi/Progression/file/Csr/Calendars/CsrSeasonCalendar.json"
+        "https://gamecms-hacs.svc.halowaypoint.com/hi/Progression/file/Csr/Calendars/CsrSeasonCalendar.json",
+        headers={"Accept": "application/json"},
     )
 
 
@@ -57,7 +61,8 @@ async def test_get_season_calendar(session, service: GameCmsHacsService):
     session.set_response("get_season_calendar.json")
     await service.get_season_calendar()
     session.get.assert_called_with(
-        "https://gamecms-hacs.svc.halowaypoint.com/hi/progression/file/calendars/seasons/seasoncalendar.json"
+        "https://gamecms-hacs.svc.halowaypoint.com/hi/progression/file/calendars/seasons/seasoncalendar.json",
+        headers={"Accept": "application/json"},
     )
 
 
@@ -66,7 +71,8 @@ async def test_get_career_reward_track(session, service: GameCmsHacsService):
     session.set_response("get_career_reward_track.json")
     await service.get_career_reward_track()
     session.get.assert_called_with(
-        "https://gamecms-hacs.svc.halowaypoint.com/hi/Progression/file/RewardTracks/CareerRanks/careerRank1.json"
+        "https://gamecms-hacs.svc.halowaypoint.com/hi/Progression/file/RewardTracks/CareerRanks/careerRank1.json",
+        headers={"Accept": "application/json"},
     )
 
 
@@ -76,5 +82,6 @@ async def test_get_image(session, service: GameCmsHacsService):
     content = await service.get_image("path/to/image.png")
     assert round(len(content) / 1024) == 15
     session.get.assert_called_with(
-        "https://gamecms-hacs.svc.halowaypoint.com/hi/images/file/path/to/image.png"
+        "https://gamecms-hacs.svc.halowaypoint.com/hi/images/file/path/to/image.png",
+        headers={"Accept": "image/*"},
     )
