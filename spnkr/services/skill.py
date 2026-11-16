@@ -34,10 +34,12 @@ class SkillService(BaseService):
         """
         if isinstance(xuids, str):
             raise TypeError("`xuids` must be an iterable of XUIDs, got `str`")
-        if not xuids:
+
+        xuid_list = list(xuids)
+        if not xuid_list:
             raise ValueError("`xuids` cannot be empty")
         url = f"{_HOST}/hi/matches/{match_id}/skill"
-        params = {"players": [wrap_xuid(x) for x in xuids]}
+        params = {"players": [wrap_xuid(x) for x in xuid_list]}
         resp = await self._get(url, params=params)
         return JsonResponse(resp, lambda data: MatchSkill(**data))
 
@@ -67,10 +69,12 @@ class SkillService(BaseService):
         """
         if isinstance(xuids, str):
             raise TypeError("`xuids` must be an iterable of XUIDs, got `str`")
-        if not xuids:
+
+        xuid_list = list(xuids)
+        if not xuid_list:
             raise ValueError("`xuids` cannot be empty")
         url = f"{_HOST}/hi/playlist/{playlist_id}/csrs"
-        params: dict = {"players": [wrap_xuid(x) for x in xuids]}
+        params: dict = {"players": [wrap_xuid(x) for x in xuid_list]}
         if season_id:
             params["season"] = _clean_season_id(season_id)
         resp = await self._get(url, params=params)

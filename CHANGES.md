@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- Fix empty generator behavior in xuid lists for skill requests.
+
 ## [0.10.2] - 2026-04-27
 
 ### Added
