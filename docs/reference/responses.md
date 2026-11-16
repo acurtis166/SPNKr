@@ -1,3 +1,0 @@
-# Responses
-
-::: spnkr.responses

@@ -5,7 +5,6 @@ from pathlib import Path
 from uuid import UUID
 
 from spnkr.models.skill import MatchSkill, PlaylistCsr
-from spnkr.responses import JsonResponse
 from spnkr.services.base import BaseService
 from spnkr.xuid import wrap_xuid
 
@@ -17,7 +16,7 @@ class SkillService(BaseService):
 
     async def get_match_skill(
         self, match_id: str | UUID, xuids: Iterable[str | int]
-    ) -> JsonResponse[MatchSkill]:
+    ) -> MatchSkill:
         """Get player CSR and team MMR values for a given match and player list.
 
         Args:
@@ -40,15 +39,14 @@ class SkillService(BaseService):
             raise ValueError("`xuids` cannot be empty")
         url = f"{_HOST}/hi/matches/{match_id}/skill"
         params = {"players": [wrap_xuid(x) for x in xuid_list]}
-        resp = await self._get(url, params=params)
-        return JsonResponse(resp, lambda data: MatchSkill(**data))
+        return await self._get_model(url, MatchSkill, params=params)
 
     async def get_playlist_csr(
         self,
         playlist_id: str | UUID,
         xuids: Iterable[str | int],
         season_id: str | None = None,
-    ) -> JsonResponse[PlaylistCsr]:
+    ) -> PlaylistCsr:
         """Get player CSR values for a given playlist and player list.
 
         Args:
@@ -77,8 +75,7 @@ class SkillService(BaseService):
         params: dict = {"players": [wrap_xuid(x) for x in xuid_list]}
         if season_id:
             params["season"] = _clean_season_id(season_id)
-        resp = await self._get(url, params=params)
-        return JsonResponse(resp, lambda data: PlaylistCsr(**data))
+        return await self._get_model(url, PlaylistCsr, params=params)
 
 
 def _clean_season_id(season_id: str) -> str:

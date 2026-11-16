@@ -31,10 +31,9 @@ async def test_get_progression_file(session, service: GameCmsHacsService):
 @pytest.mark.asyncio
 async def test_get_operation_reward_track(session, service: GameCmsHacsService):
     session.set_response("get_operation_reward_track.json")
-    response = await service.get_operation_reward_track(
+    payload = await service.get_operation_reward_track(
         "RewardTracks/Operations/S05OpPassM01.json"
     )
-    payload = await response.parse()
 
     assert payload.total_ranks == 6
     assert payload.name is not None
@@ -74,8 +73,8 @@ async def test_get_career_reward_track(session, service: GameCmsHacsService):
 @pytest.mark.asyncio
 async def test_get_image(session, service: GameCmsHacsService):
     session.set_response("career_rank_corporal_gold_III.png")
-    result = await service.get_image("path/to/image.png")
-    assert round(len(await result.read()) / 1024) == 15
+    content = await service.get_image("path/to/image.png")
+    assert round(len(content) / 1024) == 15
     session.get.assert_called_with(
         "https://gamecms-hacs.svc.halowaypoint.com/hi/images/file/path/to/image.png"
     )

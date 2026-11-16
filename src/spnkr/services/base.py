@@ -1,8 +1,9 @@
 """Base service class."""
 
-from typing import TYPE_CHECKING, TypeAlias
+from typing import TYPE_CHECKING, TypeAlias, TypeVar, cast
 
 from aiolimiter import AsyncLimiter
+from pydantic import BaseModel
 
 if TYPE_CHECKING:
     from aiohttp import ClientResponse, ClientSession
@@ -11,6 +12,8 @@ if TYPE_CHECKING:
 
 Response: TypeAlias = "ClientResponse | CachedResponse"
 Session: TypeAlias = "ClientSession | CachedSession"
+
+T = TypeVar("T", bound=BaseModel)
 
 
 class BaseService:
@@ -35,3 +38,15 @@ class BaseService:
             await self._rate_limiter.acquire()
         response.raise_for_status()
         return response
+
+    async def _get_model(self, url: str, model: type[T], **kwargs) -> T:
+        """Make a GET request to `url` and return the response as a `model` instance."""
+        response = await self._get(url, **kwargs)
+        return model.model_validate_json(await response.read())
+
+    async def _get_model_list(self, url: str, model: type[T], **kwargs) -> list[T]:
+        """Make a GET request to `url` and return the response as a list of `model` instances."""
+        response = await self._get(url, **kwargs)
+        return [
+            model.model_validate(item) for item in cast(list, await response.json())
+        ]

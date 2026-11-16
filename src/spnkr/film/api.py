@@ -43,12 +43,12 @@ async def read_highlight_events(
         spnkr.errors.FilmReadError when film data can't be retrieved or read.
     """
     try:
-        film_response = await client.discovery_ugc.get_film_by_match_id(match_id)
+        film = await client.discovery_ugc.get_film_by_match_id(match_id)
     except ClientResponseError as ex:
         raise FilmReadError(
             f"Error getting highlight events film metadata: {ex}"
         ) from ex
-    film = await film_response.parse()
+
     url = film.highlight_events_url
     if url is None:
         raise FilmReadError("Film doesn't have a highlight events chunk")

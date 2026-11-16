@@ -2,8 +2,11 @@
 
 import datetime as dt
 import warnings
-from typing import Iterable, Literal
+from collections.abc import Iterable
+from typing import Literal, TypeVar
 from uuid import UUID
+
+from pydantic import BaseModel
 
 from spnkr.models.discovery_ugc import (
     AssetSearchPage,
@@ -13,7 +16,6 @@ from spnkr.models.discovery_ugc import (
     Playlist,
     UgcGameVariant,
 )
-from spnkr.responses import JsonResponse
 from spnkr.services.base import BaseService
 
 _HOST = "https://discovery-infiniteugc.svc.halowaypoint.com:443"
@@ -31,6 +33,8 @@ _SortProperty = Literal[
     "average_rating",
     "number_of_ratings",
 ]
+
+T = TypeVar("T", bound=BaseModel)
 
 
 class DiscoveryUgcService(BaseService):
@@ -72,11 +76,14 @@ class DiscoveryUgcService(BaseService):
         asset_type: str,
         asset_id: str | UUID,
         version_id: str | UUID,
+        model: type[T],
         *,
         language: str | None = None,
-    ):
+    ) -> T:
         url = f"{_HOST}/hi/{asset_type}/{asset_id}/versions/{version_id}"
-        return await self._get(url, **self._get_localized_asset_kwargs(language))
+        return await self._get_model(
+            url, model, **self._get_localized_asset_kwargs(language)
+        )
 
     async def get_ugc_game_variant(
         self,
@@ -84,7 +91,7 @@ class DiscoveryUgcService(BaseService):
         version_id: str | UUID,
         *,
         language: str | None = None,
-    ) -> JsonResponse[UgcGameVariant]:
+    ) -> UgcGameVariant:
         """Get details about a game mode.
 
         Args:
@@ -97,13 +104,13 @@ class DiscoveryUgcService(BaseService):
         Returns:
             The game variant details.
         """
-        resp = await self._get_asset(
+        return await self._get_asset(
             "ugcGameVariants",
             asset_id,
             version_id,
+            UgcGameVariant,
             language=language,
         )
-        return JsonResponse(resp, lambda data: UgcGameVariant(**data))
 
     async def get_map_mode_pair(
         self,
@@ -111,7 +118,7 @@ class DiscoveryUgcService(BaseService):
         version_id: str | UUID,
         *,
         language: str | None = None,
-    ) -> JsonResponse[MapModePair]:
+    ) -> MapModePair:
         """Get details about a map mode pair.
 
         Args:
@@ -124,13 +131,13 @@ class DiscoveryUgcService(BaseService):
         Returns:
             The map mode pair details.
         """
-        resp = await self._get_asset(
+        return await self._get_asset(
             "mapModePairs",
             asset_id,
             version_id,
+            MapModePair,
             language=language,
         )
-        return JsonResponse(resp, lambda data: MapModePair(**data))
 
     async def get_map(
         self,
@@ -138,7 +145,7 @@ class DiscoveryUgcService(BaseService):
         version_id: str | UUID,
         *,
         language: str | None = None,
-    ) -> JsonResponse[Map]:
+    ) -> Map:
         """Get details about a map.
 
         Args:
@@ -151,13 +158,13 @@ class DiscoveryUgcService(BaseService):
         Returns:
             The map details.
         """
-        resp = await self._get_asset(
+        return await self._get_asset(
             "maps",
             asset_id,
             version_id,
+            Map,
             language=language,
         )
-        return JsonResponse(resp, lambda data: Map(**data))
 
     async def get_playlist(
         self,
@@ -165,7 +172,7 @@ class DiscoveryUgcService(BaseService):
         version_id: str | UUID,
         *,
         language: str | None = None,
-    ) -> JsonResponse[Playlist]:
+    ) -> Playlist:
         """Get details about a playlist.
 
         Args:
@@ -178,13 +185,13 @@ class DiscoveryUgcService(BaseService):
         Returns:
             The playlist details.
         """
-        resp = await self._get_asset(
+        return await self._get_asset(
             "playlists",
             asset_id,
             version_id,
+            Playlist,
             language=language,
         )
-        return JsonResponse(resp, lambda data: Playlist(**data))
 
     async def search_assets(
         self,
@@ -203,7 +210,7 @@ class DiscoveryUgcService(BaseService):
         to_date_modified_utc: dt.datetime | dt.date | None = None,
         from_date_published_utc: dt.datetime | dt.date | None = None,
         to_date_published_utc: dt.datetime | dt.date | None = None,
-    ) -> JsonResponse[AssetSearchPage]:
+    ) -> AssetSearchPage:
         """Search for map, mode, and prefab assets.
 
         Args:
@@ -269,10 +276,9 @@ class DiscoveryUgcService(BaseService):
             params["fromDatePublishedUtc"] = from_date_published_utc.isoformat()
         if to_date_published_utc is not None:
             params["toDatePublishedUtc"] = to_date_published_utc.isoformat()
-        resp = await self._get(url, params=params)
-        return JsonResponse(resp, lambda data: AssetSearchPage(**data))
+        return await self._get_model(url, AssetSearchPage, params=params)
 
-    async def get_film_by_match_id(self, match_id: str | UUID) -> JsonResponse[Film]:
+    async def get_film_by_match_id(self, match_id: str | UUID) -> Film:
         """Get metadata and download information for a film.
 
         Args:
@@ -282,5 +288,4 @@ class DiscoveryUgcService(BaseService):
             The film details.
         """
         url = f"{_HOST}/hi/films/matches/{match_id}/spectate"
-        resp = await self._get(url)
-        return JsonResponse(resp, lambda data: Film(**data))
+        return await self._get_model(url, Film)

@@ -22,8 +22,7 @@ async def test_get_match_count(session, service: StatsService):
 @pytest.mark.asyncio
 async def test_get_challenge_decks(session, service: StatsService):
     session.set_response("get_challenge_decks.json")
-    response = await service.get_challenge_decks("MyGamertag")
-    payload = await response.parse()
+    payload = await service.get_challenge_decks("MyGamertag")
 
     assert payload["CapstoneDeckId"] == "ultimate-weekly"
     assert payload["Decks"][0]["Challenges"][0]["Id"] == "weekly-win-matches"

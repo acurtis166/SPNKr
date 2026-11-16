@@ -64,7 +64,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-Calls to [HaloInfiniteClient](reference/client.md) services return `aiohttp.ClientResponse` [wrappers](reference/responses.md) to provide access to the raw response, if needed, while also providing a convenient `parse()` method to more cleanly access data from the payload as [Pydantic](https://docs.pydantic.dev/latest/) models. You can browse the information available in those response models [here](reference/models.md).
+Calls to [HaloInfiniteClient](reference/client.md) services return [Pydantic](https://docs.pydantic.dev/latest/) models. You can browse the information available in those response models [here](reference/models.md).
 
 Of course, there are additional methods for retrieving stats, CSR/MMR, and metadata information.
 
@@ -96,6 +96,7 @@ async def main() -> None:
     )
     async with CachedSession(cache=cache) as session:
         client = HaloInfiniteClient(...)
+
 
 if __name__ == "__main__":
     asyncio.run(main())

@@ -23,8 +23,7 @@ async def test_get_player_customization(session, service: EconomyService):
 @pytest.mark.asyncio
 async def test_get_player_reward_track_operations(session, service: EconomyService):
     session.set_response("get_player_reward_track_operations.json")
-    response = await service.get_player_reward_track_operations(1234567890123456)
-    payload = await response.parse()
+    payload = await service.get_player_reward_track_operations(1234567890123456)
 
     assert payload.active is not None
     assert payload.active.track_id == "S05OpPassM01"
@@ -39,8 +38,7 @@ async def test_get_player_reward_track_operations(session, service: EconomyServi
 @pytest.mark.asyncio
 async def test_get_player_career_rank(session, service: EconomyService):
     session.set_response("get_player_career_rank.json")
-    response = await service.get_player_career_rank(1234567890123456)
-    payload = await response.parse()
+    payload = await service.get_player_career_rank(1234567890123456)
 
     assert payload.current_progress.rank == 271
     assert payload.current_progress.partial_progress == 500

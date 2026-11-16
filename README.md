@@ -69,8 +69,7 @@ async def main() -> None:
         )
 
         # Accepts gamertag, raw XUID, or wrapped xuid(...) formats.
-        resp = await client.stats.get_match_history("MyGamertag", start=0, count=5)
-        history = await resp.parse()
+        history = await client.stats.get_match_history("MyGamertag", start=0, count=5)
 
         if history.results:
             latest = history.results[0].match_info
@@ -111,15 +110,6 @@ Reference: https://acurtis166.github.io/SPNKr/reference/authentication/
 | `client.economy` | Store/customization related data |
 
 Reference: https://acurtis166.github.io/SPNKr/reference/services/
-
-## Response Parsing Model
-
-Service methods return response wrappers around `aiohttp.ClientResponse`.
-Use `.parse()` to convert payloads into Pydantic models while still retaining
-access to the raw response when needed.
-
-- Wrappers: https://acurtis166.github.io/SPNKr/reference/responses/
-- Models: https://acurtis166.github.io/SPNKr/reference/models/
 
 ## Caching
 

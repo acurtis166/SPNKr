@@ -7,7 +7,6 @@ from spnkr.models.economy import (
     PlayerCustomization,
     PlayerOperationPasses,
 )
-from spnkr.responses import JsonResponse
 from spnkr.services.base import BaseService
 from spnkr.xuid import wrap_xuid
 
@@ -20,7 +19,7 @@ class EconomyService(BaseService):
     async def get_player_reward_track_operations(
         self,
         xuid: str | int,
-    ) -> JsonResponse[PlayerOperationPasses]:
+    ) -> PlayerOperationPasses:
         """Get the active and available operation reward tracks for a player.
 
         Args:
@@ -32,14 +31,13 @@ class EconomyService(BaseService):
             The player's active and available operation reward tracks.
         """
         url = f"{_HOST}/hi/players/{wrap_xuid(xuid)}/rewardtracks/operations"
-        resp = await self._get(url)
-        return JsonResponse(resp, lambda data: PlayerOperationPasses(**data))
+        return await self._get_model(url, PlayerOperationPasses)
 
     async def get_player_career_rank(
         self,
         xuid: str | int,
         reward_track_id: str = "careerrank1",
-    ) -> JsonResponse[PlayerCareerRank]:
+    ) -> PlayerCareerRank:
         """Get the player's current progress on a career rank reward track.
 
         Args:
@@ -52,14 +50,13 @@ class EconomyService(BaseService):
             The player's current career rank progress.
         """
         url = f"{_HOST}/hi/players/{wrap_xuid(xuid)}/rewardtracks/careerranks/{reward_track_id}"
-        resp = await self._get(url)
-        return JsonResponse(resp, lambda data: PlayerCareerRank(**data))
+        return await self._get_model(url, PlayerCareerRank)
 
     async def get_player_customization(
         self,
         xuid: str | int,
         view_type: Literal["public", "private"] = "public",
-    ) -> JsonResponse[PlayerCustomization]:
+    ) -> PlayerCustomization:
         """Get the customization selections for a player.
 
         Args:
@@ -74,5 +71,4 @@ class EconomyService(BaseService):
         """
         url = f"{_HOST}/hi/players/{wrap_xuid(xuid)}/customization"
         params = {"view": view_type}
-        resp = await self._get(url, params=params)
-        return JsonResponse(resp, lambda data: PlayerCustomization(**data))
+        return await self._get_model(url, PlayerCustomization, params=params)

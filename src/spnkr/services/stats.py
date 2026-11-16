@@ -1,17 +1,11 @@
 """Stats data services."""
 
 import warnings
-from typing import Any, Literal
+from typing import Any, Literal, cast
 from uuid import UUID
 
 from spnkr.models.refdata import GameplayInteraction, GameVariantCategory
-from spnkr.models.stats import (
-    MatchCount,
-    MatchHistory,
-    MatchStats,
-    ServiceRecord,
-)
-from spnkr.responses import JsonResponse
+from spnkr.models.stats import MatchCount, MatchHistory, MatchStats, ServiceRecord
 from spnkr.services.base import BaseService
 from spnkr.xuid import wrap_xuid_or_gamertag
 
@@ -31,9 +25,7 @@ _VALID_SERVICE_RECORD_FILTER_SETS = [
 class StatsService(BaseService):
     """Stats data services."""
 
-    async def get_challenge_decks(
-        self, player: str | int
-    ) -> JsonResponse[dict[str, Any]]:
+    async def get_challenge_decks(self, player: str | int) -> dict[str, Any]:
         """Get the current challenge decks assigned to a player.
 
         Args:
@@ -48,9 +40,9 @@ class StatsService(BaseService):
         xuid_or_gamertag = wrap_xuid_or_gamertag(player)
         url = f"{_HOST}/hi/players/{xuid_or_gamertag}/decks"
         resp = await self._get(url)
-        return JsonResponse(resp, lambda data: data)
+        return cast(dict[str, Any], await resp.json())
 
-    async def get_match_count(self, player: str | int) -> JsonResponse[MatchCount]:
+    async def get_match_count(self, player: str | int) -> MatchCount:
         """Get match counts across different game experiences for a player.
 
         The counts returned are for custom matches, matchmade matches, local
@@ -66,8 +58,7 @@ class StatsService(BaseService):
         """
         xuid_or_gamertag = wrap_xuid_or_gamertag(player)
         url = f"{_HOST}/hi/players/{xuid_or_gamertag}/matches/count"
-        resp = await self._get(url)
-        return JsonResponse(resp, lambda data: MatchCount(**data))
+        return await self._get_model(url, MatchCount)
 
     async def get_service_record(
         self,
@@ -78,7 +69,7 @@ class StatsService(BaseService):
         is_ranked: bool | None = None,
         playlist_asset_id: str | UUID | None = None,
         gameplay_interaction: GameplayInteraction | None = None,
-    ) -> JsonResponse[ServiceRecord]:
+    ) -> ServiceRecord:
         """Get a service record for a player. Summarizes player stats.
 
         Note that filters (`season_id`, `game_variant_category`, `is_ranked`,
@@ -148,8 +139,7 @@ class StatsService(BaseService):
                 f"Invalid filter combination: {filters}. Options:\n{valid}"
             )
         params = {k.replace("_", ""): str(v) for k, v in filters.items()}
-        resp = await self._get(url, params=params)
-        return JsonResponse(resp, lambda data: ServiceRecord(**data))
+        return await self._get_model(url, ServiceRecord, params=params)
 
     async def get_match_history(
         self,
@@ -157,7 +147,7 @@ class StatsService(BaseService):
         start: int = 0,
         count: int = 25,
         match_type: Literal["all", "matchmaking", "custom", "local"] = "all",
-    ) -> JsonResponse[MatchHistory]:
+    ) -> MatchHistory:
         """Request a batch of matches from a player's match history.
 
         Args:
@@ -176,10 +166,9 @@ class StatsService(BaseService):
         xuid_or_gamertag = wrap_xuid_or_gamertag(player)
         url = f"{_HOST}/hi/players/{xuid_or_gamertag}/matches"
         params = {"start": start, "count": count, "type": match_type}
-        resp = await self._get(url, params=params)
-        return JsonResponse(resp, lambda data: MatchHistory(**data))
+        return await self._get_model(url, MatchHistory, params=params)
 
-    async def get_match_stats(self, match_id: str | UUID) -> JsonResponse[MatchStats]:
+    async def get_match_stats(self, match_id: str | UUID) -> MatchStats:
         """Request match details using the Halo Infinite match GUID.
 
         Args:
@@ -189,5 +178,4 @@ class StatsService(BaseService):
             The match details.
         """
         url = f"{_HOST}/hi/matches/{match_id}/stats"
-        resp = await self._get(url)
-        return JsonResponse(resp, lambda data: MatchStats(**data))
+        return await self._get_model(url, MatchStats)

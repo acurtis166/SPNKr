@@ -24,8 +24,7 @@ async def main(xuids: list[str]) -> None:
         spartan = player.spartan_token.token
         clearance = player.clearance_token.token
         client = HaloInfiniteClient(session, spartan, clearance)
-        resp = await client.profile.get_users_by_id(xuids)
-        users = await resp.parse()
+        users = await client.profile.get_users_by_id(xuids)
         for user in users:
             print(user.xuid, user.gamertag)
 
