@@ -2,8 +2,18 @@
 
 from typing import TYPE_CHECKING, TypeAlias, TypeVar, cast
 
+from aiohttp import ClientResponseError
 from aiolimiter import AsyncLimiter
 from pydantic import BaseModel
+
+from spnkr.errors import (
+    APIAuthenticationError,
+    APIAuthorizationError,
+    APIError,
+    APINotFoundError,
+    APIRateLimitError,
+    APIServerError,
+)
 
 if TYPE_CHECKING:
     from aiohttp import ClientResponse, ClientSession
@@ -14,6 +24,25 @@ Response: TypeAlias = "ClientResponse | CachedResponse"
 Session: TypeAlias = "ClientSession | CachedSession"
 
 T = TypeVar("T", bound=BaseModel)
+
+
+def _handle_api_error(error: ClientResponseError) -> None:
+    """Convert aiohttp ClientResponseError to appropriate spnkr error."""
+    status = error.status
+    message = error.message or str(error)
+
+    if status == 401:
+        raise APIAuthenticationError(message, status_code=status)
+    elif status == 403:
+        raise APIAuthorizationError(message, status_code=status)
+    elif status == 404:
+        raise APINotFoundError(message, status_code=status)
+    elif status == 429:
+        raise APIRateLimitError(message, status_code=status)
+    elif 500 <= status < 600:
+        raise APIServerError(message, status_code=status)
+    else:
+        raise APIError(message, status_code=status)
 
 
 class BaseService:
@@ -36,7 +65,10 @@ class BaseService:
         if not hasattr(response, "from_cache"):
             # Only rate limit non-cached responses.
             await self._rate_limiter.acquire()
-        response.raise_for_status()
+        try:
+            response.raise_for_status()
+        except ClientResponseError as e:
+            _handle_api_error(e)
         return response
 
     async def _get_model(self, url: str, model: type[T], **kwargs) -> T:

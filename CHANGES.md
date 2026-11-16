@@ -5,6 +5,11 @@
 ### Added
 
 - Add support for uncompressed highlight event file content in read.
+- Add comprehensive custom exception hierarchy: `SPNKrError` base class, `APIError`
+  for HTTP errors, and specific subclasses for common status codes:
+  `APIAuthenticationError` (401), `APIAuthorizationError` (403),
+  `APINotFoundError` (404), `APIRateLimitError` (429), and `APIServerError` (5xx).
+- All error classes are now exported from the root `spnkr` package for easier access.
 
 ### Changed
 
@@ -14,6 +19,10 @@
   for event and medal values; medal events now expose a `Medal` through `medal`
   instead of the former `is_medal` and `medal_value` fields. `medal_name` remains
   available, and `EventType` and `Medal` are exported from `spnkr.film`.
+- Improved error messages: `OAuth2Error` now includes error type and description from
+  the OAuth2 provider response.
+- All error classes now store relevant context (status codes, response data, XUID values)
+  as instance attributes for programmatic access.
 
 ### Fixed
 
