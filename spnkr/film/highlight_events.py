@@ -83,10 +83,11 @@ def _infer_event_type(hint: int, is_medal: bool) -> EventType:
 
 def _tokens(version: int) -> list[str]:
     """Determine unpacking strategy based on the film major version."""
-    if version <= 38 or version >= 41:
+    if 38 < version < 41:
         return [
+            "pad:96",  # Skip (12 bytes)
             "bytes:32",  # 16-character utf-16 gamertag (32 bytes)
-            "pad:120",  # Skip (15 bytes)
+            "pad:24",  # Skip (3 bytes)
             "uint:8",  # Type hint (1 byte)
             "uint:32",  # Timestamp in milliseconds (4 bytes)
             "pad:24",  # Skip (3 bytes)
@@ -95,9 +96,8 @@ def _tokens(version: int) -> list[str]:
             "uint:8",  # Medal type (1 byte)
         ]
     return [
-        "pad:96",  # Skip (12 bytes)
         "bytes:32",  # 16-character utf-16 gamertag (32 bytes)
-        "pad:24",  # Skip (3 bytes)
+        "pad:120",  # Skip (15 bytes)
         "uint:8",  # Type hint (1 byte)
         "uint:32",  # Timestamp in milliseconds (4 bytes)
         "pad:24",  # Skip (3 bytes)
