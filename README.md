@@ -143,6 +143,7 @@ moments such as kills, deaths, medals, and mode-specific events.
 ![Theater timeline highlight-event markers](assets/highlight_events_timeline.png)
 
 Here is a minimal example script to dump highlight events for a match to JSON.
+Medal events include both the numeric `medal` value and its `medal_name`.
 
 ```python
 import asyncio
@@ -160,7 +161,7 @@ async def main():
         events = await film.read_highlight_events(client, match_id="MATCH_GUID")
 
     with open("highlight_events.json", "w") as fp:
-        json.dump([e._asdict() for e in events], fp)
+        json.dump([e.model_dump(mode="json") for e in events], fp)
 
 
 if __name__ == "__main__":

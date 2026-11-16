@@ -7,9 +7,12 @@ from aiohttp import ClientResponseError
 from spnkr.client import HaloInfiniteClient
 from spnkr.errors import FilmReadError
 from spnkr.film import highlight_events
+from spnkr.film.models import HighlightEvent
 
 
-async def read_highlight_events(client: HaloInfiniteClient, match_id: str | UUID):
+async def read_highlight_events(
+    client: HaloInfiniteClient, match_id: str | UUID
+) -> list[HighlightEvent]:
     """Download and parse the highlight events chunk from a film asset for a given match.
 
     Only human (not bot) players have events available. Bot data is unlikely to be

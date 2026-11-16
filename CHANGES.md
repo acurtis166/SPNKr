@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Replace `HighlightEvent`'s `NamedTuple` with an immutable Pydantic model that
+  validates event and medal consistency. Use the `EventType` and `Medal` enums
+  for event and medal values; medal events now expose a `Medal` through `medal`
+  instead of the former `is_medal` and `medal_value` fields. `medal_name` remains
+  available, and `EventType` and `Medal` are exported from `spnkr.film`.
+
 ### Fixed
 
 - Fix empty generator behavior in xuid lists for skill requests.

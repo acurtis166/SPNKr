@@ -3,9 +3,10 @@ import json
 from pathlib import Path
 
 import pytest
+from pydantic import ValidationError
 
 from spnkr.errors import FilmReadError
-from spnkr.film import highlight_events
+from spnkr.film import EventType, Medal, highlight_events
 from spnkr.models.stats import MatchStats
 
 FILM_DIR = Path(__file__).parents[1] / "data/film"
@@ -32,13 +33,45 @@ def test_read_highlight_events(events: list[highlight_events.HighlightEvent]):
         ("kill", 29, None),
         ("death", 51, None),
         ("kill", 70, None),
-        ("medal", 70, "Nade Shot"),
+        ("medal", 70, Medal.NADE_SHOT),
         ("mode", 70, None),
     ]
-    result = [(e.event_type, round(e.time_ms / 1000), e.medal_name) for e in events]
+    result = [(e.event_type, round(e.time_ms / 1000), e.medal) for e in events]
     assert len(result) == 6
     for event in expected:
         assert event in result
+
+
+@pytest.mark.parametrize(
+    "event_type,medal",
+    [
+        (EventType.MEDAL, Medal.DOUBLE_KILL),
+        (EventType.KILL, None),
+        (EventType.DEATH, None),
+        (EventType.MODE, None),
+    ],
+)
+def test_highlight_event_accepts_consistent_medal(event_type, medal):
+    event = highlight_events.HighlightEvent(
+        xuid=1, gamertag="player", event_type=event_type, time_ms=0, medal=medal
+    )
+    assert event.medal is medal
+
+
+@pytest.mark.parametrize(
+    "event_type,medal,message",
+    [
+        (EventType.MEDAL, None, "medal is required for medal events"),
+        (EventType.KILL, Medal.DOUBLE_KILL, "medal must be None for non-medal events"),
+        (EventType.DEATH, Medal.NADE_SHOT, "medal must be None for non-medal events"),
+        (EventType.MODE, Medal.NADE_SHOT, "medal must be None for non-medal events"),
+    ],
+)
+def test_highlight_event_rejects_inconsistent_medal(event_type, medal, message):
+    with pytest.raises(ValidationError, match=message):
+        highlight_events.HighlightEvent(
+            xuid=1, gamertag="player", event_type=event_type, time_ms=0, medal=medal
+        )
 
 
 @pytest.mark.parametrize(
@@ -69,10 +102,10 @@ def test_read_film_major_versions(
     assert event.xuid == xuid
     assert event.gamertag == gamertag
     assert event.time_ms == time_ms
-    assert counts["kill"] == kills
-    assert counts["death"] == deaths
-    assert counts["mode"] == modes
-    assert counts["medal"] == medals
+    assert counts[EventType.KILL] == kills
+    assert counts[EventType.DEATH] == deaths
+    assert counts[EventType.MODE] == modes
+    assert counts[EventType.MEDAL] == medals
 
 
 def test_infer_event_type_error():

@@ -2,12 +2,12 @@
 
 import collections
 import zlib
-from typing import Any, Literal, NamedTuple
+from typing import Any
 
 from bitstring import Bits
 
 from spnkr.errors import FilmReadError
-from spnkr.film.medals import MEDALS
+from spnkr.film.models import EventCounts, EventType, HighlightEvent, Medal
 from spnkr.models.stats import MatchStats, PlayerStats
 from spnkr.xuid import unwrap_xuid
 
@@ -35,29 +35,6 @@ _MEDAL_SORTING_WEIGHTS = {
     245,
     250,
 }
-
-EventType = Literal["kill", "death", "medal", "mode"]
-
-
-class HighlightEvent(NamedTuple):
-    """A kill, death, mode-related, or medal game event in a Halo Infinite match."""
-
-    xuid: int
-    """Xbox user ID of the player the event is tied to."""
-    gamertag: str
-    """Gamertag of the player the event is tied to."""
-    type_hint: int
-    """Byte value used to infer the event type."""
-    is_medal: bool
-    """Byte value used to infer the event type."""
-    event_type: EventType
-    """Inferred event type. One of 'kill', 'death', 'mode', or 'medal'."""
-    time_ms: int
-    """Timestamp of the event in milliseconds following the start of the match."""
-    medal_value: int
-    """Byte value encoding the medal type for medal event types."""
-    medal_name: str | None
-    """Name of the medal awarded for 'medal' event types. Otherwise `None`."""
 
 
 def read(data: bytes, version: int):
@@ -97,13 +74,13 @@ def _find_xuids(bits: Bits):
 def _infer_event_type(hint: int, is_medal: bool) -> EventType:
     """Infer the type of an event given information from a couple bytes."""
     if is_medal and hint in _MEDAL_SORTING_WEIGHTS:
-        return "medal"
+        return EventType.MEDAL
     if hint == _MODE:
-        return "mode"
+        return EventType.MODE
     if hint == _DEATH:
-        return "death"
+        return EventType.DEATH
     if hint == _KILL:
-        return "kill"
+        return EventType.KILL
     raise FilmReadError(f"Unhandled event type args: {hint=}, {is_medal=}")
 
 
@@ -142,25 +119,17 @@ def _parse_event(bits: Bits, start: int, version: int) -> HighlightEvent:
     values: list[Any] = event_bits.unpack(fmt=", ".join(_tokens(version)))
     gamertag_bytes, type_hint, time_ms, is_medal, medal_value = values
     event_type = _infer_event_type(type_hint, is_medal == 1)
-    medal_name = MEDALS.get(medal_value) if event_type == "medal" else None
+    try:
+        medal = Medal(medal_value) if event_type is EventType.MEDAL else None
+    except ValueError as e:
+        raise FilmReadError(f"Invalid medal value: {medal_value}, {version=}") from e
     return HighlightEvent(
         xuid=selected[:_XUID_BITS].uintle,
         gamertag=gamertag_bytes.decode("utf-16le").strip("\x00"),
-        type_hint=type_hint,
-        is_medal=is_medal == 1,
         event_type=event_type,
         time_ms=time_ms,
-        medal_value=medal_value,
-        medal_name=medal_name,
+        medal=medal,
     )
-
-
-class _EventCounts(NamedTuple):
-    """Container for storing expected or resulting event counts."""
-
-    kills: int
-    deaths: int
-    medals: int
 
 
 def check(events: list[HighlightEvent], match_stats: MatchStats) -> list[str]:
@@ -212,7 +181,7 @@ def _group_events_by_xuid(
     return out
 
 
-def _get_player_stat_event_type_counts(player: PlayerStats) -> _EventCounts:
+def _get_player_stat_event_type_counts(player: PlayerStats) -> EventCounts:
     """Get expected event counts from player stats."""
     kills = deaths = medals = 0
     for player_team in player.player_team_stats:
@@ -220,10 +189,14 @@ def _get_player_stat_event_type_counts(player: PlayerStats) -> _EventCounts:
         kills += core.kills
         deaths += core.deaths
         medals += sum(m.count for m in core.medals)
-    return _EventCounts(kills, deaths, medals)
+    return EventCounts(kills, deaths, medals)
 
 
-def _get_highlight_event_type_counts(events: list[HighlightEvent]) -> _EventCounts:
+def _get_highlight_event_type_counts(events: list[HighlightEvent]) -> EventCounts:
     """Get event type counts for a list of `events`."""
     counter = collections.Counter(e.event_type for e in events)
-    return _EventCounts(counter["kill"], counter["death"], counter["medal"])
+    return EventCounts(
+        kills=counter[EventType.KILL],
+        deaths=counter[EventType.DEATH],
+        medals=counter[EventType.MEDAL],
+    )
