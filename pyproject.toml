@@ -43,10 +43,6 @@ dev = [
 requires = ["uv_build>=0.13.8,<0.14"]
 build-backend = "uv_build"
 
-[tool.uv.build-backend]
-module-name = "spnkr"
-module-root = ""
-
 [tool.pytest.ini_options]
 asyncio_default_fixture_loop_scope = "session"
 

@@ -56,11 +56,7 @@ def _is_zlib_compressed(data: bytes) -> bool:
     if len(data) < 2:
         return False
     cmf, flg = data[:2]
-    return (
-        (cmf & 0x0F) == 8
-        and (cmf >> 4) <= 7
-        and ((cmf << 8) | flg) % 31 == 0
-    )
+    return (cmf & 0x0F) == 8 and (cmf >> 4) <= 7 and ((cmf << 8) | flg) % 31 == 0
 
 
 def _find_xuids(bits: Bits):
