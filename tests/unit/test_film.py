@@ -6,7 +6,7 @@ import pytest
 from pydantic import ValidationError
 
 from spnkr.errors import FilmReadError
-from spnkr.film import EventType, Medal, highlight_events
+from spnkr.film import EventType, HighlightEvent, Medal, highlight_events, validation
 from spnkr.models.stats import MatchStats
 
 FILM_DIR = Path(__file__).parents[1] / "data/film"
@@ -26,7 +26,7 @@ def stats():
     return MatchStats(**json.loads(data))
 
 
-def test_read_highlight_events(events: list[highlight_events.HighlightEvent]):
+def test_read_highlight_events(events: list[HighlightEvent]):
     """Test that events are parsed correctly."""
     expected = [
         ("mode", 24, None),
@@ -52,7 +52,7 @@ def test_read_highlight_events(events: list[highlight_events.HighlightEvent]):
     ],
 )
 def test_highlight_event_accepts_consistent_medal(event_type, medal):
-    event = highlight_events.HighlightEvent(
+    event = HighlightEvent(
         xuid=1, gamertag="player", event_type=event_type, time_ms=0, medal=medal
     )
     assert event.medal is medal
@@ -69,7 +69,7 @@ def test_highlight_event_accepts_consistent_medal(event_type, medal):
 )
 def test_highlight_event_rejects_inconsistent_medal(event_type, medal, message):
     with pytest.raises(ValidationError, match=message):
-        highlight_events.HighlightEvent(
+        HighlightEvent(
             xuid=1, gamertag="player", event_type=event_type, time_ms=0, medal=medal
         )
 
@@ -113,18 +113,14 @@ def test_infer_event_type_error():
         highlight_events._infer_event_type(0, False)
 
 
-def test_check_highlight_events_pass(
-    events: list[highlight_events.HighlightEvent], stats: MatchStats
-):
+def test_check_highlight_events_pass(events: list[HighlightEvent], stats: MatchStats):
     """Test that the check passes for matched event counts."""
-    errors = highlight_events.check(events, stats)
+    errors = validation.check(events, stats)
     assert not errors
 
 
-def test_check_highlight_events_fail(
-    events: list[highlight_events.HighlightEvent], stats: MatchStats
-):
+def test_check_highlight_events_fail(events: list[HighlightEvent], stats: MatchStats):
     """Test that the check fails for mismatched event counts."""
     events.pop(2)
-    errors = highlight_events.check(events, stats)
+    errors = validation.check(events, stats)
     assert len(errors) == 1
