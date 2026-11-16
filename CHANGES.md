@@ -11,6 +11,7 @@
   `APINotFoundError` (404), `APIRateLimitError` (429), and `APIServerError` (5xx).
 - All error classes are now exported from the root `spnkr` package for easier access.
 - Add retries for appropriate API error responses.
+- Add `HaloInfiniteClient` properties for session and tokens.
 
 ### Changed
 
@@ -24,6 +25,7 @@
   the OAuth2 provider response.
 - All error classes now store relevant context (status codes, response data, XUID values)
   as instance attributes for programmatic access.
+- Use properties to set spartan/clearance tokens instead of the `set_tokens` method.
 
 ### Fixed
 

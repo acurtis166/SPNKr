@@ -29,7 +29,7 @@ async def read_highlight_events(
     event.
 
     There are infrequent cases where not all kill/death events are captured as
-    expected. See `spnkr.film.highlight_events.check` for a method of checking
+    expected. See `spnkr.film.validation.check` for a method of checking
     outcomes against match stats.
 
     Args:
@@ -53,7 +53,7 @@ async def read_highlight_events(
     if url is None:
         raise FilmReadError("Film doesn't have a highlight events chunk")
 
-    response = await client._session.get(url)
+    response = await client.session.get(url)
     try:
         response.raise_for_status()
     except ClientResponseError as ex:

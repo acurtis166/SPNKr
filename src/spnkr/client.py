@@ -42,29 +42,38 @@ class HaloInfiniteClient:
                 limit is enforced per service, not globally. Defaults to 5
                 requests per second.
         """
-        self._session = session
-        self._max_retries = max(0, max_retries)
         if requests_per_second <= 0:
             raise ValueError("requests_per_second must be greater than 0")
+
+        self._session = session
+        self.spartan_token = spartan_token
+        self.clearance_token = clearance_token
+        self._max_retries = max(0, max_retries)
         self._requests_per_second = requests_per_second
-        self.set_tokens(spartan_token, clearance_token)
 
-    def set_tokens(self, spartan_token: str, clearance_token: str) -> None:
-        """Update the tokens used for authentication.
+        self._session.headers["Accept"] = "application/json"
 
-        This method is called during initialization, but can be used after
-        initialization to replace expiring tokens.
+    @property
+    def session(self) -> "ClientSession | CachedSession":
+        return self._session
 
-        Args:
-            spartan_token: The spartan token used to authenticate with the API.
-            clearance_token: The clearance token used to authenticate with the API.
-        """
-        update = {
-            "Accept": "application/json",
-            "x-343-authorization-spartan": spartan_token,
-            "343-clearance": clearance_token,
-        }
-        self._session.headers.update(update)
+    @property
+    def spartan_token(self) -> str:
+        return self._spartan_token
+
+    @spartan_token.setter
+    def spartan_token(self, value: str) -> None:
+        self._spartan_token = value
+        self.session.headers["x-343-authorization-spartan"] = self._spartan_token
+
+    @property
+    def clearance_token(self) -> str:
+        return self._clearance_token
+
+    @clearance_token.setter
+    def clearance_token(self, value: str) -> None:
+        self._clearance_token = value
+        self.session.headers["343-clearance"] = self._clearance_token
 
     @cached_property
     def profile(self) -> ProfileService:

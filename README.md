@@ -86,7 +86,7 @@ Spartan tokens are short-lived. If you already have replacement tokens, update a
 existing client without recreating it:
 
 ```python
-client.set_tokens(spartan_token="NEW_SPARTAN", clearance_token="NEW_CLEARANCE")
+client.spartan_token = "NEW_SPARTAN"
 ```
 
 For automated token refresh, see auth helpers:

@@ -24,9 +24,9 @@ def client(session):
 def test_client_invalid_requests_per_second(session):
     """Test that initializing the client with invalid requests_per_second raises ValueError."""
     with pytest.raises(ValueError):
-        HaloInfiniteClient(session, "spartan", "clearance", 0)
+        HaloInfiniteClient(session, "spartan", "clearance", requests_per_second=0)
     with pytest.raises(ValueError):
-        HaloInfiniteClient(session, "spartan", "clearance", -1)
+        HaloInfiniteClient(session, "spartan", "clearance", requests_per_second=-1)
 
 
 def test_client_set_tokens(client: HaloInfiniteClient):
@@ -36,7 +36,8 @@ def test_client_set_tokens(client: HaloInfiniteClient):
         "x-343-authorization-spartan": "spartan",
         "343-clearance": "clearance",
     }
-    client.set_tokens("new_spartan", "new_clearance")
+    client.spartan_token = "new_spartan"
+    client.clearance_token = "new_clearance"
     assert client._session.headers == {
         "Accept": "application/json",
         "x-343-authorization-spartan": "new_spartan",
