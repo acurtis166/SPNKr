@@ -21,6 +21,14 @@ def service(session):
     return BaseService(session, max_retries=3)
 
 
+def test_service_invalid_requests_per_second(session):
+    """Test that initializing the service with invalid requests_per_second raises ValueError."""
+    with pytest.raises(ValueError):
+        BaseService(session, max_retries=3, requests_per_second=0)
+    with pytest.raises(ValueError):
+        BaseService(session, max_retries=3, requests_per_second=-1)
+
+
 @pytest.mark.asyncio
 async def test_rate_limiter(service: BaseService):
     """Test that the rate limiter limits requests as expected."""

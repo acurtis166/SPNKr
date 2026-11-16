@@ -21,6 +21,14 @@ def client(session):
     return HaloInfiniteClient(session, "spartan", "clearance", 5)
 
 
+def test_client_invalid_requests_per_second(session):
+    """Test that initializing the client with invalid requests_per_second raises ValueError."""
+    with pytest.raises(ValueError):
+        HaloInfiniteClient(session, "spartan", "clearance", 0)
+    with pytest.raises(ValueError):
+        HaloInfiniteClient(session, "spartan", "clearance", -1)
+
+
 def test_client_set_tokens(client: HaloInfiniteClient):
     """Test that the client headers are set in the `set_tokens` method."""
     assert client._session.headers == {

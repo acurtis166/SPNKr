@@ -28,7 +28,7 @@ class HaloInfiniteClient:
         spartan_token: str,
         clearance_token: str,
         max_retries: int = 2,
-        requests_per_second: int = 5,
+        requests_per_second: float = 5,
     ) -> None:
         """Initialize a client for the Halo Infinite API.
 
@@ -44,6 +44,8 @@ class HaloInfiniteClient:
         """
         self._session = session
         self._max_retries = max(0, max_retries)
+        if requests_per_second <= 0:
+            raise ValueError("requests_per_second must be greater than 0")
         self._requests_per_second = requests_per_second
         self.set_tokens(spartan_token, clearance_token)
 

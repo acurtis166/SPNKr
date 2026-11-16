@@ -76,7 +76,7 @@ class BaseService:
     """Base service class. Handles initialization and rate limiting requests."""
 
     def __init__(
-        self, session: Session, max_retries: int = 2, requests_per_second: int = 5
+        self, session: Session, max_retries: int = 2, requests_per_second: float = 5
     ) -> None:
         """Initialize a service.
 
@@ -87,6 +87,8 @@ class BaseService:
         """
         self._session = session
         self._max_retries = max(0, max_retries)
+        if requests_per_second <= 0:
+            raise ValueError("requests_per_second must be greater than 0")
         # Setting the max rate to 1 disallows bursts.
         self._rate_limiter = AsyncLimiter(1, 1 / requests_per_second)
 
