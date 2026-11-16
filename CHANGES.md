@@ -10,6 +10,7 @@
   `APIAuthenticationError` (401), `APIAuthorizationError` (403),
   `APINotFoundError` (404), `APIRateLimitError` (429), and `APIServerError` (5xx).
 - All error classes are now exported from the root `spnkr` package for easier access.
+- Add retries for appropriate API error responses.
 
 ### Changed
 
