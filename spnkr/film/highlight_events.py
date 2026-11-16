@@ -57,7 +57,7 @@ def _find_xuids(bits: Bits):
     # 2a5bf9c8f1010900 (2d|25)c0
     for marker_start in bits.findall(Bits(hex="c0")):
         xuid_end = marker_start - 8
-        if bits[xuid_end:marker_start].hex not in ("2d", "25"):
+        if bits[xuid_end:marker_start].uint not in (0x2D, 0x25):
             continue
         xuid_start = xuid_end - _XUID_BITS
         xuid_bits = bits[xuid_start:xuid_end]
