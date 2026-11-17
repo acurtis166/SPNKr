@@ -9,7 +9,7 @@ pip install spnkr
 ```
 
 !!! info "Note"
-    This package depends on [aiohttp](https://docs.aiohttp.org/en/stable/) for making asyncronous requests. You may want to understand the basics of the [ClientSession](https://docs.aiohttp.org/en/stable/client_reference.html#client-session) class.
+    This package depends on [aiohttp](https://docs.aiohttp.org/en/stable/) for making asynchronous requests. You may want to understand the basics of the [ClientSession](https://docs.aiohttp.org/en/stable/client_reference.html#client-session) class.
 
 ## Authentication
 

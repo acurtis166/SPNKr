@@ -18,12 +18,7 @@ from spnkr import HaloInfiniteClient
 
 
 async def main() -> None:
-    async with HaloInfiniteClient(
-        spartan_token="SPARTAN_TOKEN",
-        clearance_token="CLEARANCE_TOKEN",  # Optional; required only for economy endpoints
-        requests_per_second=5,
-    ) as client:
-        # Use the client - session is automatically created and managed
+    async with HaloInfiniteClient("SPARTAN_TOKEN") as client:
         history = await client.get_match_history("MyGamertag")
 
 
@@ -47,13 +42,7 @@ from spnkr import HaloInfiniteClient
 
 async def main() -> None:
     async with ClientSession() as session:
-        client = HaloInfiniteClient(
-            session=session,
-            spartan_token="SPARTAN_TOKEN",
-            clearance_token="CLEARANCE_TOKEN",  # Optional; required only for economy endpoints
-            requests_per_second=5,
-        )
-        # Use the client - you manage the session lifecycle
+        client = HaloInfiniteClient("SPARTAN_TOKEN", session=session)
         history = await client.get_match_history("MyGamertag")
 
 
@@ -63,33 +52,6 @@ if __name__ == "__main__":
 
 !!! tip "Caching Support"
     If using caching via `aiohttp-client-cache`, provide a `CachedSession` as shown in the [Caching](#caching) section below.
-
-### Without Clearance Token (Economy Endpoints Not Required)
-
-If you only need public endpoints and don't plan to use economy endpoints, you can omit the clearance token:
-
-```python
-import asyncio
-
-from spnkr import HaloInfiniteClient
-
-
-async def main() -> None:
-    async with HaloInfiniteClient(
-        spartan_token="SPARTAN_TOKEN",
-        requests_per_second=5,
-    ) as client:
-        # Use the client - all public endpoints work without clearance
-        history = await client.get_match_history("MyGamertag")
-        matches = await client.get_match_stats("MATCH_GUID")
-
-
-if __name__ == "__main__":
-    asyncio.run(main())
-```
-
-!!! note "Economy Endpoints Require Clearance"
-    If you try to call `get_player_customization`, `get_player_career_rank`, or `get_player_reward_track_operations` without providing a clearance token, an `SPNKrError` will be raised.
 
 ## Requesting Data
 
@@ -109,9 +71,7 @@ PLAYER = "MyGamertag"  # AuthenticatedPlayer.gamertag
 
 
 async def main() -> None:
-    async with ClientSession() as session:
-        client = HaloInfiniteClient(...)
-
+    async with HaloInfiniteClient("SPARTAN_TOKEN") as client:
         # Request the 25 most recent matches for the player.
         history = await client.get_match_history(PLAYER)
 
@@ -143,6 +103,7 @@ async def filter_by_cache_control(response):
 
 
 async def main() -> None:
+    # Other backends are available; `SQLiteBackend` requires the `aiosqlite` package
     cache = SQLiteBackend(
         "cache.sqlite",
         cache_control=True,
@@ -153,12 +114,12 @@ async def main() -> None:
         ],
     )
     async with CachedSession(cache=cache) as session:
-        async with HaloInfiniteClient(
-            session=session,
-            spartan_token="SPARTAN_TOKEN",
-            clearance_token="CLEARANCE_TOKEN",
-        ) as client:
-            history = await client.get_match_history("MyGamertag")
+        client = HaloInfiniteClient("SPARTAN_TOKEN", session=session)
+        history = await client.get_match_history("MyGamertag")
+
+        match_id = history.results[0].match_id
+        stats1 = await client.get_match_stats(match_id)
+        stats2 = await client.get_match_stats(match_id)  # From cache
 
 
 if __name__ == "__main__":

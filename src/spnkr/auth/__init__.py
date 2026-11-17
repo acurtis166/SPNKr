@@ -6,8 +6,8 @@ from spnkr.auth.halo import ClearanceToken, SpartanToken
 from spnkr.auth.player import AuthenticatedPlayer
 
 __all__ = [
-    "AzureApp",
     "AuthenticatedPlayer",
+    "AzureApp",
     "ClearanceToken",
     "SpartanToken",
     "authenticate_player",

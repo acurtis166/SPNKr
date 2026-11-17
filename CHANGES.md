@@ -249,7 +249,7 @@
 First documented release.
 
 [unreleased]: https://github.com/acurtis166/SPNKr/compare/v0.10.2...HEAD
-[0.10.1]: https://github.com/acurtis166/SPNKr/compare/v0.10.1...v0.10.2
+[0.10.2]: https://github.com/acurtis166/SPNKr/compare/v0.10.1...v0.10.2
 [0.10.1]: https://github.com/acurtis166/SPNKr/compare/v0.10.0...v0.10.1
 [0.10.0]: https://github.com/acurtis166/SPNKr/compare/v0.9.6...v0.10.0
 [0.9.6]: https://github.com/acurtis166/SPNKr/compare/v0.9.5...v0.9.6

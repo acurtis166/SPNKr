@@ -29,4 +29,4 @@ class AuthenticatedPlayer:
     @property
     def is_valid(self) -> bool:
         """Whether the player's Spartan token is still valid."""
-        return self.spartan_token.expires_at > dt.datetime.now(dt.timezone.utc)
+        return self.spartan_token.expires_at > dt.datetime.now(dt.UTC)

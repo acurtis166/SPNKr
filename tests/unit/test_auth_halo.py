@@ -43,7 +43,7 @@ def test_spartan_token_expires_at():
     """Test that the expiration datetime is returned."""
     response = load_response("spartan")
     spartan_token = halo.SpartanToken(response)
-    expected = dt.datetime(2999, 1, 27, 5, 3, 47, tzinfo=dt.timezone.utc)
+    expected = dt.datetime(2999, 1, 27, 5, 3, 47, tzinfo=dt.UTC)
     assert spartan_token.expires_at == expected
 
 

@@ -21,7 +21,6 @@ nav:
   - Reference:
     - reference/authentication.md
     - reference/client.md
-    - reference/responses.md
     - reference/models.md
     - reference/film.md
     - reference/reference-data.md

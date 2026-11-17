@@ -169,7 +169,7 @@ class PlayerCustomization(PascalCaseModel, frozen=True):
 
 class _ExtraPascalCaseModel(PascalCaseModel, frozen=True):
     model_config = ConfigDict(
-        alias_generator=PascalCaseModel.model_config["alias_generator"],
+        alias_generator=PascalCaseModel.model_config.get("alias_generator"),
         populate_by_name=True,
         extra="allow",
     )
