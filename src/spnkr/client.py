@@ -10,6 +10,7 @@ from aiohttp import ClientSession
 from aiolimiter import AsyncLimiter
 from pydantic import BaseModel
 
+from spnkr.auth.provider import StaticTokenProvider, TokenProvider
 from spnkr.errors import SPNKrError
 from spnkr.http_helpers import Response, Session, send_api_request
 from spnkr.models.discovery_ugc import (
@@ -78,7 +79,7 @@ class HaloInfiniteClient:
 
     def __init__(
         self,
-        spartan_token: str,
+        spartan_token: str | TokenProvider,
         clearance_token: str | None = None,
         max_retries: int = 2,
         requests_per_second: float = 5,
@@ -87,12 +88,13 @@ class HaloInfiniteClient:
         """Initialize a client for the Halo Infinite API.
 
         Args:
-            spartan_token: The spartan token used to authenticate with the API.
+            spartan_token: The Spartan token used to authenticate with the API.
+                Can be a token string or a TokenProvider instance for automatic
+                token refresh support.
             clearance_token: The clearance token used to authenticate with the API.
                 Optional, but required for economy endpoints
                 (get_player_customization, get_player_career_rank,
-                get_player_reward_track_operations). If not provided, calls to
-                those methods will raise SPNKrError. Defaults to None.
+                get_player_reward_track_operations). Defaults to None.
             max_retries: The maximum number of times to retry a request on failure.
             requests_per_second: The rate limit to use. Note that this rate
                 limit is enforced per service, not globally. Defaults to 5
@@ -107,7 +109,12 @@ class HaloInfiniteClient:
 
         self._session = session
         self._own_session = session is None
-        self._spartan_token = spartan_token
+
+        if isinstance(spartan_token, str):
+            self._spartan_token_provider = StaticTokenProvider(spartan_token)
+        else:
+            self._spartan_token_provider = spartan_token
+
         self._clearance_token = clearance_token
         self._max_retries = max(0, max_retries)
         # Setting the max rate to 1 disallows bursts.
@@ -136,12 +143,22 @@ class HaloInfiniteClient:
         return self._session
 
     @property
-    def spartan_token(self) -> str:
-        return self._spartan_token
+    def spartan_token(self) -> TokenProvider:
+        """Get the current spartan token provider."""
+        return self._spartan_token_provider
 
     @spartan_token.setter
-    def spartan_token(self, value: str) -> None:
-        self._spartan_token = value
+    def spartan_token(self, value: str | TokenProvider) -> None:
+        """Set the spartan token (updates the internal provider)."""
+        if isinstance(value, str):
+            self._spartan_token_provider = StaticTokenProvider(value)
+        else:
+            self._spartan_token_provider = value
+
+    @property
+    def clearance_token(self) -> str | None:
+        """Get the current clearance token."""
+        return self._clearance_token
 
     def _require_clearance_token(self) -> None:
         if not self._clearance_token:
@@ -156,7 +173,7 @@ class HaloInfiniteClient:
             session=self.session,
             method="GET",
             url=f"https://{authority.rstrip('/')}/{endpoint.lstrip('/')}",
-            spartan_token=self._spartan_token,
+            spartan_token=self._spartan_token_provider,
             clearance_token=self._clearance_token,
             max_retries=self._max_retries,
             limiter=self._rate_limiters[authority],

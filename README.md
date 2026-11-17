@@ -46,7 +46,9 @@ You can get them in two ways:
 1. Manual (fastest): copy headers from Halo Waypoint network traffic.
 1. Programmatic (recommended): use Azure app registration + refresh flow.
 
-Detailed steps are in the [Getting Started guide](https://acurtis166.github.io/SPNKr/getting-started/).
+For detailed setup and token management strategies, see:
+- [Getting Started guide](https://acurtis166.github.io/SPNKr/getting-started/) for initial setup
+- [Token Providers guide](https://acurtis166.github.io/SPNKr/token-providers/) for static tokens, OAuth integration, and caching
 
 ### 2. Create the client
 

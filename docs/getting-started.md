@@ -8,16 +8,17 @@ Requires Python >=3.11
 pip install spnkr
 ```
 
-!!! info "Note"
-    This package depends on [aiohttp](https://docs.aiohttp.org/en/stable/) for making asynchronous requests. You may want to understand the basics of the [ClientSession](https://docs.aiohttp.org/en/stable/client_reference.html#client-session) class.
-
 ## Authentication
 
 SPNKr requires a Spartan token for all endpoints. Clearance token is optional and only required for economy endpoints. There are a couple ways to obtain these credentials.
 
-### Option 1 - Halo Waypoint
+### Option 1 - Static Token
 
-The simple, manual way of getting your tokens is to obtain them by inspecting network traffic while navigating Halo Waypoint in your web browser. This is great for getting started, but as the spartan token is only valid for 4 hours, it might become tedious if you need to consistently get new tokens. The following instructions are for Google Chrome.
+The simplest way is to grab your tokens manually from Halo Waypoint. However, since spartan tokens expire after 4 hours, this approach is best for quick testing or one-off scripts.
+
+See [Option 2 (Azure App Registration)](#option-2---azure-app-registration) below or check out the [Token Providers guide](token-providers.md) for MSAL integration with automatic caching and refresh.
+
+The following instructions are for Google Chrome:
 
 1. Navigate to [Halo Waypoint](https://www.halowaypoint.com/).
 1. Click "SIGN IN" at the top right and log in.
@@ -33,11 +34,14 @@ The simple, manual way of getting your tokens is to obtain them by inspecting ne
 
 ### Option 2 - Azure App Registration
 
-The 2nd way to obtain tokens takes a little time to set up but automates the token refresh process.
+The recommended approach uses Azure AD to automate token refresh, so you don't need to manually grab tokens.
+
+!!! tip "Using MSAL?"
+    If you're using Python's [MSAL library](https://github.com/AzureAD/microsoft-authentication-library-for-python) (recommended), check out the [Token Providers guide](token-providers.md) for a complete example. This handles token refresh automatically and securely, though you still need to register an app in Azure.
 
 #### Azure Active Directory Setup
 
-Authentication requires creating an Azure Active Directory (Azure AD) application. Use the account that you play Halo Infinite with, as you will need to be able to acquire Xbox Live and Halo Infinite credentials.
+Authentication requires creating an Azure Active Directory (Azure AD) application. Use the account that you play Halo Infinite with, as you will need to be able to acquire Xbox Live and Halo Infinite credentials. These instructions are for creating a confidential client with a secret. You can set up a public client instead, but you will need to use an MSAL token provider instead of the authentication helpers provided.
 
 1. Sign up for a [Microsoft Azure](https://azure.microsoft.com/en-us) account.
 1. Register a new application in [Azure AD](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade).

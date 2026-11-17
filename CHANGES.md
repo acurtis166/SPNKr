@@ -15,6 +15,9 @@
 - `HaloInfiniteClient` can now be used as an async context manager to automatically
   manage an internal session. The `session` parameter is now optional.
 - Add match history iteration method.
+- Add token provider interface and implementations: `StaticTokenProvider` for static tokens,
+  `RefreshTokenProvider` for OAuth-based token refresh with caching. Token providers
+  simplify integration with authentication systems like MSAL.
 
 ### Changed
 

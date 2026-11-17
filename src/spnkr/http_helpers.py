@@ -23,6 +23,8 @@ if TYPE_CHECKING:
     from aiohttp_client_cache.response import CachedResponse
     from aiohttp_client_cache.session import CachedSession
 
+    from spnkr.auth.provider import TokenProvider
+
 Response: TypeAlias = "ClientResponse | CachedResponse"
 Session: TypeAlias = "ClientSession | CachedSession"
 
@@ -73,7 +75,7 @@ async def send_api_request(
     session: Session,
     method: str,
     url: str,
-    spartan_token: str,
+    spartan_token: "str | TokenProvider",
     clearance_token: str | None,
     max_retries: int,
     limiter: AsyncLimiter,
@@ -81,9 +83,14 @@ async def send_api_request(
 ):
     last_exception: Exception | None = None
 
+    if isinstance(spartan_token, str):
+        spartan_token_value = spartan_token
+    else:
+        spartan_token_value = await spartan_token.get_token()
+
     headers = kwargs.pop("headers", {})
     headers.setdefault("Accept", "application/json")
-    headers.setdefault("x-343-authorization-spartan", spartan_token)
+    headers.setdefault("x-343-authorization-spartan", spartan_token_value)
     if clearance_token is not None:
         headers.setdefault("343-clearance", clearance_token)
     kwargs["headers"] = headers

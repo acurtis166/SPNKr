@@ -66,3 +66,7 @@ class APIServerError(APIError):
 
 class FilmReadError(SPNKrError):
     """Error occurred while reading attributes from a film chunk."""
+
+
+class TokenError(SPNKrError):
+    """Error obtaining or refreshing a token."""

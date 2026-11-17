@@ -18,6 +18,7 @@ nav:
   - Home: index.md
   - getting-started.md
   - basic-usage.md
+  - token-providers.md
   - Reference:
     - reference/authentication.md
     - reference/client.md

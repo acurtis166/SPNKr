@@ -1,7 +1,7 @@
 # Basic Usage
 
 !!! info "Note"
-    These steps assume you have obtained a spartan token as described [here](getting-started.md). The clearance token is optional and only required for economy endpoints.
+    These steps assume you have set up a spartan token provider as described [here](getting-started.md). The clearance token is optional and only required for economy endpoints.
 
 ## Initializing the HaloInfiniteClient
 
