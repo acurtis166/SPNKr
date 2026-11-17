@@ -177,6 +177,69 @@ if __name__ == "__main__":
 
 See the [Film reference](https://acurtis166.github.io/SPNKr/reference/film/) for more details.
 
+## Development
+
+### Setup
+
+This project uses `uv` as the package manager. Install dependencies with:
+
+```shell
+uv sync
+```
+
+### Code Quality
+
+Before committing, run:
+
+```shell
+uv check
+ruff check --fix
+ruff format
+```
+
+### Testing
+
+Run the full test suite:
+
+```shell
+uv run pytest                    # Run all tests
+uv run pytest tests/unit         # Run unit tests only
+uv run pytest tests/integration  # Run integration tests only
+```
+
+Unit tests run without any setup. Integration tests will be **automatically skipped** if credentials are not configured.
+
+#### Integration Tests (Optional)
+
+To run integration tests, create a `.env` file in the project root with:
+
+```env
+SPNKR_CLIENT_ID=your_azure_app_client_id
+SPNKR_CLIENT_SECRET=your_azure_app_client_secret
+SPNKR_REDIRECT_URI=https://localhost
+SPNKR_REFRESH_TOKEN=your_oauth_refresh_token
+```
+
+### Documentation
+
+Build and serve the documentation locally:
+
+```shell
+uv run mkdocs serve
+```
+
+This starts a live-reloading server at `http://localhost:8000`. To deploy documentation updates to GitHub Pages:
+
+```shell
+uv run mkdocs gh-deploy
+```
+
+This builds the docs and pushes them to the `gh-pages` branch.
+
+### Publishing
+
+Releases are published to [PyPI](https://pypi.org/project/spnkr/) automatically via GitHub Actions when a new release is created.
+
 ## Acknowledgements
 
 - Xbox Live authentication flow: https://github.com/OpenXbox/xbox-webapi-python

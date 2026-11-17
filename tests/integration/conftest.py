@@ -1,6 +1,7 @@
 import os
 
 import dotenv
+import pytest
 import pytest_asyncio
 from aiohttp import ClientSession
 
@@ -11,6 +12,19 @@ from spnkr.client import HaloInfiniteClient
 @pytest_asyncio.fixture(scope="session", loop_scope="session")
 async def authenticated_player():
     dotenv.load_dotenv()
+    required_vars = [
+        "SPNKR_REFRESH_TOKEN",
+        "SPNKR_CLIENT_ID",
+        "SPNKR_CLIENT_SECRET",
+        "SPNKR_REDIRECT_URI",
+    ]
+    missing_vars = [var for var in required_vars if not os.environ.get(var)]
+    if missing_vars:
+        pytest.skip(
+            f"Integration tests require: {', '.join(missing_vars)}. "  # type: ignore
+            "See README for .env setup instructions."
+        )
+
     refresh_token = os.environ["SPNKR_REFRESH_TOKEN"]
     client_id = os.environ["SPNKR_CLIENT_ID"]
     client_secret = os.environ["SPNKR_CLIENT_SECRET"]

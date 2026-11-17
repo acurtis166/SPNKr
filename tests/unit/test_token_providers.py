@@ -138,7 +138,7 @@ class TestRefreshTokenProvider:
         with pytest.raises(
             TypeError, match="must be an async function or async callable class"
         ):
-            RefreshTokenProvider(sync_func)  # type: ignore
+            RefreshTokenProvider(sync_func)
 
     @pytest.mark.asyncio
     async def test_async_callable_class(self):
