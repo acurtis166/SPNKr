@@ -111,8 +111,8 @@ async def main() -> None:
     async with ClientSession() as session:
         player = await refresh_player_tokens(session, app, REFRESH_TOKEN)
 
-    print(f"Spartan token: {player.spartan_token.token}")  # Valid for 4 hours.
-    print(f"Clearance token: {player.clearance_token.token}")
+    print(f"Spartan token: {player.spartan_token.spartan_token}")  # Valid for 4 hours.
+    print(f"Clearance token: {player.clearance_token.flight_configuration_id}")
     print(f"Xbox Live player ID (XUID): {player.player_id}")
     print(f"Xbox Live gamertag: {player.gamertag}")
     print(f"Xbox Live authorization: {player.xbl_authorization_header_value}")

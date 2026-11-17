@@ -86,7 +86,8 @@ async def send_api_request(
     if isinstance(spartan_token, str):
         spartan_token_value = spartan_token
     else:
-        spartan_token_value = await spartan_token.get_token()
+        token_obj = await spartan_token.get_token()
+        spartan_token_value = token_obj.spartan_token
 
     headers = kwargs.pop("headers", {})
     headers.setdefault("Accept", "application/json")

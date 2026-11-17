@@ -81,15 +81,15 @@ The token is cached after first retrieval. To explicitly refresh:
 new_token = await provider.refresh()
 ```
 
+The token will automatically be refreshed if it is about to expire.
+
 ## Custom Provider
 
 Implement the `TokenProvider` protocol for custom behavior:
 
 ```python
 class CustomTokenProvider:
-    async def get_token(self) -> str:
-        # Return a Spartan token string
-        return spartan_token_string
+    async def get_token(self) -> SpartanToken: ...
 
 
 provider = CustomTokenProvider()

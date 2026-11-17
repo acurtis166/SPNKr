@@ -35,14 +35,14 @@ def load_response(name: str) -> Any:
 def test_spartan_token_token():
     """Test that the spartan token is returned."""
     response = load_response("spartan")
-    spartan_token = halo.SpartanToken(response)
-    assert spartan_token.token == "abcdef"
+    spartan_token = halo.SpartanToken.model_validate(response)
+    assert spartan_token.spartan_token == "abcdef"
 
 
 def test_spartan_token_expires_at():
     """Test that the expiration datetime is returned."""
     response = load_response("spartan")
-    spartan_token = halo.SpartanToken(response)
+    spartan_token = halo.SpartanToken.model_validate(response)
     expected = dt.datetime(2999, 1, 27, 5, 3, 47, tzinfo=dt.UTC)
     assert spartan_token.expires_at == expected
 
@@ -50,8 +50,8 @@ def test_spartan_token_expires_at():
 def test_clearance_token_token():
     """Test that the clearance token is returned."""
     response = load_response("clearance")
-    clearance_token = halo.ClearanceToken(response)
-    assert clearance_token.token == "xyz"
+    clearance_token = halo.ClearanceToken.model_validate(response)
+    assert clearance_token.flight_configuration_id == "xyz"
 
 
 @pytest.mark.asyncio
@@ -60,12 +60,17 @@ async def test_request_spartan_token():
     response = load_response("spartan")
     session = MockSession(MockResponse(response))
     token = await halo.request_spartan_token(session, "test")  # type: ignore
-    assert token.token == "abcdef"
+    assert token.spartan_token == "abcdef"
 
 
 @pytest.mark.asyncio
 async def test_request_spartan_token_called_with():
-    session = MockSession(MockResponse({}))
+    response_data = {
+        "SpartanToken": "test_token",
+        "ExpiresUtc": {"ISO8601Date": "2099-12-31T23:59:59Z"},
+        "TokenDuration": "PT3H59M49.4904271S",
+    }
+    session = MockSession(MockResponse(response_data))
     await halo.request_spartan_token(session, "test")  # type: ignore
     session.post.assert_called_with(
         "https://settings.svc.halowaypoint.com/spartan-token",
@@ -89,12 +94,13 @@ async def test_request_clearance_token():
     response = load_response("clearance")
     session = MockSession(MockResponse(response))
     token = await halo.request_clearance_token(session, "test")  # type: ignore
-    assert token.token == "xyz"
+    assert token.flight_configuration_id == "xyz"
 
 
 @pytest.mark.asyncio
 async def test_request_clearance_token_called_with():
-    session = MockSession(MockResponse({}))
+    response_data = {"FlightConfigurationId": "test_config"}
+    session = MockSession(MockResponse(response_data))
     await halo.request_clearance_token(session, "test")  # type: ignore
     session.get.assert_called_with(
         "https://settings.svc.halowaypoint.com/oban/flight-configurations/titles/hi/audiences/RETAIL/active",

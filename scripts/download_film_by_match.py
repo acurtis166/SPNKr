@@ -28,8 +28,8 @@ async def main(match_id: str, output_dir: Path) -> None:
         player = await refresh_player_tokens(session, app, REFRESH_TOKEN)
         client = HaloInfiniteClient(
             session=session,
-            spartan_token=player.spartan_token.token,
-            clearance_token=player.clearance_token.token,
+            spartan_token=player.spartan_token.spartan_token,
+            clearance_token=player.clearance_token.flight_configuration_id,
         )
         film = await client.get_film_by_match_id(match_id)
 

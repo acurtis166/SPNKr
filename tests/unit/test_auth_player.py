@@ -6,8 +6,16 @@ from spnkr.auth import halo, player
 def test_authenticated_player_is_valid_true():
     """Test that the authenticated player is valid."""
     expires_utc = {"ISO8601Date": "2999-09-01T00:00:00.000Z"}
-    spartan_token = halo.SpartanToken({"ExpiresUtc": expires_utc})
-    clearance_token = halo.ClearanceToken({"FlightConfigurationId": "token"})
+    spartan_token = halo.SpartanToken.model_validate(
+        {
+            "ExpiresUtc": expires_utc,
+            "SpartanToken": "token",
+            "TokenDuration": "PT3H59M49.4904271S",
+        }
+    )
+    clearance_token = halo.ClearanceToken.model_validate(
+        {"FlightConfigurationId": "token"}
+    )
     authenticated_player = player.AuthenticatedPlayer(
         "player_id",
         "gamertag",
@@ -21,8 +29,16 @@ def test_authenticated_player_is_valid_true():
 def test_authenticated_player_is_valid_false():
     """Test that the authenticated player is not valid."""
     expires_utc = {"ISO8601Date": "1999-09-01T00:00:00.000Z"}
-    spartan_token = halo.SpartanToken({"ExpiresUtc": expires_utc})
-    clearance_token = halo.ClearanceToken({"FlightConfigurationId": "token"})
+    spartan_token = halo.SpartanToken.model_validate(
+        {
+            "ExpiresUtc": expires_utc,
+            "SpartanToken": "token",
+            "TokenDuration": "PT3H59M49.4904271S",
+        }
+    )
+    clearance_token = halo.ClearanceToken.model_validate(
+        {"FlightConfigurationId": "token"}
+    )
     authenticated_player = player.AuthenticatedPlayer(
         "player_id",
         "gamertag",

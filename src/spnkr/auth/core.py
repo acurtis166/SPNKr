@@ -66,7 +66,9 @@ async def refresh_player_tokens(
         session, user_token.token, XSTS_V3_HALO_AUDIENCE
     )
     spartan_token = await halo.request_spartan_token(session, halo_xsts_token.token)
-    clearance_token = await halo.request_clearance_token(session, spartan_token.token)
+    clearance_token = await halo.request_clearance_token(
+        session, spartan_token.spartan_token
+    )
     return player.AuthenticatedPlayer(
         player_id=xsts_token.xuid,
         gamertag=xsts_token.gamertag,

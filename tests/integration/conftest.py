@@ -40,6 +40,6 @@ async def client(authenticated_player):
     async with ClientSession() as session:
         yield HaloInfiniteClient(
             session=session,
-            spartan_token=authenticated_player.spartan_token.token,
-            clearance_token=authenticated_player.clearance_token.token,
+            spartan_token=authenticated_player.spartan_token.spartan_token,
+            clearance_token=authenticated_player.clearance_token.flight_configuration_id,
         )

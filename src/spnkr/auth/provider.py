@@ -1,6 +1,7 @@
 """Token provider interface for Spartan token authentication."""
 
 import asyncio
+import datetime as dt
 import functools
 import inspect
 from collections.abc import Awaitable, Callable
@@ -21,11 +22,11 @@ class TokenProvider(Protocol):
     automatic token refresh via MSAL or other identity providers.
     """
 
-    async def get_token(self) -> str:
+    async def get_token(self) -> halo.SpartanToken:
         """Get a Spartan authentication token.
 
         Returns:
-            The token string to use for authentication.
+            The SpartanToken object containing the token string and expiration info.
 
         Raises:
             TokenError: If the token cannot be obtained.
@@ -48,13 +49,17 @@ class StaticTokenProvider:
         """
         self.token = token
 
-    async def get_token(self) -> str:
+    async def get_token(self) -> halo.SpartanToken:
         """Get the static token.
 
         Returns:
-            The token string.
+            A SpartanToken wrapping the static token value.
         """
-        return self.token
+        return halo.SpartanToken(
+            spartan_token=self.token,
+            expires_utc=halo.ExpiresUtc(iso8601_date="2099-12-31T23:59:59Z"),
+            token_duration=dt.timedelta(days=365 * 100),
+        )
 
 
 def _is_async_callable(obj) -> bool:
@@ -75,10 +80,12 @@ class RefreshTokenProvider:
     Halo-specific auth logic within the provider.
 
     Token caching is built-in: the spartan token is retrieved once and reused
-    until `refresh()` is explicitly called.
+    until `refresh()` is explicitly called or it is about to expire within the grace
+    period of 60 seconds.
     """
 
     _XSTS_V3_HALO_AUDIENCE = "https://prod.xsts.halowaypoint.com/"
+    _GRACE_PERIOD = dt.timedelta(seconds=60)
 
     def __init__(self, get_access_token: Callable[[], "Awaitable[str]"]) -> None:
         """Initialize a refresh token provider.
@@ -97,32 +104,46 @@ class RefreshTokenProvider:
             )
 
         self._get_access_token = get_access_token
-        self._spartan_token: str | None = None
+        self._spartan_token: halo.SpartanToken | None = None
         self._token_lock = asyncio.Lock()
 
-    async def get_token(self) -> str:
-        """Get a Spartan token, using cached value if available.
+    async def get_token(self) -> halo.SpartanToken:
+        """Get a Spartan token, using cached value if available and not expired.
 
         The first call invokes the async callable to get an access token,
         then exchanges it for a Spartan token. Subsequent calls return the
-        cached Spartan token until `refresh()` is called.
+        cached Spartan token until it expires or `refresh()` is called.
+
+        If the cached token has expired, a new token is automatically fetched.
 
         Returns:
-            The Spartan token string.
+            The SpartanToken object containing the token string and expiration info.
 
         Raises:
             TokenError: If the token cannot be obtained.
         """
         async with self._token_lock:
-            if self._spartan_token is None:
+            if self._spartan_token is None or self._is_token_expired():
                 self._spartan_token = await self._fetch_spartan_token()
             return self._spartan_token
 
-    async def refresh(self) -> str:
+    def _is_token_expired(self) -> bool:
+        """Check if the cached token has expired.
+
+        Returns:
+            True if the token is expired or expiring within 60 seconds, False otherwise.
+        """
+        if self._spartan_token is None:
+            return True
+
+        now = dt.datetime.now(dt.timezone.utc)
+        return self._spartan_token.expires_at <= now + self._GRACE_PERIOD
+
+    async def refresh(self) -> halo.SpartanToken:
         """Refresh the Spartan token by obtaining a new access token and exchanging it.
 
         Returns:
-            The new Spartan token string.
+            The new SpartanToken object containing the token string and expiration info.
 
         Raises:
             TokenError: If the token cannot be obtained.
@@ -131,11 +152,11 @@ class RefreshTokenProvider:
             self._spartan_token = await self._fetch_spartan_token()
             return self._spartan_token
 
-    async def _fetch_spartan_token(self) -> str:
+    async def _fetch_spartan_token(self) -> halo.SpartanToken:
         """Fetch a new Spartan token by exchanging the access token.
 
         Returns:
-            The Spartan token string.
+            The SpartanToken object.
 
         Raises:
             TokenError: If the token cannot be obtained.
@@ -152,7 +173,7 @@ class RefreshTokenProvider:
                 spartan_token = await halo.request_spartan_token(
                     session, xsts_token.token
                 )
-                return spartan_token.token
+                return spartan_token
         except TokenError:
             # Re-raise TokenError as-is
             raise

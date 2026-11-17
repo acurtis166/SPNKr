@@ -1,6 +1,12 @@
 """Python SDK for requesting Halo Infinite multiplayer data"""
 
-from spnkr.auth import AzureApp, authenticate_player, refresh_player_tokens
+from spnkr.auth import (
+    AzureApp,
+    ClearanceToken,
+    SpartanToken,
+    authenticate_player,
+    refresh_player_tokens,
+)
 from spnkr.auth.provider import RefreshTokenProvider, StaticTokenProvider, TokenProvider
 from spnkr.client import HaloInfiniteClient
 from spnkr.errors import (
@@ -25,11 +31,13 @@ __all__ = [
     "APIRateLimitError",
     "APIServerError",
     "AzureApp",
+    "ClearanceToken",
     "FilmReadError",
     "HaloInfiniteClient",
     "InvalidXuidError",
     "OAuth2Error",
     "RefreshTokenProvider",
+    "SpartanToken",
     "SPNKrError",
     "StaticTokenProvider",
     "TokenError",

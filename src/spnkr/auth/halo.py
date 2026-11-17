@@ -1,52 +1,43 @@
 """Retrieve Halo Infinite authentication tokens."""
 
 import datetime as dt
-from dataclasses import dataclass
-from typing import Any
 
 from aiohttp import ClientSession
+from pydantic import BaseModel, Field
+
+from spnkr.models.base import PascalCaseModel
 
 
-@dataclass(frozen=True)
-class SpartanToken:
+class ExpiresUtc(BaseModel, populate_by_name=True):
+    """Expiration time model."""
+
+    iso8601_date: dt.datetime = Field(alias="ISO8601Date")
+
+
+class SpartanToken(PascalCaseModel):
     """Response resulting from a request for a Spartan token.
 
     This provides the primary means of authenticating with the Halo Infinite
     API. The tokens are valid for 4 hours.
-
-    Attributes:
-        raw: The raw, deserialized JSON response.
     """
 
-    raw: dict[str, Any]
-
-    @property
-    def token(self) -> str:
-        """The spartan token value."""
-        return self.raw["SpartanToken"]
+    spartan_token: str
+    expires_utc: ExpiresUtc
+    token_duration: dt.timedelta
 
     @property
     def expires_at(self) -> dt.datetime:
         """The UTC datetime at which the Spartan token expires."""
-        return dt.datetime.fromisoformat(self.raw["ExpiresUtc"]["ISO8601Date"])
+        return self.expires_utc.iso8601_date
 
 
-@dataclass(frozen=True)
-class ClearanceToken:
+class ClearanceToken(BaseModel, frozen=True):
     """A Halo Infinite clearance token response.
 
     A clearance token is required for some API endpoints.
-
-    Attributes:
-        raw: The raw, deserialized JSON response.
     """
 
-    raw: dict[str, Any]
-
-    @property
-    def token(self) -> str:
-        """The flight configuration ID."""
-        return self.raw["FlightConfigurationId"]
+    flight_configuration_id: str = Field(alias="FlightConfigurationId")
 
 
 async def request_spartan_token(
@@ -74,7 +65,7 @@ async def request_spartan_token(
         ],
     }
     response = await session.post(url, headers=headers, json=js)
-    return SpartanToken(await response.json())
+    return SpartanToken.model_validate(await response.json())
 
 
 async def request_clearance_token(
@@ -95,4 +86,4 @@ async def request_clearance_token(
     )
     headers = {"x-343-authorization-spartan": spartan_token}
     response = await session.get(url, headers=headers)
-    return ClearanceToken(await response.json())
+    return ClearanceToken.model_validate(await response.json())

@@ -21,7 +21,7 @@ async def main(xuids: list[str]) -> None:
     app = AzureApp(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI)
     async with ClientSession() as session:
         player = await refresh_player_tokens(session, app, REFRESH_TOKEN)
-        spartan = player.spartan_token.token
+        spartan = player.spartan_token.spartan_token
         client = HaloInfiniteClient(spartan, session=session)
         users = await client.get_users_by_id(xuids)
         for user in users:

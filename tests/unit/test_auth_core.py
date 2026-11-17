@@ -77,16 +77,16 @@ async def test_refresh_player_tokens(session, azure_app, monkeypatch):
     monkeypatch.setattr(
         halo,
         "request_spartan_token",
-        lambda *a: create_future(MockToken(token="test4")),
+        lambda *a: create_future(MockToken(spartan_token="test4")),
     )
     monkeypatch.setattr(
         halo,
         "request_clearance_token",
-        lambda *a: create_future(MockToken(token="test5")),
+        lambda *a: create_future(MockToken(flight_configuration_id="test5")),
     )
     player = await core.refresh_player_tokens(session, azure_app, "rt")
     assert player.player_id == "xuid(123)"
     assert player.gamertag == "MrChief"
-    assert player.spartan_token.token == "test4"
-    assert player.clearance_token.token == "test5"
+    assert player.spartan_token.spartan_token == "test4"
+    assert player.clearance_token.flight_configuration_id == "test5"
     assert player.xbl_authorization_header_value == "X 123;ABC"

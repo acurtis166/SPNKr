@@ -39,6 +39,8 @@
 - Use properties to set spartan/clearance tokens instead of the `set_tokens` method.
 - Make clearance token optional and only required for economy endpoints
   (`get_player_customization`, `get_player_career_rank`, `get_player_reward_track_operations`).
+- Update Halo authentication response models to Pydantic. This breaks prior token properties,
+  which are now accessible as attributes `SpartanToken.spartan_token` and `ClearanceToken.flight_configuration_id`.
 
 ### Fixed
 
