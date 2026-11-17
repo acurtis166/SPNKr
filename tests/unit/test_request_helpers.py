@@ -1,7 +1,7 @@
 """Test request helper functions."""
 
 import datetime as dt
-from unittest.mock import Mock
+from unittest.mock import AsyncMock, Mock
 from uuid import UUID
 
 import pytest
@@ -10,6 +10,7 @@ from spnkr.models.refdata import GameplayInteraction, GameVariantCategory
 from spnkr.request_helpers import (
     clean_season_id,
     get_localized_asset_kwargs,
+    paginate,
     prepare_search_asset_params,
     prepare_service_record_params,
     validate_xuids,
@@ -410,3 +411,101 @@ class TestCleanSeasonId:
         """Test season ID with dots in the name (before .json)."""
         result = clean_season_id("Path/To/Season1.0.1.json")
         assert result == "Season1.0.1"
+
+
+class TestPaginate:
+    """Tests for paginate async generator function."""
+
+    @pytest.mark.asyncio
+    async def test_paginate_single_page_less_than_requested(self):
+        """Test pagination when result count is less than requested count."""
+        page = Mock()
+        page.result_count = 2  # Less than requested
+        page.results = [1, 2]
+
+        fetcher = AsyncMock(return_value=page)
+
+        results = []
+        async for item in paginate(fetcher, start=0, count=10, limit=None):
+            results.append(item)
+
+        assert results == [1, 2]
+        fetcher.assert_called_once_with(start=0, count=10)
+
+    @pytest.mark.asyncio
+    async def test_paginate_multiple_pages(self):
+        """Test pagination with multiple pages of results."""
+        page1 = Mock()
+        page1.result_count = 10
+        page1.results = list(range(1, 11))
+
+        page2 = Mock()
+        page2.result_count = 10
+        page2.results = list(range(11, 21))
+
+        page3 = Mock()
+        page3.result_count = 5  # Less than requested, signals end
+        page3.results = list(range(21, 26))
+
+        fetcher = AsyncMock(side_effect=[page1, page2, page3])
+
+        results = []
+        async for item in paginate(fetcher, start=0, count=10, limit=None):
+            results.append(item)
+
+        assert results == list(range(1, 26))
+        assert fetcher.call_count == 3
+
+    @pytest.mark.asyncio
+    async def test_paginate_with_limit(self):
+        """Test pagination with a limit on total results."""
+        page1 = Mock()
+        page1.result_count = 10
+        page1.results = list(range(1, 11))
+
+        page2 = Mock()
+        page2.result_count = 10
+        page2.results = list(range(11, 21))
+
+        fetcher = AsyncMock(side_effect=[page1, page2])
+
+        results = []
+        async for item in paginate(fetcher, start=0, count=10, limit=15):
+            results.append(item)
+
+        assert results == list(range(1, 16))
+        assert fetcher.call_count == 2
+
+    @pytest.mark.asyncio
+    async def test_paginate_empty_results(self):
+        """Test pagination with empty results."""
+        page = Mock()
+        page.result_count = 0
+        page.results = []
+
+        fetcher = AsyncMock(return_value=page)
+
+        results = []
+        async for item in paginate(fetcher, start=0, count=10, limit=None):
+            results.append(item)
+
+        assert results == []
+        fetcher.assert_called_once()
+
+    @pytest.mark.asyncio
+    async def test_paginate_with_custom_kwargs(self):
+        """Test pagination passing custom keyword arguments to fetcher."""
+        page = Mock()
+        page.result_count = 5
+        page.results = ["a", "b", "c", "d", "e"]
+
+        fetcher = AsyncMock(return_value=page)
+
+        results = []
+        async for item in paginate(
+            fetcher, start=0, count=10, limit=None, custom_param="value"
+        ):
+            results.append(item)
+
+        assert results == ["a", "b", "c", "d", "e"]
+        fetcher.assert_called_once_with(start=0, count=10, custom_param="value")

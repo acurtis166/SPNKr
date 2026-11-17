@@ -2,7 +2,7 @@
 
 import collections
 import datetime as dt
-from collections.abc import Iterable
+from collections.abc import AsyncIterator, Iterable
 from typing import TYPE_CHECKING, Any, Self, TypeVar, cast
 from uuid import UUID
 
@@ -35,7 +35,13 @@ from spnkr.models.gamecms_hacs import (
 from spnkr.models.profile import User
 from spnkr.models.refdata import GameplayInteraction, GameVariantCategory
 from spnkr.models.skill import MatchSkill, PlaylistCsr
-from spnkr.models.stats import MatchCount, MatchHistory, MatchStats, ServiceRecord
+from spnkr.models.stats import (
+    MatchCount,
+    MatchHistory,
+    MatchHistoryResult,
+    MatchStats,
+    ServiceRecord,
+)
 from spnkr.request_helpers import (
     AssetKind,
     HistoryMatchType,
@@ -45,6 +51,7 @@ from spnkr.request_helpers import (
     ViewType,
     clean_season_id,
     get_localized_asset_kwargs,
+    paginate,
     prepare_search_asset_params,
     prepare_service_record_params,
     validate_xuids,
@@ -293,20 +300,21 @@ class HaloInfiniteClient:
         count: int = 25,
         match_type: HistoryMatchType = "all",
     ) -> MatchHistory:
-        """Request a batch of matches from a player's match history.
+        """Request a page of matches from a player's match history.
 
         Args:
             player: Xbox Live ID or gamertag of the player to get counts for.
                 Examples of valid inputs include "xuid(1234567890123456)",
                 "1234567890123456", 1234567890123456, and "MyGamertag".
             start: Index of the first match to request, starting at 0.
-            count: The number of matches to request. Maximum number of results
-                returned is 25.
+            count: The page size (number of matches per page). Maximum page size
+                is 25. Defaults to 25.
             match_type: The type of matches to return. One of "all",
                 "matchmaking", "custom", or "local".
 
         Returns:
-            The requested match history "page" of results.
+            A page of match history results. The page may contain fewer than
+            `count` matches if fewer are available.
         """
         xuid_or_gamertag = wrap_xuid_or_gamertag(player)
         params = {"start": start, "count": count, "type": match_type}
@@ -316,6 +324,46 @@ class HaloInfiniteClient:
             MatchHistory,
             params=params,
         )
+
+    async def iter_match_history(
+        self,
+        player: str | int,
+        start: int = 0,
+        count: int = 25,
+        limit: int | None = None,
+        match_type: HistoryMatchType = "all",
+    ) -> AsyncIterator[MatchHistoryResult]:
+        """Iterate through a player's match history.
+
+        Automatically handles pagination by requesting multiple pages of matches
+        and yielding individual results. By default, iterates through all available
+        matches.
+
+        Args:
+            player: Xbox Live ID or gamertag of the player to get counts for.
+                Examples of valid inputs include "xuid(1234567890123456)",
+                "1234567890123456", 1234567890123456, and "MyGamertag".
+            start: Index of the first match to request, starting at 0.
+            count: The page size (number of matches per page). Maximum page size
+                is 25. Defaults to 25.
+            limit: The maximum number of results to yield. If `None`, iterates
+                through all available matches.
+            match_type: The type of matches to return. One of "all",
+                "matchmaking", "custom", or "local".
+
+        Yields:
+            Individual match history results, automatically fetching new pages
+            as needed.
+        """
+        async for result in paginate(
+            self.get_match_history,
+            start=start,
+            count=count,
+            limit=limit,
+            player=player,
+            match_type=match_type,
+        ):
+            yield result
 
     async def get_match_stats(self, match_id: str | UUID) -> MatchStats:
         """Request match details using the Halo Infinite match GUID.

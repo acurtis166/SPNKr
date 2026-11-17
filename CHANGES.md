@@ -14,6 +14,7 @@
 - Add `HaloInfiniteClient` properties for session and tokens.
 - `HaloInfiniteClient` can now be used as an async context manager to automatically
   manage an internal session. The `session` parameter is now optional.
+- Add match history iteration method.
 
 ### Changed
 

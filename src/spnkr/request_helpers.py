@@ -2,7 +2,7 @@
 
 import datetime as dt
 import warnings
-from collections.abc import Iterable
+from collections.abc import AsyncIterator, Awaitable, Callable, Iterable
 from pathlib import Path
 from typing import Any, Literal
 from uuid import UUID
@@ -166,3 +166,35 @@ def clean_season_id(season_id: str) -> str:
     "CsrSeason5-1".
     """
     return Path(season_id).stem
+
+
+async def paginate(
+    fetcher: Callable[..., Awaitable],
+    start: int,
+    count: int,
+    limit: int | None,
+    **kwargs,
+) -> AsyncIterator:
+    """Paginate through results from a fetcher function with optional limit."""
+    current_start = start
+    yielded = 0
+    while True:
+        # Avoid over-fetching if limit is set and remaining limit is less than count
+        fetch_count = count
+        if limit is not None:
+            remaining = limit - yielded
+            if remaining <= 0:
+                break
+            fetch_count = min(count, remaining)
+
+        page = await fetcher(**kwargs, start=current_start, count=fetch_count)
+        if not page.results:
+            break
+        for result in page.results:
+            yield result
+            yielded += 1
+            if limit is not None and yielded >= limit:
+                return
+        if page.result_count < fetch_count:
+            break
+        current_start += fetch_count
