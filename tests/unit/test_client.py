@@ -52,11 +52,8 @@ def test_client_session_without_context_manager():
 def test_client_tokens(client: HaloInfiniteClient):
     """Test that the client tokens can be set and retrieved."""
     assert client.spartan_token == "spartan"
-    assert client.clearance_token == "clearance"
     client.spartan_token = "new_spartan"
-    client.clearance_token = "new_clearance"
     assert client.spartan_token == "new_spartan"
-    assert client.clearance_token == "new_clearance"
 
 
 @pytest.mark.asyncio

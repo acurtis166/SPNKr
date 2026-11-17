@@ -136,14 +136,6 @@ class HaloInfiniteClient:
     def spartan_token(self, value: str) -> None:
         self._spartan_token = value
 
-    @property
-    def clearance_token(self) -> str | None:
-        return self._clearance_token
-
-    @clearance_token.setter
-    def clearance_token(self, value: str | None) -> None:
-        self._clearance_token = value
-
     def _require_clearance_token(self) -> None:
         if not self._clearance_token:
             raise SPNKrError(
