@@ -119,8 +119,6 @@ For automated token refresh, see the [authentication reference](https://acurtis1
 
 # Service Overview
 
-`HaloInfiniteClient` provides direct access to all API endpoints. Methods are grouped logically by their purpose:
-
 | Authority | Methods | Requires Clearance? |
 | --- | --- | --- |
 | **Stats** | `get_match_history`, `iter_match_history`, `get_match_count`, `get_match_stats` | No |
