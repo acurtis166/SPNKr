@@ -22,7 +22,7 @@ async def authenticated_player():
     missing_vars = [var for var in required_vars if not os.environ.get(var)]
     if missing_vars:
         pytest.skip(
-            f"Integration tests require: {', '.join(missing_vars)}. "  # type: ignore
+            f"Integration tests require: {', '.join(missing_vars)}. "
             "See README for .env setup instructions."
         )
 

@@ -499,7 +499,7 @@ class SubTier(Enum):
     The `to_int` method returns the true sub-tier value, e.g., "ONE" returns 1.
     """
 
-    I = 0  # noqa: E741
+    I = 0
     II = 1
     III = 2
     IV = 3

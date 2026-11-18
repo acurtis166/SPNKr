@@ -148,7 +148,7 @@ def test_highlight_event_rejects_inconsistent_medal(event_type, medal, message):
 def test_read_film_major_versions(version: int, time_ms, kills, deaths, modes, medals):
     path = LOCAL_FILM_DIR / f"v{version}"
     if not path.is_file():
-        pytest.skip(f"Optional captured film for version {version} is not available")  # type: ignore
+        pytest.skip(f"Optional captured film for version {version} is not available")
     events = list(highlight_events.read(path.read_bytes(), version))
     counts = collections.Counter([e.event_type for e in events])
     event = events[0]

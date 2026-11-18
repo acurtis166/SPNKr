@@ -1,5 +1,6 @@
 import math
 from dataclasses import dataclass
+from typing import ClassVar
 
 from spnkr.models.refdata import SubTier, Tier
 
@@ -111,7 +112,7 @@ class CompetitiveSkillRank:
 
     csr: int | float
 
-    TIERS = [
+    TIERS: ClassVar[list[Tier]] = [
         Tier.BRONZE,
         Tier.SILVER,
         Tier.GOLD,

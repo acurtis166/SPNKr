@@ -136,7 +136,7 @@ class RefreshTokenProvider:
         if self._spartan_token is None:
             return True
 
-        now = dt.datetime.now(dt.timezone.utc)
+        now = dt.datetime.now(dt.UTC)
         return self._spartan_token.expires_at <= now + self._GRACE_PERIOD
 
     async def refresh(self) -> halo.SpartanToken:

@@ -290,13 +290,13 @@ class TestRefreshTokenProvider:
 
             # Create token that expires in the past
             past_expiry = (
-                dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=1)
+                dt.datetime.now(dt.UTC) - dt.timedelta(hours=1)
             ).isoformat()
             expired_token = create_spartan_token("expired_spartan_token", past_expiry)
 
             # Create a future token for the refresh
             future_expiry = (
-                dt.datetime.now(dt.timezone.utc) + dt.timedelta(hours=4)
+                dt.datetime.now(dt.UTC) + dt.timedelta(hours=4)
             ).isoformat()
             fresh_token = create_spartan_token("fresh_spartan_token", future_expiry)
 
@@ -335,7 +335,7 @@ class TestRefreshTokenProvider:
 
             # Create token that expires in 30 seconds
             soon_expiry = (
-                dt.datetime.now(dt.timezone.utc) + dt.timedelta(seconds=30)
+                dt.datetime.now(dt.UTC) + dt.timedelta(seconds=30)
             ).isoformat()
             soon_expired_token = create_spartan_token(
                 "soon_to_expire_token", soon_expiry
@@ -343,7 +343,7 @@ class TestRefreshTokenProvider:
 
             # Create a fresh token for the refresh
             future_expiry = (
-                dt.datetime.now(dt.timezone.utc) + dt.timedelta(hours=4)
+                dt.datetime.now(dt.UTC) + dt.timedelta(hours=4)
             ).isoformat()
             fresh_token = create_spartan_token(
                 "fresh_token_after_refresh", future_expiry
