@@ -208,6 +208,8 @@ uv run pytest tests/integration  # Run integration tests only
 ```
 
 Unit tests run without any setup. Integration tests will be **automatically skipped** if credentials are not configured.
+Some film tests expect local files at `tests/data/film/local/`.
+If those files aren't found, the tests are skipped.
 
 #### Integration Tests (Optional)
 

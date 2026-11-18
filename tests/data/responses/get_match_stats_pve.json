@@ -356,7 +356,7 @@
     ],
     "Players": [
         {
-            "PlayerId": "xuid(2533274878104604)",
+            "PlayerId": "xuid(2000000000000008)",
             "PlayerType": 1,
             "BotAttributes": null,
             "LastTeamId": 0,
@@ -571,7 +571,7 @@
             ]
         },
         {
-            "PlayerId": "xuid(2535412760927018)",
+            "PlayerId": "xuid(2000000000000015)",
             "PlayerType": 1,
             "BotAttributes": null,
             "LastTeamId": 0,
@@ -791,7 +791,7 @@
             ]
         },
         {
-            "PlayerId": "xuid(2533274815792027)",
+            "PlayerId": "xuid(2000000000000006)",
             "PlayerType": 1,
             "BotAttributes": null,
             "LastTeamId": 0,
@@ -1021,7 +1021,7 @@
             ]
         },
         {
-            "PlayerId": "xuid(2535445291321133)",
+            "PlayerId": "xuid(2000000000000026)",
             "PlayerType": 1,
             "BotAttributes": null,
             "LastTeamId": 0,

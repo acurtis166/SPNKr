@@ -55,7 +55,7 @@ def test_xsts_response_xuid():
     """Test that the xsts player id is returned."""
     response = load_response("xsts")
     xsts_token = xbox.XSTSResponse(response)
-    assert xsts_token.xuid == "xuid(2669321029139235)"
+    assert xsts_token.xuid == "xuid(2000000000000036)"
 
 
 def test_xsts_response_userhash():

@@ -1,28 +1,28 @@
 {
     "profileUsers": [
         {
-            "id": "2535445291321133",
-            "hostId": "2535445291321133",
+            "id": "2000000000000026",
+            "hostId": "2000000000000026",
             "settings": [
                 {
                     "id": "GameDisplayName",
-                    "value": "aCurtis X89"
+                    "value": "TestPlayer"
                 },
                 {
                     "id": "AppDisplayName",
-                    "value": "aCurtis X89"
+                    "value": "TestPlayer"
                 },
                 {
                     "id": "AppDisplayPicRaw",
-                    "value": "https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTcS9jr0n8i7LY1tL3U7Aiafawv0hvLVTadAYM74jo2GRWfV4isnhJzSvaPwT_5QUO5&format=png"
+                    "value": "https://example.invalid/gamerpic.png"
                 },
                 {
                     "id": "GameDisplayPicRaw",
-                    "value": "https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTcS9jr0n8i7LY1tL3U7Aiafawv0hvLVTadAYM74jo2GRWfV4isnhJzSvaPwT_5QUO5&format=png"
+                    "value": "https://example.invalid/gamerpic.png"
                 },
                 {
                     "id": "PublicGamerpic",
-                    "value": "https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTcS9jr0n8i7LY1tL3U7Aiafawv0hvLVTadAYM74jo2GRWfV4isnhJzSvaPwT_5QUO5"
+                    "value": "https://example.invalid/gamerpic.png"
                 },
                 {
                     "id": "ShowUserAsAvatar",
@@ -34,11 +34,11 @@
                 },
                 {
                     "id": "Gamertag",
-                    "value": "aCurtis X89"
+                    "value": "TestPlayer"
                 },
                 {
                     "id": "ModernGamertag",
-                    "value": "aCurtis X89"
+                    "value": "TestPlayer"
                 },
                 {
                     "id": "ModernGamertagSuffix",
@@ -46,7 +46,7 @@
                 },
                 {
                     "id": "UniqueModernGamertag",
-                    "value": "aCurtis X89"
+                    "value": "TestPlayer"
                 },
                 {
                     "id": "AccountTier",
@@ -82,7 +82,7 @@
                 },
                 {
                     "id": "RealNameOverride",
-                    "value": "Andrew Curtis"
+                    "value": "TestPlayer"
                 },
                 {
                     "id": "IsQuarantined",

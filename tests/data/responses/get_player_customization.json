@@ -58,7 +58,7 @@
             "EmblemPath": "Inventory/Spartan/Emblems/104-001-csr-tier00-em-01f9d047.json",
             "ConfigurationId": 567098062
         },
-        "ServiceTag": "ANDY",
+        "ServiceTag": "TEST",
         "IntroEmotePath": null,
         "PlayerTitlePath": null
     },

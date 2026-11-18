@@ -61,13 +61,13 @@ def test_parse_career_reward_track():
 def test_parse_match_skill():
     data = load_response("get_match_skill")
     result = MatchSkill(**data)
-    assert result.value[0].id == "xuid(2535445291321133)"
+    assert result.value[0].id == "xuid(2000000000000026)"
 
 
 def test_parse_playlist_csr():
     data = load_response("get_playlist_csr")
     result = PlaylistCsr(**data)
-    assert result.value[0].id == "xuid(2535445291321133)"
+    assert result.value[0].id == "xuid(2000000000000026)"
 
 
 def test_parse_match_count():

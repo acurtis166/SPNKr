@@ -355,7 +355,7 @@
     ],
     "Players": [
         {
-            "PlayerId": "xuid(2535445291321133)",
+            "PlayerId": "xuid(2000000000000026)",
             "PlayerType": 1,
             "BotAttributes": null,
             "LastTeamId": 0,
@@ -506,7 +506,7 @@
             ]
         },
         {
-            "PlayerId": "xuid(2535412760927018)",
+            "PlayerId": "xuid(2000000000000015)",
             "PlayerType": 1,
             "BotAttributes": null,
             "LastTeamId": 0,
@@ -657,7 +657,7 @@
             ]
         },
         {
-            "PlayerId": "xuid(2535429868095076)",
+            "PlayerId": "xuid(2000000000000021)",
             "PlayerType": 1,
             "BotAttributes": null,
             "LastTeamId": 1,
@@ -818,7 +818,7 @@
             ]
         },
         {
-            "PlayerId": "xuid(2533274964913144)",
+            "PlayerId": "xuid(2000000000000013)",
             "PlayerType": 1,
             "BotAttributes": null,
             "LastTeamId": 0,
@@ -934,7 +934,7 @@
             ]
         },
         {
-            "PlayerId": "xuid(2535469531821339)",
+            "PlayerId": "xuid(2000000000000034)",
             "PlayerType": 1,
             "BotAttributes": null,
             "LastTeamId": 0,
@@ -1070,7 +1070,7 @@
             ]
         },
         {
-            "PlayerId": "xuid(2535428040412416)",
+            "PlayerId": "xuid(2000000000000019)",
             "PlayerType": 1,
             "BotAttributes": null,
             "LastTeamId": 1,
@@ -1216,7 +1216,7 @@
             ]
         },
         {
-            "PlayerId": "xuid(2607664605684595)",
+            "PlayerId": "xuid(2000000000000035)",
             "PlayerType": 1,
             "BotAttributes": null,
             "LastTeamId": 1,
@@ -1352,7 +1352,7 @@
             ]
         },
         {
-            "PlayerId": "xuid(2535450514300316)",
+            "PlayerId": "xuid(2000000000000030)",
             "PlayerType": 1,
             "BotAttributes": null,
             "LastTeamId": 1,

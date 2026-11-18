@@ -7,6 +7,7 @@ from aiohttp import ClientSession
 
 from spnkr.auth import AzureApp, refresh_player_tokens
 from spnkr.client import HaloInfiniteClient
+from spnkr.models.profile import User
 
 
 @pytest_asyncio.fixture(scope="session", loop_scope="session")
@@ -43,3 +44,8 @@ async def client(authenticated_player):
             spartan_token=authenticated_player.spartan_token.spartan_token,
             clearance_token=authenticated_player.clearance_token.flight_configuration_id,
         )
+
+
+@pytest_asyncio.fixture(scope="session", loop_scope="session")
+async def current_user(client: HaloInfiniteClient) -> User:
+    return await client.get_current_user()

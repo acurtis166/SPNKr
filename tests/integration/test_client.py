@@ -80,46 +80,51 @@ async def test_get_current_user(client):
 
 
 @pytest.mark.asyncio(loop_scope="session")
-async def test_get_user_by_gamertag(client):
-    await client.get_user_by_gamertag(gamertag="aCurtis X89")
+async def test_get_user_by_gamertag(client, current_user):
+    await client.get_user_by_gamertag(gamertag=current_user.gamertag)
 
 
 @pytest.mark.asyncio(loop_scope="session")
-async def test_get_user_by_id(client):
-    await client.get_user_by_id(xuid=2535445291321133)
+async def test_get_user_by_id(client, current_user):
+    await client.get_user_by_id(xuid=current_user.xuid)
 
 
 @pytest.mark.asyncio(loop_scope="session")
-async def test_get_users_by_id(client):
+async def test_get_users_by_id(client, current_user):
     await client.get_users_by_id(
-        xuids=[2535445291321133, 2533274880629884],
+        xuids=[current_user.xuid],
     )
 
 
 @pytest.mark.asyncio(loop_scope="session")
-async def test_get_match_skill(client):
+async def test_get_match_skill(client, current_user):
+    history = await client.get_match_history(
+        current_user.xuid, count=1, match_type="matchmaking"
+    )
+    if not history.results:
+        pytest.skip("Current user has no matchmade matches")
     await client.get_match_skill(
-        match_id="a6106664-fd07-4973-9251-d2196502a8da",
-        xuids=[2533274824889939, 2533274792954103],
+        match_id=history.results[0].match_id,
+        xuids=[current_user.xuid],
     )
 
 
 @pytest.mark.asyncio(loop_scope="session")
-async def test_get_playlist_csr(client):
+async def test_get_playlist_csr(client, current_user):
     await client.get_playlist_csr(
         playlist_id="edfef3ac-9cbe-4fa2-b949-8f29deafd483",
-        xuids=[2535445291321133, 2533274880629884],
+        xuids=[current_user.xuid],
     )
 
 
 @pytest.mark.asyncio(loop_scope="session")
-async def test_get_match_count(client):
-    await client.get_match_count(player="aCurtis X89")
+async def test_get_match_count(client, current_user):
+    await client.get_match_count(player=current_user.xuid)
 
 
 @pytest.mark.asyncio(loop_scope="session")
-async def test_get_service_record(client):
-    await client.get_service_record(player="aCurtis X89")
+async def test_get_service_record(client, current_user):
+    await client.get_service_record(player=current_user.xuid)
 
 
 @pytest.mark.asyncio(loop_scope="session")
@@ -128,18 +133,18 @@ async def test_match_stats(client):
 
 
 @pytest.mark.asyncio(loop_scope="session")
-async def test_get_player_customization(client):
-    await client.get_player_customization(xuid=2535445291321133)
+async def test_get_player_customization(client, current_user):
+    await client.get_player_customization(xuid=current_user.xuid)
 
 
 @pytest.mark.asyncio(loop_scope="session")
-async def test_get_player_reward_track_operations(client):
-    await client.get_player_reward_track_operations(xuid=2535445291321133)
+async def test_get_player_reward_track_operations(client, current_user):
+    await client.get_player_reward_track_operations(xuid=current_user.xuid)
 
 
 @pytest.mark.asyncio(loop_scope="session")
-async def test_get_player_career_rank(client):
-    await client.get_player_career_rank(xuid=2535445291321133)
+async def test_get_player_career_rank(client, current_user):
+    await client.get_player_career_rank(xuid=current_user.xuid)
 
 
 @pytest.mark.asyncio(loop_scope="session")
@@ -157,5 +162,5 @@ async def test_get_operation_reward_track(client):
 
 
 @pytest.mark.asyncio(loop_scope="session")
-async def test_get_challenge_decks(client):
-    await client.get_challenge_decks(player="aCurtis X89")
+async def test_get_challenge_decks(client, current_user):
+    await client.get_challenge_decks(player=current_user.xuid)
