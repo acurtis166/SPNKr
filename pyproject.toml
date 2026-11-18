@@ -1,6 +1,6 @@
 [project]
 name = "spnkr"
-version = "0.10.2"
+version = "0.11.0"
 description = "Unofficial Python SDK for the Halo Infinite web API."
 readme = "README.md"
 authors = [{ name = "Andy Curtis" }]

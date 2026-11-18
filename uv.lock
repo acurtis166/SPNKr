@@ -1288,7 +1288,7 @@ wheels = [
 
 [[package]]
 name = "spnkr"
-version = "0.10.2"
+version = "0.11.0"
 source = { editable = "." }
 dependencies = [
     { name = "aiohttp" },
