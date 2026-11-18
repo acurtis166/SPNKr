@@ -34,8 +34,6 @@ pip install "spnkr[cache]"
 
 ## Quickstart
 
-### 1. Get tokens
-
 SPNKr requires these Halo headers:
 
 - `x-343-authorization-spartan` (required for all endpoints)
@@ -46,11 +44,11 @@ You can get them in two ways:
 1. Manual (fastest): copy headers from Halo Waypoint network traffic.
 1. Programmatic (recommended): use Azure app registration + refresh flow.
 
-For detailed setup and token management strategies, see:
-- [Getting Started guide](https://acurtis166.github.io/SPNKr/getting-started/) for initial setup
-- [Token Providers guide](https://acurtis166.github.io/SPNKr/token-providers/) for static tokens, OAuth integration, and caching
+For more detailed setup and token management information, see:
+- [Getting Started guide](https://acurtis166.github.io/SPNKr/getting-started/)
+- [Token Providers guide](https://acurtis166.github.io/SPNKr/token-providers/)
 
-### 2. Create the client
+Once you have the spartan token or a provider, you can create a client and start making requests:
 
 ```python
 import asyncio
@@ -105,17 +103,6 @@ async def main() -> None:
 if __name__ == "__main__":
     asyncio.run(main())
 ```
-
-### 3. Refresh tokens when needed
-
-Spartan tokens are short-lived. If you already have replacement tokens, update an
-existing client without recreating it:
-
-```python
-client.spartan_token = "NEW_SPARTAN"
-```
-
-For automated token refresh, see the [authentication reference](https://acurtis166.github.io/SPNKr/reference/authentication/) for `authenticate_player` and `refresh_player_tokens`.
 
 # Service Overview
 
