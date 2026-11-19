@@ -5,7 +5,7 @@ from uuid import UUID
 from aiohttp import ClientResponseError
 
 from spnkr.client import HaloInfiniteClient
-from spnkr.errors import FilmReadError
+from spnkr.errors import APIError, FilmReadError
 from spnkr.film import highlight_events
 from spnkr.film.models import HighlightEvent
 
@@ -44,7 +44,7 @@ async def read_highlight_events(
     """
     try:
         film = await client.get_film_by_match_id(match_id)
-    except ClientResponseError as ex:
+    except APIError as ex:
         raise FilmReadError(
             f"Error getting highlight events film metadata: {ex}"
         ) from ex
