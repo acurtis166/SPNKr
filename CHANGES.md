@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- Fix expected error type in film fetch for highlight events.
+
 ## [0.11.0] - 2026-11-17
 
 ### Added
